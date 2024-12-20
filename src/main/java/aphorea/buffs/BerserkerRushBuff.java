@@ -1,7 +1,7 @@
 package aphorea.buffs;
 
-import aphorea.registry.AphBuffs;
 import aphorea.other.utils.AphTimeout;
+import aphorea.registry.AphBuffs;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameRandom;

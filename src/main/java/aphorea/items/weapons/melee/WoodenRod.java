@@ -9,7 +9,6 @@ import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.item.Item;
 import necesse.level.maps.Level;
 
 public class WoodenRod extends AphGlaiveToolItem {
@@ -18,7 +17,7 @@ public class WoodenRod extends AphGlaiveToolItem {
 
     public WoodenRod() {
         super(300);
-        rarity = Item.Rarity.COMMON;
+        rarity = Rarity.COMMON;
         attackAnimTime.setBaseValue(500);
         attackDamage.setBaseValue(5)
                 .setUpgradedValue(1, 30);

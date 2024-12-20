@@ -20,20 +20,29 @@ import aphorea.mobs.summon.BabyUnstableGelSlime;
 import aphorea.mobs.summon.UndeadSkeleton;
 import aphorea.mobs.summon.VolatileGelSlime;
 import aphorea.objects.WitchStatue;
+import aphorea.other.buffs.trinkets.AphBaseRuneTrinketBuff;
 import aphorea.other.data.AphSwampLevelData;
 import aphorea.other.data.AphWorldData;
 import aphorea.other.itemtype.weapons.AphSaberToolItem;
 import aphorea.other.journal.AphJournalChallenges;
 import aphorea.packets.AphCustomPushPacket;
+import aphorea.packets.AphRunesInjectorAbilityPacket;
 import aphorea.projectiles.arrow.GelArrowProjectile;
 import aphorea.projectiles.arrow.UnstableGelArrowProjectile;
 import aphorea.projectiles.mob.PinkWitchProjectile;
 import aphorea.projectiles.toolitem.*;
 import aphorea.registry.*;
 import aphorea.tiles.GelTile;
+import necesse.engine.GlobalData;
+import necesse.engine.input.Control;
+import necesse.engine.input.InputEvent;
+import necesse.engine.input.InputID;
 import necesse.engine.journal.JournalEntry;
 import necesse.engine.modLoader.annotations.ModEntry;
+import necesse.engine.network.client.Client;
 import necesse.engine.registries.*;
+import necesse.engine.state.MainGame;
+import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.inventory.item.ItemCategory;
 import necesse.inventory.lootTable.LootTable;
@@ -66,6 +75,9 @@ public class AphoreaMod {
         // Damage Types
         AphDamageType.registerCore();
 
+        // Containers
+        AphContainers.registerCore();
+
         // Item Category
         ItemCategory.createCategory("A-A-E", "equipment", "tools", "healing");
         ItemCategory.equipmentManager.createCategory("C-A-A", "tools");
@@ -88,7 +100,7 @@ public class AphoreaMod {
         // Mobs
         MobRegistry.registerMob("gelslime", GelSlime.class, true);
         MobRegistry.registerMob("rockygelslime", RockyGelSlime.class, true);
-        MobRegistry.registerMob("pinkwitch", PinkWitch.class, true);
+        MobRegistry.registerMob("witch", PinkWitch.class, true);
         MobRegistry.registerMob("voidadept", VoidAdept.class, true);
         MobRegistry.registerMob("wildphosphorslime", WildPhosphorSlime.class, true);
 
@@ -123,7 +135,7 @@ public class AphoreaMod {
         ProjectileRegistry.registerProjectile("goldenwand", GoldenWandProjectile.class, "none", "none");
 
         // Projectiles [Mobs]
-        ProjectileRegistry.registerProjectile("pinkwitch", PinkWitchProjectile.class, "none", "none");
+        ProjectileRegistry.registerProjectile("witch", PinkWitchProjectile.class, "none", "none");
         ProjectileRegistry.registerProjectile("miniunstablegelslime", MiniUnstableGelSlimeProjectile.class, "miniunstablegelslime", "none");
 
         // Buffs
@@ -142,9 +154,30 @@ public class AphoreaMod {
         PacketRegistry.registerPacket(BlankBannerItem.BlankBannerAreaParticlesPacket.class);
         PacketRegistry.registerPacket(StrikeBannerItem.StrikeBannerAreaParticlesPacket.class);
         PacketRegistry.registerPacket(WildPhosphorSlime.PhosphorSlimeParticlesPacket.class);
+        PacketRegistry.registerPacket(AphRunesInjectorAbilityPacket.class);
 
         // Events
         LevelEventRegistry.registerEvent("gelprojectilegroundeffect", GelProjectile.GelProjectileGroundEffectEvent.class);
+
+        // Controls
+        Control.addModControl(new Control(InputID.KEY_G, "runesinjectorability") {
+            @Override
+            public void activate(InputEvent event) {
+                super.activate(event);
+                if (isPressed()) {
+                    Client client = ((MainGame) GlobalData.getCurrentState()).getClient();
+                    if (client != null) {
+                        PlayerMob playerMob = client.getPlayer();
+                        if (playerMob != null) {
+                            playerMob.buffManager.getBuffs().values().stream().filter(b -> b.buff instanceof AphBaseRuneTrinketBuff).map(b -> (AphBaseRuneTrinketBuff) b.buff).findFirst().ifPresent(
+                                    runeBuff -> client.network.sendPacket(new AphRunesInjectorAbilityPacket(client.getSlot(), runeBuff))
+                            );
+                        }
+                    }
+                }
+            }
+        });
+
 
         // Journal [Surface]
 
@@ -153,7 +186,7 @@ public class AphoreaMod {
         forestSurfaceJournal.addEntryChallenges(AphJournalChallenges.APH_FOREST_SURFACE_CHALLENGES_ID);
 
         JournalEntry swampSurfaceJournal = JournalRegistry.getJournalEntry("swampsurface");
-        swampSurfaceJournal.addMobEntries("pinkwitch");
+        swampSurfaceJournal.addMobEntries("witch");
 
         // Journal [Cave]
 
@@ -186,7 +219,7 @@ public class AphoreaMod {
         // MOBS
         GelSlime.texture = GameTexture.fromFile("mobs/gelslime");
         RockyGelSlime.texture = GameTexture.fromFile("mobs/rockygelslime");
-        PinkWitch.texture = GameTexture.fromFile("mobs/pinkwitch");
+        PinkWitch.texture = GameTexture.fromFile("mobs/witch");
         UnstableGelSlime.texture = GameTexture.fromFile("mobs/unstablegelslime");
         UnstableGelSlime.icon = GameTexture.fromFile("mobs/icons/unstablegelslime");
         MiniUnstableGelSlime.texture = GameTexture.fromFile("mobs/miniunstablegelslime");
@@ -213,7 +246,6 @@ public class AphoreaMod {
 
         // PARTICLES
         GelProjectile.GelProjectileParticle.texture = GameTexture.fromFile("particles/gelprojectile");
-
     }
 
     public void postInit() {
@@ -231,7 +263,7 @@ public class AphoreaMod {
                 .add(30, "rockygelslime");
 
         SwampBiome.surfaceMobs
-                .addLimited(1, "pinkwitch", 1, 1024 * 32);
+                .addLimited(1, "witch", 1, 1024 * 32);
 
         DungeonBiome.defaultDungeonMobs
                 .add(5, "voidadept");

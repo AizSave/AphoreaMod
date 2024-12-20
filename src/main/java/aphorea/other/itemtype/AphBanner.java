@@ -71,7 +71,7 @@ abstract public class AphBanner extends BannerItem {
         GameUtils.streamNetworkClients(player.getLevel()).filter((c) -> {
             return this.shouldBuffPlayer(item, player, c.playerMob);
         }).filter((c) -> {
-            return GameMath.diagonalMoveDistance(player.getX(), player.getY(), c.playerMob.getX(), c.playerMob.getY()) <= (double) this.range;
+            return GameMath.diagonalMoveDistance(player.getX(), player.getY(), c.playerMob.getX(), c.playerMob.getY()) <= (double)this.range;
         }).forEach((c) -> {
             this.applyBuffs(c.playerMob, player);
         });
@@ -80,7 +80,7 @@ abstract public class AphBanner extends BannerItem {
         }).filter((m) -> {
             return this.shouldBuffMob(item, player, m);
         }).filter((m) -> {
-            return GameMath.diagonalMoveDistance(player.getX(), player.getY(), m.getX(), m.getY()) <= (double) this.range;
+            return GameMath.diagonalMoveDistance(player.getX(), player.getY(), m.getX(), m.getY()) <= (double)this.range;
         }).forEach((m) -> {
             this.applyBuffs(m, player);
         });
@@ -98,9 +98,9 @@ abstract public class AphBanner extends BannerItem {
     public void applyBuffs(Mob mob) {
         Buff buff = this.buff.apply(mob);
         if (buff != null) {
-            if (mob.buffManager.hasBuff(buff.getID())) {
+            if(mob.buffManager.hasBuff(buff.getID())) {
                 Attacker attacker = mob.buffManager.getBuff(buff.getID()).getAttacker();
-                if (attacker != null && attacker.getAttackOwner() != null) {
+                if(attacker != null && attacker.getAttackOwner() != null) {
                     return;
                 }
             }
@@ -112,12 +112,12 @@ abstract public class AphBanner extends BannerItem {
     public void applyBuffs(Mob mob, PlayerMob player) {
         Buff buff = this.buff.apply(mob);
         if (buff != null) {
-            if (mob.buffManager.hasBuff(buff.getID())) {
+            if(mob.buffManager.hasBuff(buff.getID())) {
                 Attacker attacker = mob.buffManager.getBuff(buff.getID()).getAttacker();
-                if (attacker != null) {
+                if(attacker != null) {
                     Mob otherMob = attacker.getAttackOwner();
-                    if (otherMob != player) {
-                        if (otherMob != null && otherMob.buffManager.getModifier(AphModifiers.BANNER_EFFECT) >= player.buffManager.getModifier(AphModifiers.BANNER_EFFECT)) {
+                    if(otherMob != player) {
+                        if(otherMob != null && otherMob.buffManager.getModifier(AphModifiers.BANNER_EFFECT) >= player.buffManager.getModifier(AphModifiers.BANNER_EFFECT)) {
                             return;
                         }
                         mob.buffManager.removeBuff(buff.getID(), false);

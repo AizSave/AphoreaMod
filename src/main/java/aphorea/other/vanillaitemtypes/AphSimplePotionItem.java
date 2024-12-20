@@ -6,11 +6,10 @@ import necesse.engine.util.GameBlackboard;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.item.Item;
 import necesse.inventory.item.placeableItem.consumableItem.potionConsumableItem.SimplePotionItem;
 
 abstract public class AphSimplePotionItem extends SimplePotionItem {
-    public AphSimplePotionItem(int stackSize, Item.Rarity rarity, String buffStringID, int buffDurationSeconds, String... tooltipKeys) {
+    public AphSimplePotionItem(int stackSize, Rarity rarity, String buffStringID, int buffDurationSeconds, String... tooltipKeys) {
         super(stackSize, rarity, buffStringID, buffDurationSeconds, tooltipKeys);
     }
 

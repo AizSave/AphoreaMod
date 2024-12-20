@@ -25,12 +25,12 @@ abstract public class AphDeletedItem extends AphConsumableItem {
 
     abstract public ArrayList<InventoryItem> items(PlayerMob player);
 
-    public int freeQuantity(PlayerMob player) {
+    public int freeSpace(PlayerMob player) {
         return (int) player.getInv().main.streamSlots().filter(InventorySlot::isSlotClear).count();
     }
 
     public String canPlace(Level level, int x, int y, PlayerMob player, InventoryItem item, PacketReader contentReader) {
-        if (freeQuantity(player) < items(player).size()) return "nofreeslots";
+        if (freeSpace(player) < items(player).size()) return "nofreeslots";
         return null;
     }
 

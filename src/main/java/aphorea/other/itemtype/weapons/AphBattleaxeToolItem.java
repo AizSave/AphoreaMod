@@ -1,11 +1,11 @@
 package aphorea.other.itemtype.weapons;
 
-import aphorea.registry.AphBuffs;
 import aphorea.other.itemtype.weapons.AphoreaChargeAttackToolItem.AphChargeAttackToolItem;
 import aphorea.other.itemtype.weapons.AphoreaChargeAttackToolItem.AphCustomChargeAttackHandler;
 import aphorea.other.itemtype.weapons.AphoreaChargeAttackToolItem.AphCustomChargeLevel;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.PacketReader;
+import necesse.engine.registries.BuffRegistry;
 import necesse.engine.util.GameBlackboard;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
@@ -43,7 +43,7 @@ abstract public class AphBattleaxeToolItem extends AphChargeAttackToolItem imple
 
     @Override
     public InventoryItem onAttack(Level level, int x, int y, PlayerMob player, int attackHeight, InventoryItem item, PlayerInventorySlot slot, int animAttack, int seed, PacketReader contentReader) {
-        AphCustomChargeLevel[] charge = player.buffManager.hasBuff(AphBuffs.BERSERKER_RUSH) ? this.rushChargeLevels : this.chargeLevels;
+        AphCustomChargeLevel[] charge = player.buffManager.hasBuff("berserkerrush") ? this.rushChargeLevels : this.chargeLevels;
 
         player.startAttackHandler(new BattleaxeAttackHandler(player, slot, item, this, seed, x, y, charge));
 
@@ -62,13 +62,13 @@ abstract public class AphBattleaxeToolItem extends AphChargeAttackToolItem imple
 
     @Override
     public boolean canLevelInteract(Level level, int x, int y, PlayerMob player, InventoryItem item) {
-        return !player.isRiding() && !player.isAttacking && !this.isCharging && !player.buffManager.hasBuff(AphBuffs.BERSERKER_RUSH) && !player.buffManager.hasBuff(AphBuffs.COOLDOWNS.BERSERKER_RUSH_COOLDOWN);
+        return !player.isRiding() && !player.isAttacking && !this.isCharging && !player.buffManager.hasBuff("berserkerrush") && !player.buffManager.hasBuff("berserkerrushcooldown");
     }
 
     @Override
     public InventoryItem onLevelInteract(Level level, int x, int y, PlayerMob player, int attackHeight, InventoryItem item, PlayerInventorySlot slot, int seed, PacketReader contentReader) {
 
-        ActiveBuff buff = new ActiveBuff(AphBuffs.BERSERKER_RUSH, player, 11.0F, null);
+        ActiveBuff buff = new ActiveBuff(BuffRegistry.getBuff("berserkerrush"), player, 11.0F, null);
         player.addBuff(buff, true);
 
         return item;

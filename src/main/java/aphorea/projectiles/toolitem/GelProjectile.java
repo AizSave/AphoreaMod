@@ -132,7 +132,7 @@ public class GelProjectile extends Projectile {
             this.tickCounter = 0;
             this.hitCooldowns = new MobHitCooldowns();
             if (this.isClient()) {
-                this.level.entityManager.addParticle(this.particle = new GelProjectileParticle(this.level, (float) this.x, (float) this.y, 5000L), true, Particle.GType.CRITICAL);
+                this.level.entityManager.addParticle(this.particle = new GelProjectileParticle(this.level, (float)this.x, (float)this.y, 5000L), true, Particle.GType.CRITICAL);
             }
 
         }
@@ -213,7 +213,7 @@ public class GelProjectile extends Projectile {
             long remainingLifeTime = this.getRemainingLifeTime();
             float alpha = 1.0F;
             if (remainingLifeTime < 500L) {
-                alpha = Math.max(0.0F, (float) remainingLifeTime / 500.0F);
+                alpha = Math.max(0.0F, (float)remainingLifeTime / 500.0F);
             }
 
             DrawOptions options = texture.initDraw().sprite(gel, 0, 96).light(light).alpha(alpha).pos(drawX, drawY);

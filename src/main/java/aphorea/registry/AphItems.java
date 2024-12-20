@@ -33,11 +33,15 @@ import aphorea.items.weapons.summoner.VolatileGelStaff;
 import aphorea.items.weapons.throwable.GelBall;
 import aphorea.items.weapons.throwable.GelBallGroup;
 import aphorea.items.weapons.throwable.UnstableGelveline;
+import aphorea.other.itemtype.AphBaseRune;
+import aphorea.other.itemtype.AphModifierRune;
+import aphorea.other.itemtype.AphRunesInjector;
 import aphorea.other.vanillaitemtypes.AphMatItem;
 import aphorea.other.vanillaitemtypes.AphPetItem;
 import aphorea.other.vanillaitemtypes.AphSimpleTrinketItem;
 import necesse.engine.registries.ItemRegistry;
 import necesse.inventory.item.Item;
+import necesse.inventory.item.trinketItem.SimpleTrinketItem;
 
 public class AphItems {
 
@@ -100,7 +104,7 @@ public class AphItems {
         registerItem("goldhat", new GoldHat());
         registerItem("magicalboots", new MagicalBoots());
         registerItem("magicalsuit", new MagicalSuit());
-        registerItem("pinkwitchhat", new PinkWitchHat(), 100.0F);
+        registerItem("witchhat", new PinkWitchHat(), 100.0F);
         registerItem("swampboots", new SwampBoots());
         registerItem("swampchestplate", new SwampChestplate());
         registerItem("swampmask", new SwampMask());
@@ -142,6 +146,26 @@ public class AphItems {
 
         // Misc
         registerItem("gelslimenullifier", new GelSlimeNullifier());
+
+        // Runes Injectors
+        registerItem("demonicrunesinjector", new AphRunesInjector(1));
+        registerItem("piraterunesinjector", new AphRunesInjector(1));
+        registerItem("pestrunesinjector", new AphRunesInjector(1));
+
+        // Base Runes
+        registerItem("dashrune", new AphBaseRune(1));
+        registerItem("healingrune", new AphBaseRune(0));
+        registerItem("hardeningrune", new AphBaseRune(2));
+
+        // Modifier Runes
+        registerItem("empoweringrune", new AphModifierRune());
+        registerItem("recurrentrune", new AphModifierRune());
+        registerItem("frenzyrune", new AphModifierRune());
+        registerItem("devastatingrune", new AphModifierRune());
+
+        // In Development
+        registerItem("bannerbearerfoci", (new SimpleTrinketItem(Item.Rarity.COMMON, "bannerbearerfoci", 500)).addDisables("magicfoci", "rangefoci", "meleefoci", "summonfoci").addDisabledBy("magicfoci", "rangefoci", "meleefoci", "summonfoci"), 200.0F);
+        registerItem("iceboots", (new SimpleTrinketItem(Item.Rarity.COMMON, "iceboots", 300)).addDisabledBy("spikedboots", "spikedbatboots"));
     }
 
     private static void registerItem(String stringID, Item item, float brokerValue, boolean isObtainable) {

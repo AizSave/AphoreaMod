@@ -54,12 +54,12 @@ abstract public class AphBackpack extends PouchItem {
     }
 
     @Override
-    public boolean isValidRequestType(Item.Type type) {
+    public boolean isValidRequestType(Type type) {
         return false;
     }
 
     @Override
-    public int getInventoryAmount(Level level, PlayerMob player, InventoryItem item, Item.Type requestType, String purpose) {
+    public int getInventoryAmount(Level level, PlayerMob player, InventoryItem item, Type requestType, String purpose) {
         int amount = super.getInventoryAmount(level, player, item, requestType, purpose);
         if (this.isValidRequestItem(item.item)) {
             Inventory internalInventory = this.getInternalInventory(item);
@@ -70,7 +70,7 @@ abstract public class AphBackpack extends PouchItem {
     }
 
     @Override
-    public Item getInventoryFirstItem(Level level, PlayerMob player, InventoryItem item, Item.Type requestType, String purpose) {
+    public Item getInventoryFirstItem(Level level, PlayerMob player, InventoryItem item, Type requestType, String purpose) {
         if (this.isValidRequestItem(item.item)) {
             Inventory internalInventory = this.getInternalInventory(item);
             Item firstItem = internalInventory.getFirstItem(level, player, requestType, purpose);
@@ -83,7 +83,7 @@ abstract public class AphBackpack extends PouchItem {
     }
 
     @Override
-    public int removeInventoryAmount(Level level, PlayerMob player, InventoryItem item, Item.Type requestType, int amount, String purpose) {
+    public int removeInventoryAmount(Level level, PlayerMob player, InventoryItem item, Type requestType, int amount, String purpose) {
         int removed = 0;
         if (this.isValidRequestItem(item.item)) {
             Inventory internalInventory = this.getInternalInventory(item);

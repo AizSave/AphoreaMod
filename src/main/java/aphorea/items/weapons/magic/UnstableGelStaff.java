@@ -1,10 +1,10 @@
 package aphorea.items.weapons.magic;
 
-import aphorea.registry.AphBuffs;
 import aphorea.other.area.AphArea;
 import aphorea.other.area.AphAreaList;
 import aphorea.other.itemtype.weapons.Secondary.AphMagicProjectileSecondaryAreaToolItem;
 import aphorea.projectiles.toolitem.UnstableGelProjectile;
+import aphorea.registry.AphBuffs;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.NetworkPacket;
 import necesse.engine.network.Packet;

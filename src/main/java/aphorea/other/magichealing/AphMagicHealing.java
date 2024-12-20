@@ -1,7 +1,7 @@
 package aphorea.other.magichealing;
 
-import aphorea.registry.AphModifiers;
 import aphorea.other.itemtype.healing.AphMagicHealingToolItem;
+import aphorea.registry.AphModifiers;
 import necesse.entity.levelEvent.LevelEvent;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.MobHealthChangeEvent;
 import necesse.entity.mobs.Mob;
@@ -21,7 +21,7 @@ public class AphMagicHealing {
     static Map<Mob, Long> cooldowns = new HashMap<>();
 
     public static boolean canHealMob(Mob healer, Mob target) {
-        if (healer instanceof PlayerMob) {
+        if(healer instanceof PlayerMob) {
             return target.getHealthPercent() != 1 && !target.isHostile && !target.canBeTargeted(healer, ((PlayerMob) healer).getNetworkClient()) && (cooldowns.get(target) == null || target.getWorldTime() >= cooldowns.get(target));
         } else {
             return target.getHealthPercent() != 1 && target.isSameTeam(healer);

@@ -1,7 +1,7 @@
 package aphorea.items.armor.Swamp;
 
-import aphorea.registry.AphModifiers;
 import aphorea.other.vanillaitemtypes.armor.AphBootsArmorItem;
+import aphorea.registry.AphModifiers;
 import necesse.engine.modifiers.ModifierValue;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.BuffModifiers;

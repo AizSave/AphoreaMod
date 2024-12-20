@@ -129,6 +129,16 @@ public class AphRecipes {
                         new Ingredient("stardust", 1)
                 )
         );
+
+        addCraftingList(null, tech,
+                new AphCraftingRecipe("bannerbearerfoci", 1,
+                        new Ingredient("meleefoci", 1),
+                        new Ingredient("rangefoci", 1),
+                        new Ingredient("magicfoci", 1),
+                        new Ingredient("summonfoci", 1),
+                        new Ingredient("blankbanner", 1)
+                )
+        );
     }
 
     public static void TungstenWorkstation() {
@@ -428,7 +438,7 @@ public class AphRecipes {
             Recipe recipe = new Recipe(item, amount, tech, ingredients, hidden);
 
             if (nextToItem != null) {
-                if (showAfter) {
+                if(showAfter) {
                     recipe.showAfter(nextToItem);
                 } else {
                     recipe.showBefore(nextToItem);

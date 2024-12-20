@@ -6,7 +6,6 @@ import necesse.engine.network.PacketReader;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameFont.FontOptions;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.item.Item;
 import necesse.inventory.item.ItemCategory;
 import necesse.level.maps.Level;
 import necesse.level.maps.hudManager.floatText.UniqueFloatText;
@@ -15,7 +14,7 @@ import java.awt.*;
 
 public class LowdsPotion extends AphSimplePotionItem {
     public LowdsPotion() {
-        super(100, Item.Rarity.COMMON, "lowdspoison", 300, "lowdspotion");
+        super(100, Rarity.COMMON, "lowdspoison", 300, "lowdspotion");
         this.setItemCategory(ItemCategory.craftingManager, "consumable", "buffpotions");
     }
 

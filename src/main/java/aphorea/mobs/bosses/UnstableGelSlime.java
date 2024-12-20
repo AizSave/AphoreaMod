@@ -1,7 +1,7 @@
 package aphorea.mobs.bosses;
 
-import aphorea.registry.AphBuffs;
 import aphorea.projectiles.toolitem.MiniUnstableGelSlimeProjectile;
+import aphorea.registry.AphBuffs;
 import necesse.engine.eventStatusBars.EventStatusBarManager;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.localization.Localization;

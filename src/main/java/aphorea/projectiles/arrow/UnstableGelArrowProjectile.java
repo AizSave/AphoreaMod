@@ -1,8 +1,8 @@
 package aphorea.projectiles.arrow;
 
-import aphorea.registry.AphBuffs;
 import aphorea.other.area.AphArea;
 import aphorea.other.area.AphAreaList;
+import aphorea.registry.AphBuffs;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.sound.SoundEffect;

@@ -49,14 +49,14 @@ public class VolatileGelSlime extends AttackingFollowingMob {
     @Override
     public void serverTick() {
         super.serverTick();
-        if (!this.removed() && this.explosionTime > 0) {
+        if(!this.removed() && this.explosionTime > 0) {
             this.explosionTime++;
-            if (this.explosionTime >= maxExplosionTime) {
+            if(this.explosionTime >= maxExplosionTime) {
                 doExplosion();
             }
         }
         time++;
-        if (time > 1200) {
+        if(time > 1200) {
             time = 0;
         }
     }
@@ -64,11 +64,11 @@ public class VolatileGelSlime extends AttackingFollowingMob {
     @Override
     public void clientTick() {
         super.clientTick();
-        if (!this.removed() && this.explosionTime > 0) {
+        if(!this.removed() && this.explosionTime > 0) {
             this.explosionTime++;
         }
         time++;
-        if (time > 1200) {
+        if(time > 1200) {
             time = 0;
         }
     }
@@ -109,7 +109,7 @@ public class VolatileGelSlime extends AttackingFollowingMob {
             }
         });
 
-        if (!this.isWaterWalking()) addShadowDrawables(tileList, x, y, light, camera);
+        if(!this.isWaterWalking()) addShadowDrawables(tileList, x, y, light, camera);
     }
 
     public Point getAnimSprite(int x, int y, int dir) {
@@ -132,7 +132,7 @@ public class VolatileGelSlime extends AttackingFollowingMob {
     @Override
     public void collidedWith(Mob other) {
         super.collidedWith(other);
-        if (this.explosionTime <= 0 && !this.removed() && other.canBeTargeted(this, this.getPvPOwner()) && other.canBeHit(this)) {
+        if(this.explosionTime <= 0 && !this.removed() && other.canBeTargeted(this, this.getPvPOwner()) && other.canBeHit(this)) {
             ActiveBuff buff = new ActiveBuff(AphBuffs.STICKY, other, 2000, this);
             other.addBuff(buff, true);
             this.explosionTime = 1;
@@ -152,6 +152,6 @@ public class VolatileGelSlime extends AttackingFollowingMob {
 
     @Override
     public void addBuff(ActiveBuff buff, boolean sendUpdatePacket) {
-        if (buff.buff != AphBuffs.STICKY) super.addBuff(buff, sendUpdatePacket);
+        if(buff.buff != AphBuffs.STICKY) super.addBuff(buff, sendUpdatePacket);
     }
 }

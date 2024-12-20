@@ -1,10 +1,10 @@
 package aphorea.items.banners;
 
-import aphorea.registry.AphBuffs;
-import aphorea.registry.AphModifiers;
 import aphorea.other.area.AphArea;
 import aphorea.other.area.AphAreaList;
 import aphorea.other.itemtype.AphBanner;
+import aphorea.registry.AphBuffs;
+import aphorea.registry.AphModifiers;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.NetworkPacket;
 import necesse.engine.network.Packet;
@@ -75,7 +75,7 @@ public class BlankBannerItem extends AphBanner {
     }
 
     public DrawOptions getStandDrawOptions(Level level, int tileX, int tileY, int drawX, int drawY, GameLight light) {
-        int anim = GameUtils.getAnim(level.getWorldEntity().getTime() + (long) (tileX * 97) + (long) (tileY * 151), 5, 800);
+        int anim = GameUtils.getAnim(level.getWorldEntity().getTime() + (long)(tileX * 97) + (long)(tileY * 151), 5, 800);
         int xOffset = -30;
         int yOffset = -32;
 
@@ -84,12 +84,10 @@ public class BlankBannerItem extends AphBanner {
 
     @Override
     public void addToolTips(ListGameTooltips tooltips, PlayerMob perspective) {
-        if (perspective != null) {
-            float bannerEffect = perspective.buffManager.getModifier(AphModifiers.BANNER_EFFECT);
-            tooltips.add(Localization.translate("itemtooltip", "blankbannereffect", "effect", Math.round(10F * bannerEffect * 100.0f) / 100.0f));
-            float bannerAbilitySpeed = perspective.buffManager.getModifier(AphModifiers.BANNER_ABILITY_SPEED);
-            tooltips.add(Localization.translate("itemtooltip", "blankbannerability", "time", Math.round(4F / bannerAbilitySpeed * 100.0f) / 100.0f));
-            areaList.addAreasToolTip(tooltips, perspective, true, null, null);
-        }
+        float bannerEffect = perspective.buffManager.getModifier(AphModifiers.BANNER_EFFECT);
+        tooltips.add(Localization.translate("itemtooltip", "blankbannereffect", "effect", Math.round(10F * bannerEffect * 100.0f) / 100.0f));
+        float bannerAbilitySpeed = perspective.buffManager.getModifier(AphModifiers.BANNER_ABILITY_SPEED);
+        tooltips.add(Localization.translate("itemtooltip", "blankbannerability", "time",  Math.round(4F / bannerAbilitySpeed * 100.0f) / 100.0f));
+        areaList.addAreasToolTip(tooltips, perspective, true, null, null);
     }
 }

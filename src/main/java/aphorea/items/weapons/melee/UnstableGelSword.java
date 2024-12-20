@@ -1,7 +1,7 @@
 package aphorea.items.weapons.melee;
 
-import aphorea.registry.AphBuffs;
 import aphorea.other.vanillaitemtypes.weapons.AphSwordToolItem;
+import aphorea.registry.AphBuffs;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.PacketReader;
 import necesse.engine.util.GameBlackboard;

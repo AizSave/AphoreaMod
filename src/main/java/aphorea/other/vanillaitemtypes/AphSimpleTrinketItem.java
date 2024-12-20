@@ -10,7 +10,6 @@ import necesse.inventory.InventoryItem;
 import necesse.inventory.enchants.Enchantable;
 import necesse.inventory.enchants.EquipmentItemEnchant;
 import necesse.inventory.enchants.ItemEnchantment;
-import necesse.inventory.item.Item;
 import necesse.inventory.item.trinketItem.SimpleTrinketItem;
 
 import java.util.HashSet;
@@ -19,20 +18,20 @@ import java.util.Set;
 public class AphSimpleTrinketItem extends SimpleTrinketItem {
     public final boolean healingEnchantments;
 
-    public AphSimpleTrinketItem(Item.Rarity rarity, String[] buffStringIDs, int enchantCost, boolean healingEnchantments) {
+    public AphSimpleTrinketItem(Rarity rarity, String[] buffStringIDs, int enchantCost, boolean healingEnchantments) {
         super(rarity, buffStringIDs, enchantCost);
         this.healingEnchantments = healingEnchantments;
     }
 
-    public AphSimpleTrinketItem(Item.Rarity rarity, String[] buffStringIDs, int enchantCost) {
+    public AphSimpleTrinketItem(Rarity rarity, String[] buffStringIDs, int enchantCost) {
         this(rarity, buffStringIDs, enchantCost, false);
     }
 
-    public AphSimpleTrinketItem(Item.Rarity rarity, String buffStringID, int enchantCost, boolean healingEnchantments) {
+    public AphSimpleTrinketItem(Rarity rarity, String buffStringID, int enchantCost, boolean healingEnchantments) {
         this(rarity, new String[]{buffStringID}, enchantCost, healingEnchantments);
     }
 
-    public AphSimpleTrinketItem(Item.Rarity rarity, String buffStringID, int enchantCost) {
+    public AphSimpleTrinketItem(Rarity rarity, String buffStringID, int enchantCost) {
         this(rarity, buffStringID, enchantCost, false);
     }
 

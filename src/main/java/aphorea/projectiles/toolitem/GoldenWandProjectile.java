@@ -104,7 +104,7 @@ public class GoldenWandProjectile extends FollowingProjectile {
     }
 
     @Override
-    public void addDrawables(java.util.List<LevelSortedDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, OrderableDrawables overlayList, Level level, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
+    public void addDrawables(List<LevelSortedDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, OrderableDrawables overlayList, Level level, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
         if (removed()) return;
         GameLight light = level.getLightLevel(this);
         int drawX = camera.getDrawX(x) - texture.getWidth() / 2;
@@ -161,7 +161,7 @@ public class GoldenWandProjectile extends FollowingProjectile {
         }
 
         if (this.canHitMobs) {
-            java.util.List<Mob> targets = (List) this.customStreamTargets(hitbox).filter((m) -> {
+            List<Mob> targets = (List) this.customStreamTargets(hitbox).filter((m) -> {
                 return this.canHit(m) && hitbox.intersects(m.getHitBox());
             }).filter((m) -> {
                 return !this.isSolid || m.canHitThroughCollision() || !this.perpLineCollidesWithLevel(m.x, m.y);

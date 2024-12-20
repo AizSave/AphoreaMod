@@ -1,10 +1,10 @@
 package aphorea.other.itemtype;
 
-import aphorea.registry.AphEnchantments;
-import aphorea.registry.AphModifiers;
 import aphorea.other.area.AphAreaList;
 import aphorea.other.area.AphAreaType;
 import aphorea.other.itemtype.healing.AphMagicHealingToolItem;
+import aphorea.registry.AphEnchantments;
+import aphorea.registry.AphModifiers;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.Packet;
 import necesse.engine.network.PacketReader;

@@ -1,9 +1,9 @@
 package aphorea.other.itemtype.weapons;
 
-import aphorea.registry.AphBuffs;
 import aphorea.other.itemtype.weapons.AphoreaChargeAttackToolItem.AphChargeAttackToolItem;
 import aphorea.other.itemtype.weapons.AphoreaChargeAttackToolItem.AphCustomChargeAttackHandler;
 import aphorea.other.itemtype.weapons.AphoreaChargeAttackToolItem.AphCustomChargeLevel;
+import aphorea.registry.AphBuffs;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.Packet;

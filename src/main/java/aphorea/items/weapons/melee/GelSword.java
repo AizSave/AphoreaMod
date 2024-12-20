@@ -1,7 +1,7 @@
 package aphorea.items.weapons.melee;
 
-import aphorea.registry.AphBuffs;
 import aphorea.other.vanillaitemtypes.weapons.AphSwordToolItem;
+import aphorea.registry.AphBuffs;
 import necesse.engine.localization.Localization;
 import necesse.engine.util.GameBlackboard;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.ToolItemMobAbilityEvent;
@@ -10,14 +10,13 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.item.Item;
 import necesse.level.maps.Level;
 
 public class GelSword extends AphSwordToolItem {
 
     public GelSword() {
         super(400);
-        rarity = Item.Rarity.COMMON;
+        rarity = Rarity.COMMON;
         attackAnimTime.setBaseValue(300);
         attackDamage.setBaseValue(18)
                 .setUpgradedValue(1, 80);

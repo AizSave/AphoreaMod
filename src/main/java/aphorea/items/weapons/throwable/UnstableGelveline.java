@@ -20,7 +20,6 @@ import necesse.entity.projectile.modifiers.ResilienceOnHitProjectileModifier;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.PlayerInventorySlot;
-import necesse.inventory.item.Item;
 import necesse.level.maps.Level;
 
 import java.awt.geom.Point2D;
@@ -31,7 +30,7 @@ public class UnstableGelveline extends AphThrowToolItem {
 
     public UnstableGelveline() {
         super(500);
-        this.rarity = Item.Rarity.UNCOMMON;
+        this.rarity = Rarity.UNCOMMON;
         this.attackAnimTime.setBaseValue(250);
         this.attackCooldownTime.setBaseValue(500);
         this.attackDamage.setBaseValue(topBaseDamage).setUpgradedValue(1, topTier1Damage);

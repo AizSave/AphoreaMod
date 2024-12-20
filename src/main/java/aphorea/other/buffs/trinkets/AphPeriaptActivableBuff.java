@@ -1,7 +1,7 @@
 package aphorea.other.buffs.trinkets;
 
-import aphorea.registry.AphBuffs;
 import aphorea.other.utils.AphTimeout;
+import aphorea.registry.AphBuffs;
 import necesse.engine.network.Packet;
 import necesse.engine.registries.BuffRegistry;
 import necesse.engine.sound.SoundEffect;

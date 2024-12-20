@@ -23,6 +23,5 @@ public class AphCustomPushPacket extends PacketForceOfWind {
         if (Math.abs(mob.dy) < Math.abs(forceY)) {
             mob.dy = forceY;
         }
-
     }
 }

@@ -1,8 +1,8 @@
 package aphorea.mobs.hostile;
 
-import aphorea.registry.AphBuffs;
 import aphorea.other.data.AphWorldData;
 import aphorea.other.mobclass.AphDayHostileMob;
+import aphorea.registry.AphBuffs;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.server.Server;
 import necesse.engine.network.server.ServerClient;

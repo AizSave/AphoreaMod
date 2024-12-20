@@ -1,9 +1,9 @@
 package aphorea.other.itemtype.weapons.Secondary;
 
-import aphorea.registry.AphEnchantments;
-import aphorea.registry.AphModifiers;
 import aphorea.other.area.AphAreaList;
 import aphorea.other.vanillaitemtypes.weapons.AphMagicProjectileToolItem;
+import aphorea.registry.AphEnchantments;
+import aphorea.registry.AphModifiers;
 import necesse.engine.network.Packet;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.server.ServerClient;
@@ -33,6 +33,7 @@ abstract public class AphMagicProjectileSecondaryAreaToolItem extends AphMagicPr
         this.secondaryAttackAnimTime = secondaryAttackAnimTime;
         this.consumeManaSecondary = consumeManaSecondary;
     }
+
 
     public float getSecondaryManaCost(InventoryItem item) {
         return (consumeManaSecondary * this.getManaUsageModifier(item));

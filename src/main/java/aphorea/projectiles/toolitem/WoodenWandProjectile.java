@@ -95,7 +95,7 @@ public class WoodenWandProjectile extends FollowingProjectile {
     }
 
     @Override
-    public void addDrawables(java.util.List<LevelSortedDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, OrderableDrawables overlayList, Level level, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
+    public void addDrawables(List<LevelSortedDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, OrderableDrawables overlayList, Level level, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
         if (removed()) return;
         GameLight light = level.getLightLevel(this);
         int drawX = camera.getDrawX(x) - texture.getWidth() / 2;
