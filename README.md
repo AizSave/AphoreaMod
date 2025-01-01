@@ -8,4 +8,5 @@ Most of the Sprites were created by Pooper. They are licensed under CC BY-NC-SA 
 If you want to create a mod whit Aphorea as depencendy and you have any doubt, contact me on Discord! My username is **aiz_save**
 
 Save Steam profile: https://steamcommunity.com/id/Aiz_Save/
+
 Pooper Steam profile: https://steamcommunity.com/profiles/76561198448686767
