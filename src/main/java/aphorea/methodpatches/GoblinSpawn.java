@@ -12,17 +12,17 @@ public class GoblinSpawn {
 
     @Advice.OnMethodEnter(skipOn = Advice.OnNonDefaultValue.class)
     static boolean onEnter(@Advice.This GoblinMob goblinMob) {
-        if(goblinMob instanceof DaggerGoblin) {
+        if (goblinMob instanceof DaggerGoblin) {
             return false;
         }
 
         boolean daggerGoblin = GameRandom.globalRandom.getChance(0.1F);
-        if(daggerGoblin) {
+        if (daggerGoblin) {
             String daggerType;
             float randomDagger = GameRandom.globalRandom.getFloatBetween(0, 1);
-            if(randomDagger < 0.65) {
+            if (randomDagger < 0.65) {
                 daggerType = "copper";
-            } else if(randomDagger < 0.90) {
+            } else if (randomDagger < 0.90) {
                 daggerType = "iron";
             } else {
                 daggerType = "gold";

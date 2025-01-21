@@ -11,8 +11,6 @@ import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.buffs.staticBuffs.Buff;
 import necesse.entity.particle.Particle;
 
-import java.awt.*;
-
 public class ImmortalBuff extends Buff {
     public ImmortalBuff() {
         this.isImportant = true;
@@ -20,7 +18,7 @@ public class ImmortalBuff extends Buff {
     }
 
     public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {
-        if(buff.owner.buffManager.hasBuff(AphBuffs.INMORTAL_COOLDOWN)) {
+        if (buff.owner.buffManager.hasBuff(AphBuffs.INMORTAL_COOLDOWN)) {
             buff.owner.buffManager.removeBuff(buff.buff, true);
         } else {
             buff.addModifier(BuffModifiers.INCOMING_DAMAGE_MOD, -1000F);
@@ -43,7 +41,7 @@ public class ImmortalBuff extends Buff {
     @Override
     public void serverTick(ActiveBuff buff) {
         super.serverTick(buff);
-        if(buff.owner.buffManager.hasBuff(AphBuffs.INMORTAL_COOLDOWN)) {
+        if (buff.owner.buffManager.hasBuff(AphBuffs.INMORTAL_COOLDOWN)) {
             buff.owner.buffManager.removeBuff(buff.buff, true);
         }
     }
@@ -67,7 +65,7 @@ public class ImmortalBuff extends Buff {
     @Override
     public void onRemoved(ActiveBuff buff) {
         super.onRemoved(buff);
-        if(!buff.owner.isHostile && !buff.owner.isBoss()) {
+        if (!buff.owner.isHostile && !buff.owner.isBoss()) {
             buff.owner.addBuff(new ActiveBuff(AphBuffs.INMORTAL_COOLDOWN, buff.owner, 1000, null), false);
         }
     }

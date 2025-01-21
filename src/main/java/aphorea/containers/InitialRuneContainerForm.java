@@ -11,9 +11,7 @@ import necesse.gfx.forms.presets.containerComponent.ContainerForm;
 import necesse.gfx.gameFont.FontOptions;
 import necesse.inventory.InventoryItem;
 
-import java.util.Arrays;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class InitialRuneContainerForm<T extends InitialRuneContainer> extends ContainerForm<T> {
 

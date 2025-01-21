@@ -1,9 +1,9 @@
 package aphorea.items.weapons.magic;
 
-import aphorea.utils.area.AphAreaList;
 import aphorea.items.vanillaitemtypes.weapons.AphMagicProjectileToolItem;
 import aphorea.registry.AphEnchantments;
 import aphorea.registry.AphModifiers;
+import aphorea.utils.area.AphAreaList;
 import necesse.engine.network.Packet;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.server.ServerClient;

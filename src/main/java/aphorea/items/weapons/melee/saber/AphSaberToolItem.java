@@ -1,9 +1,9 @@
 package aphorea.items.weapons.melee.saber;
 
+import aphorea.registry.AphBuffs;
 import aphorea.utils.customchargeattacks.AphChargeAttackToolItem;
 import aphorea.utils.customchargeattacks.AphCustomChargeAttackHandler;
 import aphorea.utils.customchargeattacks.AphCustomChargeLevel;
-import aphorea.registry.AphBuffs;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.Packet;
@@ -368,8 +368,7 @@ abstract public class AphSaberToolItem extends AphChargeAttackToolItem implement
                     this.player.getServer().network.sendToClientsWithEntityExcept(new PacketLevelEvent(event), event, serverClient);
                 }
 
-                ActiveBuff buff = new ActiveBuff(AphBuffs.SABER_DASH_COOLDOWN, this.player, 5.0F, null);
-                this.player.addBuff(buff, false);
+                this.player.addBuff(new ActiveBuff(AphBuffs.SABER_DASH_COOLDOWN, this.player, 5.0F, null), false);
             }
 
             if (this.hudDrawElement != null) {
@@ -423,8 +422,7 @@ abstract public class AphSaberToolItem extends AphChargeAttackToolItem implement
             }
 
             if (this.owner != null) {
-                ActiveBuff buff = new ActiveBuff(AphBuffs.SABER_DASH_ACTIVE, this.owner, this.animTime, null);
-                this.owner.addBuff(buff, false);
+                this.owner.addBuff(new ActiveBuff(AphBuffs.SABER_DASH_ACTIVE, this.owner, this.animTime, null), false);
             }
 
         }

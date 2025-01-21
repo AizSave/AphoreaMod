@@ -1,9 +1,9 @@
 package aphorea.projectiles.arrow;
 
+import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
-import aphorea.registry.AphBuffs;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.sound.SoundEffect;
@@ -73,8 +73,7 @@ public class UnstableGelArrowProjectile extends Projectile {
     @Override
     public void addHit(Mob target) {
         super.addHit(target);
-        ActiveBuff buff = new ActiveBuff(AphBuffs.STICKY, target, 2000, this);
-        target.addBuff(buff, true);
+        target.addBuff(new ActiveBuff(AphBuffs.STICKY, target, 2000, this), true);
     }
 
     public void dropItem() {

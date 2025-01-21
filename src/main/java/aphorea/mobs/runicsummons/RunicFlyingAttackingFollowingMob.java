@@ -1,6 +1,5 @@
 package aphorea.mobs.runicsummons;
 
-import necesse.entity.mobs.summon.summonFollowingMob.attackingFollowingMob.AttackingFollowingMob;
 import necesse.entity.mobs.summon.summonFollowingMob.attackingFollowingMob.FlyingAttackingFollowingMob;
 
 public class RunicFlyingAttackingFollowingMob extends FlyingAttackingFollowingMob {

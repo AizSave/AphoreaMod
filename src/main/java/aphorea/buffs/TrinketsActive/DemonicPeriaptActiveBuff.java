@@ -14,8 +14,6 @@ import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.buffs.staticBuffs.Buff;
 import necesse.entity.particle.Particle;
 
-import java.awt.*;
-
 public class DemonicPeriaptActiveBuff extends Buff {
     public DemonicPeriaptActiveBuff() {
         this.isVisible = false;

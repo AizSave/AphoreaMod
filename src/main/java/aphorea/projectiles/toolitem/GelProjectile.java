@@ -7,7 +7,6 @@ import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
 import necesse.engine.util.GameRandom;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.GroundEffectEvent;
-import necesse.entity.levelEvent.mobAbilityLevelEvent.WebWeaverWebEvent;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.MobHitCooldowns;
@@ -91,8 +90,7 @@ public class GelProjectile extends Projectile {
     @Override
     public void addHit(Mob target) {
         super.addHit(target);
-        ActiveBuff buff = new ActiveBuff(AphBuffs.STICKY, target, 1000, this);
-        target.addBuff(buff, true);
+        target.addBuff(new ActiveBuff(AphBuffs.STICKY, target, 1000, this), true);
 
     }
 
@@ -133,7 +131,7 @@ public class GelProjectile extends Projectile {
             this.tickCounter = 0;
             this.hitCooldowns = new MobHitCooldowns();
             if (this.isClient()) {
-                this.level.entityManager.addParticle(this.particle = new GelProjectileParticle(this.level, (float)this.x, (float)this.y, 5000L), true, Particle.GType.CRITICAL);
+                this.level.entityManager.addParticle(this.particle = new GelProjectileParticle(this.level, (float) this.x, (float) this.y, 5000L), true, Particle.GType.CRITICAL);
             }
 
         }
@@ -151,8 +149,7 @@ public class GelProjectile extends Projectile {
 
         public void serverHit(Mob target, boolean clientSubmitted) {
             if (clientSubmitted || !target.buffManager.hasBuff(AphBuffs.STICKY)) {
-                ActiveBuff buff = new ActiveBuff(AphBuffs.STICKY, target, 1000, this);
-                target.addBuff(buff, true);
+                target.addBuff(new ActiveBuff(AphBuffs.STICKY, target, 1000, this), true);
             }
 
         }
@@ -214,7 +211,7 @@ public class GelProjectile extends Projectile {
             long remainingLifeTime = this.getRemainingLifeTime();
             float alpha = 1.0F;
             if (remainingLifeTime < 500L) {
-                alpha = Math.max(0.0F, (float)remainingLifeTime / 500.0F);
+                alpha = Math.max(0.0F, (float) remainingLifeTime / 500.0F);
             }
 
             DrawOptions options = texture.initDraw().sprite(gel, 0, 96).light(light).alpha(alpha).pos(drawX, drawY);

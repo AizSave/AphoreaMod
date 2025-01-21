@@ -1,6 +1,5 @@
 package aphorea.levelevents;
 
-import aphorea.registry.AphBuffs;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
 import necesse.engine.registries.BuffRegistry;
@@ -60,7 +59,7 @@ public class AphRuneOfQueenSpiderEvent extends GroundEffectEvent {
     }
 
     public void serverHit(Mob target, boolean clientSubmitted) {
-        if (clientSubmitted || !target.buffManager.hasBuff(AphBuffs.STICKY)) {
+        if (clientSubmitted || !target.buffManager.hasBuff(BuffRegistry.Debuffs.SPIDER_WEB_SLOW)) {
             target.addBuff(new ActiveBuff(BuffRegistry.Debuffs.SPIDER_WEB_SLOW, target, 1000, this), true);
         }
 

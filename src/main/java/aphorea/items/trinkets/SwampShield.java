@@ -1,7 +1,7 @@
 package aphorea.items.trinkets;
 
-import aphorea.utils.magichealing.AphMagicHealing;
 import aphorea.items.vanillaitemtypes.AphShieldTrinketItem;
+import aphorea.utils.magichealing.AphMagicHealing;
 import necesse.engine.localization.Localization;
 import necesse.engine.util.GameBlackboard;
 import necesse.entity.mobs.Mob;

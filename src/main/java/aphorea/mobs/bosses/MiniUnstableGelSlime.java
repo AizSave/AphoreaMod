@@ -70,8 +70,7 @@ public class MiniUnstableGelSlime extends FlyingHostileMob {
         super.init();
         ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 1024 * 32, attack, attack_knockback, 40000), new FlyingAIMover());
 
-        ActiveBuff buff = new ActiveBuff(AphBuffs.IMMORTAL, this, 1000, this);
-        this.addBuff(buff, true);
+        this.addBuff(new ActiveBuff(AphBuffs.IMMORTAL, this, 1000, this), true);
 
         if (GameRandom.globalRandom.getChance(0.5F) && this.initialTP) {
             this.executeTeleport();
@@ -167,8 +166,7 @@ public class MiniUnstableGelSlime extends FlyingHostileMob {
     @Override
     public void handleCollisionHit(Mob target, GameDamage damage, int knockback) {
         super.handleCollisionHit(target, damage, knockback);
-        ActiveBuff buff = new ActiveBuff(AphBuffs.STICKY, target, 500, this);
-        target.addBuff(buff, true);
+        target.addBuff(new ActiveBuff(AphBuffs.STICKY, target, 500, this), true);
 
     }
 

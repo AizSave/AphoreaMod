@@ -9,7 +9,6 @@ import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.MobDrawable;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.ai.behaviourTree.BehaviourTreeAI;
-import necesse.entity.mobs.ai.behaviourTree.leaves.CollisionChaserAINode;
 import necesse.entity.mobs.ai.behaviourTree.trees.PlayerFlyingFollowerCollisionChaserAI;
 import necesse.entity.mobs.ai.behaviourTree.util.FlyingAIMover;
 import necesse.entity.particle.FleshParticle;

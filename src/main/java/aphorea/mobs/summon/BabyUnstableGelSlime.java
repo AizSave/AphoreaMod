@@ -78,7 +78,7 @@ public class BabyUnstableGelSlime extends AttackingFollowingMob {
             }
         });
 
-        if(!this.isWaterWalking()) addShadowDrawables(tileList, x, y, light, camera);
+        if (!this.isWaterWalking()) addShadowDrawables(tileList, x, y, light, camera);
     }
 
     protected TextureDrawOptions getShadowDrawOptions(int x, int y, GameLight light, GameCamera camera) {
@@ -96,6 +96,6 @@ public class BabyUnstableGelSlime extends AttackingFollowingMob {
 
     @Override
     public void addBuff(ActiveBuff buff, boolean sendUpdatePacket) {
-        if(buff.buff != AphBuffs.STICKY) super.addBuff(buff, sendUpdatePacket);
+        if (buff.buff != AphBuffs.STICKY) super.addBuff(buff, sendUpdatePacket);
     }
 }

@@ -11,7 +11,6 @@ import necesse.engine.network.packet.PacketRequestPlayerData;
 import necesse.engine.network.server.Server;
 import necesse.engine.network.server.ServerClient;
 import necesse.entity.mobs.PlayerMob;
-import necesse.entity.mobs.buffs.staticBuffs.Buff;
 import necesse.entity.particle.Particle;
 import necesse.entity.particle.SmokePuffParticle;
 

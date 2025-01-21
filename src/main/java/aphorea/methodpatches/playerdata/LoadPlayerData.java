@@ -11,8 +11,7 @@ import net.bytebuddy.asm.Advice;
 public class LoadPlayerData {
 
     @Advice.OnMethodExit
-    static void onExit(@Advice.This PlayerMob playerMob, @Advice.Argument(0) LoadData loadData)
-    {
+    static void onExit(@Advice.This PlayerMob playerMob, @Advice.Argument(0) LoadData loadData) {
         AphPlayerData player = AphPlayerDataList.getCurrentPlayer(playerMob);
         player.loadData(loadData);
     }

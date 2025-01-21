@@ -1,15 +1,13 @@
 package aphorea.registry;
 
-import aphorea.levelevents.AphRuneOfQueenSpiderEvent;
 import aphorea.projectiles.arrow.GelArrowProjectile;
 import aphorea.projectiles.arrow.UnstableGelArrowProjectile;
 import aphorea.projectiles.mob.MiniUnstableGelSlimeProjectile;
 import aphorea.projectiles.mob.PinkWitchProjectile;
 import aphorea.projectiles.mob.RockyGelSlimeLootProjectile;
 import aphorea.projectiles.mob.RockyGelSlimeProjectile;
-import aphorea.projectiles.rune.RuneOfSpiderEmpressProjectile;
-import aphorea.projectiles.toolitem.UnstableGelProjectile;
 import aphorea.projectiles.rune.RuneOfCryoQueenProjectile;
+import aphorea.projectiles.rune.RuneOfSpiderEmpressProjectile;
 import aphorea.projectiles.toolitem.*;
 import necesse.engine.registries.ProjectileRegistry;
 

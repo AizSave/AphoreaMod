@@ -77,7 +77,7 @@ public class AphBaseRune extends Item {
         float effectNumber = buff.getBaseEffectNumber() * (isFinalBuff ? buff.getEffectNumberVariation(item, runesInjector) : 1);
         float healthCost = isFinalBuff ? buff.getFinalHealthCost(item, runesInjector) : buff.getBaseHealthCost();
         int cooldown;
-        if(buff.isTemporary()) {
+        if (buff.isTemporary()) {
             AphBaseRuneActiveBuff activeBuff = getActiveBuff();
             cooldown = (int) (activeBuff.getBaseCooldownDuration() * (isFinalBuff ? AphBaseRuneTrinketBuff.getCooldownVariation(item, runesInjector) : 1));
         } else {
@@ -88,7 +88,7 @@ public class AphBaseRune extends Item {
 
         String baseRunePrefix = isFinalBuff ? "§i[B]§0 " : "";
 
-        for(int i = 0; i < tooltipsNumber; i++) {
+        for (int i = 0; i < tooltipsNumber; i++) {
             String tooltipNumber = i == 0 ? "" : String.valueOf(i + 1);
             tooltips.add(baseRunePrefix + Localization.translate("itemtooltip", getStringID() + tooltipNumber, "effectNumber", (float) Math.round(effectNumber * 100) / 100, "F0effectNumber", effectNumber));
         }
@@ -97,29 +97,29 @@ public class AphBaseRune extends Item {
         }
 
         float extraEffectNumberMod = buff.getExtraEffectNumberMod() - 1;
-        if(extraEffectNumberMod != 0) {
-            if(extraEffectNumberMod > 0) {
+        if (extraEffectNumberMod != 0) {
+            if (extraEffectNumberMod > 0) {
                 tooltips.add(baseRunePrefix + Localization.translate("itemtooltip", "moreextraeffectmod", "mod", extraEffectNumberMod * 100));
             } else {
                 tooltips.add(baseRunePrefix + Localization.translate("itemtooltip", "lessextraeffectmod", "mod", Math.abs(extraEffectNumberMod) * 100));
             }
         }
 
-        if(healthCost > 0) {
+        if (healthCost > 0) {
             tooltips.add(Localization.translate("itemtooltip", "runehealthcost", "health", Math.round(healthCost * 100)));
-        } else if(healthCost < 0) {
+        } else if (healthCost < 0) {
             tooltips.add(Localization.translate("itemtooltip", "runehealthhealing", "health", Math.round(-healthCost * 100)));
         }
 
-        if(isFinalBuff) {
-            for(int i = 0; i < runesInjector.getTooltipsNumber(); i++) {
+        if (isFinalBuff) {
+            for (int i = 0; i < runesInjector.getTooltipsNumber(); i++) {
                 String tooltipNumber = i == 0 ? "" : String.valueOf(i + 1);
                 tooltips.add(Localization.translate("itemtooltip", runesInjector.getStringID() + "_mod" + tooltipNumber));
             }
 
             runesInjector.getModifierRunes(item).forEach(
                     b -> {
-                        for(int i = 0; i < b.getTooltipsNumber(); i++) {
+                        for (int i = 0; i < b.getTooltipsNumber(); i++) {
                             String tooltipNumber = i == 0 ? "" : String.valueOf(i + 1);
                             tooltips.add("§a[M]§0 " + Localization.translate("itemtooltip", b.getStringID() + tooltipNumber));
                         }

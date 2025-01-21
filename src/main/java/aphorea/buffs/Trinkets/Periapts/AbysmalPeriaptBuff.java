@@ -18,8 +18,6 @@ import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.trinketItem.TrinketItem;
 
-import java.awt.*;
-
 public class AbysmalPeriaptBuff extends TrinketBuff {
 
     public AbysmalPeriaptBuff() {

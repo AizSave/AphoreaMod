@@ -62,7 +62,7 @@ public class AphRunesInjector extends TrinketItem implements InternalInventoryIt
 
         ItemRegistry.getItems().forEach(
                 i -> {
-                    if(i instanceof AphRunesInjector) {
+                    if (i instanceof AphRunesInjector) {
                         this.disables.add(i.getStringID());
                     }
                 }
@@ -147,7 +147,7 @@ public class AphRunesInjector extends TrinketItem implements InternalInventoryIt
         float value = super.getBrokerValue(item);
         Inventory internalInventory = this.getInternalInventory(item);
 
-        for(int i = 0; i < internalInventory.getSize(); ++i) {
+        for (int i = 0; i < internalInventory.getSize(); ++i) {
             if (!internalInventory.isSlotClear(i)) {
                 value += internalInventory.getItem(i).getBrokerValue();
             }
@@ -158,15 +158,15 @@ public class AphRunesInjector extends TrinketItem implements InternalInventoryIt
 
     public String isInvalidInjector(InventoryItem inventoryItem, PlayerMob player) {
         String error = isInvalidInjector(inventoryItem);
-        if(error != null) {
+        if (error != null) {
             return error;
         }
         InventoryItem baseRune = getBaseRune(inventoryItem);
-        if(baseRune == null) {
+        if (baseRune == null) {
             return "requiresbaserune";
         }
         String runeOwner = baseRune.getGndData().getString("runeOwner", null);
-        if(runeOwner != null && !Objects.equals(player.playerName, runeOwner)) {
+        if (runeOwner != null && !Objects.equals(player.playerName, runeOwner)) {
             return "notruneowner";
         }
         return null;
@@ -174,11 +174,11 @@ public class AphRunesInjector extends TrinketItem implements InternalInventoryIt
 
     public String isInvalidInjector(InventoryItem inventoryItem) {
         int baseRunes = getBaseRunes(inventoryItem).size();
-        if(baseRunes == 0) {
+        if (baseRunes == 0) {
             return "requiresbaserune";
-        } else if(baseRunes > 1) {
+        } else if (baseRunes > 1) {
             return "onlyonebaserune";
-        } else if(hasDuplicateModifierRunes(inventoryItem)) {
+        } else if (hasDuplicateModifierRunes(inventoryItem)) {
             return "duplicatedmodifierrunes";
         }
         return null;
@@ -338,9 +338,9 @@ public class AphRunesInjector extends TrinketItem implements InternalInventoryIt
         addToolTips(tooltips, item, perspective);
         tooltips.add(Localization.translate("itemtooltip", "line"));
         String invalid = isInvalidInjector(item, perspective);
-        if(invalid == null) {
+        if (invalid == null) {
             AphBaseRune baseRune = getBaseRunes(item).get(0);
-            if(baseRune != null) {
+            if (baseRune != null) {
                 baseRune.addToolTips(tooltips, item, this, perspective, true);
                 tooltips.add(Localization.translate("itemtooltip", "useruneinfusor"));
             } else {
@@ -387,25 +387,25 @@ public class AphRunesInjector extends TrinketItem implements InternalInventoryIt
         float effectCooldownVariation = buff.getCooldownVariation();
         float healthCost = buff.getHealthCost();
 
-        if(effectNumberVariation > 0) {
+        if (effectNumberVariation > 0) {
             tooltips.add(Localization.translate("itemtooltip", "increaseruneeffectnumber", "variation", Math.round(effectNumberVariation * 100)));
-        } else if(effectNumberVariation < 0) {
+        } else if (effectNumberVariation < 0) {
             tooltips.add(Localization.translate("itemtooltip", "decreaseruneeffectnumber", "variation", Math.round(-effectNumberVariation * 100)));
         }
 
-        if(effectCooldownVariation > 0) {
+        if (effectCooldownVariation > 0) {
             tooltips.add(Localization.translate("itemtooltip", "increaserunecooldown", "variation", Math.round(effectCooldownVariation * 100)));
-        } else if(effectCooldownVariation < 0) {
+        } else if (effectCooldownVariation < 0) {
             tooltips.add(Localization.translate("itemtooltip", "decreaserunecooldown", "variation", Math.round(-effectCooldownVariation * 100)));
         }
 
-        if(healthCost > 0) {
+        if (healthCost > 0) {
             tooltips.add(Localization.translate("itemtooltip", "increaserunehealthcost", "health", Math.round(healthCost * 100)));
-        } else if(healthCost < 0) {
+        } else if (healthCost < 0) {
             tooltips.add(Localization.translate("itemtooltip", "increaserunehealthhealing", "health", Math.round(-healthCost * 100)));
         }
 
-        for(int i = 0; i < tooltipsNumber; i++) {
+        for (int i = 0; i < tooltipsNumber; i++) {
             String tooltipNumber = i == 0 ? "" : String.valueOf(i + 1);
             tooltips.add(Localization.translate("itemtooltip", getStringID() + "_mod" + tooltipNumber));
         }

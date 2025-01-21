@@ -17,7 +17,6 @@ import necesse.gfx.gameTexture.GameTexture;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
 
-import java.awt.*;
 import java.util.List;
 
 public class FireSlingStoneProjectile extends SlingStoneProjectile {
@@ -75,8 +74,7 @@ public class FireSlingStoneProjectile extends SlingStoneProjectile {
     public void addHit(Mob target) {
         super.addHit(target);
 
-        ActiveBuff buff2 = new ActiveBuff(BuffRegistry.Debuffs.ON_FIRE, target, 10000, this);
-        target.addBuff(buff2, true);
+        target.addBuff(new ActiveBuff(BuffRegistry.Debuffs.ON_FIRE, target, 10000, this), true);
     }
 
 }

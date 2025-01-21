@@ -1,7 +1,7 @@
 package aphorea.items.weapons.melee.glaive;
 
-import aphorea.utils.magichealing.AphMagicHealing;
 import aphorea.items.vanillaitemtypes.weapons.AphGlaiveToolItem;
+import aphorea.utils.magichealing.AphMagicHealing;
 import necesse.engine.localization.Localization;
 import necesse.engine.util.GameBlackboard;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.ToolItemMobAbilityEvent;

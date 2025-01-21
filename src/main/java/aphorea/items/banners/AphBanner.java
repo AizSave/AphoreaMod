@@ -96,8 +96,7 @@ abstract public class AphBanner extends BannerItem {
                     return;
                 }
             }
-            ActiveBuff ab = new ActiveBuff(buff, mob, 100, null);
-            mob.buffManager.addBuff(ab, false);
+            mob.buffManager.addBuff(new ActiveBuff(buff, mob, 100, null), false);
         }
     }
 
@@ -106,7 +105,7 @@ abstract public class AphBanner extends BannerItem {
         if (buff != null) {
             if (mob.buffManager.hasBuff(buff.getID())) {
                 ActiveBuff antBuff = mob.buffManager.getBuff(buff.getID());
-                if(antBuff != null && antBuff.buff instanceof AphBannerBuff) {
+                if (antBuff != null && antBuff.buff instanceof AphBannerBuff) {
                     AphBannerBuff bannerBuff = (AphBannerBuff) antBuff.buff;
                     if (bannerBuff.shouldRemove(antBuff) || bannerBuff.bannerEffect <= player.buffManager.getModifier(AphModifiers.BANNER_EFFECT)) {
                         addBuff(buff, mob, player, true);
@@ -121,8 +120,7 @@ abstract public class AphBanner extends BannerItem {
     }
 
     public void addBuff(Buff buff, Mob mob, PlayerMob player, boolean forceOverride) {
-        ActiveBuff ab = new ActiveBuff(buff, mob, 100, player);
-        mob.buffManager.addBuff(ab, false, forceOverride);
+        mob.buffManager.addBuff(new ActiveBuff(buff, mob, 100, player), false, forceOverride);
     }
 
     public void runServerAbility(Level level, InventoryItem item, PlayerMob player) {

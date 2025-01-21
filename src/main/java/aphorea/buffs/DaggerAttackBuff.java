@@ -13,7 +13,7 @@ public class DaggerAttackBuff extends Buff {
 
     public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {
         float prevMovementMod = buff.owner.buffManager.getModifier(BuffModifiers.ATTACK_MOVEMENT_MOD);
-        if(prevMovementMod != 1F) {
+        if (prevMovementMod != 1F) {
             buff.setModifier(BuffModifiers.SPEED, 1F - prevMovementMod);
 
         }

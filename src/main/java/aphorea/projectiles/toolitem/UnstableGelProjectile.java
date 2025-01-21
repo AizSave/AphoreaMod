@@ -91,8 +91,7 @@ public class UnstableGelProjectile extends Projectile {
     @Override
     public void addHit(Mob target) {
         super.addHit(target);
-        ActiveBuff buff = new ActiveBuff(AphBuffs.STICKY, target, 2000, this);
-        target.addBuff(buff, true);
+        target.addBuff(new ActiveBuff(AphBuffs.STICKY, target, 2000, this), true);
     }
 
     @Override

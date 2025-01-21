@@ -33,7 +33,6 @@ public class UnstableGelBattleaxe extends AphBattleaxeToolItem {
     @Override
     public void hitMob(InventoryItem item, ToolItemMobAbilityEvent event, Level level, Mob target, Mob attacker) {
         super.hitMob(item, event, level, target, attacker);
-        ActiveBuff buff = new ActiveBuff(AphBuffs.STICKY, target, 3000, event.owner);
-        target.addBuff(buff, true);
+        target.addBuff(new ActiveBuff(AphBuffs.STICKY, target, 3000, null), true);
     }
 }

@@ -36,7 +36,6 @@ import necesse.inventory.item.ItemStatTipList;
 import necesse.inventory.item.toolItem.projectileToolItem.ProjectileToolItem;
 import necesse.level.maps.Level;
 
-import java.awt.*;
 import java.awt.geom.Point2D;
 
 abstract public class AphSlingToolItem extends ProjectileToolItem {

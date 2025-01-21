@@ -3,7 +3,6 @@ package aphorea.buffs.Trinkets;
 import aphorea.utils.area.AphAreaList;
 import aphorea.utils.magichealing.AphMagicHealingFunctions;
 import necesse.engine.network.Packet;
-import necesse.engine.network.server.ServerClient;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;

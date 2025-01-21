@@ -1,19 +1,12 @@
 package aphorea.items.weapons.magic;
 
+import aphorea.items.AphAreaToolItem;
 import aphorea.packets.AphSingleAreaShowPacket;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
-import aphorea.items.AphAreaToolItem;
-import necesse.engine.network.NetworkPacket;
 import necesse.engine.network.Packet;
-import necesse.engine.network.PacketReader;
-import necesse.engine.network.PacketWriter;
-import necesse.engine.network.client.Client;
-import necesse.engine.network.client.ClientClient;
-import necesse.engine.network.packet.PacketRequestPlayerData;
 import necesse.engine.registries.DamageTypeRegistry;
-import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.ItemInteractAction;

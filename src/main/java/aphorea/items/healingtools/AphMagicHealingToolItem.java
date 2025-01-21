@@ -1,9 +1,9 @@
 package aphorea.items.healingtools;
 
-import aphorea.utils.magichealing.AphMagicHealing;
-import aphorea.utils.magichealing.AphMagicHealingFunctions;
 import aphorea.items.vanillaitemtypes.AphToolItem;
 import aphorea.registry.AphEnchantments;
+import aphorea.utils.magichealing.AphMagicHealing;
+import aphorea.utils.magichealing.AphMagicHealingFunctions;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.PacketReader;
 import necesse.engine.util.GameRandom;

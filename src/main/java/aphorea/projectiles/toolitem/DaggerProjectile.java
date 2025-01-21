@@ -2,10 +2,8 @@ package aphorea.projectiles.toolitem;
 
 import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
-import necesse.engine.network.gameNetworkData.GNDItem;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.registries.ItemRegistry;
-import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
@@ -99,7 +97,7 @@ abstract public class DaggerProjectile extends Projectile {
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
         super.doHitLogic(mob, object, x, y);
         if (this.isServer() && shouldDrop && stringItemID != null && gndData != null) {
-            if(mob != null && this.amountHit() < this.piercing) {
+            if (mob != null && this.amountHit() < this.piercing) {
                 return;
             } else {
                 int bouncing = this.bouncing;
@@ -107,7 +105,7 @@ abstract public class DaggerProjectile extends Projectile {
                 if (owner != null) {
                     bouncing += owner.buffManager.getModifier(BuffModifiers.PROJECTILE_BOUNCES);
                 }
-                if(object != null && this.bounced < bouncing && this.canBounce) {
+                if (object != null && this.bounced < bouncing && this.canBounce) {
                     return;
                 }
             }

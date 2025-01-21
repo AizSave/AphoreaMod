@@ -11,8 +11,7 @@ import net.bytebuddy.asm.Advice;
 public class SavePlayerData {
 
     @Advice.OnMethodExit
-    static void onExit(@Advice.This PlayerMob playerMob, @Advice.Argument(0) SaveData saveData)
-    {
+    static void onExit(@Advice.This PlayerMob playerMob, @Advice.Argument(0) SaveData saveData) {
         AphPlayerData player = AphPlayerDataList.getCurrentPlayer(playerMob);
         player.saveData(saveData);
     }

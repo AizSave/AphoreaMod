@@ -1,9 +1,9 @@
 package aphorea.items.weapons.range.greatbow;
 
-import aphorea.utils.AphColors;
-import aphorea.utils.AphMaths;
 import aphorea.items.vanillaitemtypes.weapons.AphGreatbowProjectileToolItem;
 import aphorea.packets.AphCustomPushPacket;
+import aphorea.utils.AphColors;
+import aphorea.utils.AphMaths;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.server.ServerClient;
@@ -22,7 +22,6 @@ import necesse.inventory.PlayerInventorySlot;
 import necesse.inventory.item.arrowItem.ArrowItem;
 import necesse.level.maps.Level;
 
-import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.Objects;
 

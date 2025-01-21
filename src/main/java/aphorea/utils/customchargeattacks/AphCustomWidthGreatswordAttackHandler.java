@@ -45,7 +45,7 @@ public class AphCustomWidthGreatswordAttackHandler extends GreatswordAttackHandl
         float dy = GameMath.cos(angle);
         int range = GameRandom.globalRandom.getIntBetween(0, this.toolItem.getAttackRange(this.item));
         float rangeWidth = GameRandom.globalRandom.getFloatBetween(-width / 2, width / 2);
-        this.player.getLevel().entityManager.addParticle(this.player.x + (float)offsetX + dx * (float)range + GameRandom.globalRandom.floatGaussian() * 3.0F + dy * rangeWidth, this.player.y + 4.0F + GameRandom.globalRandom.floatGaussian() * 4 + dy * rangeWidth, Particle.GType.IMPORTANT_COSMETIC).movesConstant(this.player.dx, this.player.dy).color(color).height(20.0F - dy * (float)range - (float)offsetY);
+        this.player.getLevel().entityManager.addParticle(this.player.x + (float) offsetX + dx * (float) range + GameRandom.globalRandom.floatGaussian() * 3.0F + dy * rangeWidth, this.player.y + 4.0F + GameRandom.globalRandom.floatGaussian() * 4 + dy * rangeWidth, Particle.GType.IMPORTANT_COSMETIC).movesConstant(this.player.dx, this.player.dy).color(color).height(20.0F - dy * (float) range - (float) offsetY);
     }
 
 }

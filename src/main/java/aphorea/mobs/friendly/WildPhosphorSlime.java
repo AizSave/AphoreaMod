@@ -85,8 +85,7 @@ public class WildPhosphorSlime extends FriendlyMob {
         super.serverTick();
         if (isScared(getLevel())) {
             if (!buffManager.hasBuff("movespeedburst")) {
-                ActiveBuff buff = new ActiveBuff(BuffRegistry.MOVE_SPEED_BURST, this, 3000, this);
-                buffManager.addBuff(buff, true);
+                buffManager.addBuff(new ActiveBuff(BuffRegistry.MOVE_SPEED_BURST, this, 3000, this), true);
             }
             if (dayInSurface(getLevel())) {
                 dayCount++;

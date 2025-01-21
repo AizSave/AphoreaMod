@@ -20,8 +20,6 @@ import necesse.entity.mobs.buffs.staticBuffs.Buff;
 import necesse.entity.particle.Particle;
 import necesse.level.maps.Level;
 
-import java.awt.*;
-
 public class LowdsPoisonBuff extends Buff {
     public LowdsPoisonBuff() {
         this.isImportant = true;

@@ -1,9 +1,9 @@
 package aphorea.items.healingtools;
 
+import aphorea.items.AphAreaToolItem;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
-import aphorea.items.AphAreaToolItem;
 import necesse.engine.network.NetworkPacket;
 import necesse.engine.network.Packet;
 import necesse.engine.network.PacketReader;

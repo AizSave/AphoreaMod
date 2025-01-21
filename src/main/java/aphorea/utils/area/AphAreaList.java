@@ -15,7 +15,6 @@ import necesse.inventory.item.toolItem.ToolItem;
 import necesse.level.maps.Level;
 import org.jetbrains.annotations.Nullable;
 
-import java.awt.*;
 import java.util.Arrays;
 
 public class AphAreaList {

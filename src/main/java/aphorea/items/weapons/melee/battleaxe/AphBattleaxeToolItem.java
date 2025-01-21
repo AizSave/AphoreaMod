@@ -1,9 +1,9 @@
 package aphorea.items.weapons.melee.battleaxe;
 
+import aphorea.registry.AphBuffs;
 import aphorea.utils.customchargeattacks.AphChargeAttackToolItem;
 import aphorea.utils.customchargeattacks.AphCustomChargeAttackHandler;
 import aphorea.utils.customchargeattacks.AphCustomChargeLevel;
-import aphorea.registry.AphBuffs;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.PacketReader;
 import necesse.engine.util.GameBlackboard;
@@ -70,8 +70,7 @@ abstract public class AphBattleaxeToolItem extends AphChargeAttackToolItem imple
     @Override
     public InventoryItem onLevelInteract(Level level, int x, int y, PlayerMob player, int attackHeight, InventoryItem item, PlayerInventorySlot slot, int seed, PacketReader contentReader) {
 
-        ActiveBuff buff = new ActiveBuff(AphBuffs.BERSERKER_RUSH, player, 11.0F, null);
-        player.addBuff(buff, true);
+        player.addBuff(new ActiveBuff(AphBuffs.BERSERKER_RUSH, player, 11.0F, null), true);
 
         return item;
     }

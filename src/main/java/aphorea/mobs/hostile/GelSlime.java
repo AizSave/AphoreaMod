@@ -140,8 +140,9 @@ public class GelSlime extends AphDayHostileMob {
     @Override
     public void collidedWith(Mob other) {
         super.collidedWith(other);
-        ActiveBuff buff = new ActiveBuff(AphBuffs.STICKY, other, 1000, this);
-        other.addBuff(buff, true);
+        if (isServer()) {
+            other.addBuff(new ActiveBuff(AphBuffs.STICKY, other, 1000, this), true);
+        }
     }
 
     @Override

@@ -1,11 +1,11 @@
 package aphorea.items.weapons.magic;
 
 import aphorea.packets.AphSingleAreaShowPacket;
+import aphorea.projectiles.toolitem.UnstableGelProjectile;
+import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
-import aphorea.projectiles.toolitem.UnstableGelProjectile;
-import aphorea.registry.AphBuffs;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.Packet;
 import necesse.engine.network.PacketReader;
@@ -110,8 +110,7 @@ public class UnstableGelStaff extends AphMagicProjectileSecondaryAreaToolItem im
     @Override
     public void hitMob(InventoryItem item, ToolItemMobAbilityEvent event, Level level, Mob target, Mob attacker) {
         super.hitMob(item, event, level, target, attacker);
-        ActiveBuff buff = new ActiveBuff(AphBuffs.STICKY, target, 2000, event.owner);
-        target.addBuff(buff, true);
+        target.addBuff(new ActiveBuff(AphBuffs.STICKY, target, 2000, null), true);
     }
 
     @Override

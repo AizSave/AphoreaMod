@@ -1,9 +1,9 @@
 package aphorea.mobs.hostile;
 
+import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
-import aphorea.registry.AphBuffs;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.util.GameRandom;
@@ -93,8 +93,7 @@ public class VoidAdept extends HostileMob {
             public boolean attackTarget(VoidAdept mob, Mob target) {
                 if (mob.canAttack() && !mob.isAccelerating() && !mob.hasCurrentMovement()) {
                     mob.attack(target.getX(), target.getY(), false);
-                    ActiveBuff buff = new ActiveBuff(AphBuffs.STUN, mob, 1500, mob);
-                    mob.addBuff(buff, true);
+                    mob.addBuff(new ActiveBuff(AphBuffs.STUN, mob, 1500, mob), true);
 
                     return true;
                 } else {

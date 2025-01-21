@@ -86,8 +86,7 @@ public class MiniUnstableGelSlimeProjectile extends Projectile {
         super.doHitLogic(mob, object, x, y);
         if (this.isServer()) {
             MiniUnstableGelSlime spawnMob = (MiniUnstableGelSlime) MobRegistry.getMob("miniunstablegelslime", this.getLevel());
-            ActiveBuff buff = new ActiveBuff(AphBuffs.STUN, spawnMob, 500, spawnMob);
-            spawnMob.addBuff(buff, true);
+            spawnMob.addBuff(new ActiveBuff(AphBuffs.STUN, spawnMob, 500, spawnMob), true);
             this.getLevel().entityManager.addMob(spawnMob, x, y);
         }
     }
@@ -95,8 +94,7 @@ public class MiniUnstableGelSlimeProjectile extends Projectile {
     @Override
     public void addHit(Mob target) {
         super.addHit(target);
-        ActiveBuff buff = new ActiveBuff(AphBuffs.STICKY, target, 500, this);
-        target.addBuff(buff, true);
+        target.addBuff(new ActiveBuff(AphBuffs.STICKY, target, 500, this), true);
 
     }
 }

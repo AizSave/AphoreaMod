@@ -81,7 +81,6 @@ public class SlingStoneProjectile extends Projectile {
     @Override
     public void addHit(Mob target) {
         super.addHit(target);
-        ActiveBuff buff = new ActiveBuff(AphBuffs.STUN, target, 500, this);
-        target.addBuff(buff, true);
+        target.addBuff(new ActiveBuff(AphBuffs.STUN, target, 500, this), true);
     }
 }

@@ -26,8 +26,6 @@ import necesse.inventory.item.ItemStatTipList;
 import necesse.inventory.item.LocalMessageDoubleItemStatTip;
 import necesse.level.maps.Level;
 
-import java.awt.*;
-
 public class MagicalVial extends AphMagicHealingToolItem {
 
     static AphAreaList area = new AphAreaList(

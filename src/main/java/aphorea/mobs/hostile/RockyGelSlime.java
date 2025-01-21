@@ -26,7 +26,6 @@ import java.awt.*;
 import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class RockyGelSlime extends HostileMob {
 
@@ -137,11 +136,11 @@ public class RockyGelSlime extends HostileMob {
                 int targetX = this.getX() + (int) (Math.cos(angle) * 100);
                 int targetY = this.getY() + (int) (Math.sin(angle) * 100);
                 boolean isLoot = GameRandom.globalRandom.getChance(0.25F);
-                if(isLoot) {
-                    if(!alreadyLoot.get()) {
+                if (isLoot) {
+                    if (!alreadyLoot.get()) {
                         alreadyLoot.set(true);
                     }
-                } else if(i == 7 && !alreadyLoot.get()) {
+                } else if (i == 7 && !alreadyLoot.get()) {
                     isLoot = true;
                 }
                 throwRock(targetX, targetY, isLoot);
@@ -151,7 +150,7 @@ public class RockyGelSlime extends HostileMob {
 
     public void throwRock(int targetX, int targetY, boolean dropRockyGel) {
         Projectile projectile;
-        if(dropRockyGel) {
+        if (dropRockyGel) {
             projectile = new RockyGelSlimeLootProjectile(this, this.x, this.y, targetX, targetY, 40.0F, 640, rock_damage, rock_knockback);
         } else {
             projectile = new RockyGelSlimeProjectile(this, this.x, this.y, targetX, targetY, 40.0F, 640, rock_damage, rock_knockback);

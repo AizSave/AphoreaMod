@@ -2,8 +2,8 @@ package aphorea.projectiles.toolitem;
 
 import aphorea.items.healingtools.AphHealingProjectileToolItem;
 import aphorea.utils.AphColors;
-import aphorea.utils.magichealing.AphMagicHealing;
 import aphorea.utils.AphDistances;
+import aphorea.utils.magichealing.AphMagicHealing;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.server.ServerClient;
 import necesse.engine.util.GameUtils;

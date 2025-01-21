@@ -19,7 +19,6 @@ import necesse.inventory.item.miscItem.PouchItem;
 import necesse.level.maps.Level;
 import necesse.level.maps.hudManager.floatText.UniqueFloatText;
 
-import java.awt.*;
 import java.util.function.Consumer;
 
 abstract public class AphBackpack extends PouchItem {

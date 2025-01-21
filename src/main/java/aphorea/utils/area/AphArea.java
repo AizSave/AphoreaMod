@@ -187,16 +187,14 @@ public class AphArea {
                 if (this.areaTypes.contains(AphAreaType.BUFF) && target != attacker && target.isSameTeam(attacker)) {
                     Arrays.stream(buffs).forEach(
                             buffID -> {
-                                ActiveBuff buff = new ActiveBuff(BuffRegistry.getBuff(buffID), target, buffDuration, attacker);
-                                target.buffManager.addBuff(buff, true);
+                                target.buffManager.addBuff(new ActiveBuff(BuffRegistry.getBuff(buffID), target, buffDuration, attacker), true);
                             }
                     );
                 }
                 if (this.areaTypes.contains(AphAreaType.DEBUFF) && target != attacker && canAreaAttack(attacker, target)) {
                     Arrays.stream(debuffs).forEach(
                             debuffID -> {
-                                ActiveBuff debuff = new ActiveBuff(BuffRegistry.getBuff(debuffID), target, debuffDuration, attacker);
-                                target.buffManager.addBuff(debuff, true);
+                                target.buffManager.addBuff(new ActiveBuff(BuffRegistry.getBuff(debuffID), target, debuffDuration, attacker), true);
                             }
                     );
                 }

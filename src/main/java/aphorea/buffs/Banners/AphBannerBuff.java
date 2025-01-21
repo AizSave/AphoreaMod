@@ -15,7 +15,7 @@ public class AphBannerBuff extends VicinityBuff {
     public float bannerEffect = 1F;
 
     public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {
-        if(buff.getAttacker() != null && buff.getAttacker().getAttackOwner() != null) {
+        if (buff.getAttacker() != null && buff.getAttacker().getAttackOwner() != null) {
             bannerEffect = buff.getAttacker().getAttackOwner().buffManager.getModifier(AphModifiers.BANNER_EFFECT);
         }
     }
@@ -35,7 +35,7 @@ public class AphBannerBuff extends VicinityBuff {
 
     public String getRealName() {
         String name = this.getStringID();
-        if(name.startsWith("aph_")) {
+        if (name.startsWith("aph_")) {
             return name.replace("aph_", "");
         }
         return name;
@@ -49,7 +49,7 @@ public class AphBannerBuff extends VicinityBuff {
     }
 
     public boolean shouldRemove(ActiveBuff ab) {
-        if(ab.getAttacker() == null || ab.getAttacker().getAttackOwner() == null) {
+        if (ab.getAttacker() == null || ab.getAttacker().getAttackOwner() == null) {
             return false;
         }
         return ab.getAttacker().getAttackOwner().buffManager.getModifier(AphModifiers.BANNER_EFFECT) < bannerEffect;

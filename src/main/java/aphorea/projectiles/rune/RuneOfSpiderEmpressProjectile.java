@@ -2,10 +2,8 @@ package aphorea.projectiles.rune;
 
 import aphorea.registry.AphBuffs;
 import necesse.engine.gameLoop.tickManager.TickManager;
-import necesse.engine.network.server.FollowPosition;
 import necesse.engine.network.server.ServerClient;
 import necesse.engine.registries.BuffRegistry;
-import necesse.engine.registries.MobRegistry;
 import necesse.entity.chains.Chain;
 import necesse.entity.chains.ChainLocation;
 import necesse.entity.mobs.GameDamage;
@@ -25,9 +23,7 @@ import necesse.level.maps.Level;
 import necesse.level.maps.LevelObjectHit;
 import necesse.level.maps.light.GameLight;
 
-import java.awt.*;
 import java.util.List;
-import java.util.Vector;
 
 public class RuneOfSpiderEmpressProjectile extends BoomerangProjectile {
     private Chain chain;
@@ -113,8 +109,8 @@ public class RuneOfSpiderEmpressProjectile extends BoomerangProjectile {
     @Override
     public void onHit(Mob mob, LevelObjectHit object, float x, float y, boolean fromPacket, ServerClient packetSubmitter) {
         if (mob != null && getOwner().isPlayer) {
-            mob.addBuff(new ActiveBuff(BuffRegistry.Debuffs.SPIDER_WEB_SLOW, mob, 10000, null), true);
-            mob.addBuff(new ActiveBuff(AphBuffs.STUN, mob, 3000, null), true);
+            mob.addBuff(new ActiveBuff(BuffRegistry.Debuffs.SPIDER_WEB_SLOW, mob, 10000, this), true);
+            mob.addBuff(new ActiveBuff(AphBuffs.STUN, mob, 3000, this), true);
         }
         super.onHit(mob, object, x, y, fromPacket, packetSubmitter);
     }

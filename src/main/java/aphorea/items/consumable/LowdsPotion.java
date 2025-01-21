@@ -11,8 +11,6 @@ import necesse.inventory.item.ItemCategory;
 import necesse.level.maps.Level;
 import necesse.level.maps.hudManager.floatText.UniqueFloatText;
 
-import java.awt.*;
-
 public class LowdsPotion extends AphSimplePotionItem {
     public LowdsPotion() {
         super(100, Rarity.COMMON, "lowdspoison", 300, "lowdspotion");

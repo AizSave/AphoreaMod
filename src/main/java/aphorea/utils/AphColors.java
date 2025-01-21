@@ -8,7 +8,7 @@ public class AphColors {
     public static Color[] paletteDemonic = new Color[]{new Color(121, 100, 186), new Color(204, 0, 0)};
     public static Color[] paletteDeepDemonic = new Color[]{new Color(121, 100, 186), new Color(40, 43, 74), new Color(204, 0, 0)};
     public static Color[] palettePinkWitch = new Color[]{new Color(255, 0, 191), new Color(191, 0, 255), new Color(104, 0, 204)};
-    public static Color[] paletteMotherSlime = new Color[]{new Color(221, 161, 49), new Color(177, 121, 31), new Color(152,100,30)};
+    public static Color[] paletteMotherSlime = new Color[]{new Color(221, 161, 49), new Color(177, 121, 31), new Color(152, 100, 30)};
 
     public static Color copper = new Color(191, 90, 62);
     public static Color iron = new Color(98, 104, 113);

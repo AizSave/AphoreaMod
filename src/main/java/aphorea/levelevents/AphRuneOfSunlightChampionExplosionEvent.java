@@ -1,7 +1,5 @@
 package aphorea.levelevents;
 
-import necesse.engine.sound.SoundEffect;
-import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameRandom;
 import necesse.entity.ParticleTypeSwitcher;
 import necesse.entity.levelEvent.explosionEvent.ExplosionEvent;

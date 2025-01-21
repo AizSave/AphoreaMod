@@ -143,6 +143,7 @@ public class UnstableGelSlime extends FlyingBossMob {
     public LootTable getLootTable() {
         return lootTable;
     }
+
     public LootTable getPrivateLootTable() {
         return privateLootTable;
     }
@@ -283,8 +284,7 @@ public class UnstableGelSlime extends FlyingBossMob {
     @Override
     public void handleCollisionHit(Mob target, GameDamage damage, int knockback) {
         super.handleCollisionHit(target, damage, knockback);
-        ActiveBuff buff = new ActiveBuff(AphBuffs.STICKY, target, 1000, this);
-        target.addBuff(buff, true);
+        target.addBuff(new ActiveBuff(AphBuffs.STICKY, target, 1000, this), true);
     }
 
     @Override
@@ -374,10 +374,8 @@ public class UnstableGelSlime extends FlyingBossMob {
 
                             blackboard.put("currentTarget", mob);
 
-                            ActiveBuff buff = new ActiveBuff(BuffRegistry.getBuff("unstablegelslimerush"), mob, 3000, mob);
-                            mob.addBuff(buff, true);
-                            ActiveBuff buff2 = new ActiveBuff(AphBuffs.IMMORTAL, mob, 1000, mob);
-                            mob.addBuff(buff2, true);
+                            mob.addBuff(new ActiveBuff(BuffRegistry.getBuff("unstablegelslimerush"), mob, 3000, mob), true);
+                            mob.addBuff(new ActiveBuff(AphBuffs.IMMORTAL, mob, 1000, mob), true);
 
                             Point point = getTeleportPoint(mob);
                             if (point != null) {
@@ -416,10 +414,8 @@ public class UnstableGelSlime extends FlyingBossMob {
 
                         blackboard.put("currentTarget", mob);
 
-                        ActiveBuff buff = new ActiveBuff(BuffRegistry.getBuff("unstablegelslimerush"), mob, 3000, mob);
-                        mob.addBuff(buff, true);
-                        ActiveBuff buff2 = new ActiveBuff(AphBuffs.IMMORTAL, mob, 1000, mob);
-                        mob.addBuff(buff2, true);
+                        mob.addBuff(new ActiveBuff(BuffRegistry.getBuff("unstablegelslimerush"), mob, 3000, mob), true);
+                        mob.addBuff(new ActiveBuff(AphBuffs.IMMORTAL, mob, 1000, mob), true);
 
                         Point point = getTeleportPoint(mob);
                         if (point == null) {

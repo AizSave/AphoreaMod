@@ -1,8 +1,8 @@
 package aphorea.items.weapons.melee.greatsword;
 
-import aphorea.utils.customchargeattacks.AphGreatswordCustomChargeToolItem;
 import aphorea.packets.AphCustomPushPacket;
 import aphorea.registry.AphBuffs;
+import aphorea.utils.customchargeattacks.AphGreatswordCustomChargeToolItem;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.Packet;
@@ -60,7 +60,7 @@ abstract public class AphGreatswordSecondarySpinToolItem extends AphGreatswordCu
     public float getSwingRotationOffset(InventoryItem item, int dir, float swingAngle) {
         float offset = super.getSwingRotationOffset(item, dir, swingAngle);
         if (secondary) {
-            if(dir == 1 || dir == 3) {
+            if (dir == 1 || dir == 3) {
                 offset -= 180;
             } else {
                 offset -= 90;

@@ -1,20 +1,13 @@
 package aphorea.items.banners;
 
 import aphorea.packets.AphSingleAreaShowPacket;
-import aphorea.utils.AphColors;
-import aphorea.utils.area.AphArea;
-import aphorea.utils.area.AphAreaList;
 import aphorea.registry.AphBuffs;
 import aphorea.registry.AphDamageType;
 import aphorea.registry.AphModifiers;
+import aphorea.utils.AphColors;
+import aphorea.utils.area.AphArea;
+import aphorea.utils.area.AphAreaList;
 import necesse.engine.localization.Localization;
-import necesse.engine.network.NetworkPacket;
-import necesse.engine.network.Packet;
-import necesse.engine.network.PacketReader;
-import necesse.engine.network.PacketWriter;
-import necesse.engine.network.client.Client;
-import necesse.engine.network.client.ClientClient;
-import necesse.engine.network.packet.PacketRequestPlayerData;
 import necesse.engine.util.GameUtils;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.drawOptions.DrawOptions;

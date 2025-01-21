@@ -66,8 +66,7 @@ public class PetPhosphorSlime extends PetFollowingMob {
         super.serverTick();
         if (isScared(getLevel())) {
             if (!buffManager.hasBuff("movespeedburst")) {
-                ActiveBuff buff = new ActiveBuff(BuffRegistry.MOVE_SPEED_BURST, this, 3000, this);
-                buffManager.addBuff(buff, true);
+                buffManager.addBuff(new ActiveBuff(BuffRegistry.MOVE_SPEED_BURST, this, 3000, this), true);
             }
             if (dayInSurface(getLevel())) {
                 dayCount++;
@@ -114,7 +113,7 @@ public class PetPhosphorSlime extends PetFollowingMob {
     }
 
     public boolean isScared(Level level) {
-        return dayInSurface(level) || level.entityManager.streamAreaMobsAndPlayers(this.x, this.y, 500).anyMatch(m -> m.isHostile  && m.getDistance(this) <= 500) || level.entityManager.streamAreaMobsAndPlayers(this.x, this.y, 500).noneMatch(m -> m.getDistance(this) <= 500);
+        return dayInSurface(level) || level.entityManager.streamAreaMobsAndPlayers(this.x, this.y, 500).anyMatch(m -> m.isHostile && m.getDistance(this) <= 500) || level.entityManager.streamAreaMobsAndPlayers(this.x, this.y, 500).noneMatch(m -> m.getDistance(this) <= 500);
     }
 
     public static boolean dayInSurface(Level level) {

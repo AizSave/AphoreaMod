@@ -86,14 +86,14 @@ public class RuneOfCryoQueenProjectile extends PositionedCirclingProjectile {
 
     public void onMoveTick(Point2D.Float startPos, double movedDist) {
         super.onMoveTick(startPos, movedDist);
-        this.radius = (float)((double)this.radius + movedDist * 1.2);
+        this.radius = (float) ((double) this.radius + movedDist * 1.2);
         this.distCounter += movedDist;
         this.distBuffer += movedDist;
 
-        while(this.distBuffer > 8.0) {
+        while (this.distBuffer > 8.0) {
             this.distBuffer -= 8.0;
-            synchronized(this.pillars) {
-                this.pillars.add(new CryoQueenMob.CryoPillar((int)(this.x + GameRandom.globalRandom.floatGaussian() * 6.0F), (int)(this.y + GameRandom.globalRandom.floatGaussian() * 4.0F), this.distCounter, this.getWorldEntity().getLocalTime()));
+            synchronized (this.pillars) {
+                this.pillars.add(new CryoQueenMob.CryoPillar((int) (this.x + GameRandom.globalRandom.floatGaussian() * 6.0F), (int) (this.y + GameRandom.globalRandom.floatGaussian() * 4.0F), this.distCounter, this.getWorldEntity().getLocalTime()));
             }
         }
 
@@ -108,7 +108,7 @@ public class RuneOfCryoQueenProjectile extends PositionedCirclingProjectile {
 
     @Override
     public void onHit(Mob mob, LevelObjectHit object, float x, float y, boolean fromPacket, ServerClient packetSubmitter) {
-        if(mob != null && !mob.isBoss() && !mob.isPlayer) {
+        if (mob != null && !mob.isBoss() && !mob.isPlayer) {
             float damagePercent = 2;
             if (mob.isHuman) {
                 damagePercent /= 5;

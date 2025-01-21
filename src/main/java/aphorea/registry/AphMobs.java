@@ -8,7 +8,10 @@ import aphorea.mobs.pet.PetPhosphorSlime;
 import aphorea.mobs.runicsummons.RunicBat;
 import aphorea.mobs.runicsummons.RunicUnstableGelSlime;
 import aphorea.mobs.runicsummons.RunicVultureHatchling;
-import aphorea.mobs.summon.*;
+import aphorea.mobs.summon.BabyUnstableGelSlime;
+import aphorea.mobs.summon.Onyx;
+import aphorea.mobs.summon.UndeadSkeleton;
+import aphorea.mobs.summon.VolatileGelSlime;
 import necesse.engine.registries.MobRegistry;
 
 public class AphMobs {

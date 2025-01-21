@@ -60,25 +60,25 @@ public class AphModifierRune extends Item {
         float effectCooldownVariation = buff.getCooldownVariation();
         float healthCost = buff.getHealthCost();
 
-        if(effectNumberVariation > 0) {
+        if (effectNumberVariation > 0) {
             tooltips.add(Localization.translate("itemtooltip", "increaseruneeffectnumber", "variation", Math.round(effectNumberVariation * 100)));
-        } else if(effectNumberVariation < 0) {
+        } else if (effectNumberVariation < 0) {
             tooltips.add(Localization.translate("itemtooltip", "decreaseruneeffectnumber", "variation", Math.round(-effectNumberVariation * 100)));
         }
 
-        if(effectCooldownVariation > 0) {
+        if (effectCooldownVariation > 0) {
             tooltips.add(Localization.translate("itemtooltip", "increaserunecooldown", "variation", Math.round(effectCooldownVariation * 100)));
-        } else if(effectCooldownVariation < 0) {
+        } else if (effectCooldownVariation < 0) {
             tooltips.add(Localization.translate("itemtooltip", "decreaserunecooldown", "variation", Math.round(-effectCooldownVariation * 100)));
         }
 
-        if(healthCost > 0) {
+        if (healthCost > 0) {
             tooltips.add(Localization.translate("itemtooltip", "increaserunehealthcost", "health", Math.round(healthCost * 100)));
-        } else if(healthCost < 0) {
+        } else if (healthCost < 0) {
             tooltips.add(Localization.translate("itemtooltip", "increaserunehealthhealing", "health", Math.round(-healthCost * 100)));
         }
 
-        for(int i = 0; i < tooltipsNumber; i++) {
+        for (int i = 0; i < tooltipsNumber; i++) {
             String tooltipNumber = i == 0 ? "" : String.valueOf(i + 1);
             tooltips.add(Localization.translate("itemtooltip", getStringID() + tooltipNumber));
         }

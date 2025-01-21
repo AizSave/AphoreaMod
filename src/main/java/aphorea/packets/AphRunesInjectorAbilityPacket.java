@@ -50,7 +50,7 @@ public class AphRunesInjectorAbilityPacket extends Packet {
 
                 ActiveBuff buff = target.playerMob.buffManager.getBuff(this.buffID);
                 if (buff != null && buff.buff instanceof AphBaseRuneTrinketBuff) {
-                    AphBaseRuneTrinketBuff buffAbility = (AphBaseRuneTrinketBuff)buff.buff;
+                    AphBaseRuneTrinketBuff buffAbility = (AphBaseRuneTrinketBuff) buff.buff;
                     buffAbility.runClient(client, target.playerMob, this.mouseLevelX, this.mouseLevelY);
                 }
             } else {
@@ -68,10 +68,10 @@ public class AphRunesInjectorAbilityPacket extends Packet {
 
             ActiveBuff buff = client.playerMob.buffManager.getBuff(this.buffID);
             if (buff != null && buff.buff instanceof AphBaseRuneTrinketBuff) {
-                AphBaseRuneTrinketBuff buffAbility = (AphBaseRuneTrinketBuff)buff.buff;
+                AphBaseRuneTrinketBuff buffAbility = (AphBaseRuneTrinketBuff) buff.buff;
                 String error = buffAbility.canRun(client.playerMob);
-                if(error != null) {
-                    if(!error.isEmpty()) {
+                if (error != null) {
+                    if (!error.isEmpty()) {
                         client.sendChatMessage(new LocalMessage("message", error));
                     }
                 } else {

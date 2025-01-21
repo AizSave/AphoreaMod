@@ -9,7 +9,7 @@ public class AphPlayerDataList {
 
     public static AphPlayerData getCurrentPlayer(String playerName) {
         AphPlayerData playerData = players.stream().filter(p -> p.playerName.equals(playerName)).findFirst().orElse(null);
-        if(playerData == null) {
+        if (playerData == null) {
             playerData = initPlayer(playerName);
         }
         return playerData;

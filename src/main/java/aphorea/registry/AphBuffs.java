@@ -856,7 +856,7 @@ public class AphBuffs {
                             } else if (mob.isPlayer || mob.isHuman) {
                                 timeMod = 0.5F;
                             }
-                            mob.addBuff(new ActiveBuff(AphBuffs.FALLEN_STUN, player, getEffectNumber(player) * timeMod, null), true);
+                            mob.addBuff(new ActiveBuff(AphBuffs.FALLEN_STUN, player, getEffectNumber(player) * timeMod, player), true);
                         }
                 );
             }
@@ -1078,8 +1078,7 @@ public class AphBuffs {
                     public void run(Level level, PlayerMob player, int targetX, int targetY) {
                         super.run(level, player, targetX, targetY);
                         if (!player.buffManager.hasBuff("pawningruneactive")) {
-                            ActiveBuff activeBuff = new ActiveBuff("pawningruneactive", player, 10000, null);
-                            player.buffManager.addBuff(activeBuff, false);
+                            player.buffManager.addBuff(new ActiveBuff("pawningruneactive", player, 10000, null), false);
                             SoundManager.playSound(GameResources.magicbolt1, SoundEffect.effect(player).volume(1.0F).pitch(1.0F));
                         }
                     }

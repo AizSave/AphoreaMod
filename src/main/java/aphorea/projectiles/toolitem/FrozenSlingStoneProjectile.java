@@ -8,8 +8,6 @@ import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.trails.Trail;
 import necesse.level.maps.Level;
 
-import java.awt.*;
-
 public class FrozenSlingStoneProjectile extends SlingStoneProjectile {
 
     public FrozenSlingStoneProjectile() {
@@ -29,7 +27,6 @@ public class FrozenSlingStoneProjectile extends SlingStoneProjectile {
     public void addHit(Mob target) {
         super.addHit(target);
 
-        ActiveBuff buff2 = new ActiveBuff(BuffRegistry.Debuffs.FREEZING, target, 10000, this);
-        target.addBuff(buff2, true);
+        target.addBuff(new ActiveBuff(BuffRegistry.Debuffs.FREEZING, target, 10000, this), true);
     }
 }

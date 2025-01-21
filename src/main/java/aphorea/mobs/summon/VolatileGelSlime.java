@@ -49,9 +49,9 @@ public class VolatileGelSlime extends AttackingFollowingMob {
     @Override
     public void serverTick() {
         super.serverTick();
-        if(!this.removed() && this.explosionTime > 0) {
+        if (!this.removed() && this.explosionTime > 0) {
             this.explosionTime++;
-            if(this.explosionTime >= maxExplosionTime) {
+            if (this.explosionTime >= maxExplosionTime) {
                 doExplosion();
             }
         }
@@ -60,13 +60,13 @@ public class VolatileGelSlime extends AttackingFollowingMob {
     @Override
     public void clientTick() {
         super.clientTick();
-        if(!this.removed() && this.explosionTime > 0) {
+        if (!this.removed() && this.explosionTime > 0) {
             this.explosionTime++;
         }
     }
 
     public void spawnDeathParticles(float knockbackX, float knockbackY) {
-        if(texture != null) {
+        if (texture != null) {
             for (int i = 0; i < 4; i++) {
                 getLevel().entityManager.addParticle(new FleshParticle(
                         getLevel(), texture,
@@ -103,7 +103,7 @@ public class VolatileGelSlime extends AttackingFollowingMob {
             }
         });
 
-        if(!this.isWaterWalking()) addShadowDrawables(tileList, x, y, light, camera);
+        if (!this.isWaterWalking()) addShadowDrawables(tileList, x, y, light, camera);
     }
 
     public Point getAnimSprite(int x, int y, int dir) {
@@ -120,7 +120,7 @@ public class VolatileGelSlime extends AttackingFollowingMob {
     @Override
     public void collidedWith(Mob other) {
         super.collidedWith(other);
-        if(this.explosionTime <= 0 && !this.removed() && other.canBeTargeted(this, this.getPvPOwner()) && other.canBeHit(this)) {
+        if (this.explosionTime <= 0 && !this.removed() && other.canBeTargeted(this, this.getPvPOwner()) && other.canBeHit(this)) {
             ActiveBuff buff = new ActiveBuff(AphBuffs.STICKY, other, 2000, this);
             other.addBuff(buff, true);
             this.explosionTime = 1;
@@ -140,6 +140,6 @@ public class VolatileGelSlime extends AttackingFollowingMob {
 
     @Override
     public void addBuff(ActiveBuff buff, boolean sendUpdatePacket) {
-        if(buff.buff != AphBuffs.STICKY) super.addBuff(buff, sendUpdatePacket);
+        if (buff.buff != AphBuffs.STICKY) super.addBuff(buff, sendUpdatePacket);
     }
 }

@@ -1,8 +1,8 @@
 package aphorea.buffs;
 
+import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import aphorea.utils.AphTimeout;
-import aphorea.registry.AphBuffs;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameRandom;
@@ -15,8 +15,6 @@ import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.buffs.staticBuffs.Buff;
 import necesse.entity.particle.Particle;
 import necesse.gfx.GameResources;
-
-import java.awt.*;
 
 public class BerserkerRushBuff extends Buff {
     public BerserkerRushBuff() {
