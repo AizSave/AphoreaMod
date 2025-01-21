@@ -1,6 +1,6 @@
 package aphorea.packets;
 
-import aphorea.other.buffs.trinkets.AphBaseRuneTrinketBuff;
+import aphorea.buffs.Runes.AphBaseRuneTrinketBuff;
 import necesse.engine.GameLog;
 import necesse.engine.localization.message.LocalMessage;
 import necesse.engine.network.NetworkPacket;
@@ -18,20 +18,28 @@ import necesse.entity.mobs.buffs.staticBuffs.Buff;
 
 public class AphRunesInjectorAbilityPacket extends Packet {
     public final int slot;
+    public final int mouseLevelX;
+    public final int mouseLevelY;
     public final int buffID;
 
     public AphRunesInjectorAbilityPacket(byte[] data) {
         super(data);
         PacketReader reader = new PacketReader(this);
         this.slot = reader.getNextByteUnsigned();
+        this.mouseLevelX = reader.getNextInt();
+        this.mouseLevelY = reader.getNextInt();
         this.buffID = reader.getNextShortUnsigned();
     }
 
-    public AphRunesInjectorAbilityPacket(int slot, Buff buff) {
+    public AphRunesInjectorAbilityPacket(int slot, int mouseLevelX, int mouseLevelY, Buff buff) {
         this.slot = slot;
+        this.mouseLevelX = mouseLevelX;
+        this.mouseLevelY = mouseLevelY;
         this.buffID = buff.getID();
         PacketWriter writer = new PacketWriter(this);
         writer.putNextByteUnsigned(slot);
+        writer.putNextInt(mouseLevelX);
+        writer.putNextInt(mouseLevelY);
         writer.putNextShortUnsigned(this.buffID);
     }
 
@@ -43,7 +51,7 @@ public class AphRunesInjectorAbilityPacket extends Packet {
                 ActiveBuff buff = target.playerMob.buffManager.getBuff(this.buffID);
                 if (buff != null && buff.buff instanceof AphBaseRuneTrinketBuff) {
                     AphBaseRuneTrinketBuff buffAbility = (AphBaseRuneTrinketBuff)buff.buff;
-                    buffAbility.runClient(client, target.playerMob);
+                    buffAbility.runClient(client, target.playerMob, this.mouseLevelX, this.mouseLevelY);
                 }
             } else {
                 client.network.sendPacket(new PacketRequestPlayerData(this.slot));
@@ -67,8 +75,8 @@ public class AphRunesInjectorAbilityPacket extends Packet {
                         client.sendChatMessage(new LocalMessage("message", error));
                     }
                 } else {
-                    buffAbility.runServer(server, client.playerMob);
-                    server.network.sendToAllClients(new AphRunesInjectorAbilityPacket(this.slot, buff.buff));
+                    buffAbility.runServer(server, client.playerMob, this.mouseLevelX, this.mouseLevelY);
+                    server.network.sendToAllClients(new AphRunesInjectorAbilityPacket(this.slot, this.mouseLevelX, this.mouseLevelY, buff.buff));
                 }
             }
         } else {

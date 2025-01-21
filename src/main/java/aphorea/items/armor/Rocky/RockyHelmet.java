@@ -1,6 +1,6 @@
 package aphorea.items.armor.Rocky;
 
-import aphorea.other.vanillaitemtypes.armor.AphSetHelmetArmorItem;
+import aphorea.items.vanillaitemtypes.armor.AphSetHelmetArmorItem;
 import necesse.engine.modifiers.ModifierValue;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.entity.mobs.Mob;

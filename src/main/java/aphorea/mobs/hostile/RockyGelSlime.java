@@ -1,6 +1,7 @@
 package aphorea.mobs.hostile;
 
-import aphorea.registry.AphBuffs;
+import aphorea.projectiles.mob.RockyGelSlimeLootProjectile;
+import aphorea.projectiles.mob.RockyGelSlimeProjectile;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.server.Server;
 import necesse.engine.network.server.ServerClient;
@@ -8,28 +9,32 @@ import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.*;
 import necesse.entity.mobs.ai.behaviourTree.BehaviourTreeAI;
 import necesse.entity.mobs.ai.behaviourTree.trees.CollisionPlayerChaserWandererAI;
-import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.hostile.HostileMob;
 import necesse.entity.particle.FleshParticle;
 import necesse.entity.particle.Particle;
+import necesse.entity.projectile.Projectile;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawOptions.DrawOptions;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.inventory.lootTable.LootTable;
 import necesse.inventory.lootTable.lootItem.ChanceLootItem;
-import necesse.inventory.lootTable.lootItem.LootItem;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
 
 import java.awt.*;
 import java.util.HashSet;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class RockyGelSlime extends HostileMob {
 
-    public static GameDamage attack = new GameDamage(30);
-    public static int attack_knockback = 50;
+    public static GameDamage collision_damage = new GameDamage(30);
+    public static int collision_knockback = 50;
+
+    public static GameDamage rock_damage = new GameDamage(15);
+    public static int rock_knockback = 25;
 
     @Override
     public boolean isValidSpawnLocation(Server server, ServerClient client, int targetX, int targetY) {
@@ -39,12 +44,11 @@ public class RockyGelSlime extends HostileMob {
     public static GameTexture texture;
 
     public static LootTable lootTable = new LootTable(
-            LootItem.between("rockygel", 1, 4),
             ChanceLootItem.between(0.05f, "unstablecore", 1, 1)
     );
 
     public RockyGelSlime() {
-        super(160);
+        super(220);
         setSpeed(25);
         setFriction(3);
 
@@ -56,7 +60,7 @@ public class RockyGelSlime extends HostileMob {
     @Override
     public void init() {
         super.init();
-        ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 12 * 32, attack, attack_knockback, 40000));
+        ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 12 * 32, collision_damage, collision_knockback, 40000));
     }
 
     @Override
@@ -106,24 +110,52 @@ public class RockyGelSlime extends HostileMob {
     }
 
     @Override
+    public MobWasHitEvent isHit(MobWasHitEvent event, Attacker attacker) {
+        MobWasHitEvent eventResult = super.isHit(event, attacker);
+        if (eventResult != null && attacker != null && attacker.getAttackOwner() != null && !eventResult.wasPrevented && eventResult.damage < this.getHealth()) {
+            Mob attackOwner = attacker.getAttackOwner();
+            throwRock(attackOwner.getX(), attackOwner.getY(), false);
+        }
+
+        return eventResult;
+    }
+
+    @Override
     public int getRockSpeed() {
         return 20;
     }
 
     @Override
-    public void collidedWith(Mob other) {
-        super.collidedWith(other);
-        ActiveBuff buff = new ActiveBuff(AphBuffs.STICKY, other, 1000, this);
-        other.addBuff(buff, true);
-    }
-
-    @Override
     protected void onDeath(Attacker attacker, HashSet<Attacker> attackers) {
         super.onDeath(attacker, attackers);
+        if (isServer()) {
+            float initialAngle = GameRandom.globalRandom.getFloatBetween(0, (float) (2 * Math.PI));
+            int projectiles = 8;
+            AtomicBoolean alreadyLoot = new AtomicBoolean(false);
+            for (int i = 0; i < projectiles; i++) {
+                float angle = initialAngle + i * 2 * (float) Math.PI / projectiles;
+                int targetX = this.getX() + (int) (Math.cos(angle) * 100);
+                int targetY = this.getY() + (int) (Math.sin(angle) * 100);
+                boolean isLoot = GameRandom.globalRandom.getChance(0.25F);
+                if(isLoot) {
+                    if(!alreadyLoot.get()) {
+                        alreadyLoot.set(true);
+                    }
+                } else if(i == 7 && !alreadyLoot.get()) {
+                    isLoot = true;
+                }
+                throwRock(targetX, targetY, isLoot);
+            }
+        }
     }
 
-    @Override
-    public void addBuff(ActiveBuff buff, boolean sendUpdatePacket) {
-        if (buff.buff != AphBuffs.STICKY) super.addBuff(buff, sendUpdatePacket);
+    public void throwRock(int targetX, int targetY, boolean dropRockyGel) {
+        Projectile projectile;
+        if(dropRockyGel) {
+            projectile = new RockyGelSlimeLootProjectile(this, this.x, this.y, targetX, targetY, 40.0F, 640, rock_damage, rock_knockback);
+        } else {
+            projectile = new RockyGelSlimeProjectile(this, this.x, this.y, targetX, targetY, 40.0F, 640, rock_damage, rock_knockback);
+        }
+        this.getLevel().entityManager.projectiles.add(projectile);
     }
 }

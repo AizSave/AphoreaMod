@@ -1,6 +1,6 @@
 package aphorea.items.weapons.summoner;
 
-import aphorea.other.vanillaitemtypes.weapons.AphSummonToolItem;
+import aphorea.items.vanillaitemtypes.weapons.AphSummonToolItem;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.server.FollowPosition;
 import necesse.entity.mobs.PlayerMob;

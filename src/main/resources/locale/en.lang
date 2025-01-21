@@ -3,19 +3,19 @@
 [global]
 aphorea=§!Aphorea Mod
 
-[tile]
-geltile=Gel Floor
-
-[object]
-witchstatue=Witch Statue
 
 [buffmodifiers]
+// Magic Healing
 magichealing=<mod>% magic healing
 magichealingflat=<mod> magic healing
 magichealingreceived=<mod>% magic healing received
 magichealingreceivedflat=<mod> magic healing received
 magichealinggrace=<mod>% magic healing grace
+
+// Area
 arearange=<mod>% area range
+
+// Banner Damage
 # NEW
 bannerdamage=<mod>% banner damage
 bannercritchance=<mod>% banner crit chance
@@ -23,50 +23,151 @@ bannercritdamage=<mod>% banner crit damage
 bannereffect=<mod>% banner effect
 bannerabilityspeed=<mod>% banner ability speed
 
+// Others
+# NEW
+loyal=The dagger is not lost when thrown
+
+
 [stats]
 banner_damage=Banner damage
 
+
 [enchantment]
+// Healing Equipment
 godly=Godly
 absent=Absent
 auxiliary=Auxiliary
 vain=Vain
 gentle=Gentle
 selfish=Selfish
+
+// Healing
 friendly=Friendly
 graceful=Graceful
 wonderful=Wonderful
 ecologic=Ecologic
 exalted=Exalted
 cursed=Cursed
+
+// Area
 booming=Booming
 dimmed=Dimmed
+
+// Others
+# NEW
+loyal=Loyal
+
+
+[tile]
+geltile=Gel Floor
+
+
+[object]
+witchstatue=Witch Statue
+# NEW
+runestable=Runes Table
+
 
 [itemcategory]
 healing=Healing
 healingtools=Healing
+# NEW
+runesinjectors=Runes Injectors
+baserunes=Base Runes
+modifierrunes=Modifier Runes
 
-[itemtype]
-battleaxe=Battleaxe
-saber=Saber
-sling=Sling
-blowgun=Blow Gun
-healingtool=Healing Tool
 
 [item]
-gelball=Gel Ball
+// General Materials
+# NEW
+anybasicfoci=Any Basic Foci
+
+// Materials
 rockygel=Rocky Gel
-gelballgroup=Grouped Gel Balls
-gelsword=Gel Sword
-unstablecore=Unstable Core
 unstablegel=Unstable Gel
+stardust=Stardust
+
+// Consumables
+unstablecore=Unstable Core
+lowdspotion=Lowd's Potion
+# NEW
+initialrune=Initial Rune
+
+// Swords
+gelsword=Gel Sword
 unstablegelsword=Unstable Gel Sword
+broom=Broom
+voidhammer=Void Hammer
+
+// Greatswords
 unstablegelgreatsword=Unstable Gel Greatsword
+
+// Glaives
+woodenrod=Wooden Rod
+
+// Sabers
+saber=Saber
+coppersaber=Copper Saber
+ironsaber=Iron Saber
+goldsaber=Gold Saber
+demonicsaber=Demonic Saber
+unstablegelsaber=Unstable Gel Saber
+
+// Battleaxes
+battleaxe=Battleaxe
+unstablegelbattleaxe=Unstable Gel Battleaxe
+demonicbattleaxe=Demonic Battleaxe
+
+// Daggers
+# NEW
+dagger=Dagger
+copperdagger=Copper Dagger
+irondagger=Iron Dagger
+golddagger=Gold Dagger
+demonicdagger=Demonic Dagger
+tungstendagger=Tungsten Dagger
+
+// Magic weapons
 unstablegelstaff=Unstable Gel Staff
+magicalbroom=Magical Broom
+adeptsbook=Adept's Book
+
+// Greatbows
+gelgreatbow=Gel Greatbow
+unstablegelgreatbow=Unstable Gel Greatbow
+
+// Arrows
+gelarrow=Gel Arrow
+unstablegelarrow=Unstable Gel Arrow
+
+// Slings
 sling=Sling
 firesling=Fire Sling
 frozensling=Frozen Sling
+
+// Blowguns
 blowgun=Blow Gun
+
+// Throw weapons
+gelball=Gel Ball
+gelballgroup=Grouped Gel Balls
+unstablegelveline=Unstable Gelveline
+
+// Summon weapons
+volatilegelstaff=Volatile Gel Staff
+
+// Banners
+# NEW
+blankbanner=Blank Banner
+
+// Healing Tools
+healingtool=Healing Tool
+magicalvial=Magical Vial
+healingstaff=Healing Staff
+woodenwand=Wooden Wand
+goldenwand=Golden Wand
+
+// Trinkets
 rockyperiapt=Rocky Periapt
 unstableperiapt=Unstable Periapt
 bloodyperiapt=Bloody Periapt
@@ -74,60 +175,117 @@ demonicperiapt=Demonic Periapt
 abysmalperiapt=Abysmal Periapt
 frozenperiapt=Frozen Periapt
 necromancyperiapt=Necromancy Periapt
+floralring=Floral Ring
+gelring=Gel Ring
+heartring=Heart Ring
+ringofhealth=Ring of Health
+swampshield=Swamp Shield
+witchmedallion=Witch Medallion
+# NEW
+iceboots=Ice Boots
+bannerbearerfoci=Banner-bearer Foci
+
+// Armor
 rockyboots=Rocky Boots
 rockychestplate=Rocky Chestplate
 rockyhelmet=Rocky Helmet
 goldhat=Gold Hat
-unstablegelbattleaxe=Unstable Gel Battleaxe
-demonicbattleaxe=Demonic Battleaxe
-coppersaber=Copper Saber
-ironsaber=Iron Saber
-goldsaber=Gold Saber
-unstablegelsaber=Unstable Gel Saber
-demonicsaber=Demonic Saber
+pinkwitchhat=Pink Witch Hat
+magicalsuit=Magical Suit
+magicalboots=Magical Boots
+swampboots=Swamp Boots
+swampchestplate=Swamp Chestplate
+swampmask=Swamp Mask
+swamphood=Swamp Hood
+
+// Misc
+gelslimenullifier=Gel Slime Nullifier
+cuberry=Cuberry
+
+// Backpacks
 basicbackpack=Basic Backpack
 sapphirebackpack=Sapphire Backpack
 amethystbackpack=Amethyst Backpack
 rubybackpack=Ruby Backpack
 emeraldbackpack=Emerald Backpack
 diamondbackpack=Diamond Backpack
-gelslimenullifier=Gel Slime Nullifier
-broom=Broom
-magicalbroom=Magical Broom
-pinkwitchhat=Pink Witch Hat
-magicalsuit=Magical Suit
-magicalboots=Magical Boots
-stardust=Stardust
-magicalvial=Magical Vial
-healingstaff=Healing Staff
-floralring=Floral Ring
-gelring=Gel Ring
-heartring=Heart Ring
-ringofhealth=Ring of Health
-swampboots=Swamp Boots
-swampchestplate=Swamp Chestplate
-swampmask=Swamp Mask
-swamphood=Swamp Hood
-swampshield=Swamp Shield
-woodenrod=Wooden Rod
-woodenwand=Wooden Wand
-witchmedallion=Witch Medallion
-lowdspotion=Lowd's Potion
-adeptsbook=Adept's Book
-goldenwand=Golden Wand
-unstablegelarrow=Unstable Gel Arrow
-gelarrow=Gel Arrow
-unstablegelgreatbow=Unstable Gel Greatbow
-gelgreatbow=Gel Greatbow
-voidhammer=Void Hammer
-unstablegelveline=Unstable Gelveline
-cuberry=Cuberry
-volatilegelstaff=Volatile Gel Staff
+
+// Runes Injectors
 # NEW
-blankbanner=Blank Banner
-bannerbearerfoci=Banner-bearer Foci
+runesinjector=Runes Injector
+rusticrunesinjector=Rustic Runes Injector
+unstablerunesinjector=Unstable Runes Injector
+demonicrunesinjector=Demonic Runes Injector
+tungstenrunesinjector=Tungsten Runes Injector
+ancientrunesinjector=Ancient Runes Injector
+
+// Base Runes Tier 0
+# NEW
+baserune=Base Rune
+runeoffury=Rune of Fury
+runeofspeed=Rune of Speed
+runeofhealing=Rune of Healing
+runeofresistance=Rune of Resistance
+runeofvalor=Rune of Valor
+runeofdetonation=Rune of Detonation
+runeofthunder=Rune of Thunder
+runeofwinter=Rune of Winter
+runeofshadows=Rune of Shadows
+runeofimmortality=Rune of Immortality
+
+// Base Runes Tier 1
+# NEW
+runeofunstablegelslime=Rune of Unstable Gel Slime
+runeofevilsprotector=Rune of Evil's Protector
+runeofqueenspider=Rune of Queen Spider
+runeofvoidwizard=Rune of Void Wizard
+runeofswampguardian=Rune of Swamp Guardian
+runeofancientvulture=Rune of Ancient Vulture
+runeofpiratecaptain=Rune of Pirate Captain
+
+// Base Runes Tier 2
+# NEW
+runeofreaper=Rune of Reaper
+runeofcryoqueen=Rune of Cryo Queen
+runeofpestwarden=Rune of Pest Warden
+runeofsageandgrit=Rune of Sage & Grit
+runeoffallenwizard=Rune of Fallen Wizard
+
+// Base Runes Tier 3
+# NEW
+runeofmotherslime=Rune of Mother Slime
+runeofnightswarm=Rune of Night Swarm
+runeofspiderempress=Rune of Spider Empress
+runeofsunlightchampion=Rune of Sunlight Champion
+runeofmoonlightdancer=Rune of Moonlight Dancer
+runeofcrystaldragon=Rune of Crystal Dragon
+
+// Modifier Runes Tier 0
+# NEW
+modifierrune=Modifier Rune
+empoweringrune=Empowering Rune
+recurrentrune=Recurrent Rune
+
+// Modifier Runes Tier 1
+# NEW
+frenzyrune=Frenzy Rune
+vitalrune=Vital Rune
+devastatingrune=Devastating Rune
+onyxrune=Onyx Rune
+pawningrune=Pawning Rune
+
+// Modifier Runes Tier 2
+# NEW
+abysmalrune=Abysmal Rune
+tidalrune=Tidal Rune
+
+// Modifier Runes Tier 3
+# NEW
+ascendantrune=Ascendant Rune
+
 
 [itemtooltip]
+// Stat tips
 line=--------------------
 magichealingtip=Magic healing: §7<health>
 rangetip=Range: §9<range>
@@ -138,8 +296,23 @@ areabuff=Apply <buff> to allys
 areadebuff=Apply <buff> to enemies
 areabuffdisplay=<buff> for <duration> seconds
 
+// Mechanics
 magichealinggrace=§aMagic Healing Grace:§0 Heals yourself with a % of the §9[Magic Healing]§0 intended for allies
 
+// Misc
+gelslimenullifier=They will stop bothering you with a simple click!
+# NEW
+enchantingscrollhealingequipmenttip=Used to enchant an healing equipment item with <enchantment>\n§!Aphorea Mod
+enchantingscrollhealingtip=Used to enchant an healing tool with <enchantment>\n§!Aphorea Mod
+enchantingscrollareatip=Used to enchant an area-effect tool with <enchantment>\n§!Aphorea Mod
+enchantingscrolldaggertip=Used to enchant a dagger weapon with <enchantment>\n§!Aphorea Mod
+
+// Consumables
+deleteditem=This item has been removed, use this item to recover the materials before it is permanently removed
+unstablecore=§bReleases an unstable aura...§0 Can only be used during the day
+lowdspotion=DO NOT DRINK THIS
+
+// General Weapons & Tools
 saber=Quick charge dealing x2 damage after 0.5 seconds, then discharges over another 0.5 seconds
 saber2=A perfect attack will launch an aircut that deals base damage. A good one will also launch a weak one
 saber3=Hold [input=mouse2] to charge up a dash to slice through enemies dealing base damage
@@ -152,56 +325,178 @@ areasecondaryattack=[input=mouse2] to perform an area attack consuming <mana> Ma
 stikybuff1=Makes the enemy §9Sticky§0 for 1 second
 stikybuff2=Makes the enemy §9Sticky§0 for 2 seconds
 stikybuff3=Makes the enemy §9Sticky§0 for 3 seconds
-gelball=Throws a gel ball
-unstablecore=§bReleases an unstable aura...§0 Can only be used during the day
-rockyperiapt=+5 Armor, but -5% Movement Speed
-rockyperiapt2=Press [input=trinketability] to gain 10 Armor for 10 seconds\nYou cannot take damage or move while activating the ability
-unstableperiapt=Calls two §bBaby Unstable Gel Slimes§0 who will protect you. These slimes §9deal 8 Summoner Damage§0
-unstableperiapt2=Makes you immune to the §9Sticky§0 debuff
-bloodyperiapt=Press [input=trinketability] to gain +50% Speed, +30% Attack Speed, and\nthe weapons §6Blood Bolt§0 and §6Blood Volley§0 will heal you for 5% of the damage you deal with them.\nYou cannot take damage or move while activating the ability
-demonicperiapt=Press [input=trinketability] to gain +50% Speed, +30% Attack Speed, and\nmagic weapons will heal you for 5% of the damage you deal with them for 10 seconds.\nYou cannot take damage or move while activating the ability
-abysmalperiapt=Magic weapons will heal you for 5% of the damage you deal with them
-necromancyperiapt=Every time you or one of your summons kills a hostile mob you summon a §bUndead Skeleton§0\n that §9deals 20 Summoner Damage§0 for§9 10 seconds§0 with a maximum of§9 3 at a time§0
-frozenperiapt=Melee and Ranged weapons will §6Freeze§0 for 3 seconds. If the target is already frozen, increases the base Damage of the attack by §9+20%§0
-frozenperiapt2=Press [input=trinketability] to gain +50% Speed, +30% Attack Speed and\nmake this work with all damage for 10 seconds.\nYou cannot take damage or move while activating the ability
-frozenperiapt3=Makes you immune to the §9Freeze§0 and §9Frostslow§0 debuffs
-goldhatsetbonus=+60% Ranged Attack Speed while you are not moving
-firesling=Burns the enemies
-frozensling=Freezes the enemies
 backpack=It is a new inventory that stores all the items you collect
 backpack2=§6Do not have backpacks with items in the inventory when you are going to create a better backpack
 backpackslots=Capacity of <slots> items
 stored=Stored items: <items>
-gelslimenullifier=They will stop bothering you with a simple click!
+twoarrows=Shoots two arrows at once
+threearrows=Shoots three arrows at once
+projectilearea=When the projectile ends, it deals area damage
+# NEW
+blowgun=Shoots seeds
+
+// Single Weapons & Tools
+gelball=Throws a gel ball
+firesling=Burns the enemies
+frozensling=Freezes the enemies
+magicalvial=§9[Magic Healing]§0 of §7<healing>§0. Point at an injured human to heal them, don't point at anyone to heal yourself. 20-second cooldown
+woodenrod=Self §9[Magic Healing]§0 with §7<healing>§0 every 10 attacks
+voidhammer=When the projectile bounces or hits an enemy, it targets the nearest one, hitting up to 3 times
+unstablegelstaff=When projectiles bounces off walls, they duplicate
+gelgreatbow=Turns Stone Arrows into Gel Arrows
+unstablegelgreatbow=Turns Stone Arrows and Gel Arrows into Unstable Gel Arrows
+# NEW
+woodenwand=Shots a §9[Magic Healing]§0 projectile
+goldenwand=Shots a projectile that ends with a §9[Magic Healing]§0 area
+
+// Tiles & Objects
 geltile=Sticky floor that greatly slows down everything on top
-pinkwitchsetbonus=Increases Magic Attack Speed, Mana Regeneration, and Armor as you have less life, with a maximum of 50% / 6 Armor
+witchstatue=Placing this statue on the surface of a swamp will eliminate witch spawn throughout the island
+
+// Trinkets
+rockyperiapt=+5 Armor, but -5% Movement Speed
+rockyperiapt2=Press [input=trinketability] to gain 10 Armor for 10 seconds\nYou cannot take damage or move while activating the ability
+unstableperiapt=Calls two §bBaby Unstable Gel Slimes§0 who will protect you. These slimes §9deal 8 Summoner Damage§0
+unstableperiapt2=Makes you immune to the §9Sticky§0 debuff
+bloodyperiapt=Press [input=trinketability] to gain +50% Speed, +30% Attack Speed, and\nthe weapons §6Blood Bolt§0 and §6Blood Volley§0 will heal you for 5% of the damage you deal with them\nYou cannot take damage or move while activating the ability
+demonicperiapt=Press [input=trinketability] to gain +50% Speed, +30% Attack Speed, and\nmagic weapons will heal you for 5% of the damage you deal with them for 10 seconds\nYou cannot take damage or move while activating the ability
+abysmalperiapt=Magic weapons will heal you for 5% of the damage you deal with them
+necromancyperiapt=Every time you or one of your summons kills a hostile mob you summon a §bUndead Skeleton§0\n that §9deals 20 Summoner Damage§0 for§9 10 seconds§0 with a maximum of§9 3 at a time§0
+frozenperiapt=Melee and Ranged weapons will §9Freeze§0 for 3 seconds. If the target is already frozen, increases the base Damage of the attack by §9+20%§0
+frozenperiapt2=Press [input=trinketability] to gain +50% Speed, +30% Attack Speed and\nmake this work with all damage for 10 seconds\nYou cannot take damage or move while activating the ability
+frozenperiapt3=Makes you immune to the §9Freeze§0 and §9Frostslow§0 debuffs
 floralring=Self §9[Magic Healing]§0 with §7<healing>§0 every 5 seconds
 gelring=+30% §9[Magic Healing]§0 received
 heartring=+20 max health
-magicalvial=§9[Magic Healing]§0 of §7<healing>§0. Point at an injured human to heal them, don't point at anyone to heal yourself. 20-second cooldown
 swampshield=Only protects attacks in the direction they are received\nSelf §9[Magic Healing]§0 with the §7<healing>§0 of the damage you prevent
-witchstatue=Placing this statue on the surface of a swamp will eliminate Pink Witch spawn throughout the island
-deleteditem=This item has been removed, use this item to recover the materials before it is permanently removed
-woodenrod=Self §9[Magic Healing]§0 with §7<healing>§0 every 10 attacks
 witchmedallion=Deals 15 Area Damage for every 20 §9[Magic Healing]§0 done
-lowdspotion=DO NOT DRINK THIS
-projectilearea=When the projectile ends, it deals area damage
-voidhammer=When it bounces or hits an enemy, it targets the nearest one, hitting up to 3 times
-unstablegelstaff=When it bounces off walls, it duplicates
-twoarrows=Shoots two arrows at once
-threearrows=Shoots three arrows at once
-gelgreatbow=Turns Stone Arrows into Gel Arrows
-unstablegelgreatbow=Turns Stone Arrows and Gel Arrows into Unstable Gel Arrows
-strikebannereffect=+<effect>% life regeneration (in and out of combat)
-strikebannerability=Every <time> seconds: Performs an area attack
+# NEW
+bannerbearerfoci1=§7+40%§0 banner effect and §7+20%§0 banner ability speed
+bannerbearerfoci2=§6-20%§0 all non-banner damage and §6-1§0 max summons
+iceboots=Makes you slide as if you were on ice, but grants +50% movement speed and +4 armor
+
+// Set Bonus
+goldhatsetbonus=+60% Ranged Attack Speed while you are not moving
+pinkwitchsetbonus=Increases Magic Attack Speed, Mana Regeneration, and Armor as you have less life, with a maximum of 50% / 6 Armor
+
+// Banners
+strikebannereffect=§7+<effect>%§0 life regeneration (in and out of combat)
+strikebannerability=§aEvery <time> seconds:§0 Performs an area attack
 # NEW
 blankbannereffect=§7+<effect>%§0 life regeneration (out of combat)
 blankbannerability=§aEvery <time> seconds:§0 Performs an area healing
-bannerbearerfoci1=§7+40%§0 banner effect and §7+20%§0 banner ability speed
-bannerbearerfoci2=§6-20%§0 all non-banner damage and §6-1§0 max summons
+bannerofdamageeffect=§7+<effect>%§0 damage
+bannerofdefenseeffect=§7-<effect>%§0 incoming damage
+bannerofspeedeffect=§7+<effect>%§0 movement speed
+bannerofsummonspeedeffect=§7+<effect>%§0 summon movement speed
+
+// Runes (General)
+# NEW
+baserune=§iBase Rune
+modifierrune=§aModifier Rune
+linkedrune=§bRune linked to [<player>]
+notruneowner=You are not the Base Rune owner
+runesslots=Can insert up to 1 Base Rune + <modifierslots> Modifier Runes
+useruneinfusor=[input=runesinjectorability] to active
+requiresbaserune=Requires a base rune inserted
+onlyonebaserune=Only one base rune can be inserted at a time
+duplicatedmodifierrunes=Cannot insert more than one of the same modifier rune
+runehealthcost=Consumes <health>% of max health upon activation
+runehealthhealing=Restores <health>% of max health when used
+runecooldown=Recharges in <seconds> seconds
+increaseruneeffectnumber=Increases the effect by §7<variation>%§0
+decreaseruneeffectnumber=Decreases the effect by §6<variation>%§0
+increaserunecooldown=Increases the cooldown by §6<variation>%§0
+decreaserunecooldown=Decreases the cooldown by §7<variation>%§0
+increaserunehealthcost=Increases the consumption of max health by §6<health>%§0
+increaserunehealthhealing=Increases the restoration of max health by §7<health>%§0
+runedamagereduction=The damage is drastically reduced against humans and even more against bosses
+runedamagereductionnoboss=The damage is drastically reduced against humans and don't affect bosses
+moreextraeffectmod=Effect modifications are <mod>% more effective
+lessextraeffectmod=Effect modifications are <mod>% less effective
+
+// Runes Injectors
+
+// Base Runes Tier 0
+# NEW
+runeoffury=Increase your damage and attack speed by §7<effectNumber>§0% for 10 seconds
+runeofspeed=Dash with §7<effectNumber>§0 strength in the direction you are moving and become invincible for 0.5 seconds
+runeofhealing=Increases the restoration of max health by §7<effectNumber>§0%
+runeofresistance=Increases your armor by §7<effectNumber>§0% for 10 seconds
+runeofresistance2=While on cooldown, your armor is reduced by half
+runeofvalor=Doubles the effects of banners you carry and doubles their ability speed for §7<effectNumber>§0 seconds
+runeofdetonation=Explodes, dealing more damage and knocking back enemies the closer they are
+runeofdetonation2=The maximum damage is §7<effectNumber>§0% of the mobs' max health as damage
+runeofthunder=After two seconds, a lightning strikes your cursor's initial position
+runeofthunder2=The lightning deals §7<effectNumber>§0% of the mobs' health as damage and stun for 2 seconds
+runeofwinter=Frost-slows enemies within a 500 range for §7<effectNumber>§0 seconds
+runeofimmortality=If you die within the next §7<effectNumber>§0 seconds, you will survive with max health
+runeofimmortality2=If this happens, you will be immortal for 3 seconds, but the cooldown will be 30 seconds
+runeofimmortality3=While on cooldown, your max health is reduced by half
+runeofshadows=For §7<effectNumber>§0 seconds, you will become invisible but also intimidated, preventing you from taking any actions
+
+// Base Runes Tier 1
+# NEW
+runeofunstablegelslime=Teleport to a nearby location and summon 2 Runic Unstable Gel Slimes for §7<effectNumber>§0 seconds
+runeofunstablegelslime2=The summons will deal 5% of the mobs' maximum health as damage
+runeofevilsprotector=+§7<effectNumber>§0% attack speed, but -50% movement speed for 10 seconds
+runeofevilsprotector2=During the night on the surface, the positive effect is doubled
+runeofqueenspider=Leaves a spider web on the ground for §7<effectNumber>§0 seconds
+runeofvoidwizard=All projectiles will bounce infinitely and +§7<effectNumber>§0% projectile speed for 10 seconds
+runeofswampguardian=Reduces all damage taken by 80% for §7<effectNumber>§0 seconds
+runeofancientvulture=Summons a Runic Vulture Hatchling for 10 seconds
+runeofancientvulture2=The summon will deal §7<effectNumber>§0% of the mobs' maximum health as damage
+runeofpiratecaptain=Increase your Damage by §7<effectNumber>§0% for every 200 coins you have, up to a maximum of 20,000 coins
+runeofpiratecaptain2=Each time you attack, you will lose 3 coins
+
+// Base Runes Tier 2
+# NEW
+runeofreaper=Teleport to the position of your mouse. Maximum §7<effectNumber>§0 distance
+runeofcryoqueen=Stop for 1 second and launch an ice attack around you with §7<effectNumber>§0 range
+runeofcryoqueen2=The projectiles will deal 200% of the mobs' maximum health as damage
+runeofpestwarden=You move at high speed towards the position of your mouse for §7<effectNumber>§0 seconds. You cannot attack
+runeofpestwarden2=All received attacks deal 1 damage, and colliding with enemies deals 20% of their max health
+runeofsageandgrit=If there are damaged allies nearby (500 range), heal §7<effectNumber>§0% of their total health
+runeofsageandgrit2=If not, increase your damage, attack speed and movement speed by +§7<effectNumber>§0% for 20 seconds
+runeoffallenwizard=Stun all mobs' except for you for §7<effectNumber>§0 seconds
+runeoffallenwizard2=Humans will break free faster, and bosses even faster
+
+// Base Runes Tier 3
+# NEW
+runeofmotherslime=Perform a large leap towards your mouse position and deal area damage upon landing
+runeofmotherslime2=The lading will deal §7<effectNumber>§0% of the mobs' maximum health as damage
+runeofnightswarm=Summon 5 bats for §7<effectNumber>§0 seconds that seek out hostile mobs to bite them
+runeofnightswarm2=Each bite restores 1% of your total health (at least 1)
+runeofspiderempress=Throws §7<F0effectNumber>§0 web balls in the direction of your mouse
+runeofspiderempress2=The web balls will stun for 3 seconds and slow down for 10 seconds
+runeofsunlightchampion=Get stuned for 3 seconds charging a nova of §7<effectNumber>§0 range
+runeofsunlightchampion2=The nova will deal 200% of the mobs' maximum health as damage
+runeofmoonlightdancer=+§7<effectNumber>§0% damage for every +1% movement speed for 10 seconds
+runeofcrystaldragon=Throw a laser beam in your cursor position for 5 seconds
+runeofcrystaldragon2=The laser will deal §7<effectNumber>§0% of the mobs' maximum health as damage
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+# NEW
+onyxrune=When activated, summons Onyx for 5 seconds. It will deal damage based on 5% of the mob's health
+onyxrune2=Each bite from Onyx restores 1% of your total health (at least 1)
+onyxrune3=§3Thanks Onyx for the brilliant rune ideas! <3
+pawningrune=When activated, if you don't already have the effect, immediately restores 20% of your maximum health
+pawningrune2=After 10 seconds, you will lose the amount restored plus an additional 40%
+
+// Modifier Runes Tier 2
+# NEW
+abysmalrune=When activated, summons a black hole at your cursor position, pulling enemies in for 2 seconds
+abysmalrune2=The black hole will only summon if 10 seconds have passed since the last activation
+tidalrune=When activated, summons a wave of water that pushes enemies away
+
+// Modifier Runes Tier 3
+
 
 [mobtooltip]
 usenet=Use a Net! [item=net]
+
 
 [mob]
 gelslime=Gel Slime
@@ -215,17 +510,34 @@ voidadept=Void Adept
 volatilegelslime=Volatile Gel Slime
 wildphosphorslime=Wild Phosphor Slime
 petphosphorslime=Phosphor Slime
+# NEW
+copperdaggergoblin=Copper Dagger Goblin
+irondaggergoblin=Iron Dagger Goblin
+golddaggergoblin=Gold Dagger Goblin
+runicunstablegelslime=Runic Unstable Gel Slime
+runicvulturehatchling=Runic Vulture Hatchling
+runicbat=Runic Bat
+onyx=Onyx
+
 
 [buff]
-stunStunned
-stickySticky
-berserkerrushBerserker Rush
-berserkerrushcooldownBerserker Rush on Cooldown
-swordchargeattackcooldown=Sword Charge Attack on Cooldown
-periaptcooldownPeriapt Ability on Cooldown
-periaptactivePeriapt Ability Active
+stun=Stunned
+sticky=Sticky
+berserkerrush=Berserker Rush
+berserkerrushcooldown=Berserker Rush on Cooldown
+spinattackcooldown=Spin Attack on Cooldown
+periaptcooldown=Periapt Ability on Cooldown
+periaptactive=Periapt Ability Active
 saberdashcooldown=Dash Cooldown
 lowdspoison=Lowd's Poison
+# NEW
+stop=Stopped
+immortal=Immortal
+immortalcooldown=Immortal Cooldown
+fallenstun=Fallen Stun
+runesinjectoractive=Runes Injector Active
+runesinjectorcooldown=Runes Injector Cooldown
+
 
 [message]
 unstablegelslime_anger=§6Unstable Gel Slime is getting angry... <anger>/10
@@ -241,8 +553,20 @@ healthalreadyfull=Health is already full
 cantheal=Can't heal
 pickupenabledinventoryfull=Pickup cannot be disabled because inventory is full
 itoldyou=I told you
+# NEW
+insuficienthealth=Insufficient health to perform this action!
+cannottrhowlockeditem=You cannot throw an inventory-locked item
+initialrunetip=Choose your initial rune carefully;\nyou won't obtain the others until later in the game
+alreadyselectedinitialrune=Already selected initial rune
+cannotusetrial=Cannot use in trial rooms
+
 
 [journal]
 killgelslimesforest=[mob=gelslime] Kill 25 Gel Slimes in the forest
 pickupfloralring=[item=floralring] Cut a lot of grass in the forest to obtain the Floral Ring
 killunstablegelslime=[mob=unstablegelslime] Kill 1 Unstable Gel Slime
+
+
+[controls]
+# NEW
+runesinjectorability=Runes Injector Ability

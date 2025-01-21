@@ -3,6 +3,7 @@ package aphorea.mobs.summon;
 import aphorea.registry.AphBuffs;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.util.GameRandom;
+import necesse.engine.util.GameUtils;
 import necesse.entity.levelEvent.explosionEvent.BombExplosionEvent;
 import necesse.entity.levelEvent.explosionEvent.ExplosionEvent;
 import necesse.entity.mobs.Mob;
@@ -37,9 +38,8 @@ public class VolatileGelSlime extends AttackingFollowingMob {
         selectBox = new Rectangle(-14, -7 - 14, 28, 28);
     }
 
-    int time = 0;
     int explosionTime = 0;
-    int maxExplosionTime = (int) Math.floor(Math.random() * 11) + 15;
+    int maxExplosionTime = GameRandom.globalRandom.getIntBetween(17, 23);
 
     public void init() {
         super.init();
@@ -55,10 +55,6 @@ public class VolatileGelSlime extends AttackingFollowingMob {
                 doExplosion();
             }
         }
-        time++;
-        if(time > 1200) {
-            time = 0;
-        }
     }
 
     @Override
@@ -67,22 +63,20 @@ public class VolatileGelSlime extends AttackingFollowingMob {
         if(!this.removed() && this.explosionTime > 0) {
             this.explosionTime++;
         }
-        time++;
-        if(time > 1200) {
-            time = 0;
-        }
     }
 
     public void spawnDeathParticles(float knockbackX, float knockbackY) {
-        for (int i = 0; i < 4; i++) {
-            getLevel().entityManager.addParticle(new FleshParticle(
-                    getLevel(), texture,
-                    GameRandom.globalRandom.nextInt(5),
-                    8,
-                    32,
-                    x, y, 20f,
-                    knockbackX, knockbackY
-            ), Particle.GType.IMPORTANT_COSMETIC);
+        if(texture != null) {
+            for (int i = 0; i < 4; i++) {
+                getLevel().entityManager.addParticle(new FleshParticle(
+                        getLevel(), texture,
+                        GameRandom.globalRandom.nextInt(5),
+                        8,
+                        32,
+                        x, y, 20f,
+                        knockbackX, knockbackY
+                ), Particle.GType.IMPORTANT_COSMETIC);
+            }
         }
     }
 
@@ -113,15 +107,9 @@ public class VolatileGelSlime extends AttackingFollowingMob {
     }
 
     public Point getAnimSprite(int x, int y, int dir) {
-        Point p = new Point(0, dir);
-        int animTime = time * 5;
-        if (this.inLiquid(x, y)) {
-            p.x = 4 + (animTime % 2);
-        } else {
-            p.x = animTime % 4;
-        }
-
-        return p;
+        int animTime = 200;
+        int spriteX = this.inLiquid(x, y) ? 4 + GameUtils.getAnim(this.getWorldEntity().getTime(), 2, animTime) : GameUtils.getAnim(this.getWorldEntity().getTime(), 4, animTime);
+        return new Point(spriteX, dir);
     }
 
     @Override
@@ -140,7 +128,7 @@ public class VolatileGelSlime extends AttackingFollowingMob {
     }
 
     public void doExplosion() {
-        this.spawnDeathParticles((float) Math.random() * 1200 - 600, (float) Math.random() * 1200 - 600);
+        this.spawnDeathParticles(GameRandom.globalRandom.getFloatBetween(-600, 600), GameRandom.globalRandom.getFloatBetween(-600, 600));
         this.remove();
 
         if (damage != null) {

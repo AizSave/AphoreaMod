@@ -18,6 +18,8 @@ public class AphModifiers {
 
     public static final Modifier<Float> TOOL_AREA_RANGE;
 
+    public static final Modifier<Boolean> LOYAL;
+
     public static final Modifier<Float> BANNER_DAMAGE;
     public static final Modifier<Float> BANNER_CRIT_CHANCE;
     public static final Modifier<Float> BANNER_CRIT_DAMAGE;
@@ -37,6 +39,8 @@ public class AphModifiers {
         TOOL_MAGIC_HEALING_GRACE = new Modifier<>(ToolItemModifiers.LIST, "magichealinggrace", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> Math.max(0.0F, v), Modifier.NORMAL_PERC_PARSER("magichealinggrace"), ModifierLimiter.NORMAL_PERC_LIMITER("magichealinggrace"));
 
         TOOL_AREA_RANGE = new Modifier<>(ToolItemModifiers.LIST, "arearange", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> Math.max(0.0F, v), Modifier.NORMAL_PERC_PARSER("arearange"), ModifierLimiter.NORMAL_PERC_LIMITER("arearange"));
+
+        LOYAL = new Modifier<>(ToolItemModifiers.LIST, "loyal", false, false, Modifier.OR_APPEND, Modifier.BOOL_PARSER("loyal"), null);
 
         BANNER_DAMAGE = new Modifier<>(BuffModifiers.LIST, "bannerdamage", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> v, Modifier.NORMAL_PERC_PARSER("bannerdamage"), ModifierLimiter.NORMAL_PERC_LIMITER("bannerdamage"));
         BANNER_CRIT_CHANCE = new Modifier<>(BuffModifiers.LIST, "bannercritchance", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> v, Modifier.NORMAL_PERC_PARSER("bannercritchance"), ModifierLimiter.NORMAL_PERC_LIMITER("bannercritchance"));

@@ -1,5 +1,6 @@
 package aphorea.buffs.Trinkets.Periapts;
 
+import aphorea.utils.AphColors;
 import necesse.engine.localization.Localization;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.util.GameRandom;
@@ -28,7 +29,7 @@ public class AbysmalPeriaptBuff extends TrinketBuff {
     }
 
     public void onHasAttacked(ActiveBuff buff, MobWasHitEvent event) {
-        if (!event.wasPrevented) {
+        if (!event.wasPrevented && event.target.isHostile) {
             Mob owner = event.attacker.getAttackOwner();
             if (event.damageType.equals(DamageTypeRegistry.MAGIC)) {
                 int heal = (int) Math.ceil(event.damage * 0.05F);
@@ -43,7 +44,7 @@ public class AbysmalPeriaptBuff extends TrinketBuff {
                         int angle = (int) (360.0F + GameRandom.globalRandom.nextFloat() * 360.0F);
                         float dx = (float) Math.sin(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
                         float dy = (float) Math.cos(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
-                        owner.getLevel().entityManager.addParticle(owner, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(dx, dy, 0.8F).color(i % 3 == 0 ? new Color(26, 27, 28) : new Color(204, 0, 0)).heightMoves(10.0F, 30.0F).lifeTime(500);
+                        owner.getLevel().entityManager.addParticle(owner, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(dx, dy, 0.8F).color(GameRandom.globalRandom.getOneOf(AphColors.paletteDeepDemonic)).heightMoves(10.0F, 30.0F).lifeTime(500);
                     }
                 }
             }

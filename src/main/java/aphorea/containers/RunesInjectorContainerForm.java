@@ -4,6 +4,7 @@ import necesse.engine.Settings;
 import necesse.engine.network.client.Client;
 import necesse.gfx.forms.components.FormFlow;
 import necesse.gfx.forms.components.FormLabelEdit;
+import necesse.gfx.forms.components.containerSlot.FormContainerSlot;
 import necesse.gfx.forms.presets.containerComponent.ContainerForm;
 import necesse.gfx.gameFont.FontOptions;
 import necesse.inventory.InventoryItem;
@@ -11,7 +12,7 @@ import necesse.inventory.item.miscItem.InternalInventoryItemInterface;
 
 public class RunesInjectorContainerForm<T extends RunesInjectorContainer> extends ContainerForm<T> {
     public FormLabelEdit label;
-    public RuneContainerSlot[] slots;
+    public FormContainerSlot[] slots;
 
 
     public RunesInjectorContainerForm(Client client, final T container) {
@@ -28,17 +29,17 @@ public class RunesInjectorContainerForm<T extends RunesInjectorContainer> extend
     }
 
     protected void addSlots(FormFlow flow) {
-        this.slots = new RuneContainerSlot[(this.container).INVENTORY_END - (this.container).INVENTORY_START + 1];
+        this.slots = new FormContainerSlot[(this.container).INVENTORY_END - (this.container).INVENTORY_START + 1];
         int currentY = flow.next();
 
-        for(int i = 0; i < this.slots.length; ++i) {
+        for (int i = 0; i < this.slots.length; ++i) {
             int slotIndex = i + (this.container).INVENTORY_START;
             int x = i % 10;
             if (x == 0) {
                 currentY = flow.next(40);
             }
 
-            this.slots[i] = this.addComponent(new RuneContainerSlot(this.client, this.container, slotIndex, 4 + x * 40, currentY));
+            this.slots[i] = this.addComponent(new FormContainerSlot(this.client, this.container, slotIndex, 4 + x * 40, currentY));
         }
     }
 }

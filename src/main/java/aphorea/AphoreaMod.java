@@ -1,61 +1,43 @@
 package aphorea;
 
 import aphorea.buffs.LowdsPoisonBuff;
-import aphorea.buffs.Trinkets.Healing.WitchMedallionBuff;
-import aphorea.items.banners.BlankBannerItem;
-import aphorea.items.banners.StrikeBannerItem;
+import aphorea.data.AphSwampLevelData;
+import aphorea.data.AphWorldData;
 import aphorea.items.healingtools.HealingStaff;
-import aphorea.items.weapons.magic.AdeptsBook;
-import aphorea.items.weapons.magic.MagicalBroom;
-import aphorea.items.weapons.magic.UnstableGelStaff;
-import aphorea.mobs.bosses.MiniUnstableGelSlime;
-import aphorea.mobs.bosses.UnstableGelSlime;
+import aphorea.items.weapons.melee.saber.AphSaberToolItem;
+import aphorea.journal.AphJournalChallenges;
+import aphorea.levelevents.*;
 import aphorea.mobs.friendly.WildPhosphorSlime;
-import aphorea.mobs.hostile.GelSlime;
-import aphorea.mobs.hostile.PinkWitch;
-import aphorea.mobs.hostile.RockyGelSlime;
-import aphorea.mobs.hostile.VoidAdept;
-import aphorea.mobs.pet.PetPhosphorSlime;
-import aphorea.mobs.summon.BabyUnstableGelSlime;
-import aphorea.mobs.summon.UndeadSkeleton;
-import aphorea.mobs.summon.VolatileGelSlime;
+import aphorea.objects.RunesTable;
 import aphorea.objects.WitchStatue;
-import aphorea.other.buffs.trinkets.AphBaseRuneTrinketBuff;
-import aphorea.other.data.AphSwampLevelData;
-import aphorea.other.data.AphWorldData;
-import aphorea.other.itemtype.weapons.AphSaberToolItem;
-import aphorea.other.journal.AphJournalChallenges;
 import aphorea.packets.AphCustomPushPacket;
+import aphorea.packets.AphRuneOfUnstableGelSlimePacket;
 import aphorea.packets.AphRunesInjectorAbilityPacket;
-import aphorea.projectiles.arrow.GelArrowProjectile;
-import aphorea.projectiles.arrow.UnstableGelArrowProjectile;
-import aphorea.projectiles.mob.PinkWitchProjectile;
-import aphorea.projectiles.toolitem.*;
+import aphorea.packets.AphSingleAreaShowPacket;
+import aphorea.projectiles.toolitem.GelProjectile;
 import aphorea.registry.*;
 import aphorea.tiles.GelTile;
-import necesse.engine.GlobalData;
-import necesse.engine.input.Control;
-import necesse.engine.input.InputEvent;
-import necesse.engine.input.InputID;
+import aphorea.utils.AphColors;
+import aphorea.utils.AphResources;
 import necesse.engine.journal.JournalEntry;
 import necesse.engine.modLoader.annotations.ModEntry;
-import necesse.engine.network.client.Client;
 import necesse.engine.registries.*;
-import necesse.engine.state.MainGame;
-import necesse.entity.mobs.PlayerMob;
-import necesse.gfx.gameTexture.GameTexture;
+import necesse.entity.mobs.hostile.*;
+import necesse.entity.mobs.hostile.bosses.*;
+import necesse.entity.mobs.hostile.pirates.PirateCaptainMob;
 import necesse.inventory.item.ItemCategory;
 import necesse.inventory.lootTable.LootTable;
 import necesse.inventory.lootTable.LootTablePresets;
 import necesse.inventory.lootTable.lootItem.ChanceLootItem;
 import necesse.inventory.lootTable.lootItem.LootItem;
 import necesse.inventory.lootTable.lootItem.LootItemList;
+import necesse.inventory.lootTable.presets.DeepCaveChestLootTable;
+import necesse.inventory.lootTable.presets.DeepCaveRuinsLootTable;
 import necesse.level.maps.biomes.Biome;
 import necesse.level.maps.biomes.dungeon.DungeonBiome;
-import necesse.level.maps.biomes.forest.ForestBiome;
 import necesse.level.maps.biomes.swamp.SwampBiome;
 
-import java.awt.*;
+import java.util.Objects;
 
 @ModEntry
 public class AphoreaMod {
@@ -80,113 +62,92 @@ public class AphoreaMod {
 
         // Item Category
         ItemCategory.createCategory("A-A-E", "equipment", "tools", "healing");
+        ItemCategory.createCategory("A-F-A", "misc", "runes");
+        ItemCategory.createCategory("A-F-A", "misc", "runes", "baserunes");
+        ItemCategory.createCategory("A-F-B", "misc", "runes", "modifierrunes");
+
         ItemCategory.equipmentManager.createCategory("C-A-A", "tools");
         ItemCategory.equipmentManager.createCategory("C-B-A", "tools", "healingtools");
+
         ItemCategory.craftingManager.createCategory("D-B-F", "equipment", "tools", "healingtools");
+        ItemCategory.craftingManager.createCategory("J-A-A", "runes");
+        ItemCategory.craftingManager.createCategory("J-A-A", "runes", "runesinjectors");
+        ItemCategory.craftingManager.createCategory("J-B-A", "runes", "baserunes");
+        ItemCategory.craftingManager.createCategory("J-c-A", "runes", "modifierrunes");
 
         // Data
         WorldDataRegistry.registerWorldData("aphoreaworlddata", AphWorldData.class);
         LevelDataRegistry.registerLevelData("aphoreaswampleveldata", AphSwampLevelData.class);
 
         // Tiles
-        TileRegistry.registerTile("geltile", new GelTile("geltile", new Color(20, 80, 255)), -1.0F, true);
+        TileRegistry.registerTile("geltile", new GelTile("geltile", AphColors.gel), -1.0F, true);
 
         // Objects
         ObjectRegistry.registerObject("witchstatue", new WitchStatue(), -1.0F, true);
+        ObjectRegistry.registerObject("runestable", new RunesTable(), -1.0F, true);
+
+        // Recipe Tech
+        AphTech.registerCore();
 
         // Items
         AphItems.registerCore();
 
+        // Global Ingredients
+        ItemRegistry.getItem("magicfoci").addGlobalIngredient("anybasicfoci");
+        ItemRegistry.getItem("meleefoci").addGlobalIngredient("anybasicfoci");
+        ItemRegistry.getItem("rangefoci").addGlobalIngredient("anybasicfoci");
+        ItemRegistry.getItem("summonfoci").addGlobalIngredient("anybasicfoci");
+
         // Mobs
-        MobRegistry.registerMob("gelslime", GelSlime.class, true);
-        MobRegistry.registerMob("rockygelslime", RockyGelSlime.class, true);
-        MobRegistry.registerMob("witch", PinkWitch.class, true);
-        MobRegistry.registerMob("voidadept", VoidAdept.class, true);
-        MobRegistry.registerMob("wildphosphorslime", WildPhosphorSlime.class, true);
-
-        // Bosses [Mobs]
-        MobRegistry.registerMob("unstablegelslime", UnstableGelSlime.class, true);
-        MobRegistry.registerMob("miniunstablegelslime", MiniUnstableGelSlime.class, true);
-
-        // Summon [Mobs]
-        MobRegistry.registerMob("babyunstablegelslime", BabyUnstableGelSlime.class, false);
-        MobRegistry.registerMob("volatilegelslime", VolatileGelSlime.class, false);
-        MobRegistry.registerMob("undeadskeleton", UndeadSkeleton.class, false);
-
-        // Pets [Mobs]
-        MobRegistry.registerMob("petphosphorslime", PetPhosphorSlime.class, false);
+        AphMobs.registerCore();
 
         // Projectiles
-        ProjectileRegistry.registerProjectile("gel", GelProjectile.class, "gel", "ball_shadow");
-        ProjectileRegistry.registerProjectile("unstablegel", UnstableGelProjectile.class, "unstablegel", "ball_shadow");
-        ProjectileRegistry.registerProjectile("copperaircut", AircutProjectile.CopperAircutProjectile.class, "none", "none");
-        ProjectileRegistry.registerProjectile("ironaircut", AircutProjectile.IronAircutProjectile.class, "none", "none");
-        ProjectileRegistry.registerProjectile("goldaircut", AircutProjectile.GoldAircutProjectile.class, "none", "none");
-        ProjectileRegistry.registerProjectile("demonicaircut", AircutProjectile.DemonicAircutProjectile.class, "none", "none");
-        ProjectileRegistry.registerProjectile("unstablegelaircut", AircutProjectile.UnstableGelAircutProjectile.class, "none", "none");
-        ProjectileRegistry.registerProjectile("slingstone", SlingStoneProjectile.class, "slingstone", "ball_shadow");
-        ProjectileRegistry.registerProjectile("slingfirestone", FireSlingStoneProjectile.class, "slingfirestone", "ball_shadow");
-        ProjectileRegistry.registerProjectile("slingfrozenstone", FrozenSlingStoneProjectile.class, "slingfrozenstone", "ball_shadow");
-        ProjectileRegistry.registerProjectile("unstablegelveline", UnstableGelvelineProjectile.class, "unstablegelveline", "unstablegelveline_shadow");
-        ProjectileRegistry.registerProjectile("gelarrow", GelArrowProjectile.class, "gelarrow", "gelarrow_shadow");
-        ProjectileRegistry.registerProjectile("unstablegelarrow", UnstableGelArrowProjectile.class, "unstablegelarrow", "unstablegelarrow_shadow");
-        ProjectileRegistry.registerProjectile("voidstone", VoidStoneProjectile.class, "voidstone", "voidstone_shadow");
-        ProjectileRegistry.registerProjectile("woodenwand", WoodenWandProjectile.class, "none", "none");
-        ProjectileRegistry.registerProjectile("goldenwand", GoldenWandProjectile.class, "none", "none");
-
-        // Projectiles [Mobs]
-        ProjectileRegistry.registerProjectile("witch", PinkWitchProjectile.class, "none", "none");
-        ProjectileRegistry.registerProjectile("miniunstablegelslime", MiniUnstableGelSlimeProjectile.class, "miniunstablegelslime", "none");
+        AphProjectiles.registerCore();
 
         // Buffs
         AphBuffs.registerCore();
 
-        // LevelEvent
+        // LevelEvents
         LevelEventRegistry.registerEvent("saberdashlevelevent", AphSaberToolItem.SaberDashLevelEvent.class);
+        LevelEventRegistry.registerEvent("gelprojectilegroundeffect", GelProjectile.GelProjectileGroundEffectEvent.class);
+
+        // Base Runes LevelEvents
+        LevelEventRegistry.registerEvent("runeofdetonationevent", AphRuneOfDetonationEvent.class);
+        LevelEventRegistry.registerEvent("runeofthunderevent", AphRuneOfThunderEvent.class);
+        LevelEventRegistry.registerEvent("runeofqueenspiderevent", AphRuneOfQueenSpiderEvent.class);
+        LevelEventRegistry.registerEvent("runeofcryoqueenevent", AphRuneOfCryoQueenEvent.class);
+        LevelEventRegistry.registerEvent("runeofpestwardenevent", AphRuneOfPestWardenEvent.class);
+        LevelEventRegistry.registerEvent("runeofmotherslimeevent", AphRuneOfMotherSlimeEvent.class);
+        LevelEventRegistry.registerEvent("runeofsunlightchampionevent", AphRuneOfSunlightChampionEvent.class);
+        LevelEventRegistry.registerEvent("runeofsunlightchampionexplosionevent", AphRuneOfSunlightChampionExplosionEvent.class);
+        LevelEventRegistry.registerEvent("runeofcrystaldragonevent", AphRuneOfCrystalDragonEvent.class);
+
+        // Modifier Runes LevelEvents
+        LevelEventRegistry.registerEvent("abysmalruneevent", AphAbysmalRuneEvent.class);
+        LevelEventRegistry.registerEvent("tildalruneevent", AphTidalRuneEvent.class);
 
         // Packets
         PacketRegistry.registerPacket(AphCustomPushPacket.class);
+        PacketRegistry.registerPacket(AphRunesInjectorAbilityPacket.class);
+        PacketRegistry.registerPacket(AphRuneOfUnstableGelSlimePacket.class);
+
+        // Client only Packets
+        PacketRegistry.registerPacket(AphSingleAreaShowPacket.class);
         PacketRegistry.registerPacket(LowdsPoisonBuff.LowdsPoisonBuffPacket.class);
         PacketRegistry.registerPacket(HealingStaff.HealingStaffAreaParticlesPacket.class);
-        PacketRegistry.registerPacket(AdeptsBook.AdeptsBookAreaParticlesPacket.class);
-        PacketRegistry.registerPacket(WitchMedallionBuff.WitchMedallionAreaParticlesPacket.class);
-        PacketRegistry.registerPacket(UnstableGelStaff.UnstableGelStaffAreaParticlesPacket.class);
-        PacketRegistry.registerPacket(BlankBannerItem.BlankBannerAreaParticlesPacket.class);
-        PacketRegistry.registerPacket(StrikeBannerItem.StrikeBannerAreaParticlesPacket.class);
         PacketRegistry.registerPacket(WildPhosphorSlime.PhosphorSlimeParticlesPacket.class);
-        PacketRegistry.registerPacket(AphRunesInjectorAbilityPacket.class);
-
-        // Events
-        LevelEventRegistry.registerEvent("gelprojectilegroundeffect", GelProjectile.GelProjectileGroundEffectEvent.class);
 
         // Controls
-        Control.addModControl(new Control(InputID.KEY_G, "runesinjectorability") {
-            @Override
-            public void activate(InputEvent event) {
-                super.activate(event);
-                if (isPressed()) {
-                    Client client = ((MainGame) GlobalData.getCurrentState()).getClient();
-                    if (client != null) {
-                        PlayerMob playerMob = client.getPlayer();
-                        if (playerMob != null) {
-                            playerMob.buffManager.getBuffs().values().stream().filter(b -> b.buff instanceof AphBaseRuneTrinketBuff).map(b -> (AphBaseRuneTrinketBuff) b.buff).findFirst().ifPresent(
-                                    runeBuff -> client.network.sendPacket(new AphRunesInjectorAbilityPacket(client.getSlot(), runeBuff))
-                            );
-                        }
-                    }
-                }
-            }
-        });
-
+        AphControls.registerCore();
 
         // Journal [Surface]
 
         JournalEntry forestSurfaceJournal = JournalRegistry.getJournalEntry("forestsurface");
-        forestSurfaceJournal.addMobEntries("gelslime", "wildphosphorslime", "unstablegelslime");
         forestSurfaceJournal.addEntryChallenges(AphJournalChallenges.APH_FOREST_SURFACE_CHALLENGES_ID);
+        forestSurfaceJournal.addMobEntries("unstablegelslime");
 
         JournalEntry swampSurfaceJournal = JournalRegistry.getJournalEntry("swampsurface");
-        swampSurfaceJournal.addMobEntries("witch");
+        swampSurfaceJournal.addMobEntries("pinkwitch");
 
         // Journal [Cave]
 
@@ -204,10 +165,14 @@ public class AphoreaMod {
         dungeonJournal.addTreasureEntry(new LootTable(new LootItem("heartring")));
 
         // Journal [Bulk]
-
         JournalRegistry.getJournalEntries().forEach(journalEntry -> {
             if (journalEntry.levelType == JournalRegistry.LevelType.SURFACE) {
+                journalEntry.addMobEntries("gelslime", "wildphosphorslime");
                 journalEntry.addTreasureEntry(new LootTable(new LootItem("blowgun"), new LootItem("sling")));
+            }
+            if (journalEntry.mobsData.stream().anyMatch(m -> Objects.equals(m.mob.getStringID(), "goblin"))) {
+                System.out.println(journalEntry.getStringID());
+                journalEntry.addMobEntries("copperdaggergoblin", "irondaggergoblin", "golddaggergoblin");
             }
         });
 
@@ -215,37 +180,7 @@ public class AphoreaMod {
     }
 
     public void initResources() {
-
-        // MOBS
-        GelSlime.texture = GameTexture.fromFile("mobs/gelslime");
-        RockyGelSlime.texture = GameTexture.fromFile("mobs/rockygelslime");
-        PinkWitch.texture = GameTexture.fromFile("mobs/witch");
-        UnstableGelSlime.texture = GameTexture.fromFile("mobs/unstablegelslime");
-        UnstableGelSlime.icon = GameTexture.fromFile("mobs/icons/unstablegelslime");
-        MiniUnstableGelSlime.texture = GameTexture.fromFile("mobs/miniunstablegelslime");
-        VoidAdept.texture = MobRegistry.Textures.humanTexture("voidadept");
-        WildPhosphorSlime.texture = GameTexture.fromFile("mobs/phosphorslime");
-        WildPhosphorSlime.texture_scared = GameTexture.fromFile("mobs/phosphorslime_scared");
-        PetPhosphorSlime.texture = GameTexture.fromFile("mobs/phosphorslime");
-        PetPhosphorSlime.texture_scared = GameTexture.fromFile("mobs/phosphorslime_scared");
-
-        // MOBS [SUMMON]
-        BabyUnstableGelSlime.texture = GameTexture.fromFile("mobs/babyunstablegelslime");
-        VolatileGelSlime.texture = GameTexture.fromFile("mobs/volatilegelslime");
-
-        // ITEMS
-        MagicalBroom.worldTexture = GameTexture.fromFile("worlditems/magicalbroom");
-
-        // PROJECTILES
-        FireSlingStoneProjectile.texture_2 = GameTexture.fromFile("projectiles/slingfirestone_2");
-        AircutProjectile.CopperAircutProjectile.texture = GameTexture.fromFile("projectiles/aircutcopper");
-        AircutProjectile.IronAircutProjectile.texture = GameTexture.fromFile("projectiles/aircutiron");
-        AircutProjectile.GoldAircutProjectile.texture = GameTexture.fromFile("projectiles/aircutgold");
-        AircutProjectile.UnstableGelAircutProjectile.texture = GameTexture.fromFile("projectiles/aircutunstablegel");
-        AircutProjectile.DemonicAircutProjectile.texture = GameTexture.fromFile("projectiles/aircutdemonic");
-
-        // PARTICLES
-        GelProjectile.GelProjectileParticle.texture = GameTexture.fromFile("particles/gelprojectile");
+        AphResources.initResources();
     }
 
     public void postInit() {
@@ -255,7 +190,7 @@ public class AphoreaMod {
 
         // Spawn tables
 
-        ForestBiome.defaultSurfaceMobs
+        Biome.defaultSurfaceMobs
                 .addLimited(40, "gelslime", 2, 32 * 32)
                 .addLimited(2, "wildphosphorslime", 1, 16 * 32, mob -> mob.isHostile);
 
@@ -263,7 +198,7 @@ public class AphoreaMod {
                 .add(30, "rockygelslime");
 
         SwampBiome.surfaceMobs
-                .addLimited(1, "witch", 1, 1024 * 32);
+                .addLimited(1, "pinkwitch", 1, 1024 * 32);
 
         DungeonBiome.defaultDungeonMobs
                 .add(5, "voidadept");
@@ -273,44 +208,143 @@ public class AphoreaMod {
         LootTablePresets.startChest.items.addAll(
                 new LootItemList(
                         new LootItem("sling", 1),
-                        new LootItem("basicbackpack", 1)
+                        new LootItem("basicbackpack", 1),
+                        new LootItem("rusticrunesinjector", 1)
                 )
         );
 
         LootTablePresets.caveCryptCoffin.items.add(
-                ChanceLootItem.between(0.1f, "bloodyperiapt", 1, 1)
+                new LootItemList(
+                        new ChanceLootItem(0.1f, "bloodyperiapt"),
+                        new ChanceLootItem(0.05f, "onyxrune")
+                )
         );
 
         LootTablePresets.snowCaveChest.items.add(
-                ChanceLootItem.between(0.05f, "frozenperiapt", 1, 1)
+                new ChanceLootItem(0.05f, "frozenperiapt")
         );
 
         LootTablePresets.surfaceRuinsChest.items.addAll(
                 new LootItemList(
-                        ChanceLootItem.between(0.05f, "blowgun", 1, 1),
-                        ChanceLootItem.between(0.05f, "sling", 1, 1)
+                        new ChanceLootItem(0.05f, "blowgun"),
+                        new ChanceLootItem(0.05f, "sling")
                 )
         );
 
         LootTablePresets.basicCaveChest.items.addAll(
                 new LootItemList(
-                        ChanceLootItem.between(0.05f, "blowgun", 1, 1),
-                        ChanceLootItem.between(0.05f, "sling", 1, 1)
+                        new ChanceLootItem(0.05f, "blowgun"),
+                        new ChanceLootItem(0.05f, "sling")
                 )
         );
 
         LootTablePresets.hunterChest.items.addAll(
                 new LootItemList(
-                        ChanceLootItem.between(0.05f, "blowgun", 1, 1),
-                        ChanceLootItem.between(0.05f, "sling", 1, 1)
+                        new ChanceLootItem(0.05f, "blowgun"),
+                        new ChanceLootItem(0.05f, "sling")
                 )
         );
 
         LootTablePresets.dungeonChest.items.addAll(
                 new LootItemList(
-                        ChanceLootItem.between(0.05f, "heartring", 1, 1)
+                        new ChanceLootItem(0.1f, "runeofthunder"),
+                        new ChanceLootItem(0.05f, "heartring")
                 )
         );
+
+        LootTablePresets.fishianBarrel.items.add(
+                new ChanceLootItem(0.25f, "tidalrune")
+        );
+
+        DeepCaveChestLootTable.extraItems.items.add(
+                new ChanceLootItem(0.02f, "abyssalrune")
+        );
+
+        DeepCaveRuinsLootTable.extraItems.items.add(
+                new ChanceLootItem(0.005f, "abyssalrune")
+        );
+
+        // Mobs loot
+
+        DeepCaveSpiritMob.lootTable.items.add(
+                new ChanceLootItem(0.05F, "runeofshadows")
+        );
+
+        FishianHookWarriorMob.lootTable.items.add(
+                new ChanceLootItem(0.01F, "tidalrune")
+        );
+
+        FishianHealerMob.lootTable.items.add(
+                new ChanceLootItem(0.01F, "tidalrune")
+        );
+
+        FishianShamanMob.lootTable.items.add(
+                new ChanceLootItem(0.01F, "tidalrune")
+        );
+
+        TrenchcoatGoblinHelmetMob.lootTable = new LootTable(
+                GoblinMob.lootTable,
+                new ChanceLootItem(0.4F, "frenzyrune")
+        );
+
+        VampireMob.lootTable.items.add(
+                new ChanceLootItem(0.01f, "onyxrune")
+        );
+
+        // Bosses loot
+
+        EvilsProtectorMob.privateLootTable.items.add(
+                new LootItem("runeofevilsprotector")
+        );
+
+        QueenSpiderMob.privateLootTable.items.add(
+                new LootItem("runeofqueenspider")
+        );
+
+        VoidWizard.privateLootTable.items.add(
+                new LootItem("runeofvoidwizard")
+        );
+
+        SwampGuardianHead.privateLootTable.items.add(
+                new LootItem("runeofswampguardian")
+        );
+
+        AncientVultureMob.privateLootTable.items.add(
+                new LootItem("runeofancientvulture")
+        );
+
+        PirateCaptainMob.privateLootTable.items.add(
+                new LootItem("runeofpiratecaptain")
+        );
+
+        ReaperMob.privateLootTable.items.add(
+                new LootItem("runeofreaper")
+        );
+
+        CryoQueenMob.privateLootTable.items.add(
+                new LootItem("runeofcryoqueen")
+        );
+
+        PestWardenHead.privateLootTable.items.add(
+                new LootItem("runeofpestwarden")
+        );
+
+        FlyingSpiritsHead.privateLootTable.items.add(
+                new LootItem("runeofsageandgrit")
+        );
+
+        FallenWizardMob.privateLootTable.items.add(
+                new LootItem("runeoffallenwizard")
+        );
+
+        MotherSlimeMob.privateLootTable.items.add(
+                new LootItem("runeofmotherslime")
+        );
+
+        SpiderEmpressMob.privateLootTable.items.add(
+                new LootItem("runeofspiderempress")
+        );
+
     }
 
 }

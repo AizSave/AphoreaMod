@@ -1,6 +1,6 @@
 package aphorea.items.armor.Witch;
 
-import aphorea.other.vanillaitemtypes.armor.AphSetHelmetArmorItem;
+import aphorea.items.vanillaitemtypes.armor.AphSetHelmetArmorItem;
 import aphorea.registry.AphModifiers;
 import necesse.engine.modifiers.ModifierValue;
 import necesse.engine.registries.DamageTypeRegistry;
@@ -11,7 +11,7 @@ import necesse.inventory.item.armorItem.ArmorModifiers;
 
 public class PinkWitchHat extends AphSetHelmetArmorItem {
     public PinkWitchHat() {
-        super(1, DamageTypeRegistry.MAGIC, 200, Rarity.COMMON, "witchhat", "magicalsuit", "magicalboots", "witchsetbonus");
+        super(1, DamageTypeRegistry.MAGIC, 200, Rarity.COMMON, "pinkwitchhat", "magicalsuit", "magicalboots", "pinkwitchsetbonus");
         this.hairDrawOptions = HairDrawMode.OVER_HAIR;
         this.facialFeatureDrawOptions = FacialFeatureDrawMode.OVER_FACIAL_FEATURE;
     }

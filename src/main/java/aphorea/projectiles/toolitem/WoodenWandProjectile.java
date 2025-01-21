@@ -1,8 +1,9 @@
 package aphorea.projectiles.toolitem;
 
-import aphorea.other.itemtype.healing.AphHealingProjectileToolItem;
-import aphorea.other.magichealing.AphMagicHealing;
-import aphorea.other.utils.AphDistances;
+import aphorea.items.healingtools.AphHealingProjectileToolItem;
+import aphorea.utils.AphColors;
+import aphorea.utils.magichealing.AphMagicHealing;
+import aphorea.utils.AphDistances;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.server.ServerClient;
 import necesse.engine.util.GameUtils;
@@ -31,7 +32,7 @@ import java.util.stream.Stream;
 
 public class WoodenWandProjectile extends FollowingProjectile {
 
-    Color color = new Color(0, 214, 0);
+    Color color = AphColors.nature;
     AphHealingProjectileToolItem toolItem;
     InventoryItem item;
     int healing;

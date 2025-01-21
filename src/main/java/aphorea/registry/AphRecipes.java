@@ -20,49 +20,67 @@ public class AphRecipes {
         DemonicAnvil();
         TungstenAnvil();
         Alchemy();
+
+        // Modded
+        Runes();
     }
 
     public static void None() {
         Tech tech = RecipeTechRegistry.NONE;
 
         addCraftingList("stonearrow", tech,
-                new AphCraftingRecipe("gelarrow", 10, true, true,
+                AphCraftingRecipe.showAfter("gelarrow", 10,
                         new Ingredient("stonearrow", 10),
                         new Ingredient("gelball", 1)
-                )
+                ).setHidden()
         );
     }
 
     public static void Workstation() {
         Tech tech = RecipeTechRegistry.WORKSTATION;
 
+        addCraftingList("alchemytable", tech,
+                AphCraftingRecipe.showAfter("runestable", 1,
+                        new Ingredient("goldbar", 2),
+                        new Ingredient("rockygel", 4),
+                        new Ingredient("anylog", 10)
+                )
+        );
+
         addCraftingList("bannerofsummonspeed", tech,
-                new AphCraftingRecipe("blankbanner", 1,
+                AphCraftingRecipe.showAfter("blankbanner", 1,
                         new Ingredient("wool", 10),
                         new Ingredient("anylog", 2)
                 )
         );
 
         addCraftingList("stonepathtile", tech,
-                new AphCraftingRecipe("geltile", 1,
+                AphCraftingRecipe.showAfter("geltile", 1,
                         new Ingredient("stonepathtile", 1),
                         new Ingredient("gelball", 3)
                 )
         );
 
+        addCraftingList("trackerboot", tech,
+                AphCraftingRecipe.showAfter("iceboots", 1,
+                        new Ingredient("trackerboot", 1),
+                        new Ingredient("icetile", 1)
+                )
+        );
+
         addCraftingList("regenpendant", tech,
-                new AphCraftingRecipe("frozenperiapt", 1,
+                AphCraftingRecipe.showAfter("frozenperiapt", 1,
                         new Ingredient("frostshard", 10),
                         new Ingredient("goldbar", 5)
                 ),
-                new AphCraftingRecipe("rockyperiapt", 1,
+                AphCraftingRecipe.showAfter("rockyperiapt", 1,
                         new Ingredient("stone", 10),
                         new Ingredient("rockygel", 4)
                 )
         );
 
         addCraftingList("hardenedshield", tech,
-                new AphCraftingRecipe("swampshield", 1,
+                AphCraftingRecipe.showAfter("swampshield", 1,
                         new Ingredient("willowlog", 10),
                         new Ingredient("swampsludge", 3),
                         new Ingredient("stardust", 2)
@@ -71,33 +89,33 @@ public class AphRecipes {
 
 
         addCraftingList(null, tech,
-                new AphCraftingRecipe("gelslimenullifier", 1,
+                AphCraftingRecipe.showAfter("gelslimenullifier", 1,
                         new Ingredient("gelball", 20),
                         new Ingredient("unstablegel", 5)
                 ),
 
-                new AphCraftingRecipe("basicbackpack", 1,
+                AphCraftingRecipe.showAfter("basicbackpack", 1,
                         new Ingredient("leather", 6),
                         new Ingredient("ironbar", 1),
                         new Ingredient("rope", 1)
                 ),
-                new AphCraftingRecipe("sapphirebackpack", 1,
+                AphCraftingRecipe.showAfter("sapphirebackpack", 1,
                         new Ingredient("basicbackpack", 1),
                         new Ingredient("sapphire", 4)
                 ),
-                new AphCraftingRecipe("amethystbackpack", 1,
+                AphCraftingRecipe.showAfter("amethystbackpack", 1,
                         new Ingredient("sapphirebackpack", 1),
                         new Ingredient("amethyst", 4)
                 ),
-                new AphCraftingRecipe("rubybackpack", 1,
+                AphCraftingRecipe.showAfter("rubybackpack", 1,
                         new Ingredient("amethystbackpack", 1),
                         new Ingredient("ruby", 4)
                 ),
-                new AphCraftingRecipe("emeraldbackpack", 1,
+                AphCraftingRecipe.showAfter("emeraldbackpack", 1,
                         new Ingredient("rubybackpack", 1),
                         new Ingredient("emerald", 4)
                 ),
-                new AphCraftingRecipe("diamondbackpack", 1,
+                AphCraftingRecipe.showAfter("diamondbackpack", 1,
                         new Ingredient("emeraldbackpack", 1),
                         new Ingredient("pearlescentdiamond", 4)
                 )
@@ -108,20 +126,20 @@ public class AphRecipes {
         Tech tech = RecipeTechRegistry.DEMONIC_WORKSTATION;
 
         addCraftingList("chainshirt", tech,
-                new AphCraftingRecipe("bloodyperiapt", 1,
+                AphCraftingRecipe.showAfter("bloodyperiapt", 1,
                         new Ingredient("voidshard", 10),
                         new Ingredient("batwing", 10)
                 ),
-                new AphCraftingRecipe("demonicperiapt", 1,
+                AphCraftingRecipe.showAfter("demonicperiapt", 1,
                         new Ingredient("bloodyperiapt", 1),
                         new Ingredient("demonicbar", 5)
                 ),
-                new AphCraftingRecipe("heartring", 1,
+                AphCraftingRecipe.showAfter("heartring", 1,
                         new Ingredient("healthpotion", 5),
                         new Ingredient("firemone", 10),
                         new Ingredient("voidshard", 6)
                 ),
-                new AphCraftingRecipe("ringofhealth", 1,
+                AphCraftingRecipe.showAfter("ringofhealth", 1,
                         new Ingredient("floralring", 1),
                         new Ingredient("gelring", 1),
                         new Ingredient("heartring", 1),
@@ -130,13 +148,11 @@ public class AphRecipes {
                 )
         );
 
-        addCraftingList(null, tech,
-                new AphCraftingRecipe("bannerbearerfoci", 1,
-                        new Ingredient("meleefoci", 1),
-                        new Ingredient("rangefoci", 1),
-                        new Ingredient("magicfoci", 1),
-                        new Ingredient("summonfoci", 1),
-                        new Ingredient("blankbanner", 1)
+        addCraftingList("balancedfoci", tech,
+                AphCraftingRecipe.showAfter("bannerbearerfoci", 1,
+                        new Ingredient("anybasicfoci", 1),
+                        new Ingredient("blankbanner", 1),
+                        new Ingredient("voidshard", 3)
                 )
         );
     }
@@ -144,12 +160,12 @@ public class AphRecipes {
     public static void TungstenWorkstation() {
         Tech tech = RecipeTechRegistry.TUNGSTEN_WORKSTATION;
 
-        addCraftingList("demonicperiapt", tech,
-                new AphCraftingRecipe("abysmalperiapt", 1,
+        addCraftingList("frozensoul", tech,
+                AphCraftingRecipe.showAfter("abysmalperiapt", 1,
                         new Ingredient("demonicperiapt", 1),
                         new Ingredient("tungstenbar", 5)
                 ),
-                new AphCraftingRecipe("necromancyperiapt", 1,
+                AphCraftingRecipe.showAfter("necromancyperiapt", 1,
                         new Ingredient("unstableperiapt", 1),
                         new Ingredient("bone", 10),
                         new Ingredient("demonicbar", 5)
@@ -161,180 +177,159 @@ public class AphRecipes {
         Tech tech = RecipeTechRegistry.IRON_ANVIL;
 
         addCraftingList("stonearrow", tech,
-                new AphCraftingRecipe("gelarrow", 10,
+                AphCraftingRecipe.showAfter("gelarrow", 10,
                         new Ingredient("stonearrow", 10),
                         new Ingredient("gelball", 1)
                 )
         );
 
-        addCraftingList(null, tech,
-                new AphCraftingRecipe("woodenwand", 1,
-                        new Ingredient("anylog", 1),
-                        new Ingredient("anysapling", 2),
-                        new Ingredient("firemone", 2)
-                ),
-                new AphCraftingRecipe("goldenwand", 1,
-                        new Ingredient("woodenwand", 1),
-                        new Ingredient("goldbar", 3)
-                ),
-                new AphCraftingRecipe("healingstaff", 1,
-                        new Ingredient("woodstaff", 1),
-                        new Ingredient("stardust", 5)
-                ),
-                new AphCraftingRecipe("magicalvial", 1,
-                        new Ingredient("healthpotion", 10),
-                        new Ingredient("stardust", 3)
-                )
-        );
-
-        addCraftingList("frostboomerang", tech,
-                new AphCraftingRecipe("woodenrod", 1,
-                        new Ingredient("woodenwand", 2),
-                        new Ingredient("wool", 2)
-                ),
-                new AphCraftingRecipe("gelsword", 1,
-                        new Ingredient("gelball", 15)
-                ),
-                new AphCraftingRecipe("unstablegelsword", 1,
-                        new Ingredient("gelsword", 1),
-                        new Ingredient("unstablegel", 10)
-                ),
-                new AphCraftingRecipe("unstablegelgreatsword", 1,
-                        new Ingredient("unstablegel", 10),
-                        new Ingredient("rockygel", 10)
-                ),
-                new AphCraftingRecipe("unstablegelbattleaxe", 1,
-                        new Ingredient("unstablegel", 20)
-                )
-        );
-
-        addCraftingList("frostbow", tech,
-                new AphCraftingRecipe("gelgreatbow", 1,
-                        new Ingredient("gelball", 15)
-                ),
-                new AphCraftingRecipe("unstablegelgreatbow", 1,
-                        new Ingredient("gelgreatbow", 1),
-                        new Ingredient("unstablegel", 10)
-                ),
-                new AphCraftingRecipe("blowgun", 1,
-                        new Ingredient("anysapling", 10)
-                ),
-                new AphCraftingRecipe("sling", 1,
-                        new Ingredient("leather", 4),
-                        new Ingredient("rope", 2)
-                ),
-                new AphCraftingRecipe("firesling", 1,
-                        new Ingredient("sling", 1),
-                        new Ingredient("torch", 60)
-                ),
-                new AphCraftingRecipe("frozensling", 1,
-                        new Ingredient("sling", 1),
-                        new Ingredient("frostshard", 10)
-                )
-        );
-
-        addCraftingList(null, tech,
-                new AphCraftingRecipe("gelballgroup", 1,
-                        new Ingredient("gelball", 12),
-                        new Ingredient("mysteriousportal", 1)
-                ),
-                new AphCraftingRecipe("unstablegelveline", 1,
-                        new Ingredient("gelballgroup", 1),
-                        new Ingredient("unstablegel", 10)
-                )
-        );
-
-
-        addCraftingList("froststaff", tech,
-                new AphCraftingRecipe("unstablegelstaff", 1,
-                        new Ingredient("unstablegel", 15)
-                )
-        );
-
-        addCraftingList("spiderstaff", tech,
-                new AphCraftingRecipe("volatilegelstaff", 1,
-                        new Ingredient("unstablegel", 15)
-                )
-        );
-
-        addCraftingList(null, tech,
-                new AphCraftingRecipe("witchstatue", 1,
-                        new Ingredient("goldbar", 10),
-                        new Ingredient("stardust", 3)
-                )
-        );
-
-        addCraftingList("ironboots", tech,
-                new AphCraftingRecipe("rockyhelmet", 1,
-                        new Ingredient("stone", 30),
-                        new Ingredient("rockygel", 7)
-                ),
-                new AphCraftingRecipe("rockychestplate", 1,
-                        new Ingredient("stone", 40),
-                        new Ingredient("rockygel", 10)
-                ),
-                new AphCraftingRecipe("rockyboots", 1,
-                        new Ingredient("stone", 20),
-                        new Ingredient("rockygel", 5)
-                )
-        );
-
         addCraftingList("coppersword", tech,
-                new AphCraftingRecipe("coppersaber", 1,
+                AphCraftingRecipe.showAfter("coppersaber", 1,
                         new Ingredient("copperbar", 10),
                         new Ingredient("anylog", 1)
                 )
         );
 
+        addCraftingList("ironhelmet", tech,
+                AphCraftingRecipe.showBefore("rockyhelmet", 1,
+                        new Ingredient("stone", 30),
+                        new Ingredient("rockygel", 7)
+                ),
+                AphCraftingRecipe.showAfter("rockychestplate", 1,
+                        new Ingredient("stone", 40),
+                        new Ingredient("rockygel", 10)
+                ),
+                AphCraftingRecipe.showAfter("rockyboots", 1,
+                        new Ingredient("stone", 20),
+                        new Ingredient("rockygel", 5)
+                )
+        );
+
         addCraftingList("ironsword", tech,
-                new AphCraftingRecipe("ironsaber", 1,
+                AphCraftingRecipe.showAfter("ironsaber", 1,
                         new Ingredient("ironbar", 10),
                         new Ingredient("anylog", 1)
                 )
         );
 
         addCraftingList("goldsword", tech,
-                new AphCraftingRecipe("goldsaber", 1,
+                AphCraftingRecipe.showAfter("goldsaber", 1,
                         new Ingredient("goldbar", 10),
                         new Ingredient("anylog", 1)
                 )
         );
 
-        addCraftingList("goldsword", tech,
-                new AphCraftingRecipe("goldsaber", 1,
-                        new Ingredient("goldbar", 10),
-                        new Ingredient("anylog", 1)
+        addCraftingList("sparkler", tech,
+                AphCraftingRecipe.showAfter("goldenwand", 1,
+                        new Ingredient("woodenwand", 1),
+                        new Ingredient("goldbar", 3)
                 )
         );
 
-        addCraftingList("frostboots", tech,
-                new AphCraftingRecipe("swampmask", 1,
+        addCraftingList("woodboomerang", tech,
+                AphCraftingRecipe.showAfter("woodenrod", 1,
+                        new Ingredient("woodenwand", 2),
+                        new Ingredient("wool", 2)
+                ),
+                AphCraftingRecipe.showAfter("blowgun", 1,
+                        new Ingredient("anysapling", 10)
+                ),
+                AphCraftingRecipe.showAfter("sling", 1,
+                        new Ingredient("leather", 4),
+                        new Ingredient("rope", 2)
+                ),
+                AphCraftingRecipe.showAfter("firesling", 1,
+                        new Ingredient("sling", 1),
+                        new Ingredient("torch", 60)
+                ),
+                AphCraftingRecipe.showAfter("frozensling", 1,
+                        new Ingredient("sling", 1),
+                        new Ingredient("frostshard", 10)
+                ),
+                AphCraftingRecipe.showAfter("woodenwand", 1,
+                        new Ingredient("anylog", 1),
+                        new Ingredient("anysapling", 2),
+                        new Ingredient("firemone", 2)
+                ),
+                AphCraftingRecipe.showAfter("gelsword", 1,
+                        new Ingredient("gelball", 15)
+                ),
+                AphCraftingRecipe.showAfter("gelgreatbow", 1,
+                        new Ingredient("gelball", 15)
+                ),
+                AphCraftingRecipe.showAfter("gelballgroup", 1,
+                        new Ingredient("gelball", 12),
+                        new Ingredient("mysteriousportal", 1)
+                )
+        );
+
+        addCraftingList("superiorhealthpotion", tech,
+                AphCraftingRecipe.showBefore("unstablegelsword", 1,
+                        new Ingredient("gelsword", 1),
+                        new Ingredient("unstablegel", 10)
+                ),
+                AphCraftingRecipe.showAfter("unstablegelgreatsword", 1,
+                        new Ingredient("unstablegel", 10),
+                        new Ingredient("rockygel", 10)
+                ),
+                AphCraftingRecipe.showAfter("unstablegelbattleaxe", 1,
+                        new Ingredient("unstablegel", 20)
+                ),
+                AphCraftingRecipe.showAfter("unstablegelgreatbow", 1,
+                        new Ingredient("gelgreatbow", 1),
+                        new Ingredient("unstablegel", 10)
+                ),
+                AphCraftingRecipe.showAfter("unstablegelstaff", 1,
+                        new Ingredient("unstablegel", 15)
+                ),
+                AphCraftingRecipe.showAfter("volatilegelstaff", 1,
+                        new Ingredient("unstablegel", 15)
+                ),
+                AphCraftingRecipe.showAfter("unstablegelveline", 1,
+                        new Ingredient("gelballgroup", 1),
+                        new Ingredient("unstablegel", 10)
+                ),
+
+                AphCraftingRecipe.showAfter("swampmask", 1,
                         new Ingredient("willowlog", 10),
                         new Ingredient("stardust", 3)
                 ),
-                new AphCraftingRecipe("swamphood", 1,
+                AphCraftingRecipe.showAfter("swamphood", 1,
                         new Ingredient("swampsludge", 5),
                         new Ingredient("stardust", 3)
                 ),
-                new AphCraftingRecipe("swampchestplate", 1,
+                AphCraftingRecipe.showAfter("swampchestplate", 1,
                         new Ingredient("willowlog", 5),
                         new Ingredient("swampsludge", 3),
                         new Ingredient("stardust", 2)
                 ),
-                new AphCraftingRecipe("swampboots", 1,
+                AphCraftingRecipe.showAfter("swampboots", 1,
                         new Ingredient("willowlog", 8),
                         new Ingredient("stardust", 1)
-                )
-        );
+                ),
 
-
-        addCraftingList("clothboots", tech,
-                new AphCraftingRecipe("magicalsuit", 1,
+                AphCraftingRecipe.showAfter("magicalsuit", 1,
                         new Ingredient("clothrobe", 1),
                         new Ingredient("stardust", 4)
                 ),
-                new AphCraftingRecipe("magicalboots", 1,
+                AphCraftingRecipe.showAfter("magicalboots", 1,
                         new Ingredient("clothboots", 1),
+                        new Ingredient("stardust", 3)
+                ),
+                AphCraftingRecipe.showAfter("healingstaff", 1,
+                        new Ingredient("woodstaff", 1),
+                        new Ingredient("stardust", 5)
+                ),
+                AphCraftingRecipe.showAfter("magicalvial", 1,
+                        new Ingredient("healthpotion", 10),
+                        new Ingredient("stardust", 3)
+                )
+
+        );
+
+        addCraftingList("settlementflag", tech,
+                AphCraftingRecipe.showAfter("witchstatue", 1,
+                        new Ingredient("goldbar", 10),
                         new Ingredient("stardust", 3)
                 )
         );
@@ -345,7 +340,7 @@ public class AphRecipes {
         Tech tech = RecipeTechRegistry.DEMONIC_ANVIL;
 
         addCraftingList("quartzstaff", tech,
-                new AphCraftingRecipe("magicalbroom", 1,
+                AphCraftingRecipe.showAfter("magicalbroom", 1,
                         new Ingredient("broom", 1),
                         new Ingredient("voidshard", 8),
                         new Ingredient("stardust", 3)
@@ -353,24 +348,28 @@ public class AphRecipes {
         );
 
         addCraftingList("demonicsword", tech,
-                new AphCraftingRecipe("demonicsaber", 1,
+                AphCraftingRecipe.showAfter("demonicdagger", 1,
+                        new Ingredient("demonicbar", 5),
+                        new Ingredient("anylog", 1)
+                ),
+                AphCraftingRecipe.showAfter("demonicsaber", 1,
                         new Ingredient("demonicbar", 12)
                 ),
-                new AphCraftingRecipe("demonicbattleaxe", 1,
+                AphCraftingRecipe.showAfter("demonicbattleaxe", 1,
                         new Ingredient("demonicbar", 20),
                         new Ingredient("rockygel", 10)
                 )
         );
 
         addCraftingList("goldcrown", tech,
-                new AphCraftingRecipe("goldhat", 1,
+                AphCraftingRecipe.showAfter("goldhat", 1,
                         new Ingredient("goldbar", 8),
                         new Ingredient("sapphire", 5)
                 )
         );
 
         addCraftingList("voidboomerang", tech,
-                new AphCraftingRecipe("voidhammer", 1,
+                AphCraftingRecipe.showAfter("voidhammer", 1,
                         new Ingredient("heavyhammer", 1),
                         new Ingredient("rockygel", 8),
                         new Ingredient("voidshard", 5)
@@ -383,10 +382,21 @@ public class AphRecipes {
         Tech tech = RecipeTechRegistry.TUNGSTEN_ANVIL;
 
         addCraftingList("bonearrow", tech,
-                new AphCraftingRecipe("unstablegelarrow", 10,
+                AphCraftingRecipe.showAfter("unstablegelarrow", 10,
                         new Ingredient("bonearrow", 10),
                         new Ingredient("unstablegel", 1)
                 )
+        );
+
+        addCraftingList("tungstensword", tech,
+                AphCraftingRecipe.showAfter("tungstendagger", 1,
+                        new Ingredient("tungstenbar", 4),
+                        new Ingredient("anylog", 1)
+                )/*,
+                AphCraftingRecipe.showAfter("tungstensaber", 1,
+                        new Ingredient("tungstenbar", 10),
+                        new Ingredient("anylog", 1)
+                )*/
         );
     }
 
@@ -394,9 +404,102 @@ public class AphRecipes {
         Tech tech = RecipeTechRegistry.ALCHEMY;
 
         addCraftingList("fishingpotion", tech,
-                new AphCraftingRecipe("lowdspotion", 1,
+                AphCraftingRecipe.showAfter("lowdspotion", 1,
                         new Ingredient("cavespidergland", 5),
                         new Ingredient("glassbottle", 1)
+                )
+        );
+    }
+
+    public static void Runes() {
+        Tech tech = AphTech.RUNES;
+        addCraftingList(null, tech,
+
+                // Runes injector
+
+                AphCraftingRecipe.showAfter("rusticrunesinjector", 1,
+                        new Ingredient("anylog", 4),
+                        new Ingredient("anysapling", 2)
+                ),
+                AphCraftingRecipe.showAfter("unstablerunesinjector", 1,
+                        new Ingredient("gelball", 4),
+                        new Ingredient("unstablegel", 2)
+                ),
+                AphCraftingRecipe.showAfter("demonicrunesinjector", 1,
+                        new Ingredient("demonicbar", 4),
+                        new Ingredient("voidshard", 2)
+                ),
+                AphCraftingRecipe.showAfter("tungstenrunesinjector", 1,
+                        new Ingredient("tungstenbar", 4),
+                        new Ingredient("bone", 2)
+                ),
+                AphCraftingRecipe.showAfter("ancientrunesinjector", 1,
+                        new Ingredient("ancientfossilbar", 4),
+                        new Ingredient("lifequartz", 2)
+                ),
+
+                // Base runes
+
+                AphCraftingRecipe.showAfter("runeofdetonation", 1,
+                        new Ingredient("ironbomb", 5),
+                        new Ingredient("goldbar", 3)
+                ),
+                AphCraftingRecipe.showAfter("runeofwinter", 1,
+                        new Ingredient("frostshard", 8),
+                        new Ingredient("demonicbar", 2)
+                ),
+                AphCraftingRecipe.showAfter("runeofimmortality", 1,
+                        new Ingredient("healthpotion", 5),
+                        new Ingredient("healthregenpotion", 2),
+                        new Ingredient("ivybar", 1)
+                ),
+                AphCraftingRecipe.showAfter("runeoffury", 1,
+                        new Ingredient("battlepotion", 2),
+                        new Ingredient("tungstenbar", 1)
+                ),
+                AphCraftingRecipe.showAfter("runeofspeed", 1,
+                        new Ingredient("speedpotion", 2),
+                        new Ingredient("tungstenbar", 1)
+                ),
+                AphCraftingRecipe.showAfter("runeofhealing", 1,
+                        new Ingredient("healthregenpotion", 2),
+                        new Ingredient("tungstenbar", 1)
+                ),
+                AphCraftingRecipe.showAfter("runeofresistance", 1,
+                        new Ingredient("resistancepotion", 2),
+                        new Ingredient("tungstenbar", 1)
+                ),
+                AphCraftingRecipe.showAfter("runeofvalor", 1,
+                        new Ingredient("blankbanner", 1),
+                        new Ingredient("goldbar", 1),
+                        new Ingredient("tungstenbar", 1)
+                ),
+
+                // Modifier runes
+
+                AphCraftingRecipe.showAfter("empoweringrune", 1,
+                        new Ingredient("ironbar", 2)
+                ),
+                AphCraftingRecipe.showAfter("recurrentrune", 1,
+                        new Ingredient("speedpotion", 1)
+                ),
+                AphCraftingRecipe.showAfter("devastatingrune", 1,
+                        new Ingredient("goldbar", 1)
+                ),
+                AphCraftingRecipe.showAfter("onyxrune", 1,
+                        new Ingredient("batwing", 2),
+                        new Ingredient("demonicbar", 1)
+                ),
+                AphCraftingRecipe.showAfter("vitalrune", 1,
+                        new Ingredient("healthpotion", 5),
+                        new Ingredient("healthregenpotion", 1),
+                        new Ingredient("ivybar", 1)
+                ),
+                AphCraftingRecipe.showAfter("ascendantrune", 1,
+                        new Ingredient("slimeessence", 5),
+                        new Ingredient("bloodessence", 5),
+                        new Ingredient("spideressence", 5),
+                        new Ingredient("ancientfossilbar", 1)
                 )
         );
     }
@@ -418,11 +521,12 @@ public class AphRecipes {
     public static class AphCraftingRecipe {
         public String item;
         private final int amount;
-        private final boolean hidden;
         private final Ingredient[] ingredients;
         private final boolean showAfter;
 
-        public AphCraftingRecipe(String item, int amount, boolean hidden, boolean showAfter, Ingredient... ingredients) {
+        private boolean hidden;
+
+        private AphCraftingRecipe(String item, int amount, boolean hidden, boolean showAfter, Ingredient... ingredients) {
             this.item = item;
             this.amount = amount;
             this.hidden = hidden;
@@ -430,15 +534,28 @@ public class AphRecipes {
             this.ingredients = ingredients;
         }
 
-        public AphCraftingRecipe(String item, int amount, Ingredient... ingredients) {
-            this(item, amount, false, true, ingredients);
+        public static AphCraftingRecipe showAfter(String item, int amount, Ingredient... ingredients) {
+            return new AphCraftingRecipe(item, amount, false, true, ingredients);
+        }
+
+        public static AphCraftingRecipe showBefore(String item, int amount, Ingredient... ingredients) {
+            return new AphCraftingRecipe(item, amount, false, false, ingredients);
+        }
+
+        public AphCraftingRecipe setHidden(boolean hidden) {
+            this.hidden = hidden;
+            return this;
+        }
+
+        public AphCraftingRecipe setHidden() {
+            return setHidden(true);
         }
 
         public void registerRecipe(String nextToItem, Tech tech) {
             Recipe recipe = new Recipe(item, amount, tech, ingredients, hidden);
 
             if (nextToItem != null) {
-                if(showAfter) {
+                if (showAfter) {
                     recipe.showAfter(nextToItem);
                 } else {
                     recipe.showBefore(nextToItem);

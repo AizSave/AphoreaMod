@@ -114,7 +114,7 @@ public class PetPhosphorSlime extends PetFollowingMob {
     }
 
     public boolean isScared(Level level) {
-        return dayInSurface(level) || level.entityManager.mobs.getInRegionByTileRange(this.getTileX(), this.getTileY(), 150 / 32 + 2).stream().anyMatch(m -> m.isHostile) || level.entityManager.players.getInRegionByTileRange(this.getTileX(), this.getTileY(), 150 / 32 + 2).isEmpty();
+        return dayInSurface(level) || level.entityManager.streamAreaMobsAndPlayers(this.x, this.y, 500).anyMatch(m -> m.isHostile  && m.getDistance(this) <= 500) || level.entityManager.streamAreaMobsAndPlayers(this.x, this.y, 500).noneMatch(m -> m.getDistance(this) <= 500);
     }
 
     public static boolean dayInSurface(Level level) {

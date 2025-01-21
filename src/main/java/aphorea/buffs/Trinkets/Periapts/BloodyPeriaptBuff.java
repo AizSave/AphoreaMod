@@ -1,6 +1,7 @@
 package aphorea.buffs.Trinkets.Periapts;
 
-import aphorea.other.buffs.trinkets.AphPeriaptActivableBuff;
+import aphorea.buffs.Trinkets.AphPeriaptActivableBuff;
+import aphorea.utils.AphColors;
 import necesse.engine.localization.Localization;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
@@ -17,7 +18,7 @@ public class BloodyPeriaptBuff extends AphPeriaptActivableBuff {
 
     @Override
     public Color getColor() {
-        return new Color(255, 0, 0);
+        return AphColors.blood;
     }
 
     public ListGameTooltips getTrinketTooltip(TrinketItem trinketItem, InventoryItem item, PlayerMob perspective) {

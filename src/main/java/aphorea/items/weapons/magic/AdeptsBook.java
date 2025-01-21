@@ -1,8 +1,10 @@
 package aphorea.items.weapons.magic;
 
-import aphorea.other.area.AphArea;
-import aphorea.other.area.AphAreaList;
-import aphorea.other.itemtype.AphAreaToolItem;
+import aphorea.packets.AphSingleAreaShowPacket;
+import aphorea.utils.AphColors;
+import aphorea.utils.area.AphArea;
+import aphorea.utils.area.AphAreaList;
+import aphorea.items.AphAreaToolItem;
 import necesse.engine.network.NetworkPacket;
 import necesse.engine.network.Packet;
 import necesse.engine.network.PacketReader;
@@ -21,8 +23,11 @@ import java.awt.*;
 
 public class AdeptsBook extends AphAreaToolItem implements ItemInteractAction {
 
+    static int range = 250;
+    static Color color = AphColors.palettePinkWitch[2];
+
     static AphAreaList areaList = new AphAreaList(
-            new AphArea(250, new Color(58, 22, 100)).setDamageArea(30).setArmorPen(10)
+            new AphArea(range, color).setDamageArea(30).setArmorPen(10)
     ).setDamageType(DamageTypeRegistry.MAGIC);
 
     public AdeptsBook() {
@@ -42,52 +47,12 @@ public class AdeptsBook extends AphAreaToolItem implements ItemInteractAction {
     }
 
     @Override
-    public Packet getPacket(int slot, float rangeModifier) {
-        return new AdeptsBookAreaParticlesPacket(slot, rangeModifier);
+    public Packet getPacket(PlayerMob player, float rangeModifier) {
+        return new AphSingleAreaShowPacket(player.x, player.y, range * rangeModifier, color);
     }
 
     @Override
     public void usePacket(Level level, PlayerMob player, float rangeModifier) {
-        AdeptsBookAreaParticlesPacket.applyToPlayer(level, player, rangeModifier);
-    }
-
-    public static class AdeptsBookAreaParticlesPacket extends Packet {
-        public final int slot;
-        public final float rangeModifier;
-
-        public AdeptsBookAreaParticlesPacket(byte[] data) {
-            super(data);
-            PacketReader reader = new PacketReader(this);
-            this.slot = reader.getNextByteUnsigned();
-            this.rangeModifier = reader.getNextFloat();
-        }
-
-        public AdeptsBookAreaParticlesPacket(int slot, float rangeModifier) {
-            this.slot = slot;
-            this.rangeModifier = rangeModifier;
-            PacketWriter writer = new PacketWriter(this);
-            writer.putNextByteUnsigned(slot);
-            writer.putNextFloat(rangeModifier);
-        }
-
-        public void processClient(NetworkPacket packet, Client client) {
-            if (client.getLevel() != null) {
-                ClientClient target = client.getClient(this.slot);
-                if (target != null && target.isSamePlace(client.getLevel())) {
-                    applyToPlayer(target.playerMob.getLevel(), target.playerMob, rangeModifier);
-                } else {
-                    client.network.sendPacket(new PacketRequestPlayerData(this.slot));
-                }
-
-            }
-        }
-
-        public static void applyToPlayer(Level level, Mob mob, float rangeModifier) {
-
-            if (level != null && level.isClient()) {
-                areaList.showAllAreaParticles(mob, rangeModifier);
-            }
-
-        }
+        AphSingleAreaShowPacket.applyToPlayer(level, player, range * rangeModifier, color);
     }
 }

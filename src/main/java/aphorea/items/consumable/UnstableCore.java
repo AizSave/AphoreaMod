@@ -1,6 +1,6 @@
 package aphorea.items.consumable;
 
-import aphorea.other.vanillaitemtypes.AphConsumableItem;
+import aphorea.items.vanillaitemtypes.AphConsumableItem;
 import necesse.engine.localization.Localization;
 import necesse.engine.localization.message.GameMessage;
 import necesse.engine.localization.message.LocalMessage;

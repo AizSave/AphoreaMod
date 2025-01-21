@@ -1,5 +1,6 @@
 package aphorea.projectiles.toolitem;
 
+import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.registries.BuffRegistry;
 import necesse.entity.mobs.GameDamage;
@@ -42,7 +43,7 @@ public class FireSlingStoneProjectile extends SlingStoneProjectile {
 
     @Override
     public Trail getTrail() {
-        return new Trail(this, getLevel(), new Color(153, 0, 0), 26, 100, getHeight());
+        return new Trail(this, getLevel(), AphColors.fire, 26, 100, getHeight());
     }
 
     @Override

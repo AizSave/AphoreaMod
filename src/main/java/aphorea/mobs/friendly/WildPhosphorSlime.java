@@ -1,6 +1,6 @@
 package aphorea.mobs.friendly;
 
-import aphorea.other.ai.AphRunFromMobsAI;
+import aphorea.mobs.ai.AphRunFromMobsAI;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.*;
@@ -141,7 +141,7 @@ public class WildPhosphorSlime extends FriendlyMob {
     }
 
     public boolean isScared(Level level) {
-        return dayInSurface(level) || level.entityManager.mobs.getInRegionByTileRange(this.getTileX(), this.getTileY(), 150 / 32 + 2).stream().anyMatch(m -> m.isHostile);
+        return dayInSurface(level) || level.entityManager.streamAreaMobsAndPlayers(this.x, this.y, 500).anyMatch(m -> m.isHostile && m.getDistance(this) <= 500);
     }
 
     public static boolean dayInSurface(Level level) {
@@ -177,7 +177,7 @@ public class WildPhosphorSlime extends FriendlyMob {
                 }
             });
 
-            this.addChild(aphRunFromMobsAI = new AphRunFromMobsAI<>(150, (m) -> m.isHostile, true, false));
+            this.addChild(aphRunFromMobsAI = new AphRunFromMobsAI<>(500, (m) -> m.isHostile));
 
             this.addChild(new WandererAINode<>(10000));
         }

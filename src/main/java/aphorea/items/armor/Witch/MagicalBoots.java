@@ -1,6 +1,6 @@
 package aphorea.items.armor.Witch;
 
-import aphorea.other.vanillaitemtypes.armor.AphBootsArmorItem;
+import aphorea.items.vanillaitemtypes.armor.AphBootsArmorItem;
 import necesse.engine.modifiers.ModifierValue;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.BuffModifiers;

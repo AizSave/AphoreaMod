@@ -1,7 +1,8 @@
 package aphorea.projectiles.arrow;
 
-import aphorea.other.area.AphArea;
-import aphorea.other.area.AphAreaList;
+import aphorea.utils.AphColors;
+import aphorea.utils.area.AphArea;
+import aphorea.utils.area.AphAreaList;
 import aphorea.registry.AphBuffs;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.registries.DamageTypeRegistry;
@@ -30,7 +31,7 @@ import java.util.List;
 
 public class GelArrowProjectile extends Projectile {
 
-    Color color = new Color(48, 150, 255);
+    Color color = AphColors.gel;
 
     AphAreaList areaList = new AphAreaList(
             new AphArea(50, color)
@@ -126,6 +127,6 @@ public class GelArrowProjectile extends Projectile {
         if (this.getOwner() != null) {
             areaList.executeAreas(this.getOwner(), 1, (int) x, (int) y, false);
         }
-        areaList.showAllAreaParticles(this.getOwner(), x, y);
+        areaList.showAllAreaParticles(this.getLevel(), x, y);
     }
 }

@@ -1,6 +1,6 @@
 package aphorea.items.weapons.throwable;
 
-import aphorea.other.vanillaitemtypes.weapons.AphThrowToolItem;
+import aphorea.items.vanillaitemtypes.weapons.AphThrowToolItem;
 import aphorea.projectiles.toolitem.GelProjectile;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.PacketReader;

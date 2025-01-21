@@ -9,7 +9,7 @@ public class RockyPeriaptActiveBuff extends Buff {
     public RockyPeriaptActiveBuff() {
         this.isVisible = false;
         this.canCancel = false;
-        this.shouldSave = false;
+        this.shouldSave = true;
     }
 
     public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {

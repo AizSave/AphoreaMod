@@ -1,7 +1,7 @@
 package aphorea.mobs.hostile;
 
-import aphorea.other.data.AphWorldData;
-import aphorea.other.mobclass.AphDayHostileMob;
+import aphorea.data.AphWorldData;
+import aphorea.mobs.hostile.classes.AphDayHostileMob;
 import aphorea.registry.AphBuffs;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.server.Server;
@@ -73,7 +73,7 @@ public class GelSlime extends AphDayHostileMob {
     public void init() {
         super.init();
         ai = new BehaviourTreeAI<>(this, new CollisionOnlyPlayerChaserWandererAI<>(onlyDay ? () -> this.getServer().world.worldEntity.isNight() : null, 4 * 32, attack, attack_knockback, 40000));
-        turnPhosphor = Math.random() < 0.05;
+        turnPhosphor = GameRandom.globalRandom.getChance(0.03F);
     }
 
     public void addSaveData(SaveData save) {
@@ -156,6 +156,6 @@ public class GelSlime extends AphDayHostileMob {
 
     @Override
     public void addBuff(ActiveBuff buff, boolean sendUpdatePacket) {
-        if (AphBuffs.STICKY != AphBuffs.STICKY) super.addBuff(buff, sendUpdatePacket);
+        if (buff.buff != AphBuffs.STICKY) super.addBuff(buff, sendUpdatePacket);
     }
 }

@@ -1,6 +1,6 @@
 package aphorea.items.armor.Swamp;
 
-import aphorea.other.vanillaitemtypes.armor.AphSetHelmetArmorItem;
+import aphorea.items.vanillaitemtypes.armor.AphSetHelmetArmorItem;
 import aphorea.registry.AphModifiers;
 import necesse.engine.modifiers.ModifierValue;
 import necesse.engine.registries.DamageTypeRegistry;

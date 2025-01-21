@@ -30,12 +30,12 @@ public class RunesInjectorContainer extends Container {
         this.inventoryItemSlot = new PlayerInventorySlot(itemInventoryID, itemInventorySlot);
         this.item = this.inventoryItemSlot.getItem(client.playerMob.getInv());
         if (this.item != null && this.item.item.getID() == this.itemID && this.item.item instanceof InternalInventoryItemInterface) {
-            this.inventoryItem = (InternalInventoryItemInterface)this.item.item;
+            this.inventoryItem = (InternalInventoryItemInterface) this.item.item;
             this.lockSlot(this.inventoryItemSlot);
-            InternalInventoryItemInterface internalInventoryItemInterface = (InternalInventoryItemInterface)this.item.item;
+            InternalInventoryItemInterface internalInventoryItemInterface = (InternalInventoryItemInterface) this.item.item;
             this.inventory = internalInventoryItemInterface.getInternalInventory(this.item);
 
-            for(int i = 0; i < this.inventory.getSize(); ++i) {
+            for (int i = 0; i < this.inventory.getSize(); ++i) {
                 int index = this.addSlot(this.getItemContainerSlot(this.inventory, i, internalInventoryItemInterface));
                 if (this.INVENTORY_START == -1) {
                     this.INVENTORY_START = index;
@@ -76,7 +76,7 @@ public class RunesInjectorContainer extends Container {
                     return;
                 }
 
-                this.inventory.override(((InternalInventoryItemInterface)item.item).getInternalInventory(item));
+                this.inventory.override(((InternalInventoryItemInterface) item.item).getInternalInventory(item));
                 this.item = item;
             }
         }
@@ -84,7 +84,7 @@ public class RunesInjectorContainer extends Container {
         if (this.inventory.isDirty()) {
             item = this.inventoryItemSlot.getItem(this.client.playerMob.getInv());
             if (item != null) {
-                ((InternalInventoryItemInterface)item.item).saveInternalInventory(item, this.inventory);
+                ((InternalInventoryItemInterface) item.item).saveInternalInventory(item, this.inventory);
             }
 
             this.inventory.clean();

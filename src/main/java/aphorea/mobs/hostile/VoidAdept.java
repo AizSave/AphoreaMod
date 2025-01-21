@@ -1,7 +1,8 @@
 package aphorea.mobs.hostile;
 
-import aphorea.other.area.AphArea;
-import aphorea.other.area.AphAreaList;
+import aphorea.utils.AphColors;
+import aphorea.utils.area.AphArea;
+import aphorea.utils.area.AphAreaList;
 import aphorea.registry.AphBuffs;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.registries.DamageTypeRegistry;
@@ -39,7 +40,7 @@ public class VoidAdept extends HostileMob {
             new AphArea(250, new Color(255, 255, 255))
     ).setDamageType(DamageTypeRegistry.MAGIC);
     public static AphAreaList attackArea = new AphAreaList(
-            new AphArea(250, new Color(58, 22, 100)).setDamageArea(40).setArmorPen(10)
+            new AphArea(250, AphColors.palettePinkWitch[2]).setDamageArea(40).setArmorPen(10)
     ).setDamageType(DamageTypeRegistry.MAGIC);
 
 
@@ -69,8 +70,8 @@ public class VoidAdept extends HostileMob {
         this.teleportAbility = this.registerAbility(new CoordinateMobAbility() {
             protected void run(int x, int y) {
                 if (VoidAdept.this.isClient()) {
-                    VoidAdept.this.getLevel().entityManager.addParticle(new SmokePuffParticle(VoidAdept.this.getLevel(), VoidAdept.this.x, VoidAdept.this.y, new Color(58, 22, 100)), Particle.GType.CRITICAL);
-                    VoidAdept.this.getLevel().entityManager.addParticle(new SmokePuffParticle(VoidAdept.this.getLevel(), (float) x, (float) y, new Color(58, 22, 100)), Particle.GType.CRITICAL);
+                    VoidAdept.this.getLevel().entityManager.addParticle(new SmokePuffParticle(VoidAdept.this.getLevel(), VoidAdept.this.x, VoidAdept.this.y, AphColors.palettePinkWitch[2]), Particle.GType.CRITICAL);
+                    VoidAdept.this.getLevel().entityManager.addParticle(new SmokePuffParticle(VoidAdept.this.getLevel(), (float) x, (float) y, AphColors.palettePinkWitch[2]), Particle.GType.CRITICAL);
                 }
 
                 VoidAdept.this.setPos((float) x, (float) y, true);
@@ -80,7 +81,7 @@ public class VoidAdept extends HostileMob {
         this.teleportParticle = this.registerAbility(new CoordinateMobAbility() {
             protected void run(int x, int y) {
                 if (VoidAdept.this.isClient()) {
-                    VoidAdept.this.getLevel().entityManager.addParticle(new SmokePuffParticle(VoidAdept.this.getLevel(), (float) x, (float) y, new Color(58, 22, 100)), Particle.GType.CRITICAL);
+                    VoidAdept.this.getLevel().entityManager.addParticle(new SmokePuffParticle(VoidAdept.this.getLevel(), (float) x, (float) y, AphColors.palettePinkWitch[2]), Particle.GType.CRITICAL);
                 }
             }
         });
@@ -163,20 +164,20 @@ public class VoidAdept extends HostileMob {
                         this.teleportAbility.runAndSend(point.x, point.y);
                     }
                 } else if (this.isClient()) {
-                    attackArea.showAllAreaParticles(this);
+                    attackArea.showAllAreaParticles(getLevel(), this.x, this.y);
                 }
             }
         } else if ((progress >= 0.5F) && attackCount == 1) {
             this.attackCount = 2;
 
             if (this.isClient()) {
-                showAttackRange.showAllAreaParticles(this);
+                showAttackRange.showAllAreaParticles(getLevel(), this.x, this.y);
             }
         } else if (attackCount == 0) {
             this.attackCount = 1;
 
             if (this.isClient()) {
-                showAttackRange.showAllAreaParticles(this);
+                showAttackRange.showAllAreaParticles(getLevel(), this.x, this.y);
             }
         }
 

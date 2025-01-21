@@ -1,6 +1,7 @@
 package aphorea.items.consumable;
 
-import aphorea.other.vanillaitemtypes.AphSimplePotionItem;
+import aphorea.items.vanillaitemtypes.AphSimplePotionItem;
+import aphorea.utils.AphColors;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.PacketReader;
 import necesse.entity.mobs.PlayerMob;
@@ -21,7 +22,7 @@ public class LowdsPotion extends AphSimplePotionItem {
     @Override
     public InventoryItem onPlace(Level level, int x, int y, PlayerMob player, InventoryItem item, PacketReader contentReader) {
         super.onPlace(level, x, y, player, item, contentReader);
-        UniqueFloatText text = new UniqueFloatText(player.getX(), player.getY() - 20, Localization.translate("message", "itoldyou"), (new FontOptions(16)).outline().color(new Color(200, 100, 100)), "mountfail") {
+        UniqueFloatText text = new UniqueFloatText(player.getX(), player.getY() - 20, Localization.translate("message", "lowdspotion"), (new FontOptions(16)).outline().color(AphColors.fail_message), "lowdspotion") {
             public int getAnchorX() {
                 return player.getX();
             }

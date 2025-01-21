@@ -9,7 +9,7 @@ public class FrozenPeriaptActiveBuff extends Buff {
     public FrozenPeriaptActiveBuff() {
         this.isVisible = false;
         this.canCancel = false;
-        this.shouldSave = false;
+        this.shouldSave = true;
     }
 
     public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {

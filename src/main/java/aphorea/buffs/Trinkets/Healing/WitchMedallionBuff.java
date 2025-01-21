@@ -1,8 +1,10 @@
 package aphorea.buffs.Trinkets.Healing;
 
-import aphorea.other.area.AphArea;
-import aphorea.other.area.AphAreaList;
-import aphorea.other.buffs.trinkets.AphDamageWhenHealTrinketBuff;
+import aphorea.packets.AphSingleAreaShowPacket;
+import aphorea.utils.AphColors;
+import aphorea.utils.area.AphArea;
+import aphorea.utils.area.AphAreaList;
+import aphorea.buffs.Trinkets.AphDamageWhenHealTrinketBuff;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.NetworkPacket;
 import necesse.engine.network.Packet;
@@ -22,8 +24,11 @@ import necesse.level.maps.Level;
 import java.awt.*;
 
 public class WitchMedallionBuff extends AphDamageWhenHealTrinketBuff {
+    static int range = 200;
+    static Color color = AphColors.palettePinkWitch[2];
+
     public static AphAreaList areaList = new AphAreaList(
-            new AphArea(200, new Color(104, 0, 204)).setDamageArea(15).setArmorPen(5)
+            new AphArea(range, color).setDamageArea(15).setArmorPen(5)
     ).setDamageType(DamageTypeRegistry.MAGIC);
 
     public WitchMedallionBuff() {
@@ -31,47 +36,8 @@ public class WitchMedallionBuff extends AphDamageWhenHealTrinketBuff {
     }
 
     @Override
-    public Packet getPacket(int slot, float rangeModifier) {
-        return new WitchMedallionAreaParticlesPacket(slot, rangeModifier);
-    }
-
-    public static class WitchMedallionAreaParticlesPacket extends Packet {
-        public final int slot;
-        public final float rangeModifier;
-
-        public WitchMedallionAreaParticlesPacket(byte[] data) {
-            super(data);
-            PacketReader reader = new PacketReader(this);
-            this.slot = reader.getNextByteUnsigned();
-            this.rangeModifier = reader.getNextFloat();
-        }
-
-        public WitchMedallionAreaParticlesPacket(int slot, float rangeModifier) {
-            this.slot = slot;
-            this.rangeModifier = rangeModifier;
-            PacketWriter writer = new PacketWriter(this);
-            writer.putNextByteUnsigned(slot);
-            writer.putNextFloat(rangeModifier);
-        }
-
-        public void processClient(NetworkPacket packet, Client client) {
-            if (client.getLevel() != null) {
-                ClientClient target = client.getClient(this.slot);
-                if (target != null && target.isSamePlace(client.getLevel())) {
-                    applyToPlayer(target.playerMob.getLevel(), target.playerMob, rangeModifier);
-                } else {
-                    client.network.sendPacket(new PacketRequestPlayerData(this.slot));
-                }
-
-            }
-        }
-
-        public static void applyToPlayer(Level level, Mob mob, float rangeModifier) {
-            if (level != null && level.isClient()) {
-                areaList.showAllAreaParticles(mob, rangeModifier);
-            }
-
-        }
+    public Packet getPacket(PlayerMob player, float rangeModifier) {
+        return new AphSingleAreaShowPacket(player.x, player.y, range * rangeModifier, color);
     }
 
     public ListGameTooltips getTrinketTooltip(TrinketItem trinketItem, InventoryItem item, PlayerMob perspective) {

@@ -1,9 +1,9 @@
 package aphorea.items.healingtools;
 
-import aphorea.other.area.AphArea;
-import aphorea.other.area.AphAreaList;
-import aphorea.other.itemtype.healing.AphMagicHealingToolItem;
-import aphorea.other.magichealing.AphMagicHealing;
+import aphorea.utils.AphColors;
+import aphorea.utils.area.AphArea;
+import aphorea.utils.area.AphAreaList;
+import aphorea.utils.magichealing.AphMagicHealing;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.PacketReader;
 import necesse.engine.sound.SoundEffect;
@@ -31,7 +31,7 @@ import java.awt.*;
 public class MagicalVial extends AphMagicHealingToolItem {
 
     static AphAreaList area = new AphAreaList(
-            new AphArea(400, new Color(255, 0, 0))
+            new AphArea(400, AphColors.blood)
     );
 
     int particlesAreaCount = 0;
@@ -78,7 +78,7 @@ public class MagicalVial extends AphMagicHealingToolItem {
         if (canHealMob && !perspective.isItemOnCooldown(this) && !inInDistance) {
             if (particlesAreaCount >= 3) {
                 particlesAreaCount = 0;
-                area.showAllAreaParticles(perspective, perspective.x, perspective.y, 1, 0.5F, 0, (int) (Math.random() * 200) + 400);
+                area.showAllAreaParticles(perspective.getLevel(), perspective.x, perspective.y, 1, 0.5F, 0, (int) (Math.random() * 200) + 400);
             } else {
                 particlesAreaCount++;
             }
@@ -94,7 +94,7 @@ public class MagicalVial extends AphMagicHealingToolItem {
             float angle = (float) i / particles * 240 + 9 * particleCount;
             float dx = (float) Math.sin(Math.toRadians(angle)) * d;
             float dy = (float) Math.cos(Math.toRadians(angle)) * d;
-            perspective.getLevel().entityManager.addParticle(target.x + dx, target.y + dy, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(0, 0, 0).color(new Color(255, 0, 0)).heightMoves(10, 10).lifeTime(160);
+            perspective.getLevel().entityManager.addParticle(target.x + dx, target.y + dy, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(0, 0, 0).color(AphColors.blood).heightMoves(10, 10).lifeTime(160);
         }
     }
 

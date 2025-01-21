@@ -1,7 +1,9 @@
 package aphorea.buffs.Trinkets.Periapts;
 
-import aphorea.other.buffs.trinkets.AphPeriaptActivableBuff;
+import aphorea.buffs.Trinkets.AphPeriaptActivableBuff;
+import aphorea.utils.AphColors;
 import necesse.engine.localization.Localization;
+import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
@@ -17,7 +19,7 @@ public class DemonicPeriaptBuff extends AphPeriaptActivableBuff {
 
     @Override
     public Color getColor() {
-        return new Color(204, 0, 0);
+        return GameRandom.globalRandom.getOneOf(AphColors.paletteDemonic);
     }
 
     public ListGameTooltips getTrinketTooltip(TrinketItem trinketItem, InventoryItem item, PlayerMob perspective) {

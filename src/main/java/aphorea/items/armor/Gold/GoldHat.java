@@ -1,6 +1,6 @@
 package aphorea.items.armor.Gold;
 
-import aphorea.other.vanillaitemtypes.armor.AphSetHelmetArmorItem;
+import aphorea.items.vanillaitemtypes.armor.AphSetHelmetArmorItem;
 import necesse.engine.registries.DamageTypeRegistry;
 
 public class GoldHat extends AphSetHelmetArmorItem {

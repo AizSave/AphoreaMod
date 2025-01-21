@@ -1,6 +1,6 @@
 package aphorea.buffs.Trinkets.Healing;
 
-import aphorea.other.magichealing.AphMagicHealing;
+import aphorea.utils.magichealing.AphMagicHealing;
 import necesse.engine.localization.Localization;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;

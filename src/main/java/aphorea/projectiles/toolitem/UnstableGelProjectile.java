@@ -1,6 +1,7 @@
 package aphorea.projectiles.toolitem;
 
 import aphorea.registry.AphBuffs;
+import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.network.server.ServerClient;
@@ -58,12 +59,12 @@ public class UnstableGelProjectile extends Projectile {
 
     @Override
     public Color getParticleColor() {
-        return new Color(191, 60, 255);
+        return AphColors.unstableGel;
     }
 
     @Override
     public Trail getTrail() {
-        return new Trail(this, getLevel(), new Color(191, 60, 255), 26, 500, getHeight());
+        return new Trail(this, getLevel(), AphColors.unstableGel, 26, 500, getHeight());
     }
 
     @Override

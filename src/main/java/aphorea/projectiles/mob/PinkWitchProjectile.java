@@ -1,5 +1,6 @@
 package aphorea.projectiles.mob;
 
+import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
@@ -47,12 +48,12 @@ public class PinkWitchProjectile extends FollowingProjectile {
 
     @Override
     public Color getParticleColor() {
-        return new Color(147, 0, 255);
+        return AphColors.palettePinkWitch[2];
     }
 
     @Override
     public Trail getTrail() {
-        return new Trail(this, getLevel(), new Color(147, 0, 255), 26, 500, getHeight());
+        return new Trail(this, getLevel(), AphColors.palettePinkWitch[2], 26, 500, getHeight());
     }
 
     @Override

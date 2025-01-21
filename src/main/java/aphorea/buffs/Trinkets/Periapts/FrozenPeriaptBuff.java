@@ -1,6 +1,7 @@
 package aphorea.buffs.Trinkets.Periapts;
 
-import aphorea.other.buffs.trinkets.AphPeriaptActivableBuff;
+import aphorea.buffs.Trinkets.AphPeriaptActivableBuff;
+import aphorea.utils.AphColors;
 import necesse.engine.localization.Localization;
 import necesse.engine.registries.BuffRegistry;
 import necesse.engine.registries.DamageTypeRegistry;
@@ -26,7 +27,7 @@ public class FrozenPeriaptBuff extends AphPeriaptActivableBuff {
 
     @Override
     public Color getColor() {
-        return new Color(0, 204, 255);
+        return AphColors.ice;
     }
 
     @Override
@@ -58,7 +59,7 @@ public class FrozenPeriaptBuff extends AphPeriaptActivableBuff {
                     int angle = (int) (360.0F + GameRandom.globalRandom.nextFloat() * 360.0F);
                     float dx = (float) Math.sin(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
                     float dy = (float) Math.cos(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
-                    owner.getLevel().entityManager.addParticle(event.target, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(dx, dy, 0.8F).color(new Color(0, 153, 255)).heightMoves(10.0F, 30.0F).lifeTime(500);
+                    owner.getLevel().entityManager.addParticle(event.target, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(dx, dy, 0.8F).color(AphColors.ice).heightMoves(10.0F, 30.0F).lifeTime(500);
                 }
             }
 

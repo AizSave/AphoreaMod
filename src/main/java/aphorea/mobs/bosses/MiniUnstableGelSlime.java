@@ -1,6 +1,7 @@
 package aphorea.mobs.bosses;
 
 import aphorea.registry.AphBuffs;
+import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.util.GameRandom;
 import necesse.engine.util.GameUtils;
@@ -69,13 +70,13 @@ public class MiniUnstableGelSlime extends FlyingHostileMob {
         super.init();
         ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 1024 * 32, attack, attack_knockback, 40000), new FlyingAIMover());
 
-        ActiveBuff buff = new ActiveBuff(AphBuffs.INMORTAL, this, 1000, this);
+        ActiveBuff buff = new ActiveBuff(AphBuffs.IMMORTAL, this, 1000, this);
         this.addBuff(buff, true);
 
-        if (Math.random() > 0.5 && this.initialTP) {
+        if (GameRandom.globalRandom.getChance(0.5F) && this.initialTP) {
             this.executeTeleport();
         } else if (this.isClient()) {
-            this.getLevel().entityManager.addParticle(new SmokePuffParticle(this.getLevel(), this.x, this.y, new Color(191, 60, 255)), Particle.GType.CRITICAL);
+            this.getLevel().entityManager.addParticle(new SmokePuffParticle(this.getLevel(), this.x, this.y, AphColors.unstableGel), Particle.GType.CRITICAL);
         }
 
 
@@ -98,12 +99,12 @@ public class MiniUnstableGelSlime extends FlyingHostileMob {
 
             if (tpTarget != null) {
                 float distance = 200;
-                float angle = (float) Math.random() * 360;
+                float angle = GameRandom.globalRandom.getFloatBetween(0, 360);
                 float xExtra = (float) (Math.cos(angle) * distance);
                 float yExtra = (float) (Math.sin(angle) * distance);
 
                 if (this.isClient()) {
-                    this.getLevel().entityManager.addParticle(new SmokePuffParticle(this.getLevel(), this.x, this.y, new Color(191, 60, 255)), Particle.GType.CRITICAL);
+                    this.getLevel().entityManager.addParticle(new SmokePuffParticle(this.getLevel(), this.x, this.y, AphColors.unstableGel), Particle.GType.CRITICAL);
                 }
 
                 this.setPos(tpTarget.x + xExtra, tpTarget.y + yExtra, true);
@@ -145,7 +146,7 @@ public class MiniUnstableGelSlime extends FlyingHostileMob {
         DrawOptions drawOptions = texture.initDraw()
                 .sprite(sprite.x, sprite.y, 64)
                 .light(light)
-                .alpha(this.buffManager.hasBuff(AphBuffs.INMORTAL) ? 0.6F : 1)
+                .alpha(this.buffManager.hasBuff(AphBuffs.IMMORTAL) ? 0.6F : 1)
                 .pos(drawX, drawY);
 
         list.add(new MobDrawable() {

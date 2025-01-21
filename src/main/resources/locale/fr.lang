@@ -205,17 +205,17 @@ babyunstablegelslime=Bébé gélatineux instable
 undeadskeleton=Squelette réanimé
 
 [buff]
-stunÉtourdi
-stickyCollant
+stun=Étourdi
+sticky=Collant
 
-berserkerrushCharge du berserk
-berserkerrushcooldownCharge du berserk en récupération
+berserkerrush=Charge du berserk
+berserkerrushcooldown=Charge du berserk en récupération
 
 swordchargeattackcooldown=Attaque chargé de l'épée en récupération
 
-periaptcooldownCapacité de l'amulette en récupération
+periaptcooldown=Capacité de l'amulette en récupération
 
-periaptactiveCapacité de l'amulette disponible
+periaptactive=Capacité de l'amulette disponible
 
 saberdashcooldown=Charge du sabre en récupération
 

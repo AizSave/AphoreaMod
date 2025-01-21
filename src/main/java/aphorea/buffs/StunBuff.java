@@ -9,12 +9,12 @@ public class StunBuff extends Buff {
     public StunBuff() {
         this.isImportant = true;
         this.canCancel = false;
-        this.isVisible = true;
     }
 
     public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {
         buff.addModifier(BuffModifiers.SLOW, 10F);
         buff.addModifier(BuffModifiers.SPEED, -10F);
         buff.addModifier(BuffModifiers.PARALYZED, true);
+        buff.addModifier(BuffModifiers.INTIMIDATED, true);
     }
 }

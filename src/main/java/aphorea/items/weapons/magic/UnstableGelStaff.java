@@ -1,18 +1,14 @@
 package aphorea.items.weapons.magic;
 
-import aphorea.other.area.AphArea;
-import aphorea.other.area.AphAreaList;
-import aphorea.other.itemtype.weapons.Secondary.AphMagicProjectileSecondaryAreaToolItem;
+import aphorea.packets.AphSingleAreaShowPacket;
+import aphorea.utils.AphColors;
+import aphorea.utils.area.AphArea;
+import aphorea.utils.area.AphAreaList;
 import aphorea.projectiles.toolitem.UnstableGelProjectile;
 import aphorea.registry.AphBuffs;
 import necesse.engine.localization.Localization;
-import necesse.engine.network.NetworkPacket;
 import necesse.engine.network.Packet;
 import necesse.engine.network.PacketReader;
-import necesse.engine.network.PacketWriter;
-import necesse.engine.network.client.Client;
-import necesse.engine.network.client.ClientClient;
-import necesse.engine.network.packet.PacketRequestPlayerData;
 import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.sound.SoundEffect;
@@ -37,8 +33,11 @@ import java.awt.*;
 
 public class UnstableGelStaff extends AphMagicProjectileSecondaryAreaToolItem implements ItemInteractAction {
 
+    static int range = 200;
+    static Color color = AphColors.unstableGel;
+
     static AphAreaList areaList = new AphAreaList(
-            new AphArea(200, new Color(191, 60, 255)).setDamageArea(20, 90).setArmorPen(10)
+            new AphArea(range, color).setDamageArea(20, 90).setArmorPen(10)
     ).setDamageType(DamageTypeRegistry.MAGIC);
 
     public UnstableGelStaff() {
@@ -116,52 +115,12 @@ public class UnstableGelStaff extends AphMagicProjectileSecondaryAreaToolItem im
     }
 
     @Override
-    public Packet getPacket(int slot, float rangeModifier) {
-        return new UnstableGelStaffAreaParticlesPacket(slot, rangeModifier);
+    public Packet getPacket(PlayerMob player, float rangeModifier) {
+        return new AphSingleAreaShowPacket(player.x, player.y, range * rangeModifier, color);
     }
 
     @Override
     public void usePacket(Level level, PlayerMob player, float rangeModifier) {
-        UnstableGelStaffAreaParticlesPacket.applyToPlayer(level, player, rangeModifier);
-    }
-
-    public static class UnstableGelStaffAreaParticlesPacket extends Packet {
-        public final int slot;
-        public final float rangeModifier;
-
-        public UnstableGelStaffAreaParticlesPacket(byte[] data) {
-            super(data);
-            PacketReader reader = new PacketReader(this);
-            this.slot = reader.getNextByteUnsigned();
-            this.rangeModifier = reader.getNextFloat();
-        }
-
-        public UnstableGelStaffAreaParticlesPacket(int slot, float rangeModifier) {
-            this.slot = slot;
-            this.rangeModifier = rangeModifier;
-            PacketWriter writer = new PacketWriter(this);
-            writer.putNextByteUnsigned(slot);
-            writer.putNextFloat(rangeModifier);
-        }
-
-        public void processClient(NetworkPacket packet, Client client) {
-            if (client.getLevel() != null) {
-                ClientClient target = client.getClient(this.slot);
-                if (target != null && target.isSamePlace(client.getLevel())) {
-                    applyToPlayer(target.playerMob.getLevel(), target.playerMob, rangeModifier);
-                } else {
-                    client.network.sendPacket(new PacketRequestPlayerData(this.slot));
-                }
-
-            }
-        }
-
-        public static void applyToPlayer(Level level, Mob mob, float rangeModifier) {
-
-            if (level != null && level.isClient()) {
-                areaList.showAllAreaParticles(mob, rangeModifier);
-            }
-
-        }
+        AphSingleAreaShowPacket.applyToPlayer(level, player, range * rangeModifier, color);
     }
 }

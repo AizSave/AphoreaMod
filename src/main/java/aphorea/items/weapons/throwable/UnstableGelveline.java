@@ -1,7 +1,7 @@
 package aphorea.items.weapons.throwable;
 
 
-import aphorea.other.vanillaitemtypes.weapons.AphThrowToolItem;
+import aphorea.items.vanillaitemtypes.weapons.AphThrowToolItem;
 import aphorea.packets.AphCustomPushPacket;
 import aphorea.projectiles.toolitem.UnstableGelvelineProjectile;
 import necesse.engine.localization.Localization;

@@ -1,6 +1,6 @@
 package aphorea.mobs.hostile;
 
-import aphorea.other.data.AphSwampLevelData;
+import aphorea.data.AphSwampLevelData;
 import aphorea.projectiles.mob.PinkWitchProjectile;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
@@ -48,7 +48,7 @@ public class PinkWitch extends FlyingHostileMob {
                     new LootItem("broom", (new GNDItemMap())), // 20% | 40%
                     new LootItem("broom", (new GNDItemMap())), // 20% |
                     new LootItem("witchmedallion", (new GNDItemMap())), // 20%
-                    new LootItem("witchhat", (new GNDItemMap())), // 20%
+                    new LootItem("pinkwitchhat", (new GNDItemMap())), // 20%
                     new ChanceLootItem(0.25F, "magicalvial", (new GNDItemMap())) // 5%
             )
     );

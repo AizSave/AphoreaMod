@@ -1,229 +1,572 @@
 # Translation made by AI
 
 [global]
-aphorea=§!Aphorea Mod
+aphorea=Mod Aphorea
 
-[tile]
-geltile=Solo de Gel
-
-[object]
-witchstatue=Estátua da Bruxa
 
 [buffmodifiers]
+// Magic Healing
 magichealing=<mod>% cura mágica
 magichealingflat=<mod> cura mágica
 magichealingreceived=<mod>% cura mágica recebida
 magichealingreceivedflat=<mod> cura mágica recebida
 magichealinggrace=<mod>% graça de cura mágica
+
+// Area
 arearange=<mod>% alcance da área
 
+// Banner Damage
+# NEW
+bannerdamage=<mod>% dano de banner
+bannercritchance=<mod>% chance de crítico do banner
+bannercritdamage=<mod>% dano crítico do banner
+bannereffect=<mod>% efeito de banner
+bannerabilityspeed=<mod>% velocidade de habilidade do banner
+
+// Others
+# NEW
+loyal=A adaga não é perdida quando jogada
+
+
 [stats]
-banner_damage=Dano do estandarte
+banner_damage=Dano de banner
+
 
 [enchantment]
+// Healing Equipment
 godly=Divino
 absent=Ausente
 auxiliary=Auxiliar
-vain=Vaidoso
+vain=Vão
 gentle=Gentil
 selfish=Egoísta
+
+// Healing
 friendly=Amigável
 graceful=Gracioso
 wonderful=Maravilhoso
 ecologic=Ecológico
 exalted=Exaltado
 cursed=Amaldiçoado
-booming=Estrondoso
-dimmed=Esvaziado
+
+// Area
+booming=Explosivo
+dimmed=Diminuído
+
+// Others
+# NEW
+loyal=Leal
+
+
+[tile]
+geltile=Chão de Gel
+
+
+[object]
+witchstatue=Estátua da Bruxa
+# NEW
+runestable=Mesa de Runas
+
 
 [itemcategory]
-healing=Cura
-healingtools=Cura
+healing=Curativo
+healingtools=Ferramentas de Cura
+# NEW
+runesinjectors=Injetores de Runas
+baserunes=Base Runes
+modifierrunes=Runas Modificadoras
 
-[itemtype]
-battleaxe=Machado de Batalha
-saber=Sabre
-sling=Estilingue
-blowgun=Zarabatana
-healingtool=Ferramenta de Cura
 
 [item]
-gelball=Bola de Gel
-rockygel=Gel Rochoso
-gelballgroup=Grupo de Bolas de Gel
-gelsword=Espada de Gel
-unstablecore=Núcleo Instável
+// General Materials
+# NEW
+anybasicfoci=Qualquer Foco Básico
+
+// Materials
+rockygel=Gel Rocoso
 unstablegel=Gel Instável
+stardust=Pó de Estrela
+
+// Consumables
+unstablecore=Núcleo Instável
+lowdspotion=Poção de Lowd
+# NEW
+initialrune=Rune Inicial
+
+// Swords
+gelsword=Espada de Gel
 unstablegelsword=Espada de Gel Instável
-unstablegelgreatsword=Espadona de Gel Instável
-unstablegelstaff=Cajado de Gel Instável
-sling=Estilingue
-firesling=Estilingue de Fogo
-frozensling=Estilingue Congelado
-blowgun=Zarabatana
-rockyperiapt=Talismã Rochoso
-unstableperiapt=Talismã Instável
-bloodyperiapt=Talismã Sangrento
-demonicperiapt=Talismã Demoníaco
-abysmalperiapt=Talismã Abissal
-frozenperiapt=Talismã Congelado
-necromancyperiapt=Talismã de Necromancia
-rockyboots=Botas Rochosas
-rockychestplate=Peitoral Rochoso
-rockyhelmet=Elmo Rochoso
-goldhat=Chapéu de Ouro
-unstablegelbattleaxe=Machado de Batalha de Gel Instável
-demonicbattleaxe=Machado de Batalha Demoníaco
+broom=Vassoura
+voidhammer=Martelo do Vazio
+
+// Greatswords
+unstablegelgreatsword=Espadão de Gel Instável
+
+// Glaives
+woodenrod=Varinha de Madeira
+
+// Sabers
+saber=Sabre
 coppersaber=Sabre de Cobre
 ironsaber=Sabre de Ferro
 goldsaber=Sabre de Ouro
-unstablegelsaber=Sabre de Gel Instável
 demonicsaber=Sabre Demoníaco
+unstablegelsaber=Sabre de Gel Instável
+
+// Battleaxes
+battleaxe=Machado de Batalha
+unstablegelbattleaxe=Machado de Batalha de Gel Instável
+demonicbattleaxe=Machado de Batalha Demoníaco
+
+// Daggers
+# NEW
+dagger=Adaga
+copperdagger=Adaga de Cobre
+irondagger=Adaga de Ferro
+golddagger=Adaga de Ouro
+demonicdagger=Adaga Demoníaca
+tungstendagger=Adaga de Tungstênio
+
+// Magic weapons
+unstablegelstaff=Cajado de Gel Instável
+magicalbroom=Vassoura Mágica
+adeptsbook=Livro do Adepto
+
+// Greatbows
+gelgreatbow=Arco Longo de Gel
+unstablegelgreatbow=Arco Longo de Gel Instável
+
+// Arrows
+gelarrow=Flecha de Gel
+unstablegelarrow=Flecha de Gel Instável
+
+// Slings
+sling=Funda
+firesling=Funda de Fogo
+frozensling=Funda Congelante
+
+// Blowguns
+blowgun=Zarabatana
+
+// Throw weapons
+gelball=Bola de Gel
+gelballgroup=Bolas de Gel Agrupadas
+unstablegelveline=Gel Instável
+
+// Summon weapons
+volatilegelstaff=Varinha de Gel Volátil
+
+// Banners
+# NEW
+blankbanner=Banner em Branco
+
+// Healing Tools
+healingtool=Ferramenta de Cura
+magicalvial=Frasco Mágico
+healingstaff=Cajado de Cura
+woodenwand=Varinha de Madeira
+goldenwand=Varinha Dourada
+
+// Trinkets
+rockyperiapt=Periapto Rocoso
+unstableperiapt=Periapto Instável
+bloodyperiapt=Periapto Sangrento
+demonicperiapt=Periapto Demoníaco
+abysmalperiapt=Periapto Abissal
+frozenperiapt=Periapto Congelante
+necromancyperiapt=Periapto de Necromancia
+floralring=Anel Floral
+gelring=Anel de Gel
+heartring=Anel do Coração
+ringofhealth=Anel de Saúde
+swampshield=Escudo de Pântano
+witchmedallion=Medalhão da Bruxa
+# NEW
+iceboots=Botas de Gelo
+bannerbearerfoci=Foco de Portador de Banner
+
+// Armor
+rockyboots=Botas Rochosas
+rockychestplate=Peitoral Rochoso
+rockyhelmet=Capacete Rochoso
+goldhat=Chapéu de Ouro
+pinkwitchhat=Chapéu de Bruxa Rosa
+magicalsuit=Traje Mágico
+magicalboots=Botas Mágicas
+swampboots=Botas de Pântano
+swampchestplate=Peitoral de Pântano
+swampmask=Máscara de Pântano
+swamphood=Capa de Pântano
+
+// Misc
+gelslimenullifier=Anulador de Slime de Gel
+cuberry=Cuberry
+
+// Backpacks
 basicbackpack=Mochila Básica
 sapphirebackpack=Mochila de Safira
 amethystbackpack=Mochila de Ametista
 rubybackpack=Mochila de Rubi
 emeraldbackpack=Mochila de Esmeralda
 diamondbackpack=Mochila de Diamante
-gelslimenullifier=Anulador de Slimes de Gel
-broom=Vassoura
-magicalbroom=Vassoura Mágica
-pinkwitchhat=Chapéu de Bruxa Rosa
-magicalsuit=Traje Mágico
-magicalboots=Botas Mágicas
-stardust=Pó Estelar
-magicalvial=Frasco Mágico
-healingstaff=Cajado de Cura
-floralring=Anel Floral
-gelring=Anel de Gel
-heartring=Anel de Coração
-ringofhealth=Anel de Saúde
-swampboots=Botas de Pântano
-swampchestplate=Peitoral de Pântano
-swampmask=Máscara de Pântano
-swamphood=Capuz de Pântano
-swampshield=Escudo de Pântano
-woodenrod=Vara de Madeira
-woodenwand=Varinha de Madeira
-witchmedallion=Medalhão de Bruxa
-lowdspotion=Potion do Lowd
-adeptsbook=Livro do Adepto
-goldenwand=Varinha Dourada
-unstablegelarrow=Flecha de Gel Instável
-gelarrow=Flecha de Gel
-unstablegelgreatbow=Grande Arco de Gel Instável
-gelgreatbow=Grande Arco de Gel
-voidhammer=Martelo do Vazio
-unstablegelveline=Gelveline Instável
-cuberry=Cuberry
-volatilegelstaff=Bastão de Gel Volátil
+
+// Runes Injectors
+# NEW
+runesinjector=Injetor de Runas
+rusticrunesinjector=Injetor de Runas Rústico
+unstablerunesinjector=Injetor de Runas Instável
+demonicrunesinjector=Injetor de Runas Demoníaco
+tungstenrunesinjector=Injetor de Runas de Tungstênio
+ancientrunesinjector=Injetor de Runas Antigo
+
+// Base Runes Tier 0
+# NEW
+baserune=Rune Base
+runeoffury=Rune da Fúria
+runeofspeed=Rune da Velocidade
+runeofhealing=Rune da Cura
+runeofresistance=Rune da Resistência
+runeofvalor=Rune do Valor
+runeofdetonation=Rune da Detonação
+runeofthunder=Rune do Trovão
+runeofwinter=Rune do Inverno
+runeofshadows=Rune das Sombras
+runeofimmortality=Rune da Imortalidade
+
+// Base Runes Tier 1
+# NEW
+runeofunstablegelslime=Rune de Slime de Gel Instável
+runeofevilsprotector=Rune do Protetor do Mal
+runeofqueenspider=Rune da Aranha Rainha
+runeofvoidwizard=Rune do Mago do Vazio
+runeofswampguardian=Rune do Guardião do Pântano
+runeofancientvulture=Rune do Abutre Antigo
+runeofpiratecaptain=Rune do Capitão Pirata
+
+// Base Runes Tier 2
+# NEW
+runeofreaper=Runa do Ceifador
+runeofcryoqueen=Runa da Rainha de Gelo
+runeofpestwarden=Runa do Guardião da Peste
+runeofsageandgrit=Runa do Sábio & Coragem
+runeoffallenwizard=Runa do Mago Caído
+
+// Base Runes Tier 3
+# NEW
+runeofmotherslime=Runa da Slime Mãe
+runeofnightswarm=Runa do Enxame Noturno
+runeofspiderempress=Runa da Imperatriz Aranha
+runeofsunlightchampion=Runa do Campeão da Luz Solar
+runeofmoonlightdancer=Runa da Dançarina do Luar
+runeofcrystaldragon=Runa do Dragão de Cristal
+
+// Modifier Runes Tier 0
+# NEW
+modifierrune=Runa Modificadora
+empoweringrune=Runa Potencializadora
+recurrentrune=Runa Recorrente
+
+// Modifier Runes Tier 1
+# NEW
+frenzyrune=Runa da Fúria
+vitalrune=Runa Vital
+devastatingrune=Runa Devastadora
+onyxrune=Runa de Onyx
+pawningrune=Runa de Domínio
+
+// Modifier Runes Tier 2
+# NEW
+abysmalrune=Runa Abismal
+tidalrune=Runa das Marés
+
+// Modifier Runes Tier 3
+# NEW
+ascendantrune=Runa Ascendente
+
 
 [itemtooltip]
+// Stat tips
 line=--------------------
 magichealingtip=Cura mágica: §7<health>
 rangetip=Alcance: §9<range>
 areatip=§aÁrea <number>
 bannerdamagetip=Dano do estandarte: <value>
+# NEW
+areabuff=Aplica <buff> aos aliados
+areadebuff=Aplica <buff> aos inimigos
+areabuffdisplay=<buff> por <duration> segundos
 
-magichealinggrace=§aGraça de Cura Mágica:§0 Cura a si mesmo com uma % da §9[Cura Mágica]§0 destinada aos aliados
+// Mechanics
+magichealinggrace=§aGraça da Cura Mágica:§0 Cura você mesmo com uma % da §9[Cura Mágica]§0 destinada a aliados
 
-saber=Carga rápida causando 2x dano após 0,5 segundos, depois descarrega por mais 0,5 segundos
-saber2=Um ataque perfeito lançará um corte aéreo que causa dano base. Um bom também lançará um fraco
-saber3=Mantenha [input=mouse2] para carregar um dash para cortar inimigos causando dano base
-battleaxe=Requer muito tempo de carga
-battleaxe2=Pressione [input=mouse2] para ativar o Ataque do Berserker. Não pode sofrer dano ou se mover enquanto ativa a habilidade
-sling=Atira pedras com força
-sling2=100% de chance de atordoar o inimigo por 0,5 segundos
-spinsecondaryattack=[input=mouse2] para tornar o próximo ataque um ataque de área
-areasecondaryattack=[input=mouse2] para realizar um ataque de área consumindo <mana> Mana
+// Misc
+gelslimenullifier=Eles vão parar de incomodá-lo com um simples clique!
+# NEW
+enchantingscrollhealingequipmenttip=Usado para encantar um item de equipamento de cura com <enchantment>\n§!Aphorea Mod
+enchantingscrollhealingtip=Usado para encantar uma ferramenta de cura com <enchantment>\n§!Aphorea Mod
+enchantingscrollareatip=Usado para encantar uma ferramenta de efeito em área com <enchantment>\n§!Aphorea Mod
+enchantingscrolldaggertip=Usado para encantar uma adaga com <enchantment>\n§!Aphorea Mod
+
+// Consumables
+deleteditem=Este item foi removido. Use este item para recuperar os materiais antes que seja removido permanentemente
+unstablecore=§bLibera uma aura instável...§0 Só pode ser usado durante o dia
+lowdspotion=NÃO BEBA ISSO
+
+// General Weapons & Tools
+saber=Carga rápida que causa 2x de dano após 0,5 segundos, depois descarrega em mais 0,5 segundos
+saber2=Um ataque perfeito lançará um corte aéreo que causa dano base. Um bom ataque lançará também um corte fraco
+saber3=Mantenha pressionado [input=mouse2] para carregar um dash que corta inimigos causando dano base
+battleaxe=Requer muito tempo de carregamento
+battleaxe2=Pressione [input=mouse2] para ativar a Fúria do Berserker. Você não pode sofrer dano ou se mover enquanto ativa a habilidade
+sling=Arremessa pedras com força
+sling2=Chance de 100% de atordoar o inimigo por 0,5 segundos
+spinsecondaryattack=[input=mouse2] para fazer o próximo ataque se tornar um ataque em área
+areasecondaryattack=[input=mouse2] para realizar um ataque em área consumindo <mana> Mana
 stikybuff1=Torna o inimigo §9Pegajoso§0 por 1 segundo
 stikybuff2=Torna o inimigo §9Pegajoso§0 por 2 segundos
 stikybuff3=Torna o inimigo §9Pegajoso§0 por 3 segundos
-gelball=Joga uma bola de gel
-unstablecore=§bLibera uma aura instável...§0 Só pode ser usado durante o dia
-rockyperiapt=+5 Armadura, mas -5% Velocidade de Movimento
-rockyperiapt2=Pressione [input=trinketability] para ganhar 10 de Armadura por 10 segundos\nVocê não pode sofrer dano ou se mover enquanto ativa a habilidade
-unstableperiapt=Chama duas §bGel Slimes Bebês Instáveis§0 que irão protegê-lo. Estas slimes §9causam 8 de Dano de Invocador§0
-unstableperiapt2=Torna-se imune ao debuff §9Pegajoso§0
-bloodyperiapt=Pressione [input=trinketability] para ganhar +50% de Velocidade, +30% de Velocidade de Ataque, e\nas armas §6Disparo de Sangue§0 e §6Rajada de Sangue§0 irão curá-lo por 5% do dano que causar com elas.\nVocê não pode sofrer dano ou se mover enquanto ativa a habilidade
-demonicperiapt=Pressione [input=trinketability] para ganhar +50% de Velocidade, +30% de Velocidade de Ataque, e\nas armas mágicas irão curá-lo por 5% do dano que causar com elas por 10 segundos.\nVocê não pode sofrer dano ou se mover enquanto ativa a habilidade
-abysmalperiapt=Armas mágicas irão curá-lo por 5% do dano que causar com elas
-necromancyperiapt=Cada vez que você ou um dos seus invocados mata um mob hostil você invoca um §bEsqueleto Morto-Vivo§0\n que §9causa 20 de Dano de Invocador§0 por§9 10 segundos§0 com um máximo de§9 3 ao mesmo tempo§0
-frozenperiapt=Armas Corpo a Corpo e de Longo Alcance irão §6Congelar§0 por 3 segundos. Se o alvo já estiver congelado, aumenta o dano base do ataque em §9+20%§0
-frozenperiapt2=Pressione [input=trinketability] para ganhar +50% de Velocidade, +30% de Velocidade de Ataque e\nfazer com que isso funcione com todo o dano por 10 segundos.\nVocê não pode sofrer dano ou se mover enquanto ativa a habilidade
-frozenperiapt3=Torna-se imune aos debuffs §9Congelar§0 e §9Lentidão de Gelo§0
-goldhatsetbonus=+60% de Velocidade de Ataque a Longo Alcance enquanto você não estiver se movendo
-firesling=Queima os inimigos
-frozensling=Congela os inimigos
 backpack=É um novo inventário que armazena todos os itens que você coleta
-backpack2=§6Não tenha mochilas com itens no inventário quando for criar uma mochila melhor
+backpack2=§6Não tenha mochilas com itens no inventário ao criar uma mochila melhor
 backpackslots=Capacidade de <slots> itens
 stored=Itens armazenados: <items>
-gelslimenullifier=Eles vão parar de incomodá-lo com um simples clique!
-geltile=Chão pegajoso que desacelera bastante tudo o que estiver em cima
-pinkwitchsetbonus=Aumenta a Velocidade de Ataque Mágico, Regeneração de Mana e Armadura conforme você tem menos vida, com um máximo de 50% / 6 Armor
-floralring=Auto §9[Cura Mágica]§0 com §7<healing>§0 a cada 5 segundos
-gelring=+30% §9[Cura Mágica]§0 recebida
-heartring=+20 de saúde máxima
-magicalvial=§9[Cura Mágica]§0 de §7<healing>§0. Aponte para um humano ferido para curá-lo, ou não aponte para ninguém para se curar. Tempo de recarga de 20 segundos
-swampshield=Protege apenas contra ataques na direção em que são recebidos\nAuto §9[Cura Mágica]§0 com o §7<healing>§0 do dano que você impede
-witchstatue=Colocar esta estátua na superfície de um pântano eliminará a aparição de Bruxas Rosa em toda a ilha
-deleteditem=Este item foi removido, use-o para recuperar os materiais antes de ser permanentemente eliminado
-woodenrod=Auto §9[Cura Mágica]§0 com §7<healing>§0 a cada 10 ataques
-witchmedallion=Causa 15 de Dano em área a cada 20 de §9[Cura Mágica]§0 realizada
-lowdspotion=NÃO BEBA ISSO
+twoarrows=Dispara duas flechas de uma vez
+threearrows=Dispara três flechas de uma vez
 projectilearea=Quando o projétil termina, causa dano em área
-voidhammer=Quando rebote ou acerta um inimigo, mira no mais próximo, acertando até 3 vezes
-unstablegelstaff=Quando rebote nas paredes, duplica
-twoarrows=Atira duas flechas de uma vez
-threearrows=Atira três flechas de uma vez
+# NEW
+blowgun=Dispara sementes
+
+// Single Weapons & Tools
+gelball=Arremessa uma bola de gel
+firesling=Queima os inimigos
+frozensling=Congela os inimigos
+magicalvial=§9[Cura Mágica]§0 de §7<healing>§0. Aponte para um humano ferido para curá-lo, não aponte para ninguém para curar a si mesmo. Recarga de 20 segundos
+woodenrod=§9[Cura Mágica]§0 em si mesmo com §7<healing>§0 a cada 10 ataques
+voidhammer=Quando o projétil ricocheteia ou atinge um inimigo, ele mira no mais próximo, acertando até 3 vezes
+unstablegelstaff=Quando projéteis ricocheteiam nas paredes, eles se duplicam
 gelgreatbow=Transforma Flechas de Pedra em Flechas de Gel
 unstablegelgreatbow=Transforma Flechas de Pedra e Flechas de Gel em Flechas de Gel Instável
-strikebannereffect=+<effect>% regeneração de vida (dentro e fora de combate)
-strikebannerability=A cada <time> segundos: Realiza um ataque em área
+# NEW
+woodenwand=Dispara um projétil de §9[Cura Mágica]§0
+goldenwand=Dispara um projétil que termina com uma área de §9[Cura Mágica]§0
+
+// Tiles & Objects
+geltile=Piso pegajoso que desacelera significativamente tudo que estiver em cima
+witchstatue=Colocar esta estátua na superfície de um pântano eliminará a geração de bruxas em toda a ilha
+
+// Trinkets
+rockyperiapt=+5 Armadura, mas -5% Velocidade de Movimento
+rockyperiapt2=Pressione [input=trinketability] para ganhar 10 de Armadura por 10 segundos\nVocê não pode sofrer dano ou se mover enquanto ativa a habilidade
+unstableperiapt=Chama dois §bSlimes Bebês de Gel Instável§0 que o protegerão. Esses slimes §9causam 8 de Dano de Invocador§0
+unstableperiapt2=Torna você imune ao debuff §9Pegajoso§0
+bloodyperiapt=Pressione [input=trinketability] para ganhar +50% Velocidade, +30% Velocidade de Ataque, e\nas armas §6Projétil de Sangue§0 e §6Rajada de Sangue§0 curarão você por 5% do dano causado\nVocê não pode sofrer dano ou se mover enquanto ativa a habilidade
+demonicperiapt=Pressione [input=trinketability] para ganhar +50% Velocidade, +30% Velocidade de Ataque, e\nas armas mágicas curarão você por 5% do dano causado por 10 segundos\nVocê não pode sofrer dano ou se mover enquanto ativa a habilidade
+abysmalperiapt=Armas mágicas curarão você por 5% do dano causado
+necromancyperiapt=Cada vez que você ou uma de suas invocações mata um mob hostil, você invoca um §bEsqueleto Morto-Vivo§0\n que §9causa 20 de Dano de Invocador§0 por§9 10 segundos§0 com um máximo de§9 3 de cada vez§0
+frozenperiapt=Armas Corpo a Corpo e de Longo Alcance irão §9Congelar§0 por 3 segundos. Se o alvo já estiver congelado, aumenta o Dano Base do ataque em §9+20%§0
+frozenperiapt2=Pressione [input=trinketability] para ganhar +50% Velocidade, +30% Velocidade de Ataque e\nfazer isso funcionar com todos os danos por 10 segundos\nVocê não pode sofrer dano ou se mover enquanto ativa a habilidade
+frozenperiapt3=Torna você imune aos debuffs §9Congelado§0 e §9Ralentado pelo Gelo§0
+floralring=§9[Cura Mágica]§0 em si mesmo com §7<healing>§0 a cada 5 segundos
+gelring=+30% §9[Cura Mágica]§0 recebida
+heartring=+20 de vida máxima
+swampshield=Só protege ataques na direção em que são recebidos\n§9[Cura Mágica]§0 em si mesmo com §7<healing>§0 do dano que você previne
+witchmedallion=Causa 15 de Dano em Área para cada 20 §9[Cura Mágica]§0 feita
+# NEW
+bannerbearerfoci1=§7+40%§0 efeito do estandarte e §7+20%§0 velocidade da habilidade do estandarte
+bannerbearerfoci2=§6-20%§0 de todo dano que não seja de estandarte e §6-1§0 de invocações máximas
+iceboots=Faz você deslizar como se estivesse no gelo, mas concede +50% de velocidade de movimento e +4 de armadura
+
+// Set Bonus
+goldhatsetbonus=+60% de Velocidade de Ataque à Distância enquanto você não estiver se movendo
+pinkwitchsetbonus=Aumenta a Velocidade de Ataque Mágico, Regeneração de Mana e Armadura conforme você tem menos vida, com um máximo de 50% / 6 de Armadura
+
+// Banners
+strikebannereffect=§7+<effect>%§0 de regeneração de vida (dentro e fora de combate)
+strikebannerability=§aA cada <time> segundos:§0 Realiza um ataque em área
+# NOVO
+blankbannereffect=§7+<effect>%§0 de regeneração de vida (fora de combate)
+blankbannerability=§aA cada <time> segundos:§0 Realiza uma cura em área
+bannerofdamageeffect=§7+<effect>%§0 de dano
+bannerofdefenseeffect=§7-<effect>%§0 de dano recebido
+bannerofspeedeffect=§7+<effect>%§0 de velocidade de movimento
+bannerofsummonspeedeffect=§7+<effect>%§0 de velocidade de movimento de invocações
+
+// Runes (General)
+# NEW
+baserune=§iRuna Base
+modifierrune=§aRuna Modificadora
+linkedrune=§bRuna vinculada a [<player>]
+notruneowner=Você não é o dono da Runa Base
+runesslots=Pode inserir até 1 Runa Base + <modifierslots> Runas Modificadoras
+useruneinfusor=[input=runesinjectorability] para ativar
+requiresbaserune=Requer uma runa base inserida
+onlyonebaserune=Apenas uma runa base pode ser inserida por vez
+duplicatedmodifierrunes=Não é possível inserir mais de uma runa modificadora igual
+runehealthcost=Consome <health>% da saúde máxima ao ativar
+runehealthhealing=Restaura <health>% da saúde máxima ao usar
+runecooldown=Recarrega em <seconds> segundos
+increaseruneeffectnumber=Aumenta o efeito em §7<variation>%§0
+decreaseruneeffectnumber=Reduz o efeito em §6<variation>%§0
+increaserunecooldown=Aumenta o tempo de recarga em §6<variation>%§0
+decreaserunecooldown=Reduz o tempo de recarga em §7<variation>%§0
+increaserunehealthcost=Aumenta o consumo de saúde máxima em §6<health>%§0
+increaserunehealthhealing=Aumenta a restauração da saúde máxima em §7<health>%§0
+runedamagereduction=O dano é drasticamente reduzido contra humanos e ainda mais contra chefes
+runedamagereductionnoboss=O dano é drasticamente reduzido contra humanos e não afeta chefes
+moreextraeffectmod=As modificações de efeito são <mod>% mais eficazes
+lessextraeffectmod=As modificações de efeito são <mod>% menos eficazes
+
+// Runes Injectors
+
+// Base Runes Tier 0
+# NEW
+runeoffury=Aumenta seu dano e velocidade de ataque em §7<effectNumber>§0% por 10 segundos
+runeofspeed=Avança com força de §7<effectNumber>^§0 na direção em que você está se movendo e fica invencível por 0,5 segundos
+runeofhealing=Aumenta a restauração da saúde máxima em §7<effectNumber>§0%
+runeofresistance=Aumenta sua armadura em §7<effectNumber>§0% por 10 segundos
+runeofresistance2=Enquanto estiver em recarga, sua armadura será reduzida pela metade
+runeofvalor=Duplica os efeitos dos estandartes que você carrega e duplica a velocidade de suas habilidades por §7<effectNumber>§0 segundos
+runeofdetonation=Explode, causando mais dano e empurrando os inimigos quanto mais próximos eles estiverem
+runeofdetonation2=O dano máximo é §7<effectNumber>§0% da saúde máxima dos inimigos
+runeofthunder=Após dois segundos, um raio atinge a posição inicial do cursor
+runeofthunder2=O raio causa §7<effectNumber>§0% da saúde dos inimigos como dano e os atordoa por 2 segundos
+runeofwinter=Congela os inimigos em um raio de 500 por §7<effectNumber>§0 segundos
+runeofimmortality=Se você morrer nos próximos §7<effectNumber>^^§0 segundos, sobreviverá com saúde máxima
+runeofimmortality2=Se isso acontecer, você será imortal por 3 segundos, mas o tempo de recarga será de 30 segundos
+runeofimmortality3=Enquanto estiver em recarga, sua saúde máxima será reduzida pela metade
+runeofshadows=Por §7<effectNumber>§0 segundos, você ficará invisível, mas também intimidado, impedindo-o de realizar qualquer ação
+
+// Base Runes Tier 1
+# NEW
+runeofunstablegelslime=Teleporta para uma localização próxima e invoca 2 Slimes Instáveis Rúnicos por §7<effectNumber>§0 segundos
+runeofunstablegelslime2=As invocações causarão 5% da saúde máxima dos inimigos como dano
+runeofevilsprotector=+§7<effectNumber>§0% de velocidade de ataque, mas -50% de velocidade de movimento por 10 segundos
+runeofevilsprotector2=Durante a noite na superfície, o efeito positivo é dobrado
+runeofqueenspider=Deixa uma teia de aranha no chão por §7<effectNumber>§0 segundos
+runeofvoidwizard=Todos os projéteis irão ricochetear infinitamente e +§7<effectNumber>^§0% de velocidade do projétil por 10 segundos
+runeofswampguardian=Reduz todo o dano recebido em 80% por §7<effectNumber>§0 segundos
+runeofancientvulture=Invoca um Abutre Rúnico por 10 segundos
+runeofancientvulture2=A invocação causará §7<effectNumber>§0% da saúde máxima dos inimigos como dano
+runeofpiratecaptain=Aumenta seu dano em §7<effectNumber>§0% para cada 200 moedas que você possui, até um máximo de 20.000 moedas
+runeofpiratecaptain2=Cada vez que você ataca, perde 3 moedas
+
+// Base Runes Tier 2
+# NEW
+runeofreaper=Teleporta para a posição do seu mouse. Distância máxima de §7<effectNumber>§0
+runeofcryoqueen=Para por 1 segundo e lança um ataque de gelo ao seu redor com alcance de §7<effectNumber>§0
+runeofcryoqueen2=Os projéteis causarão 200% da saúde máxima dos inimigos como dano
+runeofpestwarden=Você se move em alta velocidade em direção à posição do seu mouse por §7<effectNumber>§0 segundos. Você não pode atacar
+runeofpestwarden2=Todos os ataques recebidos causam 1 de dano, e colidir com inimigos causa 20% da saúde máxima deles
+runeofsageandgrit=Se houver aliados feridos próximos (500 de alcance), cura §7<effectNumber>§0% da saúde total deles
+runeofsageandgrit2=Se não houver, aumenta seu dano, velocidade de ataque e velocidade de movimento em +§7<effectNumber>§0% por 20 segundos
+runeoffallenwizard=Atordoa todos os inimigos, exceto você, por §7<effectNumber>§0 segundos
+runeoffallenwizard2=Humanos se libertam mais rápido, e chefes ainda mais rápido
+
+// Base Runes Tier 3
+# NEW
+runeofmotherslime=Realiza um grande salto em direção à posição do seu mouse e causa dano em área ao pousar
+runeofmotherslime2=O pouso causará §7<effectNumber>§0% da saúde máxima dos inimigos como dano
+runeofnightswarm=Invoca 5 morcegos por §7<effectNumber>§0 segundos que procuram mobs hostis para mordê-los
+runeofnightswarm2=Cada mordida restaura 1% da sua saúde total (mínimo de 1)
+runeofspiderempress=Arremessa §7<F0effectNumber>§0 bolas de teia na direção do seu mouse
+runeofspiderempress2=As bolas de teia vão atordoar por 3 segundos e desacelerar por 10 segundos
+runeofsunlightchampion=Fica atordoado por 3 segundos carregando uma nova de alcance §7<effectNumber>§0
+runeofsunlightchampion2=A nova causará 200% da saúde máxima dos inimigos como dano
+runeofmoonlightdancer=+§7<effectNumber>§0% de dano para cada +1% de velocidade de movimento por 10 segundos
+runeofcrystaldragon=Arremessa um laser na posição do seu cursor por 5 segundos
+runeofcrystaldragon2=O laser causará §7<effectNumber>§0% da saúde máxima dos inimigos como dano
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+# NEW
+onyxrune=Quando ativada, invoca Onyx por 5 segundos. Ele causará dano baseado em 5% da saúde dos inimigos
+onyxrune2=Cada mordida de Onyx restaura 1% da sua saúde total (mínimo de 1)
+onyxrune3=§3Obrigado, Onyx, pelas ideias brilhantes de runas! <3
+pawningrune=Quando ativada, se você ainda não tiver o efeito, restaura imediatamente 20% da sua saúde máxima
+pawningrune2=Após 10 segundos, você perderá a quantidade restaurada mais 40% adicionais
+
+// Modifier Runes Tier 2
+# NEW
+abysmalrune=Quando ativada, invoca um buraco negro na posição do seu cursor, puxando inimigos por 2 segundos
+abysmalrune2=O buraco negro só será invocado se tiverem se passado 10 segundos desde a última ativação
+tidalrune=Quando ativada, invoca uma onda de água que empurra os inimigos para longe
+
+// Modifier Runes Tier 3
+
 
 [mobtooltip]
-usenet=Use uma Rede! [item=net]
+usenet=Use a Net! [item=net]
 
-gelslime=Slime de Gel
+
+[mob]
+gelslime=Gel Slime
 rockygelslime=Slime de Gel Rochoso
 unstablegelslime=Slime de Gel Instável
 miniunstablegelslime=Mini Slime de Gel Instável
 pinkwitch=Bruxa Rosa
-babyunstablegelslime=Bebê Slime de Gel Instável
+babyunstablegelslime=Baby Slime de Gel Instável
 undeadskeleton=Esqueleto Morto-Vivo
-voidadept=Adepto do Vazio
+voidadept=Adepto do Vácuo
 volatilegelslime=Slime de Gel Volátil
 wildphosphorslime=Slime de Fósforo Selvagem
-petphosphorslime=Slime de Fósforo
+petphosphorslime=Slime de Fósforo de Estimação
+# NEW
+copperdaggergoblin=Goblin com Adaga de Cobre
+irondaggergoblin=Goblin com Adaga de Ferro
+golddaggergoblin=Goblin com Adaga de Ouro
+runicunstablegelslime=Slime de Gel Instável Rúnico
+runicvulturehatchling=Filhote de Abutre Rúnico
+runicbat=Morcego Rúnico
+onyx=Onyx
+
 
 [buff]
-stunAtordoado
-stickyPegajoso
-berserkerrushFúria do Berserker
-berserkerrushcooldownFúria do Berserker em Recarga
-swordchargeattackcooldown=Ataque de Espada Carregado em Recarga
-periaptcooldownHabilidade de Talismã em Recarga
-periaptactiveHabilidade de Talismã Ativa
-saberdashcooldown=Recarga de Dash
+stun=Atordoado
+sticky=Pegajoso
+berserkerrush=Investida do Berserker
+berserkerrushcooldown=Investida do Berserker em Recarga
+spinattackcooldown=Ataque Giratório em Recarga
+periaptcooldown=Habilidade do Amuleto em Recarga
+periaptactive=Habilidade do Amuleto Ativa
+saberdashcooldown=Recarga do Impulso
 lowdspoison=Veneno de Lowd
+# NEW
+stop=Parado
+immortal=Imortal
+immortalcooldown=Recarga da Imortalidade
+fallenstun=Atordoamento Decaído
+runesinjectoractive=Injetor de Runas Ativo
+runesinjectorcooldown=Injetor de Runas em Recarga
+
 
 [message]
-unstablegelslime_anger=§6Slime de Gel Instável está ficando bravo... <anger>/10
-unstablegelslime_fullanger=§6Slime de Gel Instável ficou bravo! <anger>/10
-unstablegelslime_night=§6Slime de Gel Instável§0 desapareceu ao cair da noite!
-gelslimesnulled=Slimes de Gel anulados neste mundo. Eles não aparecerão mais
-gelslimesunnulled=Slimes de Gel permitidos neste mundo. Eles agora aparecerão
-pinkwitchesnulled=Bruxas Rosa anuladas em (<x>, <y>)
-pinkwitchesunnulled=Bruxas Rosa permitidas em (<x>, <y>)
-needfreeslots=Você precisa de <slots> espaços livres no inventário para usar isto
+unstablegelslime_anger=§6Gel Slime Instável está ficando com raiva... <anger>/10
+unstablegelslime_fullanger=§6Gel Slime Instável ficou com raiva! <anger>/10
+unstablegelslime_night=§6Gel Slime Instável§0 desapareceu quando a noite caiu!
+gelslimesnulled=Gel Slimes anulados neste mundo. Eles não aparecerão mais
+gelslimesunnulled=Gel Slimes permitidos neste mundo. Eles agora aparecerão
+pinkwitchesnulled=Bruxas Rosas anuladas em (<x>, <y>)
+pinkwitchesunnulled=Bruxas Rosas permitidas em (<x>, <y>)
+needfreeslots=Você precisa de <slots> espaços livres no inventário para usar isso
 cantuseatnight=Não pode ser usado à noite
-healthalreadyfull=Saúde já está completa
-cantheal=Não é possível curar
-pickupenabledinventoryfull=A coleta automática não pode ser desativada porque o inventário está cheio
-itoldyou=Eu te disse
+healthalreadyfull=A vida já está cheia
+cantheal=Não pode curar
+pickupenabledinventoryfull=A coleta não pode ser desativada porque o inventário está cheio
+itoldyou=Eu avisei
+# NEW
+insuficienthealth=Vida insuficiente para realizar esta ação!
+cannottrhowlockeditem=Você não pode descartar um item bloqueado no inventário
+initialrunetip=Escolha sua runa inicial com cuidado;\nvocê não obterá as outras até mais tarde no jogo
+alreadyselectedinitialrune=Runa inicial já selecionada
+cannotusetrial=Não pode ser usado em salas de teste
+
 
 [journal]
-killgelslimesforest=[mob=gelslime] Mate 25 Slimes de Gel na floresta
+killgelslimesforest=[mob=gelslime] Mate 25 Gel Slimes na floresta
 pickupfloralring=[item=floralring] Corte muita grama na floresta para obter o Anel Floral
-killunstablegelslime=[mob=unstablegelslime] Mate 1 Slime de Gel Instável
+killunstablegelslime=[mob=unstablegelslime] Mate 1 Gel Slime Instável
+
+
+[controls]
+# NEW
+runesinjectorability=Habilidade do Injetor de Runas

@@ -1,5 +1,6 @@
 package aphorea.projectiles.toolitem;
 
+import aphorea.utils.AphColors;
 import necesse.engine.registries.BuffRegistry;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
@@ -20,7 +21,7 @@ public class FrozenSlingStoneProjectile extends SlingStoneProjectile {
 
     @Override
     public Trail getTrail() {
-        return new Trail(this, getLevel(), new Color(0, 153, 153), 26, 100, getHeight());
+        return new Trail(this, getLevel(), AphColors.ice, 26, 100, getHeight());
     }
 
 

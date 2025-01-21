@@ -56,8 +56,7 @@ public class NecromancyPeriaptBuff extends TrinketBuff {
 
             AttackingFollowingMob mob = (AttackingFollowingMob) MobRegistry.getMob(mobId, player.getLevel());
 
-            serverClient.addFollower("necromancyperiapt", mob, FollowPosition.PYRAMID, "necromancyperiapt", Float.MIN_VALUE, Integer.MAX_VALUE, null, true);
-            mob.updateDamage(damage);
+            serverClient.addFollower("necromancyperiapt", mob, FollowPosition.PYRAMID, "necromancyperiapt", Float.MIN_VALUE, Integer.MAX_VALUE, (MserverClient, Mmob) -> ((AttackingFollowingMob) Mmob).updateDamage(damage), true);
             mob.getLevel().entityManager.addMob(mob, spawnX, spawnY);
         }
     }

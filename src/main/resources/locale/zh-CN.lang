@@ -3,22 +3,38 @@
 [global]
 aphorea=§!艾弗瑞亚模组
 
-[tile]
-geltile=凝胶地面
-
-[object]
-witchstatue=女巫雕像
 
 [buffmodifiers]
+// Magic Healing
 magichealing=<mod>% 魔法治疗
 magichealingflat=<mod> 魔法治疗
 magichealingreceived=<mod>% 获得魔法治疗
 magichealingreceivedflat=<mod> 获得魔法治疗
 magichealinggrace=<mod>% 魔法治疗之赐
 
+// Area
 arearange=<mod>% 远程范围
 
+// Banner Damage
+# NEW
+bannerdamage=<mod>% 旗帜伤害
+bannercritchance=<mod>% 旗帜暴击概率
+bannercritdamage=<mod>% 旗帜暴击伤害
+bannereffect=<mod>% 旗帜效果
+bannerabilityspeed=<mod>% 旗帜效果触发速度
+
+// Others
+# NEW
+loyal=匕首投掷时不会丢失
+
+
+[stats]
+# NEW
+banner_damage=旗帜伤害
+
+
 [enchantment]
+// Healing Equipment
 godly=神圣的
 absent=缺陷的
 auxiliary=辅助的
@@ -26,6 +42,7 @@ vain=自负的
 gentle=绅士的
 selfish=自私的
 
+// Healing
 friendly=友好的
 graceful=优雅的
 wonderful=无缺的
@@ -33,37 +50,133 @@ ecologic=生态的
 exalted=崇高的
 cursed=被诅咒的
 
+// Area
 booming=激进的
 dimmed=黯淡的
+
+// Others
+# NEW
+loyal=忠诚
+
+
+[tile]
+geltile=凝胶地面
+
+
+[object]
+witchstatue=女巫雕像
+# NEW
+runestable=符文表
+
 
 [itemcategory]
 healing=牧师
 healingtools=牧师
+# NEW
+runesinjectors=符文启动器
+baserunes=基础符文
+modifierrunes=修饰符文
 
-[itemtype]
-battleaxe=战斧
-saber=武士刀
-sling=投石器
-blowgun=吹箭
-healingtool=牧师
 
 [item]
-gelball=凝胶球
-rockygel=岩化凝胶球
-gelballgroup=集束凝胶组
-gelsword=凝胶剑
-unstablecore=紊乱凝胶核心
-unstablegel=紊乱凝胶球
-unstablegelsword=紊乱凝胶剑
-unstablegelgreatsword=紊乱凝胶大剑
-unstablegelstaff=紊乱凝胶魔杖
+// General Materials
+# NEW
+anybasicfoci=任意基础护符
 
+// Materials
+rockygel=岩化凝胶球
+unstablegel=紊乱凝胶球
+stardust=星之尘
+
+// Consumables
+unstablecore=紊乱凝胶核心
+# NEW
+lowdspotion=洛德药水
+initialrune=原初符文
+
+// Swords
+gelsword=凝胶剑
+unstablegelsword=紊乱凝胶剑
+broom=扫帚
+# NEW
+voidhammer=虚空之锤
+
+// Greatswords
+unstablegelgreatsword=紊乱凝胶大剑
+
+// Glaives
+# NEW
+woodenrod=木制阔剑
+
+// Sabers
+saber=武士刀
+coppersaber=铜制武士刀
+ironsaber=铁制武士刀
+goldsaber=金制武士刀
+demonicsaber=恶魔武士刀
+unstablegelsaber=紊乱凝胶武士刀
+
+// Battleaxes
+battleaxe=战斧
+unstablegelbattleaxe=紊乱凝胶战斧
+demonicbattleaxe=恶魔战斧
+
+// Daggers
+# NEW
+dagger=匕首
+copperdagger=铜匕首
+irondagger=铁匕首
+golddagger=金匕首
+demonicdagger=恶魔匕首
+tungstendagger=钨匕首
+
+// Magic weapons
+unstablegelstaff=紊乱凝胶魔杖
+magicalbroom=魔法扫帚
+# NEW
+adeptsbook=男巫之书
+
+// Greatbows
+# NEW
+gelgreatbow=凝胶巨弓
+unstablegelgreatbow=紊乱凝胶巨弓
+
+// Arrows
+# NEW
+gelarrow=凝胶箭
+unstablegelarrow=紊乱凝胶箭
+
+// Slings
 sling=投石器
 firesling=火焰投石器
 frozensling=寒冰投石器
 
+// Blowguns
 blowgun=吹箭
 
+// Throw weapons
+gelball=凝胶球
+gelballgroup=集束凝胶组
+# NEW
+unstablegelveline=紊乱凝胶投枪
+
+// Summon weapons
+# NEW
+volatilegelstaff=自爆史莱姆权杖
+
+// Banners
+# NEW
+blankbanner=空白旗帜
+
+// Healing Tools
+healingtool=牧师
+magicalvial=魔法瓶
+healingstaff=治愈法杖
+# NEW
+woodenwand=木制魔杖
+goldenwand=金魔杖
+
+// Trinkets
 rockyperiapt=岩化护符
 unstableperiapt=紊乱凝胶护符
 bloodyperiapt=血池护符
@@ -71,22 +184,35 @@ demonicperiapt=恶魔护符
 abysmalperiapt=深渊护符
 frozenperiapt=寒冰护符
 necromancyperiapt=死灵护符
+floralring=花之戒
+gelring=凝胶之戒
+heartring=心之戒
+ringofhealth=治愈之戒
+swampshield=沼泽盾牌
+# NEW
+witchmedallion=女巫勋章
+iceboots=冰靴
+bannerbearerfoci=旗手护符
 
+// Armor
 rockyboots=岩化靴
 rockychestplate=岩化胸甲
 rockyhelmet=岩化头盔
-
 goldhat=黄金之帽
+pinkwitchhat=粉红女巫帽
+magicalsuit=魔法制服
+magicalboots=魔法靴
+swampboots=沼泽靴
+swampchestplate=沼泽胸甲
+swampmask=沼泽面罩
+swamphood=沼泽兜帽
 
-unstablegelbattleaxe=紊乱凝胶战斧
-demonicbattleaxe=恶魔战斧
+// Misc
+gelslimenullifier=凝胶史莱姆生成控制器
+# NEW
+cuberry=立方梅
 
-coppersaber=铜制武士刀
-ironsaber=铁制武士刀
-goldsaber=金制武士刀
-unstablegelsaber=紊乱凝胶武士刀
-demonicsaber=恶魔武士刀
-
+// Backpacks
 basicbackpack=基础背包
 sapphirebackpack=蓝宝石背包
 amethystbackpack=紫水晶背包
@@ -94,143 +220,366 @@ rubybackpack=红宝石背包
 emeraldbackpack=翡翠背包
 diamondbackpack=钻石背包
 
-gelslimenullifier=凝胶史莱姆生成控制器
+// Runes Injectors
+# NEW
+runesinjector=符文启动器
+rusticrunesinjector=粗制符文启动器
+unstablerunesinjector=紊乱符文启动器
+demonicrunesinjector=恶魔符文启动器
+tungstenrunesinjector=钨制符文启动器
+ancientrunesinjector=远古符文启动器
 
-broom=扫帚
-magicalbroom=魔法扫帚
-witchhat=巫师帽
-magicalsuit=魔法制服
-magicalboots=魔法靴
+// Base Runes Tier 0
+# NEW
+baserune=基础符文
+runeoffury=狂暴符文
+runeofspeed=速度符文
+runeofhealing=治疗符文
+runeofresistance=抵抗符文
+runeofvalor=英勇符文
+runeofdetonation=爆燃符文
+runeofthunder=雷电符文
+runeofwinter=寒冬符文
+runeofshadows=阴影符文
+runeofimmortality=不朽符文
 
-stardust=星之尘
-magicalvial=魔法瓶
-healingstaff=治愈法杖
+// Base Runes Tier 1
+# NEW
+runeofunstablegelslime=紊乱史莱姆符文
+runeofevilsprotector=恶魔守卫符文
+runeofqueenspider=蜘蛛女王符文
+runeofvoidwizard=虚空巫师符文
+runeofswampguardian=沼泽守护者
+runeofancientvulture=远古秃鹫符文
+runeofpiratecaptain=海盗船长符文
 
-floralring=花之戒
-gelring=凝胶之戒
-heartring=心之戒
-ringofhealth=治愈之戒
+// Base Runes Tier 2
+# NEW
+runeofreaper=收割者符文
+runeofcryoqueen=冰雪女王符文
+runeofpestwarden=佩斯典狱长符文
+runeofsageandgrit=圣人和沙砾符文
+runeoffallenwizard=堕落巫师符文
 
-swampboots=沼泽靴
-swampchestplate=沼泽胸甲
-swampmask=沼泽面罩
-swamphood=沼泽兜帽
-swampshield=沼泽盾牌
+// Base Runes Tier 3
+# NEW
+runeofmotherslime=史莱姆之母符文
+runeofnightswarm=暗夜蝠群符文
+runeofspiderempress=蛛魔女皇符文
+runeofsunlightchampion=阳光卫士符文
+runeofmoonlightdancer=月光舞者符文
+runeofcrystaldragon=水晶龙符文
+
+// Modifier Runes Tier 0
+# NEW
+modifierrune=修饰符文
+empoweringrune=赋能符文
+recurrentrune=循环符文
+
+// Modifier Runes Tier 1
+# NEW
+frenzyrune=狂热符文
+vitalrune=生命符文
+devastatingrune=毁灭符文
+onyxrune=奥尼克斯符文
+pawningrune=典当符文
+
+// Modifier Runes Tier 2
+# NEW
+abysmalrune=深渊符文
+tidalrune=潮汐符文
+
+// Modifier Runes Tier 3
+# NEW
+ascendantrune=支配符文
+
 
 [itemtooltip]
+// Stat tips
 line=--------------------
-
 magichealingtip=魔法治疗: <health>
 rangetip=远程: <range>
 areatip=§a范围 <number>
+# NEW
+bannerdamagetip=旗帜伤害: <value>
+areabuff=赋予 <buff> 给盟友
+areadebuff=赋予 <buff> 给敌人
+areabuffdisplay=<buff> 持续 <duration> 秒
 
+// Mechanics
 magichealinggrace=§a魔法治疗之赐:§0 治疗他人时，使自己获得此次治疗量百分比的治疗值
 
+// Misc
+gelslimenullifier=按下一个简单的按钮让他们不再打扰你
+# NEW
+enchantingscrollhealingequipmenttip=用于给一件治疗装备注入 <enchantment> 的效果\n§!艾弗瑞亚模组
+enchantingscrollhealingtip=用于给一件治疗道具注入 <enchantment> 的效果\n§!艾弗瑞亚模组
+enchantingscrollareatip=用于给一件范围作用道具注入 <enchantment> 的效果\n§!艾弗瑞亚模组
+enchantingscrolldaggertip=用于给一件匕首装备注入 <enchantment> 的效果\n§!艾弗瑞亚模组
+
+// Consumables
+deleteditem=这件物品已被移除, 在其被永久移除之前使用此物品来恢复材料
+unstablecore=§b渗漏出一股紊乱的气息...§0 只能在白天使用
+# NEW
+lowdspotion=请勿饮用！！！
+
+// General Weapons & Tools
 saber=经过0.5秒快速的蓄力后，造成x2的伤害,。剩下的0.5秒内，蓄力将持续衰减。
 saber2=一次完美的蓄力攻击将会产生一道剑气，造成基础伤害.。一次凑合的蓄力攻击将会产生一道较弱的剑气。
 saber3=按住 [input=mouse2] 可为冲刺攻击蓄力，利刃将划过敌人造成基础伤害。
-
 battleaxe=需要很长的蓄力时间
 battleaxe2=按下 [input=mouse2] 来激活狂战之怒. 在激活的瞬间你不能够进行移动或造成伤害。
-
 sling=奋力扔出石头
 sling2=有100%的几率使敌人晕眩0.5秒
-
 spinsecondaryattack=[input=mouse2] 来让下一次攻击变为范围伤害
 areasecondaryattack=[input=mouse2] 通过消耗 <mana> 来造成一次范围伤害
-
 stikybuff1=让敌人 §9粘滞§0 1秒
 stikybuff2=让敌人 §9粘滞§0 2秒
 stikybuff3=让敌人 §9粘滞§0 3秒
-
-gelball=扔出一个凝胶球
-unstablecore=§b渗漏出一股紊乱的气息...§0 只能在白天使用
-
-rockyperiapt=+5 护甲, 但是 -5% 移动速度
-rockyperiapt2=按下 [input=trinketability] 来在接下来10秒内获得10点护甲值\n在激活的瞬间你不能够进行移动或造成伤害。
-
-unstableperiapt=召唤两只 §b幼态紊乱凝胶史莱姆§0 来保护你. 这些史莱姆 §9造成8点召唤伤害§0
-unstableperiapt2=让你免疫 §9粘滞§0 的负面状态
-
-bloodyperiapt=按下 [input=trinketability] 来获得+50% 速度, +30% 攻击速度，并且\n武器 §6鲜血迸发§0 和 §6血色绽放§0 将会为你吸取5%其造成伤害值的生命值。\n在激活的瞬间你不能够进行移动或造成伤害。
-
-demonicperiapt=按下 [input=trinketability] 来获得+50% 速度, +30% 攻击速度，并且\n魔法武器都会为你吸取10其造成伤害值的生命值，在接下来5%秒内有效。\n在激活的瞬间你不能够进行移动或造成伤害。
-
-abysmalperiapt=魔法武器将为你恢复造成伤害值的5%生命值。
-
-necromancyperiapt=每次你或者你的召唤物杀死一个敌人时 将会召唤一个§b死灵骷髅§0\n其 §9 造成20点召唤伤害§0 召唤物存在§9 10秒§0 最大同一时间存在§9 3个§0
-
-frozenperiapt=近程和远程攻击将会 §6冰封§0敌人3秒。如果敌人已处于冰封状态, 攻击造成伤害 §9+20%§0
-frozenperiapt2=按下 [input=trinketability] 来获得+50% 速度, +30% 攻击速度 并且\n在接下来10秒内冰封效果对所有类型伤害有效\n在激活的瞬间你不能够进行移动或造成伤害。
-frozenperiapt3=让你免疫§9冰封§0 和 §9冰霜§0 的负面状态
-
-goldhatsetbonus=当你不动时+60% 远程攻击速度
-
-firesling=使敌人燃烧
-frozensling=使敌人冰封
-
 backpack=为你提供新的库存来储存物品
 backpack2=§6当你制造一个更好的背包时，请确保背包内没有任何物品
 backpackslots=物品 <slots> 容量
 stored=储存的物品: <items>
+# NEW
+twoarrows=一次性发射两枚箭矢
+threearrows=一次性发射三枚箭矢
+projectilearea=当触及实物时，造成范围伤害
+blowgun=射出种子
 
-gelslimenullifier=按下一个简单的按钮让他们不再打扰你！
+// Single Weapons & Tools
+gelball=扔出一个凝胶球
+firesling=使敌人燃烧
+frozensling=使敌人冰封
+magicalvial=提供魔法治疗 §7<healing>§0. 指向受伤的人来治疗他们, 不指向任何人可为自己提供治疗. 冷却时间20秒
+# NEW
+woodenrod=每攻击10次进行自我 §9[Magic Healing]§0 ，治疗 §7<healing>§0 生命值
+voidhammer=当投射物弹射或者击中敌人时, 它将以最近距离单位为目标, 攻击3次
+unstablegelstaff=当投射物从墙上反弹时，它们会复制
+gelgreatbow=将 石箭 转化为 凝胶箭
+unstablegelgreatbow=将 石箭和凝胶箭 转化为 紊乱凝胶箭
+woodenwand=射出 §9[Magic Healing]§0 投射物
+goldenwand=射出投射物进行区域性的 §9[Magic Healing]§0
 
+// Tiles & Objects
 geltile=黏黏的地板会减少所有物体在上面的移动速度
+witchstatue=把这尊雕像放置在沼泽大陆上将会阻止女巫的生成
 
-witchsetbonus=提升魔法攻击速度, 魔法回复, 根据当前剩余生命值提高护甲, 最大 50%剩余生命值时提供6 护甲值
-
+// Trinkets
+rockyperiapt=+5 护甲, 但是 -5% 移动速度
+rockyperiapt2=按下 [input=trinketability] 来在接下来10秒内获得10点护甲值\n在激活的瞬间你不能够进行移动或造成伤害。
+unstableperiapt=召唤两只 §b幼态紊乱凝胶史莱姆§0 来保护你. 这些史莱姆 §9造成8点召唤伤害§0
+unstableperiapt2=让你免疫 §9粘滞§0 的负面状态
+bloodyperiapt=按下 [input=trinketability] 来获得+50% 速度, +30% 攻击速度，并且\n武器 §6鲜血迸发§0 和 §6血色绽放§0 将会为你吸取5%其造成伤害值的生命值。\n在激活的瞬间你不能够进行移动或造成伤害。
+demonicperiapt=按下 [input=trinketability] 来获得+50% 速度, +30% 攻击速度，并且\n魔法武器都会为你吸取5%其造成伤害值的生命值，在接下来10秒内有效。\n在激活的瞬间你不能够进行移动或造成伤害。
+abysmalperiapt=魔法武器将为你恢复造成伤害值的5%生命值。
+necromancyperiapt=每次你或者你的召唤物杀死一个敌人时 将会召唤一个§b死灵骷髅§0\n其 §9 造成20点召唤伤害§0 召唤物存在§9 10秒§0 最大同一时间存在§9 3个§0
+frozenperiapt=近程和远程攻击将会 §9冰封§0敌人3秒。如果敌人已处于冰封状态, 攻击造成伤害 §9+20%§0
+frozenperiapt2=按下 [input=trinketability] 来获得+50% 速度，+30% 攻击速度 并且\n在接下来10秒内冰封效果对所有类型伤害有效\n在激活的瞬间你不能够进行移动或造成伤害。
+frozenperiapt3=让你免疫§9冰封§0 和 §9冰霜§0 的负面状态
 floralring=每5秒获得§7<healing>§0魔法治疗
 gelring=+30% 魔法治疗获得
 heartring=+20 最大生命值上限
-
-magicalvial=提供魔法治疗 §7<healing>§0. 指向受伤的人来治疗他们, 不指向任何人可为自己提供治疗. 冷却时间20秒
-
 swampshield=只会格挡并吸收面前的攻击\n基于你吸收的伤害提供魔法治疗 §7<healing>§0
+# NEW
+witchmedallion=每进行 20 点§9[Magic Healing]§0 会造成15点范围伤害
+bannerbearerfoci1=§7+40%§0 旗帜效果 并且 §7+20%§0 旗帜效果触发速度
+bannerbearerfoci2=§6-20%§0 所有非旗帜伤害 并且 §6-1§0 最大召唤数量
+iceboots=让你移动地像在冰上滑一样, 但是会提升 +50% 移动速度 并且 +4 护甲
 
-witchstatue=把这尊雕像放置在沼泽大陆上将会阻止女巫的生成
+// Set Bonus
+goldhatsetbonus=当你不动时+60% 远程攻击速度
+witchsetbonus=提升魔法攻击速度，魔法回复，根据当前剩余生命值提高护甲，最大 50%剩余生命值时提供6 护甲值
 
-deleteditem=这件物品已被移除, 在其被永久移除之前使用此物品来恢复材料
+// Banners
+# NEW
+strikebannereffect=§7+<effect>%§0 生命恢复 (战斗中和战斗外)
+strikebannerability=§a每 <time> 秒:§0 造成区域伤害
+blankbannereffect=§7+<effect>%§0 生命恢复 (战斗外)
+blankbannerability=§a每 <time> 秒:§0 赋予区域生命回复
+bannerofdamageeffect=§7+<effect>%§0 伤害
+bannerofdefenseeffect=§7-<effect>%§0 受到伤害
+bannerofspeedeffect=§7+<effect>%§0 移动速度
+bannerofsummonspeedeffect=§7+<effect>%§0 召唤物移动速度
+
+// Runes (General)
+# NEW
+baserune=§i基础符文
+modifierrune=§a修饰符文
+linkedrune=§b符文锁定于 [<player>]
+notruneowner=你不是这个基础符文的拥有者
+runesslots=最多可以插入1个基础符文 + <modifierslots> 修饰符文
+useruneinfusor=[input=runesinjectorability] 来激活
+requiresbaserune=需要插入一个基础符文
+onlyonebaserune==同一时间只能激活一个基础符文
+duplicatedmodifierrunes=不能插入相同的修饰符文
+runehealthcost=启用时，需要消耗最大生命值的 <health>% 的生命值
+runehealthhealing=启用时，回复最大生命值的 <health>% 的生命值
+runecooldown=在 <seconds> 秒内重新充能
+increaseruneeffectnumber=效果增强 §7<variation>%§0
+decreaseruneeffectnumber=效果减弱 §6<variation>%§0
+increaserunecooldown=增加 §6<variation>%§0 冷却时间
+decreaserunecooldown=减少 §7<variation>%§0 冷却时间
+increaserunehealthcost=额外增加 §6<health>%§0 的最大生命值消耗
+increaserunehealthhealing=额外减少 §7<health>%§0 的最大生命值消耗
+runedamagereduction=对玩家的伤害大大降低，对首领的伤害更大
+runedamagereductionnoboss=对玩家的伤害大大降低，对首领无影响
+moreextraeffectmod=效果修改提高 <mod>%
+lessextraeffectmod=效果修改降低 <mod>%
+
+// Runes Injectors
+
+// Base Runes Tier 0
+# NEW
+runeoffury=在10秒内，提高你 §7<effectNumber>§0% 的伤害和攻击速度
+runeofspeed=以 §7<effectNumber>^§0 的力量向你所移动的方向冲刺并且在接下来的0.5秒内无敌
+runeofhealing=提高 §7<effectNumber>§0% 的生命回复效果
+runeofresistance=在10秒内，提高 §7<effectNumber>§0% 的护甲值
+runeofresistance2=当处于冷却时，你的护甲值减半
+runeofvalor=在 §7<effectNumber>§0 秒内将你的旗帜效果和生效速度加倍
+runeofdetonation=产生爆炸，敌人靠近时产生击退效果，造成更多伤害
+runeofdetonation2=最大造成此生物 §7<effectNumber>§0% 的最大生命值的伤害
+runeofthunder=启用两秒之后, 在你光标的最初位置处产生一道雷霆
+runeofthunder2=雷霆造成此生物 §7<effectNumber>§0% 的最大生命值的伤害并且造成2秒晕眩
+runeofwinter=在 §7<effectNumber>§0 秒内，霜冻使在500范围内的敌人减速
+runeofimmortality=如果你在启用后的 §7<effectNumber>^^§0 秒内死去，你将会以满血状态复活
+runeofimmortality2=效果成功触发后, 你将会获得持续3秒的无敌，但是冷却会持续30秒
+runeofimmortality3=当处于冷却时，你的最大生命值减半
+runeofshadows=在 §7<effectNumber>§0 秒内，你会变得隐形，但你无法采取任何行动
+
+// Base Runes Tier 1
+# NEW
+runeofunstablegelslime=传送到附近的地点，召唤2个持续时间为 §7<effectNumber>§0 秒的符文紊乱凝胶史莱姆
+runeofunstablegelslime2=召唤物将会造成该生物 5% 的最大生命值的伤害
+runeofevilsprotector=+§7<effectNumber>§0% 攻击速度，但是在10秒内 -50% 的移动速度
+runeofevilsprotector2=在夜晚的地表上时，增益效果加倍
+runeofqueenspider=在地上留下一个持续时间为 §7<effectNumber>§0 秒的蜘蛛网
+runeofvoidwizard=在10秒内，所有投射物都会无限反弹 并且 +§7<effectNumber>^§0% 投射速度
+runeofswampguardian=在 §7<effectNumber>§0 秒内减少受到的所有伤害
+runeofancientvulture=召唤一个持续时间为10秒的符文秃鹫幼体
+runeofancientvulture2=召唤物将会造成该生物 §7<effectNumber>§0% 的最大生命值的伤害
+runeofpiratecaptain=你每持有200金币，你的伤害将提升 §7<effectNumber>§0% ，上限于20000金币
+runeofpiratecaptain2=你每攻击一次，失去3枚金币
+
+// Base Runes Tier 2
+# NEW
+runeofreaper=传送至你的光标位置. 可移动最高 §7<effectNumber>§0 的距离
+runeofcryoqueen=停滞 1 秒后在你周围的 §7<effectNumber>§0 范围发动冰霜攻击
+runeofcryoqueen2=投射物将会以生物 200% 的最大生命值造成伤害
+runeofpestwarden=在 §7<effectNumber>§0 秒内朝你的鼠标位置高速移动，期间无法行动
+runeofpestwarden2=所有受到的伤害降低为 1 点，并且撞击路径上的敌人，造成 20% 他们最大生命值的伤害
+runeofsageandgrit=如果在500范围内有盟友受到伤害， 回复他们 §7<effectNumber>§0% 的总生命值的生命值
+runeofsageandgrit2=如果没有，在20秒内，+§7<effectNumber>§0% 的伤害，攻击速度和移动速度
+runeoffallenwizard=眩晕除你以外的所有生物 §7<effectNumber>§0 秒
+runeoffallenwizard2=玩家会快速脱离晕眩状态，首领们则会更快
+
+// Base Runes Tier 3
+# NEW
+runeofmotherslime=向光标位置进行大幅跳跃，并在着陆时造成区域伤害
+runeofmotherslime2=着陆将造成该生物 §7<effectNumber>§0% 的最大生命值的伤害
+runeofnightswarm=召唤4只持续时间为 §7<effectNumber>§0 秒的蝙蝠，蝙蝠会寻找敌人来进行啃咬
+runeofnightswarm2=每次啃咬会回复你 1% 的总生命值(最低2点)
+runeofspiderempress=朝你的鼠标位置扔出 §7<F0effectNumber>§0 颗蛛丝球
+runeofspiderempress2=蛛丝球将会使陷入的生物停滞3秒并且在10秒内减速
+runeofsunlightchampion=你将陷入晕眩状态3秒， 在 §7<effectNumber>§0 范围内持续充能新星冲击
+runeofsunlightchampion2=新星冲击将会造成该生物 200% 的最大生命值的伤害
+runeofmoonlightdancer=在10秒内，每有1%的速度提升将会 +§7<effectNumber>§0% 的伤害
+runeofcrystaldragon=在5秒内，向你的光标位置持续发射激光
+runeofcrystaldragon2=激光将会造成该生物 §7<effectNumber>§0% 的最大生命值的伤害
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+# NEW
+onyxrune=当启用时，召唤持续时间为5秒的奥尼克斯. 它将基于生物5%的生命值造成伤害
+onyxrune2=奥尼克斯每咬一口，就能恢复你1%的生命值 (最低2点)
+onyxrune3=§3感谢奥尼克斯提出的绝妙符文创意! <3
+pawningrune=当启用时, 若你不具有此效果, 立即回复最大生命值20%的生命值
+pawningrune2=10秒后, 你将失去此次回复获得的140%的生命值
+
+// Modifier Runes Tier 2
+# NEW
+abysmalrune=当启用时，在你的光标位置处生成一个黑洞，在2秒内拉引敌人
+abysmalrune2=离上次召唤黑洞10秒之后才能再次召唤黑洞
+tidalrune=当启用时，召唤潮汐推远敌人
+
+// Modifier Runes Tier 3
+
+
+[mobtooltip]
+# NEW
+usenet=用网捕捉! [item=net]
+
 
 [mob]
 gelslime=凝胶史莱姆
 rockygelslime=岩化凝胶史莱姆
 unstablegelslime=紊乱凝胶史莱姆
 miniunstablegelslime=迷你紊乱凝胶史莱姆
-
-witch=女巫
-
+pinkwitch=粉红女巫
 babyunstablegelslime=幼态紊乱凝胶史莱姆
 undeadskeleton=死灵骷髅
+# NEW
+voidadept=虚空男巫
+volatilegelslime=自爆凝胶史莱姆
+wildphosphorslime=野生荧光史莱姆
+petphosphorslime=荧光史莱姆
+copperdaggergoblin=铜匕首哥布林
+irondaggergoblin=铁匕首哥布林
+golddaggergoblin=金匕首哥布林
+runicunstablegelslime=符文紊乱凝胶史莱姆
+runicvulturehatchling=符文秃鹫幼体
+runicbat=符文蝙蝠
+onyx=奥尼克斯
+
 
 [buff]
-stun眩晕
-sticky粘滞
-
-berserkerrush狂战之怒
-berserkerrushcooldown狂战之怒冷却中
-
-swordchargeattackcooldown=充能剑击冷却中
-
-periaptcooldown护符能力冷却中
-
-periaptactive护符能力充能中
-
+stun=眩晕
+sticky=粘滞
+berserkerrush=狂战之怒
+berserkerrushcooldown=狂战之怒冷却中
+spinattackcooldown=旋转攻击冷却中
+periaptcooldown=护符能力冷却中
+periaptactive=护符能力充能中
 saberdashcooldown=冲刺冷却
+# NEW
+lowdspoison=洛德药水
+stop=禁止
+immortal=不朽
+immortalcooldown=不朽冷却中
+fallenstun=昏迷
+runesinjectoractive=符文启动器生效中
+runesinjectorcooldown=符文启动器冷却中
+
 
 [message]
 unstablegelslime_anger=§6紊乱史莱姆愈发愤怒... <anger>/10
 unstablegelslime_fullanger=§6紊乱史莱姆已怒火中烧！ <anger>/10
 unstablegelslime_night=§6紊乱史莱姆§0 在夜晚来临时逃走!
-
 gelslimesnulled=凝胶史莱姆已在此世界中被移除.。他们不会再出现了
 gelslimesunnulled=凝胶史莱姆已被允许在此世界中出现.。他们将会到来
-
-witchesnulled=女巫被移除于 (<x>, <y>)
-witchesunnulled=女巫被允许存在于 (<x>, <y>)
-
-needfreeslots=你需要 <slots> 在库存中有足够的空间来使用此物
-
-healthalreadyfull=生命值已满
-
+pinkwitchesnulled=粉红女巫被移除于 (<x>, <y>)
+pinkwitchesunnulled=粉红女巫被允许存在于 (<x>, <y>)
+needfreeslots=你需要在库存中有足够的 <slots> 来使用此物
 cantuseatnight=我不能在晚上使用！
+healthalreadyfull=生命值已满
+# NEW
+cantheal=无法治疗
+pickupenabledinventoryfull=库存已满，无法捡起
+itoldyou=活该
+insuficienthealth=没有足够的生命值来使用!
+cannottrhowlockeditem=你不能丢弃一个库存锁定的物品！
+initialrunetip=仔细地选择你的原初符文;\n直到游戏后期为止你无法获得其他符文
+alreadyselectedinitialrune=已经选择过原初符文
+cannotusetrial=不能在审判室使用
+
+
+[journal]
+# NEW
+killgelslimesforest=[mob=gelslime] 在森林地形中杀死25只凝胶史莱姆
+pickupfloralring=[item=floralring] 在森林地形中割去大量的草来获得花之戒
+killunstablegelslime=[mob=unstablegelslime] 杀死1只紊乱凝胶史莱姆
+
+
+[controls]
+# NEW
+runesinjectorability=符文启动器效果

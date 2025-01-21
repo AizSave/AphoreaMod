@@ -1,8 +1,9 @@
 package aphorea.items.healingtools;
 
-import aphorea.other.area.AphArea;
-import aphorea.other.area.AphAreaList;
-import aphorea.other.itemtype.AphAreaToolItem;
+import aphorea.utils.AphColors;
+import aphorea.utils.area.AphArea;
+import aphorea.utils.area.AphAreaList;
+import aphorea.items.AphAreaToolItem;
 import necesse.engine.network.NetworkPacket;
 import necesse.engine.network.Packet;
 import necesse.engine.network.PacketReader;
@@ -20,13 +21,11 @@ import necesse.inventory.InventoryItem;
 import necesse.inventory.item.ItemInteractAction;
 import necesse.level.maps.Level;
 
-import java.awt.*;
-
 public class HealingStaff extends AphAreaToolItem implements ItemInteractAction {
 
     static AphAreaList areaList = new AphAreaList(
-            new AphArea(120, new Color(191, 0, 255)).setHealingArea(6, 8),
-            new AphArea(120, new Color(255, 0, 191)).setHealingArea(2, 3)
+            new AphArea(120, AphColors.palettePinkWitch[1]).setHealingArea(6, 8),
+            new AphArea(120, AphColors.palettePinkWitch[0]).setHealingArea(2, 3)
     );
 
     public HealingStaff() {
@@ -44,8 +43,8 @@ public class HealingStaff extends AphAreaToolItem implements ItemInteractAction 
     }
 
     @Override
-    public Packet getPacket(int slot, float rangeModifier) {
-        return new HealingStaffAreaParticlesPacket(slot, rangeModifier);
+    public Packet getPacket(PlayerMob player, float rangeModifier) {
+        return new HealingStaffAreaParticlesPacket(player.getServerClient().slot, rangeModifier);
     }
 
     @Override
@@ -87,7 +86,7 @@ public class HealingStaff extends AphAreaToolItem implements ItemInteractAction 
         public static void applyToPlayer(Level level, Mob mob, float rangeModifier) {
 
             if (level != null && level.isClient()) {
-                areaList.showAllAreaParticles(mob, rangeModifier);
+                areaList.showAllAreaParticles(level, mob.x, mob.y, rangeModifier);
             }
 
         }

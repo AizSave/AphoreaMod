@@ -1,6 +1,6 @@
 package aphorea.buffs.Trinkets.Periapts;
 
-import aphorea.other.buffs.trinkets.AphSummoningTrinketBuff;
+import aphorea.buffs.Trinkets.AphSummoningTrinketBuff;
 import aphorea.registry.AphBuffs;
 import necesse.engine.localization.Localization;
 import necesse.engine.registries.DamageTypeRegistry;

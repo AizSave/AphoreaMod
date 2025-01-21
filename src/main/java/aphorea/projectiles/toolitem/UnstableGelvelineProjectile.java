@@ -1,7 +1,8 @@
 package aphorea.projectiles.toolitem;
 
-import aphorea.other.area.AphArea;
-import aphorea.other.area.AphAreaList;
+import aphorea.utils.AphColors;
+import aphorea.utils.area.AphArea;
+import aphorea.utils.area.AphAreaList;
 import aphorea.registry.AphBuffs;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.entity.mobs.Mob;
@@ -26,7 +27,7 @@ import java.util.List;
 
 public class UnstableGelvelineProjectile extends Projectile {
 
-    Color color = new Color(191, 60, 255);
+    Color color = AphColors.unstableGel;
     ToolItem toolItem;
     InventoryItem item;
 
@@ -95,7 +96,7 @@ public class UnstableGelvelineProjectile extends Projectile {
         if (this.getOwner() != null) {
             areaList.executeAreas(this.getOwner(), 1, (int) x, (int) y, false, item, toolItem);
         }
-        areaList.showAllAreaParticles(this.getOwner(), x, y);
+        areaList.showAllAreaParticles(this.getLevel(), x, y);
     }
 
 

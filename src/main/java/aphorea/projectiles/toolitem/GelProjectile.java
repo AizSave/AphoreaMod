@@ -1,11 +1,13 @@
 package aphorea.projectiles.toolitem;
 
 import aphorea.registry.AphBuffs;
+import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
 import necesse.engine.util.GameRandom;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.GroundEffectEvent;
+import necesse.entity.levelEvent.mobAbilityLevelEvent.WebWeaverWebEvent;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.MobHitCooldowns;
@@ -57,12 +59,12 @@ public class GelProjectile extends Projectile {
 
     @Override
     public Color getParticleColor() {
-        return new Color(0, 153, 255);
+        return AphColors.gel;
     }
 
     @Override
     public Trail getTrail() {
-        return new Trail(this, getLevel(), new Color(0, 153, 255), 26, 500, getHeight());
+        return new Trail(this, getLevel(), AphColors.gel, 26, 500, getHeight());
     }
 
     @Override
@@ -105,7 +107,6 @@ public class GelProjectile extends Projectile {
 
         }
     }
-
 
     public static class GelProjectileGroundEffectEvent extends GroundEffectEvent {
         protected int tickCounter;

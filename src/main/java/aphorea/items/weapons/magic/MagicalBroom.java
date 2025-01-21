@@ -1,6 +1,6 @@
 package aphorea.items.weapons.magic;
 
-import aphorea.other.vanillaitemtypes.AphToolItem;
+import aphorea.items.vanillaitemtypes.AphToolItem;
 import aphorea.packets.AphCustomPushPacket;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.PacketReader;

@@ -11,7 +11,7 @@ public class PeriaptActiveBuff extends Buff {
         this.isImportant = true;
         this.canCancel = false;
         this.isVisible = true;
-        this.shouldSave = false;
+        this.shouldSave = true;
     }
 
     public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {

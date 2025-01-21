@@ -1,7 +1,8 @@
 package aphorea.mobs.bosses;
 
-import aphorea.projectiles.toolitem.MiniUnstableGelSlimeProjectile;
+import aphorea.projectiles.mob.MiniUnstableGelSlimeProjectile;
 import aphorea.registry.AphBuffs;
+import aphorea.utils.AphColors;
 import necesse.engine.eventStatusBars.EventStatusBarManager;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.localization.Localization;
@@ -76,24 +77,26 @@ public class UnstableGelSlime extends FlyingBossMob {
     public final CoordinateMobAbility teleportAbility;
 
     public static LootTable lootTable = new LootTable(
-            LootItem.between("unstablegel", 10, 18),
-            new LootItem("unstableperiapt"),
-            new ConditionLootItem("gelslimenullifier", (r, o) -> {
-                ServerClient client = LootTable.expectExtra(ServerClient.class, o, 1);
-                return client != null && client.playerMob.getInv().getAmount(ItemRegistry.getItem("gelslimenullifier"), false, false, true, true, "have") == 0;
-            }),
+            LootItem.between("unstablegel", 10, 18)
+    );
+
+    public static LootTable privateLootTable = new LootTable(
             RotationLootItem.globalLootRotation(
                     new LootItem("unstablegelsword", (new GNDItemMap())),
                     new LootItem("unstablegelgreatbow", (new GNDItemMap())),
                     new LootItem("unstablegelstaff", (new GNDItemMap())),
                     new LootItem("volatilegelstaff", (new GNDItemMap()))
             ),
-            new ChanceLootItem(0.01F, "unstablegelsaber")
+            new LootItem("unstableperiapt"),
+            new LootItem("runeofunstablegelslime"),
+            new ChanceLootItem(0.01F, "unstablegelsaber"),
+            new ConditionLootItem("gelslimenullifier", (r, o) -> {
+                ServerClient client = LootTable.expectExtra(ServerClient.class, o, 1);
+                return client != null && client.playerMob.getInv().getAmount(ItemRegistry.getItem("gelslimenullifier"), false, false, true, true, "have") == 0;
+            })
     );
 
-
     protected MobHealthScaling scaling = new MobHealthScaling(this);
-
 
     public UnstableGelSlime() {
         super(1500);
@@ -113,8 +116,8 @@ public class UnstableGelSlime extends FlyingBossMob {
         this.teleportAbility = this.registerAbility(new CoordinateMobAbility() {
             protected void run(int x, int y) {
                 if (UnstableGelSlime.this.isClient()) {
-                    UnstableGelSlime.this.getLevel().entityManager.addParticle(new SmokePuffParticle(UnstableGelSlime.this.getLevel(), UnstableGelSlime.this.x, UnstableGelSlime.this.y, 92, new Color(191, 60, 255)), Particle.GType.CRITICAL);
-                    UnstableGelSlime.this.getLevel().entityManager.addParticle(new SmokePuffParticle(UnstableGelSlime.this.getLevel(), (float) x, (float) y, 92, new Color(191, 60, 255)), Particle.GType.CRITICAL);
+                    UnstableGelSlime.this.getLevel().entityManager.addParticle(new SmokePuffParticle(UnstableGelSlime.this.getLevel(), UnstableGelSlime.this.x, UnstableGelSlime.this.y, 92, AphColors.unstableGel), Particle.GType.CRITICAL);
+                    UnstableGelSlime.this.getLevel().entityManager.addParticle(new SmokePuffParticle(UnstableGelSlime.this.getLevel(), (float) x, (float) y, 92, AphColors.unstableGel), Particle.GType.CRITICAL);
                 }
 
                 UnstableGelSlime.this.setPos((float) x, (float) y, true);
@@ -139,6 +142,9 @@ public class UnstableGelSlime extends FlyingBossMob {
     @Override
     public LootTable getLootTable() {
         return lootTable;
+    }
+    public LootTable getPrivateLootTable() {
+        return privateLootTable;
     }
 
     @Override
@@ -170,7 +176,7 @@ public class UnstableGelSlime extends FlyingBossMob {
         DrawOptions drawOptions = texture.initDraw()
                 .sprite(sprite.x, sprite.y, 192)
                 .light(light)
-                .alpha(this.buffManager.hasBuff(AphBuffs.INMORTAL) ? 0.6F : 1)
+                .alpha(this.buffManager.hasBuff(AphBuffs.IMMORTAL) ? 0.6F : 1)
                 .pos(drawX, drawY);
 
         list.add(new MobDrawable() {
@@ -271,7 +277,7 @@ public class UnstableGelSlime extends FlyingBossMob {
     }
 
     public float randomPositionClose(float n) {
-        return n + (float) Math.floor(Math.random() * 11) - 5;
+        return n + GameRandom.globalRandom.getFloatBetween(5, 10);
     }
 
     @Override
@@ -358,8 +364,6 @@ public class UnstableGelSlime extends FlyingBossMob {
                         if (!mob.buffManager.hasBuff("unstablegelslimerush")) {
                             int targets = (int) streamPossibleTargets(mob).count();
 
-                            maxAngerTeleportCooldownTimer = (int) Math.floor(Math.random() * 41F);
-
                             SoundManager.playSound(GameResources.roar, SoundEffect.effect(mob)
                                     .volume(0.7f)
                                     .pitch(GameRandom.globalRandom.getFloatBetween(1.0f, 1.1f)));
@@ -372,7 +376,7 @@ public class UnstableGelSlime extends FlyingBossMob {
 
                             ActiveBuff buff = new ActiveBuff(BuffRegistry.getBuff("unstablegelslimerush"), mob, 3000, mob);
                             mob.addBuff(buff, true);
-                            ActiveBuff buff2 = new ActiveBuff(AphBuffs.INMORTAL, mob, 1000, mob);
+                            ActiveBuff buff2 = new ActiveBuff(AphBuffs.IMMORTAL, mob, 1000, mob);
                             mob.addBuff(buff2, true);
 
                             Point point = getTeleportPoint(mob);
@@ -414,7 +418,7 @@ public class UnstableGelSlime extends FlyingBossMob {
 
                         ActiveBuff buff = new ActiveBuff(BuffRegistry.getBuff("unstablegelslimerush"), mob, 3000, mob);
                         mob.addBuff(buff, true);
-                        ActiveBuff buff2 = new ActiveBuff(AphBuffs.INMORTAL, mob, 1000, mob);
+                        ActiveBuff buff2 = new ActiveBuff(AphBuffs.IMMORTAL, mob, 1000, mob);
                         mob.addBuff(buff2, true);
 
                         Point point = getTeleportPoint(mob);
@@ -486,7 +490,7 @@ public class UnstableGelSlime extends FlyingBossMob {
 
                 private void applyTemporaryBuffs(T mob, int duration) {
                     mob.addBuff(new ActiveBuff(AphBuffs.STUN, mob, duration, mob), true);
-                    mob.addBuff(new ActiveBuff(AphBuffs.INMORTAL, mob, duration, mob), true);
+                    mob.addBuff(new ActiveBuff(AphBuffs.IMMORTAL, mob, duration, mob), true);
                 }
 
                 private void prepareSlimeThrow(T mob) {

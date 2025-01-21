@@ -1,6 +1,7 @@
 package aphorea.buffs.Trinkets.Periapts;
 
-import aphorea.other.buffs.trinkets.AphPeriaptActivableBuff;
+import aphorea.buffs.Trinkets.AphPeriaptActivableBuff;
+import aphorea.utils.AphColors;
 import necesse.engine.localization.Localization;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
@@ -20,7 +21,7 @@ public class RockyPeriaptBuff extends AphPeriaptActivableBuff {
 
     @Override
     public Color getColor() {
-        return new Color(153, 153, 153);
+        return AphColors.stone;
     }
 
     public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {

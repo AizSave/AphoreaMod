@@ -1,5 +1,6 @@
 package aphorea.projectiles.toolitem;
 
+import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
@@ -85,12 +86,10 @@ abstract public class AircutProjectile extends Projectile {
 
     public static class CopperAircutProjectile extends AircutProjectile {
 
-        static Color color = new Color(202, 108, 91);
-
         public static GameTexture texture;
 
         Color getColor() {
-            return color;
+            return AphColors.copper;
         }
 
         GameTexture getTexture() {
@@ -107,11 +106,10 @@ abstract public class AircutProjectile extends Projectile {
 
     public static class IronAircutProjectile extends AircutProjectile {
 
-        static Color color = new Color(192, 192, 192);
         public static GameTexture texture;
 
         Color getColor() {
-            return color;
+            return AphColors.iron;
         }
 
         GameTexture getTexture() {
@@ -128,11 +126,10 @@ abstract public class AircutProjectile extends Projectile {
 
     public static class GoldAircutProjectile extends AircutProjectile {
 
-        static Color color = new Color(228, 176, 77);
         public static GameTexture texture;
 
         Color getColor() {
-            return color;
+            return AphColors.gold;
         }
 
         GameTexture getTexture() {
@@ -149,11 +146,10 @@ abstract public class AircutProjectile extends Projectile {
 
     public static class UnstableGelAircutProjectile extends AircutProjectile {
 
-        static Color color = new Color(191, 60, 255);
         public static GameTexture texture;
 
         Color getColor() {
-            return color;
+            return AphColors.unstableGel;
         }
 
         GameTexture getTexture() {
@@ -170,11 +166,10 @@ abstract public class AircutProjectile extends Projectile {
 
     public static class DemonicAircutProjectile extends AircutProjectile {
 
-        static Color color = new Color(40, 10, 60);
         public static GameTexture texture;
 
         Color getColor() {
-            return color;
+            return AphColors.demonic;
         }
 
         GameTexture getTexture() {

@@ -1,6 +1,7 @@
 package aphorea.objects;
 
-import aphorea.other.data.AphSwampLevelData;
+import aphorea.data.AphSwampLevelData;
+import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.packet.PacketChatMessage;
@@ -39,7 +40,7 @@ public class WitchStatue extends GameObject {
         hoverHitbox = new Rectangle(0, -32, 32, 64);
         toolType = ToolType.PICKAXE;
         isLightTransparent = false;
-        mapColor = new Color(255, 255, 0);
+        mapColor = AphColors.gold;
     }
 
     @Override

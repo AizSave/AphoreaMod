@@ -1,6 +1,6 @@
 package aphorea.tiles;
 
-import aphorea.other.vanillaitemtypes.AphTileItem;
+import aphorea.items.vanillaitemtypes.AphTileItem;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.localization.Localization;
 import necesse.engine.modifiers.ModifierValue;
