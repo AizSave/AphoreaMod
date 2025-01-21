@@ -85,8 +85,6 @@ public class AphModifierRune extends Item {
         for (String extraToolTip : this.getExtraToolTips()) {
             tooltips.add(Localization.translate("itemtooltip", extraToolTip));
         }
-
-        tooltips.add("§3The sprite of this item is temporary, it will be changed future updates");
     }
 
     public int getTooltipsNumber() {
