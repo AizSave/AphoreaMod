@@ -11,7 +11,7 @@ import necesse.inventory.item.armorItem.ArmorModifiers;
 public class RockyHelmet extends AphSetHelmetArmorItem {
     public RockyHelmet() {
         super(7, DamageTypeRegistry.MELEE, 250, Rarity.COMMON, "rockyhelmet", "rockychestplate", "rockyboots", "rockysetbonus");
-        this.hairDrawOptions = HairDrawMode.NO_HEAD;
+        this.hairDrawOptions = HairDrawMode.NO_HAIR;
     }
 
     public ArmorModifiers getArmorModifiers(InventoryItem item, Mob mob) {

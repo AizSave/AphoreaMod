@@ -20,6 +20,7 @@ import aphorea.tiles.GelTile;
 import aphorea.utils.AphColors;
 import aphorea.utils.AphResources;
 import necesse.engine.journal.JournalEntry;
+import necesse.engine.modLoader.ModLoader;
 import necesse.engine.modLoader.annotations.ModEntry;
 import necesse.engine.registries.*;
 import necesse.entity.mobs.hostile.*;
@@ -194,8 +195,15 @@ public class AphoreaMod {
                 .addLimited(40, "gelslime", 2, 32 * 32)
                 .addLimited(2, "wildphosphorslime", 1, 16 * 32, mob -> mob.isHostile);
 
+        int rockyGelTickets;
+        try {
+            rockyGelTickets = ModLoader.getEnabledMods().stream()
+                    .anyMatch(mod -> Objects.equals(mod.id, "vulpesnova.mod")) ? 30 : 20;
+        } catch (Exception e) {
+            rockyGelTickets = 20;
+        }
         Biome.forestCaveMobs
-                .add(30, "rockygelslime");
+                .add(rockyGelTickets, "rockygelslime");
 
         SwampBiome.surfaceMobs
                 .addLimited(1, "pinkwitch", 1, 1024 * 32);

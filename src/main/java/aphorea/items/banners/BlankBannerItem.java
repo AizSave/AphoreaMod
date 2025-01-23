@@ -21,7 +21,7 @@ public class BlankBannerItem extends AphBanner {
     static int range = 200;
     static Color color = AphColors.nature;
     public static AphAreaList areaList = new AphAreaList(
-            new AphArea(range, 0.5F, color).setHealingArea(2)
+            new AphArea(range, 0.5F, color).setHealingArea(4)
     );
 
     public BlankBannerItem() {

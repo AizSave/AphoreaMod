@@ -40,7 +40,7 @@ public class AphResources {
         // HOSTILE
         GelSlime.texture = GameTexture.fromFile("mobs/gelslime");
         RockyGelSlime.texture = GameTexture.fromFile("mobs/rockygelslime");
-        PinkWitch.texture = GameTexture.fromFile("mobs/witch");
+        PinkWitch.texture = GameTexture.fromFile("mobs/pinkwitch");
         VoidAdept.texture = MobRegistry.Textures.humanTexture("voidadept");
         DaggerGoblin.humanTexture = new HumanTexture(GameTexture.fromFile("mobs/daggergoblin"), null, null);
 

@@ -64,7 +64,7 @@ public class AphRecipes {
         addCraftingList("trackerboot", tech,
                 AphCraftingRecipe.showAfter("iceboots", 1,
                         new Ingredient("trackerboot", 1),
-                        new Ingredient("icetile", 1)
+                        new Ingredient("icetile", 10)
                 )
         );
 
@@ -192,16 +192,19 @@ public class AphRecipes {
 
         addCraftingList("ironhelmet", tech,
                 AphCraftingRecipe.showBefore("rockyhelmet", 1,
+                        new Ingredient("rockygel", 7),
                         new Ingredient("stone", 30),
-                        new Ingredient("rockygel", 7)
+                        new Ingredient("clay", 10)
                 ),
                 AphCraftingRecipe.showAfter("rockychestplate", 1,
+                        new Ingredient("rockygel", 10),
                         new Ingredient("stone", 40),
-                        new Ingredient("rockygel", 10)
+                        new Ingredient("clay", 15)
                 ),
                 AphCraftingRecipe.showAfter("rockyboots", 1,
+                        new Ingredient("rockygel", 5),
                         new Ingredient("stone", 20),
-                        new Ingredient("rockygel", 5)
+                        new Ingredient("clay", 5)
                 )
         );
 

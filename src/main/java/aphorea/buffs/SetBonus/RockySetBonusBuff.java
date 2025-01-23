@@ -15,7 +15,8 @@ public class RockySetBonusBuff extends SetBonusBuff {
     public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {
         buff.addModifier(BuffModifiers.SPEED, -0.1F);
         buff.addModifier(BuffModifiers.ARMOR_FLAT, 10);
-        buff.addModifier(BuffModifiers.MAX_RESILIENCE_FLAT, 5);
+        buff.addModifier(BuffModifiers.MAX_RESILIENCE_FLAT, 10);
+        buff.addModifier(BuffModifiers.RESILIENCE_DECAY, -1F);
     }
 
     public void addStatTooltips(LinkedList<ItemStatTip> list, ActiveBuff currentValues, ActiveBuff lastValues) {

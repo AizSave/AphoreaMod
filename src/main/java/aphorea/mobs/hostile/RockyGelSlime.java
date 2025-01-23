@@ -111,9 +111,12 @@ public class RockyGelSlime extends HostileMob {
     @Override
     public MobWasHitEvent isHit(MobWasHitEvent event, Attacker attacker) {
         MobWasHitEvent eventResult = super.isHit(event, attacker);
-        if (eventResult != null && attacker != null && attacker.getAttackOwner() != null && !eventResult.wasPrevented && eventResult.damage < this.getHealth()) {
-            Mob attackOwner = attacker.getAttackOwner();
-            throwRock(attackOwner.getX(), attackOwner.getY(), false);
+        if (isServer()) {
+            if (eventResult != null && attacker != null && attacker.getAttackOwner() != null && !eventResult.wasPrevented && eventResult.damage < this.getHealth()) {
+                Mob attackOwner = attacker.getAttackOwner();
+                throwRock(attackOwner.getX(), attackOwner.getY(), false);
+            }
+            throwRock(GameRandom.globalRandom.getFloatBetween(0, (float) (2 * Math.PI)), false);
         }
 
         return eventResult;
@@ -129,31 +132,29 @@ public class RockyGelSlime extends HostileMob {
         super.onDeath(attacker, attackers);
         if (isServer()) {
             float initialAngle = GameRandom.globalRandom.getFloatBetween(0, (float) (2 * Math.PI));
-            int projectiles = 8;
-            AtomicBoolean alreadyLoot = new AtomicBoolean(false);
+            int projectiles = 10;
             for (int i = 0; i < projectiles; i++) {
                 float angle = initialAngle + i * 2 * (float) Math.PI / projectiles;
-                int targetX = this.getX() + (int) (Math.cos(angle) * 100);
-                int targetY = this.getY() + (int) (Math.sin(angle) * 100);
-                boolean isLoot = GameRandom.globalRandom.getChance(0.25F);
-                if (isLoot) {
-                    if (!alreadyLoot.get()) {
-                        alreadyLoot.set(true);
-                    }
-                } else if (i == 7 && !alreadyLoot.get()) {
-                    isLoot = true;
-                }
-                throwRock(targetX, targetY, isLoot);
+                boolean dropRockyGel = i == 0 || GameRandom.globalRandom.getChance(0.3F);
+                throwRock(angle + GameRandom.globalRandom.getFloatBetween((float) -Math.PI / 36F, (float) Math.PI / 36F), dropRockyGel);
             }
         }
     }
 
+    public void throwRock(float angle, boolean dropRockyGel) {
+        int targetX = this.getX() + (int) (Math.cos(angle) * 100);
+        int targetY = this.getY() + (int) (Math.sin(angle) * 100);
+        throwRock(targetX, targetY, dropRockyGel);
+    }
+
+
     public void throwRock(int targetX, int targetY, boolean dropRockyGel) {
         Projectile projectile;
+        float speed = GameRandom.globalRandom.getFloatBetween(40.0F, 50.0F);
         if (dropRockyGel) {
-            projectile = new RockyGelSlimeLootProjectile(this, this.x, this.y, targetX, targetY, 40.0F, 640, rock_damage, rock_knockback);
+            projectile = new RockyGelSlimeLootProjectile(this, this.x, this.y, targetX, targetY, speed, 640, rock_damage, rock_knockback);
         } else {
-            projectile = new RockyGelSlimeProjectile(this, this.x, this.y, targetX, targetY, 40.0F, 640, rock_damage, rock_knockback);
+            projectile = new RockyGelSlimeProjectile(this, this.x, this.y, targetX, targetY, speed, 640, rock_damage, rock_knockback);
         }
         this.getLevel().entityManager.projectiles.add(projectile);
     }

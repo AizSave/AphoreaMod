@@ -384,7 +384,7 @@ strikebannereffect=+<effect>% regeneración de vida (fuera y dentro de combate)
 strikebannerability=Cada <time> segundos: Realiza un ataque en área
 # NEW
 blankbannereffect=§7+<effect>%§0 regeneración de vida (fuera de combate)
-blankbannerability=§aEvery <time> seconds:§0 Realiza una curación en área
+blankbannerability=§aCada <time> segundos:§0 Realiza una curación en área
 bannerofdamageeffect=§7+<effect>%§0 daño
 bannerofdefenseeffect=§7-<effect>%§0 daño recibido
 bannerofspeedeffect=§7+<effect>%§0 velocidad de movimiento
