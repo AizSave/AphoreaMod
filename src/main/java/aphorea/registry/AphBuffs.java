@@ -1068,7 +1068,9 @@ public class AphBuffs {
                             mob.getLevel().entityManager.addMob(mob, player.x, player.y);
                         }
                     }
-                }.setEffectNumberVariation(-0.2F)
+                }
+                .setEffectNumberVariation(-0.2F)
+                .setHealthCost(0.05F)
         );
 
 

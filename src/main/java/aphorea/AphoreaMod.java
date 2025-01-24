@@ -198,9 +198,9 @@ public class AphoreaMod {
         int rockyGelTickets;
         try {
             rockyGelTickets = ModLoader.getEnabledMods().stream()
-                    .anyMatch(mod -> Objects.equals(mod.id, "vulpesnova.mod")) ? 30 : 20;
+                    .anyMatch(mod -> Objects.equals(mod.id, "vulpesnova.mod")) ? 20 : 10;
         } catch (Exception e) {
-            rockyGelTickets = 20;
+            rockyGelTickets = 10;
         }
         Biome.forestCaveMobs
                 .add(rockyGelTickets, "rockygelslime");

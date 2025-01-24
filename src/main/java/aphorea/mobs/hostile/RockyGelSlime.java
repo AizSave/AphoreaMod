@@ -135,7 +135,7 @@ public class RockyGelSlime extends HostileMob {
             int projectiles = 10;
             for (int i = 0; i < projectiles; i++) {
                 float angle = initialAngle + i * 2 * (float) Math.PI / projectiles;
-                boolean dropRockyGel = i == 0 || GameRandom.globalRandom.getChance(0.3F);
+                boolean dropRockyGel = i == 0 || GameRandom.globalRandom.getChance(0.25F);
                 throwRock(angle + GameRandom.globalRandom.getFloatBetween((float) -Math.PI / 36F, (float) Math.PI / 36F), dropRockyGel);
             }
         }

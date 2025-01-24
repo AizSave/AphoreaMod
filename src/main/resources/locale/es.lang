@@ -480,8 +480,8 @@ runeofcrystaldragon2=El láser hará daño según el §7<effectNumber>§0% de la
 // Modifier Runes Tier 1
 # NEW
 onyxrune=Cuando es activada invocas a Onyx por 5 segundos. Hará daño según el 5% de la vida máxima de los enemigos
-onyxrune3=Cada mordisco de Onyx te restaurará 1% de tu vida máxima (al menos 1)
-onyxrune4=§3Gracias Onyx por las ideas brillantes para runas! <3
+onyxrune2=Cada mordisco de Onyx te restaurará 1% de tu vida máxima (al menos 1)
+onyxrune3=§3Gracias Onyx por las ideas brillantes para runas! <3
 pawningrune=Cuando es activada, si no tienes ya el efecto, recuperas el 20% de tu vida máxima
 pawningrune2=Luego de 10 segundos perderás la vida que recuperaste más un interés del 40%
 
