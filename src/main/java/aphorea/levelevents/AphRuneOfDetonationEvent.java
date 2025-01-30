@@ -2,6 +2,7 @@ package aphorea.levelevents;
 
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
+import necesse.engine.registries.DamageTypeRegistry;
 import necesse.entity.levelEvent.explosionEvent.ExplosionEvent;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
@@ -45,7 +46,7 @@ public class AphRuneOfDetonationEvent extends ExplosionEvent {
         } else if (mob.isPlayer || mob.isHuman) {
             damagePercent /= 5;
         }
-        GameDamage damage = new GameDamage(mob.getMaxHealth() * damagePercent * mod, 1000000);
+        GameDamage damage = new GameDamage(DamageTypeRegistry.TRUE, mob.getMaxHealth() * damagePercent * mod);
         float knockback = (float) this.knockback * mod;
         mob.isServerHit(damage, (float) mob.getX() - this.x, (float) mob.getY() - this.y, knockback, this);
     }

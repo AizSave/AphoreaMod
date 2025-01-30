@@ -1,0 +1,318 @@
+package aphorea.mobs.hostile;
+
+import aphorea.utils.AphColors;
+import necesse.engine.gameLoop.tickManager.TickManager;
+import necesse.engine.registries.MobRegistry;
+import necesse.engine.sound.SoundEffect;
+import necesse.engine.sound.SoundManager;
+import necesse.engine.util.GameMath;
+import necesse.engine.util.GameRandom;
+import necesse.engine.util.GameUtils;
+import necesse.engine.util.RayLinkedList;
+import necesse.engine.util.gameAreaSearch.GameAreaStream;
+import necesse.entity.ParticleBeamHandler;
+import necesse.entity.mobs.*;
+import necesse.entity.mobs.ability.CoordinateMobAbility;
+import necesse.entity.mobs.ability.TargetedMobAbility;
+import necesse.entity.mobs.ai.behaviourTree.BehaviourTreeAI;
+import necesse.entity.mobs.ai.behaviourTree.Blackboard;
+import necesse.entity.mobs.ai.behaviourTree.composites.SequenceAINode;
+import necesse.entity.mobs.ai.behaviourTree.decorators.InverterAINode;
+import necesse.entity.mobs.ai.behaviourTree.leaves.ChaserAINode;
+import necesse.entity.mobs.ai.behaviourTree.leaves.CooldownAttackTargetAINode;
+import necesse.entity.mobs.ai.behaviourTree.leaves.EscapeAINode;
+import necesse.entity.mobs.ai.behaviourTree.leaves.TargetFinderAINode;
+import necesse.entity.mobs.ai.behaviourTree.util.TargetFinderDistance;
+import necesse.entity.mobs.buffs.BuffModifiers;
+import necesse.entity.mobs.hostile.HostileMob;
+import necesse.entity.particle.FleshParticle;
+import necesse.entity.particle.Particle;
+import necesse.entity.projectile.laserProjectile.CrystalGolemBeamProjectile;
+import necesse.gfx.GameResources;
+import necesse.gfx.camera.GameCamera;
+import necesse.gfx.drawOptions.DrawOptions;
+import necesse.gfx.drawables.OrderableDrawables;
+import necesse.gfx.gameTexture.GameSprite;
+import necesse.gfx.gameTexture.GameTexture;
+import necesse.inventory.lootTable.LootTable;
+import necesse.inventory.lootTable.lootItem.LootItem;
+import necesse.level.maps.CollisionFilter;
+import necesse.level.maps.Level;
+import necesse.level.maps.LevelObjectHit;
+import necesse.level.maps.levelBuffManager.LevelModifiers;
+import necesse.level.maps.light.GameLight;
+
+import java.awt.*;
+import java.awt.geom.Point2D;
+import java.util.List;
+
+public class RubyGolem extends HostileMob {
+    public static GameTexture texture;
+
+    public static GameDamage damage = new GameDamage(20.0F);
+    public static int chargeTime = 300;
+    public static int stickTime = 100;
+    protected long shootTime;
+    protected Mob shootTarget;
+    protected int shootX;
+    protected int shootY;
+    public ParticleBeamHandler warningBeam;
+    public final TargetedMobAbility startShootingAbility;
+    public final CoordinateMobAbility stickShootAbility;
+    public final CoordinateMobAbility shootAbility;
+
+    public RubyGolem() {
+        super(100);
+        this.setArmor(40);
+        this.setSpeed(20.0F);
+        this.setFriction(3.0F);
+        this.setKnockbackModifier(0.4F);
+        this.collision = new Rectangle(-10, -7, 20, 14);
+        this.hitBox = new Rectangle(-14, -12, 28, 24);
+        this.selectBox = new Rectangle(-14, -41, 28, 48);
+        this.swimMaskMove = 32;
+        this.swimMaskOffset = -6;
+        this.swimSinkOffset = -4;
+        this.startShootingAbility = this.registerAbility(new TargetedMobAbility() {
+            protected void run(Mob target) {
+                RubyGolem.this.attackAnimTime = RubyGolem.chargeTime + RubyGolem.stickTime + 500;
+                RubyGolem.this.attackCooldown = RubyGolem.chargeTime + RubyGolem.stickTime;
+                RubyGolem.this.shootTime = RubyGolem.this.getWorldEntity().getTime() + (long) RubyGolem.chargeTime + (long) RubyGolem.stickTime;
+                RubyGolem.this.shootTarget = target;
+                if (RubyGolem.this.warningBeam != null) {
+                    RubyGolem.this.warningBeam.dispose();
+                }
+
+                RubyGolem.this.warningBeam = null;
+                RubyGolem.this.startAttackCooldown();
+                if (target != null) {
+                    RubyGolem.this.showAttack(target.getX(), target.getY(), true);
+                } else {
+                    RubyGolem.this.showAttack(RubyGolem.this.getX() + 100, RubyGolem.this.getY(), true);
+                }
+
+            }
+        });
+        this.stickShootAbility = this.registerAbility(new CoordinateMobAbility() {
+            protected void run(int x, int y) {
+                RubyGolem.this.shootX = x;
+                RubyGolem.this.shootY = y;
+                RubyGolem.this.shootTarget = null;
+            }
+        });
+        this.shootAbility = this.registerAbility(new CoordinateMobAbility() {
+            protected void run(int x, int y) {
+                RubyGolem.this.shootAbilityProjectile(x, y);
+            }
+        });
+    }
+
+    public PathDoorOption getPathDoorOption() {
+        if (this.getLevel() != null) {
+            return this.buffManager.getModifier(BuffModifiers.CAN_BREAK_OBJECTS) ? this.getLevel().regionManager.CAN_BREAK_OBJECTS_OPTIONS : this.getLevel().regionManager.CAN_OPEN_DOORS_OPTIONS;
+        } else {
+            return null;
+        }
+    }
+
+    public void init() {
+        super.init();
+        this.ai = new BehaviourTreeAI<>(this, new RubyGolem.CrystalGolemAI<>(544, 320, this.isSummoned ? 960 : 384));
+    }
+
+    public float getAttackingMovementModifier() {
+        return 0.0F;
+    }
+
+    public void tickMovement(float delta) {
+        super.tickMovement(delta);
+        if (!this.isServer()) {
+            if (this.shootTime != 0L) {
+                long timer = this.shootTime - this.getWorldEntity().getTime();
+                Point2D.Float target;
+                if (this.shootTarget != null) {
+                    target = new Point2D.Float(this.shootTarget.x, this.shootTarget.y);
+                } else {
+                    target = new Point2D.Float((float) this.shootX, (float) this.shootY);
+                }
+
+                this.setFacingDir(target.x - this.x, target.y - this.y);
+                RayLinkedList<LevelObjectHit> rays = GameUtils.castRay(this.getLevel(), (double) this.x, (double) this.y, (double) (target.x - this.x), (double) (target.y - this.y), 1000.0, 0, (new CollisionFilter()).projectileCollision());
+                if (this.warningBeam == null) {
+                    this.warningBeam = (new ParticleBeamHandler(this.getLevel())).particleSize(10, 12).particleThicknessMod(0.2F).endParticleSize(8, 12).distPerParticle(20.0F).thickness(10, 2).speed(50.0F).height(24.0F).sprite(new GameSprite(GameResources.chains, 7, 0, 32));
+                }
+
+                int alpha = GameMath.limit(GameMath.lerp((float) timer / (float) (chargeTime + stickTime), 255, 0), 0, 255);
+                Color color = new Color(AphColors.ruby.getRed(), AphColors.ruby.getGreen(), AphColors.ruby.getBlue(), alpha);
+                this.warningBeam.color(color);
+                this.warningBeam.update(rays, delta);
+            } else if (this.warningBeam != null) {
+                this.warningBeam.dispose();
+                this.warningBeam = null;
+            }
+        }
+
+    }
+
+    public void clientTick() {
+        super.clientTick();
+        this.tickShooting();
+    }
+
+    public void serverTick() {
+        super.serverTick();
+        this.tickShooting();
+    }
+
+    private void tickShooting() {
+        if (this.shootTime != 0L) {
+            long timer = this.shootTime - this.getWorldEntity().getTime();
+            if (!this.isServer()) {
+                if (timer <= 0L) {
+                    this.shootTime = 0L;
+                    return;
+                }
+
+                this.spawnChargeParticles();
+            } else if (timer <= (long) stickTime && this.shootTarget != null && this.isSamePlace(this.shootTarget)) {
+                this.stickShootAbility.runAndSend(this.shootTarget.getX(), this.shootTarget.getY());
+            } else if (timer <= 0L) {
+                this.shootAbility.runAndSend(this.shootX, this.shootY);
+                this.shootTime = 0L;
+            }
+        }
+
+    }
+
+    public void shootAbilityProjectile(int x, int y) {
+        if (this.isServer()) {
+            CrystalGolemBeamProjectile p = new CrystalGolemBeamProjectile(this.getLevel(), this, this.x, this.y, (float) x, (float) y, 1000, damage, 20);
+            this.getLevel().entityManager.projectiles.add(p);
+        }
+
+        if (this.isClient()) {
+            if (this.warningBeam != null) {
+                this.warningBeam.dispose();
+            }
+
+            this.warningBeam = null;
+            SoundManager.playSound(GameResources.firespell1, SoundEffect.effect(this).pitch(1.8F).volume(0.8F));
+        }
+
+        this.shootTime = 0L;
+    }
+
+    public void spawnChargeParticles() {
+        for (int i = 0; i < 2; ++i) {
+            int angle = GameRandom.globalRandom.nextInt(360);
+            Point2D.Float dir = GameMath.getAngleDir((float) angle);
+            float range = GameRandom.globalRandom.getFloatBetween(25.0F, 40.0F);
+            float startX = this.x + dir.x * range;
+            float startY = this.y + 4.0F;
+            float endHeight = 29.0F;
+            float startHeight = endHeight + dir.y * range;
+            int lifeTime = GameRandom.globalRandom.getIntBetween(200, 500);
+            float speed = dir.x * range * 250.0F / (float) lifeTime;
+            Color color = GameRandom.globalRandom.getOneOf(AphColors.ruby_lighter, AphColors.ruby_light, AphColors.ruby, AphColors.ruby_dark);
+            float hueMod = (float) this.getLevel().getWorldEntity().getLocalTime() / 10.0F % 240.0F;
+            float glowHue = hueMod < 120.0F ? hueMod + 200.0F : 440.0F - hueMod;
+            this.getLevel().entityManager.addParticle(startX, startY, Particle.GType.IMPORTANT_COSMETIC).sprite(GameResources.puffParticles.sprite(GameRandom.globalRandom.nextInt(5), 0, 12)).sizeFades(10, 16).rotates().heightMoves(startHeight, endHeight).movesConstant(-speed, 0.0F).color(color).givesLight(glowHue, 1.0F).ignoreLight(true).fadesAlphaTime(100, 50).lifeTime(lifeTime);
+        }
+
+    }
+
+    public void spawnDeathParticles(float knockbackX, float knockbackY) {
+        for (int i = 0; i < 4; ++i) {
+            this.getLevel().entityManager.addParticle(new FleshParticle(this.getLevel(), MobRegistry.Textures.crystalGolem, GameRandom.globalRandom.nextInt(5), 8, 32, this.x, this.y, 20.0F, knockbackX, knockbackY), Particle.GType.IMPORTANT_COSMETIC);
+        }
+
+    }
+
+    public void addDrawables(List<MobDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, Level level, int x, int y, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
+        super.addDrawables(list, tileList, topList, level, x, y, tickManager, camera, perspective);
+        GameLight light = level.getLightLevel(x / 32, y / 32);
+        int drawX = camera.getDrawX(x) - 22 - 10;
+        int drawY = camera.getDrawY(y) - 44 - 7 - 6;
+        int dir = this.getDir();
+        Point sprite = this.getAnimSprite(x, y, dir);
+        drawY += this.getBobbing(x, y);
+        drawY += this.getLevel().getTile(x / 32, y / 32).getMobSinkingAmount(this);
+        if (this.isAttacking) {
+            sprite.x = 0;
+        }
+
+        final MaskShaderOptions swimMask = this.getSwimMaskShaderOptions(this.inLiquidFloat(x, y));
+        final DrawOptions drawOptions = texture.initDraw().sprite(sprite.x, sprite.y, 64).addMaskShader(swimMask).light(light.minLevelCopy(100.0F)).pos(drawX, drawY);
+        list.add(new MobDrawable() {
+            public void draw(TickManager tickManager) {
+                swimMask.use();
+                drawOptions.draw();
+                swimMask.stop();
+            }
+        });
+        this.addShadowDrawables(tileList, x, y, light, camera);
+    }
+
+    public void dispose() {
+        super.dispose();
+        if (this.warningBeam != null) {
+            this.warningBeam.dispose();
+        }
+
+        this.warningBeam = null;
+    }
+
+    public static class CrystalGolemAI<T extends RubyGolem> extends SequenceAINode<T> {
+        public final EscapeAINode<T> escapeAINode;
+        public final CooldownAttackTargetAINode<T> shootAtTargetNode;
+        public final TargetFinderAINode<T> targetFinderNode;
+        public final ChaserAINode<T> chaserNode;
+
+        public CrystalGolemAI(int shootDistance, int meleeDistance, int searchDistance) {
+            this.addChild(new InverterAINode<>(this.escapeAINode = new EscapeAINode<T>() {
+                public boolean shouldEscape(T mob, Blackboard<T> blackboard) {
+                    return mob.isHostile && !mob.isSummoned && (Boolean) mob.getLevel().buffManager.getModifier(LevelModifiers.ENEMIES_RETREATING);
+                }
+            }));
+            if (shootDistance > 0) {
+                this.addChild(this.shootAtTargetNode = new CooldownAttackTargetAINode<T>(CooldownAttackTargetAINode.CooldownTimer.TICK, RubyGolem.chargeTime + RubyGolem.stickTime + 500, shootDistance) {
+                    public boolean attackTarget(T mob, Mob target) {
+                        if (mob.canAttack() && mob.shootTime == 0L) {
+                            mob.startShootingAbility.runAndSend(target);
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+                });
+                this.shootAtTargetNode.attackTimer = (long) this.shootAtTargetNode.attackCooldown;
+            } else {
+                this.shootAtTargetNode = null;
+            }
+
+            TargetFinderDistance<T> targetFinder = new TargetFinderDistance<>(searchDistance);
+            targetFinder.targetLostAddedDistance = searchDistance * 2;
+            this.addChild(this.targetFinderNode = new TargetFinderAINode<T>(targetFinder) {
+                public GameAreaStream<? extends Mob> streamPossibleTargets(T mob, Point base, TargetFinderDistance<T> distance) {
+                    return TargetFinderAINode.streamPlayersAndHumans(mob, base, distance);
+                }
+            });
+            this.addChild(this.chaserNode = new ChaserAINode<T>(meleeDistance, false, true) {
+                public boolean attackTarget(T mob, Mob target) {
+                    return false;
+                }
+            });
+        }
+    }
+
+    public static LootTable lootTable = new LootTable();
+
+    static {
+        lootTable.items.add(LootItem.between("ruby", 2, 3));
+    }
+
+    @Override
+    public LootTable getLootTable() {
+        return lootTable;
+    }
+}

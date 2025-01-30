@@ -16,6 +16,9 @@ public class AphColors {
     public static Color demonic = new Color(121, 100, 186);
     public static Color tungsten = new Color(40, 43, 74);
 
+    public static Color rock_light = new Color(130, 139, 152);
+    public static Color rock = new Color(72, 71, 77);
+
     public static Color stone = new Color(139, 140, 122);
     public static Color leather = new Color(116, 78, 59);
     public static Color ice = new Color(92, 166, 193);
@@ -29,6 +32,17 @@ public class AphColors {
     public static Color unstableGel = new Color(205, 52, 247);
     public static Color unstableGel_light = new Color(140, 100, 200);
     public static Color unstableGel_very_light = new Color(180, 180, 220);
+
+    public static Color infected_light = new Color(255, 153, 255);
+    public static Color infected = new Color(161, 87, 181);
+    public static Color infected_dark = new Color(125, 0, 178);
+
+    public static Color ruby_lighter = new Color(255, 166, 197);
+    public static Color ruby_light = new Color(255, 125, 175);
+    public static Color ruby = new Color(248, 93, 128);
+    public static Color ruby_dark = new Color(189, 76, 110);
+    public static Color ruby_darker = new Color(94, 7, 17);
+
 
     public static Color fail_message = new Color(200, 100, 100);
 }

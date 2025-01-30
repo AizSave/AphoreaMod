@@ -2,6 +2,7 @@ package aphorea.mobs.runicsummons;
 
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.server.ServerClient;
+import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.registries.MobRegistry.Textures;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.GameDamage;
@@ -46,7 +47,7 @@ public class RunicVultureHatchling extends RunicFlyingAttackingFollowingMob {
             damagePercent /= 5;
         }
 
-        return new GameDamage(target.getMaxHealth() * damagePercent, 1000000);
+        return new GameDamage(DamageTypeRegistry.TRUE, target.getMaxHealth() * damagePercent);
     }
 
     public int getCollisionKnockback(Mob target) {

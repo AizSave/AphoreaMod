@@ -9,6 +9,7 @@ import necesse.entity.mobs.ai.behaviourTree.BehaviourTreeAI;
 import necesse.entity.mobs.ai.behaviourTree.leaves.PlayerFollowerAINode;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.summon.summonFollowingMob.petFollowingMob.PetFollowingMob;
+import necesse.entity.mobs.summon.summonFollowingMob.petFollowingMob.PetWalkingTorchMob;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawOptions.DrawOptions;
 import necesse.gfx.drawables.OrderableDrawables;

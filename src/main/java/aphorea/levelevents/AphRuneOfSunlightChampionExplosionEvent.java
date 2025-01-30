@@ -1,5 +1,6 @@
 package aphorea.levelevents;
 
+import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.util.GameRandom;
 import necesse.entity.ParticleTypeSwitcher;
 import necesse.entity.levelEvent.explosionEvent.ExplosionEvent;
@@ -64,7 +65,7 @@ public class AphRuneOfSunlightChampionExplosionEvent extends ExplosionEvent impl
         } else if (mob.isPlayer || mob.isHuman) {
             damagePercent /= 5;
         }
-        GameDamage damage = new GameDamage(mob.getMaxHealth() * damagePercent * mod, 1000000);
+        GameDamage damage = new GameDamage(DamageTypeRegistry.TRUE, mob.getMaxHealth() * damagePercent * mod);
         float knockback = (float) this.knockback * mod;
         mob.isServerHit(damage, (float) mob.getX() - this.x, (float) mob.getY() - this.y, knockback, this);
     }

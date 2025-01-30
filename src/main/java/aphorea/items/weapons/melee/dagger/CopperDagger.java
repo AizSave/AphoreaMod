@@ -4,7 +4,6 @@ import aphorea.projectiles.toolitem.DaggerProjectile;
 import aphorea.utils.AphColors;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.projectile.Projectile;
-import necesse.gfx.drawOptions.itemAttack.ItemAttackDrawOptions;
 import necesse.inventory.InventoryItem;
 import necesse.level.maps.Level;
 
@@ -20,11 +19,6 @@ public class CopperDagger extends AphDaggerToolItem {
 
         this.attackRange.setBaseValue(36);
         this.knockback.setBaseValue(25);
-    }
-
-    @Override
-    public ItemAttackDrawOptions setupItemSpriteAttackDrawOptions(ItemAttackDrawOptions options, InventoryItem item, PlayerMob player, int mobDir, float attackDirX, float attackDirY, float attackProgress, Color itemColor) {
-        return super.setupItemSpriteAttackDrawOptions(options, item, player, mobDir, attackDirX, attackDirY, attackProgress, itemColor);
     }
 
     public Projectile getProjectile(Level level, int x, int y, PlayerMob player, InventoryItem item, boolean shouldDrop) {

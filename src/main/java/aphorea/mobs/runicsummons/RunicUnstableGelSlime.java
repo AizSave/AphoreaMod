@@ -4,6 +4,7 @@ import aphorea.mobs.summon.BabyUnstableGelSlime;
 import aphorea.registry.AphBuffs;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.server.ServerClient;
+import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.registries.MobRegistry.Textures;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.GameDamage;
@@ -52,7 +53,7 @@ public class RunicUnstableGelSlime extends RunicAttackingFollowingMob {
                 } else if (target.isPlayer || target.isHuman) {
                     damagePercent /= 5;
                 }
-                return CollisionChaserAINode.simpleAttack(mob, target, new GameDamage(target.getMaxHealth() * damagePercent, 1000000), this.knockback);
+                return CollisionChaserAINode.simpleAttack(mob, target, new GameDamage(DamageTypeRegistry.TRUE, target.getMaxHealth() * damagePercent), this.knockback);
             }
         });
 

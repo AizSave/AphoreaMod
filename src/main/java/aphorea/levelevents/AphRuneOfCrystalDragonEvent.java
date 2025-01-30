@@ -3,6 +3,7 @@ package aphorea.levelevents;
 import necesse.engine.network.Packet;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
+import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.util.*;
 import necesse.entity.ParticleBeamHandler;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.MobAbilityLevelEvent;
@@ -133,7 +134,7 @@ public class AphRuneOfCrystalDragonEvent extends MobAbilityLevelEvent {
             } else if (target.isPlayer || target.isHuman) {
                 damagePercent /= 5;
             }
-            target.isServerHit(new GameDamage(target.getMaxHealth() * damagePercent, 1000000), target.x - this.owner.x, target.y - this.owner.y, (float) this.knockback, this.owner);
+            target.isServerHit(new GameDamage(DamageTypeRegistry.TRUE, target.getMaxHealth() * damagePercent), target.x - this.owner.x, target.y - this.owner.y, (float) this.knockback, this.owner);
         }
 
     }

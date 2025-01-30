@@ -2,6 +2,7 @@ package aphorea.levelevents;
 
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
+import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.util.GameRandom;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.HitboxEffectEvent;
 import necesse.entity.mobs.Attacker;
@@ -77,7 +78,7 @@ public class AphRuneOfPestWardenEvent extends HitboxEffectEvent implements Attac
                 } else if (target.isPlayer || target.isHuman) {
                     damagePercent /= 5;
                 }
-                GameDamage damage = new GameDamage(target.getMaxHealth() * damagePercent, 1000000);
+                GameDamage damage = new GameDamage(DamageTypeRegistry.TRUE, target.getMaxHealth() * damagePercent);
                 float knockback = 20.0F / modifier;
                 target.isServerHit(damage, target.x - (int) owner.x, target.y - (int) owner.y, knockback, this.owner);
             }

@@ -5,6 +5,7 @@ import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
+import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameRandom;
@@ -153,7 +154,7 @@ public class AphRuneOfThunderEvent extends HitboxEffectEvent implements Attacker
                 } else if (target.isPlayer || target.isHuman) {
                     damagePercent /= 5;
                 }
-                target.isServerHit(new GameDamage(target.getMaxHealth() * damagePercent, 1000000), target.x - this.owner.x, target.y - this.owner.y, knockback, this.owner);
+                target.isServerHit(new GameDamage(DamageTypeRegistry.TRUE, target.getMaxHealth() * damagePercent), target.x - this.owner.x, target.y - this.owner.y, knockback, this.owner);
                 target.addBuff(new ActiveBuff(AphBuffs.STUN, target, 2000, this), true);
             }
             this.hits.add(target.getUniqueID());

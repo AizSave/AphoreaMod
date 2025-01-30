@@ -1,15 +1,17 @@
 package aphorea;
 
+import aphorea.biomes.InfectedFieldsBiome;
+import aphorea.biomes.levels.InfectedCaveLevel;
+import aphorea.biomes.levels.InfectedSurfaceLevel;
 import aphorea.buffs.LowdsPoisonBuff;
 import aphorea.data.AphSwampLevelData;
 import aphorea.data.AphWorldData;
 import aphorea.items.healingtools.HealingStaff;
+import aphorea.objects.*;
 import aphorea.items.weapons.melee.saber.AphSaberToolItem;
 import aphorea.journal.AphJournalChallenges;
 import aphorea.levelevents.*;
 import aphorea.mobs.friendly.WildPhosphorSlime;
-import aphorea.objects.RunesTable;
-import aphorea.objects.WitchStatue;
 import aphorea.packets.AphCustomPushPacket;
 import aphorea.packets.AphRuneOfUnstableGelSlimePacket;
 import aphorea.packets.AphRunesInjectorAbilityPacket;
@@ -17,10 +19,11 @@ import aphorea.packets.AphSingleAreaShowPacket;
 import aphorea.projectiles.toolitem.GelProjectile;
 import aphorea.registry.*;
 import aphorea.tiles.GelTile;
+import aphorea.tiles.InfectedGrassTile;
+import aphorea.tiles.InfectedWaterTile;
 import aphorea.utils.AphColors;
 import aphorea.utils.AphResources;
 import necesse.engine.journal.JournalEntry;
-import necesse.engine.modLoader.ModLoader;
 import necesse.engine.modLoader.annotations.ModEntry;
 import necesse.engine.registries.*;
 import necesse.entity.mobs.hostile.*;
@@ -34,6 +37,10 @@ import necesse.inventory.lootTable.lootItem.LootItem;
 import necesse.inventory.lootTable.lootItem.LootItemList;
 import necesse.inventory.lootTable.presets.DeepCaveChestLootTable;
 import necesse.inventory.lootTable.presets.DeepCaveRuinsLootTable;
+import necesse.level.gameObject.CrystalClusterObject;
+import necesse.level.gameObject.CrystalClusterSmallObject;
+import necesse.level.gameObject.RockObject;
+import necesse.level.gameObject.SingleRockObject;
 import necesse.level.maps.biomes.Biome;
 import necesse.level.maps.biomes.dungeon.DungeonBiome;
 import necesse.level.maps.biomes.swamp.SwampBiome;
@@ -82,10 +89,24 @@ public class AphoreaMod {
 
         // Tiles
         TileRegistry.registerTile("geltile", new GelTile("geltile", AphColors.gel), -1.0F, true);
+        TileRegistry.registerTile("infectedwatertile", new InfectedWaterTile(), 20.0F, true);
+        TileRegistry.registerTile("infectedgrasstile", new InfectedGrassTile(), 0.0F, false);
 
         // Objects
         ObjectRegistry.registerObject("witchstatue", new WitchStatue(), -1.0F, true);
         ObjectRegistry.registerObject("runestable", new RunesTable(), -1.0F, true);
+        ObjectRegistry.registerObject("infectedgrass", new InfectedGrassObject(), -1.0F, true);
+        ObjectRegistry.registerObject("infectedsapling", new AphSaplingObject("infectedsapling", "infectedtree", 900, 1800, true, 50, 0F, 0.6F, "infectedgrasstile"), 10.0F, true);
+        ObjectRegistry.registerObject("infectedtree", new AphTreeObject("infectedtree", "infectedlog", "infectedsapling", AphColors.infected_dark, 45, 60, 110, "infectedleaves", 100, 0F, 0.6F), 0.0F, false);
+        InfectedRubyClusterObject.registerCrystalCluster("infectedrubycluster", "rubycluster", AphColors.ruby_light, 337.0F, "ruby", -1.0F, true);
+        InfectedRubyClusterObject.registerCrystalCluster("infectedrubyclusterpure", "rubyclusterpure", AphColors.ruby_light, 337.0F, "ruby", -1.0F, true);
+        ObjectRegistry.registerObject("infectedrubyclustersmall", new InfectedRubyClusterSmallObject("rubycluster_small", AphColors.ruby_light, 337.0F, "ruby", 0, 1, 1), -1.0F, true);
+
+
+        RockObject gelRock;
+        ObjectRegistry.registerObject("gelrock", gelRock = new RockObject("gelrock", AphColors.rock, "rockygel", 1, 2, 2), -1.0F, true);
+        gelRock.toolTier = 2;
+        SingleRockObject.registerSurfaceRock(gelRock, "surfacegelrock", AphColors.rock_light, 1, 2, 2, -1.0F, true);
 
         // Recipe Tech
         AphTech.registerCore();
@@ -141,6 +162,13 @@ public class AphoreaMod {
         // Controls
         AphControls.registerCore();
 
+        // Biomes
+        BiomeRegistry.registerBiome("infectedfields", new InfectedFieldsBiome(), 200, null);
+
+        // Levels
+        LevelRegistry.registerLevel("infectedfieldssurface", InfectedSurfaceLevel.class);
+        LevelRegistry.registerLevel("infectedcave", InfectedCaveLevel.class);
+
         // Journal [Surface]
 
         JournalEntry forestSurfaceJournal = JournalRegistry.getJournalEntry("forestsurface");
@@ -169,13 +197,21 @@ public class AphoreaMod {
         JournalRegistry.getJournalEntries().forEach(journalEntry -> {
             if (journalEntry.levelType == JournalRegistry.LevelType.SURFACE) {
                 journalEntry.addMobEntries("gelslime", "wildphosphorslime");
-                journalEntry.addTreasureEntry(new LootTable(new LootItem("blowgun"), new LootItem("sling")));
+                journalEntry.addTreasureEntry("blowgun", "sling");
             }
             if (journalEntry.mobsData.stream().anyMatch(m -> Objects.equals(m.mob.getStringID(), "goblin"))) {
                 System.out.println(journalEntry.getStringID());
                 journalEntry.addMobEntries("copperdaggergoblin", "irondaggergoblin", "golddaggergoblin");
             }
         });
+
+        // Journal [Infected Fields]
+
+        JournalEntry infectedFieldsSurface = new JournalEntry(BiomeRegistry.getBiome("infectedfields"), JournalRegistry.LevelType.SURFACE);
+        infectedFieldsSurface.addMobEntries("infectedtreant", "rockygelslime");
+        infectedFieldsSurface.addTreasureEntry(AphLootTables.infectedFieldsSurface);
+        JournalRegistry.registerJournalEntry("infectedfieldssurface", infectedFieldsSurface);
+
 
         System.out.println("AphoreaMod started");
     }
@@ -195,15 +231,8 @@ public class AphoreaMod {
                 .addLimited(40, "gelslime", 2, 32 * 32)
                 .addLimited(2, "wildphosphorslime", 1, 16 * 32, mob -> mob.isHostile);
 
-        int rockyGelTickets;
-        try {
-            rockyGelTickets = ModLoader.getEnabledMods().stream()
-                    .anyMatch(mod -> Objects.equals(mod.id, "vulpesnova.mod")) ? 20 : 10;
-        } catch (Exception e) {
-            rockyGelTickets = 10;
-        }
         Biome.forestCaveMobs
-                .add(rockyGelTickets, "rockygelslime");
+                .add(10, "rockygelslime");
 
         SwampBiome.surfaceMobs
                 .addLimited(1, "pinkwitch", 1, 1024 * 32);
@@ -352,7 +381,8 @@ public class AphoreaMod {
         SpiderEmpressMob.privateLootTable.items.add(
                 new LootItem("runeofspiderempress")
         );
-
     }
+
+
 
 }

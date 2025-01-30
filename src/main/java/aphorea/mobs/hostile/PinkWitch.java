@@ -6,6 +6,7 @@ import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.network.server.Server;
 import necesse.engine.network.server.ServerClient;
+import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.*;
 import necesse.entity.mobs.ai.behaviourTree.BehaviourTreeAI;
@@ -29,7 +30,7 @@ import java.util.List;
 
 public class PinkWitch extends FlyingHostileMob {
 
-    public static GameDamage attack = new GameDamage(20, 100000);
+    public static GameDamage attack = new GameDamage(DamageTypeRegistry.TRUE, 20);
     public static int attack_knockback = 50;
 
     public static MaxHealthGetter MAX_HEALTH = new MaxHealthGetter(400, 500, 600, 700, 800);

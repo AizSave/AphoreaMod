@@ -2,6 +2,7 @@ package aphorea.mobs.summon;
 
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.server.ServerClient;
+import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.util.GameUtils;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.MobHealthChangeEvent;
 import necesse.entity.mobs.GameDamage;
@@ -48,7 +49,7 @@ public class Onyx extends FlyingAttackingFollowingMob {
             damagePercent /= 5;
         }
 
-        return new GameDamage(target.getMaxHealth() * damagePercent, 1000000);
+        return new GameDamage(DamageTypeRegistry.TRUE, target.getMaxHealth() * damagePercent);
     }
 
     public int getCollisionKnockback(Mob target) {

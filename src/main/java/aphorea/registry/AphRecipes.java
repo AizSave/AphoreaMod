@@ -20,9 +20,11 @@ public class AphRecipes {
         DemonicAnvil();
         TungstenAnvil();
         Alchemy();
+        Landscaping();
 
         // Modded
         Runes();
+
     }
 
     public static void None() {
@@ -410,6 +412,22 @@ public class AphRecipes {
                 AphCraftingRecipe.showAfter("lowdspotion", 1,
                         new Ingredient("cavespidergland", 5),
                         new Ingredient("glassbottle", 1)
+                )
+        );
+    }
+
+    public static void Landscaping() {
+        Tech tech = RecipeTechRegistry.LANDSCAPING;
+
+        addCraftingList(null, tech,
+                AphCraftingRecipe.showAfter("gelrock", 1,
+                        new Ingredient("rockygel", 2)
+                ),
+                AphCraftingRecipe.showAfter("surfacegelrock", 1,
+                        new Ingredient("rockygel", 2)
+                ),
+                AphCraftingRecipe.showAfter("infectedgrass", 1,
+                        new Ingredient("infectedgrassseed", 1)
                 )
         );
     }

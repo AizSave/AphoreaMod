@@ -109,7 +109,7 @@ public class UnstableGelSlime extends FlyingBossMob {
 
         staySmoothSnapped = true;
 
-        this.collision = new Rectangle(-30, -30 - 9, 60, 30);
+        this.collision = new Rectangle(-30, -30 - 5, 60, 24);
         this.hitBox = new Rectangle(-40, -40 - 9, 80, 50);
         this.selectBox = new Rectangle(-50, -75 - 9, 100, 90);
 

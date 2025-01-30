@@ -4,6 +4,7 @@ import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
 import necesse.engine.network.server.ServerClient;
+import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.util.GameRandom;
 import necesse.engine.util.GroundPillarList;
 import necesse.entity.manager.GroundPillarHandler;
@@ -113,7 +114,7 @@ public class RuneOfCryoQueenProjectile extends PositionedCirclingProjectile {
             if (mob.isHuman) {
                 damagePercent /= 5;
             }
-            this.setDamage(new GameDamage(mob.getMaxHealth() * damagePercent, 1000000));
+            this.setDamage(new GameDamage(DamageTypeRegistry.TRUE, mob.getMaxHealth() * damagePercent));
         }
         super.onHit(mob, object, x, y, fromPacket, packetSubmitter);
     }

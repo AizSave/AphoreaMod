@@ -27,6 +27,7 @@ import aphorea.items.runes.AphBaseRune;
 import aphorea.items.runes.AphModifierRune;
 import aphorea.items.runes.AphRunesInjector;
 import aphorea.items.trinkets.SwampShield;
+import aphorea.items.vanillaitemtypes.AphGrassSeedItem;
 import aphorea.items.vanillaitemtypes.AphMatItem;
 import aphorea.items.vanillaitemtypes.AphPetItem;
 import aphorea.items.vanillaitemtypes.AphSimpleTrinketItem;
@@ -55,6 +56,8 @@ import aphorea.items.weapons.throwable.GelBallGroup;
 import aphorea.items.weapons.throwable.UnstableGelveline;
 import necesse.engine.registries.ItemRegistry;
 import necesse.inventory.item.Item;
+import necesse.inventory.item.placeableItem.tileItem.GrassSeedItem;
+import necesse.inventory.item.toolItem.pickaxeToolItem.CustomPickaxeToolItem;
 
 import java.util.ArrayList;
 
@@ -65,8 +68,9 @@ public class AphItems {
     public static void registerCore() {
         // Basic Materials
         registerItem("unstablegel", (new AphMatItem(500, Item.Rarity.UNCOMMON)).setItemCategory("materials"), 10F);
-        registerItem("rockygel", (new AphMatItem(500, Item.Rarity.COMMON)).setItemCategory("materials"), 5F);
+        registerItem("rockygel", (new AphMatItem(500, Item.Rarity.COMMON)).setItemCategory("materials"), 1F);
         registerItem("stardust", (new AphMatItem(500, Item.Rarity.UNCOMMON)).setItemCategory("materials"), 30F);
+        registerItem("infectedlog", (new AphMatItem(500, "anylog")).setItemCategory("materials", "logs"), 2F);
 
         // Melee Weapons
         registerItem("woodenrod", new WoodenRod());
@@ -108,6 +112,9 @@ public class AphItems {
         registerItem("gelball", new GelBall(), 2F);
         registerItem("gelballgroup", new GelBallGroup());
         registerItem("unstablegelveline", new UnstableGelveline());
+
+        // Tools
+        registerItem("superiorpickaxe", new CustomPickaxeToolItem(350, 220, 6, 30, 60, 60, 1200, Item.Rarity.EPIC));
 
         // Healing Tools
         registerItem("healingstaff", new HealingStaff());
@@ -175,6 +182,7 @@ public class AphItems {
 
         // Misc
         registerItem("gelslimenullifier", new GelSlimeNullifier());
+        registerItem("infectedgrassseed", new AphGrassSeedItem("infectedgrasstile"), 0.2F);
 
         // Runes Injectors
         registerItem("rusticrunesinjector", new AphRunesInjector(Item.Rarity.NORMAL, 0, 0));

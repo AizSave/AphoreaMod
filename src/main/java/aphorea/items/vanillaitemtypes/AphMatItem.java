@@ -12,6 +12,22 @@ public class AphMatItem extends MatItem {
         super(stackSize, rarity);
     }
 
+    public AphMatItem(int stackSize, String... globalIngredients) {
+        super(stackSize, globalIngredients);
+    }
+
+    public AphMatItem(int stackSize, Rarity rarity, String... globalIngredients) {
+        super(stackSize, rarity, globalIngredients);
+    }
+
+    public AphMatItem(int stackSize, Rarity rarity, String tooltipKey) {
+        super(stackSize, rarity, tooltipKey);
+    }
+
+    public AphMatItem(int stackSize, Rarity rarity, String tooltipKey, String... globalIngredients) {
+        super(stackSize, rarity, tooltipKey, globalIngredients);
+    }
+
     @Override
     public ListGameTooltips getTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {
         ListGameTooltips tooltips = super.getTooltips(item, perspective, blackboard);

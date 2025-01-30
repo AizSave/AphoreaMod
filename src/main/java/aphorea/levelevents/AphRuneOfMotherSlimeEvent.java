@@ -6,6 +6,7 @@ import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
+import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameRandom;
@@ -149,7 +150,7 @@ public class AphRuneOfMotherSlimeEvent extends HitboxEffectEvent implements Atta
                 } else if (target.isPlayer || target.isHuman) {
                     damagePercent /= 5;
                 }
-                target.isServerHit(new GameDamage(target.getMaxHealth() * damagePercent, 1000000), target.x - this.owner.x, target.y - this.owner.y, knockback, this.owner);
+                target.isServerHit(new GameDamage(DamageTypeRegistry.TRUE, target.getMaxHealth() * damagePercent), target.x - this.owner.x, target.y - this.owner.y, knockback, this.owner);
             }
             this.hits.add(target.getUniqueID());
         }
