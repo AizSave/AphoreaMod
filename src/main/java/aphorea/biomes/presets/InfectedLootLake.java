@@ -97,6 +97,9 @@ public class InfectedLootLake extends Preset {
                 ).replaceAll("-2", String.valueOf(TileRegistry.getTileID("infectedwatertile")))
         );
 
-        this.addInventory(new LootTable(AphLootTables.infectedLootLake), random, 12, 12);
+        this.addInventory(new LootTable(AphLootTables.infectedLootLake), random, 11, 11);
+
+        this.addCanApplyRectPredicate(11, 11, 0, 0, 0, (level, levelStartX, levelStartY, levelEndX, levelEndY, dir) -> level.isLiquidTile(levelStartX, levelStartY));
+
     }
 }

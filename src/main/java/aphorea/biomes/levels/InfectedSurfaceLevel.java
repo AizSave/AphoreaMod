@@ -9,11 +9,14 @@ import necesse.engine.GameEvents;
 import necesse.engine.events.worldGeneration.*;
 import necesse.engine.localization.message.GameMessage;
 import necesse.engine.localization.message.LocalMessage;
+import necesse.engine.modifiers.ModifierValue;
 import necesse.engine.registries.ObjectRegistry;
 import necesse.engine.registries.TileRegistry;
 import necesse.engine.util.LevelIdentifier;
 import necesse.engine.util.TicketSystemList;
 import necesse.engine.world.WorldEntity;
+import necesse.entity.mobs.Mob;
+import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.level.gameTile.GameTile;
 import necesse.level.maps.Level;
 import necesse.level.maps.biomes.Biome;
@@ -22,6 +25,8 @@ import necesse.level.maps.generationModules.IslandGeneration;
 import necesse.level.maps.generationModules.PresetGeneration;
 import necesse.level.maps.presets.*;
 import necesse.level.maps.presets.set.*;
+
+import java.util.stream.Stream;
 
 public class InfectedSurfaceLevel extends Level {
     public InfectedSurfaceLevel(LevelIdentifier identifier, int width, int height, WorldEntity worldEntity) {
@@ -139,5 +144,14 @@ public class InfectedSurfaceLevel extends Level {
 
     public static int getRandomTile(IslandGeneration ig) {
         return ig.random.getOneOf(TileRegistry.woodPathID, TileRegistry.stonePathID, TileRegistry.snowStonePathID);
+    }
+
+    @Override
+    public Stream<ModifierValue<?>> getMobModifiers(Mob mob) {
+        Stream<ModifierValue<?>> modifiers = Stream.concat(
+                super.getMobModifiers(mob),
+                Stream.of(new ModifierValue<>(BuffModifiers.BLINDNESS, 0.4F))
+        );
+        return modifiers;
     }
 }

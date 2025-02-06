@@ -47,7 +47,7 @@ public class BloodyPeriaptActiveBuff extends Buff {
         if (!event.wasPrevented && event.damageType.equals(DamageTypeRegistry.MAGIC) && event.target.isHostile) {
             Mob owner = event.attacker.getAttackOwner();
             if (doLifeSteal) {
-                int heal = (int) Math.ceil(event.damage * 0.05F);
+                int heal = (int) Math.ceil(event.damage * 0.03F);
 
                 if (heal > 0) {
                     if (owner.isServer()) {

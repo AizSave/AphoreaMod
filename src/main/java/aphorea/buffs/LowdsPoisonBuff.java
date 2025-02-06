@@ -32,6 +32,7 @@ public class LowdsPoisonBuff extends Buff {
         buff.addModifier(BuffModifiers.RESILIENCE_REGEN, -100F);
         buff.addModifier(BuffModifiers.HEALTH_REGEN, -100F);
         buff.addModifier(BuffModifiers.COMBAT_HEALTH_REGEN, -100F);
+        buff.addModifier(BuffModifiers.BLINDNESS, 0.25F);
     }
 
     @Override

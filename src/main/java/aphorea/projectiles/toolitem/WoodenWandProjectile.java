@@ -58,6 +58,7 @@ public class WoodenWandProjectile extends FollowingProjectile {
     public void init() {
         super.init();
 
+        this.turnSpeed = 0.1F;
         piercing = 0;
         bouncing = 0;
         this.doesImpactDamage = false;
@@ -65,8 +66,6 @@ public class WoodenWandProjectile extends FollowingProjectile {
         this.canBreakObjects = false;
         this.canHitMobs = true;
         this.givesLight = true;
-
-        this.turnSpeed = 0.05F;
 
         this.setWidth(0, 5);
     }
@@ -138,13 +137,10 @@ public class WoodenWandProjectile extends FollowingProjectile {
             this.remove();
         }
 
-        Iterator var4;
         if (this.isServer() && this.canBreakObjects) {
             ArrayList<LevelObjectHit> hits = this.getLevel().getCollisions(hitbox, this.getAttackThroughCollisionFilter());
-            var4 = hits.iterator();
 
-            while (var4.hasNext()) {
-                LevelObjectHit hit = (LevelObjectHit) var4.next();
+            for (LevelObjectHit hit : hits) {
                 if (!hit.invalidPos() && hit.getObject().attackThrough) {
                     this.attackThrough(hit);
                 }
@@ -152,26 +148,16 @@ public class WoodenWandProjectile extends FollowingProjectile {
         }
 
         if (this.canHitMobs) {
-            List<Mob> targets = (List) this.customStreamTargets(hitbox).filter((m) -> {
-                return this.canHit(m) && hitbox.intersects(m.getHitBox());
-            }).filter((m) -> {
-                return !this.isSolid || m.canHitThroughCollision() || !this.perpLineCollidesWithLevel(m.x, m.y);
-            }).collect(Collectors.toCollection(LinkedList::new));
-            var4 = targets.iterator();
+            List<Mob> targets = this.customStreamTargets(hitbox).filter((m) -> this.canHit(m) && hitbox.intersects(m.getHitBox())).filter((m) -> !this.isSolid || m.canHitThroughCollision() || !this.perpLineCollidesWithLevel(m.x, m.y)).collect(Collectors.toCollection(LinkedList::new));
 
-            while (var4.hasNext()) {
-                Mob target = (Mob) var4.next();
-                this.onHit(target, (LevelObjectHit) null, this.x, this.y, false, (ServerClient) null);
+            for (Mob target : targets) {
+                this.onHit(target, null, this.x, this.y, false, null);
             }
         }
 
     }
 
     protected Stream<Mob> customStreamTargets(Shape hitBounds) {
-        return Stream.concat(this.getLevel().entityManager.mobs.streamInRegionsShape(hitBounds, 1), GameUtils.streamNetworkClients(this.getLevel()).filter((c) -> {
-            return !c.isDead() && c.hasSpawned();
-        }).map((sc) -> {
-            return sc.playerMob;
-        }));
+        return Stream.concat(this.getLevel().entityManager.mobs.streamInRegionsShape(hitBounds, 1), GameUtils.streamNetworkClients(this.getLevel()).filter((c) -> !c.isDead() && c.hasSpawned()).map((sc) -> sc.playerMob));
     }
 }

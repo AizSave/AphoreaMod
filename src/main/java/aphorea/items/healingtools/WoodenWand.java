@@ -28,7 +28,7 @@ public class WoodenWand extends AphHealingProjectileToolItem {
         attackXOffset += 10;
         attackYOffset += 15;
 
-        magicHealing.setBaseValue(2).setUpgradedValue(1, 3);
+        magicHealing.setBaseValue(4).setUpgradedValue(1, 6);
     }
 
     public Projectile[] getProjectiles(Level level, int x, int y, PlayerMob player, InventoryItem item) {

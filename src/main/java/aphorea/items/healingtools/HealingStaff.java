@@ -24,8 +24,8 @@ import necesse.level.maps.Level;
 public class HealingStaff extends AphAreaToolItem implements ItemInteractAction {
 
     static AphAreaList areaList = new AphAreaList(
-            new AphArea(120, AphColors.palettePinkWitch[1]).setHealingArea(6, 8),
-            new AphArea(120, AphColors.palettePinkWitch[0]).setHealingArea(2, 3)
+            new AphArea(120, AphColors.palettePinkWitch[1]).setHealingArea(10, 12),
+            new AphArea(120, AphColors.palettePinkWitch[0]).setHealingArea(4, 6)
     );
 
     public HealingStaff() {

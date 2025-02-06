@@ -24,7 +24,7 @@ public class WitchMedallionBuff extends AphDamageWhenHealTrinketBuff {
     ).setDamageType(DamageTypeRegistry.MAGIC);
 
     public WitchMedallionBuff() {
-        super(20, areaList);
+        super(30, areaList);
     }
 
     @Override

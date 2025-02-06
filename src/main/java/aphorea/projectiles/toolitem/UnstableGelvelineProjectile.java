@@ -5,9 +5,12 @@ import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
 import necesse.engine.gameLoop.tickManager.TickManager;
+import necesse.engine.registries.ItemRegistry;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
+import necesse.entity.mobs.buffs.BuffModifiers;
+import necesse.entity.pickup.ItemPickupEntity;
 import necesse.entity.projectile.Projectile;
 import necesse.entity.trails.Trail;
 import necesse.gfx.camera.GameCamera;
@@ -88,14 +91,31 @@ public class UnstableGelvelineProjectile extends Projectile {
     @Override
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
         super.doHitLogic(mob, object, x, y);
+        if (mob != null && this.amountHit() < this.piercing) {
+            return;
+        } else {
+            int bouncing = this.bouncing;
+            Mob owner = this.getOwner();
+            if (owner != null) {
+                bouncing += owner.buffManager.getModifier(BuffModifiers.PROJECTILE_BOUNCES);
+            }
+            if (object != null && this.bounced < bouncing && this.canBounce) {
+                return;
+            }
+        }
         executeArea();
+
     }
 
     public void executeArea() {
         if (this.getOwner() != null) {
-            areaList.executeAreas(this.getOwner(), 1, (int) x, (int) y, false, item, toolItem);
+            if(isServer()) {
+                areaList.executeAreas(this.getOwner(), 1, (int) x, (int) y, false, item, toolItem);
+            }
+            if(isClient()) {
+                areaList.showAllAreaParticles(this.getLevel(), x, y);
+            }
         }
-        areaList.showAllAreaParticles(this.getLevel(), x, y);
     }
 
 

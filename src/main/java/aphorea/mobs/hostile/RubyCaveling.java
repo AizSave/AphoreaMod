@@ -17,30 +17,35 @@ import necesse.gfx.drawOptions.texture.TextureDrawOptionsEnd;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.lootTable.LootTable;
+import necesse.inventory.lootTable.lootItem.ChanceLootItem;
 import necesse.inventory.lootTable.lootItem.LootItem;
+import necesse.inventory.lootTable.lootItem.RotationLootItem;
 import necesse.level.maps.Level;
 import necesse.level.maps.TilePosition;
 import necesse.level.maps.light.GameLight;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class RubyCaveling extends HostileMob {
     public static GameDamage collision_damage = new GameDamage(30);
     public static int collision_knockback = 50;
 
-    public static LootTable lootTable = new LootTable();
+    public static LootTable lootTable = new LootTable(
+            RotationLootItem.globalLootRotation(
+                    new ChanceLootItem(0.5F, "ruby"),
+                    new ChanceLootItem(0.5F, "liferuby")
+            )
+    );
     public static HumanTexture texture;
     public Color popParticleColor;
     public boolean isRock = true;
     public InventoryItem item;
 
-    static {
-        lootTable.items.add(new LootItem("ruby"));
-    }
-
     public RubyCaveling() {
         super(80);
+        this.setArmor(10);
         this.setSpeed(60);
         this.setFriction(3.0F);
         this.collision = new Rectangle(-10, -7, 20, 14);
@@ -49,7 +54,7 @@ public class RubyCaveling extends HostileMob {
         this.swimMaskMove = 12;
         this.swimMaskOffset = 4;
         this.swimSinkOffset = 0;
-        this.item = new InventoryItem(ItemRegistry.getItem("ruby"));
+        this.item = new InventoryItem("liferuby", 0);
     }
 
     public LootTable getLootTable() {
@@ -59,6 +64,10 @@ public class RubyCaveling extends HostileMob {
     public void init() {
         super.init();
         ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 12 * 32, collision_damage, collision_knockback, 40000));
+        ArrayList<InventoryItem> items = lootTable.getNewList(GameRandom.globalRandom, 1F);
+        if(!items.isEmpty()) {
+            this.item = items.get(0);
+        }
     }
 
     public void clientTick() {

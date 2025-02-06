@@ -4,10 +4,13 @@ import aphorea.utils.AphColors;
 import necesse.engine.network.server.ServerClient;
 import necesse.engine.registries.MobRegistry;
 import necesse.engine.registries.ObjectRegistry;
+import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.Attacker;
 import necesse.entity.particle.Particle;
 import necesse.entity.particle.SmokePuffParticle;
 import necesse.entity.pickup.ItemPickupEntity;
+import necesse.inventory.InventoryItem;
+import necesse.inventory.item.placeableItem.objectItem.ObjectItem;
 import necesse.inventory.lootTable.LootTable;
 import necesse.level.gameObject.CrystalClusterObject;
 import necesse.level.maps.Level;
@@ -26,8 +29,9 @@ public class InfectedRubyClusterObject extends CrystalClusterObject {
     public void onDestroyed(Level level, int layerID, int x, int y, Attacker attacker, ServerClient client, ArrayList<ItemPickupEntity> itemsDropped) {
         if (level.isServer()) {
             level.entityManager.addMob(MobRegistry.getMob("rubygolem", level), x * 32 + 16, y * 32 + 16);
-        } else if (level.isClient()) {
-            level.entityManager.addParticle(new SmokePuffParticle(level, x * 32 + 16, y * 32, AphColors.ruby), Particle.GType.CRITICAL);
+        }
+        if (level.isClient()) {
+            level.entityManager.addParticle(new SmokePuffParticle(level, x * 32 + 16, y * 32 + 32, AphColors.ruby), Particle.GType.CRITICAL);
         }
         level.objectLayer.setObject(layerID, x, y, 0);
     }
@@ -46,5 +50,10 @@ public class InfectedRubyClusterObject extends CrystalClusterObject {
 
     public MultiTile getMultiTile(int rotation) {
         return new StaticMultiTile(0, 0, 2, 1, true, this.getID(), this.counterID);
+    }
+
+    @Override
+    public ArrayList<InventoryItem> getDroppedItems(Level level, int layerID, int x, int y) {
+        return new ArrayList<>();
     }
 }

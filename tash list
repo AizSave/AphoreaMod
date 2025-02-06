@@ -1,0 +1,11 @@
+[33m24967a3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin_public/main[m[33m)[m HEAD@{0}: pull origin_public main: Fast-forward
+[33m8cae408[m HEAD@{1}: reset: moving to 99b3b3c^
+[33m8cae408[m HEAD@{2}: reset: moving to 99b3b3c^
+[33m99b3b3c[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{3}: commit: v0.5.1.2
+[33m8cae408[m HEAD@{4}: commit: v0.5.1.1
+[33me377d4d[m HEAD@{5}: commit: v0.5.1
+[33m1399a4b[m HEAD@{6}: commit: v0.5.0.2
+[33mb5ceabd[m HEAD@{7}: commit: v0.5.0.1
+[33me0d1b14[m HEAD@{8}: commit: v0.5
+[33m37be6f6[m HEAD@{9}: commit: 13:00 20/10/2024
+[33mb443f2e[m HEAD@{10}: commit (initial): v0.4

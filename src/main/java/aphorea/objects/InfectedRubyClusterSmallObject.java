@@ -3,10 +3,12 @@ package aphorea.objects;
 import aphorea.utils.AphColors;
 import necesse.engine.network.server.ServerClient;
 import necesse.engine.registries.MobRegistry;
+import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.Attacker;
 import necesse.entity.particle.Particle;
 import necesse.entity.particle.SmokePuffParticle;
 import necesse.entity.pickup.ItemPickupEntity;
+import necesse.inventory.InventoryItem;
 import necesse.level.gameObject.CrystalClusterSmallObject;
 import necesse.level.maps.Level;
 
@@ -20,11 +22,19 @@ public class InfectedRubyClusterSmallObject extends CrystalClusterSmallObject {
 
     @Override
     public void onDestroyed(Level level, int layerID, int x, int y, Attacker attacker, ServerClient client, ArrayList<ItemPickupEntity> itemsDropped) {
-        if (level.isServer()) {
-            level.entityManager.addMob(MobRegistry.getMob("rubycaveling", level), x * 32 + 16, y * 32 + 16);
-        } else if (level.isClient()) {
-            level.entityManager.addParticle(new SmokePuffParticle(level, x * 32 + 16, y * 32, AphColors.ruby), Particle.GType.CRITICAL);
+        if(GameRandom.globalRandom.seeded(getTileSeed(x, y)).getChance(0.5F)) {
+            if (level.isServer()) {
+                level.entityManager.addMob(MobRegistry.getMob("rubycaveling", level), x * 32 + 16, y * 32 + 16);
+            }
+            if (level.isClient()) {
+                level.entityManager.addParticle(new SmokePuffParticle(level, x * 32 + 16, y * 32 + 32, AphColors.ruby), Particle.GType.CRITICAL);
+            }
         }
         level.objectLayer.setObject(layerID, x, y, 0);
+    }
+
+    @Override
+    public ArrayList<InventoryItem> getDroppedItems(Level level, int layerID, int x, int y) {
+        return new ArrayList<>();
     }
 }

@@ -36,6 +36,7 @@ import necesse.gfx.gameTexture.GameSprite;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.inventory.lootTable.LootTable;
 import necesse.inventory.lootTable.lootItem.LootItem;
+import necesse.inventory.lootTable.lootItem.RotationLootItem;
 import necesse.level.maps.CollisionFilter;
 import necesse.level.maps.Level;
 import necesse.level.maps.LevelObjectHit;
@@ -61,9 +62,16 @@ public class RubyGolem extends HostileMob {
     public final CoordinateMobAbility stickShootAbility;
     public final CoordinateMobAbility shootAbility;
 
+    public static LootTable lootTable = new LootTable(
+            RotationLootItem.globalLootRotation(
+                    LootItem.between("ruby", 2, 3),
+                    LootItem.between("liferuby", 2, 3)
+            )
+    );
+
     public RubyGolem() {
         super(100);
-        this.setArmor(40);
+        this.setArmor(20);
         this.setSpeed(20.0F);
         this.setFriction(3.0F);
         this.setKnockbackModifier(0.4F);
@@ -303,12 +311,6 @@ public class RubyGolem extends HostileMob {
                 }
             });
         }
-    }
-
-    public static LootTable lootTable = new LootTable();
-
-    static {
-        lootTable.items.add(LootItem.between("ruby", 2, 3));
     }
 
     @Override
