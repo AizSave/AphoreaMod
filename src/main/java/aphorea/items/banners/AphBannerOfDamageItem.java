@@ -13,7 +13,7 @@ public class AphBannerOfDamageItem extends AphBanner {
 
     @Override
     public void addToolTips(ListGameTooltips tooltips, PlayerMob perspective) {
-        float bannerEffect = perspective.buffManager.getModifier(AphModifiers.BANNER_EFFECT);
+        float bannerEffect = perspective == null ? AphModifiers.BANNER_EFFECT.defaultBuffManagerValue : perspective.buffManager.getModifier(AphModifiers.BANNER_EFFECT);
         tooltips.add(Localization.translate("itemtooltip", "bannerofdamageeffect", "effect", Math.round(15 * bannerEffect * 100.0f) / 100.0f));
     }
 }

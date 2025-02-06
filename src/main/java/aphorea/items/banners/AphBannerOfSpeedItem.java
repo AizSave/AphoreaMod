@@ -13,7 +13,7 @@ public class AphBannerOfSpeedItem extends AphBanner {
 
     @Override
     public void addToolTips(ListGameTooltips tooltips, PlayerMob perspective) {
-        float bannerEffect = perspective.buffManager.getModifier(AphModifiers.BANNER_EFFECT);
+        float bannerEffect = perspective == null ? AphModifiers.BANNER_EFFECT.defaultBuffManagerValue : perspective.buffManager.getModifier(AphModifiers.BANNER_EFFECT);
         tooltips.add(Localization.translate("itemtooltip", "bannerofspeedeffect", "effect", Math.round(30 * bannerEffect * 100.0f) / 100.0f));
     }
 }

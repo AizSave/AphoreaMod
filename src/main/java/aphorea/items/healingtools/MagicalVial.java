@@ -38,8 +38,8 @@ public class MagicalVial extends AphMagicHealingToolItem {
     public MagicalVial() {
         super(200);
         this.rarity = Rarity.UNCOMMON;
-        magicHealing.setBaseValue(18)
-                .setUpgradedValue(1.0F, 20);
+        magicHealing.setBaseValue(25)
+                .setUpgradedValue(1.0F, 30);
 
         this.setItemCategory("equipment", "tools", "healing");
         this.setItemCategory(ItemCategory.equipmentManager, "tools", "healingtools");

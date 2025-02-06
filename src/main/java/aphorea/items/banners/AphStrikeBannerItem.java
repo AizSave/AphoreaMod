@@ -45,9 +45,9 @@ public class AphStrikeBannerItem extends AphBanner {
 
     @Override
     public void addToolTips(ListGameTooltips tooltips, PlayerMob perspective) {
-        float bannerEffect = perspective.buffManager.getModifier(AphModifiers.BANNER_EFFECT);
+        float bannerEffect = perspective == null ? AphModifiers.BANNER_EFFECT.defaultBuffManagerValue : perspective.buffManager.getModifier(AphModifiers.BANNER_EFFECT);
         tooltips.add(Localization.translate("itemtooltip", "strikebannereffect", "effect", Math.round(10F * bannerEffect * 100.0f) / 100.0f));
-        float bannerAbilitySpeed = perspective.buffManager.getModifier(AphModifiers.BANNER_ABILITY_SPEED);
+        float bannerAbilitySpeed = perspective == null ? AphModifiers.BANNER_ABILITY_SPEED.defaultBuffManagerValue : perspective.buffManager.getModifier(AphModifiers.BANNER_ABILITY_SPEED);
         tooltips.add(Localization.translate("itemtooltip", "strikebannerability", "time", Math.round(2F / bannerAbilitySpeed * 100.0f) / 100.0f));
         areaList.addAreasToolTip(tooltips, perspective, true, null, null);
     }

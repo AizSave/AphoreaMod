@@ -62,7 +62,7 @@ public class GoldenWandProjectile extends FollowingProjectile {
     public void init() {
         super.init();
 
-        this.turnSpeed = 0.05F;
+        this.turnSpeed = 0.1F;
         piercing = 0;
         bouncing = 0;
         this.doesImpactDamage = false;

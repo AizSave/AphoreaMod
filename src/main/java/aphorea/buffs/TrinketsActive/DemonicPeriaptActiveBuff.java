@@ -30,7 +30,7 @@ public class DemonicPeriaptActiveBuff extends Buff {
         if (!event.wasPrevented && event.target.isHostile) {
             Mob owner = event.attacker.getAttackOwner();
             if (event.damageType.equals(DamageTypeRegistry.MAGIC)) {
-                int heal = (int) Math.ceil(event.damage * 0.05F);
+                int heal = (int) Math.ceil(event.damage * 0.03F);
 
                 if (heal > 0) {
                     if (owner.isServer()) {

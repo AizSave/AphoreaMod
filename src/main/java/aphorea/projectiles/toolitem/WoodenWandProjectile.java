@@ -58,6 +58,7 @@ public class WoodenWandProjectile extends FollowingProjectile {
     public void init() {
         super.init();
 
+        this.turnSpeed = 0.1F;
         piercing = 0;
         bouncing = 0;
         this.doesImpactDamage = false;
@@ -65,8 +66,6 @@ public class WoodenWandProjectile extends FollowingProjectile {
         this.canBreakObjects = false;
         this.canHitMobs = true;
         this.givesLight = true;
-
-        this.turnSpeed = 0.05F;
 
         this.setWidth(0, 5);
     }

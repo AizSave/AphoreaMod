@@ -153,9 +153,9 @@ rockyperiapt2=Appuyez [input=trinketability] pour gagner 10 Armor pendant 10 sec
 unstableperiapt=Invoque 2 §bBébé gélatineux instable§0 qui vous protègeront. Ils §9infligent 8 dégâts d'invocation§0
 unstableperiapt2=Vous devenez immunisé à l'effet §9collant§0
 
-bloodyperiapt=Appuyez [input=trinketability] pour gagner +50% Vitesse, +30% Vitesse d'attaque et\nles armes §6Éclair de sang§0 et §6Volée de sang§0 vous soigneront de 5% des dégâts que vous infligez avec elles.\nVous ne pouvez pas subir de dégâts ou vous déplacer pendant que vous activez cette capacité
+bloodyperiapt=Appuyez [input=trinketability] pour gagner +50% Vitesse, +30% Vitesse d'attaque et\nles armes §6Éclair de sang§0 et §6Volée de sang§0 vous soigneront de 3% des dégâts que vous infligez avec elles.\nVous ne pouvez pas subir de dégâts ou vous déplacer pendant que vous activez cette capacité
 
-demonicperiapt=Appuyez [input=trinketability] pour gagner +50% Vitesse, +30% Vitesse d'attaque et\nles armes magiques vous soigneront de 5% des dégâts que vous infligez avec elles pendant 10 secondes.\nVous ne pouvez pas subir de dégâts ou vous déplacer pendant que vous activez cette capacité
+demonicperiapt=Appuyez [input=trinketability] pour gagner +50% Vitesse, +30% Vitesse d'attaque et\nles armes magiques vous soigneront de 3% des dégâts que vous infligez avec elles pendant 10 secondes.\nVous ne pouvez pas subir de dégâts ou vous déplacer pendant que vous activez cette capacité
 
 abysmalperiapt=Les armes magiques vous soigneront de 5% des dégâts que vous infligez avec elles
 

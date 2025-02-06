@@ -28,7 +28,7 @@ public class GoldenWand extends AphHealingProjectileToolItem {
         attackXOffset += 10;
         attackYOffset += 15;
 
-        magicHealing.setBaseValue(3).setUpgradedValue(1, 4);
+        magicHealing.setBaseValue(8).setUpgradedValue(1, 10);
     }
 
     public Projectile[] getProjectiles(Level level, int x, int y, PlayerMob player, InventoryItem item) {

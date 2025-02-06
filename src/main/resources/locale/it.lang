@@ -358,9 +358,9 @@ rockyperiapt=+5 Armatura, ma -5% Velocità di Movimento
 rockyperiapt2=Premi [input=trinketability] per ottenere 10 Armatura per 10 secondi\nNon puoi subire danni o muoverti mentre attivi l'abilità
 unstableperiapt=Evoca due §bPiccoli Slime di Gel Instabile§0 che ti proteggeranno. Questi slime §9infliggono 8 Danni d'Evocazione§0
 unstableperiapt2=Ti rende immune al debuff §9Appiccicoso§0
-bloodyperiapt=Premi [input=trinketability] per ottenere +50% Velocità, +30% Velocità d'Attacco e\ne le armi §6Dardo di Sangue§0 e §6Sangue Volante§0 ti cureranno del 5% del danno che infliggi con esse.\nNon puoi subire danni o muoverti mentre attivi l'abilità
-demonicperiapt=Premi [input=trinketability] per ottenere +50% Velocità, +30% Velocità d'Attacco e\ne le armi magiche ti cureranno del 5% del danno che infliggi con esse per 10 secondi.\nNon puoi subire danni o muoverti mentre attivi l'abilità
-abysmalperiapt=Le armi magiche ti cureranno del 5% del danno che infliggi con esse
+bloodyperiapt=Premi [input=trinketability] per ottenere +50% Velocità, +30% Velocità d'Attacco e\ne le armi §6Dardo di Sangue§0 e §6Sangue Volante§0 ti cureranno del 3% del danno che infliggi con esse.\nNon puoi subire danni o muoverti mentre attivi l'abilità
+demonicperiapt=Premi [input=trinketability] per ottenere +50% Velocità, +30% Velocità d'Attacco e\ne le armi magiche ti cureranno del 3% del danno che infliggi con esse per 10 secondi.\nNon puoi subire danni o muoverti mentre attivi l'abilità
+abysmalperiapt=Le armi magiche ti cureranno del 3% del danno che infliggi con esse
 necromancyperiapt=Ogni volta che tu o una delle tue evocazioni uccidete un mostro ostile, evochi uno §bScheletro Non Morto§0\n che §9infligge 20 Danni d'Evocazione§0 per§9 10 secondi§0 con un massimo di§9 3 alla volta§0
 frozenperiapt=Le armi da mischia e a distanza applicheranno l'effetto §9Congelare§0 per 3 secondi. Se il bersaglio è già congelato, aumenta il Danno base dell'attacco del §9+20%§0
 frozenperiapt2=Premi [input=trinketability] per ottenere +50% Velocità, +30% Velocità d'Attacco e\nfarlo funzionare con tutti i danni per 10 secondi.\nNon puoi subire danni o muoverti mentre attivi l'abilità
@@ -369,7 +369,7 @@ floralring=Ricevi §7<healing>§0 Guarigione Magica ogni 3 secondi
 gelring=+30% guarigione magica ricevuta
 heartring=+20 vita massima
 swampshield=Protegge solo gli attacchi nella direzione in cui vengono ricevuti\nGuarisci magicamente di §7<healing>§0 del danno che previeni
-witchmedallion=Infligge 15 Danni ad Area per ogni 20 §9[Guarigioni Magiche]§0 effettuate
+witchmedallion=Infligge 15 Danni ad Area per ogni 30 §9[Guarigioni Magiche]§0 effettuate
 # NEW
 bannerbearerfoci1=§7+40%§0 effetto dello stendardo e §7+20%§0 velocità ability dello stendardo
 bannerbearerfoci2=§6-20%§0 danno non dello stendardo e §6-1§0 evocazioni massime
