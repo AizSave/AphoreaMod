@@ -358,9 +358,9 @@ rockyperiapt=+5 de Armadura, pero -5% de Velocidad de movimiento
 rockyperiapt2=Presiona [input=trinketability] para recibir 10 de Armadura durante 10 segundos\nNo puedes recibir daño ni moverte mientras activas la habilidad
 unstableperiapt=Llama a dos §bSlimes de Gel Inestable Bebé§0 que te protegerán. Estos slimes §9hacen 8 de Daño de Invocador§0
 unstableperiapt2=Te vuelve inmune al debuff §9Pegajoso§0
-bloodyperiapt=Presiona [input=trinketability] para recibir +50% de Velocidad, +30% de Velocidad de Ataque y\nlas armas §6Rayo de sangre§0 y §6Descarga carmesí§0 te sanarán un 5% del Daño que inflijas con ellas.\nNo puedes recibir daño ni moverte mientras activas la habilidad
-demonicperiapt=Presiona [input=trinketability] para recibir +50% de Velocidad, +30% de Velocidad de Ataque y\nlas armas mágicas te sanarán un 5% del Daño que inflijas con ellas durante 10 segundos.\nNo puedes recibir daño ni moverte mientras activas la habilidad
-abysmalperiapt=Las armas mágicas te sanarán un 5% del Daño que inflijas con ellas
+bloodyperiapt=Presiona [input=trinketability] para recibir +50% de Velocidad, +30% de Velocidad de Ataque y\nlas armas §6Rayo de sangre§0 y §6Descarga carmesí§0 te sanarán un 3% del Daño que inflijas con ellas.\nNo puedes recibir daño ni moverte mientras activas la habilidad
+demonicperiapt=Presiona [input=trinketability] para recibir +50% de Velocidad, +30% de Velocidad de Ataque y\nlas armas mágicas te sanarán un 3% del Daño que inflijas con ellas durante 10 segundos.\nNo puedes recibir daño ni moverte mientras activas la habilidad
+abysmalperiapt=Las armas mágicas te sanarán un 3% del Daño que inflijas con ellas
 necromancyperiapt=Cada vez que tú o uno de tus esbirros mata a un mob hostil, invocas un §bEsqueleto No-Muerto§0\n que §9inflige 20 de Daño de Invocador§0 durante§9 10 segundos§0, con un máximo de§9 3 a la vez§0
 frozenperiapt=Las armas cuerpo a cuerpo y a distancia §9Congelarán§0 durante 3 segundos. Si el objetivo ya está congelado aumenta en §9+20%§0 el Daño base del ataque
 frozenperiapt2=Presiona [input=trinketability] para recibir +50% de Velocidad, +30% de Velocidad de Ataque y\nhacer que esto funcione con todo el daño durante 10 segundos.\nNo puedes recibir daño ni moverte mientras activas la habilidad
@@ -369,7 +369,7 @@ floralring=§9[Curación Mágica]§0 propia de §7<healing>§0 cada 5 segundos
 gelring=+30% §9[Curación Mágica]§0 recibida
 heartring=+20 de salud máxima
 swampshield=Solo protege ataques en la dirección que se reciben\n§9[Curación Mágica]§0 propia según el §7<healing>§0 del daño que prevengas
-witchmedallion=Realiza 15 de Daño en área cada 20 de §9[Curación Mágica]§0 realizada
+witchmedallion=Realiza 15 de Daño en área cada 30 de §9[Curación Mágica]§0 realizada
 # NEW
 iceboots=Te hace resbalarte como en hielo, pero otorga +50% velocidad de movimiento y +4 de armadura
 bannerbearerfoci1=§7+40%§0 efecto de banner and §7+20%§0 velocidad de habilidad de banner

@@ -369,9 +369,9 @@ rockyperiapt=+5 护甲, 但是 -5% 移动速度
 rockyperiapt2=按下 [input=trinketability] 来在接下来10秒内获得10点护甲值\n在激活的瞬间你不能够进行移动或造成伤害。
 unstableperiapt=召唤两只 §b幼态紊乱凝胶史莱姆§0 来保护你. 这些史莱姆 §9造成8点召唤伤害§0
 unstableperiapt2=让你免疫 §9粘滞§0 的负面状态
-bloodyperiapt=按下 [input=trinketability] 来获得+50% 速度, +30% 攻击速度，并且\n武器 §6鲜血迸发§0 和 §6血色绽放§0 将会为你吸取5%其造成伤害值的生命值。\n在激活的瞬间你不能够进行移动或造成伤害。
-demonicperiapt=按下 [input=trinketability] 来获得+50% 速度, +30% 攻击速度，并且\n魔法武器都会为你吸取5%其造成伤害值的生命值，在接下来10秒内有效。\n在激活的瞬间你不能够进行移动或造成伤害。
-abysmalperiapt=魔法武器将为你恢复造成伤害值的5%生命值。
+bloodyperiapt=按下 [input=trinketability] 来获得+50% 速度, +30% 攻击速度，并且\n武器 §6鲜血迸发§0 和 §6血色绽放§0 将会为你吸取3%其造成伤害值的生命值。\n在激活的瞬间你不能够进行移动或造成伤害。
+demonicperiapt=按下 [input=trinketability] 来获得+50% 速度, +30% 攻击速度，并且\n魔法武器都会为你吸取3%其造成伤害值的生命值，在接下来10秒内有效。\n在激活的瞬间你不能够进行移动或造成伤害。
+abysmalperiapt=魔法武器将为你恢复造成伤害值的3%生命值。
 necromancyperiapt=每次你或者你的召唤物杀死一个敌人时 将会召唤一个§b死灵骷髅§0\n其 §9 造成20点召唤伤害§0 召唤物存在§9 10秒§0 最大同一时间存在§9 3个§0
 frozenperiapt=近程和远程攻击将会 §9冰封§0敌人3秒。如果敌人已处于冰封状态, 攻击造成伤害 §9+20%§0
 frozenperiapt2=按下 [input=trinketability] 来获得+50% 速度，+30% 攻击速度 并且\n在接下来10秒内冰封效果对所有类型伤害有效\n在激活的瞬间你不能够进行移动或造成伤害。
@@ -381,7 +381,7 @@ gelring=+30% 魔法治疗获得
 heartring=+20 最大生命值上限
 swampshield=只会格挡并吸收面前的攻击\n基于你吸收的伤害提供魔法治疗 §7<healing>§0
 # NEW
-witchmedallion=每进行 20 点§9[Magic Healing]§0 会造成15点范围伤害
+witchmedallion=每进行 30 点§9[Magic Healing]§0 会造成15点范围伤害
 bannerbearerfoci1=§7+40%§0 旗帜效果 并且 §7+20%§0 旗帜效果触发速度
 bannerbearerfoci2=§6-20%§0 所有非旗帜伤害 并且 §6-1§0 最大召唤数量
 iceboots=让你移动地像在冰上滑一样, 但是会提升 +50% 移动速度 并且 +4 护甲

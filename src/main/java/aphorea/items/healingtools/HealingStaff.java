@@ -25,7 +25,7 @@ public class HealingStaff extends AphAreaToolItem implements ItemInteractAction 
 
     static AphAreaList areaList = new AphAreaList(
             new AphArea(120, AphColors.palettePinkWitch[1]).setHealingArea(10, 12),
-            new AphArea(120, AphColors.palettePinkWitch[0]).setHealingArea(4, 6)
+            new AphArea(120, AphColors.palettePinkWitch[0]).setHealingArea(6, 8)
     );
 
     public HealingStaff() {

@@ -745,11 +745,13 @@ public class AphBuffs {
             float angle;
             boolean initAngle = true;
 
-            final float maxDeltaAngle = (float) Math.toRadians(15);
+            final float maxDeltaAngle = (float) Math.toRadians(10);
+            final float speed = 20;
 
             @Override
             public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {
                 super.init(buff, eventSubscriber);
+                buff.owner.setDir(2);
                 initAngle = true;
             }
 
@@ -781,12 +783,10 @@ public class AphBuffs {
                     angle = normalizeAngle(angle);
                 }
 
-                int speed = 200;
                 float speedX = speed * (float) Math.cos(angle);
                 float speedY = speed * (float) Math.sin(angle);
 
-                player.moveX = speedX;
-                player.moveY = speedY;
+                player.setPos(player.x + speedX, player.y + speedY, true);
 
                 player.getLevel().entityManager.addParticle(player.x + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), player.y + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(player.dx / 2, player.dy / 2).color(AphColors.nature).height(16.0F);
             }
@@ -807,9 +807,6 @@ public class AphBuffs {
         baseEffectNumber = 20;
         // On activation
         BuffRegistry.registerBuff("runeofsageandgrit", new AphBaseRuneTrinketBuff(baseEffectNumber, 20000, "runeofsageandgritactive") {
-
-            final AphAreaList areaList = new AphAreaList(new AphArea(500, AphColors.nature));
-
             @Override
             public void run(Level level, PlayerMob player, int targetX, int targetY) {
                 super.run(level, player, targetX, targetY);

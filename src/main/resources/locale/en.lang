@@ -358,9 +358,9 @@ rockyperiapt=+5 Armor, but -5% Movement Speed
 rockyperiapt2=Press [input=trinketability] to gain 10 Armor for 10 seconds\nYou cannot take damage or move while activating the ability
 unstableperiapt=Calls two §bBaby Unstable Gel Slimes§0 who will protect you. These slimes §9deal 8 Summoner Damage§0
 unstableperiapt2=Makes you immune to the §9Sticky§0 debuff
-bloodyperiapt=Press [input=trinketability] to gain +50% Speed, +30% Attack Speed, and\nthe weapons §6Blood Bolt§0 and §6Blood Volley§0 will heal you for 5% of the damage you deal with them\nYou cannot take damage or move while activating the ability
-demonicperiapt=Press [input=trinketability] to gain +50% Speed, +30% Attack Speed, and\nmagic weapons will heal you for 5% of the damage you deal with them for 10 seconds\nYou cannot take damage or move while activating the ability
-abysmalperiapt=Magic weapons will heal you for 5% of the damage you deal with them
+bloodyperiapt=Press [input=trinketability] to gain +50% Speed, +30% Attack Speed, and\nthe weapons §6Blood Bolt§0 and §6Blood Volley§0 will heal you for 3% of the damage you deal with them\nYou cannot take damage or move while activating the ability
+demonicperiapt=Press [input=trinketability] to gain +50% Speed, +30% Attack Speed, and\nmagic weapons will heal you for 3% of the damage you deal with them for 10 seconds\nYou cannot take damage or move while activating the ability
+abysmalperiapt=Magic weapons will heal you for 3% of the damage you deal with them
 necromancyperiapt=Every time you or one of your summons kills a hostile mob you summon a §bUndead Skeleton§0\n that §9deals 20 Summoner Damage§0 for§9 10 seconds§0 with a maximum of§9 3 at a time§0
 frozenperiapt=Melee and Ranged weapons will §9Freeze§0 for 3 seconds. If the target is already frozen, increases the base Damage of the attack by §9+20%§0
 frozenperiapt2=Press [input=trinketability] to gain +50% Speed, +30% Attack Speed and\nmake this work with all damage for 10 seconds\nYou cannot take damage or move while activating the ability
@@ -369,7 +369,7 @@ floralring=Self §9[Magic Healing]§0 with §7<healing>§0 every 5 seconds
 gelring=+30% §9[Magic Healing]§0 received
 heartring=+20 max health
 swampshield=Only protects attacks in the direction they are received\nSelf §9[Magic Healing]§0 with the §7<healing>§0 of the damage you prevent
-witchmedallion=Deals 15 Area Damage for every 20 §9[Magic Healing]§0 done
+witchmedallion=Deals 15 Area Damage for every 30 §9[Magic Healing]§0 done
 # NEW
 bannerbearerfoci1=§7+40%§0 banner effect and §7+20%§0 banner ability speed
 bannerbearerfoci2=§6-20%§0 all non-banner damage and §6-1§0 max summons
