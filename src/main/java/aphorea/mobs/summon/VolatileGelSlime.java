@@ -2,19 +2,19 @@ package aphorea.mobs.summon;
 
 import aphorea.registry.AphBuffs;
 import necesse.engine.gameLoop.tickManager.TickManager;
+import necesse.engine.sound.SoundEffect;
+import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameRandom;
 import necesse.engine.util.GameUtils;
-import necesse.entity.levelEvent.explosionEvent.BombExplosionEvent;
 import necesse.entity.levelEvent.explosionEvent.ExplosionEvent;
-import necesse.entity.mobs.Mob;
-import necesse.entity.mobs.MobDrawable;
-import necesse.entity.mobs.PlayerMob;
+import necesse.entity.mobs.*;
 import necesse.entity.mobs.ai.behaviourTree.BehaviourTreeAI;
 import necesse.entity.mobs.ai.behaviourTree.trees.PlayerFollowerCollisionChaserAI;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.summon.summonFollowingMob.attackingFollowingMob.AttackingFollowingMob;
 import necesse.entity.particle.FleshParticle;
 import necesse.entity.particle.Particle;
+import necesse.gfx.GameResources;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawOptions.DrawOptions;
 import necesse.gfx.drawables.OrderableDrawables;
@@ -132,7 +132,7 @@ public class VolatileGelSlime extends AttackingFollowingMob {
         this.remove();
 
         if (damage != null) {
-            ExplosionEvent event = new BombExplosionEvent(x, y, 140, damage, false, 0, this.getFollowingPlayer());
+            ExplosionEvent event = new VolatileGelExplosion(x, y, damage, this.getFollowingPlayer());
             this.getLevel().entityManager.addLevelEvent(event);
         }
 
@@ -142,4 +142,26 @@ public class VolatileGelSlime extends AttackingFollowingMob {
     public void addBuff(ActiveBuff buff, boolean sendUpdatePacket) {
         if (buff.buff != AphBuffs.STICKY) super.addBuff(buff, sendUpdatePacket);
     }
+
+
+    static public class VolatileGelExplosion extends ExplosionEvent implements Attacker {
+        public VolatileGelExplosion() {
+            this(0.0F, 0.0F, new GameDamage(0), null);
+        }
+
+        public VolatileGelExplosion(float x, float y, GameDamage damage, Mob owner) {
+            super(x, y, 140, damage, false, 0, owner);
+        }
+
+        protected void playExplosionEffects() {
+            SoundManager.playSound(GameResources.explosionHeavy, SoundEffect.effect(this.x, this.y).volume(2.5F).pitch(1.5F));
+            this.level.getClient().startCameraShake(this.x, this.y, 300, 40, 3.0F, 3.0F, true);
+        }
+
+        @Override
+        protected boolean canHitMob(Mob target) {
+            return super.canHitMob(target) && (target == ownerMob || target.canBeTargeted(ownerMob, ((PlayerMob) ownerMob).getNetworkClient()));
+        }
+    }
+
 }

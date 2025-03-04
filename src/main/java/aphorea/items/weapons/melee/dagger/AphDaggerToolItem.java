@@ -24,6 +24,7 @@ import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.attackHandler.MouseAngleAttackHandler;
 import necesse.entity.mobs.buffs.ActiveBuff;
+import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.friendly.human.HumanMob;
 import necesse.entity.particle.Particle;
 import necesse.entity.projectile.Projectile;
@@ -137,7 +138,7 @@ public abstract class AphDaggerToolItem extends SpearToolItem implements ItemInt
                 if (slot.isItemLocked() && throwItem) {
                     player.getServerClient().sendChatMessage(Localization.translate("message", "cannottrhowlockeditem"));
                 } else if (level.isServer()) {
-                    Projectile projectile = this.getProjectile(level, x, y, player, item, throwItem);
+                    Projectile projectile = this.getProjectile(level, x, y, player, item, player.buffManager.getModifier(BuffModifiers.THROWING_VELOCITY), throwItem);
                     GameRandom random = new GameRandom(seed);
                     projectile.resetUniqueID(random);
                     level.entityManager.projectiles.addHidden(projectile);
@@ -169,7 +170,7 @@ public abstract class AphDaggerToolItem extends SpearToolItem implements ItemInt
         return enchantments;
     }
 
-    public abstract Projectile getProjectile(Level level, int x, int y, PlayerMob player, InventoryItem item, boolean shouldDrop);
+    public abstract Projectile getProjectile(Level level, int x, int y, PlayerMob player, InventoryItem item, float throwingVelocity, boolean shouldDrop);
 
     public abstract Color getSecondaryAttackColor();
 

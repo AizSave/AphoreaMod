@@ -21,11 +21,11 @@ public class CopperDagger extends AphDaggerToolItem {
         this.knockback.setBaseValue(25);
     }
 
-    public Projectile getProjectile(Level level, int x, int y, PlayerMob player, InventoryItem item, boolean shouldDrop) {
+    public Projectile getProjectile(Level level, int x, int y, PlayerMob player, InventoryItem item, float throwingVelocity, boolean shouldDrop) {
         return new DaggerProjectile.CopperDaggerProjectile(level, player,
                 player.x, player.y,
                 x, y,
-                100, 300,
+                100 * throwingVelocity, 300,
                 getAttackDamage(item),
                 getKnockback(item, player),
                 shouldDrop,

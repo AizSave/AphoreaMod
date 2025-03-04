@@ -21,11 +21,11 @@ public class GoldDagger extends AphDaggerToolItem {
         this.knockback.setBaseValue(25);
     }
 
-    public Projectile getProjectile(Level level, int x, int y, PlayerMob player, InventoryItem item, boolean shouldDrop) {
+    public Projectile getProjectile(Level level, int x, int y, PlayerMob player, InventoryItem item, float throwingVelocity, boolean shouldDrop) {
         return new DaggerProjectile.GoldDaggerProjectile(level, player,
                 player.x, player.y,
                 x, y,
-                200, 300,
+                200 * throwingVelocity, 300,
                 getAttackDamage(item),
                 getKnockback(item, player),
                 shouldDrop,

@@ -21,11 +21,11 @@ public class DemonicDagger extends AphDaggerToolItem {
         this.knockback.setBaseValue(25);
     }
 
-    public Projectile getProjectile(Level level, int x, int y, PlayerMob player, InventoryItem item, boolean shouldDrop) {
+    public Projectile getProjectile(Level level, int x, int y, PlayerMob player, InventoryItem item, float throwingVelocity, boolean shouldDrop) {
         return new DaggerProjectile.DemonicDaggerProjectile(level, player,
                 player.x, player.y,
                 x, y,
-                200, 350,
+                200 * throwingVelocity, 350,
                 getAttackDamage(item),
                 getKnockback(item, player),
                 shouldDrop,

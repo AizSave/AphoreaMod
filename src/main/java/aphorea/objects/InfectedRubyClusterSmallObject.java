@@ -22,7 +22,7 @@ public class InfectedRubyClusterSmallObject extends CrystalClusterSmallObject {
 
     @Override
     public void onDestroyed(Level level, int layerID, int x, int y, Attacker attacker, ServerClient client, ArrayList<ItemPickupEntity> itemsDropped) {
-        if(GameRandom.globalRandom.seeded(getTileSeed(x, y)).getChance(0.5F)) {
+        if(new GameRandom().seeded(getTileSeed(x, y)).getChance(0.5F)) {
             if (level.isServer()) {
                 level.entityManager.addMob(MobRegistry.getMob("rubycaveling", level), x * 32 + 16, y * 32 + 16);
             }

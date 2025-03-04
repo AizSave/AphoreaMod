@@ -34,8 +34,8 @@ public class InfectedWaterTile extends LiquidTile {
     private static final Map<Integer, Integer> consecutiveHits = new HashMap<>();
 
     public InfectedWaterTile() {
-        super(AphColors.infected_light, "infected_freshwater_shallow", "infected_freshwater_deep", "infected_saltwater_shallow", "infected_saltwater_deep");
-        this.lightLevel = 100;
+        super(AphColors.infected_light, "infected_freshwater", "infected_saltwater");
+        this.lightLevel = 150;
         this.lightHue = 0.0F;
         this.lightSat = 0.6F;
         this.drawRandom = new GameRandom();
@@ -48,7 +48,7 @@ public class InfectedWaterTile extends LiquidTile {
     }
 
     public TextureIndexes getTextureIndexes(Level level) {
-        return new TextureIndexes(0, 1, 2, 3);
+        return new TextureIndexes(0, 0, 1, 1);
     }
 
     public void tick(Mob mob, Level level, int x, int y) {
