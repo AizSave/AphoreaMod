@@ -112,14 +112,8 @@ abstract public class DaggerProjectile extends Projectile {
             shouldDrop = false;
             InventoryItem inventoryItem = new InventoryItem(ItemRegistry.getItem(stringItemID));
             inventoryItem.setGndData(gndData);
-            ItemPickupEntity itemPickup = new ItemPickupEntity(getLevel(), inventoryItem, x, y, 0, 0);
-            getLevel().entityManager.pickups.add(itemPickup);
+            getLevel().entityManager.pickups.add(new ItemPickupEntity(getLevel(), inventoryItem, x, y, 0, 0));
         }
-    }
-
-    @Override
-    protected void dropItem() {
-        super.dropItem();
     }
 
     public static class CopperDaggerProjectile extends DaggerProjectile {

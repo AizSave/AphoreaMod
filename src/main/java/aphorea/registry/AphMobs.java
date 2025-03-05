@@ -12,9 +12,7 @@ import aphorea.mobs.summon.BabyUnstableGelSlime;
 import aphorea.mobs.summon.Onyx;
 import aphorea.mobs.summon.UndeadSkeleton;
 import aphorea.mobs.summon.VolatileGelSlime;
-import necesse.engine.localization.message.GameMessage;
 import necesse.engine.registries.MobRegistry;
-import necesse.entity.mobs.friendly.critters.caveling.StoneCaveling;
 
 public class AphMobs {
     public static void registerCore() {
@@ -27,8 +25,8 @@ public class AphMobs {
         MobRegistry.registerMob("irondaggergoblin", IronDaggerGoblin.class, true);
         MobRegistry.registerMob("golddaggergoblin", GoldDaggerGoblin.class, true);
         MobRegistry.registerMob("infectedtreant", InfectedTreant.class, true);
-        MobRegistry.registerMob("rubygolem", RubyGolem.class, true);
-        MobRegistry.registerMob("rubycaveling", RubyCaveling.class, true);
+        MobRegistry.registerMob("spinelgolem", SpinelGolem.class, true);
+        MobRegistry.registerMob("spinelcaveling", SpinelCaveling.class, true);
 
         // Bosses [Mobs]
         MobRegistry.registerMob("unstablegelslime", UnstableGelSlime.class, true, true);

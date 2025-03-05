@@ -381,6 +381,13 @@ public class AphRecipes {
                 )
         );
 
+        addCraftingList("voidbullet", tech,
+                AphCraftingRecipe.showAfter("spambullet", 50,
+                        new Ingredient("spinel", 1),
+                        new Ingredient("rockygel", 5)
+                )
+        );
+
     }
 
     public static void TungstenAnvil() {
@@ -428,6 +435,18 @@ public class AphRecipes {
                 ),
                 AphCraftingRecipe.showAfter("infectedgrass", 1,
                         new Ingredient("infectedgrassseed", 1)
+                ),
+                AphCraftingRecipe.showAfter("spinelgravel", 5,
+                        new Ingredient("spinel", 1)
+                ),
+                AphCraftingRecipe.showAfter("spinelclustersmall", 1,
+                        new Ingredient("spinel", 1)
+                ),
+                AphCraftingRecipe.showAfter("spinelcluster", 1,
+                        new Ingredient("spinel", 2)
+                ),
+                AphCraftingRecipe.showAfter("spinelclusterpure", 1,
+                        new Ingredient("spinel", 3)
                 )
         );
     }

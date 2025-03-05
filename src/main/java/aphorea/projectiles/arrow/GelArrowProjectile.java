@@ -124,8 +124,7 @@ public class GelArrowProjectile extends Projectile {
 
     public void executeArea() {
         if (this.getOwner() != null) {
-            areaList.executeAreas(this.getOwner(), 1, (int) x, (int) y, false);
+            areaList.execute(this.getOwner(), x, y);
         }
-        areaList.showAllAreaParticles(this.getLevel(), x, y);
     }
 }

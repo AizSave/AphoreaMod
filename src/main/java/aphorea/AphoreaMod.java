@@ -17,13 +17,13 @@ import aphorea.packets.AphCustomPushPacket;
 import aphorea.packets.AphRuneOfUnstableGelSlimePacket;
 import aphorea.packets.AphRunesInjectorAbilityPacket;
 import aphorea.packets.AphSingleAreaShowPacket;
+import aphorea.projectiles.bullet.SpamBulletProjectile;
 import aphorea.projectiles.toolitem.GelProjectile;
 import aphorea.registry.*;
 import aphorea.tiles.GelTile;
 import aphorea.tiles.InfectedGrassTile;
 import aphorea.tiles.InfectedWaterTile;
 import aphorea.utils.AphColors;
-import aphorea.utils.AphResources;
 import necesse.engine.journal.JournalEntry;
 import necesse.engine.modLoader.annotations.ModEntry;
 import necesse.engine.registries.*;
@@ -38,10 +38,9 @@ import necesse.inventory.lootTable.lootItem.LootItem;
 import necesse.inventory.lootTable.lootItem.LootItemList;
 import necesse.inventory.lootTable.presets.DeepCaveChestLootTable;
 import necesse.inventory.lootTable.presets.DeepCaveRuinsLootTable;
-import necesse.level.gameObject.CrystalClusterObject;
-import necesse.level.gameObject.CrystalClusterSmallObject;
 import necesse.level.gameObject.RockObject;
 import necesse.level.gameObject.SingleRockObject;
+import necesse.level.gameTile.CrystalGravelTile;
 import necesse.level.maps.biomes.Biome;
 import necesse.level.maps.biomes.dungeon.DungeonBiome;
 import necesse.level.maps.biomes.swamp.SwampBiome;
@@ -92,22 +91,23 @@ public class AphoreaMod {
         TileRegistry.registerTile("geltile", new GelTile("geltile", AphColors.gel), -1.0F, true);
         TileRegistry.registerTile("infectedwatertile", new InfectedWaterTile(), 20.0F, true);
         TileRegistry.registerTile("infectedgrasstile", new InfectedGrassTile(), 0.0F, false);
+        TileRegistry.registerTile("spinelgravel", new CrystalGravelTile("spinelgravel", AphColors.spinel_dark), 10.0F, true);
 
         // Objects
         ObjectRegistry.registerObject("witchstatue", new WitchStatue(), -1.0F, true);
         ObjectRegistry.registerObject("runestable", new RunesTable(), -1.0F, true);
         ObjectRegistry.registerObject("infectedgrass", new InfectedGrassObject(), -1.0F, true);
-        ObjectRegistry.registerObject("infectedsapling", new AphSaplingObject("infectedsapling", "infectedtree", 900, 1800, true, 50, 0F, 0.6F, "infectedgrasstile"), 10.0F, true);
-        ObjectRegistry.registerObject("infectedtree", new AphTreeObject("infectedtree", "infectedlog", "infectedsapling", AphColors.infected_dark, 45, 60, 110, "infectedleaves", 100, 0F, 0.6F), 0.0F, false);
-        InfectedRubyClusterObject.registerCrystalCluster("infectedrubycluster", "rubycluster", AphColors.ruby_light, 337.0F, "ruby", -1.0F, true);
-        InfectedRubyClusterObject.registerCrystalCluster("infectedrubyclusterpure", "rubyclusterpure", AphColors.ruby_light, 337.0F, "ruby", -1.0F, true);
-        ObjectRegistry.registerObject("infectedrubyclustersmall", new InfectedRubyClusterSmallObject("rubycluster_small", AphColors.ruby_light, 337.0F, "ruby", 0, 1, 1), -1.0F, true);
+        ObjectRegistry.registerObject("infectedsapling", new AphSaplingObject("infectedsapling", "infectedtree", 900, 1800, true, 50, 340F, 0.6F, "infectedgrasstile"), 10.0F, true);
+        ObjectRegistry.registerObject("infectedtree", new AphTreeObject("infectedtree", "infectedlog", "infectedsapling", AphColors.infected_dark, 45, 60, 110, "infectedleaves", 100, 340F, 0.6F), 0.0F, false);
+        SpinelClusterObject.registerCrystalCluster("spinelcluster", "spinelcluster", AphColors.spinel_light, 337.0F, -1.0F, true);
+        SpinelClusterObject.registerCrystalCluster("spinelclusterpure", "spinelclusterpure", AphColors.spinel_light, 337.0F, -1.0F, true);
+        ObjectRegistry.registerObject("spinelclustersmall", new SpinelClusterSmallObject("spinelcluster_small", AphColors.spinel_light, 337.0F), -1.0F, true);
 
 
         RockObject gelRock;
-        ObjectRegistry.registerObject("gelrock", gelRock = new RockObject("gelrock", AphColors.rock, "rockygel", 1, 2, 2), -1.0F, true);
+        ObjectRegistry.registerObject("gelrock", gelRock = new RockyWallObject("gelrock", AphColors.rock, "rockygel", 0, 1, 1), -1.0F, true);
         gelRock.toolTier = 2;
-        SingleRockObject.registerSurfaceRock(gelRock, "surfacegelrock", AphColors.rock_light, 1, 2, 2, -1.0F, true);
+        SingleRockObject.registerSurfaceRock(gelRock, "surfacegelrock", AphColors.rock_light, 1, 2, 1, -1.0F, true);
 
         // Recipe Tech
         AphTech.registerCore();
@@ -134,6 +134,8 @@ public class AphoreaMod {
         LevelEventRegistry.registerEvent("saberdashlevelevent", AphSaberToolItem.SaberDashLevelEvent.class);
         LevelEventRegistry.registerEvent("gelprojectilegroundeffect", GelProjectile.GelProjectileGroundEffectEvent.class);
         LevelEventRegistry.registerEvent("volatilegelexplosion", VolatileGelSlime.VolatileGelExplosion.class);
+        LevelEventRegistry.registerEvent("spambulletexplosion", SpamBulletProjectile.SpamBulletExplosion.class);
+        LevelEventRegistry.registerEvent("firepoolgroundeffect", SpamBulletProjectile.FirePoolGroundEffectEvent.class);
 
         // Base Runes LevelEvents
         LevelEventRegistry.registerEvent("runeofdetonationevent", AphRuneOfDetonationEvent.class);

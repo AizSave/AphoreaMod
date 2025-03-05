@@ -1,17 +1,10 @@
 package aphorea.objects;
 
-import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
-import necesse.engine.network.server.ServerClient;
-import necesse.engine.registries.MobRegistry;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameRandom;
-import necesse.entity.mobs.Attacker;
 import necesse.entity.mobs.PlayerMob;
-import necesse.entity.particle.Particle;
-import necesse.entity.particle.SmokePuffParticle;
-import necesse.entity.pickup.ItemPickupEntity;
 import necesse.gfx.GameResources;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawOptions.texture.TextureDrawOptions;
@@ -26,16 +19,15 @@ import necesse.level.maps.multiTile.MultiTile;
 import necesse.level.maps.multiTile.StaticMultiTile;
 
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
 
-public class InfectedRubyClusterRObject extends GameObject {
+public class SpinelClusterRObject extends GameObject {
     protected int counterID;
     private final String textureName;
     public ObjectDamagedTextureArray texture;
     protected final GameRandom drawRandom;
 
-    public InfectedRubyClusterRObject(String textureName, Color mapColor, float glowHue) {
+    public SpinelClusterRObject(String textureName, Color mapColor, float glowHue) {
         super(new Rectangle(0, 14, 18, 10));
         this.textureName = textureName;
         this.mapColor = mapColor;

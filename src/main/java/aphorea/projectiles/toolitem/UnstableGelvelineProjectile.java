@@ -109,12 +109,7 @@ public class UnstableGelvelineProjectile extends Projectile {
 
     public void executeArea() {
         if (this.getOwner() != null) {
-            if(isServer()) {
-                areaList.executeAreas(this.getOwner(), 1, (int) x, (int) y, false, item, toolItem);
-            }
-            if(isClient()) {
-                areaList.showAllAreaParticles(this.getLevel(), x, y);
-            }
+            areaList.executeAreas(this.getOwner(), x, y, 1, item, toolItem);
         }
     }
 

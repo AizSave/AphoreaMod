@@ -1,4 +1,4 @@
-package aphorea.utils;
+package aphorea;
 
 import aphorea.items.weapons.magic.MagicalBroom;
 import aphorea.mobs.bosses.MiniUnstableGelSlime;
@@ -10,6 +10,7 @@ import aphorea.mobs.pet.PetPhosphorSlime;
 import aphorea.mobs.summon.BabyUnstableGelSlime;
 import aphorea.mobs.summon.Onyx;
 import aphorea.mobs.summon.VolatileGelSlime;
+import aphorea.projectiles.bullet.SpamBulletProjectile;
 import aphorea.projectiles.toolitem.AircutProjectile;
 import aphorea.projectiles.toolitem.DaggerProjectile;
 import aphorea.projectiles.toolitem.FireSlingStoneProjectile;
@@ -36,6 +37,8 @@ public class AphResources {
 
         // PARTICLES
         GelProjectile.GelProjectileParticle.texture = GameTexture.fromFile("particles/gelprojectile");
+        SpamBulletProjectile.FirePoolParticle.texture = GameTexture.fromFile("particles/firepool");
+
     }
 
     public static void mobResources() {
@@ -58,8 +61,8 @@ public class AphResources {
                 InfectedTreant.leavesTexture = null;
             }
         }
-        RubyGolem.texture = GameTexture.fromFile("mobs/rubygolem");
-        RubyCaveling.texture = new HumanTexture(GameTexture.fromFile("mobs/rubycaveling"), GameTexture.fromFile("mobs/rubycavelingarms_front"), GameTexture.fromFile("mobs/rubycavelingarms_back"));;
+        SpinelGolem.texture = GameTexture.fromFile("mobs/rubygolem");
+        SpinelCaveling.texture = new HumanTexture(GameTexture.fromFile("mobs/rubycaveling"), GameTexture.fromFile("mobs/rubycavelingarms_front"), GameTexture.fromFile("mobs/rubycavelingarms_back"));;
 
         // BOSSES
         UnstableGelSlime.texture = GameTexture.fromFile("mobs/unstablegelslime");
@@ -94,6 +97,8 @@ public class AphResources {
         DaggerProjectile.GoldDaggerProjectile.texture = GameTexture.fromFile("player/weapons/golddagger");
         DaggerProjectile.DemonicDaggerProjectile.texture = GameTexture.fromFile("player/weapons/demonicdagger");
         DaggerProjectile.TungstenDaggerProjectile.texture = GameTexture.fromFile("player/weapons/tungstendagger");
+
+        SpamBulletProjectile.texture = GameTexture.fromFile("projectiles/spambullet");
     }
 
 }

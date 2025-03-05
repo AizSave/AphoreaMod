@@ -30,7 +30,9 @@ public class AphLootTables {
 
         infectedLootLake.items.addAll(
                 new LootItemList(
-                        new LootItem("oaklog")
+                        new LootItem("thespammer"),
+                        LootItem.between("spambullet", 90, 110),
+                        LootItem.between("spinela", 4, 6)
                 )
         );
 

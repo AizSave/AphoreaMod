@@ -1,6 +1,7 @@
 package aphorea.registry;
 
 import aphorea.items.ammo.GelArrowItem;
+import aphorea.items.ammo.SpamBullet;
 import aphorea.items.ammo.UnstableGelArrowItem;
 import aphorea.items.armor.Gold.GoldHat;
 import aphorea.items.armor.Rocky.RockyBoots;
@@ -44,6 +45,7 @@ import aphorea.items.weapons.melee.sword.Broom;
 import aphorea.items.weapons.melee.sword.GelSword;
 import aphorea.items.weapons.melee.sword.UnstableGelSword;
 import aphorea.items.weapons.melee.sword.VoidHammer;
+import aphorea.items.weapons.range.TheSpammer;
 import aphorea.items.weapons.range.blowgun.Blowgun;
 import aphorea.items.weapons.range.greatbow.GelGreatbow;
 import aphorea.items.weapons.range.greatbow.UnstableGelGreatbow;
@@ -71,6 +73,7 @@ public class AphItems {
         registerItem("rockygel", (new AphMatItem(500, Item.Rarity.COMMON)).setItemCategory("materials"), 1F);
         registerItem("stardust", (new AphMatItem(500, Item.Rarity.UNCOMMON)).setItemCategory("materials"), 30F);
         registerItem("infectedlog", (new AphMatItem(500, "anylog")).setItemCategory("materials", "logs"), 2F);
+        registerItem("spinel", (new AphMatItem(500, Item.Rarity.UNCOMMON)).setItemCategory("materials", "minerals"), 15F);
 
         // Melee Weapons
         registerItem("woodenrod", new WoodenRod());
@@ -99,6 +102,7 @@ public class AphItems {
         registerItem("frozensling", new FrozenSling());
         registerItem("gelgreatbow", new GelGreatbow());
         registerItem("unstablegelgreatbow", new UnstableGelGreatbow());
+        registerItem("thespammer", new TheSpammer());
 
         // Magic Weapons
         registerItem("unstablegelstaff", new UnstableGelStaff());
@@ -163,6 +167,7 @@ public class AphItems {
         // Ammo
         registerItem("gelarrow", new GelArrowItem(), 0.4F);
         registerItem("unstablegelarrow", new UnstableGelArrowItem(), 2.2F);
+        registerItem("spambullet", new SpamBullet());
 
         // Consumable Items
         registerItem("unstablecore", new UnstableCore(), 20F);

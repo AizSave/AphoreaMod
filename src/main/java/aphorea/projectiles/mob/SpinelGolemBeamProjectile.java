@@ -9,11 +9,11 @@ import necesse.level.maps.Level;
 
 import java.awt.*;
 
-public class RubyGolemBeamProjectile extends LaserProjectile {
-    public RubyGolemBeamProjectile() {
+public class SpinelGolemBeamProjectile extends LaserProjectile {
+    public SpinelGolemBeamProjectile() {
     }
 
-    public RubyGolemBeamProjectile(Level level, Mob owner, float x, float y, float targetX, float targetY, int distance, GameDamage damage, int knockback) {
+    public SpinelGolemBeamProjectile(Level level, Mob owner, float x, float y, float targetX, float targetY, int distance, GameDamage damage, int knockback) {
         this.setLevel(level);
         this.setOwner(owner);
         this.x = x;
@@ -37,10 +37,10 @@ public class RubyGolemBeamProjectile extends LaserProjectile {
     }
 
     public Color getParticleColor() {
-        return AphColors.ruby_darker;
+        return AphColors.spinel_darker;
     }
 
     public Trail getTrail() {
-        return new Trail(this, this.getLevel(), AphColors.ruby_darker, 15.0F, 500, 18.0F);
+        return new Trail(this, this.getLevel(), AphColors.spinel_darker, 15.0F, 500, 18.0F);
     }
 }

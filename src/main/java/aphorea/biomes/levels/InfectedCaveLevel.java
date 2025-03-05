@@ -48,20 +48,20 @@ public class InfectedCaveLevel extends InfectedSurfaceLevel {
         GameEvents.triggerEvent(new GenerateCaveMiniBiomesEvent(this, cg), (e) -> {
             GenerationTools.generateRandomSmoothTileVeins(this, cg.random, 0.1F, 2, 2.0F, 10.0F, 2.0F, 10.0F, TileRegistry.getTileID("infectedwatertile"), 1.0F, true);
             this.liquidManager.calculateShores();
-            cg.generateRandomSingleRocks(ObjectRegistry.getObjectID("infectedrubyclustersmall"), 0.02F);
-            cg.generateRandomSingleRocks(ObjectRegistry.getObjectID("infectedrubyclusterpure"), 0.004F);
+            cg.generateRandomSingleRocks(ObjectRegistry.getObjectID("spinelclustersmall"), 0.02F);
+            cg.generateRandomSingleRocks(ObjectRegistry.getObjectID("spinelclusterpure"), 0.004F);
         });
         GameEvents.triggerEvent(new GeneratedCaveMiniBiomesEvent(this, cg));
         GameEvents.triggerEvent(new GenerateCaveOresEvent(this, cg), (e) -> {
 
         });
         GameEvents.triggerEvent(new GeneratedCaveOresEvent(this, cg));
-        GameObject crystalClusterSmall = ObjectRegistry.getObject("infectedrubyclustersmall");
-        GenerationTools.generateRandomSmoothVeinsL(this, cg.random, 0.001F, 4, 20.0F, 40.0F, 10.0F, 20.0F, (lg) -> {
+        GameObject crystalClusterSmall = ObjectRegistry.getObject("spinelclustersmall");
+        GenerationTools.generateRandomSmoothVeinsL(this, cg.random, 0.001F, 4, 80.0F, 120.0F, 10.0F, 20.0F, (lg) -> {
             CellAutomaton ca = lg.doCellularAutomaton(cg.random);
             ca.streamAliveOrdered().forEachOrdered((tile) -> {
                 cg.addIllegalCrateTile(tile.x, tile.y);
-                this.setTile(tile.x, tile.y, TileRegistry.getTileID("rubygravel"));
+                this.setTile(tile.x, tile.y, TileRegistry.getTileID("spinelgravel"));
                 this.setObject(tile.x, tile.y, 0);
             });
             ca.streamAliveOrdered().forEachOrdered((tile) -> {
@@ -69,7 +69,7 @@ public class InfectedCaveLevel extends InfectedSurfaceLevel {
                     int rotation = cg.random.nextInt(4);
                     Point[] clearPoints = new Point[]{new Point(-1, -1), new Point(1, -1)};
                     if (this.getRelativeAnd(tile.x, tile.y, PresetUtils.getRotatedPoints(0, 0, rotation, clearPoints), (tileX, tileY) -> ca.isAlive(tileX, tileY) && this.getObjectID(tileX, tileY) == 0)) {
-                        ObjectRegistry.getObject(ObjectRegistry.getObjectID("infectedrubycluster")).placeObject(this, tile.x, tile.y, rotation, false);
+                        ObjectRegistry.getObject(ObjectRegistry.getObjectID("spinelcluster")).placeObject(this, tile.x, tile.y, rotation, false);
                     }
                 }
 

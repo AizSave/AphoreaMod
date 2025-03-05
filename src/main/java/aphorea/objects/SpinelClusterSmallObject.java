@@ -15,19 +15,19 @@ import necesse.level.maps.Level;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class InfectedRubyClusterSmallObject extends CrystalClusterSmallObject {
-    public InfectedRubyClusterSmallObject(String textureName, Color mapColor, float glowHue, String dropItem, int minDropAmount, int maxDropAmount, int placedDropAmount) {
-        super(textureName, mapColor, glowHue, dropItem, minDropAmount, maxDropAmount, placedDropAmount);
+public class SpinelClusterSmallObject extends CrystalClusterSmallObject {
+    public SpinelClusterSmallObject(String textureName, Color mapColor, float glowHue) {
+        super(textureName, mapColor, glowHue, "spinel", 0, 0, 0);
     }
 
     @Override
     public void onDestroyed(Level level, int layerID, int x, int y, Attacker attacker, ServerClient client, ArrayList<ItemPickupEntity> itemsDropped) {
         if(new GameRandom().seeded(getTileSeed(x, y)).getChance(0.5F)) {
             if (level.isServer()) {
-                level.entityManager.addMob(MobRegistry.getMob("rubycaveling", level), x * 32 + 16, y * 32 + 16);
+                level.entityManager.addMob(MobRegistry.getMob("spinelcaveling", level), x * 32 + 16, y * 32 + 16);
             }
             if (level.isClient()) {
-                level.entityManager.addParticle(new SmokePuffParticle(level, x * 32 + 16, y * 32 + 32, AphColors.ruby), Particle.GType.CRITICAL);
+                level.entityManager.addParticle(new SmokePuffParticle(level, x * 32 + 16, y * 32 + 32, AphColors.spinel), Particle.GType.CRITICAL);
             }
         }
         level.objectLayer.setObject(layerID, x, y, 0);

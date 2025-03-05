@@ -59,7 +59,7 @@ abstract public class AphMagicProjectileSecondaryAreaToolItem extends AphMagicPr
         usePacket(level, player, rangeModifier);
 
         if (player.isServer()) {
-            areaList.executeAreas(player, rangeModifier, x, y, false, item, this);
+            areaList.executeAreas(player, x, y, rangeModifier, item, this);
 
             ServerClient serverClient = player.getServerClient();
             level.getServer().network.sendToClientsWithEntityExcept(getPacket(player, rangeModifier), serverClient.playerMob, serverClient);

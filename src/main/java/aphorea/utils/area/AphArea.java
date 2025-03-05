@@ -170,13 +170,8 @@ public class AphArea {
         return (item == null || !(item.item instanceof ToolItem)) ? areaHealing.getValue(0) : areaHealing.getValue(item.item.getUpgradeTier(item));
     }
 
-    public void execute(Mob attacker, Mob target, float modRange, int x, int y, boolean centerIsAttacker, InventoryItem item, ToolItem toolItem) {
-        float distanceToTarget = target.getDistance(attacker);
-        boolean reachMob = centerIsAttacker
-                ? ((attacker == target && position == 0) || (distanceToTarget <= (range * modRange) && distanceToTarget > (antRange * modRange)))
-                : (target.getDistance(x, y) <= (range * modRange) && target.getDistance(x, y) > (antRange * modRange));
-
-        if (reachMob) {
+    public void execute(Mob attacker, Mob target, float x, float y, float modRange, InventoryItem item, ToolItem toolItem) {
+        if (target.getDistance(x, y) <= (range * modRange) && target.getDistance(x, y) > (antRange * modRange)) {
             if (this.areaTypes.contains(AphAreaType.DAMAGE) && target != attacker && canAreaAttack(attacker, target)) {
                 target.isServerHit(getDamage(item), target.x - attacker.x, target.y - attacker.y, 0, attacker);
             }

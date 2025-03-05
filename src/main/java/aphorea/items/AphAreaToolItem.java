@@ -65,7 +65,7 @@ abstract public class AphAreaToolItem extends AphMagicHealingToolItem {
         usePacket(level, player, rangeModifier);
 
         if (level.isServer()) {
-            areaList.executeAreas(player, rangeModifier, x, y, true, item, this);
+            areaList.executeAreas(player, player.x, player.y, rangeModifier, item, this);
 
             ServerClient serverClient = player.getServerClient();
             level.getServer().network.sendToClientsWithEntityExcept(getPacket(player, rangeModifier), serverClient.playerMob, serverClient);

@@ -1,7 +1,6 @@
 package aphorea.mobs.hostile;
 
 import necesse.engine.gameLoop.tickManager.TickManager;
-import necesse.engine.registries.ItemRegistry;
 import necesse.engine.registries.MobRegistry;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.*;
@@ -17,33 +16,28 @@ import necesse.gfx.drawOptions.texture.TextureDrawOptionsEnd;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.lootTable.LootTable;
-import necesse.inventory.lootTable.lootItem.ChanceLootItem;
 import necesse.inventory.lootTable.lootItem.LootItem;
-import necesse.inventory.lootTable.lootItem.RotationLootItem;
+import necesse.level.gameTile.GameTile;
 import necesse.level.maps.Level;
 import necesse.level.maps.TilePosition;
+import necesse.level.maps.biomes.desert.DesertCaveLevel;
+import necesse.level.maps.biomes.desert.DesertDeepCaveLevel;
 import necesse.level.maps.light.GameLight;
 
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
 
-public class RubyCaveling extends HostileMob {
+public class SpinelCaveling extends HostileMob {
     public static GameDamage collision_damage = new GameDamage(30);
     public static int collision_knockback = 50;
 
     public static LootTable lootTable = new LootTable(
-            RotationLootItem.globalLootRotation(
-                    new ChanceLootItem(0.5F, "ruby"),
-                    new ChanceLootItem(0.5F, "liferuby")
-            )
+            new LootItem("spinel")
     );
     public static HumanTexture texture;
-    public Color popParticleColor;
-    public boolean isRock = true;
     public InventoryItem item;
 
-    public RubyCaveling() {
+    public SpinelCaveling() {
         super(80);
         this.setArmor(10);
         this.setSpeed(60);
@@ -54,7 +48,7 @@ public class RubyCaveling extends HostileMob {
         this.swimMaskMove = 12;
         this.swimMaskOffset = 4;
         this.swimSinkOffset = 0;
-        this.item = new InventoryItem("liferuby", 0);
+        this.item = new InventoryItem("spinel", 0);
     }
 
     public LootTable getLootTable() {
@@ -64,41 +58,13 @@ public class RubyCaveling extends HostileMob {
     public void init() {
         super.init();
         ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 12 * 32, collision_damage, collision_knockback, 40000));
-        ArrayList<InventoryItem> items = lootTable.getNewList(GameRandom.globalRandom, 1F);
-        if(!items.isEmpty()) {
-            this.item = items.get(0);
-        }
-    }
-
-    public void clientTick() {
-        super.clientTick();
-        this.tickIsRock();
-    }
-
-    public void serverTick() {
-        super.serverTick();
-        this.tickIsRock();
-    }
-
-    public void tickIsRock() {
-        boolean nextIsRock = !this.isAccelerating() && this.dx == 0.0F && this.dy == 0.0F;
-        if (this.isRock != nextIsRock) {
-            this.isRock = nextIsRock;
-            if (this.isClient() && this.popParticleColor != null) {
-                for (int i = 0; i < 20; ++i) {
-                    int startHeight = GameRandom.globalRandom.getIntBetween(2, 10);
-                    this.getLevel().entityManager.addParticle(this.x + GameRandom.globalRandom.floatGaussian() * 8.0F, this.y - 4.0F + GameRandom.globalRandom.floatGaussian() * 4.0F, Particle.GType.IMPORTANT_COSMETIC).movesFriction(GameRandom.globalRandom.floatGaussian() * 20.0F, GameRandom.globalRandom.floatGaussian() * 16.0F, 2.0F).color(this.popParticleColor).heightMoves((float) startHeight, (float) (startHeight + 20)).lifeTime(1000);
-                }
-            }
-        }
-
+        dropsLoot = new GameRandom(GameTile.getTileSeed(this.getTileX(), this.getTileY())).getChance(0.5F / 2);
     }
 
     public void spawnDeathParticles(float knockbackX, float knockbackY) {
         for (int i = 0; i < 6; ++i) {
             this.getLevel().entityManager.addParticle(new FleshParticle(this.getLevel(), texture.body, i, 8, 32, this.x, this.y, 20.0F, knockbackX, knockbackY), Particle.GType.IMPORTANT_COSMETIC);
         }
-
     }
 
     public void addDrawables(List<MobDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, Level level, int x, int y, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
@@ -121,7 +87,6 @@ public class RubyCaveling extends HostileMob {
         GameLight itemLight = hasSpelunker ? light.minLevelCopy(100.0F) : light;
         final TextureDrawOptionsEnd itemOptions = this.item.item.getItemSprite(this.item, perspective).initDraw().colorLight(drawColor, itemLight).mirror(sprite.y < 2, false).size(32).posMiddle(drawX + 32, drawY + 16 + itemBobbing + swimMask.drawYOffset);
 
-
         final TextureDrawOptionsEnd leftArmOptions = texture.leftArms.initDraw().sprite(sprite.x, sprite.y, 64).addMaskShader(swimMask).spelunkerLight(light, hasSpelunker, this.getID(), this).pos(drawX, drawY);
         list.add(new MobDrawable() {
             public void draw(TickManager tickManager) {
@@ -129,7 +94,10 @@ public class RubyCaveling extends HostileMob {
                 rightArmOptions.draw();
                 bodyOptions.draw();
                 swimMask.stop();
-                itemOptions.draw();
+
+                if(dropsLoot) {
+                    itemOptions.draw();
+                }
 
                 swimMask.use();
                 leftArmOptions.draw();

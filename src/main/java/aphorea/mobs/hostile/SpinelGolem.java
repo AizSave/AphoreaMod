@@ -1,5 +1,6 @@
 package aphorea.mobs.hostile;
 
+import aphorea.projectiles.mob.SpinelGolemBeamProjectile;
 import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.registries.MobRegistry;
@@ -27,7 +28,6 @@ import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.hostile.HostileMob;
 import necesse.entity.particle.FleshParticle;
 import necesse.entity.particle.Particle;
-import necesse.entity.projectile.laserProjectile.CrystalGolemBeamProjectile;
 import necesse.gfx.GameResources;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawOptions.DrawOptions;
@@ -35,8 +35,8 @@ import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameSprite;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.inventory.lootTable.LootTable;
+import necesse.inventory.lootTable.lootItem.ChanceLootItem;
 import necesse.inventory.lootTable.lootItem.LootItem;
-import necesse.inventory.lootTable.lootItem.RotationLootItem;
 import necesse.level.maps.CollisionFilter;
 import necesse.level.maps.Level;
 import necesse.level.maps.LevelObjectHit;
@@ -47,7 +47,7 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.List;
 
-public class RubyGolem extends HostileMob {
+public class SpinelGolem extends HostileMob {
     public static GameTexture texture;
 
     public static GameDamage damage = new GameDamage(20.0F);
@@ -63,13 +63,10 @@ public class RubyGolem extends HostileMob {
     public final CoordinateMobAbility shootAbility;
 
     public static LootTable lootTable = new LootTable(
-            RotationLootItem.globalLootRotation(
-                    LootItem.between("ruby", 2, 3),
-                    LootItem.between("liferuby", 2, 3)
-            )
+            new LootItem("spinel")
     );
 
-    public RubyGolem() {
+    public SpinelGolem() {
         super(100);
         this.setArmor(20);
         this.setSpeed(20.0F);
@@ -83,34 +80,34 @@ public class RubyGolem extends HostileMob {
         this.swimSinkOffset = -4;
         this.startShootingAbility = this.registerAbility(new TargetedMobAbility() {
             protected void run(Mob target) {
-                RubyGolem.this.attackAnimTime = RubyGolem.chargeTime + RubyGolem.stickTime + 500;
-                RubyGolem.this.attackCooldown = RubyGolem.chargeTime + RubyGolem.stickTime;
-                RubyGolem.this.shootTime = RubyGolem.this.getWorldEntity().getTime() + (long) RubyGolem.chargeTime + (long) RubyGolem.stickTime;
-                RubyGolem.this.shootTarget = target;
-                if (RubyGolem.this.warningBeam != null) {
-                    RubyGolem.this.warningBeam.dispose();
+                SpinelGolem.this.attackAnimTime = SpinelGolem.chargeTime + SpinelGolem.stickTime + 500;
+                SpinelGolem.this.attackCooldown = SpinelGolem.chargeTime + SpinelGolem.stickTime;
+                SpinelGolem.this.shootTime = SpinelGolem.this.getWorldEntity().getTime() + (long) SpinelGolem.chargeTime + (long) SpinelGolem.stickTime;
+                SpinelGolem.this.shootTarget = target;
+                if (SpinelGolem.this.warningBeam != null) {
+                    SpinelGolem.this.warningBeam.dispose();
                 }
 
-                RubyGolem.this.warningBeam = null;
-                RubyGolem.this.startAttackCooldown();
+                SpinelGolem.this.warningBeam = null;
+                SpinelGolem.this.startAttackCooldown();
                 if (target != null) {
-                    RubyGolem.this.showAttack(target.getX(), target.getY(), true);
+                    SpinelGolem.this.showAttack(target.getX(), target.getY(), true);
                 } else {
-                    RubyGolem.this.showAttack(RubyGolem.this.getX() + 100, RubyGolem.this.getY(), true);
+                    SpinelGolem.this.showAttack(SpinelGolem.this.getX() + 100, SpinelGolem.this.getY(), true);
                 }
 
             }
         });
         this.stickShootAbility = this.registerAbility(new CoordinateMobAbility() {
             protected void run(int x, int y) {
-                RubyGolem.this.shootX = x;
-                RubyGolem.this.shootY = y;
-                RubyGolem.this.shootTarget = null;
+                SpinelGolem.this.shootX = x;
+                SpinelGolem.this.shootY = y;
+                SpinelGolem.this.shootTarget = null;
             }
         });
         this.shootAbility = this.registerAbility(new CoordinateMobAbility() {
             protected void run(int x, int y) {
-                RubyGolem.this.shootAbilityProjectile(x, y);
+                SpinelGolem.this.shootAbilityProjectile(x, y);
             }
         });
     }
@@ -125,7 +122,7 @@ public class RubyGolem extends HostileMob {
 
     public void init() {
         super.init();
-        this.ai = new BehaviourTreeAI<>(this, new RubyGolem.CrystalGolemAI<>(544, 320, this.isSummoned ? 960 : 384));
+        this.ai = new BehaviourTreeAI<>(this, new SpinelGolem.CrystalGolemAI<>(544, 320, this.isSummoned ? 960 : 384));
     }
 
     public float getAttackingMovementModifier() {
@@ -145,13 +142,13 @@ public class RubyGolem extends HostileMob {
                 }
 
                 this.setFacingDir(target.x - this.x, target.y - this.y);
-                RayLinkedList<LevelObjectHit> rays = GameUtils.castRay(this.getLevel(), (double) this.x, (double) this.y, (double) (target.x - this.x), (double) (target.y - this.y), 1000.0, 0, (new CollisionFilter()).projectileCollision());
+                RayLinkedList<LevelObjectHit> rays = GameUtils.castRay(this.getLevel(), this.x, this.y, target.x - this.x, target.y - this.y, 1000.0, 0, (new CollisionFilter()).projectileCollision());
                 if (this.warningBeam == null) {
                     this.warningBeam = (new ParticleBeamHandler(this.getLevel())).particleSize(10, 12).particleThicknessMod(0.2F).endParticleSize(8, 12).distPerParticle(20.0F).thickness(10, 2).speed(50.0F).height(24.0F).sprite(new GameSprite(GameResources.chains, 7, 0, 32));
                 }
 
                 int alpha = GameMath.limit(GameMath.lerp((float) timer / (float) (chargeTime + stickTime), 255, 0), 0, 255);
-                Color color = new Color(AphColors.ruby.getRed(), AphColors.ruby.getGreen(), AphColors.ruby.getBlue(), alpha);
+                Color color = new Color(AphColors.spinel.getRed(), AphColors.spinel.getGreen(), AphColors.spinel.getBlue(), alpha);
                 this.warningBeam.color(color);
                 this.warningBeam.update(rays, delta);
             } else if (this.warningBeam != null) {
@@ -194,7 +191,7 @@ public class RubyGolem extends HostileMob {
 
     public void shootAbilityProjectile(int x, int y) {
         if (this.isServer()) {
-            CrystalGolemBeamProjectile p = new CrystalGolemBeamProjectile(this.getLevel(), this, this.x, this.y, (float) x, (float) y, 1000, damage, 20);
+            SpinelGolemBeamProjectile p = new SpinelGolemBeamProjectile(this.getLevel(), this, this.x, this.y, (float) x, (float) y, 1000, damage, 20);
             this.getLevel().entityManager.projectiles.add(p);
         }
 
@@ -221,7 +218,7 @@ public class RubyGolem extends HostileMob {
             float startHeight = endHeight + dir.y * range;
             int lifeTime = GameRandom.globalRandom.getIntBetween(200, 500);
             float speed = dir.x * range * 250.0F / (float) lifeTime;
-            Color color = GameRandom.globalRandom.getOneOf(AphColors.ruby_lighter, AphColors.ruby_light, AphColors.ruby, AphColors.ruby_dark);
+            Color color = GameRandom.globalRandom.getOneOf(AphColors.spinel_lighter, AphColors.spinel_light, AphColors.spinel, AphColors.spinel_dark);
             float hueMod = (float) this.getLevel().getWorldEntity().getLocalTime() / 10.0F % 240.0F;
             float glowHue = hueMod < 120.0F ? hueMod + 200.0F : 440.0F - hueMod;
             this.getLevel().entityManager.addParticle(startX, startY, Particle.GType.IMPORTANT_COSMETIC).sprite(GameResources.puffParticles.sprite(GameRandom.globalRandom.nextInt(5), 0, 12)).sizeFades(10, 16).rotates().heightMoves(startHeight, endHeight).movesConstant(-speed, 0.0F).color(color).givesLight(glowHue, 1.0F).ignoreLight(true).fadesAlphaTime(100, 50).lifeTime(lifeTime);
@@ -270,7 +267,7 @@ public class RubyGolem extends HostileMob {
         this.warningBeam = null;
     }
 
-    public static class CrystalGolemAI<T extends RubyGolem> extends SequenceAINode<T> {
+    public static class CrystalGolemAI<T extends SpinelGolem> extends SequenceAINode<T> {
         public final EscapeAINode<T> escapeAINode;
         public final CooldownAttackTargetAINode<T> shootAtTargetNode;
         public final TargetFinderAINode<T> targetFinderNode;
@@ -279,11 +276,11 @@ public class RubyGolem extends HostileMob {
         public CrystalGolemAI(int shootDistance, int meleeDistance, int searchDistance) {
             this.addChild(new InverterAINode<>(this.escapeAINode = new EscapeAINode<T>() {
                 public boolean shouldEscape(T mob, Blackboard<T> blackboard) {
-                    return mob.isHostile && !mob.isSummoned && (Boolean) mob.getLevel().buffManager.getModifier(LevelModifiers.ENEMIES_RETREATING);
+                    return mob.isHostile && !mob.isSummoned && mob.getLevel().buffManager.getModifier(LevelModifiers.ENEMIES_RETREATING);
                 }
             }));
             if (shootDistance > 0) {
-                this.addChild(this.shootAtTargetNode = new CooldownAttackTargetAINode<T>(CooldownAttackTargetAINode.CooldownTimer.TICK, RubyGolem.chargeTime + RubyGolem.stickTime + 500, shootDistance) {
+                this.addChild(this.shootAtTargetNode = new CooldownAttackTargetAINode<T>(CooldownAttackTargetAINode.CooldownTimer.TICK, SpinelGolem.chargeTime + SpinelGolem.stickTime + 500, shootDistance) {
                     public boolean attackTarget(T mob, Mob target) {
                         if (mob.canAttack() && mob.shootTime == 0L) {
                             mob.startShootingAbility.runAndSend(target);
@@ -293,7 +290,7 @@ public class RubyGolem extends HostileMob {
                         }
                     }
                 });
-                this.shootAtTargetNode.attackTimer = (long) this.shootAtTargetNode.attackCooldown;
+                this.shootAtTargetNode.attackTimer = this.shootAtTargetNode.attackCooldown;
             } else {
                 this.shootAtTargetNode = null;
             }
