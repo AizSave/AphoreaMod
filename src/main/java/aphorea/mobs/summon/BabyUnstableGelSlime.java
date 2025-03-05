@@ -39,7 +39,7 @@ public class BabyUnstableGelSlime extends AttackingFollowingMob {
 
     public void init() {
         super.init();
-        this.ai = new BehaviourTreeAI<Mob>(this, new PlayerFollowerCollisionChaserAI<>(10 * 32, this.damage, 30, 1000, 640, 64));
+        this.ai = new BehaviourTreeAI<Mob>(this, new PlayerFollowerCollisionChaserAI<>(10 * 32, this.summonDamage, 30, 1000, 640, 64));
     }
 
     public void spawnDeathParticles(float knockbackX, float knockbackY) {

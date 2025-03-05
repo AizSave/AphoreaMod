@@ -8,6 +8,7 @@ import aphorea.utils.area.AphAreaType;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.Packet;
 import necesse.engine.network.PacketReader;
+import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.network.server.ServerClient;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.registries.EnchantmentRegistry;
@@ -15,6 +16,8 @@ import necesse.entity.mobs.AttackAnimMob;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
+import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.gfx.drawOptions.itemAttack.ItemAttackDrawOptions;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.PlayerInventorySlot;
@@ -50,27 +53,29 @@ abstract public class AphAreaToolItem extends AphMagicHealingToolItem {
     }
 
     @Override
-    public InventoryItem onAttack(Level level, int x, int y, PlayerMob player, int attackHeight, InventoryItem item, PlayerInventorySlot slot, int animAttack, int seed, PacketReader contentReader) {
+    public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob mob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
+        if(mob.isPlayer) {
+            PlayerMob player = (PlayerMob) mob;
 
-        if (areaList.someType(AphAreaType.HEALING)) {
-            onHealingToolItemUsed(player, item);
+            if (areaList.someType(AphAreaType.HEALING)) {
+                onHealingToolItemUsed(player, item);
+            }
+
+            if (this.getManaCost(item) > 0) {
+                this.consumeMana(player, item);
+            }
+
+            float rangeModifier = 1 + this.getEnchantment(item).getModifier(AphModifiers.TOOL_AREA_RANGE);
+
+            usePacket(level, player, rangeModifier);
+
+            if (level.isServer()) {
+                areaList.executeAreas(player, rangeModifier, x, y, true, item, this);
+
+                ServerClient serverClient = player.getServerClient();
+                level.getServer().network.sendToClientsWithEntityExcept(getPacket(player, rangeModifier), serverClient.playerMob, serverClient);
+            }
         }
-
-        if (this.getManaCost(item) > 0) {
-            this.consumeMana(player, item);
-        }
-
-        float rangeModifier = 1 + this.getEnchantment(item).getModifier(AphModifiers.TOOL_AREA_RANGE);
-
-        usePacket(level, player, rangeModifier);
-
-        if (level.isServer()) {
-            areaList.executeAreas(player, rangeModifier, x, y, true, item, this);
-
-            ServerClient serverClient = player.getServerClient();
-            level.getServer().network.sendToClientsWithEntityExcept(getPacket(player, rangeModifier), serverClient.playerMob, serverClient);
-        }
-
         return item;
     }
 
@@ -90,7 +95,8 @@ abstract public class AphAreaToolItem extends AphMagicHealingToolItem {
     public void showAttack(Level level, int x, int y, AttackAnimMob mob, int attackHeight, InventoryItem item, int seed, PacketReader contentReader) {
     }
 
-    public void addStatTooltips(ItemStatTipList list, InventoryItem currentItem, InventoryItem lastItem, Mob perspective, boolean forceAdd) {
+    @Override
+    public void addStatTooltips(ItemStatTipList list, InventoryItem currentItem, InventoryItem lastItem, ItemAttackerMob perspective, boolean forceAdd) {
         areaList.addAreasStatTip(list, this, currentItem, lastItem, perspective, forceAdd);
         this.addAttackSpeedTip(list, currentItem, lastItem, perspective);
         this.addResilienceGainTip(list, currentItem, lastItem, perspective, forceAdd);

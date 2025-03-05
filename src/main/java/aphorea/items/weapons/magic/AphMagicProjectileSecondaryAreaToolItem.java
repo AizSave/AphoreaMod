@@ -9,6 +9,7 @@ import necesse.engine.network.PacketReader;
 import necesse.engine.network.server.ServerClient;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.PlayerMob;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.PlayerInventorySlot;
 import necesse.inventory.enchants.Enchantable;
@@ -40,12 +41,13 @@ abstract public class AphMagicProjectileSecondaryAreaToolItem extends AphMagicPr
     }
 
     @Override
-    public int getLevelInteractAttackAnimTime(InventoryItem item, PlayerMob player) {
-        return Math.round(secondaryAttackAnimTime * (1.0F / this.getAttackSpeedModifier(item, player)));
+    public int getLevelInteractAttackAnimTime(InventoryItem item, ItemAttackerMob attackerMob) {
+        return Math.round(secondaryAttackAnimTime * (1.0F / this.getAttackSpeedModifier(item, attackerMob)));
     }
 
-    public boolean canLevelInteract(Level level, int x, int y, PlayerMob player, InventoryItem item) {
-        return !player.isAttacking;
+    @Override
+    public boolean canLevelInteract(Level level, int x, int y, ItemAttackerMob attackerMob, InventoryItem item) {
+        return !attackerMob.isAttacking;
     }
 
     public InventoryItem onLevelInteract(Level level, int x, int y, PlayerMob player, int attackHeight, InventoryItem item, PlayerInventorySlot slot, int seed, PacketReader contentReader) {

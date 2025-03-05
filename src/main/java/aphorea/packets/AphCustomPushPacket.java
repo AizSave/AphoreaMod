@@ -9,8 +9,8 @@ public class AphCustomPushPacket extends PacketForceOfWind {
         super(data);
     }
 
-    public AphCustomPushPacket(int slot, float dirX, float dirY, float strength) {
-        super(slot, dirX, dirY, strength);
+    public AphCustomPushPacket(Mob mob, float dirX, float dirY, float strength) {
+        super(mob.getFollowingMob(), dirX, dirY, strength);
     }
 
     public static void applyToPlayer(Level level, Mob mob, float dirX, float dirY, float strength) {

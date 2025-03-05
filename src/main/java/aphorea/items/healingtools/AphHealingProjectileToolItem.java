@@ -9,6 +9,8 @@ import necesse.entity.mobs.AttackAnimMob;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.BuffModifiers;
+import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.gfx.drawOptions.itemAttack.ItemAttackDrawOptions;
 import necesse.inventory.InventoryItem;
@@ -51,34 +53,38 @@ abstract public class AphHealingProjectileToolItem extends AphMagicHealingToolIt
     public void showAttack(Level level, int x, int y, AttackAnimMob mob, int attackHeight, InventoryItem item, int seed, PacketReader contentReader) {
     }
 
-    public void addStatTooltips(ItemStatTipList list, InventoryItem currentItem, InventoryItem lastItem, Mob perspective, boolean forceAdd) {
+    @Override
+    public void addStatTooltips(ItemStatTipList list, InventoryItem currentItem, InventoryItem lastItem, ItemAttackerMob perspective, boolean forceAdd) {
         AphMagicHealing.addMagicHealingTip(this, list, currentItem, lastItem, perspective);
         this.addAttackSpeedTip(list, currentItem, lastItem, perspective);
         this.addManaCostTip(list, currentItem, lastItem, perspective);
     }
 
-    public InventoryItem onAttack(Level level, int x, int y, PlayerMob player, int attackHeight, InventoryItem item, PlayerInventorySlot slot, int animAttack, int seed, PacketReader contentReader) {
-        onHealingToolItemUsed(player, item);
+    @Override
+    public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob mob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
+        if(mob.isPlayer) {
+            PlayerMob player = (PlayerMob) mob;
+            onHealingToolItemUsed(player, item);
 
-        if (this.getManaCost(item) > 0) {
-            this.consumeMana(player, item);
+            if (this.getManaCost(item) > 0) {
+                this.consumeMana(player, item);
+            }
+
+            Projectile[] projectiles = this.getProjectiles(level, x, y, player, item);
+
+            Arrays.stream(projectiles).forEach(projectile -> {
+                projectile.getUniqueID(new GameRandom(seed));
+                level.entityManager.projectiles.addHidden(projectile);
+
+                if (this.moveDist != 0) {
+                    projectile.moveDist(this.moveDist);
+                }
+
+                if (level.isServer()) {
+                    level.getServer().network.sendToClientsWithEntityExcept(new PacketSpawnProjectile(projectile), projectile, player.getServerClient());
+                }
+            });
         }
-
-        Projectile[] projectiles = this.getProjectiles(level, x, y, player, item);
-
-        Arrays.stream(projectiles).forEach(projectile -> {
-            projectile.getUniqueID(new GameRandom(seed));
-            level.entityManager.projectiles.addHidden(projectile);
-
-            if (this.moveDist != 0) {
-                projectile.moveDist(this.moveDist);
-            }
-
-            if (level.isServer()) {
-                level.getServer().network.sendToClientsWithEntityExcept(new PacketSpawnProjectile(projectile), projectile, player.getServerClient());
-            }
-        });
-
         return item;
     }
 }

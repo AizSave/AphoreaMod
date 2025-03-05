@@ -16,6 +16,7 @@ import necesse.entity.mobs.AttackAnimMob;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.gfx.drawOptions.itemAttack.ItemAttackDrawOptions;
 import necesse.gfx.gameTexture.GameSprite;
 import necesse.gfx.gameTexture.GameTexture;
@@ -71,7 +72,7 @@ public class MagicalBroom extends AphToolItem {
         currentA = 1;
     }
 
-    public void addStatTooltips(ItemStatTipList list, InventoryItem currentItem, InventoryItem lastItem, Mob perspective, boolean forceAdd) {
+    public void addStatTooltips(ItemStatTipList list, InventoryItem currentItem, InventoryItem lastItem, ItemAttackerMob perspective, boolean forceAdd) {
         this.addAttackDamageTip(list, currentItem, lastItem, perspective, forceAdd);
         this.addAttackSpeedTip(list, currentItem, lastItem, perspective);
         this.addResilienceGainTip(list, currentItem, lastItem, perspective, forceAdd);
@@ -185,13 +186,11 @@ public class MagicalBroom extends AphToolItem {
 
             int strength = 50;
             Point2D.Float dir = GameMath.normalize((float) x - player.x, (float) y - player.y);
-            AphCustomPushPacket.applyToPlayer(level, player, dir.x, dir.y, (float) strength);
             player.buffManager.addBuff(new ActiveBuff(BuffRegistry.FOW_ACTIVE, player, 0.15F, null), level.isServer());
             player.buffManager.forceUpdateBuffs();
 
             if (player.isServer()) {
-                ServerClient serverClient = player.getServerClient();
-                level.getServer().network.sendToClientsWithEntityExcept(new AphCustomPushPacket(serverClient.slot, dir.x, dir.y, (float) strength), serverClient.playerMob, serverClient);
+                level.getServer().network.sendToAllClients(new AphCustomPushPacket(player, dir.x, dir.y, (float) strength));
             } else if (player.isClient()) {
                 currentA = currentA == 0 ? 1 : 0;
                 animInverted = currentA == 1;

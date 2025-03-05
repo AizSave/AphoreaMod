@@ -65,10 +65,7 @@ public class RunicUnstableGelSlime extends RunicAttackingFollowingMob {
 
         if (count >= 20 * effectNumber) {
             if (this.isFollowing()) {
-                ServerClient c = this.getFollowingServerClient();
-                if (c != null) {
-                    c.removeFollower(this, false, false);
-                }
+                this.getFollowingClient().playerMob.serverFollowersManager.removeFollower(this, false, false);
             }
             this.remove();
         }

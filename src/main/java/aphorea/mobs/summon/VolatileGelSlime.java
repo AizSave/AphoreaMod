@@ -131,8 +131,8 @@ public class VolatileGelSlime extends AttackingFollowingMob {
         this.spawnDeathParticles(GameRandom.globalRandom.getFloatBetween(-600, 600), GameRandom.globalRandom.getFloatBetween(-600, 600));
         this.remove();
 
-        if (damage != null) {
-            ExplosionEvent event = new BombExplosionEvent(x, y, 140, damage, false, 0, this.getFollowingPlayer());
+        if (this.summonDamage != null) {
+            ExplosionEvent event = new BombExplosionEvent(x, y, 140, this.summonDamage, false, 0, this.getFollowingMob());
             this.getLevel().entityManager.addLevelEvent(event);
         }
 

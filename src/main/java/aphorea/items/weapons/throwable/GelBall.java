@@ -4,6 +4,7 @@ import aphorea.items.vanillaitemtypes.weapons.AphThrowToolItem;
 import aphorea.projectiles.toolitem.GelProjectile;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.PacketReader;
+import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
@@ -11,6 +12,8 @@ import necesse.engine.util.GameBlackboard;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.AttackAnimMob;
 import necesse.entity.mobs.PlayerMob;
+import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.gfx.GameResources;
 import necesse.gfx.gameTooltips.ListGameTooltips;
@@ -48,37 +51,37 @@ public class GelBall extends AphThrowToolItem {
     }
 
     @Override
-    public void showAttack(Level level, int x, int y, AttackAnimMob mob, int attackHeight, InventoryItem item, int seed, PacketReader contentReader) {
+    public void showAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, int animAttack, int seed, GNDItemMap mapContent) {
         if (level.isClient()) {
-            SoundManager.playSound(GameResources.slimesplash, SoundEffect.effect(mob)
+            SoundManager.playSound(GameResources.slimesplash, SoundEffect.effect(attackerMob)
                     .volume(0.7f)
                     .pitch(GameRandom.globalRandom.getFloatBetween(1.0f, 1.1f)));
         }
     }
 
     @Override
-    public InventoryItem onAttack(Level level, int x, int y, PlayerMob player, int attackHeight, InventoryItem item, PlayerInventorySlot slot, int animAttack, int seed, PacketReader contentReader) {
-
+    public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
         Projectile projectile = new GelProjectile(
-                level, player,
-                player.x, player.y,
+                level, attackerMob,
+                attackerMob.x, attackerMob.y,
                 x, y,
-                getProjectileVelocity(item, player),
+                getProjectileVelocity(item, attackerMob),
                 getAttackRange(item),
                 getAttackDamage(item),
-                getKnockback(item, player)
+                getKnockback(item, attackerMob)
         );
         GameRandom random = new GameRandom(seed);
         projectile.resetUniqueID(random);
 
         level.entityManager.projectiles.addHidden(projectile);
 
-        if (level.isServer()) {
-            level.getServer().network.sendToClientsWithEntityExcept(new PacketSpawnProjectile(projectile), projectile, player.getServerClient());
+        if (level.isServer() && attackerMob.isPlayer) {
+            level.getServer().network.sendToClientsWithEntityExcept(new PacketSpawnProjectile(projectile), projectile, ((PlayerMob) attackerMob).getServerClient());
         }
 
         if (!infinity) item.setAmount(item.getAmount() - 1);
 
         return item;
     }
+
 }

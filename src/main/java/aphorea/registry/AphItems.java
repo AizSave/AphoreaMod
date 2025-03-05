@@ -33,12 +33,8 @@ import aphorea.items.vanillaitemtypes.AphSimpleTrinketItem;
 import aphorea.items.weapons.magic.AdeptsBook;
 import aphorea.items.weapons.magic.MagicalBroom;
 import aphorea.items.weapons.magic.UnstableGelStaff;
-import aphorea.items.weapons.melee.battleaxe.DemonicBattleaxe;
-import aphorea.items.weapons.melee.battleaxe.UnstableGelBattleaxe;
 import aphorea.items.weapons.melee.dagger.*;
 import aphorea.items.weapons.melee.glaive.WoodenRod;
-import aphorea.items.weapons.melee.greatsword.UnstableGelGreatsword;
-import aphorea.items.weapons.melee.saber.*;
 import aphorea.items.weapons.melee.sword.Broom;
 import aphorea.items.weapons.melee.sword.GelSword;
 import aphorea.items.weapons.melee.sword.UnstableGelSword;
@@ -46,15 +42,13 @@ import aphorea.items.weapons.melee.sword.VoidHammer;
 import aphorea.items.weapons.range.blowgun.Blowgun;
 import aphorea.items.weapons.range.greatbow.GelGreatbow;
 import aphorea.items.weapons.range.greatbow.UnstableGelGreatbow;
-import aphorea.items.weapons.range.sling.FireSling;
-import aphorea.items.weapons.range.sling.FrozenSling;
-import aphorea.items.weapons.range.sling.Sling;
 import aphorea.items.weapons.summoner.VolatileGelStaff;
 import aphorea.items.weapons.throwable.GelBall;
 import aphorea.items.weapons.throwable.GelBallGroup;
 import aphorea.items.weapons.throwable.UnstableGelveline;
 import necesse.engine.registries.ItemRegistry;
 import necesse.inventory.item.Item;
+import necesse.inventory.item.matItem.MatItem;
 
 import java.util.ArrayList;
 
@@ -72,14 +66,14 @@ public class AphItems {
         registerItem("woodenrod", new WoodenRod());
         registerItem("gelsword", new GelSword());
         registerItem("unstablegelsword", new UnstableGelSword());
-        registerItem("unstablegelgreatsword", new UnstableGelGreatsword());
-        registerItem("unstablegelbattleaxe", new UnstableGelBattleaxe());
-        registerItem("demonicbattleaxe", new DemonicBattleaxe());
-        registerItem("coppersaber", new CopperSaber());
-        registerItem("ironsaber", new IronSaber());
-        registerItem("goldsaber", new GoldSaber());
-        registerItem("unstablegelsaber", new UnstableGelSaber(), 500F);
-        registerItem("demonicsaber", new DemonicSaber());
+        registerItem("unstablegelgreatsword", new MatItem(1));
+        registerItem("unstablegelbattleaxe", new MatItem(1));
+        registerItem("demonicbattleaxe", new MatItem(1));
+        registerItem("coppersaber", new MatItem(1));
+        registerItem("ironsaber", new MatItem(1));
+        registerItem("goldsaber", new MatItem(1));
+        registerItem("unstablegelsaber", new MatItem(1), 500F);
+        registerItem("demonicsaber", new MatItem(1));
         registerItem("broom", new Broom(), 50F);
         registerItem("voidhammer", new VoidHammer());
         registerItem("copperdagger", new CopperDagger(), 15F);
@@ -90,9 +84,9 @@ public class AphItems {
 
         // Range Weapons
         registerItem("blowgun", new Blowgun());
-        registerItem("sling", new Sling());
-        registerItem("firesling", new FireSling());
-        registerItem("frozensling", new FrozenSling());
+        registerItem("sling", new MatItem(1));
+        registerItem("firesling", new MatItem(1));
+        registerItem("frozensling", new MatItem(1));
         registerItem("gelgreatbow", new GelGreatbow());
         registerItem("unstablegelgreatbow", new UnstableGelGreatbow());
 

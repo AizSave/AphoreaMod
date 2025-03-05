@@ -1,13 +1,12 @@
 package aphorea.buffs.Trinkets;
 
-import necesse.engine.network.server.FollowPosition;
-import necesse.engine.network.server.ServerClient;
 import necesse.engine.registries.MobRegistry;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.staticBuffs.armorBuffs.trinketBuffs.TrinketBuff;
+import necesse.entity.mobs.itemAttacker.FollowPosition;
 import necesse.entity.mobs.summon.summonFollowingMob.attackingFollowingMob.AttackingFollowingMob;
 import necesse.inventory.item.ItemStatTip;
 
@@ -37,12 +36,11 @@ abstract public class AphSummoningTrinketBuff extends TrinketBuff {
 
         if (buff.owner.isPlayer) {
             PlayerMob player = (PlayerMob) buff.owner;
-            ServerClient serverClient = player.getServerClient();
-            int summonMobs = mobQuantity - (int) serverClient.getFollowerCount(buffId);
+            int summonMobs = mobQuantity - (int) player.serverFollowersManager.getFollowerCount(buffId);
             for (int i = 0; i < summonMobs; i++) {
                 AttackingFollowingMob mob = (AttackingFollowingMob) MobRegistry.getMob(mobId, buff.owner.getLevel());
 
-                serverClient.addFollower(buffId, mob, FollowPosition.WALK_CLOSE, buffId, 1, 2, null, true);
+                player.serverFollowersManager.addFollower(buffId, mob, FollowPosition.WALK_CLOSE, buffId, 1, 2, null, true);
                 mob.updateDamage(damage);
                 mob.getLevel().entityManager.addMob(mob, buff.owner.x, buff.owner.y);
             }

@@ -9,6 +9,7 @@ import aphorea.utils.area.AphAreaList;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.Packet;
 import necesse.engine.network.PacketReader;
+import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.sound.SoundEffect;
@@ -20,6 +21,8 @@ import necesse.entity.mobs.AttackAnimMob;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
+import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.gfx.GameResources;
 import necesse.gfx.gameTooltips.ListGameTooltips;
@@ -65,7 +68,7 @@ public class UnstableGelStaff extends AphMagicProjectileSecondaryAreaToolItem im
         return tooltips;
     }
 
-    public void addStatTooltips(ItemStatTipList list, InventoryItem currentItem, InventoryItem lastItem, Mob perspective, boolean forceAdd) {
+    public void addStatTooltips(ItemStatTipList list, InventoryItem currentItem, InventoryItem lastItem, ItemAttackerMob perspective, boolean forceAdd) {
         this.addAttackDamageTip(list, currentItem, lastItem, perspective, forceAdd);
         this.addAttackSpeedTip(list, currentItem, lastItem, perspective);
         this.addCritChanceTip(list, currentItem, lastItem, perspective, forceAdd);
@@ -73,17 +76,16 @@ public class UnstableGelStaff extends AphMagicProjectileSecondaryAreaToolItem im
     }
 
     @Override
-    public void showAttack(Level level, int x, int y, AttackAnimMob mob, int attackHeight, InventoryItem item, int seed, PacketReader contentReader) {
+    public void showAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, int animAttack, int seed, GNDItemMap mapContent) {
         if (level.isClient()) {
-            SoundManager.playSound(GameResources.slimesplash, SoundEffect.effect(mob)
+            SoundManager.playSound(GameResources.slimesplash, SoundEffect.effect(attackerMob)
                     .volume(0.7f)
                     .pitch(GameRandom.globalRandom.getFloatBetween(1.0f, 1.1f)));
         }
     }
 
     @Override
-    public InventoryItem onAttack(Level level, int x, int y, PlayerMob player, int attackHeight, InventoryItem item, PlayerInventorySlot slot, int animAttack, int seed, PacketReader contentReader) {
-
+    public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob player, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
         Projectile projectile = new UnstableGelProjectile(
                 level, player,
                 player.x, player.y,
@@ -98,8 +100,8 @@ public class UnstableGelStaff extends AphMagicProjectileSecondaryAreaToolItem im
 
         level.entityManager.projectiles.addHidden(projectile);
 
-        if (level.isServer()) {
-            level.getServer().network.sendToClientsWithEntityExcept(new PacketSpawnProjectile(projectile), projectile, player.getServerClient());
+        if (level.isServer() && player.isPlayer) {
+            level.getServer().network.sendToClientsWithEntityExcept(new PacketSpawnProjectile(projectile), projectile, ((PlayerMob) player).getServerClient());
         }
 
         this.consumeMana(player, item);

@@ -32,9 +32,4 @@ public class IronDagger extends AphDaggerToolItem {
                 item.item.getStringID(), item.getGndData()
         );
     }
-
-    @Override
-    public Color getSecondaryAttackColor() {
-        return AphColors.iron;
-    }
 }

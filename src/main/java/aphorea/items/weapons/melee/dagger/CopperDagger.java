@@ -38,9 +38,4 @@ public class CopperDagger extends AphDaggerToolItem {
                 item.item.getStringID(), item.getGndData()
         );
     }
-
-    @Override
-    public Color getSecondaryAttackColor() {
-        return AphColors.copper;
-    }
 }

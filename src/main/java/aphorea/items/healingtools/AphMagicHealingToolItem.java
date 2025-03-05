@@ -6,9 +6,12 @@ import aphorea.utils.magichealing.AphMagicHealing;
 import aphorea.utils.magichealing.AphMagicHealingFunctions;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.PacketReader;
+import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
+import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.PlayerInventorySlot;
 import necesse.inventory.enchants.Enchantable;
@@ -47,9 +50,9 @@ abstract public class AphMagicHealingToolItem extends AphToolItem {
     }
 
     @Override
-    public InventoryItem onAttack(Level level, int x, int y, PlayerMob player, int attackHeight, InventoryItem item, PlayerInventorySlot slot, int animAttack, int seed, PacketReader contentReader) {
+    public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob player, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
         onHealingToolItemUsed(player, item);
-        return super.onAttack(level, x, y, player, attackHeight, item, slot, animAttack, seed, contentReader);
+        return super.onAttack(level, x, y, player, attackHeight, item, slot, animAttack, seed, mapContent);
     }
 
     public ToolItemEnchantment getRandomEnchantment(GameRandom random, InventoryItem item) {

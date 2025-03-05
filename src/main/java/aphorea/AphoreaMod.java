@@ -4,7 +4,6 @@ import aphorea.buffs.LowdsPoisonBuff;
 import aphorea.data.AphSwampLevelData;
 import aphorea.data.AphWorldData;
 import aphorea.items.healingtools.HealingStaff;
-import aphorea.items.weapons.melee.saber.AphSaberToolItem;
 import aphorea.journal.AphJournalChallenges;
 import aphorea.levelevents.*;
 import aphorea.mobs.friendly.WildPhosphorSlime;
@@ -109,7 +108,6 @@ public class AphoreaMod {
         AphBuffs.registerCore();
 
         // LevelEvents
-        LevelEventRegistry.registerEvent("saberdashlevelevent", AphSaberToolItem.SaberDashLevelEvent.class);
         LevelEventRegistry.registerEvent("gelprojectilegroundeffect", GelProjectile.GelProjectileGroundEffectEvent.class);
 
         // Base Runes LevelEvents

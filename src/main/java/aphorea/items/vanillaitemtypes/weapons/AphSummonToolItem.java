@@ -1,9 +1,9 @@
 package aphorea.items.vanillaitemtypes.weapons;
 
 import necesse.engine.localization.Localization;
-import necesse.engine.network.server.FollowPosition;
 import necesse.engine.util.GameBlackboard;
 import necesse.entity.mobs.PlayerMob;
+import necesse.entity.mobs.itemAttacker.FollowPosition;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.toolItem.summonToolItem.SummonToolItem;
