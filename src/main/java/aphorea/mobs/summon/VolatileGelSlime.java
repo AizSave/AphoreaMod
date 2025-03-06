@@ -41,6 +41,7 @@ public class VolatileGelSlime extends AttackingFollowingMob {
     int explosionTime = 0;
     int maxExplosionTime = GameRandom.globalRandom.getIntBetween(17, 23);
 
+    @Override
     public void init() {
         super.init();
         this.ai = new BehaviourTreeAI<Mob>(this, new PlayerFollowerCollisionChaserAI<>(16 * 32, null, 0, 1000, 640, 64));
@@ -65,6 +66,7 @@ public class VolatileGelSlime extends AttackingFollowingMob {
         }
     }
 
+    @Override
     public void spawnDeathParticles(float knockbackX, float knockbackY) {
         if (texture != null) {
             for (int i = 0; i < 4; i++) {
@@ -80,6 +82,7 @@ public class VolatileGelSlime extends AttackingFollowingMob {
         }
     }
 
+    @Override
     public void addDrawables(List<MobDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, Level level, int x, int y, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
         super.addDrawables(list, tileList, topList, level, x, y, tickManager, camera, perspective);
         GameLight light = level.getLightLevel(getTileX(), getTileY());
@@ -106,6 +109,7 @@ public class VolatileGelSlime extends AttackingFollowingMob {
         if (!this.isWaterWalking()) addShadowDrawables(tileList, x, y, light, camera);
     }
 
+    @Override
     public Point getAnimSprite(int x, int y, int dir) {
         int animTime = 200;
         int spriteX = this.inLiquid(x, y) ? 4 + GameUtils.getAnim(this.getWorldEntity().getTime(), 2, animTime) : GameUtils.getAnim(this.getWorldEntity().getTime(), 4, animTime);

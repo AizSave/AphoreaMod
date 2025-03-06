@@ -204,20 +204,24 @@ public class UnstableGelSlime extends FlyingBossMob {
         return 20;
     }
 
+    @Override
     public int getMaxHealth() {
         return super.getMaxHealth() + (int) ((float) (this.scaling == null ? 0 : this.scaling.getHealthIncrease()) * this.getMaxHealthModifier());
     }
 
+    @Override
     public void setupHealthPacket(PacketWriter writer, boolean isFull) {
         this.scaling.setupHealthPacket(writer, isFull);
         super.setupHealthPacket(writer, isFull);
     }
 
+    @Override
     public void applyHealthPacket(PacketReader reader, boolean isFull) {
         this.scaling.applyHealthPacket(reader, isFull);
         super.applyHealthPacket(reader, isFull);
     }
 
+    @Override
     public void setMaxHealth(int maxHealth) {
         super.setMaxHealth(maxHealth);
         if (this.scaling != null) {
@@ -226,6 +230,7 @@ public class UnstableGelSlime extends FlyingBossMob {
 
     }
 
+    @Override
     public boolean shouldDrawOnMap() {
         return true;
     }
@@ -244,14 +249,17 @@ public class UnstableGelSlime extends FlyingBossMob {
         return super.isHealthBarVisible();
     }
 
+    @Override
     public Rectangle drawOnMapBox(double tileScale, boolean isMinimap) {
         return new Rectangle(-16, -16, 32, 32);
     }
 
+    @Override
     public GameTooltips getMapTooltips() {
         return new StringTooltips(this.getDisplayName() + " " + this.getHealth() + "/" + this.getMaxHealth());
     }
 
+    @Override
     protected void onDeath(Attacker attacker, HashSet<Attacker> attackers) {
         super.onDeath(attacker, attackers);
 
@@ -264,6 +272,7 @@ public class UnstableGelSlime extends FlyingBossMob {
         }
     }
 
+    @Override
     public void clientTick() {
         super.clientTick();
         SoundManager.setMusic(MusicRegistry.TheFirstTrial, SoundManager.MusicPriority.EVENT, 1.5F);
@@ -271,6 +280,7 @@ public class UnstableGelSlime extends FlyingBossMob {
         BossNearbyBuff.applyAround(this);
     }
 
+    @Override
     public void serverTick() {
         super.serverTick();
         this.scaling.serverTick();

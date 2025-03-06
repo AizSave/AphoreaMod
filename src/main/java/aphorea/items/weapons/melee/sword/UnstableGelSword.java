@@ -3,18 +3,13 @@ package aphorea.items.weapons.melee.sword;
 import aphorea.items.vanillaitemtypes.weapons.AphSwordToolItem;
 import aphorea.registry.AphBuffs;
 import necesse.engine.localization.Localization;
-import necesse.engine.network.PacketReader;
-import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.util.GameBlackboard;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.ToolItemMobAbilityEvent;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
-import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
-import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.PlayerInventorySlot;
 import necesse.level.maps.Level;
 
 public class UnstableGelSword extends AphSwordToolItem {

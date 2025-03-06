@@ -31,7 +31,7 @@ public class AphStrikeBannerItem extends AphBanner {
 
     @Override
     public void runServerAbility(Level level, InventoryItem item, PlayerMob player) {
-        areaList.executeAreas(player);
+        areaList.executeServer(player);
         level.getServer().network.sendToAllClients(new AphSingleAreaShowPacket(player.x, player.y, range, color, 0.5F));
     }
 

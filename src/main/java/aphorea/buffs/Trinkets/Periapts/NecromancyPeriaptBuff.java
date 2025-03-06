@@ -1,7 +1,6 @@
 package aphorea.buffs.Trinkets.Periapts;
 
 import necesse.engine.localization.Localization;
-import necesse.engine.network.server.ServerClient;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.registries.MobRegistry;
 import necesse.entity.mobs.GameDamage;

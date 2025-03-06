@@ -1,4 +1,4 @@
-package aphorea.mobs.hostile.classes;
+package aphorea.mobs.hostile;
 
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.entity.mobs.*;
@@ -16,6 +16,7 @@ import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
 
 import java.awt.*;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 
@@ -45,6 +46,7 @@ public abstract class DaggerGoblin extends GoblinMob {
     }
 
 
+    @Override
     public void init() {
         super.init();
 
@@ -61,6 +63,7 @@ public abstract class DaggerGoblin extends GoblinMob {
         });
     }
 
+    @Override
     public LootTable getLootTable() {
         return new LootTable(
                 lootTable,
@@ -68,6 +71,7 @@ public abstract class DaggerGoblin extends GoblinMob {
         );
     }
 
+    @Override
     public void addDrawables(List<MobDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, Level level, int x, int y, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
         GameLight light = level.getLightLevel(x / 32, y / 32);
         int drawX = camera.getDrawX(x) - 6 - 26;
@@ -100,5 +104,34 @@ public abstract class DaggerGoblin extends GoblinMob {
         lootTable = new LootTable(
                 GoblinMob.lootTable
         );
+    }
+
+    public static class CopperDaggerGoblin extends DaggerGoblin {
+
+        public CopperDaggerGoblin() {
+            super("copperdagger");
+        }
+
+    }
+
+    public static class IronDaggerGoblin extends DaggerGoblin {
+
+        public IronDaggerGoblin() {
+            super("irondagger");
+        }
+
+    }
+
+    public static class GoldDaggerGoblin extends DaggerGoblin {
+
+        public GoldDaggerGoblin() {
+            super("golddagger");
+        }
+
+
+        @Override
+        protected void onDeath(Attacker attacker, HashSet<Attacker> attackers) {
+            super.onDeath(attacker, attackers);
+        }
     }
 }

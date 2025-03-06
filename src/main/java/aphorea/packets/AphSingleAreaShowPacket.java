@@ -60,27 +60,20 @@ public class AphSingleAreaShowPacket extends Packet {
         this(x, y, range, color, color.getAlpha());
     }
 
+    @Override
     public void processClient(NetworkPacket packet, Client client) {
         if (client.getLevel() != null) {
             applyToPlayer(client.getLevel(), x, y, range, new Color(r, g, b, alpha));
         }
     }
 
-    public static void applyToPlayer(Level level, float x, float y, float range, Color color, float alpha) {
-
-        AphSingleAreaShowPacket.applyToPlayer(level, x, y, range, new Color(color.getRed(), color.getGreen(), color.getBlue(), (int) (255 * alpha)));
-
-    }
-
     public static void applyToPlayer(Level level, PlayerMob player, float range, Color color) {
-
         AphSingleAreaShowPacket.applyToPlayer(level, player.x, player.y, range, color);
-
     }
 
     public static void applyToPlayer(Level level, float x, float y, float range, Color color) {
         if (level != null && level.isClient()) {
-            new AphAreaList(new AphArea(range, color)).showAllAreaParticles(level, x, y);
+            new AphAreaList(new AphArea(range, color)).executeClient(level, x, y);
         }
     }
 

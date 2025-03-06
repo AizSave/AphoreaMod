@@ -37,11 +37,13 @@ public class BabyUnstableGelSlime extends AttackingFollowingMob {
         selectBox = new Rectangle(-13, -14, 26, 24);
     }
 
+    @Override
     public void init() {
         super.init();
         this.ai = new BehaviourTreeAI<Mob>(this, new PlayerFollowerCollisionChaserAI<>(10 * 32, this.summonDamage, 30, 1000, 640, 64));
     }
 
+    @Override
     public void spawnDeathParticles(float knockbackX, float knockbackY) {
         for (int i = 0; i < 4; i++) {
             getLevel().entityManager.addParticle(new FleshParticle(
@@ -55,6 +57,7 @@ public class BabyUnstableGelSlime extends AttackingFollowingMob {
         }
     }
 
+    @Override
     public void addDrawables(List<MobDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, Level level, int x, int y, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
         super.addDrawables(list, tileList, topList, level, x, y, tickManager, camera, perspective);
         GameLight light = level.getLightLevel(getTileX(), getTileY());
@@ -81,6 +84,7 @@ public class BabyUnstableGelSlime extends AttackingFollowingMob {
         if (!this.isWaterWalking()) addShadowDrawables(tileList, x, y, light, camera);
     }
 
+    @Override
     protected TextureDrawOptions getShadowDrawOptions(int x, int y, GameLight light, GameCamera camera) {
         GameTexture shadowTexture = Textures.human_baby_shadow;
         int res = shadowTexture.getHeight();
@@ -90,6 +94,7 @@ public class BabyUnstableGelSlime extends AttackingFollowingMob {
         return shadowTexture.initDraw().sprite(this.getDir(), 0, res).light(light).pos(drawX, drawY);
     }
 
+    @Override
     public int getRockSpeed() {
         return 20;
     }

@@ -40,11 +40,13 @@ public class PetPhosphorSlime extends PetFollowingMob {
         this.selectBox = new Rectangle(-16, -28 - getFlyingHeight(), 32, 34 + getFlyingHeight());
     }
 
+    @Override
     public void init() {
         super.init();
         this.ai = new BehaviourTreeAI<>(this, new PlayerFollowerAINode<>(480, 32));
     }
 
+    @Override
     public void clientTick() {
         super.clientTick();
         time++;
@@ -62,6 +64,7 @@ public class PetPhosphorSlime extends PetFollowingMob {
         lightTime++;
     }
 
+    @Override
     public void serverTick() {
         super.serverTick();
         if (isScared(getLevel())) {
@@ -78,14 +81,16 @@ public class PetPhosphorSlime extends PetFollowingMob {
         }
     }
 
-
+    @Override
     protected void playDeathSound() {
     }
 
+    @Override
     public int getFlyingHeight() {
         return 20;
     }
 
+    @Override
     public void addDrawables(List<MobDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, Level level, int x, int y, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
         super.addDrawables(list, tileList, topList, level, x, y, tickManager, camera, perspective);
         GameLight light = level.getLightLevel(getTileX(), getTileY());

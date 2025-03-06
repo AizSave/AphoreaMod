@@ -28,6 +28,7 @@ public class FireSlingStoneProjectile extends SlingStoneProjectile {
     public FireSlingStoneProjectile() {
     }
 
+    @Override
     public void init() {
         super.init();
         givesLight = true;

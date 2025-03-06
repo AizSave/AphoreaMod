@@ -1,15 +1,14 @@
 package aphorea.projectiles.toolitem;
 
 
+import aphorea.utils.AphDistances;
 import necesse.engine.network.server.ServerClient;
-import necesse.engine.util.GameUtils;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.projectile.StoneProjectile;
 import necesse.level.maps.LevelObjectHit;
 
-import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -50,10 +49,7 @@ public class VoidStoneProjectile extends StoneProjectile {
     }
 
     public Mob getClosestNotAttackedMob() {
-        return GameUtils.streamTargetsRange(this.getOwner(), this.distance * 3)
-                .filter(mob -> !attackedMob.contains(mob) && mob.canBeTargeted(this.getOwner(), ((PlayerMob) this.getOwner()).getNetworkClient()))
-                .min(Comparator.comparingDouble(mob -> mob.getDistance(this.x, this.y)))
-                .orElse(null);
+        return AphDistances.findClosestMob(getLevel(), x, y, (int) (this.distance - this.traveledDistance), mob -> !attackedMob.contains(mob) && mob.canBeTargeted(this.getOwner(), this.getOwner().isPlayer ? ((PlayerMob) this.getOwner()).getNetworkClient() : null));
     }
 
 }

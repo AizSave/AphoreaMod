@@ -15,10 +15,12 @@ import necesse.inventory.InventoryItem;
 import necesse.inventory.item.toolItem.ToolItem;
 import necesse.inventory.item.upgradeUtils.FloatUpgradeValue;
 import necesse.inventory.item.upgradeUtils.IntUpgradeValue;
+import necesse.level.maps.CollisionFilter;
 import necesse.level.maps.Level;
 import org.jetbrains.annotations.Nullable;
 
 import java.awt.*;
+import java.awt.geom.Line2D;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -76,11 +78,6 @@ public class AphArea {
         return setDamageArea(new FloatUpgradeValue(0, 0.2F).setBaseValue(damage).setUpgradedValue(1, tier1Damage));
     }
 
-    public AphArea setBaseCritChance(int baseCritChance) {
-        this.baseCritChance = baseCritChance;
-        return this;
-    }
-
     public AphArea setArmorPen(int armorPen) {
         this.armorPen = armorPen;
         return this;
@@ -117,7 +114,7 @@ public class AphArea {
         return this;
     }
 
-    public void showAreaParticles(Level level, float x, float y, AphAreaList areaList, Color[] forcedColors, float rangeModifier, float borderParticleModifier, float innerParticleModifier, int particleTime) {
+    public void showParticles(Level level, float x, float y, AphAreaList areaList, Color[] forcedColors, float rangeModifier, float borderParticleModifier, float innerParticleModifier, int particleTime) {
         int range = Math.round(this.range * rangeModifier);
         int antRange = Math.round(this.antRange * rangeModifier);
         if (colors != null || forcedColors != null) {
@@ -148,7 +145,7 @@ public class AphArea {
             if (position > 0) {
                 AphArea antArea = areaList.areas[position - 1];
 
-                antArea.showAreaParticles(level, x, y, areaList, forcedColors, rangeModifier, borderParticleModifier, innerParticleModifier, particleTime);
+                antArea.showParticles(level, x, y, areaList, forcedColors, rangeModifier, borderParticleModifier, innerParticleModifier, particleTime);
             }
 
         }
@@ -170,13 +167,9 @@ public class AphArea {
         return (item == null || !(item.item instanceof ToolItem)) ? areaHealing.getValue(0) : areaHealing.getValue(item.item.getUpgradeTier(item));
     }
 
-    public void execute(Mob attacker, Mob target, float modRange, int x, int y, boolean centerIsAttacker, InventoryItem item, ToolItem toolItem) {
-        float distanceToTarget = target.getDistance(attacker);
-        boolean reachMob = centerIsAttacker
-                ? ((attacker == target && position == 0) || (distanceToTarget <= (range * modRange) && distanceToTarget > (antRange * modRange)))
-                : (target.getDistance(x, y) <= (range * modRange) && target.getDistance(x, y) > (antRange * modRange));
-
-        if (reachMob) {
+    public void executeServer(Mob attacker, Mob target, float x, float y, float modRange, InventoryItem item, ToolItem toolItem) {
+        float distance = target.getDistance(x, y);
+        if ((position == 0 == isCenter(attacker, target, distance)) || (inRange(distance, modRange) && inVision(target, x, y))) {
             if (this.areaTypes.contains(AphAreaType.DAMAGE) && target != attacker && canAreaAttack(attacker, target)) {
                 target.isServerHit(getDamage(item), target.x - attacker.x, target.y - attacker.y, 0, attacker);
             }
@@ -202,11 +195,19 @@ public class AphArea {
         }
     }
 
-    public boolean canAreaAttack(Mob attacker, Mob target) {
-        if (attacker instanceof PlayerMob) {
-            return target.canBeTargeted(attacker, ((PlayerMob) attacker).getNetworkClient());
-        } else {
-            return target.canBeHit(attacker) && !attacker.isSameTeam(target);
-        }
+    public static boolean isCenter(Mob attacker, Mob target, float distance) {
+        return attacker == target && distance == 0;
+    }
+
+    public boolean inRange(float distance, float modRange) {
+        return distance <= (range * modRange) && distance > (antRange * modRange);
+    }
+
+    public static boolean inVision(Mob target, float x, float y) {
+        return !target.getLevel().collides(new Line2D.Float(x, y, target.x, target.y), new CollisionFilter().projectileCollision());
+    }
+
+    public static boolean canAreaAttack(Mob attacker, Mob target) {
+        return target.canBeTargeted(attacker, attacker.isPlayer ? ((PlayerMob) attacker).getNetworkClient() : null);
     }
 }

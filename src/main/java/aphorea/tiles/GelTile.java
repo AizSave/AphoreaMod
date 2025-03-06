@@ -33,11 +33,13 @@ public class GelTile extends EdgedTiledTexture {
         this.tilesHeight = 2;
     }
 
+    @Override
     protected void loadTextures() {
         super.loadTextures();
         this.texture = tileTextures.addTexture(GameTexture.fromFile("tiles/" + this.textureName));
     }
 
+    @Override
     public void addDrawables(LevelTileTerrainDrawOptions underLiquidList, LevelTileLiquidDrawOptions liquidList, LevelTileTerrainDrawOptions overLiquidList, List<LevelSortedDrawable> sortedList, Level level, int tileX, int tileY, GameCamera camera, TickManager tickManager) {
         super.addDrawables(underLiquidList, liquidList, overLiquidList, sortedList, level, tileX, tileY, camera, tickManager);
         if (tileY < level.height - 1 && level.isShore(tileX, tileY + 1) && !level.getTile(tileX, tileY + 1).isFloor) {
@@ -46,6 +48,7 @@ public class GelTile extends EdgedTiledTexture {
 
     }
 
+    @Override
     public void addBridgeDrawables(LevelTileTerrainDrawOptions sharedList, List<LevelSortedDrawable> sortedList, Level level, int tileX, int tileY, GameCamera camera, TickManager tickManager) {
         int drawX = camera.getTileDrawX(tileX);
         int drawY = camera.getTileDrawY(tileY);
@@ -63,6 +66,7 @@ public class GelTile extends EdgedTiledTexture {
 
     }
 
+    @Override
     protected boolean isMergeTile(Level level, int tileX, int tileY) {
         if (super.isMergeTile(level, tileX, tileY)) {
             return true;
@@ -72,6 +76,7 @@ public class GelTile extends EdgedTiledTexture {
         }
     }
 
+    @Override
     public ModifierValue<Float> getSpeedModifier(Mob mob) {
         if (mob.isPlayer && mob.buffManager.hasBuff("unstableperiapt")) {
             return super.getSpeedModifier(mob);
@@ -79,6 +84,7 @@ public class GelTile extends EdgedTiledTexture {
         return mob.isFlying() ? super.getSpeedModifier(mob) : new ModifierValue<>(BuffModifiers.SPEED, -0.5F);
     }
 
+    @Override
     public ListGameTooltips getItemTooltips(InventoryItem item, PlayerMob perspective) {
         ListGameTooltips tooltips = super.getItemTooltips(item, perspective);
         tooltips.add(Localization.translate("itemtooltip", "geltile"));

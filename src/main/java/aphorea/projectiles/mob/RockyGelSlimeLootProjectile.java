@@ -25,10 +25,12 @@ public class RockyGelSlimeLootProjectile extends RockyGelSlimeProjectile {
     public RockyGelSlimeLootProjectile() {
     }
 
+    @Override
     public void dropItem() {
         this.getLevel().entityManager.pickups.add((new InventoryItem("rockygel")).getPickupEntity(this.getLevel(), this.x, this.y));
     }
 
+    @Override
     public void addDrawables(List<LevelSortedDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, OrderableDrawables overlayList, Level level, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
         if (!this.removed()) {
             GameLight light = level.getLightLevel(this);

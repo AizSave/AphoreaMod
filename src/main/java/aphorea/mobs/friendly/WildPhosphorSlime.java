@@ -55,15 +55,18 @@ public class WildPhosphorSlime extends FriendlyMob {
         this.selectBox = new Rectangle(-16, -28 - getFlyingHeight(), 32, 34 + getFlyingHeight());
     }
 
+    @Override
     public void init() {
         super.init();
         this.ai = new BehaviourTreeAI<>(this, new WildPhosphorSlimeAI());
     }
 
+    @Override
     public LootTable getLootTable() {
         return lootTable;
     }
 
+    @Override
     public void clientTick() {
         super.clientTick();
         time++;
@@ -81,6 +84,7 @@ public class WildPhosphorSlime extends FriendlyMob {
         lightTime++;
     }
 
+    @Override
     public void serverTick() {
         super.serverTick();
         if (isScared(getLevel())) {
@@ -97,22 +101,27 @@ public class WildPhosphorSlime extends FriendlyMob {
         }
     }
 
+    @Override
     public PathDoorOption getPathDoorOption() {
         return this.getLevel() != null ? this.getLevel().regionManager.CANNOT_PASS_DOORS_OPTIONS : null;
     }
 
+    @Override
     public int getFlyingHeight() {
         return 20;
     }
 
+    @Override
     public boolean canTakeDamage() {
         return false;
     }
 
+    @Override
     public boolean canBeTargeted(Mob attacker, NetworkClient attackerClient) {
         return true;
     }
 
+    @Override
     public void addDrawables(List<MobDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, Level level, int x, int y, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
         super.addDrawables(list, tileList, topList, level, x, y, tickManager, camera, perspective);
         GameLight light = level.getLightLevel(getTileX(), getTileY());
@@ -152,16 +161,20 @@ public class WildPhosphorSlime extends FriendlyMob {
         tooltips.add(Localization.translate("mobtooltip", "usenet"));
     }
 
+    @Override
     public boolean isHealthBarVisible() {
         return false;
     }
 
+    @Override
     protected void playDeathSound() {
     }
 
+    @Override
     protected void playHitSound() {
     }
 
+    @Override
     public void spawnDamageText(int damage, int size, boolean isCrit) {
     }
 
@@ -202,6 +215,7 @@ public class WildPhosphorSlime extends FriendlyMob {
             writer.putNextFloat(y);
         }
 
+        @Override
         public void processClient(NetworkPacket packet, Client client) {
             if (client.getLevel() != null) {
                 apply(client.getLevel(), this.x, this.y);

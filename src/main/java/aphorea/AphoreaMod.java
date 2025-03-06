@@ -3,7 +3,7 @@ package aphorea;
 import aphorea.buffs.LowdsPoisonBuff;
 import aphorea.data.AphSwampLevelData;
 import aphorea.data.AphWorldData;
-import aphorea.items.healingtools.HealingStaff;
+import aphorea.items.saber.logic.SaberDashLevelEvent;
 import aphorea.journal.AphJournalChallenges;
 import aphorea.levelevents.*;
 import aphorea.mobs.friendly.WildPhosphorSlime;
@@ -109,6 +109,7 @@ public class AphoreaMod {
 
         // LevelEvents
         LevelEventRegistry.registerEvent("gelprojectilegroundeffect", GelProjectile.GelProjectileGroundEffectEvent.class);
+        LevelEventRegistry.registerEvent("saberdash", SaberDashLevelEvent.class);
 
         // Base Runes LevelEvents
         LevelEventRegistry.registerEvent("runeofdetonationevent", AphRuneOfDetonationEvent.class);
@@ -133,7 +134,6 @@ public class AphoreaMod {
         // Client only Packets
         PacketRegistry.registerPacket(AphSingleAreaShowPacket.class);
         PacketRegistry.registerPacket(LowdsPoisonBuff.LowdsPoisonBuffPacket.class);
-        PacketRegistry.registerPacket(HealingStaff.HealingStaffAreaParticlesPacket.class);
         PacketRegistry.registerPacket(WildPhosphorSlime.PhosphorSlimeParticlesPacket.class);
 
         // Controls

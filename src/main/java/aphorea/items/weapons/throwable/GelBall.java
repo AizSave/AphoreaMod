@@ -3,14 +3,12 @@ package aphorea.items.weapons.throwable;
 import aphorea.items.vanillaitemtypes.weapons.AphThrowToolItem;
 import aphorea.projectiles.toolitem.GelProjectile;
 import necesse.engine.localization.Localization;
-import necesse.engine.network.PacketReader;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameBlackboard;
 import necesse.engine.util.GameRandom;
-import necesse.entity.mobs.AttackAnimMob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
 import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
@@ -18,7 +16,6 @@ import necesse.entity.projectile.Projectile;
 import necesse.gfx.GameResources;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.PlayerInventorySlot;
 import necesse.level.maps.Level;
 
 public class GelBall extends AphThrowToolItem {

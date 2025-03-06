@@ -70,17 +70,20 @@ public class GelSlime extends AphDayHostileMob {
         selectBox = new Rectangle(-14, -7 - 14, 28, 28);
     }
 
+    @Override
     public void init() {
         super.init();
         ai = new BehaviourTreeAI<>(this, new CollisionOnlyPlayerChaserWandererAI<>(onlyDay ? () -> this.getServer().world.worldEntity.isNight() : null, 4 * 32, attack, attack_knockback, 40000));
         turnPhosphor = GameRandom.globalRandom.getChance(0.03F);
     }
 
+    @Override
     public void addSaveData(SaveData save) {
         super.addSaveData(save);
         save.addBoolean("turnPhosphor", this.turnPhosphor);
     }
 
+    @Override
     public void applyLoadData(LoadData save) {
         super.applyLoadData(save);
         this.turnPhosphor = save.getBoolean("turnPhosphor", false, false);

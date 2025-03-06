@@ -37,6 +37,7 @@ public class AphRuneOfUnstableGelSlimePacket extends Packet {
         writer.putNextInt(targetY);
     }
 
+    @Override
     public void processClient(NetworkPacket packet, Client client) {
         if (client.getLevel() != null) {
             ClientClient target = client.getClient(this.slot);
@@ -52,6 +53,7 @@ public class AphRuneOfUnstableGelSlimePacket extends Packet {
         }
     }
 
+    @Override
     public void processServer(NetworkPacket packet, Server server, ServerClient client) {
         if (client.slot == this.slot) {
             client.playerMob.setPos(targetX, targetY, true);

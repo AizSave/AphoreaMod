@@ -88,7 +88,7 @@ public class GoldenWandProjectile extends FollowingProjectile {
         super.updateTarget();
         if (traveledDistance > 20) {
             this.target = null;
-            target = AphDistances.findClosestMob(this.getOwner(), this::canHit, this.distance / 2);
+            target = AphDistances.findClosestMob(getLevel(), x, y, this.distance / 2, this::canHit);
         }
     }
 
@@ -123,16 +123,9 @@ public class GoldenWandProjectile extends FollowingProjectile {
         addShadowDrawables(tileList, drawX, drawY, light, getAngle(), texture.getWidth() / 2, 2);
     }
 
+    @Override
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
-        executeArea();
-    }
-
-
-    public void executeArea() {
-        if (this.getOwner() != null) {
-            areaList.executeAreas(this.getOwner(), 1, (int) x, (int) y, false, item, toolItem);
-        }
-        areaList.showAllAreaParticles(this.getLevel(), x, y);
+        areaList.execute(getOwner(), x, y);
     }
 
     @Override

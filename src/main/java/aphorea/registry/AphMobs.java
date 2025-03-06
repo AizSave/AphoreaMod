@@ -21,9 +21,9 @@ public class AphMobs {
         MobRegistry.registerMob("pinkwitch", PinkWitch.class, true);
         MobRegistry.registerMob("voidadept", VoidAdept.class, true);
         MobRegistry.registerMob("wildphosphorslime", WildPhosphorSlime.class, true);
-        MobRegistry.registerMob("copperdaggergoblin", CopperDaggerGoblin.class, true);
-        MobRegistry.registerMob("irondaggergoblin", IronDaggerGoblin.class, true);
-        MobRegistry.registerMob("golddaggergoblin", GoldDaggerGoblin.class, true);
+        MobRegistry.registerMob("copperdaggergoblin", DaggerGoblin.CopperDaggerGoblin.class, true);
+        MobRegistry.registerMob("irondaggergoblin", DaggerGoblin.IronDaggerGoblin.class, true);
+        MobRegistry.registerMob("golddaggergoblin", DaggerGoblin.GoldDaggerGoblin.class, true);
 
         // Bosses [Mobs]
         MobRegistry.registerMob("unstablegelslime", UnstableGelSlime.class, true, true);

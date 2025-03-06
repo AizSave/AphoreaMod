@@ -94,6 +94,7 @@ abstract public class DaggerProjectile extends Projectile {
         addShadowDrawables(tileList, drawX, drawY, light, getAngle(), texture.getWidth() / 2, 2);
     }
 
+    @Override
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
         super.doHitLogic(mob, object, x, y);
         if (this.isServer() && shouldDrop && stringItemID != null && gndData != null) {

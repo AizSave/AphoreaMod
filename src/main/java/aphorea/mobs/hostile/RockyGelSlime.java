@@ -3,8 +3,6 @@ package aphorea.mobs.hostile;
 import aphorea.projectiles.mob.RockyGelSlimeLootProjectile;
 import aphorea.projectiles.mob.RockyGelSlimeProjectile;
 import necesse.engine.gameLoop.tickManager.TickManager;
-import necesse.engine.network.server.Server;
-import necesse.engine.network.server.ServerClient;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.*;
 import necesse.entity.mobs.ai.behaviourTree.BehaviourTreeAI;
@@ -25,7 +23,6 @@ import necesse.level.maps.light.GameLight;
 import java.awt.*;
 import java.util.HashSet;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class RockyGelSlime extends HostileMob {
 
@@ -34,11 +31,6 @@ public class RockyGelSlime extends HostileMob {
 
     public static GameDamage rock_damage = new GameDamage(15);
     public static int rock_knockback = 25;
-
-    @Override
-    public boolean isValidSpawnLocation(Server server, ServerClient client, int targetX, int targetY) {
-        return super.isValidSpawnLocation(server, client, targetX, targetY);
-    }
 
     public static GameTexture texture;
 

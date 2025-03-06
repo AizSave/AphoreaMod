@@ -64,26 +64,31 @@ public class RuneOfCryoQueenProjectile extends PositionedCirclingProjectile {
 
     }
 
+    @Override
     public void setupSpawnPacket(PacketWriter writer) {
         super.setupSpawnPacket(writer);
         writer.putNextFloat(this.radius);
         writer.putNextBoolean(this.clockwise);
     }
 
+    @Override
     public void applySpawnPacket(PacketReader reader) {
         super.applySpawnPacket(reader);
         this.radius = reader.getNextFloat();
         this.clockwise = reader.getNextBoolean();
     }
 
+    @Override
     public float getRadius() {
         return this.radius;
     }
 
+    @Override
     public boolean rotatesClockwise() {
         return this.clockwise;
     }
 
+    @Override
     public void onMoveTick(Point2D.Float startPos, double movedDist) {
         super.onMoveTick(startPos, movedDist);
         this.radius = (float) ((double) this.radius + movedDist * 1.2);
@@ -99,10 +104,12 @@ public class RuneOfCryoQueenProjectile extends PositionedCirclingProjectile {
 
     }
 
+    @Override
     public Trail getTrail() {
         return null;
     }
 
+    @Override
     public void addDrawables(List<LevelSortedDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, OrderableDrawables overlayList, Level level, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
     }
 

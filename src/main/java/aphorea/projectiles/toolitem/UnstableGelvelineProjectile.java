@@ -69,6 +69,7 @@ public class UnstableGelvelineProjectile extends Projectile {
         this.setWidth(0, 20);
     }
 
+    @Override
     public Color getParticleColor() {
         return color;
     }
@@ -88,14 +89,7 @@ public class UnstableGelvelineProjectile extends Projectile {
     @Override
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
         super.doHitLogic(mob, object, x, y);
-        executeArea();
-    }
-
-    public void executeArea() {
-        if (this.getOwner() != null) {
-            areaList.executeAreas(this.getOwner(), 1, (int) x, (int) y, false, item, toolItem);
-        }
-        areaList.showAllAreaParticles(this.getLevel(), x, y);
+        areaList.execute(getOwner(), x, y);
     }
 
 

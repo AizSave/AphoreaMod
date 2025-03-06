@@ -3,18 +3,15 @@ package aphorea.items.misc;
 import aphorea.data.AphWorldData;
 import aphorea.items.vanillaitemtypes.AphMiscItem;
 import necesse.engine.localization.Localization;
-import necesse.engine.network.PacketReader;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.network.packet.PacketChatMessage;
 import necesse.engine.util.GameBlackboard;
 import necesse.engine.util.GameUtils;
-import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
 import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.PlayerInventorySlot;
 import necesse.level.maps.Level;
 
 public class GelSlimeNullifier extends AphMiscItem {

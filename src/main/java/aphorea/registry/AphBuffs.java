@@ -58,7 +58,6 @@ import necesse.gfx.camera.MainGameCamera;
 import necesse.gfx.gameFont.FontManager;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.PlayerInventorySlot;
 import necesse.level.maps.Level;
 
 import java.awt.*;
@@ -385,7 +384,7 @@ public class AphBuffs {
                 if (player.getDistance(targetX, targetY) > range) {
                     preventUsage = true;
                     if (level.isClient()) {
-                        new AphAreaList(new AphArea(range, level.isCave ? AphColors.palettePinkWitch[2] : AphColors.lighting)).showAllAreaParticles(level, player.x, player.y, 1F, 1F, 0F);
+                        new AphAreaList(new AphArea(range, level.isCave ? AphColors.palettePinkWitch[2] : AphColors.lighting)).executeClient(level, player.x, player.y, 1F, 1F, 0F);
                     }
                 } else if (level.isServer()) {
                     player.getLevel().entityManager.addLevelEvent(new AphRuneOfThunderEvent(player, targetX, targetY, getEffectNumber(player) / 100));
@@ -407,9 +406,9 @@ public class AphBuffs {
                                 .setDebuffArea((int) (getEffectNumber(player) * 1000), BuffRegistry.Debuffs.FROSTSLOW.getStringID())
                 );
                 if (level.isServer()) {
-                    areaList.executeAreas(player);
+                    areaList.executeServer(player);
                 } else if (level.isClient()) {
-                    areaList.showAllAreaParticles(level, player.x, player.y);
+                    areaList.executeClient(level, player.x, player.y);
                 }
             }
 
@@ -694,7 +693,7 @@ public class AphBuffs {
                 if (player.getDistance(targetX, targetY) > range) {
                     preventUsage = true;
                     if (level.isClient()) {
-                        new AphAreaList(new AphArea(range, AphColors.tungsten)).showAllAreaParticles(level, player.x, player.y, 1F, 1F, 0F);
+                        new AphAreaList(new AphArea(range, AphColors.tungsten)).executeClient(level, player.x, player.y, 1F, 1F, 0F);
                     }
                 } else if (level.getObject(targetX / 32, targetY / 32).isSolid || level.isTrialRoom) {
                     preventUsage = true;
@@ -885,7 +884,7 @@ public class AphBuffs {
                 if (player.getDistance(targetX, targetY) > range) {
                     preventUsage = true;
                     if (level.isClient()) {
-                        new AphAreaList(new AphArea(range, AphColors.paletteMotherSlime)).showAllAreaParticles(level, player.x, player.y, 1F, 1F, 0F);
+                        new AphAreaList(new AphArea(range, AphColors.paletteMotherSlime)).executeClient(level, player.x, player.y, 1F, 1F, 0F);
                     }
                 } else if (level.getObject(targetX / 32, targetY / 32).isSolid || level.isTrialRoom) {
                     preventUsage = true;

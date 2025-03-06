@@ -41,45 +41,30 @@ public class AphAreaList {
         return this;
     }
 
-    public void showAllAreaParticles(Level level, float x, float y, float rangeModifier, float borderParticleModifier, float innerParticleModifier, int particleTime) {
-        Arrays.stream(areas).forEach((AphArea area) -> area.showAreaParticles(level, x, y, this, null, rangeModifier, borderParticleModifier, innerParticleModifier, particleTime));
+    public void executeClient(Level level, float x, float y, float rangeModifier, float borderParticleModifier, float innerParticleModifier, int particleTime) {
+        Arrays.stream(areas).forEach((AphArea area) -> area.showParticles(level, x, y, this, null, rangeModifier, borderParticleModifier, innerParticleModifier, particleTime));
     }
 
-    public void showAllAreaParticles(Level level, float x, float y, float rangeModifier, float borderParticleModifier, float innerParticleModifier) {
-        showAllAreaParticles(level, x, y, rangeModifier, borderParticleModifier, innerParticleModifier, (int) (Math.random() * 200) + 900);
+    public void executeClient(Level level, float x, float y, float rangeModifier, float borderParticleModifier, float innerParticleModifier) {
+        executeClient(level, x, y, rangeModifier, borderParticleModifier, innerParticleModifier, (int) (Math.random() * 200) + 900);
     }
 
-    public void showAllAreaParticles(Level level, float x, float y, float rangeModifier, float particleModifier, int particleTime) {
-        showAllAreaParticles(level, x, y, rangeModifier, particleModifier, particleModifier, particleTime);
+    public void executeClient(Level level, float x, float y, float rangeModifier) {
+        executeClient(level, x, y, rangeModifier, 1, 0.2F, (int) (Math.random() * 200) + 900);
     }
 
-    public void showAllAreaParticles(Level level, float x, float y, float rangeModifier, float particleModifier) {
-        showAllAreaParticles(level, x, y, rangeModifier, particleModifier, particleModifier, (int) (Math.random() * 200) + 900);
+    public void executeClient(Level level, float x, float y) {
+        executeClient(level, x, y, 1);
     }
 
-    public void showAllAreaParticles(Level level, float x, float y, float rangeModifier, int particleTime) {
-        showAllAreaParticles(level, x, y, rangeModifier, 1, 0.2F, particleTime);
-    }
-
-    public void showAllAreaParticles(Level level, float x, float y, float rangeModifier) {
-        showAllAreaParticles(level, x, y, rangeModifier, 1, 0.2F, (int) (Math.random() * 200) + 900);
-    }
-
-    public void showAllAreaParticles(Level level, float x, float y) {
-        showAllAreaParticles(level, x, y, 1);
-    }
-
-    public void executeAreas(Mob attacker, float rangeModifier, int x, int y, boolean centerIsAttacker, @Nullable InventoryItem item, @Nullable ToolItem toolItem) {
+    public void executeServer(Mob attacker, float x, float y, float rangeModifier, @Nullable InventoryItem item, @Nullable ToolItem toolItem) {
         if (attacker.isServer()) {
-
             int range = Math.round(this.areas[this.areas.length - 1].range * rangeModifier);
-            float centerX = centerIsAttacker ? attacker.x : x;
-            float centerY = centerIsAttacker ? attacker.y : y;
 
-            attacker.getLevel().entityManager.streamAreaMobsAndPlayers(centerX, centerY, range).forEach(
+            attacker.getLevel().entityManager.streamAreaMobsAndPlayers(x, y, range).forEach(
                     (Mob target) -> {
                         for (AphArea area : this.areas) {
-                            area.execute(attacker, target, rangeModifier, x, y, centerIsAttacker, item, toolItem);
+                            area.executeServer(attacker, target, x, y, rangeModifier, item, toolItem);
                         }
                     }
             );
@@ -87,16 +72,37 @@ public class AphAreaList {
         }
     }
 
-    public void executeAreas(Mob attacker, float rangeModifier, int x, int y, boolean centerIsAttacker) {
-        executeAreas(attacker, rangeModifier, x, y, centerIsAttacker, null, null);
+    public void executeServer(Mob attacker, float x, float y, float rangeModifier) {
+        executeServer(attacker, x, y, rangeModifier, null, null);
     }
 
-    public void executeAreas(Mob attacker, float rangeModifier) {
-        executeAreas(attacker, rangeModifier, 0, 0, true);
+    public void executeServer(Mob attacker, float x, float y) {
+        executeServer(attacker, x, y, 1F);
     }
 
-    public void executeAreas(Mob attacker) {
-        executeAreas(attacker, 1);
+    public void executeServer(Mob attacker) {
+        executeServer(attacker, attacker.x, attacker.y);
+    }
+
+    public void execute(Mob attacker, float x, float y, float rangeModifier, @Nullable InventoryItem item, @Nullable ToolItem toolItem) {
+        if(attacker.isServer()) {
+            executeServer(attacker, x, y, rangeModifier, item, toolItem);
+        }
+        if(attacker.isClient()) {
+            executeClient(attacker.getLevel(), x, y, rangeModifier);
+        }
+    }
+
+    public void execute(Mob attacker, float x, float y, float rangeModifier) {
+        execute(attacker, x, y, rangeModifier, null, null);
+    }
+
+    public void execute(Mob attacker, float x, float y) {
+        execute(attacker, x, y, 1F);
+    }
+
+    public void execute(Mob attacker) {
+        execute(attacker, attacker.x, attacker.y);
     }
 
     public boolean someType(AphAreaType type) {

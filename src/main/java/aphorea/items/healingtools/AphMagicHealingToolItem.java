@@ -5,15 +5,14 @@ import aphorea.registry.AphEnchantments;
 import aphorea.utils.magichealing.AphMagicHealing;
 import aphorea.utils.magichealing.AphMagicHealingFunctions;
 import necesse.engine.localization.Localization;
-import necesse.engine.network.PacketReader;
+import necesse.engine.localization.message.GameMessage;
+import necesse.engine.localization.message.LocalMessage;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.Mob;
-import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
 import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.PlayerInventorySlot;
 import necesse.inventory.enchants.Enchantable;
 import necesse.inventory.enchants.ItemEnchantment;
 import necesse.inventory.enchants.ToolItemEnchantment;
@@ -37,28 +36,35 @@ abstract public class AphMagicHealingToolItem extends AphToolItem {
         this.setItemCategory(ItemCategory.craftingManager, "equipment", "tools", "healingtools");
     }
 
+    @Override
+    public GameMessage getItemAttackerCanUseError(ItemAttackerMob mob, InventoryItem item) {
+        return new LocalMessage("message", "cantusehealingtools");
+    }
+
     public int getHealing(@Nullable InventoryItem item) {
         return item == null ? magicHealing.getValue(0) : magicHealing.getValue(item.item.getUpgradeTier(item));
     }
 
-    public void healMob(PlayerMob player, Mob target, int healing, InventoryItem item) {
-        AphMagicHealing.healMob(player, target, healing, item, this);
+    public void healMob(ItemAttackerMob attackerMob, Mob target, int healing, InventoryItem item) {
+        AphMagicHealing.healMob(attackerMob, target, healing, item, this);
     }
 
-    public void healMob(PlayerMob player, Mob target, InventoryItem item) {
-        healMob(player, target, magicHealing.getValue(item.item.getUpgradeTier(item)), item);
+    public void healMob(ItemAttackerMob attackerMob, Mob target, InventoryItem item) {
+        healMob(attackerMob, target, magicHealing.getValue(item.item.getUpgradeTier(item)), item);
     }
 
     @Override
-    public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob player, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
-        onHealingToolItemUsed(player, item);
-        return super.onAttack(level, x, y, player, attackHeight, item, slot, animAttack, seed, mapContent);
+    public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
+        onHealingToolItemUsed(attackerMob, item);
+        return super.onAttack(level, x, y, attackerMob, attackHeight, item, slot, animAttack, seed, mapContent);
     }
 
+    @Override
     public ToolItemEnchantment getRandomEnchantment(GameRandom random, InventoryItem item) {
         return Enchantable.getRandomEnchantment(random, this.getValidEnchantmentIDs(item), this.getEnchantmentID(item), ToolItemEnchantment.class);
     }
 
+    @Override
     public boolean isValidEnchantment(InventoryItem item, ItemEnchantment enchantment) {
         return this.getValidEnchantmentIDs(item).contains(enchantment.getID());
     }
@@ -68,6 +74,7 @@ abstract public class AphMagicHealingToolItem extends AphToolItem {
         return healingEnchantments ? AphEnchantments.healingItemEnchantments : super.getValidEnchantmentIDs(item);
     }
 
+    @Override
     public String getTranslatedTypeName() {
         return Localization.translate("item", "healingtool");
     }
@@ -80,5 +87,4 @@ abstract public class AphMagicHealingToolItem extends AphToolItem {
         }
 
     }
-
 }

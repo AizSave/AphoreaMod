@@ -1,13 +1,10 @@
 package aphorea.items.weapons.melee.dagger;
 
 import aphorea.projectiles.toolitem.DaggerProjectile;
-import aphorea.utils.AphColors;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.inventory.InventoryItem;
 import necesse.level.maps.Level;
-
-import java.awt.*;
 
 public class DemonicDagger extends AphDaggerToolItem {
     public DemonicDagger() {

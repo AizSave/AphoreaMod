@@ -3,7 +3,6 @@ package aphorea.items.consumable;
 import aphorea.items.vanillaitemtypes.AphSimplePotionItem;
 import aphorea.utils.AphColors;
 import necesse.engine.localization.Localization;
-import necesse.engine.network.PacketReader;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameFont.FontOptions;

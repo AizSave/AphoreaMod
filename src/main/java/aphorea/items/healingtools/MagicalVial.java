@@ -5,14 +5,12 @@ import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
 import aphorea.utils.magichealing.AphMagicHealing;
 import necesse.engine.localization.Localization;
-import necesse.engine.network.PacketReader;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameBlackboard;
 import necesse.engine.util.GameUtils;
 import necesse.entity.ParticleTypeSwitcher;
-import necesse.entity.mobs.AttackAnimMob;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
@@ -22,7 +20,6 @@ import necesse.gfx.GameResources;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.PlayerInventorySlot;
 import necesse.inventory.item.DoubleItemStatTip;
 import necesse.inventory.item.ItemCategory;
 import necesse.inventory.item.ItemStatTipList;
@@ -79,7 +76,7 @@ public class MagicalVial extends AphMagicHealingToolItem {
         if (canHealMob && !perspective.isItemOnCooldown(this) && !inInDistance) {
             if (particlesAreaCount >= 3) {
                 particlesAreaCount = 0;
-                area.showAllAreaParticles(perspective.getLevel(), perspective.x, perspective.y, 1, 0.5F, 0, (int) (Math.random() * 200) + 400);
+                area.executeClient(perspective.getLevel(), perspective.x, perspective.y, 1, 0.5F, 0, (int) (Math.random() * 200) + 400);
             } else {
                 particlesAreaCount++;
             }

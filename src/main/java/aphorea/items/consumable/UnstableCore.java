@@ -4,7 +4,7 @@ import aphorea.items.vanillaitemtypes.AphConsumableItem;
 import necesse.engine.localization.Localization;
 import necesse.engine.localization.message.GameMessage;
 import necesse.engine.localization.message.LocalMessage;
-import necesse.engine.network.PacketReader;
+import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.network.packet.PacketChatMessage;
 import necesse.engine.network.packet.PacketMobChat;
 import necesse.engine.registries.MobRegistry;
@@ -32,7 +32,8 @@ public class UnstableCore extends AphConsumableItem {
         this.incinerationTimeMillis = 30000;
     }
 
-    public String canPlace(Level level, int x, int y, PlayerMob player, InventoryItem item, PacketReader contentReader) {
+    @Override
+    public String canPlace(Level level, int x, int y, PlayerMob player, InventoryItem item, GNDItemMap mapContent) {
         if (level.isClient()) {
             return null;
         } else if (level instanceof IncursionLevel) {
@@ -67,7 +68,8 @@ public class UnstableCore extends AphConsumableItem {
         }
     }
 
-    public InventoryItem onPlace(Level level, int x, int y, PlayerMob player, InventoryItem item, PacketReader contentReader) {
+    @Override
+    public InventoryItem onPlace(Level level, int x, int y, PlayerMob player, int seed, InventoryItem item, GNDItemMap mapContent) {
         if (level.isServer()) {
             if (level instanceof IncursionLevel) {
                 GameMessage summonError = ((IncursionLevel) level).canSummonBoss("unstablegelslime");
@@ -117,7 +119,8 @@ public class UnstableCore extends AphConsumableItem {
         return item;
     }
 
-    public InventoryItem onAttemptPlace(Level level, int x, int y, PlayerMob player, InventoryItem item, PacketReader contentReader, String error) {
+    @Override
+    public InventoryItem onAttemptPlace(Level level, int x, int y, PlayerMob player, InventoryItem item, GNDItemMap mapContent, String error) {
         if (level.isServer() && player != null && player.isServerClient() && error.equals("inincursion")) {
             player.getServerClient().sendChatMessage(new LocalMessage("misc", "cannotsummoninincursion"));
         } else {
@@ -152,6 +155,7 @@ public class UnstableCore extends AphConsumableItem {
         return item;
     }
 
+    @Override
     public String getTranslatedTypeName() {
         return Localization.translate("item", "relic");
     }

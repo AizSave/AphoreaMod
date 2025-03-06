@@ -5,7 +5,6 @@ import aphorea.utils.AphColors;
 import aphorea.utils.AphDistances;
 import aphorea.utils.magichealing.AphMagicHealing;
 import necesse.engine.gameLoop.tickManager.TickManager;
-import necesse.engine.network.server.ServerClient;
 import necesse.engine.util.GameUtils;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
@@ -24,7 +23,6 @@ import necesse.level.maps.light.GameLight;
 import java.awt.*;
 import java.awt.geom.Line2D;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -80,7 +78,7 @@ public class WoodenWandProjectile extends FollowingProjectile {
         super.updateTarget();
         if (traveledDistance > 20) {
             this.target = null;
-            target = AphDistances.findClosestMob(this.getOwner(), this::canHit, this.distance / 2);
+            target = AphDistances.findClosestMob(getLevel(), x, y, this.distance / 2, this::canHit);
         }
     }
 
@@ -137,13 +135,10 @@ public class WoodenWandProjectile extends FollowingProjectile {
             this.remove();
         }
 
-        Iterator var4;
         if (this.isServer() && this.canBreakObjects) {
             ArrayList<LevelObjectHit> hits = this.getLevel().getCollisions(hitbox, this.getAttackThroughCollisionFilter());
-            var4 = hits.iterator();
 
-            while (var4.hasNext()) {
-                LevelObjectHit hit = (LevelObjectHit) var4.next();
+            for (LevelObjectHit hit : hits) {
                 if (!hit.invalidPos() && hit.getObject().attackThrough) {
                     this.attackThrough(hit);
                 }
@@ -151,26 +146,16 @@ public class WoodenWandProjectile extends FollowingProjectile {
         }
 
         if (this.canHitMobs) {
-            List<Mob> targets = (List) this.customStreamTargets(hitbox).filter((m) -> {
-                return this.canHit(m) && hitbox.intersects(m.getHitBox());
-            }).filter((m) -> {
-                return !this.isSolid || m.canHitThroughCollision() || !this.perpLineCollidesWithLevel(m.x, m.y);
-            }).collect(Collectors.toCollection(LinkedList::new));
-            var4 = targets.iterator();
+            List<Mob> targets = this.customStreamTargets(hitbox).filter((m) -> this.canHit(m) && hitbox.intersects(m.getHitBox())).filter((m) -> !this.isSolid || m.canHitThroughCollision() || !this.perpLineCollidesWithLevel(m.x, m.y)).collect(Collectors.toCollection(LinkedList::new));
 
-            while (var4.hasNext()) {
-                Mob target = (Mob) var4.next();
-                this.onHit(target, (LevelObjectHit) null, this.x, this.y, false, (ServerClient) null);
+            for (Mob target : targets) {
+                this.onHit(target, null, this.x, this.y, false, null);
             }
         }
 
     }
 
     protected Stream<Mob> customStreamTargets(Shape hitBounds) {
-        return Stream.concat(this.getLevel().entityManager.mobs.streamInRegionsShape(hitBounds, 1), GameUtils.streamNetworkClients(this.getLevel()).filter((c) -> {
-            return !c.isDead() && c.hasSpawned();
-        }).map((sc) -> {
-            return sc.playerMob;
-        }));
+        return Stream.concat(this.getLevel().entityManager.mobs.streamInRegionsShape(hitBounds, 1), GameUtils.streamNetworkClients(this.getLevel()).filter((c) -> !c.isDead() && c.hasSpawned()).map((sc) -> sc.playerMob));
     }
 }
