@@ -1,6 +1,6 @@
-package aphorea.items.saber.logic;
+package aphorea.items.weapons.melee.saber.logic;
 
-import aphorea.items.saber.AphSaberToolItem;
+import aphorea.items.weapons.melee.saber.AphSaberToolItem;
 import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.util.GameMath;
 import necesse.engine.util.GameRandom;

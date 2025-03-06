@@ -1,4 +1,4 @@
-package aphorea.items.saber.logic;
+package aphorea.items.weapons.melee.saber.logic;
 
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;

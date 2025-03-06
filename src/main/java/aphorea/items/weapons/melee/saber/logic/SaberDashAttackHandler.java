@@ -1,6 +1,6 @@
-package aphorea.items.saber.logic;
+package aphorea.items.weapons.melee.saber.logic;
 
-import aphorea.items.saber.AphSaberToolItem;
+import aphorea.items.weapons.melee.saber.AphSaberToolItem;
 import aphorea.registry.AphBuffs;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
@@ -118,12 +118,12 @@ public class SaberDashAttackHandler extends MousePositionAttackHandler {
             if (this.attackerMob.isClient()) {
                 int particles = 35;
                 float anglePerParticle = 360.0F / (float) particles;
-                ParticleTypeSwitcher typeSwitcher = new ParticleTypeSwitcher(new Particle.GType[]{Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC});
+                ParticleTypeSwitcher typeSwitcher = new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC);
 
                 for (int i = 0; i < particles; ++i) {
                     int angle = (int) ((float) i * anglePerParticle + GameRandom.globalRandom.nextFloat() * anglePerParticle);
-                    float dx = (float) Math.sin(Math.toRadians((double) angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
-                    float dy = (float) Math.cos(Math.toRadians((double) angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50) * 0.8F;
+                    float dx = (float) Math.sin(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
+                    float dy = (float) Math.cos(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50) * 0.8F;
                     this.attackerMob.getLevel().entityManager.addParticle(this.attackerMob, typeSwitcher.next()).movesFriction(dx, dy, 0.8F).color(this.particleColors).heightMoves(0.0F, 30.0F).lifeTime(500);
                 }
 
@@ -154,7 +154,6 @@ public class SaberDashAttackHandler extends MousePositionAttackHandler {
             }
 
             InventoryItem attackItem = this.item.copy();
-            attackItem.getGndData().setBoolean("sliceDash", true);
             attackItem.getGndData().setFloat("chargePercent", chargePercent);
             this.attackerMob.showAttackAndSendAttacker(attackItem, this.lastX, this.lastY, 0, this.seed);
             Point2D.Float dir = GameMath.normalize((float) this.lastX - this.attackerMob.x, (float) this.lastY - this.attackerMob.y);

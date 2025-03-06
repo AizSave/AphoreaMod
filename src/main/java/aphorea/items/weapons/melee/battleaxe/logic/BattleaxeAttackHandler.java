@@ -1,4 +1,4 @@
-package aphorea.items.battleaxe.logic;
+package aphorea.items.weapons.melee.battleaxe.logic;
 
 import necesse.engine.util.GameMath;
 import necesse.engine.util.GameRandom;

@@ -1,4 +1,4 @@
-package aphorea.items.battleaxe;
+package aphorea.items.weapons.melee.battleaxe;
 
 import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;

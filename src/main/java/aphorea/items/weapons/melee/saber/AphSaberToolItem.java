@@ -1,8 +1,8 @@
-package aphorea.items.saber;
+package aphorea.items.weapons.melee.saber;
 
-import aphorea.items.saber.logic.SaberAttackHandler;
-import aphorea.items.saber.logic.SaberChargeLevel;
-import aphorea.items.saber.logic.SaberDashAttackHandler;
+import aphorea.items.weapons.melee.saber.logic.SaberAttackHandler;
+import aphorea.items.weapons.melee.saber.logic.SaberChargeLevel;
+import aphorea.items.weapons.melee.saber.logic.SaberDashAttackHandler;
 import aphorea.items.vanillaitemtypes.weapons.AphGreatswordToolItem;
 import aphorea.registry.AphBuffs;
 import necesse.engine.localization.Localization;
@@ -105,15 +105,13 @@ abstract public class AphSaberToolItem extends AphGreatswordToolItem implements 
             int animTime = (int) ((float) this.getAttackAnimTime(item, attackerMob));
             mapContent.setBoolean("chargeUp", true);
             attackerMob.startAttackHandler((new SaberDashAttackHandler(attackerMob, slot, item, this, animTime, new Color(190, 220, 220), seed)).startFromInteract());
-            return item;
         } else {
             item.getGndData().setBoolean("chargeUp", false);
-            item.getGndData().setBoolean("sliceDash", false);
             if (animAttack == 0) {
                 attackerMob.startAttackHandler(new SaberAttackHandler(attackerMob, slot, item, this, seed, x, y, attackerMob.isPlayer ? this.chargeLevels : this.nonPlayerChargeLevels));
             }
-            return item;
         }
+        return item;
     }
     @Override
     public String getTranslatedTypeName() {

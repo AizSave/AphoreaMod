@@ -1,4 +1,4 @@
-package aphorea.items.saber;
+package aphorea.items.weapons.melee.saber;
 
 import aphorea.projectiles.toolitem.AircutProjectile;
 import aphorea.registry.AphBuffs;

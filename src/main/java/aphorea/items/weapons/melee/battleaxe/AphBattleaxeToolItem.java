@@ -1,6 +1,6 @@
-package aphorea.items.battleaxe;
+package aphorea.items.weapons.melee.battleaxe;
 
-import aphorea.items.battleaxe.logic.BattleaxeAttackHandler;
+import aphorea.items.weapons.melee.battleaxe.logic.BattleaxeAttackHandler;
 import aphorea.items.vanillaitemtypes.weapons.AphGreatswordToolItem;
 import aphorea.registry.AphBuffs;
 import necesse.engine.localization.Localization;
