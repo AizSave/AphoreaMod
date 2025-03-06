@@ -46,6 +46,9 @@ import aphorea.items.weapons.melee.sword.VoidHammer;
 import aphorea.items.weapons.range.blowgun.Blowgun;
 import aphorea.items.weapons.range.greatbow.GelGreatbow;
 import aphorea.items.weapons.range.greatbow.UnstableGelGreatbow;
+import aphorea.items.weapons.range.sling.FireSling;
+import aphorea.items.weapons.range.sling.FrozenSling;
+import aphorea.items.weapons.range.sling.Sling;
 import aphorea.items.weapons.summoner.VolatileGelStaff;
 import aphorea.items.weapons.throwable.GelBall;
 import aphorea.items.weapons.throwable.GelBallGroup;
@@ -88,9 +91,9 @@ public class AphItems {
 
         // Range Weapons
         registerItem("blowgun", new Blowgun());
-        registerItem("sling", new MatItem(1));
-        registerItem("firesling", new MatItem(1));
-        registerItem("frozensling", new MatItem(1));
+        registerItem("sling", new Sling());
+        registerItem("firesling", new FireSling());
+        registerItem("frozensling", new FrozenSling());
         registerItem("gelgreatbow", new GelGreatbow());
         registerItem("unstablegelgreatbow", new UnstableGelGreatbow());
 
