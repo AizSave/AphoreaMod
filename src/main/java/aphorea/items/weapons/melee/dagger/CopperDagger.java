@@ -1,8 +1,11 @@
 package aphorea.items.weapons.melee.dagger;
 
 import aphorea.projectiles.toolitem.DaggerProjectile;
+import aphorea.utils.AphColors;
 import necesse.entity.mobs.PlayerMob;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
+import necesse.gfx.drawOptions.itemAttack.ItemAttackDrawOptions;
 import necesse.inventory.InventoryItem;
 import necesse.level.maps.Level;
 
@@ -20,15 +23,31 @@ public class CopperDagger extends AphDaggerToolItem {
         this.knockback.setBaseValue(25);
     }
 
-    public Projectile getProjectile(Level level, int x, int y, PlayerMob player, InventoryItem item, float throwingVelocity, boolean shouldDrop) {
-        return new DaggerProjectile.CopperDaggerProjectile(level, player,
-                player.x, player.y,
+    @Override
+    public ItemAttackDrawOptions setupItemSpriteAttackDrawOptions(ItemAttackDrawOptions options, InventoryItem item, PlayerMob player, int mobDir, float attackDirX, float attackDirY, float attackProgress, Color itemColor) {
+        return super.setupItemSpriteAttackDrawOptions(options, item, player, mobDir, attackDirX, attackDirY, attackProgress, itemColor);
+    }
+
+    @Override
+    public Projectile getProjectile(Level level, int x, int y, ItemAttackerMob attackerMob, InventoryItem item, float throwingVelocity, boolean shouldDrop) {
+        return new DaggerProjectile.CopperDaggerProjectile(level, attackerMob,
+                attackerMob.x, attackerMob.y,
                 x, y,
-                100 * throwingVelocity, 300,
+                100 * throwingVelocity, projectileRange(),
                 getAttackDamage(item),
-                getKnockback(item, player),
+                getKnockback(item, attackerMob),
                 shouldDrop,
                 item.item.getStringID(), item.getGndData()
         );
+    }
+
+    @Override
+    public int projectileRange() {
+        return 300;
+    }
+
+    @Override
+    public Color getSecondaryAttackColor() {
+        return AphColors.copper;
     }
 }

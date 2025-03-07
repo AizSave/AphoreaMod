@@ -1,10 +1,14 @@
 package aphorea.items.weapons.melee.dagger;
 
 import aphorea.projectiles.toolitem.DaggerProjectile;
+import aphorea.utils.AphColors;
 import necesse.entity.mobs.PlayerMob;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.inventory.InventoryItem;
 import necesse.level.maps.Level;
+
+import java.awt.*;
 
 public class GoldDagger extends AphDaggerToolItem {
     public GoldDagger() {
@@ -18,15 +22,26 @@ public class GoldDagger extends AphDaggerToolItem {
         this.knockback.setBaseValue(25);
     }
 
-    public Projectile getProjectile(Level level, int x, int y, PlayerMob player, InventoryItem item, float throwingVelocity, boolean shouldDrop) {
-        return new DaggerProjectile.GoldDaggerProjectile(level, player,
-                player.x, player.y,
+    @Override
+    public Projectile getProjectile(Level level, int x, int y, ItemAttackerMob attackerMob, InventoryItem item, float throwingVelocity, boolean shouldDrop) {
+        return new DaggerProjectile.GoldDaggerProjectile(level, attackerMob,
+                attackerMob.x, attackerMob.y,
                 x, y,
-                200 * throwingVelocity, 300,
+                200 * throwingVelocity, projectileRange(),
                 getAttackDamage(item),
-                getKnockback(item, player),
+                getKnockback(item, attackerMob),
                 shouldDrop,
                 item.item.getStringID(), item.getGndData()
         );
+    }
+
+    @Override
+    public int projectileRange() {
+        return 300;
+    }
+
+    @Override
+    public Color getSecondaryAttackColor() {
+        return AphColors.gold;
     }
 }
