@@ -18,6 +18,7 @@ import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.ItemControllerInteract;
 import necesse.inventory.item.ItemInteractAction;
+import necesse.inventory.item.toolItem.projectileToolItem.bowProjectileToolItem.greatbowProjectileToolItem.GreatbowProjectileToolItem;
 import necesse.level.maps.Level;
 
 import java.awt.*;
@@ -70,7 +71,7 @@ abstract public class AphGreatswordSecondarySpinToolItem extends AphGreatswordTo
         if (!attackerMob.isPlayer && this.canDash(attackerMob)) {
             mapContent.setBoolean("chargeUp", true);
             secondaryAttack = true;
-            attackerMob.startAttackHandler((new GreatswordSecondarySpinAttackHandler<>(attackerMob, slot, item, this, 2000, spinAttackColor, seed)).startFromInteract());
+            attackerMob.startAttackHandler((new GreatswordSecondarySpinAttackHandler<>(attackerMob, slot, item, this, 2000, spinAttackColor, seed)));
         } else {
             item.getGndData().setBoolean("chargeUp", false);
             secondaryAttack = false;
@@ -130,5 +131,4 @@ abstract public class AphGreatswordSecondarySpinToolItem extends AphGreatswordTo
     public float getSwingRotationAngle(InventoryItem item, int dir) {
         return secondaryAttack ? 360.0F : 150.0F;
     }
-
 }

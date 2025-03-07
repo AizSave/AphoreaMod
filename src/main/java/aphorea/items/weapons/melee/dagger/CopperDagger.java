@@ -1,7 +1,9 @@
 package aphorea.items.weapons.melee.dagger;
 
 import aphorea.projectiles.toolitem.DaggerProjectile;
+import aphorea.utils.AphColors;
 import necesse.entity.mobs.PlayerMob;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.gfx.drawOptions.itemAttack.ItemAttackDrawOptions;
 import necesse.inventory.InventoryItem;
@@ -26,15 +28,26 @@ public class CopperDagger extends AphDaggerToolItem {
         return super.setupItemSpriteAttackDrawOptions(options, item, player, mobDir, attackDirX, attackDirY, attackProgress, itemColor);
     }
 
-    public Projectile getProjectile(Level level, int x, int y, PlayerMob player, InventoryItem item, boolean shouldDrop) {
-        return new DaggerProjectile.CopperDaggerProjectile(level, player,
-                player.x, player.y,
+    @Override
+    public Projectile getProjectile(Level level, int x, int y, ItemAttackerMob attackerMob, InventoryItem item, boolean shouldDrop) {
+        return new DaggerProjectile.CopperDaggerProjectile(level, attackerMob,
+                attackerMob.x, attackerMob.y,
                 x, y,
-                100, 300,
+                100, projectileRange(),
                 getAttackDamage(item),
-                getKnockback(item, player),
+                getKnockback(item, attackerMob),
                 shouldDrop,
                 item.item.getStringID(), item.getGndData()
         );
+    }
+
+    @Override
+    public int projectileRange() {
+        return 300;
+    }
+
+    @Override
+    public Color getSecondaryAttackColor() {
+        return AphColors.copper;
     }
 }

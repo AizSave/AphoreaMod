@@ -1,8 +1,6 @@
-package aphorea.items.weapons.range.sling.logic;
+package aphorea.items.weapons.melee.dagger.logic;
 
-import aphorea.items.weapons.range.sling.AphSlingToolItem;
-import aphorea.utils.AphColors;
-import necesse.engine.network.gameNetworkData.GNDItemMap;
+import aphorea.items.weapons.melee.dagger.AphDaggerToolItem;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameMath;
@@ -22,50 +20,24 @@ import necesse.inventory.item.ItemAttackerWeaponItem;
 import java.awt.*;
 import java.awt.geom.Point2D;
 
-public class SlingAttackHandler extends MousePositionAttackHandler {
+public class DaggerSecondaryAttackHandler extends MousePositionAttackHandler {
     public int chargeTime;
     public boolean fullyCharged;
-    public AphSlingToolItem toolItem;
+    public AphDaggerToolItem toolItem;
     public long startTime;
     public InventoryItem item;
     public int seed;
     public boolean endedByInteract;
     protected int endAttackBuffer;
 
-    private float angle_v;
-    private float angle;
-
-    public void restartAngle() {
-        angle_v = 4;
-        angle = 0;
-    }
-
-    public void moveAngle() {
-        angle += angle_v;
-        if (angle >= 360) {
-            angle = angle - 360;
-        }
-    }
-
-    public void increaseAngleM() {
-        if (angle_v < 22.5F) {
-            angle_v += 0.2F;
-            if (angle_v > 22.5F) {
-                angle_v = 22.5F;
-            }
-        }
-    }
-
-
-    public SlingAttackHandler(ItemAttackerMob attackerMob, ItemAttackSlot slot, InventoryItem item, AphSlingToolItem toolItem, int chargeTime, int seed) {
+    public DaggerSecondaryAttackHandler(ItemAttackerMob attackerMob, ItemAttackSlot slot, InventoryItem item, AphDaggerToolItem toolItem, int chargeTime, int seed) {
         super(attackerMob, slot, 20);
         this.item = item;
         this.toolItem = toolItem;
-        this.chargeTime = chargeTime;
         this.seed = seed;
         this.startTime = attackerMob.getWorldEntity().getLocalTime();
 
-        restartAngle();
+        this.chargeTime = chargeTime;
     }
 
     public long getTimeSinceStart() {
@@ -85,15 +57,11 @@ public class SlingAttackHandler extends MousePositionAttackHandler {
     public void onUpdate() {
         super.onUpdate();
 
-        this.moveAngle();
-        this.increaseAngleM();
-
         Point2D.Float dir = GameMath.normalize((float) this.lastX - this.attackerMob.x, (float) this.lastY - this.attackerMob.y);
         float chargePercent = this.getChargePercent();
         InventoryItem showItem = this.item.copy();
         showItem.getGndData().setBoolean("charging", true);
         showItem.getGndData().setFloat("chargePercent", chargePercent);
-        showItem.getGndData().setFloat("showAngle", angle);
         this.attackerMob.showAttackAndSendAttacker(showItem, this.lastX, this.lastY, 0, this.seed);
 
         if (chargePercent >= 1.0F) {
@@ -107,7 +75,7 @@ public class SlingAttackHandler extends MousePositionAttackHandler {
             }
 
             if (this.attackerMob.isClient()) {
-                this.attackerMob.getLevel().entityManager.addParticle(this.attackerMob.x + dir.x * 16.0F + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), this.attackerMob.y + 4.0F + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(this.attackerMob.dx / 10.0F, this.attackerMob.dy / 10.0F).color(AphColors.leather).height(20.0F - dir.y * 16.0F);
+                this.attackerMob.getLevel().entityManager.addParticle(this.attackerMob.x + dir.x * 16.0F + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), this.attackerMob.y + 4.0F + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(this.attackerMob.dx / 10.0F, this.attackerMob.dy / 10.0F).color(toolItem.getSecondaryAttackColor()).height(20.0F - dir.y * 16.0F);
             }
 
             if (!this.fullyCharged) {
@@ -121,13 +89,14 @@ public class SlingAttackHandler extends MousePositionAttackHandler {
                         int angle = (int) ((float) i * anglePerParticle + GameRandom.globalRandom.nextFloat() * anglePerParticle);
                         float dx = (float) Math.sin(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
                         float dy = (float) Math.cos(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50) * 0.8F;
-                        this.attackerMob.getLevel().entityManager.addParticle(this.attackerMob, typeSwitcher.next()).movesFriction(dx, dy, 0.8F).color(AphColors.leather).heightMoves(0.0F, 30.0F).lifeTime(500);
+                        this.attackerMob.getLevel().entityManager.addParticle(this.attackerMob, typeSwitcher.next()).movesFriction(dx, dy, 0.8F).color(toolItem.getSecondaryAttackColor()).heightMoves(0.0F, 30.0F).lifeTime(500);
                     }
 
                     SoundManager.playSound(GameResources.tick, SoundEffect.effect(this.attackerMob).volume(0.1F).pitch(2.5F));
                 }
             }
         }
+
     }
 
     public void onMouseInteracted(int levelX, int levelY) {
@@ -143,6 +112,7 @@ public class SlingAttackHandler extends MousePositionAttackHandler {
     public void onEndAttack(boolean bySelf) {
         float chargePercent = this.getChargePercent();
         if (!this.endedByInteract && chargePercent >= 1F) {
+
             if (this.attackerMob.isPlayer) {
                 ((PlayerMob) this.attackerMob).constantAttack = true;
             }
@@ -160,7 +130,7 @@ public class SlingAttackHandler extends MousePositionAttackHandler {
                 SoundManager.playSound(GameResources.run, SoundEffect.effect(this.attackerMob));
             }
 
-            this.toolItem.doAttack(this.attackerMob.getLevel(), this.lastX, this.lastY, this.attackerMob, attackItem, this.seed);
+            this.toolItem.doSecondaryAttack(this.attackerMob.getLevel(), this.lastX, this.lastY, this.attackerMob, attackItem, this.slot, this.seed);
 
             for (ActiveBuff b : this.attackerMob.buffManager.getArrayBuffs()) {
                 b.onItemAttacked(this.lastX, this.lastY, this.attackerMob, this.attackerMob.getCurrentAttackHeight(), attackItem, this.slot, 0);

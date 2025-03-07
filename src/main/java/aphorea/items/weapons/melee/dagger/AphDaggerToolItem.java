@@ -1,5 +1,6 @@
 package aphorea.items.weapons.melee.dagger;
 
+import aphorea.items.weapons.melee.dagger.logic.DaggerSecondaryAttackHandler;
 import aphorea.registry.AphBuffs;
 import aphorea.registry.AphEnchantments;
 import aphorea.registry.AphModifiers;
@@ -8,6 +9,7 @@ import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.util.GameBlackboard;
 import necesse.engine.util.GameRandom;
+import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
@@ -17,6 +19,7 @@ import necesse.gfx.drawOptions.itemAttack.ItemAttackDrawOptions;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.InventorySlot;
+import necesse.inventory.PlayerInventorySlot;
 import necesse.inventory.enchants.Enchantable;
 import necesse.inventory.enchants.ItemEnchantment;
 import necesse.inventory.enchants.ToolItemEnchantment;
@@ -24,7 +27,9 @@ import necesse.inventory.item.ItemInteractAction;
 import necesse.inventory.item.toolItem.spearToolItem.SpearToolItem;
 import necesse.level.maps.Level;
 
+import java.awt.*;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public abstract class AphDaggerToolItem extends SpearToolItem implements ItemInteractAction {
@@ -42,6 +47,7 @@ public abstract class AphDaggerToolItem extends SpearToolItem implements ItemInt
     public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
         attackerMob.buffManager.addBuff(new ActiveBuff(AphBuffs.DAGGER_ATTACK, attackerMob, this.getAttackAnimTime(item, attackerMob), null), false);
         return super.onAttack(level, x, y, attackerMob, attackHeight, item, slot, animAttack, seed, mapContent);
+
     }
 
     @Override
@@ -65,7 +71,7 @@ public abstract class AphDaggerToolItem extends SpearToolItem implements ItemInt
         drawOptions.pointRotation(attackDirX, attackDirY);
 
         float animation;
-        if (item.getGndData().getBoolean("isCharging")) {
+        if (item.getGndData().getBoolean("charging")) {
             animation = item.getGndData().getFloat("chargePercent") / 2 + 0.5F;
         } else {
             animation = attackProgress;
@@ -82,7 +88,7 @@ public abstract class AphDaggerToolItem extends SpearToolItem implements ItemInt
 
     @Override
     public void showAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, int animAttack, int seed, GNDItemMap mapContent) {
-        if (!item.getGndData().getBoolean("isCharging")) {
+        if (!item.getGndData().getBoolean("charging")) {
             super.showAttack(level, x, y, attackerMob, attackHeight, item, animAttack, seed, mapContent);
         }
     }
@@ -96,27 +102,33 @@ public abstract class AphDaggerToolItem extends SpearToolItem implements ItemInt
         return !attackerMob.isRiding() && !attackerMob.isAttacking && !attackerMob.buffManager.hasBuff(AphBuffs.SPIN_ATTACK_COOLDOWN);
     }
 
-    public void doSecondaryAttack(Level level, int x, int y, PlayerMob player, InventoryItem item, int seed) {
-        if (item != null) {
-            InventorySlot slot = player.getInv().streamInventorySlots(false, false, false, false).filter(
-                    inventorySlot -> inventorySlot.getItem() == item
-            ).findFirst().orElse(null);
-            if (slot != null) {
-                boolean throwItem = !getEnchantment(item).getModifier(AphModifiers.LOYAL);
+    @Override
+    public InventoryItem onLevelInteract(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int seed, GNDItemMap mapContent) {
+        attackerMob.startAttackHandler((new DaggerSecondaryAttackHandler(attackerMob, slot, item, this, getAttackAnimTime(item, attackerMob) / 2, seed)).startFromInteract());
+        return item;
+    }
 
-                if (slot.isItemLocked() && throwItem) {
+    public void doSecondaryAttack(Level level, int x, int y, ItemAttackerMob attackerMob, InventoryItem item, ItemAttackSlot itemAttackSlot, int seed) {
+        if(level.isServer()) {
+            boolean throwItem = !loyal(item);
+
+            if(throwItem && attackerMob.isPlayer) {
+                PlayerMob player = (PlayerMob) attackerMob;
+                if(player.attackSlot.isItemLocked(player.getInv())) {
                     player.getServerClient().sendChatMessage(Localization.translate("message", "cannottrhowlockeditem"));
-                } else if (level.isServer()) {
-                    Projectile projectile = this.getProjectile(level, x, y, player, item, throwItem);
-                    GameRandom random = new GameRandom(seed);
-                    projectile.resetUniqueID(random);
-                    level.entityManager.projectiles.addHidden(projectile);
+                    return;
+                }
 
-                    level.getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
+            }
 
-                    if (throwItem) {
-                        slot.clearSlot();
-                    }
+            if (level.isServer()) {
+                Projectile projectile = this.getProjectile(level, x, y, attackerMob, item, throwItem);
+                GameRandom random = new GameRandom(seed);
+                projectile.resetUniqueID(random);
+                level.entityManager.projectiles.addHidden(projectile);
+                level.getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
+                if(throwItem) {
+                    itemAttackSlot.setItem(null);
                 }
             }
         }
@@ -139,6 +151,14 @@ public abstract class AphDaggerToolItem extends SpearToolItem implements ItemInt
         return enchantments;
     }
 
-    public abstract Projectile getProjectile(Level level, int x, int y, PlayerMob player, InventoryItem item, boolean shouldDrop);
+    public boolean loyal(InventoryItem item) {
+        return getEnchantment(item).getModifier(AphModifiers.LOYAL);
+    }
+
+    public abstract Projectile getProjectile(Level level, int x, int y, ItemAttackerMob attackerMob, InventoryItem item, boolean shouldDrop);
+
+    public abstract Color getSecondaryAttackColor();
+
+    public abstract int projectileRange();
 
 }

@@ -104,7 +104,7 @@ abstract public class AphSaberToolItem extends AphGreatswordToolItem implements 
         if (!attackerMob.isPlayer && this.canDash(attackerMob)) {
             int animTime = (int) ((float) this.getAttackAnimTime(item, attackerMob));
             mapContent.setBoolean("chargeUp", true);
-            attackerMob.startAttackHandler((new SaberDashAttackHandler(attackerMob, slot, item, this, animTime, new Color(190, 220, 220), seed)).startFromInteract());
+            attackerMob.startAttackHandler((new SaberDashAttackHandler(attackerMob, slot, item, this, animTime, new Color(190, 220, 220), seed)));
         } else {
             item.getGndData().setBoolean("chargeUp", false);
             if (animAttack == 0) {

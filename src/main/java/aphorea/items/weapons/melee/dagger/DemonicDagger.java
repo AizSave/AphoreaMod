@@ -1,10 +1,14 @@
 package aphorea.items.weapons.melee.dagger;
 
 import aphorea.projectiles.toolitem.DaggerProjectile;
+import aphorea.utils.AphColors;
 import necesse.entity.mobs.PlayerMob;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.inventory.InventoryItem;
 import necesse.level.maps.Level;
+
+import java.awt.*;
 
 public class DemonicDagger extends AphDaggerToolItem {
     public DemonicDagger() {
@@ -18,15 +22,26 @@ public class DemonicDagger extends AphDaggerToolItem {
         this.knockback.setBaseValue(25);
     }
 
-    public Projectile getProjectile(Level level, int x, int y, PlayerMob player, InventoryItem item, boolean shouldDrop) {
-        return new DaggerProjectile.DemonicDaggerProjectile(level, player,
-                player.x, player.y,
+    @Override
+    public Projectile getProjectile(Level level, int x, int y, ItemAttackerMob attackerMob, InventoryItem item, boolean shouldDrop) {
+        return new DaggerProjectile.DemonicDaggerProjectile(level, attackerMob,
+                attackerMob.x, attackerMob.y,
                 x, y,
-                200, 350,
+                200, projectileRange(),
                 getAttackDamage(item),
-                getKnockback(item, player),
+                getKnockback(item, attackerMob),
                 shouldDrop,
                 item.item.getStringID(), item.getGndData()
         );
+    }
+
+    @Override
+    public int projectileRange() {
+        return 350;
+    }
+
+    @Override
+    public Color getSecondaryAttackColor() {
+        return AphColors.demonic;
     }
 }
