@@ -49,22 +49,27 @@ public class RockyGelSlimeProjectile extends Projectile {
 
     }
 
+    @Override
     public Trail getTrail() {
         return new Trail(this, this.getLevel(), new Color(50, 50, 50), 16.0F, 150, 18.0F);
     }
 
+    @Override
     public Color getParticleColor() {
         return new Color(50, 50, 50);
     }
 
+    @Override
     public float getParticleChance() {
         return super.getParticleChance() * 0.5F;
     }
 
+    @Override
     protected int getExtraSpinningParticles() {
         return 0;
     }
 
+    @Override
     public void addDrawables(List<LevelSortedDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, OrderableDrawables overlayList, Level level, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
         if (!this.removed()) {
             GameLight light = level.getLightLevel(this);
@@ -83,10 +88,12 @@ public class RockyGelSlimeProjectile extends Projectile {
         }
     }
 
+    @Override
     public float getAngle() {
         return (float) (this.getWorldEntity().getTime() - this.spawnTime);
     }
 
+    @Override
     protected void playHitSound(float x, float y) {
     }
 }

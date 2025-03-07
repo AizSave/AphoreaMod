@@ -48,7 +48,7 @@ public class BerserkerRushBuff extends Buff {
 
         PlayerMob player = (PlayerMob) owner;
 
-        if (player.isAttacking && player.attackingItem.item.getStringID().contains("battleaxe")) {
+        if (player.isAttacking && player.attackSlot.getItem(player.getInv()).item.getStringID().contains("battleaxe")) {
             buff.setModifier(BuffModifiers.ATTACK_MOVEMENT_MOD, 0F);
         } else {
             buff.setModifier(BuffModifiers.ATTACK_MOVEMENT_MOD, 1F);

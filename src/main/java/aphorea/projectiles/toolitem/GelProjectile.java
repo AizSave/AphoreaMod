@@ -46,6 +46,7 @@ public class GelProjectile extends Projectile {
         this.knockback = knockback;
     }
 
+    @Override
     public void init() {
         super.init();
         givesLight = false;
@@ -94,6 +95,7 @@ public class GelProjectile extends Projectile {
 
     }
 
+    @Override
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
         super.doHitLogic(mob, object, x, y);
         if (this.isServer()) {
@@ -118,14 +120,17 @@ public class GelProjectile extends Projectile {
             super(owner, x, y, uniqueIDRandom);
         }
 
+        @Override
         public void setupSpawnPacket(PacketWriter writer) {
             super.setupSpawnPacket(writer);
         }
 
+        @Override
         public void applySpawnPacket(PacketReader reader) {
             super.applySpawnPacket(reader);
         }
 
+        @Override
         public void init() {
             super.init();
             this.tickCounter = 0;
@@ -136,6 +141,7 @@ public class GelProjectile extends Projectile {
 
         }
 
+        @Override
         public Shape getHitBox() {
             int width = 40;
             int height = 30;
@@ -147,6 +153,7 @@ public class GelProjectile extends Projectile {
 
         }
 
+        @Override
         public void serverHit(Mob target, boolean clientSubmitted) {
             if (clientSubmitted || !target.buffManager.hasBuff(AphBuffs.STICKY)) {
                 target.addBuff(new ActiveBuff(AphBuffs.STICKY, target, 1000, this), true);
@@ -154,9 +161,11 @@ public class GelProjectile extends Projectile {
 
         }
 
+        @Override
         public void hitObject(LevelObjectHit hit) {
         }
 
+        @Override
         public void clientTick() {
             ++this.tickCounter;
             if (this.tickCounter > 100) {
@@ -167,6 +176,7 @@ public class GelProjectile extends Projectile {
 
         }
 
+        @Override
         public void serverTick() {
             ++this.tickCounter;
             if (this.tickCounter > 100) {
@@ -177,6 +187,7 @@ public class GelProjectile extends Projectile {
 
         }
 
+        @Override
         public void over() {
             super.over();
             if (this.particle != null) {
@@ -204,6 +215,7 @@ public class GelProjectile extends Projectile {
 
         }
 
+        @Override
         public void addDrawables(List<LevelSortedDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, OrderableDrawables overlayList, Level level, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
             GameLight light = level.getLightLevel(this.getX() / 32, this.getY() / 32);
             int drawX = camera.getDrawX(this.getX()) - 48;

@@ -3,8 +3,6 @@ package aphorea.mobs.runicsummons;
 import aphorea.mobs.summon.BabyUnstableGelSlime;
 import aphorea.registry.AphBuffs;
 import necesse.engine.gameLoop.tickManager.TickManager;
-import necesse.engine.network.server.ServerClient;
-import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.registries.MobRegistry.Textures;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.GameDamage;
@@ -15,6 +13,7 @@ import necesse.entity.mobs.ai.behaviourTree.BehaviourTreeAI;
 import necesse.entity.mobs.ai.behaviourTree.leaves.CollisionChaserAINode;
 import necesse.entity.mobs.ai.behaviourTree.trees.PlayerFollowerCollisionChaserAI;
 import necesse.entity.mobs.buffs.ActiveBuff;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.particle.FleshParticle;
 import necesse.entity.particle.Particle;
 import necesse.gfx.camera.GameCamera;
@@ -42,6 +41,7 @@ public class RunicUnstableGelSlime extends RunicAttackingFollowingMob {
         selectBox = new Rectangle(-13, -14, 26, 24);
     }
 
+    @Override
     public void init() {
         super.init();
         this.ai = new BehaviourTreeAI<>(this, new PlayerFollowerCollisionChaserAI<Mob>(Integer.MAX_VALUE, new GameDamage(0), 30, 1000, Integer.MAX_VALUE, 64) {
@@ -53,28 +53,27 @@ public class RunicUnstableGelSlime extends RunicAttackingFollowingMob {
                 } else if (target.isPlayer || target.isHuman) {
                     damagePercent /= 5;
                 }
-                return CollisionChaserAINode.simpleAttack(mob, target, new GameDamage(DamageTypeRegistry.TRUE, target.getMaxHealth() * damagePercent), this.knockback);
+                return CollisionChaserAINode.simpleAttack(mob, target, new GameDamage(target.getMaxHealth() * damagePercent, 1000000), this.knockback);
             }
         });
 
         count = 0;
     }
 
+    @Override
     public void serverTick() {
         super.serverTick();
         count++;
 
         if (count >= 20 * effectNumber) {
             if (this.isFollowing()) {
-                ServerClient c = this.getFollowingServerClient();
-                if (c != null) {
-                    c.removeFollower(this, false, false);
-                }
+                ((ItemAttackerMob) this.getFollowingMob()).serverFollowersManager.removeFollower(this, false, false);
             }
             this.remove();
         }
     }
 
+    @Override
     public void spawnDeathParticles(float knockbackX, float knockbackY) {
         for (int i = 0; i < 4; i++) {
             getLevel().entityManager.addParticle(new FleshParticle(
@@ -88,6 +87,7 @@ public class RunicUnstableGelSlime extends RunicAttackingFollowingMob {
         }
     }
 
+    @Override
     public void addDrawables(List<MobDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, Level level, int x, int y, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
         super.addDrawables(list, tileList, topList, level, x, y, tickManager, camera, perspective);
         GameLight light = level.getLightLevel(getTileX(), getTileY());
@@ -114,6 +114,7 @@ public class RunicUnstableGelSlime extends RunicAttackingFollowingMob {
         if (!this.isWaterWalking()) addShadowDrawables(tileList, x, y, light, camera);
     }
 
+    @Override
     protected TextureDrawOptions getShadowDrawOptions(int x, int y, GameLight light, GameCamera camera) {
         GameTexture shadowTexture = Textures.human_baby_shadow;
         int res = shadowTexture.getHeight();
@@ -123,6 +124,7 @@ public class RunicUnstableGelSlime extends RunicAttackingFollowingMob {
         return shadowTexture.initDraw().sprite(this.getDir(), 0, res).light(light).pos(drawX, drawY);
     }
 
+    @Override
     public int getRockSpeed() {
         return 20;
     }

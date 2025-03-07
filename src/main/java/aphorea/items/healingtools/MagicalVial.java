@@ -5,21 +5,21 @@ import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
 import aphorea.utils.magichealing.AphMagicHealing;
 import necesse.engine.localization.Localization;
-import necesse.engine.network.PacketReader;
+import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameBlackboard;
 import necesse.engine.util.GameUtils;
 import necesse.entity.ParticleTypeSwitcher;
-import necesse.entity.mobs.AttackAnimMob;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
+import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.particle.Particle;
 import necesse.gfx.GameResources;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.PlayerInventorySlot;
 import necesse.inventory.item.DoubleItemStatTip;
 import necesse.inventory.item.ItemCategory;
 import necesse.inventory.item.ItemStatTipList;
@@ -49,12 +49,12 @@ public class MagicalVial extends AphMagicHealingToolItem {
     }
 
     @Override
-    public int getAttackAnimTime(InventoryItem item, Mob mob) {
+    public int getAttackAnimTime(InventoryItem item, ItemAttackerMob attackerMob) {
         return 500;
     }
 
     @Override
-    public int getItemCooldownTime(InventoryItem item, Mob mob) {
+    public int getItemCooldownTime(InventoryItem item, ItemAttackerMob attackerMob) {
         return 20000;
     }
 
@@ -76,7 +76,7 @@ public class MagicalVial extends AphMagicHealingToolItem {
         if (canHealMob && !perspective.isItemOnCooldown(this) && !inInDistance) {
             if (particlesAreaCount >= 3) {
                 particlesAreaCount = 0;
-                area.showAllAreaParticles(perspective.getLevel(), perspective.x, perspective.y, 1, 0.5F, 0, (int) (Math.random() * 200) + 400);
+                area.executeClient(perspective.getLevel(), perspective.x, perspective.y, 1, 0.5F, 0, (int) (Math.random() * 200) + 400);
             } else {
                 particlesAreaCount++;
             }
@@ -97,30 +97,34 @@ public class MagicalVial extends AphMagicHealingToolItem {
     }
 
     @Override
-    public InventoryItem onAttack(Level level, int x, int y, PlayerMob player, int attackHeight, InventoryItem item, PlayerInventorySlot slot, int animAttack, int seed, PacketReader contentReader) {
-        Mob target = GameUtils.streamNetworkClients(level).filter(c -> c.playerMob != null).map(c -> c.playerMob)
-                .filter(m -> AphMagicHealing.canHealMob(player, m) && m.getDistance(x, y) / 32 <= 2)
-                .findFirst().orElse(null);
+    public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob mob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
+        if(mob.isPlayer) {
+            PlayerMob player = (PlayerMob) mob;
 
-        if (target == null) {
-            target = level.entityManager.mobs.getInRegionByTileRange(x / 32, y / 32, 2).stream()
-                    .filter(m -> AphMagicHealing.canHealMob(player, m))
+            Mob target = GameUtils.streamNetworkClients(level).filter(c -> c.playerMob != null).map(c -> c.playerMob)
+                    .filter(m -> AphMagicHealing.canHealMob(player, m) && m.getDistance(x, y) / 32 <= 2)
                     .findFirst().orElse(null);
+
+            if (target == null) {
+                target = level.entityManager.mobs.getInRegionByTileRange(x / 32, y / 32, 2).stream()
+                        .filter(m -> AphMagicHealing.canHealMob(player, m))
+                        .findFirst().orElse(null);
+            }
+
+            if (level.isServer()) {
+                healMob(player, target == null ? player : target, item);
+            }
+
+            this.animInverted = target == null;
+
+            onHealingToolItemUsed(player, item);
         }
-
-        if (level.isServer()) {
-            healMob(player, target == null ? player : target, item);
-        }
-
-        this.animInverted = target == null;
-
-        onHealingToolItemUsed(player, item);
 
         return item;
     }
 
     @Override
-    public void showAttack(Level level, int x, int y, AttackAnimMob mob, int attackHeight, InventoryItem item, int seed, PacketReader contentReader) {
+    public void showAttack(Level level, int x, int y, ItemAttackerMob mob, int attackHeight, InventoryItem item, int animAttack, int seed, GNDItemMap mapContent) {
         if (level.isClient()) {
             SoundManager.playSound(GameResources.drink, SoundEffect.effect(mob));
         }

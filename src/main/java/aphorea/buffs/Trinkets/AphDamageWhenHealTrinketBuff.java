@@ -41,7 +41,7 @@ abstract public class AphDamageWhenHealTrinketBuff extends TrinketBuff implement
             if (thisHealingDone > healingPerAttack) {
                 thisHealingDone -= healingPerAttack;
 
-                this.areaList.executeAreas(healer);
+                this.areaList.executeServer(healer);
 
                 healer.getServer().network.sendToAllClients(getPacket((PlayerMob) healer, 1));
             }

@@ -24,11 +24,13 @@ public class AphRuneOfThunderParticle extends Particle {
         this.mirror = GameRandom.globalRandom.nextBoolean();
     }
 
+    @Override
     public void clientTick() {
         super.clientTick();
         this.getLevel().lightManager.refreshParticleLightFloat(this.x, this.y, 0.0F, 0.5F);
     }
 
+    @Override
     public void addDrawables(List<LevelSortedDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, OrderableDrawables overlayList, Level level, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
         GameLight light = level.getLightLevel(this.getX() / 32, this.getY() / 32);
         int drawX = camera.getDrawX(this.x);

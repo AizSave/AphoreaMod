@@ -3,21 +3,20 @@ package aphorea.items;
 import aphorea.items.healingtools.AphMagicHealingToolItem;
 import aphorea.registry.AphEnchantments;
 import aphorea.registry.AphModifiers;
+import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
 import aphorea.utils.area.AphAreaType;
 import necesse.engine.localization.Localization;
-import necesse.engine.network.Packet;
-import necesse.engine.network.PacketReader;
-import necesse.engine.network.server.ServerClient;
+import necesse.engine.localization.message.GameMessage;
+import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.registries.EnchantmentRegistry;
-import necesse.entity.mobs.AttackAnimMob;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
-import necesse.entity.mobs.PlayerMob;
+import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.gfx.drawOptions.itemAttack.ItemAttackDrawOptions;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.PlayerInventorySlot;
 import necesse.inventory.item.ItemCategory;
 import necesse.inventory.item.ItemStatTipList;
 import necesse.level.maps.Level;
@@ -40,6 +39,7 @@ abstract public class AphAreaToolItem extends AphMagicHealingToolItem {
         this.isHealingTool = isHealingTool;
 
         this.areaList = areaList;
+        damageType = DamageTypeRegistry.MAGIC;
 
         if (isMagicWeapon) {
             this.setItemCategory("equipment", "weapons", "magicweapons");
@@ -49,47 +49,50 @@ abstract public class AphAreaToolItem extends AphMagicHealingToolItem {
     }
 
     @Override
-    public InventoryItem onAttack(Level level, int x, int y, PlayerMob player, int attackHeight, InventoryItem item, PlayerInventorySlot slot, int animAttack, int seed, PacketReader contentReader) {
-
+    public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
         if (areaList.someType(AphAreaType.HEALING)) {
-            onHealingToolItemUsed(player, item);
+            onHealingToolItemUsed(attackerMob, item);
         }
 
         if (this.getManaCost(item) > 0) {
-            this.consumeMana(player, item);
+            this.consumeMana(attackerMob, item);
         }
 
         float rangeModifier = 1 + this.getEnchantment(item).getModifier(AphModifiers.TOOL_AREA_RANGE);
 
-        usePacket(level, player, rangeModifier);
-
-        if (level.isServer()) {
-            areaList.executeAreas(player, player.x, player.y, rangeModifier, item, this);
-
-            ServerClient serverClient = player.getServerClient();
-            level.getServer().network.sendToClientsWithEntityExcept(getPacket(player, rangeModifier), serverClient.playerMob, serverClient);
-        }
+        areaList.executeServer(attackerMob, attackerMob.x, attackerMob.y, rangeModifier, item, this);
 
         return item;
     }
-
-    public abstract Packet getPacket(PlayerMob player, float rangeModifier);
-
-    public abstract void usePacket(Level level, PlayerMob player, float rangeModifier);
 
     @Override
     public GameDamage getAttackDamage(InventoryItem item) {
         return super.getAttackDamage(item);
     }
 
+    @Override
+    public GameMessage getItemAttackerCanUseError(ItemAttackerMob mob, InventoryItem item) {
+        if(areaList.someType(AphAreaType.DAMAGE) || areaList.someType(AphAreaType.DEBUFF)) {
+            return null;
+        } else {
+            return super.getItemAttackerCanUseError(mob, item);
+        }
+    }
+
+    @Override
     public boolean animDrawBehindHand(InventoryItem item) {
         return true;
     }
 
-    public void showAttack(Level level, int x, int y, AttackAnimMob mob, int attackHeight, InventoryItem item, int seed, PacketReader contentReader) {
+    @Override
+    public void showAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, int animAttack, int seed, GNDItemMap mapContent) {
+        float rangeModifier = 1 + this.getEnchantment(item).getModifier(AphModifiers.TOOL_AREA_RANGE);
+
+        areaList.executeClient(level, attackerMob.x, attackerMob.y, rangeModifier);
     }
 
-    public void addStatTooltips(ItemStatTipList list, InventoryItem currentItem, InventoryItem lastItem, Mob perspective, boolean forceAdd) {
+    @Override
+    public void addStatTooltips(ItemStatTipList list, InventoryItem currentItem, InventoryItem lastItem, ItemAttackerMob perspective, boolean forceAdd) {
         areaList.addAreasStatTip(list, this, currentItem, lastItem, perspective, forceAdd);
         this.addAttackSpeedTip(list, currentItem, lastItem, perspective);
         this.addResilienceGainTip(list, currentItem, lastItem, perspective, forceAdd);
@@ -111,6 +114,7 @@ abstract public class AphAreaToolItem extends AphMagicHealingToolItem {
         return enchantments;
     }
 
+    @Override
     public String getTranslatedTypeName() {
         if (isMagicWeapon) {
             return Localization.translate("item", "magicweapon");
@@ -122,5 +126,25 @@ abstract public class AphAreaToolItem extends AphMagicHealingToolItem {
     @Override
     public void setDrawAttackRotation(InventoryItem item, ItemAttackDrawOptions drawOptions, float attackDirX, float attackDirY, float attackProgress) {
         drawOptions.rotation(0 + this.rotationOffset);
+    }
+
+    @Override
+    public boolean canItemAttackerHitTarget(ItemAttackerMob attackerMob, float fromX, float fromY, Mob target, InventoryItem item) {
+        return this.itemAttackerHasLineOfSightToTarget(attackerMob, fromX, fromY, target, 0);
+    }
+
+    @Override
+    public int getItemAttackerAttackRange(ItemAttackerMob mob, InventoryItem item) {
+        AphArea firstArea = null;
+        for (AphArea area : areaList.areas) {
+            if(area.areaTypes.contains(AphAreaType.DAMAGE) || area.areaTypes.contains(AphAreaType.DEBUFF)) {
+                firstArea = area;
+                break;
+            }
+        }
+        if(firstArea == null) {
+            firstArea = areaList.areas[0];
+        }
+        return (int) (firstArea.range * 0.5);
     }
 }

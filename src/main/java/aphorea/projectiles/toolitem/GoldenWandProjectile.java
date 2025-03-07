@@ -10,7 +10,6 @@ import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.util.GameUtils;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
-import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.projectile.followingProjectile.FollowingProjectile;
 import necesse.entity.trails.Trail;
 import necesse.gfx.camera.GameCamera;
@@ -89,7 +88,7 @@ public class GoldenWandProjectile extends FollowingProjectile {
         super.updateTarget();
         if (traveledDistance > 20) {
             this.target = null;
-            target = AphDistances.findClosestMob(this.getOwner(), this::canHit, this.distance / 2);
+            target = AphDistances.findClosestMob(getLevel(), x, y, this.distance / 2, this::canHit);
         }
     }
 
@@ -105,31 +104,29 @@ public class GoldenWandProjectile extends FollowingProjectile {
 
     @Override
     public void addDrawables(List<LevelSortedDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, OrderableDrawables overlayList, Level level, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
+        if (removed()) return;
+        GameLight light = level.getLightLevel(this);
+        int drawX = camera.getDrawX(x) - texture.getWidth() / 2;
+        int drawY = camera.getDrawY(y);
+        TextureDrawOptions options = texture.initDraw()
+                .light(light)
+                .rotate(getAngle(), texture.getWidth() / 2, 2)
+                .pos(drawX, drawY - (int) getHeight());
+
+        list.add(new EntityDrawable(this) {
+            @Override
+            public void draw(TickManager tickManager) {
+                options.draw();
+            }
+        });
+
+        addShadowDrawables(tileList, drawX, drawY, light, getAngle(), texture.getWidth() / 2, 2);
     }
 
+    @Override
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
-        super.doHitLogic(mob, object, x, y);
-        if (mob != null && this.amountHit() < this.piercing) {
-            return;
-        } else {
-            int bouncing = this.bouncing;
-            Mob owner = this.getOwner();
-            if (owner != null) {
-                bouncing += owner.buffManager.getModifier(BuffModifiers.PROJECTILE_BOUNCES);
-            }
-            if (object != null && this.bounced < bouncing && this.canBounce) {
-                return;
-            }
-        }
-        executeArea();
+        areaList.execute(getOwner(), x, y);
     }
-
-    public void executeArea() {
-        if (this.getOwner() != null) {
-            areaList.execute(this.getOwner(), x, y, 1, item, toolItem);
-        }
-    }
-
 
     @Override
     public void checkHitCollision(Line2D hitLine) {

@@ -24,7 +24,6 @@ import necesse.engine.GlobalData;
 import necesse.engine.modifiers.ModifierValue;
 import necesse.engine.network.client.Client;
 import necesse.engine.network.packet.PacketForceOfWind;
-import necesse.engine.network.server.FollowPosition;
 import necesse.engine.network.server.Server;
 import necesse.engine.network.server.ServerClient;
 import necesse.engine.registries.BuffRegistry;
@@ -49,6 +48,9 @@ import necesse.entity.mobs.buffs.staticBuffs.HiddenCooldownBuff;
 import necesse.entity.mobs.buffs.staticBuffs.ShownCooldownBuff;
 import necesse.entity.mobs.buffs.staticBuffs.armorBuffs.setBonusBuffs.SetBonusBuff;
 import necesse.entity.mobs.buffs.staticBuffs.armorBuffs.trinketBuffs.SimpleTrinketBuff;
+import necesse.entity.mobs.itemAttacker.FollowPosition;
+import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.particle.Particle;
 import necesse.entity.particle.SmokePuffParticle;
 import necesse.gfx.GameResources;
@@ -56,7 +58,6 @@ import necesse.gfx.camera.MainGameCamera;
 import necesse.gfx.gameFont.FontManager;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.PlayerInventorySlot;
 import necesse.level.maps.Level;
 
 import java.awt.*;
@@ -278,13 +279,13 @@ public class AphBuffs {
                 float strength = getEffectNumber(player);
                 SoundManager.playSound(GameResources.swoosh, SoundEffect.effect(player).volume(0.5F).pitch(1.7F));
                 Point2D.Float dir = PacketForceOfWind.getMobDir(player);
-                PacketForceOfWind.applyToPlayer(level, player, dir.x, dir.y, strength);
+                PacketForceOfWind.applyToMob(level, player, dir.x, dir.y, strength);
                 player.buffManager.addBuff(new ActiveBuff(BuffRegistry.FOW_ACTIVE, player, 0.15F, null), level.isServer());
                 player.buffManager.forceUpdateBuffs();
                 player.buffManager.addBuff(new ActiveBuff(AphBuffs.IMMORTAL, player, 500, null), false);
                 if (level.isServer()) {
                     ServerClient serverClient = player.getServerClient();
-                    player.getServer().network.sendToClientsWithEntityExcept(new PacketForceOfWind(serverClient.slot, player.moveX, player.moveY, strength), serverClient.playerMob, serverClient);
+                    player.getServer().network.sendToClientsWithEntityExcept(new PacketForceOfWind(player, player.moveX, player.moveY, strength), player, serverClient);
                 }
             }
         });
@@ -383,7 +384,7 @@ public class AphBuffs {
                 if (player.getDistance(targetX, targetY) > range) {
                     preventUsage = true;
                     if (level.isClient()) {
-                        new AphAreaList(new AphArea(range, level.isCave ? AphColors.palettePinkWitch[2] : AphColors.lighting)).showAllAreaParticles(level, player.x, player.y, 1F, 1F, 0F);
+                        new AphAreaList(new AphArea(range, level.isCave ? AphColors.palettePinkWitch[2] : AphColors.lighting)).executeClient(level, player.x, player.y, 1F, 1F, 0F);
                     }
                 } else if (level.isServer()) {
                     player.getLevel().entityManager.addLevelEvent(new AphRuneOfThunderEvent(player, targetX, targetY, getEffectNumber(player) / 100));
@@ -405,9 +406,9 @@ public class AphBuffs {
                                 .setDebuffArea((int) (getEffectNumber(player) * 1000), BuffRegistry.Debuffs.FROSTSLOW.getStringID())
                 );
                 if (level.isServer()) {
-                    areaList.executeAreas(player);
+                    areaList.executeServer(player);
                 } else if (level.isClient()) {
-                    areaList.showAllAreaParticles(level, player.x, player.y);
+                    areaList.executeClient(level, player.x, player.y);
                 }
             }
 
@@ -491,7 +492,7 @@ public class AphBuffs {
                     for (int i = 0; i < 2; i++) {
                         RunicAttackingFollowingMob mob = (RunicAttackingFollowingMob) MobRegistry.getMob("runicunstablegelslime", player.getLevel());
 
-                        serverClient.addFollower("runicunstablegelslimes", mob, FollowPosition.WALK_CLOSE, "runeofunstablegelslime", 1, 2, (MserverClient, Mmob) -> ((RunicAttackingFollowingMob) Mmob).updateEffectNumber(getEffectNumber(player)), true);
+                        player.serverFollowersManager.addFollower("runicunstablegelslimes", mob, FollowPosition.WALK_CLOSE, "runeofunstablegelslime", 1, 2, (MserverClient, Mmob) -> ((RunicAttackingFollowingMob) Mmob).updateEffectNumber(getEffectNumber(player)), true);
                         mob.getLevel().entityManager.addMob(mob, player.x, player.y);
                     }
 
@@ -622,9 +623,8 @@ public class AphBuffs {
             public void runServer(Server server, PlayerMob player, int targetX, int targetY) {
                 super.runServer(server, player, targetX, targetY);
                 if (player.isServerClient()) {
-                    ServerClient serverClient = player.getServerClient();
                     RunicFlyingAttackingFollowingMob mob = (RunicFlyingAttackingFollowingMob) MobRegistry.getMob("runicvulturehatchling", player.getLevel());
-                    serverClient.addFollower("runicvulturehatchlings", mob, FollowPosition.WALK_CLOSE, "runeofancientvulture", 1, 1, (MserverClient, Mmob) -> ((RunicFlyingAttackingFollowingMob) Mmob).updateEffectNumber(getEffectNumber(player)), true);
+                    player.serverFollowersManager.addFollower("runicvulturehatchlings", mob, FollowPosition.WALK_CLOSE, "runeofancientvulture", 1, 1, (MserverClient, Mmob) -> ((RunicFlyingAttackingFollowingMob) Mmob).updateEffectNumber(getEffectNumber(player)), true);
                     mob.getLevel().entityManager.addMob(mob, player.x, player.y);
                 }
             }
@@ -668,10 +668,10 @@ public class AphBuffs {
             }
 
             @Override
-            public void onItemAttacked(ActiveBuff buff, int targetX, int targetY, PlayerMob player, int attackHeight, InventoryItem item, PlayerInventorySlot slot, int animAttack) {
-                super.onItemAttacked(buff, targetX, targetY, player, attackHeight, item, slot, animAttack);
-                if (player.isServer()) {
-                    player.getInv().removeItems(ItemRegistry.getItem("coin"), 3, false, false, false, false, "buy");
+            public void onItemAttacked(ActiveBuff buff, int targetX, int targetY, ItemAttackerMob mob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack) {
+                super.onItemAttacked(buff, targetX, targetY, mob, attackHeight, item, slot, animAttack);
+                if (mob.isServer() && mob.isPlayer) {
+                    ((PlayerMob) mob).getInv().removeItems(ItemRegistry.getItem("coin"), 3, false, false, false, false, "buy");
                 }
                 updateCoins(buff);
             }
@@ -693,7 +693,7 @@ public class AphBuffs {
                 if (player.getDistance(targetX, targetY) > range) {
                     preventUsage = true;
                     if (level.isClient()) {
-                        new AphAreaList(new AphArea(range, AphColors.tungsten)).showAllAreaParticles(level, player.x, player.y, 1F, 1F, 0F);
+                        new AphAreaList(new AphArea(range, AphColors.tungsten)).executeClient(level, player.x, player.y, 1F, 1F, 0F);
                     }
                 } else if (level.getObject(targetX / 32, targetY / 32).isSolid || level.isTrialRoom) {
                     preventUsage = true;
@@ -884,7 +884,7 @@ public class AphBuffs {
                 if (player.getDistance(targetX, targetY) > range) {
                     preventUsage = true;
                     if (level.isClient()) {
-                        new AphAreaList(new AphArea(range, AphColors.paletteMotherSlime)).showAllAreaParticles(level, player.x, player.y, 1F, 1F, 0F);
+                        new AphAreaList(new AphArea(range, AphColors.paletteMotherSlime)).executeClient(level, player.x, player.y, 1F, 1F, 0F);
                     }
                 } else if (level.getObject(targetX / 32, targetY / 32).isSolid || level.isTrialRoom) {
                     preventUsage = true;
@@ -908,10 +908,9 @@ public class AphBuffs {
             public void runServer(Server server, PlayerMob player, int targetX, int targetY) {
                 super.runServer(server, player, targetX, targetY);
                 if (player.isServerClient()) {
-                    ServerClient serverClient = player.getServerClient();
                     for (int i = 0; i < 5; i++) {
                         RunicFlyingAttackingFollowingMob mob = (RunicFlyingAttackingFollowingMob) MobRegistry.getMob("runicbat", player.getLevel());
-                        serverClient.addFollower("runicbats", mob, FollowPosition.WALK_CLOSE, "runeofnightswarm", 1, 8, (MserverClient, Mmob) -> ((RunicFlyingAttackingFollowingMob) Mmob).updateEffectNumber(getEffectNumber(player)), true);
+                        player.serverFollowersManager.addFollower("runicbats", mob, FollowPosition.WALK_CLOSE, "runeofnightswarm", 1, 8, (MserverClient, Mmob) -> ((RunicFlyingAttackingFollowingMob) Mmob).updateEffectNumber(getEffectNumber(player)), true);
                         mob.getLevel().entityManager.addMob(mob, player.x, player.y);
                     }
                 }
@@ -1059,9 +1058,8 @@ public class AphBuffs {
                     public void runServer(Server server, PlayerMob player, int targetX, int targetY) {
                         super.runServer(server, player, targetX, targetY);
                         if (player.isServerClient()) {
-                            ServerClient serverClient = player.getServerClient();
                             Mob mob = MobRegistry.getMob("onyx", player.getLevel());
-                            serverClient.addFollower("onyx", mob, FollowPosition.WALK_CLOSE, "onyxrune", 1, 1, null, true);
+                            player.serverFollowersManager.addFollower("onyx", mob, FollowPosition.WALK_CLOSE, "onyxrune", 1, 1, null, true);
                             mob.getLevel().entityManager.addMob(mob, player.x, player.y);
                         }
                     }

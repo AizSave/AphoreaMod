@@ -4,13 +4,12 @@ import aphorea.items.vanillaitemtypes.weapons.AphMagicProjectileToolItem;
 import aphorea.registry.AphEnchantments;
 import aphorea.registry.AphModifiers;
 import aphorea.utils.area.AphAreaList;
-import necesse.engine.network.Packet;
-import necesse.engine.network.PacketReader;
-import necesse.engine.network.server.ServerClient;
+import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.PlayerMob;
+import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.PlayerInventorySlot;
 import necesse.inventory.enchants.Enchantable;
 import necesse.inventory.enchants.ItemEnchantment;
 import necesse.inventory.enchants.ToolItemEnchantment;
@@ -40,51 +39,44 @@ abstract public class AphMagicProjectileSecondaryAreaToolItem extends AphMagicPr
     }
 
     @Override
-    public int getLevelInteractAttackAnimTime(InventoryItem item, PlayerMob player) {
-        return Math.round(secondaryAttackAnimTime * (1.0F / this.getAttackSpeedModifier(item, player)));
+    public int getLevelInteractAttackAnimTime(InventoryItem item, ItemAttackerMob attackerMob) {
+        return Math.round(secondaryAttackAnimTime * (1.0F / this.getAttackSpeedModifier(item, attackerMob)));
     }
 
-    public boolean canLevelInteract(Level level, int x, int y, PlayerMob player, InventoryItem item) {
-        return !player.isAttacking;
+    @Override
+    public boolean canLevelInteract(Level level, int x, int y, ItemAttackerMob attackerMob, InventoryItem item) {
+        return !attackerMob.isAttacking;
     }
 
-    public InventoryItem onLevelInteract(Level level, int x, int y, PlayerMob player, int attackHeight, InventoryItem item, PlayerInventorySlot slot, int seed, PacketReader contentReader) {
-        this.consumeManaSecondary(player, item);
+
+    @Override
+    public InventoryItem onLevelInteract(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int seed, GNDItemMap mapContent) {
+        this.consumeManaSecondary(attackerMob, item);
 
         float attackDamage0 = attackDamage.getValue(0);
         float attackDamage1 = attackDamage.getValue(1);
 
         float rangeModifier = 1 + this.getEnchantment(item).getModifier(AphModifiers.TOOL_AREA_RANGE);
 
-        usePacket(level, player, rangeModifier);
-
-        if (player.isServer()) {
-            areaList.executeAreas(player, x, y, rangeModifier, item, this);
-
-            ServerClient serverClient = player.getServerClient();
-            level.getServer().network.sendToClientsWithEntityExcept(getPacket(player, rangeModifier), serverClient.playerMob, serverClient);
-        }
-
+        areaList.execute(attackerMob, x, y, rangeModifier, item, this);
         attackDamage.setBaseValue(attackDamage0).setUpgradedValue(1, attackDamage1);
 
         return item;
     }
 
-    public abstract Packet getPacket(PlayerMob player, float rangeModifier);
-
-    public abstract void usePacket(Level level, PlayerMob player, float rangeModifier);
-
-    public void consumeManaSecondary(PlayerMob player, InventoryItem item) {
+    public void consumeManaSecondary(ItemAttackerMob attackerMob, InventoryItem item) {
         float manaCost = getSecondaryManaCost(item);
         if (manaCost > 0.0F) {
-            player.useMana(manaCost, player.isServerClient() ? player.getServerClient() : null);
+            attackerMob.useMana(manaCost, (attackerMob.isPlayer && ((PlayerMob) attackerMob).isServerClient()) ? ((PlayerMob) attackerMob).getServerClient() : null);
         }
     }
 
+    @Override
     public ToolItemEnchantment getRandomEnchantment(GameRandom random, InventoryItem item) {
         return Enchantable.getRandomEnchantment(random, this.getValidEnchantmentIDs(item), this.getEnchantmentID(item), ToolItemEnchantment.class);
     }
 
+    @Override
     public boolean isValidEnchantment(InventoryItem item, ItemEnchantment enchantment) {
         return this.getValidEnchantmentIDs(item).contains(enchantment.getID());
     }

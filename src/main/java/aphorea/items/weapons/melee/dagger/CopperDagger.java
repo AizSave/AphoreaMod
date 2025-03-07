@@ -1,7 +1,6 @@
 package aphorea.items.weapons.melee.dagger;
 
 import aphorea.projectiles.toolitem.DaggerProjectile;
-import aphorea.utils.AphColors;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.inventory.InventoryItem;
@@ -31,10 +30,5 @@ public class CopperDagger extends AphDaggerToolItem {
                 shouldDrop,
                 item.item.getStringID(), item.getGndData()
         );
-    }
-
-    @Override
-    public Color getSecondaryAttackColor() {
-        return AphColors.copper;
     }
 }

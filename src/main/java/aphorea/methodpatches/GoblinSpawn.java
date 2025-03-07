@@ -1,6 +1,6 @@
 package aphorea.methodpatches;
 
-import aphorea.mobs.hostile.classes.DaggerGoblin;
+import aphorea.mobs.hostile.DaggerGoblin;
 import necesse.engine.modLoader.annotations.ModMethodPatch;
 import necesse.engine.registries.MobRegistry;
 import necesse.engine.util.GameRandom;

@@ -1,28 +1,21 @@
-package aphorea;
+package aphorea.utils;
 
 import aphorea.items.weapons.magic.MagicalBroom;
 import aphorea.mobs.bosses.MiniUnstableGelSlime;
 import aphorea.mobs.bosses.UnstableGelSlime;
 import aphorea.mobs.friendly.WildPhosphorSlime;
 import aphorea.mobs.hostile.*;
-import aphorea.mobs.hostile.classes.DaggerGoblin;
 import aphorea.mobs.pet.PetPhosphorSlime;
 import aphorea.mobs.summon.BabyUnstableGelSlime;
 import aphorea.mobs.summon.Onyx;
 import aphorea.mobs.summon.VolatileGelSlime;
-import aphorea.projectiles.bullet.SpamBulletProjectile;
 import aphorea.projectiles.toolitem.AircutProjectile;
 import aphorea.projectiles.toolitem.DaggerProjectile;
 import aphorea.projectiles.toolitem.FireSlingStoneProjectile;
 import aphorea.projectiles.toolitem.GelProjectile;
 import necesse.engine.registries.MobRegistry;
-import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.HumanTexture;
-import necesse.gfx.GameResources;
 import necesse.gfx.gameTexture.GameTexture;
-import necesse.gfx.gameTexture.GameTextureSection;
-
-import java.io.FileNotFoundException;
 
 public class AphResources {
     public static void initResources() {
@@ -37,8 +30,6 @@ public class AphResources {
 
         // PARTICLES
         GelProjectile.GelProjectileParticle.texture = GameTexture.fromFile("particles/gelprojectile");
-        SpamBulletProjectile.FirePoolParticle.texture = GameTexture.fromFile("particles/firepool");
-
     }
 
     public static void mobResources() {
@@ -48,21 +39,6 @@ public class AphResources {
         PinkWitch.texture = GameTexture.fromFile("mobs/pinkwitch");
         VoidAdept.texture = MobRegistry.Textures.humanTexture("voidadept");
         DaggerGoblin.humanTexture = new HumanTexture(GameTexture.fromFile("mobs/daggergoblin"), null, null);
-        InfectedTreant.texture = GameTexture.fromFile("mobs/infectedtreant");
-        InfectedTreant.texture_shadow = GameTexture.fromFile("mobs/infectedtreant_shadow");
-        if (InfectedTreant.leavesTextureName != null) {
-            try {
-                GameTexture particleTexture = GameTexture.fromFileRaw("particles/" + InfectedTreant.leavesTextureName);
-                int leavesRes = particleTexture.getHeight();
-                int leafSprites = particleTexture.getWidth() / leavesRes;
-                GameTextureSection particleSection = GameResources.particlesTextureGenerator.addTexture(particleTexture);
-                InfectedTreant.leavesTexture = () -> particleSection.sprite(GameRandom.globalRandom.nextInt(leafSprites), 0, leavesRes);
-            } catch (FileNotFoundException var5) {
-                InfectedTreant.leavesTexture = null;
-            }
-        }
-        SpinelGolem.texture = GameTexture.fromFile("mobs/rubygolem");
-        SpinelCaveling.texture = new HumanTexture(GameTexture.fromFile("mobs/rubycaveling"), GameTexture.fromFile("mobs/rubycavelingarms_front"), GameTexture.fromFile("mobs/rubycavelingarms_back"));;
 
         // BOSSES
         UnstableGelSlime.texture = GameTexture.fromFile("mobs/unstablegelslime");
@@ -97,8 +73,6 @@ public class AphResources {
         DaggerProjectile.GoldDaggerProjectile.texture = GameTexture.fromFile("player/weapons/golddagger");
         DaggerProjectile.DemonicDaggerProjectile.texture = GameTexture.fromFile("player/weapons/demonicdagger");
         DaggerProjectile.TungstenDaggerProjectile.texture = GameTexture.fromFile("player/weapons/tungstendagger");
-
-        SpamBulletProjectile.texture = GameTexture.fromFile("projectiles/spambullet");
     }
 
 }

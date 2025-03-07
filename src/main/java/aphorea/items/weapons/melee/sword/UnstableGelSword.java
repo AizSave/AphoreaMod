@@ -3,7 +3,6 @@ package aphorea.items.weapons.melee.sword;
 import aphorea.items.vanillaitemtypes.weapons.AphSwordToolItem;
 import aphorea.registry.AphBuffs;
 import necesse.engine.localization.Localization;
-import necesse.engine.network.PacketReader;
 import necesse.engine.util.GameBlackboard;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.ToolItemMobAbilityEvent;
 import necesse.entity.mobs.Mob;
@@ -11,7 +10,6 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.PlayerInventorySlot;
 import necesse.level.maps.Level;
 
 public class UnstableGelSword extends AphSwordToolItem {
@@ -31,11 +29,6 @@ public class UnstableGelSword extends AphSwordToolItem {
         ListGameTooltips tooltips = super.getPreEnchantmentTooltips(item, perspective, blackboard);
         tooltips.add(Localization.translate("itemtooltip", "stikybuff1"));
         return tooltips;
-    }
-
-    @Override
-    public InventoryItem onAttack(Level level, int x, int y, PlayerMob player, int attackHeight, InventoryItem item, PlayerInventorySlot slot, int animAttack, int seed, PacketReader contentReader) {
-        return super.onAttack(level, x, y, player, attackHeight, item, slot, animAttack, seed, contentReader);
     }
 
     @Override

@@ -1,27 +1,28 @@
 package aphorea.items.weapons.melee.battleaxe;
 
+import aphorea.items.weapons.melee.battleaxe.logic.BattleaxeAttackHandler;
+import aphorea.items.vanillaitemtypes.weapons.AphGreatswordToolItem;
 import aphorea.registry.AphBuffs;
-import aphorea.utils.customchargeattacks.AphChargeAttackToolItem;
-import aphorea.utils.customchargeattacks.AphCustomChargeAttackHandler;
-import aphorea.utils.customchargeattacks.AphCustomChargeLevel;
 import necesse.engine.localization.Localization;
-import necesse.engine.network.PacketReader;
+import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.util.GameBlackboard;
 import necesse.entity.mobs.PlayerMob;
+import necesse.entity.mobs.attackHandler.GreatswordChargeLevel;
 import necesse.entity.mobs.buffs.ActiveBuff;
+import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.PlayerInventorySlot;
 import necesse.inventory.item.ItemInteractAction;
 import necesse.level.maps.Level;
 
 import java.awt.*;
 
-abstract public class AphBattleaxeToolItem extends AphChargeAttackToolItem implements ItemInteractAction {
-    public AphCustomChargeLevel<AphChargeAttackToolItem>[] rushChargeLevels;
+abstract public class AphBattleaxeToolItem extends AphGreatswordToolItem implements ItemInteractAction {
+    public GreatswordChargeLevel[] rushChargeLevels;
     boolean isCharging;
 
-    public AphBattleaxeToolItem(int enchantCost, AphCustomChargeLevel<AphChargeAttackToolItem>[] chargeLevels, AphCustomChargeLevel<AphChargeAttackToolItem>[] rushChargeLevels) {
+    public AphBattleaxeToolItem(int enchantCost, GreatswordChargeLevel[] chargeLevels, GreatswordChargeLevel[] rushChargeLevels) {
         super(enchantCost, chargeLevels);
         this.rushChargeLevels = rushChargeLevels;
         if (rushChargeLevels.length == 0) {
@@ -31,8 +32,8 @@ abstract public class AphBattleaxeToolItem extends AphChargeAttackToolItem imple
         this.keyWords.remove("sword");
     }
 
-    public static AphCustomChargeLevel<AphChargeAttackToolItem>[] getChargeLevel(int time, Color color) {
-        return new AphCustomChargeLevel[]{new AphCustomChargeLevel<>(time, 1.0F, color)};
+    public static GreatswordChargeLevel[] getChargeLevel(int time, Color color) {
+        return new GreatswordChargeLevel[]{new GreatswordChargeLevel(time, 1.0F, color)};
     }
 
     @Override
@@ -43,14 +44,16 @@ abstract public class AphBattleaxeToolItem extends AphChargeAttackToolItem imple
         return tooltips;
     }
 
-    @Override
-    public InventoryItem onAttack(Level level, int x, int y, PlayerMob player, int attackHeight, InventoryItem item, PlayerInventorySlot slot, int animAttack, int seed, PacketReader contentReader) {
-        AphCustomChargeLevel[] charge = player.buffManager.hasBuff("berserkerrush") ? this.rushChargeLevels : this.chargeLevels;
 
-        player.startAttackHandler(new BattleaxeAttackHandler(player, slot, item, this, seed, x, y, charge));
+    @Override
+    public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
+        GreatswordChargeLevel[] charge = attackerMob.buffManager.hasBuff("berserkerrush") ? this.rushChargeLevels : this.chargeLevels;
+
+        attackerMob.startAttackHandler(new BattleaxeAttackHandler(attackerMob, slot, item, this, seed, x, y, charge));
 
         return item;
     }
+
 
     @Override
     public String getTranslatedTypeName() {
@@ -58,32 +61,20 @@ abstract public class AphBattleaxeToolItem extends AphChargeAttackToolItem imple
     }
 
     @Override
-    public int getLevelInteractAttackAnimTime(InventoryItem item, PlayerMob player) {
+    public int getLevelInteractCooldownTime(InventoryItem item, ItemAttackerMob attackerMob) {
         return 1000;
     }
 
     @Override
-    public boolean canLevelInteract(Level level, int x, int y, PlayerMob player, InventoryItem item) {
-        return !player.isRiding() && !player.isAttacking && !this.isCharging && !player.buffManager.hasBuff("berserkerrush") && !player.buffManager.hasBuff("berserkerrushcooldown");
+    public boolean canLevelInteract(Level level, int x, int y, ItemAttackerMob attackerMob, InventoryItem item) {
+        return !attackerMob.isRiding() && !attackerMob.isAttacking && !this.isCharging && !attackerMob.buffManager.hasBuff("berserkerrush") && !attackerMob.buffManager.hasBuff("berserkerrushcooldown");
     }
 
     @Override
-    public InventoryItem onLevelInteract(Level level, int x, int y, PlayerMob player, int attackHeight, InventoryItem item, PlayerInventorySlot slot, int seed, PacketReader contentReader) {
-
-        player.addBuff(new ActiveBuff(AphBuffs.BERSERKER_RUSH, player, 11.0F, null), true);
+    public InventoryItem onLevelInteract(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int seed, GNDItemMap mapContent) {
+        attackerMob.addBuff(new ActiveBuff(AphBuffs.BERSERKER_RUSH, attackerMob, 11.0F, null), true);
 
         return item;
     }
 
-    public static class BattleaxeAttackHandler extends AphCustomChargeAttackHandler<AphBattleaxeToolItem> {
-
-        public BattleaxeAttackHandler(PlayerMob player, PlayerInventorySlot slot, InventoryItem item, AphBattleaxeToolItem toolItem, int seed, int startX, int startY, AphCustomChargeLevel<AphBattleaxeToolItem>[] chargeLevels) {
-            super(player, slot, item, toolItem, seed, startX, startY, chargeLevels);
-        }
-
-        @Override
-        public void drawWeaponParticles(InventoryItem showItem, Color color) {
-        }
-
-    }
 }

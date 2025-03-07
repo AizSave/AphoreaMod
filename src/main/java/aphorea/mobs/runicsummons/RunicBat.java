@@ -1,7 +1,6 @@
 package aphorea.mobs.runicsummons;
 
 import necesse.engine.gameLoop.tickManager.TickManager;
-import necesse.engine.network.server.ServerClient;
 import necesse.engine.registries.MobRegistry;
 import necesse.engine.util.GameUtils;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.MobHealthChangeEvent;
@@ -12,6 +11,7 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.ai.behaviourTree.BehaviourTreeAI;
 import necesse.entity.mobs.ai.behaviourTree.trees.PlayerFlyingFollowerCollisionChaserAI;
 import necesse.entity.mobs.ai.behaviourTree.util.FlyingAIMover;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.particle.FleshParticle;
 import necesse.entity.particle.Particle;
 import necesse.gfx.camera.GameCamera;
@@ -40,14 +40,17 @@ public class RunicBat extends RunicFlyingAttackingFollowingMob {
         this.selectBox = new Rectangle(-14, -41, 28, 40);
     }
 
+    @Override
     public GameDamage getCollisionDamage(Mob target) {
         return new GameDamage(0);
     }
 
+    @Override
     public int getCollisionKnockback(Mob target) {
         return 5;
     }
 
+    @Override
     public void handleCollisionHit(Mob target, GameDamage damage, int knockback) {
         Mob owner = this.getAttackOwner();
         if (owner != null && target != null) {
@@ -59,6 +62,7 @@ public class RunicBat extends RunicFlyingAttackingFollowingMob {
         }
     }
 
+    @Override
     public void init() {
         super.init();
         this.ai = new BehaviourTreeAI<>(this, new PlayerFlyingFollowerCollisionChaserAI<>(576, null, 15, 500, 640, 32), new FlyingAIMover());
@@ -66,27 +70,27 @@ public class RunicBat extends RunicFlyingAttackingFollowingMob {
         count = 0;
     }
 
+    @Override
     public void serverTick() {
         super.serverTick();
         count++;
 
         if (count >= 20 * effectNumber) {
             if (this.isFollowing()) {
-                ServerClient c = this.getFollowingServerClient();
-                if (c != null) {
-                    c.removeFollower(this, false, false);
-                }
+                ((ItemAttackerMob) this.getFollowingMob()).serverFollowersManager.removeFollower(this, false, false);
             }
             this.remove();
         }
     }
 
+    @Override
     public void spawnDeathParticles(float knockbackX, float knockbackY) {
         for (int i = 0; i < 4; ++i) {
             this.getLevel().entityManager.addParticle(new FleshParticle(this.getLevel(), texture, i, 8, 32, this.x, this.y, 20.0F, knockbackX, knockbackY), Particle.GType.IMPORTANT_COSMETIC);
         }
     }
 
+    @Override
     protected void addDrawables(List<MobDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, Level level, int x, int y, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
         super.addDrawables(list, tileList, topList, level, x, y, tickManager, camera, perspective);
         GameLight light = level.getLightLevel(x / 32, y / 32).minLevelCopy(100.0F);
@@ -106,6 +110,7 @@ public class RunicBat extends RunicFlyingAttackingFollowingMob {
         this.addShadowDrawables(tileList, x, y, light, camera);
     }
 
+    @Override
     public Point getAnimSprite(int x, int y, int dir) {
         return new Point(GameUtils.getAnim(this.getWorldEntity().getTime(), 4, 300), dir);
     }

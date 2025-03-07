@@ -1,16 +1,13 @@
 package aphorea.items.weapons.magic;
 
 import aphorea.items.AphAreaToolItem;
-import aphorea.packets.AphSingleAreaShowPacket;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
-import necesse.engine.network.Packet;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.entity.mobs.PlayerMob;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.ItemInteractAction;
-import necesse.level.maps.Level;
 
 import java.awt.*;
 
@@ -37,15 +34,5 @@ public class AdeptsBook extends AphAreaToolItem implements ItemInteractAction {
     @Override
     public void draw(InventoryItem item, PlayerMob perspective, int x, int y, boolean inInventory) {
         super.draw(item, perspective, x, y, inInventory);
-    }
-
-    @Override
-    public Packet getPacket(PlayerMob player, float rangeModifier) {
-        return new AphSingleAreaShowPacket(player.x, player.y, range * rangeModifier, color);
-    }
-
-    @Override
-    public void usePacket(Level level, PlayerMob player, float rangeModifier) {
-        AphSingleAreaShowPacket.applyToPlayer(level, player, range * rangeModifier, color);
     }
 }

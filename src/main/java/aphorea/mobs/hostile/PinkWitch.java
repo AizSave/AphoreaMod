@@ -56,6 +56,7 @@ public class PinkWitch extends FlyingHostileMob {
 
     public static AphSwampLevelData aphoreaSwampLevelData = new AphSwampLevelData();
 
+    @Override
     public boolean isValidSpawnLocation(Server server, ServerClient client, int targetX, int targetY) {
         AphSwampLevelData currentData = aphoreaSwampLevelData.getData(client.getLevel());
         if (currentData.witchesnulled) {

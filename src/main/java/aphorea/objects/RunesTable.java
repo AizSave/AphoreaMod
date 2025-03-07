@@ -25,6 +25,7 @@ public class RunesTable extends AphCraftingStationObject {
         this.isLightTransparent = true;
     }
 
+    @Override
     public int getCraftingCategoryDepth() {
         return 2;
     }

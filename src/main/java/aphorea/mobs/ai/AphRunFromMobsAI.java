@@ -51,14 +51,16 @@ public class AphRunFromMobsAI<T extends Mob> extends MoveTaskAINode<T> {
         this.runDistance = runDistance;
         this.runFromMob = runFromMob;
     }
-
-
+    
+    @Override
     protected void onRootSet(AINode<T> root, T mob, Blackboard<T> blackboard) {
     }
 
+    @Override
     public void init(T mob, Blackboard<T> blackboard) {
     }
 
+    @Override
     public AINodeResult tickNode(T mob, Blackboard<T> blackboard) {
         if (isRunning && !mob.getLevel().isCave && !(new Rectangle(96, 96, (mob.getLevel().width - 6) * 32, (mob.getLevel().height - 6) * 32)).contains(mob.getCollision())) {
             mob.remove();

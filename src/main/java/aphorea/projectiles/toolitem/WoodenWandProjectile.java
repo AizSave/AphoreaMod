@@ -5,7 +5,6 @@ import aphorea.utils.AphColors;
 import aphorea.utils.AphDistances;
 import aphorea.utils.magichealing.AphMagicHealing;
 import necesse.engine.gameLoop.tickManager.TickManager;
-import necesse.engine.network.server.ServerClient;
 import necesse.engine.util.GameUtils;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
@@ -24,7 +23,6 @@ import necesse.level.maps.light.GameLight;
 import java.awt.*;
 import java.awt.geom.Line2D;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -80,7 +78,7 @@ public class WoodenWandProjectile extends FollowingProjectile {
         super.updateTarget();
         if (traveledDistance > 20) {
             this.target = null;
-            target = AphDistances.findClosestMob(this.getOwner(), this::canHit, this.distance / 2);
+            target = AphDistances.findClosestMob(getLevel(), x, y, this.distance / 2, this::canHit);
         }
     }
 

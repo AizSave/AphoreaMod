@@ -43,6 +43,7 @@ public class AphRunesInjectorAbilityPacket extends Packet {
         writer.putNextShortUnsigned(this.buffID);
     }
 
+    @Override
     public void processClient(NetworkPacket packet, Client client) {
         if (client.getLevel() != null) {
             ClientClient target = client.getClient(this.slot);
@@ -60,6 +61,7 @@ public class AphRunesInjectorAbilityPacket extends Packet {
         }
     }
 
+    @Override
     public void processServer(NetworkPacket packet, Server server, ServerClient client) {
         if (client.slot == this.slot) {
             if (!client.checkHasRequestedSelf() || client.isDead()) {

@@ -1,11 +1,11 @@
 package aphorea.items.weapons.summoner;
 
 import aphorea.items.vanillaitemtypes.weapons.AphSummonToolItem;
-import necesse.engine.network.PacketReader;
-import necesse.engine.network.server.FollowPosition;
-import necesse.entity.mobs.PlayerMob;
+import necesse.engine.network.gameNetworkData.GNDItemMap;
+import necesse.entity.mobs.itemAttacker.FollowPosition;
+import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.PlayerInventorySlot;
 import necesse.level.maps.Level;
 
 public class VolatileGelStaff extends AphSummonToolItem {
@@ -18,8 +18,8 @@ public class VolatileGelStaff extends AphSummonToolItem {
     }
 
     @Override
-    public InventoryItem onAttack(Level level, int x, int y, PlayerMob player, int attackHeight, InventoryItem item, PlayerInventorySlot slot, int animAttack, int seed, PacketReader contentReader) {
-        super.onAttack(level, x, y, player, attackHeight, item, slot, animAttack, seed, contentReader);
+    public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob player, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
+        super.onAttack(level, x, y, player, attackHeight, item, slot, animAttack, seed, mapContent);
         consumeMana(player, item);
         return item;
     }

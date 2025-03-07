@@ -47,6 +47,7 @@ public class UnstableGelProjectile extends Projectile {
         this.knockback = knockback;
     }
 
+    @Override
     public void init() {
         super.init();
         givesLight = false;

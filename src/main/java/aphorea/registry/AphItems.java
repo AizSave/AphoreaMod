@@ -1,7 +1,6 @@
 package aphorea.registry;
 
 import aphorea.items.ammo.GelArrowItem;
-import aphorea.items.ammo.SpamBullet;
 import aphorea.items.ammo.UnstableGelArrowItem;
 import aphorea.items.armor.Gold.GoldHat;
 import aphorea.items.armor.Rocky.RockyBoots;
@@ -16,34 +15,34 @@ import aphorea.items.armor.Witch.MagicalSuit;
 import aphorea.items.armor.Witch.PinkWitchHat;
 import aphorea.items.backpacks.*;
 import aphorea.items.banners.*;
+import aphorea.items.weapons.melee.battleaxe.DemonicBattleaxe;
+import aphorea.items.weapons.melee.battleaxe.UnstableGelBattleaxe;
 import aphorea.items.consumable.InitialRune;
-import aphorea.items.consumable.LifeSpinel;
 import aphorea.items.consumable.LowdsPotion;
 import aphorea.items.consumable.UnstableCore;
-import aphorea.items.healingtools.*;
+import aphorea.items.healingtools.GoldenWand;
+import aphorea.items.healingtools.HealingStaff;
+import aphorea.items.healingtools.MagicalVial;
+import aphorea.items.healingtools.WoodenWand;
 import aphorea.items.misc.GelSlimeNullifier;
 import aphorea.items.runes.AphBaseRune;
 import aphorea.items.runes.AphModifierRune;
 import aphorea.items.runes.AphRunesInjector;
+import aphorea.items.weapons.melee.greatsword.UnstableGelGreatsword;
+import aphorea.items.weapons.melee.saber.*;
 import aphorea.items.trinkets.SwampShield;
-import aphorea.items.vanillaitemtypes.AphGrassSeedItem;
 import aphorea.items.vanillaitemtypes.AphMatItem;
 import aphorea.items.vanillaitemtypes.AphPetItem;
 import aphorea.items.vanillaitemtypes.AphSimpleTrinketItem;
 import aphorea.items.weapons.magic.AdeptsBook;
 import aphorea.items.weapons.magic.MagicalBroom;
 import aphorea.items.weapons.magic.UnstableGelStaff;
-import aphorea.items.weapons.melee.battleaxe.DemonicBattleaxe;
-import aphorea.items.weapons.melee.battleaxe.UnstableGelBattleaxe;
 import aphorea.items.weapons.melee.dagger.*;
 import aphorea.items.weapons.melee.glaive.WoodenRod;
-import aphorea.items.weapons.melee.greatsword.UnstableGelGreatsword;
-import aphorea.items.weapons.melee.saber.*;
 import aphorea.items.weapons.melee.sword.Broom;
 import aphorea.items.weapons.melee.sword.GelSword;
 import aphorea.items.weapons.melee.sword.UnstableGelSword;
 import aphorea.items.weapons.melee.sword.VoidHammer;
-import aphorea.items.weapons.range.TheSpammer;
 import aphorea.items.weapons.range.blowgun.Blowgun;
 import aphorea.items.weapons.range.greatbow.GelGreatbow;
 import aphorea.items.weapons.range.greatbow.UnstableGelGreatbow;
@@ -56,8 +55,7 @@ import aphorea.items.weapons.throwable.GelBallGroup;
 import aphorea.items.weapons.throwable.UnstableGelveline;
 import necesse.engine.registries.ItemRegistry;
 import necesse.inventory.item.Item;
-import necesse.inventory.item.placeableItem.tileItem.GrassSeedItem;
-import necesse.inventory.item.toolItem.pickaxeToolItem.CustomPickaxeToolItem;
+import necesse.inventory.item.matItem.MatItem;
 
 import java.util.ArrayList;
 
@@ -68,10 +66,8 @@ public class AphItems {
     public static void registerCore() {
         // Basic Materials
         registerItem("unstablegel", (new AphMatItem(500, Item.Rarity.UNCOMMON)).setItemCategory("materials"), 10F);
-        registerItem("rockygel", (new AphMatItem(500, Item.Rarity.COMMON)).setItemCategory("materials"), 1F);
+        registerItem("rockygel", (new AphMatItem(500, Item.Rarity.COMMON)).setItemCategory("materials"), 5F);
         registerItem("stardust", (new AphMatItem(500, Item.Rarity.UNCOMMON)).setItemCategory("materials"), 30F);
-        registerItem("infectedlog", (new AphMatItem(500, "anylog")).setItemCategory("materials", "logs"), 2F);
-        registerItem("spinel", (new AphMatItem(500, Item.Rarity.UNCOMMON)).setItemCategory("materials", "minerals"), 15F);
 
         // Melee Weapons
         registerItem("woodenrod", new WoodenRod());
@@ -100,7 +96,6 @@ public class AphItems {
         registerItem("frozensling", new FrozenSling());
         registerItem("gelgreatbow", new GelGreatbow());
         registerItem("unstablegelgreatbow", new UnstableGelGreatbow());
-        registerItem("thespammer", new TheSpammer());
 
         // Magic Weapons
         registerItem("unstablegelstaff", new UnstableGelStaff());
@@ -115,15 +110,11 @@ public class AphItems {
         registerItem("gelballgroup", new GelBallGroup());
         registerItem("unstablegelveline", new UnstableGelveline());
 
-        // Tools
-        registerItem("superiorpickaxe", new CustomPickaxeToolItem(350, 220, 6, 30, 60, 60, 1200, Item.Rarity.EPIC));
-
         // Healing Tools
         registerItem("healingstaff", new HealingStaff());
         registerItem("magicalvial", new MagicalVial());
         registerItem("woodenwand", new WoodenWand());
         registerItem("goldenwand", new GoldenWand());
-        registerItem("spinelwand", new SpinelWand());
 
         // Banners
         registerItem("blankbanner", new BlankBannerItem());
@@ -166,13 +157,11 @@ public class AphItems {
         // Ammo
         registerItem("gelarrow", new GelArrowItem(), 0.4F);
         registerItem("unstablegelarrow", new UnstableGelArrowItem(), 2.2F);
-        registerItem("spambullet", new SpamBullet());
 
         // Consumable Items
         registerItem("unstablecore", new UnstableCore(), 20F);
         registerItem("lowdspotion", new LowdsPotion());
         registerItem("initialrune", new InitialRune());
-        registerItem("lifespinel", new LifeSpinel());
 
         // Pets
         registerItem("cuberry", new AphPetItem("petphosphorslime", Item.Rarity.LEGENDARY), 50F);
@@ -187,7 +176,6 @@ public class AphItems {
 
         // Misc
         registerItem("gelslimenullifier", new GelSlimeNullifier());
-        registerItem("infectedgrassseed", new AphGrassSeedItem("infectedgrasstile"), 0.2F);
 
         // Runes Injectors
         registerItem("rusticrunesinjector", new AphRunesInjector(Item.Rarity.NORMAL, 0, 0));

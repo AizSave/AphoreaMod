@@ -75,16 +75,17 @@ public class GelArrowProjectile extends Projectile {
         target.addBuff(new ActiveBuff(AphBuffs.STICKY, target, 1000, this), true);
     }
 
+    @Override
     public void dropItem() {
         if (GameRandom.globalRandom.getChance(0.5F)) {
             this.getLevel().entityManager.pickups.add((new InventoryItem("stonearrow")).getPickupEntity(this.getLevel(), this.x, this.y));
         }
     }
 
+    @Override
     protected void playHitSound(float x, float y) {
         SoundManager.playSound(GameResources.slimesplash, SoundEffect.effect(x, y));
     }
-
 
     @Override
     public Color getParticleColor() {
@@ -117,14 +118,8 @@ public class GelArrowProjectile extends Projectile {
         addShadowDrawables(tileList, drawX, drawY, light, getAngle(), texture.getWidth() / 2, 2);
     }
 
+    @Override
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
-        executeArea();
-    }
-
-
-    public void executeArea() {
-        if (this.getOwner() != null) {
-            areaList.execute(this.getOwner(), x, y);
-        }
+        areaList.execute(getOwner(), x, y);
     }
 }

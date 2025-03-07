@@ -3,8 +3,7 @@ package aphorea.items.weapons.magic;
 import aphorea.items.vanillaitemtypes.AphToolItem;
 import aphorea.packets.AphCustomPushPacket;
 import necesse.engine.localization.Localization;
-import necesse.engine.network.PacketReader;
-import necesse.engine.network.server.ServerClient;
+import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.registries.BuffRegistry;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.registries.EnchantmentRegistry;
@@ -13,14 +12,14 @@ import necesse.engine.util.GameRandom;
 import necesse.engine.util.LineHitbox;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.ToolItemMobAbilityEvent;
 import necesse.entity.mobs.AttackAnimMob;
-import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
+import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.gfx.drawOptions.itemAttack.ItemAttackDrawOptions;
 import necesse.gfx.gameTexture.GameSprite;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.PlayerInventorySlot;
 import necesse.inventory.enchants.Enchantable;
 import necesse.inventory.enchants.ItemEnchantment;
 import necesse.inventory.enchants.ToolItemEnchantment;
@@ -68,10 +67,11 @@ public class MagicalBroom extends AphToolItem {
         attackYOffset = 155; // 140
         attackXOffset = 30; // 30
 
-        currentA = 1;
+        currentA = 0;
     }
 
-    public void addStatTooltips(ItemStatTipList list, InventoryItem currentItem, InventoryItem lastItem, Mob perspective, boolean forceAdd) {
+    @Override
+    public void addStatTooltips(ItemStatTipList list, InventoryItem currentItem, InventoryItem lastItem, ItemAttackerMob perspective, boolean forceAdd) {
         this.addAttackDamageTip(list, currentItem, lastItem, perspective, forceAdd);
         this.addAttackSpeedTip(list, currentItem, lastItem, perspective);
         this.addResilienceGainTip(list, currentItem, lastItem, perspective, forceAdd);
@@ -80,6 +80,7 @@ public class MagicalBroom extends AphToolItem {
         this.addManaCostTip(list, currentItem, lastItem, perspective);
     }
 
+    @Override
     public int getFlatItemCooldownTime(InventoryItem item) {
         return (int) ((float) this.getFlatAttackAnimTime(item) * 1.5F);
     }
@@ -102,13 +103,12 @@ public class MagicalBroom extends AphToolItem {
 
         ItemAttackDrawOptions.AttackItemSprite itemSprite = options.itemSprite(attackTexture, n, 0, 320);
 
-        int dir = player.getDir();
-        itemSprite.itemRotatePoint(dir == 2 ? this.attackXOffset + 25 : this.attackXOffset, dir == 2 ? this.attackYOffset - 5 : this.attackYOffset);
+        itemSprite.itemRotatePoint(options.dir == 2 ? this.attackXOffset + 25 : this.attackXOffset, options.dir == 2 ? this.attackYOffset - 5 : this.attackYOffset);
         if (itemColor != null) {
             itemSprite.itemColor(itemColor);
         }
 
-        if (dir == 0 || dir == 2) {
+        if (options.dir == 0 || options.dir == 2) {
             itemSprite.itemRotateOffset(-45);
         }
 
@@ -147,6 +147,7 @@ public class MagicalBroom extends AphToolItem {
         return angleGetter;
     }
 
+    @Override
     public ArrayList<Shape> getHitboxes(InventoryItem item, AttackAnimMob mob, int aimX, int aimY, ToolItemMobAbilityEvent event, boolean forDebug) {
         ArrayList<Shape> out = new ArrayList<>();
         int attackRange = this.getAttackRange(item);
@@ -180,50 +181,50 @@ public class MagicalBroom extends AphToolItem {
         return out;
     }
 
-    public InventoryItem onAttack(Level level, int x, int y, PlayerMob player, int attackHeight, InventoryItem item, PlayerInventorySlot slot, int animAttack, int seed, PacketReader contentReader) {
+    @Override
+    public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
         if (animAttack == 0) {
-
             int strength = 50;
-            Point2D.Float dir = GameMath.normalize((float) x - player.x, (float) y - player.y);
-            AphCustomPushPacket.applyToPlayer(level, player, dir.x, dir.y, (float) strength);
-            player.buffManager.addBuff(new ActiveBuff(BuffRegistry.FOW_ACTIVE, player, 0.15F, null), level.isServer());
-            player.buffManager.forceUpdateBuffs();
+            Point2D.Float dir = GameMath.normalize((float) x - attackerMob.x, (float) y - attackerMob.y);
+            attackerMob.buffManager.addBuff(new ActiveBuff(BuffRegistry.FOW_ACTIVE, attackerMob, 0.15F, null), level.isServer());
+            attackerMob.buffManager.forceUpdateBuffs();
 
-            if (player.isServer()) {
-                ServerClient serverClient = player.getServerClient();
-                level.getServer().network.sendToClientsWithEntityExcept(new AphCustomPushPacket(serverClient.slot, dir.x, dir.y, (float) strength), serverClient.playerMob, serverClient);
-            } else if (player.isClient()) {
+            if (attackerMob.isServer()) {
+                level.getServer().network.sendToAllClients(new AphCustomPushPacket(attackerMob, dir.x, dir.y, (float) strength));
+            } else if (attackerMob.isClient()) {
                 currentA = currentA == 0 ? 1 : 0;
                 animInverted = currentA == 1;
             }
 
-            int animTime = this.getAttackAnimTime(item, player);
-            int aimX = x - player.getX();
-            int aimY = y - player.getY() + attackHeight;
-            ToolItemMobAbilityEvent event = new ToolItemMobAbilityEvent(player, seed, item, aimX, aimY, animTime, animTime);
+            int animTime = this.getAttackAnimTime(item, attackerMob);
+            int aimX = x - attackerMob.getX();
+            int aimY = y - attackerMob.getY() + attackHeight;
+            ToolItemMobAbilityEvent event = new ToolItemMobAbilityEvent(attackerMob, seed, item, aimX, aimY, animTime, animTime);
             level.entityManager.addLevelEventHidden(event);
 
-            this.consumeMana(player, item);
+            this.consumeMana(attackerMob, item);
         }
 
         return item;
     }
 
+    @Override
     public ToolItemEnchantment getRandomEnchantment(GameRandom random, InventoryItem item) {
         return Enchantable.getRandomEnchantment(random, EnchantmentRegistry.meleeItemEnchantments, this.getEnchantmentID(item), ToolItemEnchantment.class);
     }
 
+    @Override
     public boolean isValidEnchantment(InventoryItem item, ItemEnchantment enchantment) {
         return EnchantmentRegistry.meleeItemEnchantments.contains(enchantment.getID());
     }
 
+    @Override
     public Set<Integer> getValidEnchantmentIDs(InventoryItem item) {
         return EnchantmentRegistry.meleeItemEnchantments;
     }
 
+    @Override
     public String getTranslatedTypeName() {
         return Localization.translate("item", "broom");
     }
-
-
 }

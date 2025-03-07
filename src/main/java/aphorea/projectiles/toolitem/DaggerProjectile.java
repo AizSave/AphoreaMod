@@ -92,6 +92,7 @@ abstract public class DaggerProjectile extends Projectile {
         });
     }
 
+    @Override
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
         super.doHitLogic(mob, object, x, y);
         if (this.isServer() && shouldDrop && stringItemID != null && gndData != null) {

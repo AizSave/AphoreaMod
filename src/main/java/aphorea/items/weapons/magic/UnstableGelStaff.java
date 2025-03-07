@@ -1,14 +1,12 @@
 package aphorea.items.weapons.magic;
 
-import aphorea.packets.AphSingleAreaShowPacket;
 import aphorea.projectiles.toolitem.UnstableGelProjectile;
 import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
 import necesse.engine.localization.Localization;
-import necesse.engine.network.Packet;
-import necesse.engine.network.PacketReader;
+import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.sound.SoundEffect;
@@ -16,15 +14,15 @@ import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameBlackboard;
 import necesse.engine.util.GameRandom;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.ToolItemMobAbilityEvent;
-import necesse.entity.mobs.AttackAnimMob;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
+import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.gfx.GameResources;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.PlayerInventorySlot;
 import necesse.inventory.item.ItemInteractAction;
 import necesse.inventory.item.ItemStatTipList;
 import necesse.level.maps.Level;
@@ -65,7 +63,7 @@ public class UnstableGelStaff extends AphMagicProjectileSecondaryAreaToolItem im
         return tooltips;
     }
 
-    public void addStatTooltips(ItemStatTipList list, InventoryItem currentItem, InventoryItem lastItem, Mob perspective, boolean forceAdd) {
+    public void addStatTooltips(ItemStatTipList list, InventoryItem currentItem, InventoryItem lastItem, ItemAttackerMob perspective, boolean forceAdd) {
         this.addAttackDamageTip(list, currentItem, lastItem, perspective, forceAdd);
         this.addAttackSpeedTip(list, currentItem, lastItem, perspective);
         this.addCritChanceTip(list, currentItem, lastItem, perspective, forceAdd);
@@ -73,17 +71,16 @@ public class UnstableGelStaff extends AphMagicProjectileSecondaryAreaToolItem im
     }
 
     @Override
-    public void showAttack(Level level, int x, int y, AttackAnimMob mob, int attackHeight, InventoryItem item, int seed, PacketReader contentReader) {
+    public void showAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, int animAttack, int seed, GNDItemMap mapContent) {
         if (level.isClient()) {
-            SoundManager.playSound(GameResources.slimesplash, SoundEffect.effect(mob)
+            SoundManager.playSound(GameResources.slimesplash, SoundEffect.effect(attackerMob)
                     .volume(0.7f)
                     .pitch(GameRandom.globalRandom.getFloatBetween(1.0f, 1.1f)));
         }
     }
 
     @Override
-    public InventoryItem onAttack(Level level, int x, int y, PlayerMob player, int attackHeight, InventoryItem item, PlayerInventorySlot slot, int animAttack, int seed, PacketReader contentReader) {
-
+    public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob player, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
         Projectile projectile = new UnstableGelProjectile(
                 level, player,
                 player.x, player.y,
@@ -99,7 +96,7 @@ public class UnstableGelStaff extends AphMagicProjectileSecondaryAreaToolItem im
         level.entityManager.projectiles.addHidden(projectile);
 
         if (level.isServer()) {
-            level.getServer().network.sendToClientsWithEntityExcept(new PacketSpawnProjectile(projectile), projectile, player.getServerClient());
+            level.getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
         }
 
         this.consumeMana(player, item);
@@ -111,15 +108,5 @@ public class UnstableGelStaff extends AphMagicProjectileSecondaryAreaToolItem im
     public void hitMob(InventoryItem item, ToolItemMobAbilityEvent event, Level level, Mob target, Mob attacker) {
         super.hitMob(item, event, level, target, attacker);
         target.addBuff(new ActiveBuff(AphBuffs.STICKY, target, 2000, null), true);
-    }
-
-    @Override
-    public Packet getPacket(PlayerMob player, float rangeModifier) {
-        return new AphSingleAreaShowPacket(player.x, player.y, range * rangeModifier, color);
-    }
-
-    @Override
-    public void usePacket(Level level, PlayerMob player, float rangeModifier) {
-        AphSingleAreaShowPacket.applyToPlayer(level, player, range * rangeModifier, color);
     }
 }

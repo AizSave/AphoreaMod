@@ -4,7 +4,6 @@ import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
 import necesse.engine.network.server.ServerClient;
-import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.util.GameRandom;
 import necesse.engine.util.GroundPillarList;
 import necesse.entity.manager.GroundPillarHandler;
@@ -65,26 +64,31 @@ public class RuneOfCryoQueenProjectile extends PositionedCirclingProjectile {
 
     }
 
+    @Override
     public void setupSpawnPacket(PacketWriter writer) {
         super.setupSpawnPacket(writer);
         writer.putNextFloat(this.radius);
         writer.putNextBoolean(this.clockwise);
     }
 
+    @Override
     public void applySpawnPacket(PacketReader reader) {
         super.applySpawnPacket(reader);
         this.radius = reader.getNextFloat();
         this.clockwise = reader.getNextBoolean();
     }
 
+    @Override
     public float getRadius() {
         return this.radius;
     }
 
+    @Override
     public boolean rotatesClockwise() {
         return this.clockwise;
     }
 
+    @Override
     public void onMoveTick(Point2D.Float startPos, double movedDist) {
         super.onMoveTick(startPos, movedDist);
         this.radius = (float) ((double) this.radius + movedDist * 1.2);
@@ -100,10 +104,12 @@ public class RuneOfCryoQueenProjectile extends PositionedCirclingProjectile {
 
     }
 
+    @Override
     public Trail getTrail() {
         return null;
     }
 
+    @Override
     public void addDrawables(List<LevelSortedDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, OrderableDrawables overlayList, Level level, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
     }
 
@@ -114,7 +120,7 @@ public class RuneOfCryoQueenProjectile extends PositionedCirclingProjectile {
             if (mob.isHuman) {
                 damagePercent /= 5;
             }
-            this.setDamage(new GameDamage(DamageTypeRegistry.TRUE, mob.getMaxHealth() * damagePercent));
+            this.setDamage(new GameDamage(mob.getMaxHealth() * damagePercent, 1000000));
             super.onHit(mob, object, x, y, fromPacket, packetSubmitter);
         }
     }

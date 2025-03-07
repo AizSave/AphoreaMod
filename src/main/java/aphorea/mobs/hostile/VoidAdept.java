@@ -87,6 +87,7 @@ public class VoidAdept extends HostileMob {
         });
     }
 
+    @Override
     public void init() {
         super.init();
         PlayerChaserWandererAI<VoidAdept> playerChaserAI = new PlayerChaserWandererAI<VoidAdept>(null, 640, 200, 40000, false, false) {
@@ -118,10 +119,12 @@ public class VoidAdept extends HostileMob {
         this.ai = new BehaviourTreeAI<>(this, playerChaserAI);
     }
 
+    @Override
     public LootTable getLootTable() {
         return lootTable;
     }
 
+    @Override
     public void spawnDeathParticles(float knockbackX, float knockbackY) {
         for (int i = 0; i < 4; ++i) {
             this.getLevel().entityManager.addParticle(new FleshParticle(this.getLevel(), texture.body, GameRandom.globalRandom.nextInt(5), 8, 32, this.x, this.y, 10.0F, knockbackX, knockbackY), Particle.GType.IMPORTANT_COSMETIC);
@@ -129,6 +132,7 @@ public class VoidAdept extends HostileMob {
 
     }
 
+    @Override
     public float getAttackAnimProgress() {
         float progress = (float) (this.getWorldEntity().getTime() - this.attackTime) / (float) this.attackAnimTime;
         if (progress >= 1.0F) {
@@ -138,7 +142,7 @@ public class VoidAdept extends HostileMob {
                 this.attackCount = 0;
 
                 if (this.isServer()) {
-                    attackArea.executeAreas(this);
+                    attackArea.executeServer(this);
 
                     int tileX = this.getX() / 32;
                     int tileY = this.getY() / 32;
@@ -163,26 +167,27 @@ public class VoidAdept extends HostileMob {
                         this.teleportAbility.runAndSend(point.x, point.y);
                     }
                 } else if (this.isClient()) {
-                    attackArea.showAllAreaParticles(getLevel(), this.x, this.y);
+                    attackArea.executeClient(getLevel(), this.x, this.y);
                 }
             }
         } else if ((progress >= 0.5F) && attackCount == 1) {
             this.attackCount = 2;
 
             if (this.isClient()) {
-                showAttackRange.showAllAreaParticles(getLevel(), this.x, this.y);
+                showAttackRange.executeClient(getLevel(), this.x, this.y);
             }
         } else if (attackCount == 0) {
             this.attackCount = 1;
 
             if (this.isClient()) {
-                showAttackRange.showAllAreaParticles(getLevel(), this.x, this.y);
+                showAttackRange.executeClient(getLevel(), this.x, this.y);
             }
         }
 
         return Math.min(1.0F, progress);
     }
 
+    @Override
     public void addDrawables(List<MobDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, Level level, int x, int y, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
         super.addDrawables(list, tileList, topList, level, x, y, tickManager, camera, perspective);
         GameLight light = level.getLightLevel(x / 32, y / 32);
@@ -213,10 +218,12 @@ public class VoidAdept extends HostileMob {
         return ItemAttackDrawOptions.start(dir).itemSprite(texture.body, 0, 9, 32).itemRotatePoint(3, 3).itemEnd().armSprite(texture.body, 0, 8, 32).light(light);
     }
 
+    @Override
     public int getRockSpeed() {
         return 20;
     }
 
+    @Override
     public DeathMessageTable getDeathMessages() {
         return this.getDeathMessages("voidapp", 3);
     }

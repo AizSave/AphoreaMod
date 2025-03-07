@@ -14,6 +14,7 @@ abstract public class AphCraftingStationObject extends CraftingStationObject {
         super(collision);
     }
 
+    @Override
     public ListGameTooltips getItemTooltips(InventoryItem item, PlayerMob perspective) {
         ListGameTooltips tooltips = super.getItemTooltips(item, perspective);
         addItemToolTips(tooltips, item, perspective);

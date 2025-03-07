@@ -1,14 +1,16 @@
 package aphorea.items.weapons.range.sling;
 
+import aphorea.projectiles.toolitem.FireSlingStoneProjectile;
 import aphorea.projectiles.toolitem.SlingStoneProjectile;
 import necesse.entity.mobs.PlayerMob;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.inventory.InventoryItem;
 import necesse.level.maps.Level;
 
 public class Sling extends AphSlingToolItem {
     public Sling() {
-        super(100, "stoneprojectile");
+        super(100);
         this.rarity = Rarity.NORMAL;
         this.attackAnimTime.setBaseValue(1200);
         this.attackDamage.setBaseValue(15.0F).setUpgradedValue(1.0F, 135.0F);
@@ -18,14 +20,15 @@ public class Sling extends AphSlingToolItem {
         this.attackYOffset = 20;
     }
 
-    public Projectile getProjectile(Level level, int x, int y, PlayerMob player, InventoryItem item) {
-        return new SlingStoneProjectile(level, player,
-                player.x, player.y,
+    @Override
+    public Projectile getProjectile(Level level, int x, int y, ItemAttackerMob attackerMob, InventoryItem item) {
+        return new SlingStoneProjectile(level, attackerMob,
+                attackerMob.x, attackerMob.y,
                 x, y,
-                getProjectileVelocity(item, player),
+                getProjectileVelocity(item, attackerMob),
                 getAttackRange(item),
                 getAttackDamage(item),
-                getKnockback(item, player)
+                getKnockback(item, attackerMob)
         );
     }
 }
