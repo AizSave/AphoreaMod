@@ -1,4 +1,4 @@
-package aphorea.utils;
+package aphorea;
 
 import aphorea.items.weapons.magic.MagicalBroom;
 import aphorea.mobs.bosses.MiniUnstableGelSlime;
