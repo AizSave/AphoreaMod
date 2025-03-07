@@ -1,6 +1,6 @@
 package aphorea.items.healingtools;
 
-import aphorea.projectiles.toolitem.GoldenWandProjectile;
+import aphorea.projectiles.toolitem.SpinelWandProjectile;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.PacketReader;
 import necesse.engine.sound.SoundEffect;
@@ -14,16 +14,16 @@ import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.level.maps.Level;
 
-public class GoldenWand extends AphHealingProjectileToolItem {
+public class SpinelWand extends AphHealingProjectileToolItem {
 
-    public GoldenWand() {
-        super(300);
+    public SpinelWand() {
+        super(400);
         rarity = Rarity.UNCOMMON;
-        attackAnimTime.setBaseValue(800);
+        attackAnimTime.setBaseValue(600);
 
         this.attackRange.setBaseValue(500);
         this.velocity.setBaseValue(200);
-        manaCost.setBaseValue(5.0F);
+        manaCost.setBaseValue(4.0F);
 
         attackXOffset += 10;
         attackYOffset += 15;
@@ -33,7 +33,7 @@ public class GoldenWand extends AphHealingProjectileToolItem {
 
     public Projectile[] getProjectiles(Level level, int x, int y, PlayerMob player, InventoryItem item) {
         return new Projectile[]{
-                new GoldenWandProjectile(this.getHealing(item), this, item, level, player,
+                new SpinelWandProjectile(this.getHealing(item), this, item, level, player,
                         player.x, player.y,
                         x, y,
                         getProjectileVelocity(item, player),
@@ -51,7 +51,7 @@ public class GoldenWand extends AphHealingProjectileToolItem {
     @Override
     public ListGameTooltips getPreEnchantmentTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {
         ListGameTooltips tooltips = super.getPreEnchantmentTooltips(item, perspective, blackboard);
-        tooltips.add(Localization.translate("itemtooltip", "goldenwand"));
+        tooltips.add(Localization.translate("itemtooltip", "spinelwand"));
         return tooltips;
     }
 }

@@ -115,7 +115,7 @@ public class RuneOfCryoQueenProjectile extends PositionedCirclingProjectile {
                 damagePercent /= 5;
             }
             this.setDamage(new GameDamage(DamageTypeRegistry.TRUE, mob.getMaxHealth() * damagePercent));
+            super.onHit(mob, object, x, y, fromPacket, packetSubmitter);
         }
-        super.onHit(mob, object, x, y, fromPacket, packetSubmitter);
     }
 }

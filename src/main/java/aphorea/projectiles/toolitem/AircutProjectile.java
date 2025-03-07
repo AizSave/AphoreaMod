@@ -80,8 +80,6 @@ abstract public class AircutProjectile extends Projectile {
                 options.draw();
             }
         });
-
-        addShadowDrawables(tileList, drawX, drawY, light, getAngle(), texture.getWidth() / 2, 2);
     }
 
     public static class CopperAircutProjectile extends AircutProjectile {

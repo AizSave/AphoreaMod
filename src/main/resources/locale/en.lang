@@ -56,12 +56,24 @@ loyal=Loyal
 
 
 [tile]
+# NEW
 geltile=Gel Floor
+infectedwatertile=Infected Water
+infectedgrasstile=Infected Grass
+spinelgravel=Spinel Gravel
 
 
 [object]
 witchstatue=Witch Statue
 runestable=Runes Table
+#NEW
+infectedsapling=Infected Sapling
+spinelcluster=Spinel Cluster
+spinelcluster_small=Small Spinel Cluster
+spinelclusterpure=Pure Spinel Cluster
+gelrock=Gel Rock
+infectedtree=Infected Tree
+infectedgrass=Infected Grass
 
 
 [itemcategory]
@@ -81,6 +93,7 @@ rockygel=Rocky Gel
 unstablegel=Unstable Gel
 stardust=Stardust
 # NEW
+infectedlog=Infected Log
 spinel=Spinel
 lifespinel=Life Spinel
 
@@ -168,6 +181,12 @@ magicalvial=Magical Vial
 healingstaff=Healing Staff
 woodenwand=Wooden Wand
 goldenwand=Golden Wand
+# NEW
+spinelwand=Spinel Wand
+
+// Tools
+# NEW
+superiorpickaxe=Superior Pickaxe
 
 // Trinkets
 rockyperiapt=Rocky Periapt
@@ -202,6 +221,8 @@ swamphood=Swamp Hood
 // Misc
 gelslimenullifier=Gel Slime Nullifier
 cuberry=Cuberry
+# NEW
+infectedgrassseed=Infected Grass Seed
 
 // Backpacks
 basicbackpack=Basic Backpack
@@ -335,7 +356,7 @@ unstablegelstaff=When projectiles bounces off walls, they duplicate
 gelgreatbow=Turns Stone Arrows into Gel Arrows
 unstablegelgreatbow=Turns Stone Arrows and Gel Arrows into Unstable Gel Arrows
 woodenwand=Shots a §9[Magic Healing]§0 projectile
-goldenwand=Shots a projectile that ends with a §9[Magic Healing]§0 area
+goldenwand=Shots a guided projectile that ends with a §9[Magic Healing]§0 area
 # NEW
 thespammer=Can shot Spam Bullets
 spambullet=Randomly have one of these effects:
@@ -345,6 +366,7 @@ spambullet3=§9Like:§0 Bounces off walls and pierces mobs, up to 10 times each
 spambullet4=§9Check:§0 Magic healing area of 3 health at the end of its path
 spambullet5=§9Explosion:§0 Explodes at the end of its path instead of colliding
 lifespinel=Permanently increases max health by 5 up to 250
+spinelwand=Shoots a very guided projectile ending in a §9[Magic Healing]§0 area
 
 
 // Tiles & Objects
@@ -502,6 +524,7 @@ copperdaggergoblin=Copper Dagger Goblin
 irondaggergoblin=Iron Dagger Goblin
 golddaggergoblin=Gold Dagger Goblin
 # NEW
+infectedtreant=Infected Treant
 spinelgolem=Spinel Golem
 spinelcaveling=Spinel Caveling
 
@@ -562,9 +585,23 @@ infectedfields=Infected Fields
 
 
 [journal]
+
+//Levels
+# NEW
+infectedsurface=Infected Fields Surface
+infectedcave=Infected Fields Cave
+
+
+// Challenges
 killgelslimesforest=[mob=gelslime] Kill 25 Gel Slimes in the forest
 pickupfloralring=[item=floralring] Cut a lot of grass in the forest to obtain the Floral Ring
 killunstablegelslime=[mob=unstablegelslime] Kill 1 Unstable Gel Slime
+
+pickupinfectedlogs=[item=infectedlog] Chop to pick up 100 Infected Logs
+
+pickupspinel=[item=spinel] Pick up 40 Spinel
+pickuplifespinel=[item=lifespinel] Pick up 5 Life Spinel
+findthespammer=[item=thespammer] Find The Spammer
 
 
 [controls]

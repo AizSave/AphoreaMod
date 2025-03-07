@@ -31,7 +31,7 @@ public class HealingStaff extends AphAreaToolItem implements ItemInteractAction 
     public HealingStaff() {
         super(500, false, true, areaList);
         rarity = Rarity.UNCOMMON;
-        attackAnimTime.setBaseValue(1400);
+        attackAnimTime.setBaseValue(1000);
 
         manaCost.setBaseValue(6.0F);
 

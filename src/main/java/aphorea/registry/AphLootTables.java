@@ -32,7 +32,8 @@ public class AphLootTables {
                 new LootItemList(
                         new LootItem("thespammer"),
                         LootItem.between("spambullet", 90, 110),
-                        LootItem.between("spinela", 4, 6)
+                        LootItem.between("spinel", 4, 6),
+                        LootItem.between("lifespinel", 1, 2)
                 )
         );
 

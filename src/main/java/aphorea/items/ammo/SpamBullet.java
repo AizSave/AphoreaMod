@@ -13,6 +13,7 @@ import necesse.inventory.item.bulletItem.BulletItem;
 
 public class SpamBullet extends BulletItem {
     public SpamBullet() {
+        this.rarity = Rarity.UNCOMMON;
     }
 
     @Override

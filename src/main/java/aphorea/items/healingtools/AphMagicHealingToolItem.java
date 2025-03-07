@@ -6,6 +6,7 @@ import aphorea.utils.magichealing.AphMagicHealing;
 import aphorea.utils.magichealing.AphMagicHealingFunctions;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.PacketReader;
+import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
@@ -32,6 +33,8 @@ abstract public class AphMagicHealingToolItem extends AphToolItem {
         this.setItemCategory("equipment", "tools", "healing");
         this.setItemCategory(ItemCategory.equipmentManager, "tools", "healingtools");
         this.setItemCategory(ItemCategory.craftingManager, "equipment", "tools", "healingtools");
+
+        damageType = DamageTypeRegistry.MAGIC;
     }
 
     public int getHealing(@Nullable InventoryItem item) {

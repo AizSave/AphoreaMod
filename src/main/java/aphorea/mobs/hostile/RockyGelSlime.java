@@ -20,6 +20,7 @@ import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.inventory.lootTable.LootTable;
 import necesse.inventory.lootTable.lootItem.ChanceLootItem;
+import necesse.inventory.lootTable.lootItem.LootItem;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
 
@@ -45,6 +46,7 @@ public class RockyGelSlime extends HostileMob {
     public static GameTexture texture;
 
     public static LootTable lootTable = new LootTable(
+            new LootItem("rockygel", 0),
             ChanceLootItem.between(0.05f, "unstablecore", 1, 1)
     );
 

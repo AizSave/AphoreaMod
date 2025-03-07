@@ -29,26 +29,21 @@ import java.util.Map;
 public class InfectedWaterTile extends LiquidTile {
     public GameTextureSection deepTexture;
     public GameTextureSection shallowTexture;
-    protected final GameRandom drawRandom;
+    protected final GameRandom drawRandom = new GameRandom();
     private static final Map<Integer, Long> lastHit = new HashMap<>();
     private static final Map<Integer, Integer> consecutiveHits = new HashMap<>();
 
     public InfectedWaterTile() {
-        super(AphColors.infected_light, "infected_freshwater", "infected_saltwater");
+        super(AphColors.infected_light, "infected_freshwater_shallow", "infected_freshwater_deep", "infected_saltwater_shallow", "infected_saltwater_deep");
         this.lightLevel = 150;
         this.lightHue = 0.0F;
         this.lightSat = 0.6F;
-        this.drawRandom = new GameRandom();
     }
 
     protected void loadTextures() {
         super.loadTextures();
         this.deepTexture = tileTextures.addTexture(GameTexture.fromFile("tiles/waterdeep"));
         this.shallowTexture = tileTextures.addTexture(GameTexture.fromFile("tiles/watershallow"));
-    }
-
-    public TextureIndexes getTextureIndexes(Level level) {
-        return new TextureIndexes(0, 0, 1, 1);
     }
 
     public void tick(Mob mob, Level level, int x, int y) {
@@ -102,12 +97,16 @@ public class InfectedWaterTile extends LiquidTile {
 
     }
 
+    public TextureIndexes getTextureIndexes(Level level) {
+        return new LiquidTile.TextureIndexes(0, 1, 2, 3);
+    }
+
     public Color getLiquidColor(Level level, int x, int y) {
         return AphColors.infected_light;
     }
 
     public Color getNewSplattingLiquidColor(Level level, int x, int y) {
-        return AphColors.infected_light;
+        return AphColors.infected;
     }
 
     public Color getMapColor(Level level, int tileX, int tileY) {

@@ -77,8 +77,6 @@ public class MiniUnstableGelSlimeProjectile extends Projectile {
                 options.draw();
             }
         });
-
-        addShadowDrawables(tileList, drawX, drawY, light, getAngle(), texture.getWidth() / 2, 2);
     }
 
     @Override

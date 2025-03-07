@@ -17,12 +17,10 @@ import aphorea.items.armor.Witch.PinkWitchHat;
 import aphorea.items.backpacks.*;
 import aphorea.items.banners.*;
 import aphorea.items.consumable.InitialRune;
+import aphorea.items.consumable.LifeSpinel;
 import aphorea.items.consumable.LowdsPotion;
 import aphorea.items.consumable.UnstableCore;
-import aphorea.items.healingtools.GoldenWand;
-import aphorea.items.healingtools.HealingStaff;
-import aphorea.items.healingtools.MagicalVial;
-import aphorea.items.healingtools.WoodenWand;
+import aphorea.items.healingtools.*;
 import aphorea.items.misc.GelSlimeNullifier;
 import aphorea.items.runes.AphBaseRune;
 import aphorea.items.runes.AphModifierRune;
@@ -125,6 +123,7 @@ public class AphItems {
         registerItem("magicalvial", new MagicalVial());
         registerItem("woodenwand", new WoodenWand());
         registerItem("goldenwand", new GoldenWand());
+        registerItem("spinelwand", new SpinelWand());
 
         // Banners
         registerItem("blankbanner", new BlankBannerItem());
@@ -173,6 +172,7 @@ public class AphItems {
         registerItem("unstablecore", new UnstableCore(), 20F);
         registerItem("lowdspotion", new LowdsPotion());
         registerItem("initialrune", new InitialRune());
+        registerItem("lifespinel", new LifeSpinel());
 
         // Pets
         registerItem("cuberry", new AphPetItem("petphosphorslime", Item.Rarity.LEGENDARY), 50F);

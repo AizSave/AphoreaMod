@@ -1,14 +1,21 @@
 package aphorea.mobs.hostile;
 
+import aphorea.registry.AphBuffs;
+import aphorea.utils.AphColors;
 import necesse.engine.Settings;
 import necesse.engine.gameLoop.tickManager.TickManager;
+import necesse.engine.network.client.Client;
+import necesse.engine.registries.BuffRegistry;
 import necesse.engine.util.GameRandom;
 import necesse.engine.window.WindowManager;
 import necesse.entity.mobs.*;
 import necesse.entity.mobs.ai.behaviourTree.BehaviourTreeAI;
 import necesse.entity.mobs.ai.behaviourTree.trees.CollisionPlayerChaserWandererAI;
+import necesse.entity.mobs.buffs.ActiveBuff;
+import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.hostile.HostileMob;
 import necesse.gfx.GameResources;
+import necesse.gfx.Renderer;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawOptions.DrawOptions;
 import necesse.gfx.drawOptions.texture.TextureDrawOptions;
@@ -78,7 +85,7 @@ public class InfectedTreant extends HostileMob {
 
     public void init() {
         super.init();
-        this.ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 4 * 32, collisionDamage, 30, 40000 * 20));
+        this.ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 6 * 32, collisionDamage, 0, 40000 * 20));
     }
 
     @Override
@@ -126,7 +133,7 @@ public class InfectedTreant extends HostileMob {
         GameLight light = level.getLightLevel(x / 32, y / 32);
         int drawX = camera.getDrawX(x) - 64;
         int drawY = camera.getDrawY(y) - 110;
-        int addedY = 0;
+        int addedY;
         if (dx == 0 && dy == 0) {
             jump = 0;
         } else {
@@ -155,7 +162,7 @@ public class InfectedTreant extends HostileMob {
 
         Consumer<TextureDrawOptionsPositionMod> waveChange = GameResources.waveShader.setupGrassWaveMod(level, x / 32, y / 32, weaveTime, weaveAmount, 2, this.drawRandom, GameObject.getTileSeed(x / 32, y / 32, 0), mirrored, 3.0F);
         DrawOptions drawOptions = texture.initDraw()
-                .sprite(inLiquid() && !isWaterWalking() && addedY == 0 ? 1 : 0, spriteY, 128)
+                .sprite(0, spriteY, 128)
                 .light(light)
                 .alpha(alpha)
                 .addPositionMod(waveChange)
@@ -169,16 +176,25 @@ public class InfectedTreant extends HostileMob {
             }
         });
 
-        if (!isWaterWalking()) addShadowDrawables(tileList, x, y, light, camera);
+        if (!isWaterWalking()) addShadowDrawables(tileList, x, y, light, camera, alpha);
     }
 
-    @Override
-    protected TextureDrawOptions getShadowDrawOptions(int x, int y, GameLight light, GameCamera camera) {
+    protected void addShadowDrawables(OrderableDrawables list, int x, int y, GameLight light, GameCamera camera, float alpha) {
+        if (!(Boolean)this.buffManager.getModifier(BuffModifiers.INVISIBILITY) && !this.isRiding()) {
+            TextureDrawOptions shadowOptions = this.getShadowDrawOptions(x, y, light, camera, alpha);
+            if (shadowOptions != null) {
+                list.add((tm) -> shadowOptions.draw());
+            }
+
+        }
+    }
+
+    protected TextureDrawOptions getShadowDrawOptions(int x, int y, GameLight light, GameCamera camera, float alpha) {
         GameTexture shadowTexture = texture_shadow;
         int drawX = camera.getDrawX(x) - shadowTexture.getWidth() / 2;
         int drawY = camera.getDrawY(y) - shadowTexture.getHeight() / 8 + 4;
         drawY += this.getBobbing(x, y);
-        return shadowTexture.initDraw().sprite(0, spriteY, shadowTexture.getWidth(), shadowTexture.getHeight() / 4).light(light)                .mirror(mirrored, false).pos(drawX, drawY);
+        return shadowTexture.initDraw().sprite(0, spriteY, shadowTexture.getWidth(), shadowTexture.getHeight() / 4).alpha(alpha).light(light)                .mirror(mirrored, false).pos(drawX, drawY);
     }
 
     @Override
@@ -208,9 +224,15 @@ public class InfectedTreant extends HostileMob {
         }
         if (damageMod != 1F) {
             event.damage = event.damage.setDamage(event.damage.damage * damageMod);
+            event.prevent();
         }
 
         super.doBeforeHitLogic(event);
+    }
+
+    @Override
+    public void addBuff(ActiveBuff buff, boolean sendUpdatePacket) {
+        if (buff.buff == BuffRegistry.Debuffs.ON_FIRE) super.addBuff(buff, sendUpdatePacket);
     }
 
     @Override
@@ -224,4 +246,17 @@ public class InfectedTreant extends HostileMob {
             TreeObject.spawnLeafParticles(level, x, y, leavesCenterWidth, minStartHeight, leavesMaxHeight, amount, windDir, windSpeed, leavesTexture);
         }
     }
+
+    public boolean shouldDrawOnMap() {
+        return true;
+    }
+
+    @Override
+    public void drawOnMap(TickManager tickManager, Client client, int x, int y, double tileScale, Rectangle drawBounds, boolean isMinimap) {
+        super.drawOnMap(tickManager, client, x, y, tileScale, drawBounds, isMinimap);
+        int width = (int) tileScale;
+        int height = (int) tileScale;
+        Renderer.initQuadDraw(width, height).color(AphColors.infected_dark).draw(x - width / 2, y - height / 2);
+    }
+
 }

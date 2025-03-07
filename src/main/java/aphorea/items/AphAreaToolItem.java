@@ -40,7 +40,6 @@ abstract public class AphAreaToolItem extends AphMagicHealingToolItem {
         this.isHealingTool = isHealingTool;
 
         this.areaList = areaList;
-        damageType = DamageTypeRegistry.MAGIC;
 
         if (isMagicWeapon) {
             this.setItemCategory("equipment", "weapons", "magicweapons");

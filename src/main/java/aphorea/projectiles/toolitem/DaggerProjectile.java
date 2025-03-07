@@ -90,8 +90,6 @@ abstract public class DaggerProjectile extends Projectile {
                 options.draw();
             }
         });
-
-        addShadowDrawables(tileList, drawX, drawY, light, getAngle(), texture.getWidth() / 2, 2);
     }
 
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {

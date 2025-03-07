@@ -19,14 +19,13 @@ import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.pickup.ItemPickupEntity;
 import necesse.level.gameObject.GameObject;
 import necesse.level.maps.biomes.Biome;
-import necesse.level.maps.generationModules.CaveGeneration;
-import necesse.level.maps.generationModules.CellAutomaton;
-import necesse.level.maps.generationModules.GenerationTools;
-import necesse.level.maps.generationModules.PresetGeneration;
+import necesse.level.maps.biomes.desert.DesertDeepCaveLevel;
+import necesse.level.maps.generationModules.*;
 import necesse.level.maps.presets.PresetUtils;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.function.Consumer;
 import java.util.stream.Stream;
 
 public class InfectedCaveLevel extends InfectedSurfaceLevel {
@@ -57,7 +56,38 @@ public class InfectedCaveLevel extends InfectedSurfaceLevel {
         });
         GameEvents.triggerEvent(new GeneratedCaveOresEvent(this, cg));
         GameObject crystalClusterSmall = ObjectRegistry.getObject("spinelclustersmall");
-        GenerationTools.generateRandomSmoothVeinsL(this, cg.random, 0.001F, 4, 80.0F, 120.0F, 10.0F, 20.0F, (lg) -> {
+
+        float minRange, maxRange, minWidth, maxWidth;
+        int veinType = cg.random.getIntBetween(0, 2);
+        switch (veinType) {
+            case 0: // Wide
+                minRange = 20F;
+                maxRange = 40F;
+                minWidth = 20F;
+                maxWidth = 40F;
+                break;
+            case 1: // Medium
+                minRange = 40F;
+                maxRange = 80F;
+                minWidth = 10F;
+                maxWidth = 20F;
+                break;
+            case 2: // Large
+                minRange = 80F;
+                maxRange = 120F;
+                minWidth = 5F;
+                maxWidth = 10F;
+                break;
+            default:
+                minRange = 0F;
+                maxRange = 0F;
+                minWidth = 0F;
+                maxWidth = 0F;
+        }
+
+        Point veinCenter = new Point(cg.random.getIntOffset(this.width / 2, 32), cg.random.getIntOffset(this.height / 2, 32));
+
+        Consumer<LinesGeneration> veinGeneration = (lg) -> {
             CellAutomaton ca = lg.doCellularAutomaton(cg.random);
             ca.streamAliveOrdered().forEachOrdered((tile) -> {
                 cg.addIllegalCrateTile(tile.x, tile.y);
@@ -78,11 +108,13 @@ public class InfectedCaveLevel extends InfectedSurfaceLevel {
                 }
 
             });
-        });
+        };
+
+        veinGeneration.accept((new LinesGeneration(veinCenter.x, veinCenter.y)).addRandomArms(cg.random, cg.random.getIntBetween(2, 6), minRange, maxRange, minWidth, maxWidth));
+
         PresetGeneration presets = new PresetGeneration(this);
         GameEvents.triggerEvent(new GenerateCaveStructuresEvent(this, cg, presets), (e) -> {
             presets.findRandomValidPositionAndApply(cg.random, 200, new InfectedLootLake(cg.random), 40, false, false);
-
         });
 
         GameEvents.triggerEvent(new GeneratedCaveStructuresEvent(this, cg, presets));

@@ -34,7 +34,7 @@ public class LifeSpinel extends ConsumableItem {
         if (level.isServer()) {
             level.getServer().network.sendToAllClientsExcept(new PacketPlayerGeneral(player.getServerClient()), player.getServerClient());
         } else if (level.isClient()) {
-            SoundManager.playSound(GameResources.drink, SoundEffect.effect(player));
+            SoundManager.playSound(GameResources.crystalHit1, SoundEffect.effect(player));
         }
 
         if (this.singleUse) {

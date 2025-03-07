@@ -49,18 +49,6 @@ public class AphAreaList {
         showAllAreaParticles(level, x, y, rangeModifier, borderParticleModifier, innerParticleModifier, (int) (Math.random() * 200) + 900);
     }
 
-    public void showAllAreaParticles(Level level, float x, float y, float rangeModifier, float particleModifier, int particleTime) {
-        showAllAreaParticles(level, x, y, rangeModifier, particleModifier, particleModifier, particleTime);
-    }
-
-    public void showAllAreaParticles(Level level, float x, float y, float rangeModifier, float particleModifier) {
-        showAllAreaParticles(level, x, y, rangeModifier, particleModifier, particleModifier, (int) (Math.random() * 200) + 900);
-    }
-
-    public void showAllAreaParticles(Level level, float x, float y, float rangeModifier, int particleTime) {
-        showAllAreaParticles(level, x, y, rangeModifier, 1, 0.2F, particleTime);
-    }
-
     public void showAllAreaParticles(Level level, float x, float y, float rangeModifier) {
         showAllAreaParticles(level, x, y, rangeModifier, 1, 0.2F, (int) (Math.random() * 200) + 900);
     }
@@ -92,6 +80,10 @@ public class AphAreaList {
         executeAreas(attacker, x, y, 1F);
     }
 
+    public void executeAreas(Mob attacker) {
+        executeAreas(attacker, attacker.x, attacker.y);
+    }
+
     public void execute(Mob attacker, float x, float y, float rangeModifier, @Nullable InventoryItem item, @Nullable ToolItem toolItem) {
         if(attacker.isServer()) {
             executeAreas(attacker, x, y, rangeModifier, item, toolItem);
@@ -109,8 +101,8 @@ public class AphAreaList {
         execute(attacker, x, y, 1F);
     }
 
-    public void executeAreas(Mob attacker) {
-        executeAreas(attacker, attacker.x, attacker.y);
+    public void execute(Mob attacker) {
+        execute(attacker, attacker.x, attacker.y);
     }
 
     public boolean someType(AphAreaType type) {

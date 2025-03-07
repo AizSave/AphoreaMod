@@ -53,6 +53,8 @@ public class AphoreaMod {
     // Load modifiers
     AphModifiers aphModifiers = new AphModifiers();
 
+    public static Biome INFECTED_FIELDS;
+
     public void init() throws Exception {
         System.out.println("AphoreaMod starting...");
 
@@ -167,7 +169,7 @@ public class AphoreaMod {
         AphControls.registerCore();
 
         // Biomes
-        BiomeRegistry.registerBiome("infectedfields", new InfectedFieldsBiome(), 200, null);
+        BiomeRegistry.registerBiome("infectedfields", INFECTED_FIELDS = new InfectedFieldsBiome(), 200, null);
 
         // Levels
         LevelRegistry.registerLevel("infectedfieldssurface", InfectedSurfaceLevel.class);
@@ -211,10 +213,17 @@ public class AphoreaMod {
 
         // Journal [Infected Fields]
 
-        JournalEntry infectedFieldsSurface = new JournalEntry(BiomeRegistry.getBiome("infectedfields"), JournalRegistry.LevelType.SURFACE);
-        infectedFieldsSurface.addMobEntries("infectedtreant", "rockygelslime");
-        infectedFieldsSurface.addTreasureEntry(AphLootTables.infectedFieldsSurface);
-        JournalRegistry.registerJournalEntry("infectedfieldssurface", infectedFieldsSurface);
+        JournalEntry infectedSurfaceJournal = new JournalEntry(INFECTED_FIELDS, JournalRegistry.LevelType.SURFACE);
+        infectedSurfaceJournal.addEntryChallenges(AphJournalChallenges.INFECTED_SURFACE_CHALLENGES_ID);
+        infectedSurfaceJournal.addMobEntries("rockygelslime", "infectedtreant");
+        infectedSurfaceJournal.addTreasureEntry(AphLootTables.infectedFieldsSurface);
+        JournalRegistry.registerJournalEntry("infectedsurface", infectedSurfaceJournal);
+
+        JournalEntry infectedCaveJournal = new JournalEntry(INFECTED_FIELDS, JournalRegistry.LevelType.CAVE);
+        infectedCaveJournal.addEntryChallenges(AphJournalChallenges.INFECTED_CAVE_CHALLENGES_ID);
+        infectedCaveJournal.addMobEntries("rockygelslime", "spinelcaveling", "spinelgolem");
+        infectedCaveJournal.addTreasureEntry(AphLootTables.infectedLootLake);
+        JournalRegistry.registerJournalEntry("infectedcave", infectedCaveJournal);
 
 
         System.out.println("AphoreaMod started");
