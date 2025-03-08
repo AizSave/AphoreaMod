@@ -2,7 +2,6 @@ package aphorea.items.weapons.melee.dagger;
 
 import aphorea.projectiles.toolitem.DaggerProjectile;
 import aphorea.utils.AphColors;
-import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.inventory.InventoryItem;

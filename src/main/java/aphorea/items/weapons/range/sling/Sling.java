@@ -1,8 +1,6 @@
 package aphorea.items.weapons.range.sling;
 
-import aphorea.projectiles.toolitem.FireSlingStoneProjectile;
 import aphorea.projectiles.toolitem.SlingStoneProjectile;
-import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.inventory.InventoryItem;

@@ -2,7 +2,6 @@ package aphorea.items.weapons.range.sling.logic;
 
 import aphorea.items.weapons.range.sling.AphSlingToolItem;
 import aphorea.utils.AphColors;
-import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameMath;
