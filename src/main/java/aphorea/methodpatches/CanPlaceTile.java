@@ -4,7 +4,6 @@ import necesse.engine.modLoader.annotations.ModMethodPatch;
 import necesse.engine.network.PacketReader;
 import necesse.entity.mobs.PlayerMob;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.item.placeableItem.objectItem.ObjectItem;
 import necesse.inventory.item.placeableItem.tileItem.TileItem;
 import necesse.level.maps.Level;
 import net.bytebuddy.asm.Advice;

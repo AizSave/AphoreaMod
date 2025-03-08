@@ -1,11 +1,9 @@
 package aphorea.journal;
 
-import aphorea.registry.AphItems;
 import necesse.engine.journal.ItemObtainedJournalChallenge;
 import necesse.engine.journal.JournalChallenge;
 import necesse.engine.journal.MultiJournalChallenge;
 import necesse.engine.journal.PickupItemsJournalChallenge;
-import necesse.engine.registries.ItemRegistry;
 import necesse.engine.registries.JournalChallengeRegistry;
 import necesse.inventory.lootTable.LootTable;
 import necesse.inventory.lootTable.lootItem.LootItem;

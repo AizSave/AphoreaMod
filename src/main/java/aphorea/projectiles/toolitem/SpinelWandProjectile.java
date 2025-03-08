@@ -14,14 +14,11 @@ import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.projectile.followingProjectile.FollowingProjectile;
 import necesse.entity.trails.Trail;
 import necesse.gfx.camera.GameCamera;
-import necesse.gfx.drawOptions.texture.TextureDrawOptions;
-import necesse.gfx.drawables.EntityDrawable;
 import necesse.gfx.drawables.LevelSortedDrawable;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.inventory.InventoryItem;
 import necesse.level.maps.Level;
 import necesse.level.maps.LevelObjectHit;
-import necesse.level.maps.light.GameLight;
 
 import java.awt.*;
 import java.awt.geom.Line2D;
@@ -89,7 +86,7 @@ public class SpinelWandProjectile extends FollowingProjectile {
         super.updateTarget();
         if (traveledDistance > 20) {
             this.target = null;
-            target = AphDistances.findClosestMob(this.getOwner(), this::canHit, this.distance / 2);
+            target = AphDistances.findClosestMob(getLevel(), x, y, this.distance / 2, this::canHit);
         }
     }
 

@@ -11,6 +11,13 @@ import necesse.engine.registries.ProjectileRegistry;
 
 public class AphProjectiles {
     public static void registerCore() {
+        // Arrows
+        ProjectileRegistry.registerProjectile("gelarrow", GelArrowProjectile.class, "gelarrow", "gelarrow_shadow");
+        ProjectileRegistry.registerProjectile("unstablegelarrow", UnstableGelArrowProjectile.class, "unstablegelarrow", "unstablegelarrow_shadow");
+
+        // Bullets
+        ProjectileRegistry.registerProjectile("spambullet", SpamBulletProjectile.class, "spambullet", "ball_shadow");
+
         ProjectileRegistry.registerProjectile("gel", GelProjectile.class, "gel", "ball_shadow");
         ProjectileRegistry.registerProjectile("unstablegel", UnstableGelProjectile.class, "unstablegel", "unstablegel_shadow");
         ProjectileRegistry.registerProjectile("slingstone", SlingStoneProjectile.class, "slingstone", "ball_shadow");
@@ -22,12 +29,12 @@ public class AphProjectiles {
         ProjectileRegistry.registerProjectile("goldenwand", GoldenWandProjectile.class, null, null);
         ProjectileRegistry.registerProjectile("spinelwand", SpinelWandProjectile.class, null, null);
 
-        // Arrows
-        ProjectileRegistry.registerProjectile("gelarrow", GelArrowProjectile.class, "gelarrow", "gelarrow_shadow");
-        ProjectileRegistry.registerProjectile("unstablegelarrow", UnstableGelArrowProjectile.class, "unstablegelarrow", "unstablegelarrow_shadow");
-
-        // Bullets
-        ProjectileRegistry.registerProjectile("spambullet", SpamBulletProjectile.class, "spambullet", "ball_shadow");
+        // Aircuts
+        ProjectileRegistry.registerProjectile("copperaircut", AircutProjectile.CopperAircutProjectile.class, null, null);
+        ProjectileRegistry.registerProjectile("ironaircut", AircutProjectile.IronAircutProjectile.class, null, null);
+        ProjectileRegistry.registerProjectile("goldaircut", AircutProjectile.GoldAircutProjectile.class, null, null);
+        ProjectileRegistry.registerProjectile("demonicaircut", AircutProjectile.DemonicAircutProjectile.class, null, null);
+        ProjectileRegistry.registerProjectile("unstablegelaircut", AircutProjectile.UnstableGelAircutProjectile.class, null, null);
 
         // Daggers
         ProjectileRegistry.registerProjectile("copperdagger", DaggerProjectile.CopperDaggerProjectile.class, null, null);
@@ -35,13 +42,6 @@ public class AphProjectiles {
         ProjectileRegistry.registerProjectile("golddagger", DaggerProjectile.GoldDaggerProjectile.class, null, null);
         ProjectileRegistry.registerProjectile("demonicdagger", DaggerProjectile.DemonicDaggerProjectile.class, null, null);
         ProjectileRegistry.registerProjectile("tungstendagger", DaggerProjectile.TungstenDaggerProjectile.class, null, null);
-
-        // Aircuts
-        ProjectileRegistry.registerProjectile("copperaircut", AircutProjectile.CopperAircutProjectile.class, null, null);
-        ProjectileRegistry.registerProjectile("ironaircut", AircutProjectile.IronAircutProjectile.class, null, null);
-        ProjectileRegistry.registerProjectile("goldaircut", AircutProjectile.GoldAircutProjectile.class, null, null);
-        ProjectileRegistry.registerProjectile("demonicaircut", AircutProjectile.DemonicAircutProjectile.class, null, null);
-        ProjectileRegistry.registerProjectile("unstablegelaircut", AircutProjectile.UnstableGelAircutProjectile.class, null, null);
 
         // Mobs
         ProjectileRegistry.registerProjectile("pinkwitch", PinkWitchProjectile.class, null, null);
@@ -52,7 +52,7 @@ public class AphProjectiles {
         // Bosses
         ProjectileRegistry.registerProjectile("miniunstablegelslime", MiniUnstableGelSlimeProjectile.class, "miniunstablegelslime", null);
 
-        // Runes
+        // Projectiles [Runes]
         ProjectileRegistry.registerProjectile("runeofcryoqueen", RuneOfCryoQueenProjectile.class, null, null);
         ProjectileRegistry.registerProjectile("runeofspiderempress", RuneOfSpiderEmpressProjectile.class, "webball", "webball_shadow");
     }

@@ -11,14 +11,11 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.entity.projectile.followingProjectile.FollowingProjectile;
 import necesse.entity.trails.Trail;
 import necesse.gfx.camera.GameCamera;
-import necesse.gfx.drawOptions.texture.TextureDrawOptions;
-import necesse.gfx.drawables.EntityDrawable;
 import necesse.gfx.drawables.LevelSortedDrawable;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.inventory.InventoryItem;
 import necesse.level.maps.Level;
 import necesse.level.maps.LevelObjectHit;
-import necesse.level.maps.light.GameLight;
 
 import java.awt.*;
 import java.awt.geom.Line2D;

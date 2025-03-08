@@ -8,7 +8,6 @@ import necesse.gfx.gameTexture.GameTextureSection;
 import necesse.inventory.lootTable.LootTable;
 import necesse.inventory.lootTable.lootItem.ChanceLootItem;
 import necesse.level.gameObject.GameObject;
-import necesse.level.gameTile.GameTile;
 import necesse.level.gameTile.GrassTile;
 import necesse.level.gameTile.TerrainSplatterTile;
 import necesse.level.maps.Level;

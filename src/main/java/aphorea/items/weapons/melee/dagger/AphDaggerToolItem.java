@@ -9,7 +9,6 @@ import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.util.GameBlackboard;
 import necesse.engine.util.GameRandom;
-import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffModifiers;
@@ -19,8 +18,6 @@ import necesse.entity.projectile.Projectile;
 import necesse.gfx.drawOptions.itemAttack.ItemAttackDrawOptions;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.InventorySlot;
-import necesse.inventory.PlayerInventorySlot;
 import necesse.inventory.enchants.Enchantable;
 import necesse.inventory.enchants.ItemEnchantment;
 import necesse.inventory.enchants.ToolItemEnchantment;
@@ -30,7 +27,6 @@ import necesse.level.maps.Level;
 
 import java.awt.*;
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 public abstract class AphDaggerToolItem extends SpearToolItem implements ItemInteractAction {

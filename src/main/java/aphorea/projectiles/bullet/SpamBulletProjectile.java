@@ -136,7 +136,7 @@ public class SpamBulletProjectile extends BulletProjectile {
 
         @Override
         protected boolean canHitMob(Mob target) {
-            return super.canHitMob(target) && target.canBeTargeted(ownerMob, ((PlayerMob) ownerMob).getNetworkClient());
+            return super.canHitMob(target) && target.canBeTargeted(ownerMob, ownerMob.isPlayer ? ((PlayerMob) ownerMob).getNetworkClient() : null);
         }
     }
 

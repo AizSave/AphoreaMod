@@ -18,24 +18,27 @@ import necesse.engine.world.WorldEntity;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.level.gameTile.GameTile;
-import necesse.level.gameTile.WaterTile;
 import necesse.level.maps.Level;
 import necesse.level.maps.biomes.Biome;
-import necesse.level.maps.biomes.forest.ForestSurfaceLevel;
 import necesse.level.maps.generationModules.GenerationTools;
 import necesse.level.maps.generationModules.IslandGeneration;
 import necesse.level.maps.generationModules.PresetGeneration;
-import necesse.level.maps.presets.*;
-import necesse.level.maps.presets.set.*;
+import necesse.level.maps.presets.BrokenHusbandryFencePreset;
+import necesse.level.maps.presets.ChristmasHousePreset;
+import necesse.level.maps.presets.Preset;
+import necesse.level.maps.presets.RandomRuinsPreset;
+import necesse.level.maps.presets.set.FenceSet;
+import necesse.level.maps.presets.set.FurnitureSet;
+import necesse.level.maps.presets.set.WallSet;
 
 import java.util.stream.Stream;
 
-public class InfectedSurfaceLevel extends Level {
-    public InfectedSurfaceLevel(LevelIdentifier identifier, int width, int height, WorldEntity worldEntity) {
+public class InfectedFieldsSurfaceLevel extends Level {
+    public InfectedFieldsSurfaceLevel(LevelIdentifier identifier, int width, int height, WorldEntity worldEntity) {
         super(identifier, width, height, worldEntity);
     }
 
-    public InfectedSurfaceLevel(int islandX, int islandY, float islandSize, WorldEntity worldEntity, Biome biome) {
+    public InfectedFieldsSurfaceLevel(int islandX, int islandY, float islandSize, WorldEntity worldEntity, Biome biome) {
         super(new LevelIdentifier(islandX, islandY, 0), 300, 300, worldEntity);
         this.biome = biome;
         this.generateLevel(islandSize);

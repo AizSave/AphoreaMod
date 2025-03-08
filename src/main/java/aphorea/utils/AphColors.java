@@ -37,11 +37,11 @@ public class AphColors {
     public static Color infected = new Color(161, 87, 181);
     public static Color infected_dark = new Color(125, 0, 178);
 
-    public static Color spinel_lighter = new Color(255, 166, 197);
-    public static Color spinel_light = new Color(255, 125, 175);
-    public static Color spinel = new Color(248, 93, 128);
-    public static Color spinel_dark = new Color(189, 76, 110);
-    public static Color spinel_darker = new Color(175, 29, 62);
+    public static Color spinel_lighter = new Color(255, 143, 245);
+    public static Color spinel_light = new Color(224, 92, 213);
+    public static Color spinel = new Color(202, 37, 173);
+    public static Color spinel_dark = new Color(150, 5, 116);
+    public static Color spinel_darker = new Color(117, 12, 75);
 
     public static Color fail_message = new Color(200, 100, 100);
 }

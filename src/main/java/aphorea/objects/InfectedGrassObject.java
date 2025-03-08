@@ -6,10 +6,7 @@ import necesse.engine.registries.TileRegistry;
 import necesse.inventory.lootTable.LootTable;
 import necesse.inventory.lootTable.lootItem.ChanceLootItem;
 import necesse.level.gameObject.GrassObject;
-import necesse.level.gameObject.SwampGrassObject;
 import necesse.level.maps.Level;
-
-import java.awt.*;
 
 public class InfectedGrassObject extends GrassObject {
     public InfectedGrassObject() {

@@ -240,7 +240,7 @@ public class UnstableGelSlime extends FlyingBossMob {
         super.drawOnMap(tickManager, client, x, y, tileScale, drawBounds, isMinimap);
         int drawX = x - 16;
         int drawY = y - 16;
-        icon.initDraw().sprite(0, 0, 64).size(32, 32).draw(drawX, drawY);
+        icon.initDraw().sprite(0, 0, 32).size(32, 32).draw(drawX, drawY);
     }
 
     @Override

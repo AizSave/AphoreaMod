@@ -1,6 +1,5 @@
 package aphorea.mobs.hostile;
 
-import aphorea.projectiles.toolitem.DaggerProjectile;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.registries.MobRegistry;
 import necesse.engine.util.GameRandom;
@@ -19,9 +18,7 @@ import necesse.gfx.drawables.OrderableDrawables;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.lootTable.LootTable;
 import necesse.inventory.lootTable.lootItem.ChanceLootItem;
-import necesse.inventory.lootTable.lootItem.LootItem;
 import necesse.inventory.lootTable.lootItem.OneOfTicketLootItems;
-import necesse.level.gameTile.GameTile;
 import necesse.level.maps.Level;
 import necesse.level.maps.TilePosition;
 import necesse.level.maps.light.GameLight;

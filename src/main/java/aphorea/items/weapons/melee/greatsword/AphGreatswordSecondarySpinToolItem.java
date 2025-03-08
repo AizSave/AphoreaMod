@@ -18,7 +18,6 @@ import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.ItemControllerInteract;
 import necesse.inventory.item.ItemInteractAction;
-import necesse.inventory.item.toolItem.projectileToolItem.bowProjectileToolItem.greatbowProjectileToolItem.GreatbowProjectileToolItem;
 import necesse.level.maps.Level;
 
 import java.awt.*;

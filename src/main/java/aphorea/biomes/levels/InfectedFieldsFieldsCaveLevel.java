@@ -6,34 +6,27 @@ import necesse.engine.events.worldGeneration.*;
 import necesse.engine.localization.message.GameMessage;
 import necesse.engine.localization.message.LocalMessage;
 import necesse.engine.modifiers.ModifierValue;
-import necesse.engine.network.server.ServerClient;
-import necesse.engine.registries.MobRegistry;
 import necesse.engine.registries.ObjectRegistry;
 import necesse.engine.registries.TileRegistry;
-import necesse.engine.util.GameRandom;
 import necesse.engine.util.LevelIdentifier;
 import necesse.engine.world.WorldEntity;
-import necesse.entity.mobs.Attacker;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.BuffModifiers;
-import necesse.entity.pickup.ItemPickupEntity;
 import necesse.level.gameObject.GameObject;
 import necesse.level.maps.biomes.Biome;
-import necesse.level.maps.biomes.desert.DesertDeepCaveLevel;
 import necesse.level.maps.generationModules.*;
 import necesse.level.maps.presets.PresetUtils;
 
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
 
-public class InfectedCaveLevel extends InfectedSurfaceLevel {
-    public InfectedCaveLevel(LevelIdentifier identifier, int width, int height, WorldEntity worldEntity) {
+public class InfectedFieldsFieldsCaveLevel extends InfectedFieldsSurfaceLevel {
+    public InfectedFieldsFieldsCaveLevel(LevelIdentifier identifier, int width, int height, WorldEntity worldEntity) {
         super(identifier, width, height, worldEntity);
     }
 
-    public InfectedCaveLevel(int islandX, int islandY, int dimension, WorldEntity worldEntity, Biome biome) {
+    public InfectedFieldsFieldsCaveLevel(int islandX, int islandY, int dimension, WorldEntity worldEntity, Biome biome) {
         super(new LevelIdentifier(islandX, islandY, dimension), 300, 300, worldEntity);
         this.biome = biome;
         this.isCave = true;
@@ -48,7 +41,7 @@ public class InfectedCaveLevel extends InfectedSurfaceLevel {
             GenerationTools.generateRandomSmoothTileVeins(this, cg.random, 0.1F, 2, 2.0F, 10.0F, 2.0F, 10.0F, TileRegistry.getTileID("infectedwatertile"), 1.0F, true);
             this.liquidManager.calculateShores();
             cg.generateRandomSingleRocks(ObjectRegistry.getObjectID("spinelclustersmall"), 0.02F);
-            cg.generateRandomSingleRocks(ObjectRegistry.getObjectID("spinelclusterpure"), 0.004F);
+            cg.generateRandomSingleRocks(ObjectRegistry.getObjectID("spinelcluster"), 0.004F);
         });
         GameEvents.triggerEvent(new GeneratedCaveMiniBiomesEvent(this, cg));
         GameEvents.triggerEvent(new GenerateCaveOresEvent(this, cg), (e) -> {

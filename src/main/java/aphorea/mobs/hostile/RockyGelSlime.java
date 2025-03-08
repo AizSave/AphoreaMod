@@ -1,8 +1,11 @@
 package aphorea.mobs.hostile;
 
+import aphorea.AphoreaMod;
 import aphorea.projectiles.mob.RockyGelSlimeLootProjectile;
 import aphorea.projectiles.mob.RockyGelSlimeProjectile;
 import necesse.engine.gameLoop.tickManager.TickManager;
+import necesse.engine.network.server.Server;
+import necesse.engine.network.server.ServerClient;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.*;
 import necesse.entity.mobs.ai.behaviourTree.BehaviourTreeAI;
@@ -17,6 +20,7 @@ import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.inventory.lootTable.LootTable;
 import necesse.inventory.lootTable.lootItem.ChanceLootItem;
+import necesse.inventory.lootTable.lootItem.LootItem;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
 
@@ -30,20 +34,27 @@ public class RockyGelSlime extends HostileMob {
     public static int collision_knockback = 50;
 
     public static GameDamage rock_damage = new GameDamage(15);
+    public static GameDamage rock_damage_if = new GameDamage(30);
     public static int rock_knockback = 25;
+
+    @Override
+    public boolean isValidSpawnLocation(Server server, ServerClient client, int targetX, int targetY) {
+        return super.isValidSpawnLocation(server, client, targetX, targetY);
+    }
 
     public static GameTexture texture;
 
     public static LootTable lootTable = new LootTable(
+            new LootItem("rockygel", 0),
             ChanceLootItem.between(0.05f, "unstablecore", 1, 1)
     );
 
     public RockyGelSlime() {
         super(220);
-        setSpeed(25);
-        setFriction(3);
+        this.setSpeed(25);
+        this.setFriction(3);
 
-        collision = new Rectangle(-18, -12, 36, 20);
+        collision = new Rectangle(-15, -6, 30, 14);
         hitBox = new Rectangle(-26, -16, 52, 28);
         selectBox = new Rectangle(-26, -27, 52, 39);
     }
@@ -52,6 +63,12 @@ public class RockyGelSlime extends HostileMob {
     public void init() {
         super.init();
         ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 12 * 32, collision_damage, collision_knockback, 40000));
+
+        if (this.getLevel().biome == AphoreaMod.INFECTED_FIELDS) {
+            this.setMaxHealth((int) (this.getHealth() * 1.5F));
+            this.setHealth(this.getMaxHealth());
+            this.setSpeed(this.getSpeed() * 1.5F);
+        }
     }
 
     @Override
@@ -142,11 +159,13 @@ public class RockyGelSlime extends HostileMob {
 
     public void throwRock(int targetX, int targetY, boolean dropRockyGel) {
         Projectile projectile;
-        float speed = GameRandom.globalRandom.getFloatBetween(40.0F, 50.0F);
+        float speed = GameRandom.globalRandom.getFloatBetween(40F, 50F);
+        GameDamage damage = this.getLevel().biome == AphoreaMod.INFECTED_FIELDS ? rock_damage_if : rock_damage;
+
         if (dropRockyGel) {
-            projectile = new RockyGelSlimeLootProjectile(this, this.x, this.y, targetX, targetY, speed, 640, rock_damage, rock_knockback);
+            projectile = new RockyGelSlimeLootProjectile(this, this.x, this.y, targetX, targetY, speed, 640, damage, rock_knockback);
         } else {
-            projectile = new RockyGelSlimeProjectile(this, this.x, this.y, targetX, targetY, speed, 640, rock_damage, rock_knockback);
+            projectile = new RockyGelSlimeProjectile(this, this.x, this.y, targetX, targetY, speed, 640, damage, rock_knockback);
         }
         this.getLevel().entityManager.projectiles.add(projectile);
     }

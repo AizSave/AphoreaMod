@@ -444,9 +444,6 @@ public class AphRecipes {
                 ),
                 AphCraftingRecipe.showAfter("spinelcluster", 1,
                         new Ingredient("spinel", 2)
-                ),
-                AphCraftingRecipe.showAfter("spinelclusterpure", 1,
-                        new Ingredient("spinel", 3)
                 )
         );
     }

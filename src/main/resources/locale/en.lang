@@ -70,7 +70,6 @@ runestable=Runes Table
 infectedsapling=Infected Sapling
 spinelcluster=Spinel Cluster
 spinelcluster_small=Small Spinel Cluster
-spinelclusterpure=Pure Spinel Cluster
 gelrock=Gel Rock
 infectedtree=Infected Tree
 infectedgrass=Infected Grass
@@ -588,8 +587,8 @@ infectedfields=Infected Fields
 
 //Levels
 # NEW
-infectedsurface=Infected Fields Surface
-infectedcave=Infected Fields Cave
+infectedfieldssurface=Infected Fields Surface
+infectedfieldscave=Infected Fields Cave
 
 
 // Challenges

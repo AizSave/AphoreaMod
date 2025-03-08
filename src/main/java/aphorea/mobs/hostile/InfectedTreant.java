@@ -1,6 +1,5 @@
 package aphorea.mobs.hostile;
 
-import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import necesse.engine.Settings;
 import necesse.engine.gameLoop.tickManager.TickManager;
@@ -215,15 +214,15 @@ public class InfectedTreant extends HostileMob {
 
     @Override
     protected void doBeforeHitLogic(MobBeforeHitEvent event) {
-        float damageMod = 0.01F;
+        boolean prevent = true;
         if (event.attacker.getAttackOwner().isPlayer) {
-            PlayerMob playerMob = (PlayerMob) event.attacker.getAttackOwner();
-            if (playerMob.attackingItem.item instanceof AxeToolItem) {
-                damageMod = 1F;
+            PlayerMob player = (PlayerMob) event.attacker.getAttackOwner();
+            if (player.isAttacking && player.attackSlot.getItem(player.getInv()).item instanceof AxeToolItem) {
+                prevent = false;
             }
         }
-        if (damageMod != 1F) {
-            event.damage = event.damage.setDamage(event.damage.damage * damageMod);
+
+        if (prevent) {
             event.prevent();
         }
 

@@ -1,7 +1,7 @@
 package aphorea.biomes;
 
-import aphorea.biomes.levels.InfectedCaveLevel;
-import aphorea.biomes.levels.InfectedSurfaceLevel;
+import aphorea.biomes.levels.InfectedFieldsFieldsCaveLevel;
+import aphorea.biomes.levels.InfectedFieldsSurfaceLevel;
 import necesse.engine.AbstractMusicList;
 import necesse.engine.MusicList;
 import necesse.engine.network.server.Server;
@@ -32,11 +32,11 @@ public class InfectedFieldsBiome extends Biome {
     }
 
     public Level getNewSurfaceLevel(int islandX, int islandY, float islandSize, Server server, WorldEntity worldEntity) {
-        return new InfectedSurfaceLevel(islandX, islandY, islandSize, worldEntity, this);
+        return new InfectedFieldsSurfaceLevel(islandX, islandY, islandSize, worldEntity, this);
     }
 
     public Level getNewCaveLevel(int islandX, int islandY, int dimension, Server server, WorldEntity worldEntity) {
-        return new InfectedCaveLevel(islandX, islandY, dimension, worldEntity, this);
+        return new InfectedFieldsFieldsCaveLevel(islandX, islandY, dimension, worldEntity, this);
     }
 
     public Level getNewDeepCaveLevel(int islandX, int islandY, int dimension, Server server, WorldEntity worldEntity) {

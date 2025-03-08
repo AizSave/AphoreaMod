@@ -28,7 +28,7 @@ public class GoldenWand extends AphHealingProjectileToolItem {
         attackXOffset += 10;
         attackYOffset += 15;
 
-        magicHealing.setBaseValue(6).setUpgradedValue(1, 8);
+        magicHealing.setBaseValue(8).setUpgradedValue(1, 10);
     }
 
     @Override
