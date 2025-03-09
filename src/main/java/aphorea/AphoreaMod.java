@@ -172,7 +172,6 @@ public class AphoreaMod {
                 journalEntry.addTreasureEntry(new LootTable(new LootItem("blowgun"), new LootItem("sling")));
             }
             if (journalEntry.mobsData.stream().anyMatch(m -> Objects.equals(m.mob.getStringID(), "goblin"))) {
-                System.out.println(journalEntry.getStringID());
                 journalEntry.addMobEntries("copperdaggergoblin", "irondaggergoblin", "golddaggergoblin");
             }
         });
