@@ -171,6 +171,11 @@ public class AphRecipes {
                         new Ingredient("unstableperiapt", 1),
                         new Ingredient("bone", 10),
                         new Ingredient("demonicbar", 5)
+                ),
+                AphCraftingRecipe.showAfter("ancientmedallion", 1,
+                        new Ingredient("witchmedallion", 1),
+                        new Ingredient("cursedmedallion", 10),
+                        new Ingredient("ancientbar", 3)
                 )
         );
     }
@@ -393,6 +398,13 @@ public class AphRecipes {
     public static void TungstenAnvil() {
         Tech tech = RecipeTechRegistry.TUNGSTEN_ANVIL;
 
+        addCraftingList("deepladderdown", tech,
+                AphCraftingRecipe.showAfter("fakespinelchest", 1,
+                        new Ingredient("spinelchest", 1),
+                        new Ingredient("lifespinel", 2)
+                )
+        );
+
         addCraftingList("bonearrow", tech,
                 AphCraftingRecipe.showAfter("unstablegelarrow", 10,
                         new Ingredient("bonearrow", 10),
@@ -404,21 +416,31 @@ public class AphRecipes {
                 AphCraftingRecipe.showAfter("tungstendagger", 1,
                         new Ingredient("tungstenbar", 4),
                         new Ingredient("anylog", 1)
-                )/*,
-                AphCraftingRecipe.showAfter("tungstensaber", 1,
-                        new Ingredient("tungstenbar", 10),
-                        new Ingredient("anylog", 1)
-                )*/
+                )
+        );
+    }
+
+    public static void FallenAnvil() {
+        Tech tech = RecipeTechRegistry.FALLEN_ANVIL;
+
+        addCraftingList("deepladderdown", tech,
+                AphCraftingRecipe.showAfter("fakespinelchest", 1,
+                        new Ingredient("spinelchest", 1),
+                        new Ingredient("lifespinel", 2)
+                )
         );
     }
 
     public static void Alchemy() {
         Tech tech = RecipeTechRegistry.ALCHEMY;
 
-        addCraftingList("fishingpotion", tech,
-                AphCraftingRecipe.showAfter("lowdspotion", 1,
-                        new Ingredient("cavespidergland", 5),
-                        new Ingredient("glassbottle", 1)
+        addCraftingList("superiorpickaxe", tech,
+                AphCraftingRecipe.showBefore("icepickaxe", 1,
+                        new Ingredient("woodpickaxe", 1),
+                        new Ingredient("slimeessence", 5),
+                        new Ingredient("bloodessence", 5),
+                        new Ingredient("spideressence", 5),
+                        new Ingredient("ancientfossilbar", 1)
                 )
         );
     }

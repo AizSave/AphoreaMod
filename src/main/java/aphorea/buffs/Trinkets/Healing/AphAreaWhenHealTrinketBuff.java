@@ -36,13 +36,13 @@ abstract public class AphAreaWhenHealTrinketBuff extends TrinketBuff implements 
     }
 
     public void onMagicalHealing(Mob healer, Mob target, int healing, int realHealing, @Nullable ToolItem toolItem, @Nullable InventoryItem item) {
-        if (healer.isServer() && healer.isPlayer) {
+        if (healer.isServer()) {
             String playerName = ((PlayerMob) healer).playerName;
 
             int thisHealingDone = healingDone.getOrDefault(playerName, 0) + realHealing;
 
-            if (thisHealingDone > healingToArea) {
-                thisHealingDone -= healingToArea;
+            if (thisHealingDone >= healingToArea) {
+                thisHealingDone = 0;
 
                 this.areaList.executeServer(healer);
 
@@ -56,15 +56,8 @@ abstract public class AphAreaWhenHealTrinketBuff extends TrinketBuff implements 
     @Override
     public ListGameTooltips getTrinketTooltip(TrinketItem trinketItem, InventoryItem item, PlayerMob perspective) {
         ListGameTooltips tooltips = super.getTrinketTooltip(trinketItem, item, perspective);
-        tooltips.add(addBeforeAreaToolTips(trinketItem, item, perspective));
         areaList.addAreasToolTip(tooltips, perspective, true, null, null);
-        return tooltips;
-    }
-
-
-    public ListGameTooltips addBeforeAreaToolTips(TrinketItem trinketItem, InventoryItem item, PlayerMob perspective) {
-        ListGameTooltips tooltips = new ListGameTooltips();
         tooltips.add(Localization.translate("itemtooltip", "areawhenheal", "magichealing", healingToArea));
-        return new ListGameTooltips(tooltips);
+        return tooltips;
     }
 }

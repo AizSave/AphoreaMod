@@ -5,6 +5,7 @@ import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.server.ServerClient;
 import necesse.engine.registries.MobRegistry;
+import necesse.engine.registries.ObjectRegistry;
 import necesse.entity.mobs.Attacker;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
@@ -17,6 +18,7 @@ import necesse.gfx.drawOptions.texture.SharedTextureDrawOptions;
 import necesse.gfx.drawables.LevelSortedDrawable;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameTexture;
+import necesse.gfx.gameTooltips.GameTooltips;
 import necesse.level.gameObject.GameObject;
 import necesse.level.gameObject.ObjectDamagedTextureArray;
 import necesse.level.maps.Level;
@@ -110,5 +112,15 @@ public class FakeSpinelChest extends GameObject {
             level.entityManager.addParticle(new SmokePuffParticle(level, tileX * 32 + 16, tileY * 32 + 32, AphColors.spinel), Particle.GType.CRITICAL);
         }
         level.objectLayer.setObject(tileX, tileY, 0);
+    }
+
+    @Override
+    public Color getMapColor(Level level, int tileX, int tileY) {
+        return AphColors.spinel;
+    }
+
+    @Override
+    public GameTooltips getMapTooltips(Level level, int x, int y) {
+        return ObjectRegistry.getObject("spinelchest").getMapTooltips(level, x, y);
     }
 }

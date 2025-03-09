@@ -6,6 +6,8 @@ import aphorea.buffs.Runes.AphBaseRuneActiveBuff;
 import aphorea.buffs.Runes.AphBaseRuneTrinketBuff;
 import aphorea.buffs.Runes.AphModifierRuneTrinketBuff;
 import aphorea.buffs.SetBonus.*;
+import aphorea.buffs.Trinkets.Healing.AncientMedallionBuff;
+import aphorea.buffs.Trinkets.Healing.CursedMedallionBuff;
 import aphorea.buffs.Trinkets.Healing.FloralRingBuff;
 import aphorea.buffs.Trinkets.Healing.WitchMedallionBuff;
 import aphorea.buffs.Trinkets.Periapts.*;
@@ -72,9 +74,12 @@ public class AphBuffs {
 
     public static Buff IMMORTAL;
     public static Buff STOP;
+
     public static Buff STUN;
     public static Buff FALLEN_STUN;
     public static Buff STICKY;
+    public static Buff CURSED;
+
     public static Buff DAGGER_ATTACK;
     public static Buff BERSERKER_RUSH;
     public static Buff PERIAPT_ACTIVE;
@@ -151,6 +156,7 @@ public class AphBuffs {
             }
         });
         BuffRegistry.registerBuff("sticky", STICKY = new StickyBuff());
+        BuffRegistry.registerBuff("cursed", CURSED = new CursedBuff());
         BuffRegistry.registerBuff("daggerattack", DAGGER_ATTACK = new DaggerAttackBuff());
         BuffRegistry.registerBuff("berserkerrush", BERSERKER_RUSH = new BerserkerRushBuff());
         BuffRegistry.registerBuff("periaptactive", PERIAPT_ACTIVE = new PeriaptActiveBuff());
@@ -194,6 +200,8 @@ public class AphBuffs {
         BuffRegistry.registerBuff("heartring", new SimpleTrinketBuff("heartring", new ModifierValue<>(BuffModifiers.MAX_HEALTH_FLAT, 20)));
         BuffRegistry.registerBuff("witchmedallion", new WitchMedallionBuff());
         BuffRegistry.registerBuff("iceboots", new SimpleTrinketBuff("iceboots", new ModifierValue<>(BuffModifiers.FRICTION, -0.75F), new ModifierValue<>(BuffModifiers.SPEED, 0.5F), new ModifierValue<>(BuffModifiers.ARMOR_FLAT, 4)));
+        BuffRegistry.registerBuff("cursedmedallion", new CursedMedallionBuff());
+        BuffRegistry.registerBuff("ancientmedallion", new AncientMedallionBuff());
 
         // Trinket Active Buffs
         BuffRegistry.registerBuff("rockyperiaptactive", new RockyPeriaptActiveBuff());

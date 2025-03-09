@@ -34,12 +34,12 @@ public class AphJournalChallenges {
         APH_FOREST_SURFACE_CHALLENGES_ID = registerChallenge("aphoreaforestsurface", (new MultiJournalChallenge(KILL_GEL_SLIMES_ID, PICKUP_FLORAL_RING_ID, KILL_UNSTABLE_GEL_SLIME_ID)).setReward(APH_FOREST_SURFACE_REWARD));
 
         PICKUP_INFECTED_LOGS_ID = registerChallenge("pickupinfectedlogs", new PickupItemsJournalChallenge(100, true, "infectedlog"));
-        INFECTED_SURFACE_CHALLENGES_ID = registerChallenge("infectedsurface", (new MultiJournalChallenge(PICKUP_INFECTED_LOGS_ID)).setReward(INFECTED_SURFACE_REWARD));
+        INFECTED_SURFACE_CHALLENGES_ID = registerChallenge("infectedfieldssurface", (new MultiJournalChallenge(PICKUP_INFECTED_LOGS_ID)).setReward(INFECTED_SURFACE_REWARD));
 
         PICKUP_SPINEL_ID = registerChallenge("pickupspinel", new PickupItemsJournalChallenge(40, true, "spinel"));
         PICKUP_LIFE_SPINEL_ID = registerChallenge("pickuplifespinel", new PickupItemsJournalChallenge(5, true, "lifespinel"));
         FIND_THE_SPAMMER_ID = registerChallenge("findthespammer", new ItemObtainedJournalChallenge("thespammer"));
-        INFECTED_CAVE_CHALLENGES_ID = registerChallenge("infectedcave", (new MultiJournalChallenge(PICKUP_SPINEL_ID, PICKUP_LIFE_SPINEL_ID, FIND_THE_SPAMMER_ID)).setReward(INFECTED_CAVE_REWARD));
+        INFECTED_CAVE_CHALLENGES_ID = registerChallenge("infectedfieldscave", (new MultiJournalChallenge(PICKUP_SPINEL_ID, PICKUP_LIFE_SPINEL_ID, FIND_THE_SPAMMER_ID)).setReward(INFECTED_CAVE_REWARD));
     }
 
     public static int registerChallenge(String stringID, JournalChallenge journalChallenge) {

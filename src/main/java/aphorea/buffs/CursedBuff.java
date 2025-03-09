@@ -1,6 +1,5 @@
 package aphorea.buffs;
 
-import aphorea.utils.AphColors;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.ActiveBuff;
@@ -11,8 +10,8 @@ import necesse.entity.particle.Particle.GType;
 
 import java.awt.*;
 
-public class CurseBuff extends Buff {
-    public CurseBuff() {
+public class CursedBuff extends Buff {
+    public CursedBuff() {
         this.isImportant = true;
         this.canCancel = false;
     }
@@ -27,6 +26,6 @@ public class CurseBuff extends Buff {
     }
 
     public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {
-        buff.addModifier(BuffModifiers.SLOW, 0.3F);
+        buff.addModifier(BuffModifiers.INCOMING_DAMAGE_MOD, 1.5F);
     }
 }

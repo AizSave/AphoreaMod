@@ -13,7 +13,7 @@ public class CanPlaceTile {
 
     @Advice.OnMethodExit
     static void onExit(@Advice.This TileItem tileItem, @Advice.Argument(0) Level level, @Advice.Return(readOnly = false) String returnValue) {
-        if ("infectedcave".equals(level.getStringID()) && tileItem.getTile().lightLevel > 0 && !tileItem.getStringID().equals("infectedwatertile")) {
+        if ("infectedfieldscave".equals(level.getStringID()) && tileItem.getTile().lightLevel > 0 && !tileItem.getStringID().equals("infectedwatertile")) {
             returnValue = "nolight";
         }
     }

@@ -73,6 +73,8 @@ spinelcluster_small=Small Spinel Cluster
 gelrock=Gel Rock
 infectedtree=Infected Tree
 infectedgrass=Infected Grass
+spinelchest=Spinel Chest
+fakespinelchest=Fake Spinel Chest
 
 
 [itemcategory]
@@ -203,6 +205,9 @@ swampshield=Swamp Shield
 witchmedallion=Witch Medallion
 iceboots=Ice Boots
 bannerbearerfoci=Banner-bearer Foci
+# NEW
+cursedmedallion=Cursed Medallion
+ancientmedallion=Ancient Medallion
 
 // Armor
 rockyboots=Rocky Boots
@@ -343,6 +348,8 @@ twoarrows=Shoots two arrows at once
 threearrows=Shoots three arrows at once
 projectilearea=When the projectile ends, it deals area damage
 blowgun=Shoots seeds
+# NEW
+cursedbuff=§bCursed:§0 +25% Incoming Damage
 
 // Single Weapons & Tools
 gelball=Throws a gel ball
@@ -366,7 +373,6 @@ spambullet4=§9Check:§0 Magic healing area of 3 health at the end of its path
 spambullet5=§9Explosion:§0 Explodes at the end of its path instead of colliding
 lifespinel=Permanently increases max health by 5 up to 250
 spinelwand=Shoots a very guided projectile ending in a §9[Magic Healing]§0 area
-
 
 // Tiles & Objects
 geltile=Sticky floor that greatly slows down everything on top
@@ -529,6 +535,7 @@ golddaggergoblin=Gold Dagger Goblin
 infectedtreant=Infected Treant
 spinelgolem=Spinel Golem
 spinelcaveling=Spinel Caveling
+spinelmimic=Spinel Mimic
 
 // Friendly
 wildphosphorslime=Wild Phosphor Slime
@@ -559,6 +566,8 @@ immortalcooldown=Immortal Cooldown
 fallenstun=Fallen Stun
 runesinjectoractive=Runes Injector Active
 runesinjectorcooldown=Runes Injector Cooldown
+# NEW
+cursed=Cursed
 
 
 [message]

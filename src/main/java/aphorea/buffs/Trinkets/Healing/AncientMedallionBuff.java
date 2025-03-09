@@ -1,9 +1,9 @@
 package aphorea.buffs.Trinkets.Healing;
 
 import aphorea.packets.AphSingleAreaShowPacket;
+import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
-import aphorea.utils.magichealing.AphMagicHealing;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.Packet;
 import necesse.engine.registries.DamageTypeRegistry;
@@ -14,15 +14,16 @@ import necesse.inventory.item.trinketItem.TrinketItem;
 
 import java.awt.*;
 
-public class CursedMedallionBuff extends AphAreaWhenHealTrinketBuff {
-    static int range = 200;
-    static Color color = new Color(0, 0, 0);
+public class AncientMedallionBuff extends AphAreaWhenHealTrinketBuff {
+    static int range = 300;
+    static Color color = new Color(AphColors.palettePinkWitch[2].getRed() / 2, AphColors.palettePinkWitch[2].getGreen() / 2, AphColors.palettePinkWitch[2].getBlue() / 2);
 
     public static AphAreaList areaList = new AphAreaList(
-            new AphArea(range, color).setDebuffArea(5000, "cursed")
-    );
+            new AphArea(range, color).setDamageArea(30).setArmorPen(10)
+                    .setDebuffArea(5000, "cursed")
+    ).setDamageType(DamageTypeRegistry.MAGIC);
 
-    public CursedMedallionBuff() {
+    public AncientMedallionBuff() {
         super(30, areaList);
     }
 

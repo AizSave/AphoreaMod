@@ -17,7 +17,9 @@ import necesse.gfx.drawOptions.texture.TextureDrawOptions;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.inventory.lootTable.LootTable;
+import necesse.inventory.lootTable.lootItem.ChanceLootItem;
 import necesse.inventory.lootTable.lootItem.LootItem;
+import necesse.inventory.lootTable.lootItem.RotationLootItem;
 import necesse.inventory.lootTable.presets.CaveChestLootTable;
 import necesse.inventory.lootTable.presets.DeepCaveChestLootTable;
 import necesse.level.maps.Level;
@@ -29,14 +31,17 @@ import java.util.List;
 public class SpinelMimic extends HostileMob {
     public static GameTexture texture;
     public static GameTexture texture_shadow;
-    public static GameDamage collisionDamage = new GameDamage(60.0F);
+    public static GameDamage collisionDamage = new GameDamage(80.0F);
     public float jump = 0;
 
     static public float jumpHeight = 30;
     static public float jumpDurationMod = 1;
 
     public static LootTable lootTable = new LootTable(
-            new LootItem("zephyrcharm"), new LootItem("shinebelt"), new LootItem("heavyhammer"), new LootItem("noblehorseshoe"),
+            new LootItem("spinelchest"),
+            RotationLootItem.globalLootRotation(
+                    new ChanceLootItem(0.5F, "cursedmedallion")
+            ),
             CaveChestLootTable.potions,
             CaveChestLootTable.bars,
             CaveChestLootTable.extraItems
@@ -45,7 +50,7 @@ public class SpinelMimic extends HostileMob {
     int adjustY = 22;
 
     public SpinelMimic() {
-        super(80);
+        super(140);
         this.setArmor(20);
         this.setSpeed(60.0F);
         this.setFriction(5.0F);

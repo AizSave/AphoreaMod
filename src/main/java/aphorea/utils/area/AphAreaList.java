@@ -12,7 +12,6 @@ import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.*;
 import necesse.inventory.item.toolItem.ToolItem;
-import necesse.inventory.item.trinketItem.TrinketItem;
 import necesse.level.maps.Level;
 import org.jetbrains.annotations.Nullable;
 
@@ -138,6 +137,25 @@ public class AphAreaList {
                 tooltips.add(Localization.translate("itemtooltip", "magichealingtip", "health", healing));
             }
 
+            if (area.areaTypes.contains(AphAreaType.BUFF)) {
+                Arrays.stream(area.buffs).forEach(
+                        buffID -> {
+                            Buff buff = BuffRegistry.getBuff(buffID);
+                            tooltips.add(Localization.translate("itemtooltip", "areabuff", "buff", Localization.translate("itemtooltip", "areabuffdisplay", "buff", buff.getLocalization(), "duration", (float) area.buffDuration / 1000)));
+                        }
+                );
+            }
+
+            if (area.areaTypes.contains(AphAreaType.DEBUFF)) {
+                Arrays.stream(area.debuffs).forEach(
+                        buffID -> {
+                            Buff buff = BuffRegistry.getBuff(buffID);
+                            tooltips.add(Localization.translate("itemtooltip", "areadebuff", "buff", Localization.translate("itemtooltip", "areabuffdisplay", "buff", buff.getLocalization(), "duration", (float) area.debuffDuration / 1000)));
+                        }
+                );
+            }
+
+
             tooltips.add(Localization.translate("itemtooltip", "rangetip", "range", area.currentRange));
 
             if (lines) {
@@ -210,7 +228,7 @@ public class AphAreaList {
                         debuffID -> {
                             Buff debuff = BuffRegistry.getBuff(debuffID);
 
-                            StringItemStatTip tip = new LocalMessageStringItemStatTip("itemtooltip", "areadebuff", "debuff", Localization.translate("itemtooltip", "areabuffdisplay", "buff", debuff.getLocalization(), "duration", (float) area.buffDuration / 1000));
+                            StringItemStatTip tip = new LocalMessageStringItemStatTip("itemtooltip", "areadebuff", "buff", Localization.translate("itemtooltip", "areabuffdisplay", "buff", debuff.getLocalization(), "duration", (float) area.buffDuration / 1000));
                             list.add(100, tip);
 
                         }

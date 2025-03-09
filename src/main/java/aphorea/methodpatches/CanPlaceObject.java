@@ -16,7 +16,7 @@ public class CanPlaceObject {
 
     @Advice.OnMethodExit
     static void onExit(@Advice.This ObjectItem objectItem, @Advice.Argument(0) Level level, @Advice.Return(readOnly = false) String returnValue) {
-        if ("infectedcave".equals(level.getStringID()) && objectItem.getObject().lightLevel > 0) {
+        if ("infectedfieldscave".equals(level.getStringID()) && objectItem.getObject().lightLevel > 0) {
             returnValue = "nolight";
         } else if(level.biome == AphoreaMod.INFECTED_FIELDS && Objects.equals(objectItem.getStringID(), "deepladderdown")) {
             returnValue = "nodeepcave";

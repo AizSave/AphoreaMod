@@ -16,13 +16,13 @@ public class GoblinSpawn {
             return false;
         }
 
-        boolean daggerGoblin = GameRandom.globalRandom.getChance(0.1F);
+        boolean daggerGoblin = GameRandom.globalRandom.getChance(0.2F);
         if (daggerGoblin) {
             String daggerType;
             float randomDagger = GameRandom.globalRandom.getFloatBetween(0, 1);
-            if (randomDagger < 0.65) {
+            if (randomDagger < 0.50) {
                 daggerType = "copper";
-            } else if (randomDagger < 0.90) {
+            } else if (randomDagger < 0.85) {
                 daggerType = "iron";
             } else {
                 daggerType = "gold";
