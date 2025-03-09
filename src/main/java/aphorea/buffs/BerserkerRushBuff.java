@@ -46,12 +46,29 @@ public class BerserkerRushBuff extends Buff {
             owner.getLevel().entityManager.addParticle(owner.x + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(AphColors.anger).height(16.0F);
         }
 
-        PlayerMob player = (PlayerMob) owner;
+        if (owner.isPlayer) {
+            PlayerMob player = (PlayerMob) owner;
 
-        if (player.isAttacking && player.attackSlot.getItem(player.getInv()).item.getStringID().contains("battleaxe")) {
-            buff.setModifier(BuffModifiers.ATTACK_MOVEMENT_MOD, 0F);
-        } else {
-            buff.setModifier(BuffModifiers.ATTACK_MOVEMENT_MOD, 1F);
+            if (player.isAttacking && player.attackSlot != null && player.attackSlot.getItem(player.getInv()).item.getStringID().contains("battleaxe")) {
+                buff.setModifier(BuffModifiers.ATTACK_MOVEMENT_MOD, 0F);
+            } else {
+                buff.setModifier(BuffModifiers.ATTACK_MOVEMENT_MOD, 1F);
+            }
+        }
+    }
+
+    @Override
+    public void serverTick(ActiveBuff buff) {
+        super.serverTick(buff);
+        Mob owner = buff.owner;
+        if (owner.isPlayer) {
+            PlayerMob player = (PlayerMob) owner;
+
+            if (player.isAttacking && player.attackSlot.getItem(player.getInv()).item.getStringID().contains("battleaxe")) {
+                buff.setModifier(BuffModifiers.ATTACK_MOVEMENT_MOD, 0F);
+            } else {
+                buff.setModifier(BuffModifiers.ATTACK_MOVEMENT_MOD, 1F);
+            }
         }
     }
 

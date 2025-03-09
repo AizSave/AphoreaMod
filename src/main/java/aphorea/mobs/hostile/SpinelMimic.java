@@ -1,14 +1,14 @@
 package aphorea.mobs.hostile;
 
 import necesse.engine.gameLoop.tickManager.TickManager;
-import necesse.engine.network.packet.PacketDeath;
-import necesse.engine.registries.ObjectRegistry;
-import necesse.entity.mobs.*;
+import necesse.entity.mobs.GameDamage;
+import necesse.entity.mobs.Mob;
+import necesse.entity.mobs.MobDrawable;
+import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.ai.behaviourTree.BehaviourTreeAI;
 import necesse.entity.mobs.ai.behaviourTree.trees.CollisionPlayerChaserWandererAI;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.hostile.HostileMob;
-import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.particle.FleshParticle;
 import necesse.entity.particle.Particle;
 import necesse.gfx.camera.GameCamera;
@@ -17,11 +17,13 @@ import necesse.gfx.drawOptions.texture.TextureDrawOptions;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.inventory.lootTable.LootTable;
+import necesse.inventory.lootTable.lootItem.LootItem;
+import necesse.inventory.lootTable.presets.CaveChestLootTable;
+import necesse.inventory.lootTable.presets.DeepCaveChestLootTable;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
 
 import java.awt.*;
-import java.util.HashSet;
 import java.util.List;
 
 public class SpinelMimic extends HostileMob {
@@ -30,10 +32,15 @@ public class SpinelMimic extends HostileMob {
     public static GameDamage collisionDamage = new GameDamage(60.0F);
     public float jump = 0;
 
-    static public float jumpHeight = 20;
+    static public float jumpHeight = 30;
     static public float jumpDurationMod = 1;
 
-    public static LootTable lootTable = new LootTable();
+    public static LootTable lootTable = new LootTable(
+            new LootItem("zephyrcharm"), new LootItem("shinebelt"), new LootItem("heavyhammer"), new LootItem("noblehorseshoe"),
+            CaveChestLootTable.potions,
+            CaveChestLootTable.bars,
+            CaveChestLootTable.extraItems
+    );
 
     int adjustY = 22;
 

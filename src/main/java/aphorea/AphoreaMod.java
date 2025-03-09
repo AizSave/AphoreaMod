@@ -207,7 +207,6 @@ public class AphoreaMod {
                 journalEntry.addTreasureEntry("blowgun", "sling");
             }
             if (journalEntry.mobsData.stream().anyMatch(m -> Objects.equals(m.mob.getStringID(), "goblin"))) {
-                System.out.println(journalEntry.getStringID());
                 journalEntry.addMobEntries("copperdaggergoblin", "irondaggergoblin", "golddaggergoblin");
             }
         });
@@ -221,7 +220,7 @@ public class AphoreaMod {
         JournalRegistry.registerJournalEntry("infectedfieldssurface", infectedFieldsSurface);
 
         JournalEntry infectedFieldsCave = new JournalEntry(AphoreaMod.INFECTED_FIELDS, JournalRegistry.LevelType.CAVE);
-        infectedFieldsCave.addMobEntries("rockygelslime", "spinelcaveling", "spinelgolem");
+        infectedFieldsCave.addMobEntries("rockygelslime", "spinelcaveling", "spinelgolem", "spinelmimic");
         infectedFieldsCave.addTreasureEntry(AphLootTables.infectedLootLake);
         infectedFieldsCave.addEntryChallenges(AphJournalChallenges.INFECTED_CAVE_CHALLENGES_ID);
         JournalRegistry.registerJournalEntry("infectedfieldscave", infectedFieldsCave);

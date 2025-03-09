@@ -12,6 +12,7 @@ import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.*;
 import necesse.inventory.item.toolItem.ToolItem;
+import necesse.inventory.item.trinketItem.TrinketItem;
 import necesse.level.maps.Level;
 import org.jetbrains.annotations.Nullable;
 
@@ -114,7 +115,7 @@ public class AphAreaList {
         return this;
     }
 
-    public void addAreasToolTip(ListGameTooltips tooltips, Attacker attacker, boolean forceLines, InventoryItem item, ToolItem toolItem) {
+    public void addAreasToolTip(ListGameTooltips tooltips, Attacker attacker, boolean forceLines, @Nullable InventoryItem item, @Nullable ToolItem toolItem) {
         boolean lines = areas.length > 1 || forceLines;
         if (lines) {
             tooltips.add(Localization.translate("itemtooltip", "line"));
@@ -226,5 +227,6 @@ public class AphAreaList {
             }
         }
     }
+
 
 }

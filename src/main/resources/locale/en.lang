@@ -372,6 +372,10 @@ spinelwand=Shoots a very guided projectile ending in a §9[Magic Healing]§0 are
 geltile=Sticky floor that greatly slows down everything on top
 witchstatue=Placing this statue on the surface of a swamp will eliminate witch spawn throughout the island
 
+// Generic Trinkets
+# NEW
+areawhenheal=Executes this area for every <magichealing> §9[Magic Healing]§0 done
+
 // Trinkets
 rockyperiapt=+5 Armor, but -5% Movement Speed
 rockyperiapt2=Press [input=trinketability] to gain 10 Armor for 10 seconds\nYou cannot take damage or move while activating the ability
@@ -388,7 +392,6 @@ floralring=Self §9[Magic Healing]§0 with §7<healing>§0 every 5 seconds
 gelring=+30% §9[Magic Healing]§0 received
 heartring=+20 max health
 swampshield=Only protects attacks in the direction they are received\nSelf §9[Magic Healing]§0 with the §7<healing>§0 of the damage you prevent
-witchmedallion=Deals 15 Area Damage for every 30 §9[Magic Healing]§0 done
 bannerbearerfoci1=§7+40%§0 banner effect and §7+20%§0 banner ability speed
 bannerbearerfoci2=§6-20%§0 all non-banner damage and §6-1§0 max summons
 iceboots=Makes you slide as if you were on ice, but grants +50% movement speed and +4 armor

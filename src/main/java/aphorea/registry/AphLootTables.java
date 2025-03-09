@@ -33,10 +33,12 @@ public class AphLootTables {
                         new LootItem("thespammer"),
                         LootItem.between("spambullet", 90, 110),
                         LootItem.between("spinel", 4, 6),
-                        LootItem.between("lifespinel", 1, 2)
+                        LootItem.between("lifespinel", 1, 2),
+                        basicChestAllMainItems,
+                        CaveChestLootTable.potions,
+                        CaveChestLootTable.extraItems
                 )
         );
-
     }
 
 }

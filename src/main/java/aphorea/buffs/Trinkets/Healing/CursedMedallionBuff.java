@@ -1,12 +1,10 @@
 package aphorea.buffs.Trinkets.Healing;
 
 import aphorea.packets.AphSingleAreaShowPacket;
-import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.Packet;
-import necesse.engine.registries.DamageTypeRegistry;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
@@ -14,15 +12,15 @@ import necesse.inventory.item.trinketItem.TrinketItem;
 
 import java.awt.*;
 
-public class WitchMedallionBuff extends AphAreaWhenHealTrinketBuff {
+public class CursedMedallionBuff extends AphAreaWhenHealTrinketBuff {
     static int range = 200;
-    static Color color = AphColors.palettePinkWitch[2];
+    static Color color = new Color(0, 0, 0);
 
     public static AphAreaList areaList = new AphAreaList(
-            new AphArea(range, color).setDamageArea(15).setArmorPen(5)
-    ).setDamageType(DamageTypeRegistry.MAGIC);
+            new AphArea(range, color).setDebuffArea(2000, "cursedbuff")
+    );
 
-    public WitchMedallionBuff() {
+    public CursedMedallionBuff() {
         super(30, areaList);
     }
 
@@ -30,4 +28,5 @@ public class WitchMedallionBuff extends AphAreaWhenHealTrinketBuff {
     public Packet getPacket(PlayerMob player, float rangeModifier) {
         return new AphSingleAreaShowPacket(player.x, player.y, range * rangeModifier, color);
     }
+
 }
