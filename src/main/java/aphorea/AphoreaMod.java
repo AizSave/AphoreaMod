@@ -104,6 +104,7 @@ public class AphoreaMod {
         SpinelClusterObject.registerCrystalCluster("spinelcluster", "spinelcluster", AphColors.spinel, 337.0F, -1.0F, true);
         SpinelClusterObject.registerCrystalCluster("spinelclusterpure", "spinelclusterpure", AphColors.spinel, 337.0F, -1.0F, true);
         ObjectRegistry.registerObject("spinelclustersmall", new SpinelClusterSmallObject("spinelcluster_small", AphColors.spinel, 337.0F), -1.0F, true);
+        ObjectRegistry.registerObject("fakespinelchest", new FakeSpinelChest(), -1.0F, true);
 
         RockObject gelRock;
         ObjectRegistry.registerObject("gelrock", gelRock = new RockyWallObject("gelrock", AphColors.rock, "rockygel", 0, 1, 1), -1.0F, true);

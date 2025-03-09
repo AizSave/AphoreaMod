@@ -65,9 +65,7 @@ public class RockyGelSlime extends HostileMob {
         ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 12 * 32, collision_damage, collision_knockback, 40000));
 
         if (this.getLevel().biome == AphoreaMod.INFECTED_FIELDS) {
-            this.setMaxHealth((int) (this.getHealth() * 1.5F));
-            this.setHealth(this.getMaxHealth());
-            this.setSpeed(this.getSpeed() * 1.5F);
+            this.setSpeed(this.getSpeed() * 1.4F);
         }
     }
 

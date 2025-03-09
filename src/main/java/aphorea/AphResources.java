@@ -62,6 +62,9 @@ public class AphResources {
         SpinelGolem.texture = GameTexture.fromFile("mobs/spinelgolem");
         SpinelCaveling.texture = new HumanTexture(GameTexture.fromFile("mobs/spinelcaveling"), GameTexture.fromFile("mobs/spinelcavelingarms_front"), GameTexture.fromFile("mobs/spinelcavelingarms_back"));;
 
+        SpinelMimic.texture = GameTexture.fromFile("mobs/spinelmimic");
+        SpinelMimic.texture_shadow = GameTexture.fromFile("mobs/spinelmimic_shadow");
+
         // BOSSES
         UnstableGelSlime.texture = GameTexture.fromFile("mobs/unstablegelslime");
         UnstableGelSlime.icon = GameTexture.fromFile("mobs/icons/unstablegelslime");

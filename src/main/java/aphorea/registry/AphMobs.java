@@ -27,6 +27,7 @@ public class AphMobs {
         MobRegistry.registerMob("infectedtreant", InfectedTreant.class, true);
         MobRegistry.registerMob("spinelgolem", SpinelGolem.class, true);
         MobRegistry.registerMob("spinelcaveling", SpinelCaveling.class, true);
+        MobRegistry.registerMob("spinelmimic", SpinelMimic.class, true);
 
         // Bosses [Mobs]
         MobRegistry.registerMob("unstablegelslime", UnstableGelSlime.class, true, true);

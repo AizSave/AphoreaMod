@@ -37,17 +37,7 @@ public class InfectedFieldsFieldsCaveLevel extends InfectedFieldsSurfaceLevel {
         CaveGeneration cg = new CaveGeneration(this, "rocktile", "gelrock");
         GameEvents.triggerEvent(new GenerateCaveLayoutEvent(this, cg), (e) -> cg.generateLevel());
         GameEvents.triggerEvent(new GeneratedCaveLayoutEvent(this, cg));
-        GameEvents.triggerEvent(new GenerateCaveMiniBiomesEvent(this, cg), (e) -> {
-            GenerationTools.generateRandomSmoothTileVeins(this, cg.random, 0.1F, 2, 2.0F, 10.0F, 2.0F, 10.0F, TileRegistry.getTileID("infectedwatertile"), 1.0F, true);
-            this.liquidManager.calculateShores();
-            cg.generateRandomSingleRocks(ObjectRegistry.getObjectID("spinelclustersmall"), 0.02F);
-            cg.generateRandomSingleRocks(ObjectRegistry.getObjectID("spinelcluster"), 0.004F);
-        });
-        GameEvents.triggerEvent(new GeneratedCaveMiniBiomesEvent(this, cg));
-        GameEvents.triggerEvent(new GenerateCaveOresEvent(this, cg), (e) -> {
 
-        });
-        GameEvents.triggerEvent(new GeneratedCaveOresEvent(this, cg));
         GameObject crystalClusterSmall = ObjectRegistry.getObject("spinelclustersmall");
 
         float minRange, maxRange, minWidth, maxWidth;
@@ -89,10 +79,11 @@ public class InfectedFieldsFieldsCaveLevel extends InfectedFieldsSurfaceLevel {
             });
             ca.streamAliveOrdered().forEachOrdered((tile) -> {
                 if (this.getObjectID(tile.x, tile.y) == 0 && this.getObjectID(tile.x - 1, tile.y) == 0 && this.getObjectID(tile.x + 1, tile.y) == 0 && this.getObjectID(tile.x, tile.y - 1) == 0 && this.getObjectID(tile.x, tile.y + 1) == 0 && cg.random.getChance(0.08F)) {
-                    int rotation = cg.random.nextInt(4);
+                    boolean isChest = cg.random.getChance(0.05F);
+                    int rotation = isChest ? 2 : cg.random.nextInt(4);
                     Point[] clearPoints = new Point[]{new Point(-1, -1), new Point(1, -1)};
                     if (this.getRelativeAnd(tile.x, tile.y, PresetUtils.getRotatedPoints(0, 0, rotation, clearPoints), (tileX, tileY) -> ca.isAlive(tileX, tileY) && this.getObjectID(tileX, tileY) == 0)) {
-                        ObjectRegistry.getObject(ObjectRegistry.getObjectID("spinelcluster")).placeObject(this, tile.x, tile.y, rotation, false);
+                        ObjectRegistry.getObject(ObjectRegistry.getObjectID(isChest ? "fakespinelchest" : "spinelcluster")).placeObject(this, tile.x, tile.y, rotation, false);
                     }
                 }
 
@@ -104,6 +95,50 @@ public class InfectedFieldsFieldsCaveLevel extends InfectedFieldsSurfaceLevel {
         };
 
         veinGeneration.accept((new LinesGeneration(veinCenter.x, veinCenter.y)).addRandomArms(cg.random, cg.random.getIntBetween(2, 6), minRange, maxRange, minWidth, maxWidth));
+
+        GameEvents.triggerEvent(new GenerateCaveMiniBiomesEvent(this, cg), (e) -> {
+            GenerationTools.generateRandomSmoothTileVeins(this, cg.random, 0.1F, 2, 2.0F, 10.0F, 2.0F, 10.0F, TileRegistry.getTileID("infectedwatertile"), 1.0F, true);
+            this.liquidManager.calculateShores();
+
+            GenerationTools.generateRandomSmoothVeinsL(this, cg.random, 0.005F, 4, 4.0F, 7.0F, 4.0F, 6.0F, (lg) -> {
+                CellAutomaton ca = lg.doCellularAutomaton(cg.random);
+
+                ca.streamAliveOrdered().forEachOrdered((tile) -> {
+                    cg.addIllegalCrateTile(tile.x, tile.y);
+                    this.setTile(tile.x, tile.y, TileRegistry.getTileID("spinelgravel"));
+                    this.setObject(tile.x, tile.y, 0);
+                });
+
+
+                int centerX = lg.x1 + (lg.x2 - lg.x1) / 2;
+                int centerY = lg.y1 + (lg.y2 - lg.y1) / 2;
+
+                ObjectRegistry.getObject(ObjectRegistry.getObjectID("fakespinelchest")).placeObject(this, centerX, centerY, 2, false);
+
+                ca.streamAliveOrdered().forEachOrdered((tile) -> {
+                    if(Math.abs(centerX - tile.x) > 1 && Math.abs(centerY - tile.y) > 1) {
+                        if (this.getObjectID(tile.x, tile.y) == 0 && this.getObjectID(tile.x - 1, tile.y) == 0 && this.getObjectID(tile.x + 1, tile.y) == 0 && this.getObjectID(tile.x, tile.y - 1) == 0 && this.getObjectID(tile.x, tile.y + 1) == 0 && cg.random.getChance(0.08F)) {
+                            int rotation = cg.random.nextInt(4);
+                            Point[] clearPoints = new Point[]{new Point(-1, -1), new Point(1, -1)};
+                            if (this.getRelativeAnd(tile.x, tile.y, PresetUtils.getRotatedPoints(0, 0, rotation, clearPoints), (tileX, tileY) -> ca.isAlive(tileX, tileY) && this.getObjectID(tileX, tileY) == 0)) {
+                                ObjectRegistry.getObject(ObjectRegistry.getObjectID("spinelcluster")).placeObject(this, tile.x, tile.y, rotation, false);
+                            }
+                        }
+
+                        if (cg.random.getChance(0.3F) && crystalClusterSmall.canPlace(this, tile.x, tile.y, 0, false) == null) {
+                            crystalClusterSmall.placeObject(this, tile.x, tile.y, 0, false);
+                        }
+                    }
+                });
+            });
+
+            cg.generateRandomSingleRocks(ObjectRegistry.getObjectID("spinelclustersmall"), 0.02F);
+            cg.generateRandomSingleRocks(ObjectRegistry.getObjectID("spinelcluster"), 0.004F);
+        });
+        GameEvents.triggerEvent(new GeneratedCaveMiniBiomesEvent(this, cg));
+        GameEvents.triggerEvent(new GenerateCaveOresEvent(this, cg), (e) -> {});
+        GameEvents.triggerEvent(new GeneratedCaveOresEvent(this, cg));
+
 
         PresetGeneration presets = new PresetGeneration(this);
         GameEvents.triggerEvent(new GenerateCaveStructuresEvent(this, cg, presets), (e) -> {
