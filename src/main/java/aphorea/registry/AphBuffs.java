@@ -247,7 +247,7 @@ public class AphBuffs {
         baseEffectNumber = 40;
         // On activation
         BuffRegistry.registerBuff("runeoffury", new AphBaseRuneTrinketBuff(baseEffectNumber, 10000, "runeoffuryactive")
-                .setHealthCost(0.4F)
+                .setHealthCost(0.25F)
         );
         // On duration
         BuffRegistry.registerBuff("runeoffuryactive", new AphBaseRuneActiveBuff(baseEffectNumber, 20000) {
@@ -347,7 +347,7 @@ public class AphBuffs {
 
         });
         // On duration
-        BuffRegistry.registerBuff("runeofvaloractive", new AphBaseRuneActiveBuff(baseEffectNumber, 20000, new ModifierValue<>(AphModifiers.BANNER_EFFECT, 1F), new ModifierValue<>(AphModifiers.BANNER_ABILITY_SPEED, 1F)) {
+        BuffRegistry.registerBuff("runeofvaloractive", new AphBaseRuneActiveBuff(baseEffectNumber, 10000, new ModifierValue<>(AphModifiers.BANNER_EFFECT, 1F), new ModifierValue<>(AphModifiers.BANNER_ABILITY_SPEED, 1F)) {
 
             @Override
             public void clientTick(ActiveBuff buff) {
@@ -370,12 +370,12 @@ public class AphBuffs {
                 player.getLevel().entityManager.addLevelEvent(new AphRuneOfDetonationEvent(player, player.x, player.y, getEffectNumber(player) / 100));
             }
 
-        }.setHealthCost(0.1F));
+        }.setHealthCost(0.05F));
 
         // RUNE OF THUNDER
         baseEffectNumber = 50;
         // On activation
-        BuffRegistry.registerBuff("runeofthunder", new AphBaseRuneTrinketBuff(baseEffectNumber, 12000) {
+        BuffRegistry.registerBuff("runeofthunder", new AphBaseRuneTrinketBuff(baseEffectNumber, 10000) {
 
             @Override
             public void run(Level level, PlayerMob player, int targetX, int targetY) {
@@ -629,7 +629,7 @@ public class AphBuffs {
                 }
             }
 
-        }).setHealthCost(0.1F);
+        }).setHealthCost(0.05F);
 
         // RUNE OF PIRATE CAPTAIN
         baseEffectNumber = 1F;
@@ -706,7 +706,7 @@ public class AphBuffs {
                 }
                 super.run(level, player, targetX, targetY);
             }
-        }).setHealthCost(0.1F);
+        }).setHealthCost(0.05F);
 
         // RUNE OF CRYO QUEEN
         baseEffectNumber = 300;
@@ -1170,7 +1170,7 @@ public class AphBuffs {
                         }
 
                     }
-                }.setCooldownVariation(0.15F)
+                }.setCooldownVariation(0.1F)
         );
     }
 

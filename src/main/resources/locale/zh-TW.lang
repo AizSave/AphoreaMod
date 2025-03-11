@@ -432,7 +432,6 @@ lessextraeffectmod=效果修改降低 <mod>%
 # NEW
 runeoffury=在10秒内，提高你 §7<effectNumber>§0% 的伤害和攻击速度
 runeofspeed=以 §7<effectNumber>^§0 的力量向你所移动的方向冲刺并且在接下来的0.5秒内无敌
-runeofhealing=提高 §7<effectNumber>§0% 的生命回复效果
 runeofresistance=在10秒内，提高 §7<effectNumber>§0% 的护甲值
 runeofresistance2=当处于冷却时，你的护甲值减半
 runeofvalor=在 §7<effectNumber>§0 秒内将你的旗帜效果和生效速度加倍

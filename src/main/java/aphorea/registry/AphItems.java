@@ -186,7 +186,7 @@ public class AphItems {
         // Base Runes Tier 0
         registerItem("runeoffury", new AphBaseRune(1).setInitialRune());
         registerItem("runeofspeed", new AphBaseRune(1).setInitialRune());
-        registerItem("runeofhealing", new AphBaseRune(1).setInitialRune());
+        registerItem("runeofhealing", new AphBaseRune(0).setInitialRune());
         registerItem("runeofresistance", new AphBaseRune(2).setInitialRune());
         registerItem("runeofvalor", new AphBaseRune(1).setInitialRune());
         registerItem("runeofdetonation", new AphBaseRune(2, "runedamagereduction"));

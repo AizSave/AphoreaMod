@@ -421,7 +421,6 @@ lessextraeffectmod=Las modificaciones de efecto son <mod>% menos efectivas
 # NEW
 runeoffury=Aumenta tu daño y velocidad de ataque en §7<effectNumber>§0% por 10 segundos
 runeofspeed=Realiza un dash con §7<effectNumber>§0 de fuerza hacia donde te mueves y vuelvete invencible por 0.5 segundos
-runeofhealing=Aumenta la recuperación de vida en §7<effectNumber>§0%
 runeofresistance=Aumenta tu armadura en §7<effectNumber>§0% por 10 segundos
 runeofresistance2=Mientras esté en recarga tu armadura se reduce a la mitad
 runeofvalor=Duplica los efectos de los banners que llevas y también duplica su velocidad de habilidad por §7<effectNumber>§0 segundos
