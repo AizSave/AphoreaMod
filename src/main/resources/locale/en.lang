@@ -135,6 +135,8 @@ irondagger=Iron Dagger
 golddagger=Gold Dagger
 demonicdagger=Demonic Dagger
 tungstendagger=Tungsten Dagger
+# NEW
+umbrella=Umbrella
 
 // Magic weapons
 unstablegelstaff=Unstable Gel Staff
@@ -156,6 +158,11 @@ unstablegelgreatbow=Unstable Gel Greatbow
 // Arrows
 gelarrow=Gel Arrow
 unstablegelarrow=Unstable Gel Arrow
+
+// Saber Guns
+# NEW
+sabergun=Saber Gun
+shotgunsaber=Shotgun Saber
 
 // Slings
 sling=Sling
@@ -183,7 +190,6 @@ healingstaff=Healing Staff
 woodenwand=Wooden Wand
 goldenwand=Golden Wand
 # NEW
-spinelwand=Spinel Wand
 
 // Tools
 # NEW
@@ -208,6 +214,9 @@ bannerbearerfoci=Banner-bearer Foci
 # NEW
 cursedmedallion=Cursed Medallion
 ancientmedallion=Ancient Medallion
+healingessence=Healing Essence
+ninjascarf=Ninja Scarf
+adrenalinecharm=Adrenaline Charm
 
 // Armor
 rockyboots=Rocky Boots
@@ -311,13 +320,14 @@ bannerdamagetip=Banner damage: <value>
 areabuff=Apply <buff> to allys
 areadebuff=Apply <buff> to enemies
 areabuffdisplay=<buff> for <duration> seconds
+attackarmorpentip=Armor pen: <value>%
 
 // Mechanics
-magichealinggrace=§aMagic Healing Grace:§0 Heals yourself with a % of the §9[Magic Healing]§0 intended for allies
+magichealinggrace=§aMagic Healing Grace:§0 Heals yourself with a % of the Magic Healing intended for allies
 
 // Misc
 gelslimenullifier=They will stop bothering you with a simple click!
-enchantingscrollhealingequipmenttip=Used to enchant an healing equipment item with <enchantment>\n§!Aphorea Mod
+enchanting  scrollhealingequipmenttip=Used to enchant an healing equipment item with <enchantment>\n§!Aphorea Mod
 enchantingscrollhealingtip=Used to enchant an healing tool with <enchantment>\n§!Aphorea Mod
 enchantingscrollareatip=Used to enchant an area-effect tool with <enchantment>\n§!Aphorea Mod
 enchantingscrolldaggertip=Used to enchant a dagger weapon with <enchantment>\n§!Aphorea Mod
@@ -328,20 +338,19 @@ unstablecore=§bReleases an unstable aura...§0 Can only be used during the day
 lowdspotion=DO NOT DRINK THIS
 
 // General Weapons & Tools
-saber=Quick charge dealing x2 damage after 0.5 seconds, then discharges over another 0.5 seconds
-saber2=A perfect attack will launch an aircut that deals base damage. A good one will also launch a weak one
-saber3=Hold [input=mouse2] to charge up a dash to slice through enemies dealing base damage
+saber=If correctly charged, your attack will unleash an aircut
+saberdash=Hold [input=mouse2] to charge up a dash to slice through enemies
 battleaxe=Requires a lot of charge time
-battleaxe2=Press [input=mouse2] to activate the Berserker Rush. You cannot take damage or move while activating the ability
+battleaxe2=Press [input=mouse2] to activate the Berserker Rush
 sling=Throws stones with force
 sling2=100% chance to stun the enemy for 0.5 seconds
-spinsecondaryattack=[input=mouse2] to make the next attack an area attack
-areasecondaryattack=[input=mouse2] to perform an area attack consuming <mana> Mana
-stikybuff1=Makes the enemy §9Sticky§0 for 1 second
-stikybuff2=Makes the enemy §9Sticky§0 for 2 seconds
-stikybuff3=Makes the enemy §9Sticky§0 for 3 seconds
+spinsecondaryattack=Press [input=mouse2] to make the next attack an area attack
+areasecondaryattack=Press [input=mouse2] to perform an area attack consuming <mana> Mana
+stikybuff1=Makes the enemy Sticky for 1 second
+stikybuff2=Makes the enemy Sticky for 2 seconds
+stikybuff3=Makes the enemy Sticky for 3 seconds
 backpack=It is a new inventory that stores all the items you collect
-backpack2=§6Do not have backpacks with items in the inventory when you are going to create a better backpack
+backpack2=§9Do not have backpacks with items in the inventory when you are going to create a better backpack
 backpackslots=Capacity of <slots> items
 stored=Stored items: <items>
 twoarrows=Shoots two arrows at once
@@ -350,19 +359,19 @@ projectilearea=When the projectile ends, it deals area damage
 blowgun=Shoots seeds
 # NEW
 cursedbuff=§bCursed:§0 +25% Incoming Damage
+dagger=Hold [input=mouse2] to throw the dagger
 
 // Single Weapons & Tools
 gelball=Throws a gel ball
 firesling=Burns the enemies
 frozensling=Freezes the enemies
-magicalvial=§9[Magic Healing]§0 of §7<healing>§0. Point at an injured human to heal them, don't point at anyone to heal yourself. 20-second cooldown
-woodenrod=Self §9[Magic Healing]§0 with §7<healing>§0 every 10 attacks
+magicalvial=Point at an injured human to heal them, don't point at anyone to heal yourself
+magicalvial2=Infinite uses
+woodenrod=Magic Heal yourself with §7<healing>§0 every 10 attacks
 voidhammer=When the projectile bounces or hits an enemy, it targets the nearest one, hitting up to 3 times
 unstablegelstaff=When projectiles bounces off walls, they duplicate
 gelgreatbow=Turns Stone Arrows into Gel Arrows
 unstablegelgreatbow=Turns Stone Arrows and Gel Arrows into Unstable Gel Arrows
-woodenwand=Shots a §9[Magic Healing]§0 projectile
-goldenwand=Shots a guided projectile that ends with a §9[Magic Healing]§0 area
 # NEW
 thespammer=Can shot Spam Bullets
 spambullet=Randomly have one of these effects:
@@ -372,7 +381,9 @@ spambullet3=§9Like:§0 Bounces off walls and pierces mobs, up to 10 times each
 spambullet4=§9Check:§0 Magic healing area of 3 health at the end of its path
 spambullet5=§9Explosion:§0 Explodes at the end of its path instead of colliding
 lifespinel=Permanently increases max health by 5 up to 250
-spinelwand=Shoots a very guided projectile ending in a §9[Magic Healing]§0 area
+spinelwand=Shoots a very guided projectile ending in a Magic Healing area
+# NEW
+shotgunsaber=Aim near center for more powerful, accurate, and piercing shots
 
 // Tiles & Objects
 geltile=Sticky floor that greatly slows down everything on top
@@ -380,31 +391,41 @@ witchstatue=Placing this statue on the surface of a swamp will eliminate witch s
 
 // Generic Trinkets
 # NEW
-areawhenheal=Executes this area for every <magichealing> §9[Magic Healing]§0 done
+areawhenheal=Executes this area for every <magichealing> Magic Healing done
 
 // Trinkets
 rockyperiapt=+5 Armor, but -5% Movement Speed
-rockyperiapt2=Press [input=trinketability] to gain 10 Armor for 10 seconds\nYou cannot take damage or move while activating the ability
-unstableperiapt=Calls two §bBaby Unstable Gel Slimes§0 who will protect you. These slimes §9deal 8 Summoner Damage§0
-unstableperiapt2=Makes you immune to the §9Sticky§0 debuff
-bloodyperiapt=Press [input=trinketability] to gain +50% Speed, +30% Attack Speed, and\nthe weapons §6Blood Bolt§0 and §6Blood Volley§0 will heal you for 3% of the damage you deal with them\nYou cannot take damage or move while activating the ability
-demonicperiapt=Press [input=trinketability] to gain +50% Speed, +30% Attack Speed, and\nmagic weapons will heal you for 3% of the damage you deal with them for 10 seconds\nYou cannot take damage or move while activating the ability
-abysmalperiapt=Magic weapons will heal you for 3% of the damage you deal with them
-necromancyperiapt=Every time you or one of your summons kills a hostile mob you summon a §bUndead Skeleton§0\n that §9deals 20 Summoner Damage§0 for§9 10 seconds§0 with a maximum of§9 3 at a time§0
-frozenperiapt=Melee and Ranged weapons will §9Freeze§0 for 3 seconds. If the target is already frozen, increases the base Damage of the attack by §9+20%§0
-frozenperiapt2=Press [input=trinketability] to gain +50% Speed, +30% Attack Speed and\nmake this work with all damage for 10 seconds\nYou cannot take damage or move while activating the ability
-frozenperiapt3=Makes you immune to the §9Freeze§0 and §9Frostslow§0 debuffs
-floralring=Self §9[Magic Healing]§0 with §7<healing>§0 every 5 seconds
-gelring=+30% §9[Magic Healing]§0 received
+rockyperiapt2=Press [input=trinketability] to gain 10 Armor for 10 seconds
+unstableperiapt=Summons two Baby Unstable Gel Slimes. Deals 8 Summoner Damage
+unstableperiapt2=Makes you immune to the Sticky debuff
+bloodyperiapt=Press [input=trinketability] to gain a boost of Speed and Attack Speed for 10 seconds
+bloodyperiapt1=Also, the weapons 'Blood Bolt' and 'Blood Volley' will steal 3% of life
+demonicperiapt=Press [input=trinketability] to gain a boost of Speed and Attack Speed for 10 seconds
+demonicperiapt2=Also, all magic weapons will steal 3% of life
+abysmalperiapt=Magic weapons will steal 3% of life
+necromancyperiapt=Every time you or one of your summons kills a hostile mob you summon a Undead Skeleton
+necromancyperiapt2=Deals 20 Summoner Damage. Lasts 10 seconds and there can be a maximum of 3 at a time
+frozenperiapt=Melee and Ranged weapons will Freeze for 3 seconds
+frozenperiapt2=Deal more damage to mobs affected by Frezze
+frozenperiapt3=Makes you immune to the Freeze and Frostslow debuffs
+floralring=Magic Heal yourself with §7<healing>§0 every 5 seconds
+gelring=+30% Magic Healing received
 heartring=+20 max health
-swampshield=Only protects attacks in the direction they are received\nSelf §9[Magic Healing]§0 with the §7<healing>§0 of the damage you prevent
-bannerbearerfoci1=§7+40%§0 banner effect and §7+20%§0 banner ability speed
-bannerbearerfoci2=§6-20%§0 all non-banner damage and §6-1§0 max summons
+swampshield=Only protects attacks in the direction they are received
+swampshield2=Magic Heal yourself with the §7<healing>§0 of the damage you prevent
+bannerbearerfoci1=+40% banner effect and +20% banner ability speed
+bannerbearerfoci2=-20% all non-banner damage and -1 max summons
 iceboots=Makes you slide as if you were on ice, but grants +50% movement speed and +4 armor
+# NEW
+healingessence=+<percent> Magic Healing per life essence
+healingessence2=-80% life essence duration
+ninjascarf=Converts Saber Dashes into Saber Jumps
+adrenalinecharm=Every hit received will increase your damage by 5% and reduce your defense by 10% for 20 seconds
+adrenalinecharm2=Can stack up to 5 times
 
 // Set Bonus
-goldhatsetbonus=+60% Ranged Attack Speed while you are not moving
-pinkwitchsetbonus=Increases Magic Attack Speed, Mana Regeneration, and Armor as you have less life, with a maximum of 50% / 6 Armor
+goldhatsetbonus=If you're still, your ranged attack speed is greatly increased
+pinkwitchsetbonus=Increases Magic Attack Speed, Mana Regeneration, and Armor the lower your health is
 
 // Banners
 strikebannereffect=§7+<effect>%§0 life regeneration (in and out of combat)
@@ -445,7 +466,6 @@ lessextraeffectmod=Effect modifications are <mod>% less effective
 // Base Runes Tier 0
 runeoffury=Increase your damage and attack speed by §7<effectNumber>§0% for 10 seconds
 runeofspeed=Dash with §7<effectNumber>§0 strength in the direction you are moving and become invincible for 0.5 seconds
-runeofhealing=Increases the restoration of max health by §7<effectNumber>§0%
 runeofresistance=Increases your armor by §7<effectNumber>§0% for 10 seconds
 runeofresistance2=While on cooldown, your armor is reduced by half
 runeofvalor=Doubles the effects of banners you carry and doubles their ability speed for §7<effectNumber>§0 seconds
@@ -568,6 +588,7 @@ runesinjectoractive=Runes Injector Active
 runesinjectorcooldown=Runes Injector Cooldown
 # NEW
 cursed=Cursed
+adrenalinecharmcharge=Adrenaline Charm Charge
 
 
 [message]

@@ -24,7 +24,13 @@ import necesse.gfx.gameTexture.GameTextureSection;
 import java.io.FileNotFoundException;
 
 public class AphResources {
+    public static GameTexture attackTrackTexture;
+    public static GameTexture attackThumbTexture;
+
     public static void initResources() {
+        attackTrackTexture = GameTexture.fromFile("ui/attacktrack");
+        attackThumbTexture = GameTexture.fromFile("ui/attackthumb");
+
         // MOBS
         mobResources();
 
@@ -99,8 +105,7 @@ public class AphResources {
         DaggerProjectile.GoldDaggerProjectile.texture = GameTexture.fromFile("player/weapons/golddagger");
         DaggerProjectile.DemonicDaggerProjectile.texture = GameTexture.fromFile("player/weapons/demonicdagger");
         DaggerProjectile.TungstenDaggerProjectile.texture = GameTexture.fromFile("player/weapons/tungstendagger");
-
-        SpamBulletProjectile.texture = GameTexture.fromFile("projectiles/spambullet");
+        DaggerProjectile.UmbrellaDaggerProjectile.texture = GameTexture.fromFile("player/weapons/umbrella");
     }
 
 }

@@ -313,9 +313,8 @@ unstablecore=§bLibera una aura inestable...§0 Solo puede ser usado durante el 
 lowdspotion=NO TE BEBAS ESTO
 
 // General Weapons & Tools
-saber=Carga rápida donde hace x2 de daño tras 0.5 segundos, luego se descarga en otros 0.5 segundos
-saber2=Un ataque perfecto lanzará un corte que hará daño base. Uno bueno también lanzará uno débil
-saber3=Manten pulsado [input=mouse2] para cargar un Dash y cortar a trav�s de los enemigos causando el daño base
+saber=Un ataque perfecto lanzará un corte que hará daño base. Uno bueno lanzará uno débil
+saberdash=Manten pulsado [input=mouse2] para cargar un Dash y cortar a trav�s de los enemigos causando el daño base
 battleaxe=Requiere mucho tiempo de carga
 battleaxe2=Presiona [input=mouse2] para activar la Furia Berserker. No puedes recibir daño ni moverte mientras activas la habilidad
 sling=Lanza piedras con fuerza
@@ -421,7 +420,6 @@ lessextraeffectmod=Las modificaciones de efecto son <mod>% menos efectivas
 # NEW
 runeoffury=Aumenta tu daño y velocidad de ataque en §7<effectNumber>§0% por 10 segundos
 runeofspeed=Realiza un dash con §7<effectNumber>§0 de fuerza hacia donde te mueves y vuelvete invencible por 0.5 segundos
-runeofhealing=Aumenta la recuperación de vida en §7<effectNumber>§0%
 runeofresistance=Aumenta tu armadura en §7<effectNumber>§0% por 10 segundos
 runeofresistance2=Mientras esté en recarga tu armadura se reduce a la mitad
 runeofvalor=Duplica los efectos de los banners que llevas y también duplica su velocidad de habilidad por §7<effectNumber>§0 segundos

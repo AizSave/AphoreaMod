@@ -78,8 +78,8 @@ public class AphRuneOfMotherSlimeEvent extends HitboxEffectEvent implements Atta
         teleported = false;
     }
 
-    public void clientTick() {
-        super.clientTick();
+    public void tickMovement(float delta) {
+        super.tickMovement(delta);
         this.lifeTime += 50;
         if (this.lifeTime >= 1100) {
             this.over();

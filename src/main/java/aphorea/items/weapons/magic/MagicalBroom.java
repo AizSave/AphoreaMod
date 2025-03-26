@@ -56,7 +56,7 @@ public class MagicalBroom extends AphToolItem {
         this.showAttackAllDirections = true;
         this.resilienceGain.setBaseValue(2.0F);
 
-        rarity = Rarity.RARE;
+        rarity = Rarity.COMMON;
         attackAnimTime.setBaseValue(300);
         attackDamage.setBaseValue(26)
                 .setUpgradedValue(1, 120);

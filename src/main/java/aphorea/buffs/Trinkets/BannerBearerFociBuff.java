@@ -1,4 +1,4 @@
-package aphorea.buffs.Trinkets.Banners;
+package aphorea.buffs.Trinkets;
 
 import aphorea.registry.AphModifiers;
 import necesse.engine.localization.Localization;
@@ -11,8 +11,8 @@ import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.trinketItem.TrinketItem;
 
-public class BannerBearerFociTrinket extends TrinketBuff {
-    public BannerBearerFociTrinket() {
+public class BannerBearerFociBuff extends TrinketBuff {
+    public BannerBearerFociBuff() {
     }
 
     public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {

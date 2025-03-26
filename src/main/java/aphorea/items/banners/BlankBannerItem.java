@@ -25,7 +25,7 @@ public class BlankBannerItem extends AphBanner {
     );
 
     public BlankBannerItem() {
-        super(Rarity.COMMON, 480, (m) -> AphBuffs.BANNER.BLANK, 4000 / 50);
+        super(Rarity.NORMAL, 480, (m) -> AphBuffs.BANNER.BLANK, 4000 / 50);
     }
 
     @Override

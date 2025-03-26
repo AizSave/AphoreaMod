@@ -71,6 +71,7 @@ public class NecromancyPeriaptBuff extends TrinketBuff {
     public ListGameTooltips getTrinketTooltip(TrinketItem trinketItem, InventoryItem item, PlayerMob perspective) {
         ListGameTooltips tooltips = super.getTrinketTooltip(trinketItem, item, perspective);
         tooltips.add(Localization.translate("itemtooltip", "necromancyperiapt"));
+        tooltips.add(Localization.translate("itemtooltip", "necromancyperiapt2"));
         return tooltips;
     }
 }

@@ -6,10 +6,12 @@ import aphorea.buffs.Runes.AphBaseRuneActiveBuff;
 import aphorea.buffs.Runes.AphBaseRuneTrinketBuff;
 import aphorea.buffs.Runes.AphModifierRuneTrinketBuff;
 import aphorea.buffs.SetBonus.*;
+import aphorea.buffs.Trinkets.AdrenalineCharmBuff;
 import aphorea.buffs.Trinkets.Healing.AncientMedallionBuff;
 import aphorea.buffs.Trinkets.Healing.CursedMedallionBuff;
 import aphorea.buffs.Trinkets.Healing.FloralRingBuff;
 import aphorea.buffs.Trinkets.Healing.WitchMedallionBuff;
+import aphorea.buffs.Trinkets.Healing.HealingEssenceBuff;
 import aphorea.buffs.Trinkets.Periapts.*;
 import aphorea.buffs.TrinketsActive.*;
 import aphorea.levelevents.*;
@@ -47,9 +49,9 @@ import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.buffs.staticBuffs.Buff;
 import necesse.entity.mobs.buffs.staticBuffs.HiddenCooldownBuff;
-import necesse.entity.mobs.buffs.staticBuffs.ShownCooldownBuff;
 import necesse.entity.mobs.buffs.staticBuffs.armorBuffs.setBonusBuffs.SetBonusBuff;
 import necesse.entity.mobs.buffs.staticBuffs.armorBuffs.trinketBuffs.SimpleTrinketBuff;
+import necesse.entity.mobs.buffs.staticBuffs.armorBuffs.trinketBuffs.TrinketBuff;
 import necesse.entity.mobs.itemAttacker.FollowPosition;
 import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
 import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
@@ -58,13 +60,11 @@ import necesse.entity.particle.SmokePuffParticle;
 import necesse.gfx.GameResources;
 import necesse.gfx.camera.MainGameCamera;
 import necesse.gfx.gameFont.FontManager;
-import necesse.gfx.gameTexture.GameTexture;
 import necesse.inventory.InventoryItem;
 import necesse.level.maps.Level;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
@@ -145,15 +145,6 @@ public class AphBuffs {
 
 
             }
-
-            @Override
-            public void loadTextures() {
-                try {
-                    this.iconTexture = GameTexture.fromFileRaw("buffs/stun");
-                } catch (FileNotFoundException var2) {
-                    this.iconTexture = GameTexture.fromFile("buffs/unknown");
-                }
-            }
         });
         BuffRegistry.registerBuff("sticky", STICKY = new StickyBuff());
         BuffRegistry.registerBuff("cursed", CURSED = new CursedBuff());
@@ -164,10 +155,10 @@ public class AphBuffs {
 
         // Common Cooldowns
         BuffRegistry.registerBuff("immortalcooldown", INMORTAL_COOLDOWN = new HiddenCooldownBuff());
-        BuffRegistry.registerBuff("berserkerrushcooldown", BERSERKER_RUSH_COOLDOWN = new ShownCooldownBuff());
-        BuffRegistry.registerBuff("spinattackcooldown", SPIN_ATTACK_COOLDOWN = new ShownCooldownBuff());
-        BuffRegistry.registerBuff("periaptcooldown", PERIAPT_COOLDOWN = new ShownCooldownBuff());
-        BuffRegistry.registerBuff("saberdashcooldown", SABER_DASH_COOLDOWN = new ShownCooldownBuff());
+        BuffRegistry.registerBuff("berserkerrushcooldown", BERSERKER_RUSH_COOLDOWN = new AphShownCooldownBuff());
+        BuffRegistry.registerBuff("spinattackcooldown", SPIN_ATTACK_COOLDOWN = new AphShownCooldownBuff());
+        BuffRegistry.registerBuff("periaptcooldown", PERIAPT_COOLDOWN = new AphShownCooldownBuff());
+        BuffRegistry.registerBuff("saberdashcooldown", SABER_DASH_COOLDOWN = new AphShownCooldownBuff());
 
         // Armor Set Bonus
         BuffRegistry.registerBuff("goldhatsetbonus", SET_BONUS.GOLD_HAT = new GoldHatSetBonusBuff());
@@ -202,19 +193,24 @@ public class AphBuffs {
         BuffRegistry.registerBuff("iceboots", new SimpleTrinketBuff("iceboots", new ModifierValue<>(BuffModifiers.FRICTION, -0.75F), new ModifierValue<>(BuffModifiers.SPEED, 0.5F), new ModifierValue<>(BuffModifiers.ARMOR_FLAT, 4)));
         BuffRegistry.registerBuff("cursedmedallion", new CursedMedallionBuff());
         BuffRegistry.registerBuff("ancientmedallion", new AncientMedallionBuff());
+        BuffRegistry.registerBuff("healingessence", new HealingEssenceBuff());
+        BuffRegistry.registerBuff("ninjascarf", new TrinketBuff() { @Override public void init(ActiveBuff activeBuff, BuffEventSubscriber buffEventSubscriber) {} });
+        BuffRegistry.registerBuff("adrenalinecharm", new AdrenalineCharmBuff());
+        BuffRegistry.registerBuff("adrenalinecharmcharge", new AdrenalineCharmBuff.AdrenalineCharmChargeBuff());
+        BuffRegistry.registerBuff("test1", new SimpleTrinketBuff("test1", new ModifierValue<>(BuffModifiers.MAX_SUMMONS, 2), new ModifierValue<>(BuffModifiers.SUMMONS_SPEED, -0.2F), new ModifierValue<>(BuffModifiers.SUMMON_DAMAGE, -0.2F)));
+        BuffRegistry.registerBuff("test2", new SimpleTrinketBuff("test2", new ModifierValue<>(BuffModifiers.MAX_SUMMONS, 3), new ModifierValue<>(BuffModifiers.SUMMONS_SPEED, -0.2F), new ModifierValue<>(BuffModifiers.SUMMON_DAMAGE, -0.2F)));
 
         // Trinket Active Buffs
         BuffRegistry.registerBuff("rockyperiaptactive", new RockyPeriaptActiveBuff());
         BuffRegistry.registerBuff("bloodyperiaptactive", new BloodyPeriaptActiveBuff());
         BuffRegistry.registerBuff("demonicperiaptactive", new DemonicPeriaptActiveBuff());
-        BuffRegistry.registerBuff("frozenperiaptactive", new FrozenPeriaptActiveBuff());
 
         // Mobs
         BuffRegistry.registerBuff("unstablegelslimerush", new UnstableGelSlimeRushBuff());
 
         // Runes Injectors
-        BuffRegistry.registerBuff("runesinjectoractive", RUNE_INJECTOR_ACTIVE = new ShownCooldownBuff());
-        BuffRegistry.registerBuff("runesinjectorcooldown", RUNE_INJECTOR_COOLDOWN = new ShownCooldownBuff());
+        BuffRegistry.registerBuff("runesinjectoractive", RUNE_INJECTOR_ACTIVE = new AphShownBuff());
+        BuffRegistry.registerBuff("runesinjectorcooldown", RUNE_INJECTOR_COOLDOWN = new AphShownCooldownBuff());
         runesInjectors();
 
         // Base Runes
@@ -255,7 +251,7 @@ public class AphBuffs {
         baseEffectNumber = 40;
         // On activation
         BuffRegistry.registerBuff("runeoffury", new AphBaseRuneTrinketBuff(baseEffectNumber, 10000, "runeoffuryactive")
-                .setHealthCost(0.4F)
+                .setHealthCost(0.25F)
         );
         // On duration
         BuffRegistry.registerBuff("runeoffuryactive", new AphBaseRuneActiveBuff(baseEffectNumber, 20000) {
@@ -355,7 +351,7 @@ public class AphBuffs {
 
         });
         // On duration
-        BuffRegistry.registerBuff("runeofvaloractive", new AphBaseRuneActiveBuff(baseEffectNumber, 20000, new ModifierValue<>(AphModifiers.BANNER_EFFECT, 1F), new ModifierValue<>(AphModifiers.BANNER_ABILITY_SPEED, 1F)) {
+        BuffRegistry.registerBuff("runeofvaloractive", new AphBaseRuneActiveBuff(baseEffectNumber, 10000, new ModifierValue<>(AphModifiers.BANNER_EFFECT, 1F), new ModifierValue<>(AphModifiers.BANNER_ABILITY_SPEED, 1F)) {
 
             @Override
             public void clientTick(ActiveBuff buff) {
@@ -378,12 +374,12 @@ public class AphBuffs {
                 player.getLevel().entityManager.addLevelEvent(new AphRuneOfDetonationEvent(player, player.x, player.y, getEffectNumber(player) / 100));
             }
 
-        }.setHealthCost(0.1F));
+        }.setHealthCost(0.05F));
 
         // RUNE OF THUNDER
         baseEffectNumber = 50;
         // On activation
-        BuffRegistry.registerBuff("runeofthunder", new AphBaseRuneTrinketBuff(baseEffectNumber, 12000) {
+        BuffRegistry.registerBuff("runeofthunder", new AphBaseRuneTrinketBuff(baseEffectNumber, 10000) {
 
             @Override
             public void run(Level level, PlayerMob player, int targetX, int targetY) {
@@ -637,7 +633,7 @@ public class AphBuffs {
                 }
             }
 
-        }).setHealthCost(0.1F);
+        }).setHealthCost(0.05F);
 
         // RUNE OF PIRATE CAPTAIN
         baseEffectNumber = 1F;
@@ -714,7 +710,7 @@ public class AphBuffs {
                 }
                 super.run(level, player, targetX, targetY);
             }
-        }).setHealthCost(0.1F);
+        }).setHealthCost(0.05F);
 
         // RUNE OF CRYO QUEEN
         baseEffectNumber = 300;
@@ -1072,8 +1068,8 @@ public class AphBuffs {
                         }
                     }
                 }
-                .setEffectNumberVariation(-0.2F)
-                .setHealthCost(0.05F)
+                        .setEffectNumberVariation(-0.2F)
+                        .setHealthCost(0.05F)
         );
 
 
@@ -1089,7 +1085,7 @@ public class AphBuffs {
                     }
                 }
         );
-        BuffRegistry.registerBuff("pawningruneactive", new ShownCooldownBuff() {
+        BuffRegistry.registerBuff("pawningruneactive", new AphShownBuff() {
             int pawnHealing;
 
             @Override
@@ -1138,7 +1134,7 @@ public class AphBuffs {
                     }
                 }.setHealthCost(0.1F)
         );
-        BuffRegistry.registerBuff("abysmalrunecooldown", new ShownCooldownBuff());
+        BuffRegistry.registerBuff("abysmalrunecooldown", new AphShownCooldownBuff());
 
         // Tidal Rune
         BuffRegistry.registerBuff("tidalrune", new AphModifierRuneTrinketBuff() {
@@ -1178,7 +1174,7 @@ public class AphBuffs {
                         }
 
                     }
-                }.setCooldownVariation(0.15F)
+                }.setCooldownVariation(0.1F)
         );
     }
 
@@ -1189,4 +1185,5 @@ public class AphBuffs {
                 .setCooldownVariation(1F)
         );
     }
+
 }

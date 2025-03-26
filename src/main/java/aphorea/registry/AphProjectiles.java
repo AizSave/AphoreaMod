@@ -2,6 +2,7 @@ package aphorea.registry;
 
 import aphorea.projectiles.arrow.GelArrowProjectile;
 import aphorea.projectiles.arrow.UnstableGelArrowProjectile;
+import aphorea.projectiles.bullet.ShotgunBulletProjectile;
 import aphorea.projectiles.bullet.SpamBulletProjectile;
 import aphorea.projectiles.mob.*;
 import aphorea.projectiles.rune.RuneOfCryoQueenProjectile;
@@ -17,6 +18,7 @@ public class AphProjectiles {
 
         // Bullets
         ProjectileRegistry.registerProjectile("spambullet", SpamBulletProjectile.class, "spambullet", "ball_shadow");
+        ProjectileRegistry.registerProjectile("shotgunbullet", ShotgunBulletProjectile.class, "shotgunbullet", null);
 
         ProjectileRegistry.registerProjectile("gel", GelProjectile.class, "gel", "ball_shadow");
         ProjectileRegistry.registerProjectile("unstablegel", UnstableGelProjectile.class, "unstablegel", "unstablegel_shadow");
@@ -42,6 +44,8 @@ public class AphProjectiles {
         ProjectileRegistry.registerProjectile("golddagger", DaggerProjectile.GoldDaggerProjectile.class, null, null);
         ProjectileRegistry.registerProjectile("demonicdagger", DaggerProjectile.DemonicDaggerProjectile.class, null, null);
         ProjectileRegistry.registerProjectile("tungstendagger", DaggerProjectile.TungstenDaggerProjectile.class, null, null);
+        ProjectileRegistry.registerProjectile("umbrelladagger", DaggerProjectile.UmbrellaDaggerProjectile.class, null, null);
+        ProjectileRegistry.registerProjectile("openumbrella", OpenUmbrellaProjectile.class, "umbrella_open", null);
 
         // Mobs
         ProjectileRegistry.registerProjectile("pinkwitch", PinkWitchProjectile.class, null, null);

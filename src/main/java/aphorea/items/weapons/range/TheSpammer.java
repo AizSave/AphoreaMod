@@ -18,7 +18,7 @@ import java.awt.*;
 public class TheSpammer extends GunProjectileToolItem {
     public TheSpammer() {
         super("spambullet", 400);
-        this.rarity = Rarity.EPIC;
+        this.rarity = Rarity.RARE;
         this.attackAnimTime.setBaseValue(300);
         this.attackDamage.setBaseValue(30).setUpgradedValue(1.0F, 45.0F);
         this.attackXOffset = 14;

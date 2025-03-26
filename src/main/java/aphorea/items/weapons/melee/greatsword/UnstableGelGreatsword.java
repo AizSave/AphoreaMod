@@ -17,7 +17,7 @@ public class UnstableGelGreatsword extends AphGreatswordSecondarySpinToolItem im
 
     public UnstableGelGreatsword() {
         super(500, 300, getThreeChargeLevels(500, 600, 700, AphColors.unstableGel_very_light, AphColors.unstableGel_light, AphColors.unstableGel), AphColors.unstableGel);
-        rarity = Rarity.UNCOMMON;
+        rarity = Rarity.COMMON;
         attackDamage.setBaseValue(50)
                 .setUpgradedValue(1, 160);
         attackRange.setBaseValue(110);

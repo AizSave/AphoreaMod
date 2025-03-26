@@ -8,6 +8,7 @@ import aphorea.data.AphSwampLevelData;
 import aphorea.data.AphWorldData;
 import aphorea.items.weapons.melee.greatsword.logic.GreatswordDashLevelEvent;
 import aphorea.items.weapons.melee.saber.logic.SaberDashLevelEvent;
+import aphorea.items.weapons.melee.saber.logic.SaberJumpLevelEvent;
 import aphorea.journal.AphJournalChallenges;
 import aphorea.levelevents.*;
 import aphorea.mobs.friendly.WildPhosphorSlime;
@@ -30,6 +31,7 @@ import necesse.engine.registries.*;
 import necesse.entity.mobs.hostile.*;
 import necesse.entity.mobs.hostile.bosses.*;
 import necesse.entity.mobs.hostile.pirates.PirateCaptainMob;
+import necesse.gfx.GameColor;
 import necesse.inventory.item.ItemCategory;
 import necesse.inventory.lootTable.LootTable;
 import necesse.inventory.lootTable.LootTablePresets;
@@ -46,7 +48,10 @@ import necesse.level.maps.biomes.Biome;
 import necesse.level.maps.biomes.dungeon.DungeonBiome;
 import necesse.level.maps.biomes.swamp.SwampBiome;
 
+import java.awt.*;
+import java.lang.reflect.Field;
 import java.util.Objects;
+import java.util.function.Supplier;
 
 @ModEntry
 public class AphoreaMod {
@@ -110,7 +115,7 @@ public class AphoreaMod {
 
         RockObject gelRock;
         ObjectRegistry.registerObject("gelrock", gelRock = new RockyWallObject("gelrock", AphColors.rock, "rockygel", 0, 1, 1), -1.0F, true);
-        gelRock.toolTier = 2;
+        gelRock.toolTier = 1.5F;
         SingleRockObject.registerSurfaceRock(gelRock, "surfacegelrock", AphColors.rock_light, 1, 2, 1, -1.0F, true);
 
         // Recipe Tech
@@ -137,6 +142,7 @@ public class AphoreaMod {
         // LevelEvents
         LevelEventRegistry.registerEvent("gelprojectilegroundeffect", GelProjectile.GelProjectileGroundEffectEvent.class);
         LevelEventRegistry.registerEvent("saberdash", SaberDashLevelEvent.class);
+        LevelEventRegistry.registerEvent("saberjump", SaberJumpLevelEvent.class);
         LevelEventRegistry.registerEvent("greatsworddash", GreatswordDashLevelEvent.class);
         LevelEventRegistry.registerEvent("volatilegelexplosion", VolatileGelSlime.VolatileGelExplosion.class);
         LevelEventRegistry.registerEvent("spambulletexplosion", SpamBulletProjectile.SpamBulletExplosion.class);
@@ -396,6 +402,17 @@ public class AphoreaMod {
         SpiderEmpressMob.privateLootTable.items.add(
                 new LootItem("runeofspiderempress")
         );
+
+        try {
+            Supplier<Color> newColor = () -> new Color(100, 250, 250);
+
+            Field description = GameColor.class.getDeclaredField("color");
+            description.setAccessible(true);
+            description.set(GameColor.ITEM_NORMAL, newColor);
+
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 

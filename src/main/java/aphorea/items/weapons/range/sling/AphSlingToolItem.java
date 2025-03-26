@@ -68,9 +68,9 @@ abstract public class AphSlingToolItem extends ProjectileToolItem {
     @Override
     public ListGameTooltips getPreEnchantmentTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {
         ListGameTooltips tooltips = super.getPreEnchantmentTooltips(item, perspective, blackboard);
-        this.addAmmoTooltips(tooltips);
         int ammoAmount = this.getAvailableAmmo(perspective);
         tooltips.add(Localization.translate("itemtooltip", "ammotip", "value", ammoAmount));
+        tooltips.add(Localization.translate("itemtooltip", "sling"));
         tooltips.add(Localization.translate("itemtooltip", "sling2"));
         return tooltips;
     }
@@ -88,10 +88,6 @@ abstract public class AphSlingToolItem extends ProjectileToolItem {
         this.addAttackSpeedTip(list, currentItem, lastItem, perspective);
         this.addResilienceGainTip(list, currentItem, lastItem, perspective, forceAdd);
         this.addCritChanceTip(list, currentItem, lastItem, perspective, forceAdd);
-    }
-
-    protected void addAmmoTooltips(ListGameTooltips tooltips) {
-        tooltips.add(Localization.translate("itemtooltip", "sling"));
     }
 
     @Override

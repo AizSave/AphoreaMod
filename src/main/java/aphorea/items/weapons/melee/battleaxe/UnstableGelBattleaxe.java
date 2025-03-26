@@ -16,7 +16,7 @@ public class UnstableGelBattleaxe extends AphBattleaxeToolItem {
 
     public UnstableGelBattleaxe() {
         super(500, getChargeLevel(2000, AphColors.unstableGel), getChargeLevel(1400, AphColors.unstableGel));
-        rarity = Rarity.UNCOMMON;
+        rarity = Rarity.COMMON;
         attackDamage.setBaseValue(120)
                 .setUpgradedValue(1, 300);
         attackRange.setBaseValue(90);

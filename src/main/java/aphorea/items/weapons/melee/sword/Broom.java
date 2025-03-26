@@ -6,7 +6,7 @@ public class Broom extends AphSwordToolItem {
 
     public Broom() {
         super(500);
-        rarity = Rarity.COMMON;
+        rarity = Rarity.NORMAL;
         attackDamage.setBaseValue(16)
                 .setUpgradedValue(1, 80);
         attackRange.setBaseValue(120);

@@ -37,7 +37,7 @@ public class MagicalVial extends AphMagicHealingToolItem {
 
     public MagicalVial() {
         super(200);
-        this.rarity = Rarity.UNCOMMON;
+        this.rarity = Rarity.COMMON;
         magicHealing.setBaseValue(30)
                 .setUpgradedValue(1.0F, 35);
 
@@ -131,9 +131,15 @@ public class MagicalVial extends AphMagicHealingToolItem {
     }
 
     @Override
+    public void addStatTooltips(ItemStatTipList list, InventoryItem currentItem, InventoryItem lastItem, ItemAttackerMob perspective, boolean forceAdd) {
+        AphMagicHealing.addMagicHealingTip(this, list, currentItem, lastItem, perspective);
+    }
+
+    @Override
     public ListGameTooltips getBaseTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {
         ListGameTooltips tooltips = super.getBaseTooltips(item, perspective, blackboard);
-        tooltips.add(Localization.translate("itemtooltip", "magicalvial", "healing", AphMagicHealing.getMagicHealingToolTip(perspective, magicHealing.getValue(item.item.getUpgradeTier(item)), item, this)));
+        tooltips.add(Localization.translate("itemtooltip", "magicalvial"));
+        tooltips.add(Localization.translate("itemtooltip", "magicalvial2"));
         return tooltips;
     }
 

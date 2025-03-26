@@ -9,8 +9,8 @@ import necesse.level.maps.Level;
 public class DemonicSaber extends AphSaberToolItem {
 
     public DemonicSaber() {
-        super(500);
-        rarity = Rarity.UNCOMMON;
+        super(800);
+        rarity = Rarity.COMMON;
         attackDamage.setBaseValue(20)
                 .setUpgradedValue(1, 120);
         knockback.setBaseValue(150);

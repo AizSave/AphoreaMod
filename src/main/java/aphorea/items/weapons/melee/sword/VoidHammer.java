@@ -22,6 +22,11 @@ public class VoidHammer extends AphHeavyHammerProjectileToolItem {
     public VoidHammer() {
         super(450);
         this.attackRange.setBaseValue(400);
+
+        this.rarity = Rarity.RARE;
+
+        this.attackXOffset = 12;
+        this.attackYOffset = 12;
     }
 
     @Override

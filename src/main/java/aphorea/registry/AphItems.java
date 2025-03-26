@@ -47,6 +47,7 @@ import aphorea.items.weapons.range.TheSpammer;
 import aphorea.items.weapons.range.blowgun.Blowgun;
 import aphorea.items.weapons.range.greatbow.GelGreatbow;
 import aphorea.items.weapons.range.greatbow.UnstableGelGreatbow;
+import aphorea.items.weapons.range.sabergun.ShotgunSaber;
 import aphorea.items.weapons.range.sling.FireSling;
 import aphorea.items.weapons.range.sling.FrozenSling;
 import aphorea.items.weapons.range.sling.Sling;
@@ -65,10 +66,13 @@ public class AphItems {
     public static final ArrayList<Item> initialRunes = new ArrayList<>();
 
     public static void registerCore() {
+        // Pickaxes Tooltips
+        replaceItem("ivypickaxe", new CustomPickaxeToolItem(450, 125, 1.5F, 18, 50, 50, 700), 100.0F);
+
         // Basic Materials
-        registerItem("unstablegel", (new AphMatItem(500, Item.Rarity.UNCOMMON)).setItemCategory("materials"), 10F);
-        registerItem("rockygel", (new AphMatItem(500, Item.Rarity.COMMON)).setItemCategory("materials"), 5F);
-        registerItem("stardust", (new AphMatItem(500, Item.Rarity.UNCOMMON)).setItemCategory("materials"), 30F);
+        registerItem("unstablegel", (new AphMatItem(500, Item.Rarity.COMMON)).setItemCategory("materials"), 10F);
+        registerItem("rockygel", (new AphMatItem(500, Item.Rarity.NORMAL)).setItemCategory("materials"), 5F);
+        registerItem("stardust", (new AphMatItem(500, Item.Rarity.COMMON)).setItemCategory("materials"), 30F);
         registerItem("infectedlog", (new AphMatItem(500, "anylog")).setItemCategory("materials", "logs"), 2F);
         registerItem("spinel", (new AphMatItem(500, Item.Rarity.UNCOMMON)).setItemCategory("materials", "minerals"), 15F);
 
@@ -91,6 +95,8 @@ public class AphItems {
         registerItem("golddagger", new GoldDagger(), 25F);
         registerItem("demonicdagger", new DemonicDagger());
         registerItem("tungstendagger", new TungstenDagger());
+        replaceItem("cutlass", new AphCutlassSaber(), 500F); // REWORKED
+        registerItem("umbrella", new UmbrellaDagger());
 
         // Range Weapons
         registerItem("blowgun", new Blowgun());
@@ -99,7 +105,8 @@ public class AphItems {
         registerItem("frozensling", new FrozenSling());
         registerItem("gelgreatbow", new GelGreatbow());
         registerItem("unstablegelgreatbow", new UnstableGelGreatbow());
-        registerItem("thespammer", new TheSpammer());
+        registerItem("thespammer", new TheSpammer(), 200F);
+        registerItem("shotgunsaber", new ShotgunSaber());
 
         // Magic Weapons
         registerItem("unstablegelstaff", new UnstableGelStaff());
@@ -126,11 +133,11 @@ public class AphItems {
 
         // Banners
         registerItem("blankbanner", new BlankBannerItem());
-        replaceItem("strikebanner", new AphStrikeBannerItem(), 50F);
-        replaceItem("bannerofdamage", new AphBannerOfDamageItem(), 200F);
-        replaceItem("bannerofdefense", new AphBannerOfDefenseItem(), 200F);
-        replaceItem("bannerofspeed", new AphBannerOfSpeedItem(), 200F);
-        replaceItem("bannerofsummonspeed", new AphBannerOfSummonSpeedItem(), 200F);
+        replaceItem("strikebanner", new AphStrikeBannerItem(), 50F); // REWORKED
+        replaceItem("bannerofdamage", new AphBannerOfDamageItem(), 200F); // REWORKED
+        replaceItem("bannerofdefense", new AphBannerOfDefenseItem(), 200F); // REWORKED
+        replaceItem("bannerofspeed", new AphBannerOfSpeedItem(), 200F); // REWORKED
+        replaceItem("bannerofsummonspeed", new AphBannerOfSummonSpeedItem(), 200F); // REWORKED
 
         // Armor
         registerItem("rockyhelmet", new RockyHelmet());
@@ -146,23 +153,26 @@ public class AphItems {
         registerItem("swampboots", new SwampBoots());
 
         // Trinkets
-        registerItem("floralring", new AphSimpleTrinketItem(Item.Rarity.COMMON, "floralring", 200), 30F);
-        registerItem("gelring", new AphSimpleTrinketItem(Item.Rarity.COMMON, "gelring", 300), 50F);
-        registerItem("heartring", new AphSimpleTrinketItem(Item.Rarity.COMMON, "heartring", 300));
-        registerItem("ringofhealth", (new AphSimpleTrinketItem(Item.Rarity.UNCOMMON, new String[]{"floralring", "gelring", "heartring"}, 400)).addDisables("floralring", "gelring", "heartring"));
+        registerItem("floralring", new AphSimpleTrinketItem(Item.Rarity.COMMON, "floralring", 200, true), 30F);
+        registerItem("gelring", new AphSimpleTrinketItem(Item.Rarity.COMMON, "gelring", 300, true), 50F);
+        registerItem("heartring", new AphSimpleTrinketItem(Item.Rarity.COMMON, "heartring", 300, true));
+        registerItem("ringofhealth", (new AphSimpleTrinketItem(Item.Rarity.UNCOMMON, new String[]{"floralring", "gelring", "heartring"}, 400, true)).addDisables("floralring", "gelring", "heartring"));
         registerItem("rockyperiapt", new AphSimpleTrinketItem(Item.Rarity.COMMON, "rockyperiapt", 300));
         registerItem("bloodyperiapt", new AphSimpleTrinketItem(Item.Rarity.COMMON, "bloodyperiapt", 300));
-        registerItem("demonicperiapt", new AphSimpleTrinketItem(Item.Rarity.UNCOMMON, "demonicperiapt", 400));
-        registerItem("abysmalperiapt", new AphSimpleTrinketItem(Item.Rarity.RARE, "abysmalperiapt", 500));
+        registerItem("demonicperiapt", new AphSimpleTrinketItem(Item.Rarity.COMMON, "demonicperiapt", 400));
+        registerItem("abysmalperiapt", new AphSimpleTrinketItem(Item.Rarity.UNCOMMON, "abysmalperiapt", 500));
         registerItem("frozenperiapt", new AphSimpleTrinketItem(Item.Rarity.COMMON, "frozenperiapt", 300));
         registerItem("unstableperiapt", new AphSimpleTrinketItem(Item.Rarity.COMMON, "unstableperiapt", 300), 100F);
-        registerItem("necromancyperiapt", new AphSimpleTrinketItem(Item.Rarity.RARE, "necromancyperiapt", 500));
-        registerItem("witchmedallion", new AphSimpleTrinketItem(Item.Rarity.COMMON, "witchmedallion", 300), 100F);
+        registerItem("necromancyperiapt", new AphSimpleTrinketItem(Item.Rarity.UNCOMMON, "necromancyperiapt", 500));
+        registerItem("witchmedallion", new AphSimpleTrinketItem(Item.Rarity.COMMON, "witchmedallion", 300, true), 100F);
         registerItem("swampshield", new SwampShield());
         registerItem("iceboots", (new AphSimpleTrinketItem(Item.Rarity.COMMON, "iceboots", 300)).addDisabledBy("spikedboots", "spikedbatboots"));
         registerItem("bannerbearerfoci", (new AphSimpleTrinketItem(Item.Rarity.COMMON, "bannerbearerfoci", 500)).addDisables("magicfoci", "rangefoci", "meleefoci", "summonfoci").addDisabledBy("magicfoci", "rangefoci", "meleefoci", "summonfoci"));
-        registerItem("cursedmedallion", (new AphSimpleTrinketItem(Item.Rarity.RARE, "cursedmedallion", 500)), 200F);
-        registerItem("ancientmedallion", (new AphSimpleTrinketItem(Item.Rarity.EPIC, "ancientmedallion", 700)).addDisables("witchmedallion", "cursedmedallion"), -1F);
+        registerItem("cursedmedallion", (new AphSimpleTrinketItem(Item.Rarity.RARE, "cursedmedallion", 500, true)), 200F);
+        registerItem("ancientmedallion", (new AphSimpleTrinketItem(Item.Rarity.EPIC, "ancientmedallion", 700, true)).addDisables("witchmedallion", "cursedmedallion"), -1F);
+        registerItem("healingessence", (new AphSimpleTrinketItem(Item.Rarity.RARE, "healingessence", 600, true)), -1F);
+        registerItem("ninjascarf", (new AphSimpleTrinketItem(Item.Rarity.RARE, "ninjascarf", 700)), 250F);
+        registerItem("adrenalinecharm", (new AphSimpleTrinketItem(Item.Rarity.RARE, "adrenalinecharm", 500)), 200F);
 
         // Ammo
         registerItem("gelarrow", new GelArrowItem(), 0.4F);
@@ -172,7 +182,7 @@ public class AphItems {
         // Consumable Items
         registerItem("unstablecore", new UnstableCore(), 20F);
         registerItem("lowdspotion", new LowdsPotion());
-        registerItem("initialrune", new InitialRune());
+        registerItem("initialrune", new InitialRune(), 0F);
         registerItem("lifespinel", new LifeSpinel(), 30F);
 
         // Pets
@@ -198,16 +208,16 @@ public class AphItems {
         registerItem("ancientrunesinjector", new AphRunesInjector(Item.Rarity.EPIC, 0, 3));
 
         // Base Runes Tier 0
-        registerItem("runeoffury", new AphBaseRune(1).setInitialRune());
-        registerItem("runeofspeed", new AphBaseRune(1).setInitialRune());
-        registerItem("runeofhealing", new AphBaseRune(1).setInitialRune());
-        registerItem("runeofresistance", new AphBaseRune(2).setInitialRune());
-        registerItem("runeofvalor", new AphBaseRune(1).setInitialRune());
-        registerItem("runeofdetonation", new AphBaseRune(2, "runedamagereduction"));
-        registerItem("runeofthunder", new AphBaseRune(2, "runedamagereductionnoboss"), 50F);
-        registerItem("runeofwinter", new AphBaseRune(1));
-        registerItem("runeofimmortality", new AphBaseRune(3));
-        registerItem("runeofshadows", new AphBaseRune(1), 100F);
+        registerItem("runeoffury", new AphBaseRune(Item.Rarity.COMMON, 1).setInitialRune());
+        registerItem("runeofspeed", new AphBaseRune(Item.Rarity.COMMON, 1).setInitialRune());
+        registerItem("runeofhealing", new AphBaseRune(Item.Rarity.COMMON, 0).setInitialRune());
+        registerItem("runeofresistance", new AphBaseRune(Item.Rarity.COMMON, 2).setInitialRune());
+        registerItem("runeofvalor", new AphBaseRune(Item.Rarity.COMMON, 1).setInitialRune());
+        registerItem("runeofdetonation", new AphBaseRune(Item.Rarity.COMMON, 2, "runedamagereduction"));
+        registerItem("runeofthunder", new AphBaseRune(Item.Rarity.COMMON, 2, "runedamagereductionnoboss"), 50F);
+        registerItem("runeofwinter", new AphBaseRune(Item.Rarity.COMMON, 1));
+        registerItem("runeofimmortality", new AphBaseRune(Item.Rarity.COMMON, 3));
+        registerItem("runeofshadows", new AphBaseRune(Item.Rarity.COMMON, 1), 100F);
 
         // Base Runes Tier 1
         int value = 40;
@@ -235,9 +245,9 @@ public class AphItems {
         registerItem("runeofcrystaldragon", new AphBaseRune(Item.Rarity.EPIC, 2, "runedamagereductionnoboss"), value += 10);
 
         // Modifier Runes Tier 0
-        registerItem("empoweringrune", new AphModifierRune(0));
-        registerItem("recurrentrune", new AphModifierRune(0));
-        registerItem("devastatingrune", new AphModifierRune(0));
+        registerItem("empoweringrune", new AphModifierRune(Item.Rarity.COMMON, 0));
+        registerItem("recurrentrune", new AphModifierRune(Item.Rarity.COMMON, 0));
+        registerItem("devastatingrune", new AphModifierRune(Item.Rarity.COMMON, 0));
 
         // Modifier Runes Tier 1
         registerItem("frenzyrune", new AphModifierRune(Item.Rarity.UNCOMMON, 0), 50F);

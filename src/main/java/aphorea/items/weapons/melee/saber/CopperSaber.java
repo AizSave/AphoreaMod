@@ -10,7 +10,7 @@ public class CopperSaber extends AphSaberToolItem {
 
     public CopperSaber() {
         super(500);
-        rarity = Rarity.COMMON;
+        rarity = Rarity.NORMAL;
         attackDamage.setBaseValue(12)
                 .setUpgradedValue(1, 75);
         knockback.setBaseValue(150);

@@ -100,7 +100,7 @@ public class GreatswordSecondarySpinAttackHandler<T extends AphGreatswordSeconda
 
         InventoryItem showItem = this.item.copy();
         showItem.getGndData().setFloat("chargePercent", chargePercent);
-        showItem.getGndData().setBoolean("chargeUp", true);
+        showItem.getGndData().setBoolean("charging", true);
         GNDItemMap attackMap = new GNDItemMap();
         this.attackerMob.showItemAttack(showItem, this.lastX, this.lastY, 0, this.seed, attackMap);
         if (this.attackerMob.isServer()) {

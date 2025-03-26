@@ -11,6 +11,7 @@ import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameMath;
 import necesse.engine.util.GameRandom;
 import necesse.entity.ParticleTypeSwitcher;
+import necesse.entity.levelEvent.LevelEvent;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.attackHandler.MousePositionAttackHandler;
 import necesse.entity.mobs.buffs.ActiveBuff;
@@ -100,7 +101,7 @@ public class SaberDashAttackHandler extends MousePositionAttackHandler {
 
         InventoryItem showItem = this.item.copy();
         showItem.getGndData().setFloat("chargePercent", chargePercent);
-        showItem.getGndData().setBoolean("chargeUp", true);
+        showItem.getGndData().setBoolean("charging", true);
         GNDItemMap attackMap = new GNDItemMap();
         this.attackerMob.showItemAttack(showItem, this.lastX, this.lastY, 0, this.seed, attackMap);
         if (this.attackerMob.isServer()) {
@@ -158,7 +159,12 @@ public class SaberDashAttackHandler extends MousePositionAttackHandler {
             this.attackerMob.showAttackAndSendAttacker(attackItem, this.lastX, this.lastY, 0, this.seed);
             Point2D.Float dir = GameMath.normalize((float) this.lastX - this.attackerMob.x, (float) this.lastY - this.attackerMob.y);
             chargePercent = Math.min(chargePercent, 1.0F);
-            SaberDashLevelEvent event = new SaberDashLevelEvent(this.attackerMob, this.seed, dir.x, dir.y, this.getChargeDistance(chargePercent), (int) (200.0F * chargePercent), this.saberItem.getAttackDamage(this.item));
+            LevelEvent event;
+            if(attackerMob.buffManager.hasBuff("ninjascarf") && !attackerMob.getLevel().isTrialRoom) {
+                event = new SaberJumpLevelEvent(this.attackerMob, this.seed, dir.x, dir.y, this.getChargeDistance(chargePercent), (int) (200.0F * chargePercent), this.saberItem.getAttackDamage(this.item));
+            } else {
+                event = new SaberDashLevelEvent(this.attackerMob, this.seed, dir.x, dir.y, this.getChargeDistance(chargePercent), (int) (200.0F * chargePercent), this.saberItem.getAttackDamage(this.item));
+            }
             this.attackerMob.addAndSendAttackerLevelEvent(event);
             this.attackerMob.buffManager.addBuff(new ActiveBuff(AphBuffs.SABER_DASH_COOLDOWN, this.attackerMob, 3.0F, null), this.attackerMob.isServer());
         }

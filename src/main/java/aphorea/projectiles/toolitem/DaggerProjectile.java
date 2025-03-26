@@ -3,7 +3,10 @@ package aphorea.projectiles.toolitem;
 import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
+import necesse.engine.network.packet.PacketSpawnProjectile;
+import necesse.engine.network.server.ServerClient;
 import necesse.engine.registries.ItemRegistry;
+import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
@@ -58,6 +61,7 @@ abstract public class DaggerProjectile extends Projectile {
         this.height = 14.0F;
         this.heightBasedOnDistance = false;
         this.setWidth(8.0F);
+        this.canBounce = false;
     }
 
     @Override
@@ -212,6 +216,62 @@ abstract public class DaggerProjectile extends Projectile {
         }
 
         public TungstenDaggerProjectile() {
+        }
+    }
+
+    public static class UmbrellaDaggerProjectile extends DaggerProjectile {
+
+        public static GameTexture texture;
+
+        GameTexture getTexture() {
+            return texture;
+        }
+
+        Color getColor() {
+            return AphColors.palettePinkWitch[0];
+        }
+
+        public UmbrellaDaggerProjectile(Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, int knockback, boolean shouldDrop, String stringItemID, GNDItemMap gndData) {
+            super(level, owner, x, y, targetX, targetY, speed, distance, damage, knockback, shouldDrop, stringItemID, gndData);
+        }
+
+        public UmbrellaDaggerProjectile() {
+        }
+
+        @Override
+        public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
+            if(mob != null) {
+                if(this.isServer()) {
+                    Level level = getLevel();
+                    float angle = (float) Math.toRadians(this.getAngle() - 90);
+                    float newTargetX = (float) (x + 100 * Math.cos(angle));
+                    float newTargetY = (float) (y + 100 * Math.sin(angle));
+                    Projectile projectile = new OpenUmbrellaProjectile(level, getOwner(), x, y, newTargetX, newTargetY, speed / 2, distance / 4, getDamage(), knockback);
+                    projectile.resetUniqueID(GameRandom.globalRandom);
+                    level.entityManager.projectiles.addHidden(projectile);
+                    level.getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
+                    if(shouldDrop && stringItemID != null && gndData != null) {
+                        if (this.amountHit() < this.piercing) {
+                            return;
+                        } else {
+                            int bouncing = this.bouncing;
+                            Mob owner = this.getOwner();
+                            if (owner != null) {
+                                bouncing += owner.buffManager.getModifier(BuffModifiers.PROJECTILE_BOUNCES);
+                            }
+                            if (object != null && this.bounced < bouncing && this.canBounce) {
+                                return;
+                            }
+                        }
+                        shouldDrop = false;
+                        InventoryItem inventoryItem = new InventoryItem(ItemRegistry.getItem(stringItemID));
+                        inventoryItem.setGndData(gndData);
+                        getLevel().entityManager.pickups.add(new ItemPickupEntity(getLevel(), inventoryItem, x, y, 0, 0));
+                    }
+                }
+                this.remove();
+            }
+            super.doHitLogic(mob, object, x, y);
         }
     }
 }

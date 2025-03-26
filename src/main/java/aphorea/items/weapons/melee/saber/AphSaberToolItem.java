@@ -25,18 +25,23 @@ import necesse.level.maps.Level;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 
 
 abstract public class AphSaberToolItem extends AphGreatswordToolItem implements ItemInteractAction {
 
     public IntUpgradeValue dashRange;
     public SaberChargeLevel[] nonPlayerChargeLevels;
+    public boolean isAuto;
 
-    public AphSaberToolItem(int enchantCost) {
-        super(enchantCost, getChargeLevels());
+    public AphSaberToolItem(int enchantCost, SaberChargeLevel[] chargeLevels, SaberChargeLevel[] nonPlayerChargeLevels, boolean isAuto) {
+        super(enchantCost, chargeLevels);
 
-        this.nonPlayerChargeLevels = getNonPlayerChargeLevels();
+        this.nonPlayerChargeLevels = nonPlayerChargeLevels;
+        this.isAuto = isAuto;
 
         this.enchantCost.setUpgradedValue(1.0F, 500);
 
@@ -45,35 +50,50 @@ abstract public class AphSaberToolItem extends AphGreatswordToolItem implements 
 
         this.attackRange.setBaseValue(60);
 
+        attackXOffset = 10;
+        attackYOffset = 10;
+
         this.keyWords.add("saber");
     }
 
-    public AphSaberToolItem(int enchantCost, SaberChargeLevel[] chargeLevels, SaberChargeLevel[] nonPlayerChargeLevels) {
-        this(enchantCost);
+    public AphSaberToolItem(int enchantCost, boolean isAuto) {
+        this(enchantCost, isAuto ? getAutoChargeLevels() : getChargeLevels(), isAuto ? null : getAutoChargeLevels(), isAuto);
+    }
+
+    public AphSaberToolItem(int enchantCost) {
+        this(enchantCost, false);
+    }
+
+    public static SaberChargeLevel[] getChargeLevels(float timeModifier) {
+        List<SaberChargeLevel> levels = new ArrayList<>(Arrays.asList(getAutoChargeLevels(timeModifier)));
+        levels.add(levels.get(3));
+        levels.add(levels.get(2));
+        levels.add(levels.get(1));
+        levels.add(levels.get(0));
+        return levels.toArray(new SaberChargeLevel[0]);
     }
 
     public static SaberChargeLevel[] getChargeLevels() {
+        return getChargeLevels(1F);
+    }
+
+    public static SaberChargeLevel[] getAutoChargeLevels(float timeModifier) {
         return new SaberChargeLevel[]{
-                new SaberChargeLevel(80, 1.0F, new Color(255, 255, 255)),
-                new SaberChargeLevel(90, 1.25F, new Color(255, 255, 0)),
-                new SaberChargeLevel(100, 1.5F, new Color(255, 128, 0)),
-                new SaberChargeLevel(120, 1.75F, new Color(255, 0, 0)),
-                new SaberChargeLevel(120, 2F, new Color(47, 0, 0)),
-                new SaberChargeLevel(120, 1.75F, new Color(255, 0, 0)),
-                new SaberChargeLevel(100, 1.5F, new Color(255, 128, 0)),
-                new SaberChargeLevel(90, 1.25F, new Color(255, 255, 0)),
-                new SaberChargeLevel(80, 1.0F, new Color(255, 255, 255))
+                new SaberChargeLevel((int) (80 * timeModifier), 1.0F, new Color(255, 255, 255)),
+                new SaberChargeLevel((int) (90 * timeModifier), 1.25F, new Color(255, 255, 0)),
+                new SaberChargeLevel((int) (100 * timeModifier), 1.5F, new Color(255, 128, 0)),
+                new SaberChargeLevel((int) (120 * timeModifier), 1.75F, new Color(255, 0, 0)),
+                new SaberChargeLevel((int) (120 * timeModifier), 2F, new Color(47, 0, 0))
         };
     }
 
-    public static SaberChargeLevel[] getNonPlayerChargeLevels() {
-        return new SaberChargeLevel[]{
-                new SaberChargeLevel(80, 1.0F, new Color(255, 255, 255)),
-                new SaberChargeLevel(90, 1.25F, new Color(255, 255, 0)),
-                new SaberChargeLevel(100, 1.5F, new Color(255, 128, 0)),
-                new SaberChargeLevel(120, 1.75F, new Color(255, 0, 0)),
-                new SaberChargeLevel(120, 2F, new Color(47, 0, 0))
-        };
+    public static SaberChargeLevel[] getAutoChargeLevels() {
+        return getAutoChargeLevels(1F);
+    }
+
+    @Override
+    public boolean getConstantUse(InventoryItem item) {
+        return isAuto;
     }
 
     @Override
@@ -81,8 +101,7 @@ abstract public class AphSaberToolItem extends AphGreatswordToolItem implements 
         ListGameTooltips tooltips = super.getPreEnchantmentTooltips(item, perspective, blackboard);
         tooltips.removeLast();
         tooltips.add(Localization.translate("itemtooltip", "saber"));
-        tooltips.add(Localization.translate("itemtooltip", "saber2"));
-        tooltips.add(Localization.translate("itemtooltip", "saber3"));
+        tooltips.add(Localization.translate("itemtooltip", "saberdash"));
         return tooltips;
     }
 
@@ -90,7 +109,7 @@ abstract public class AphSaberToolItem extends AphGreatswordToolItem implements 
     public boolean canItemAttackerHitTarget(ItemAttackerMob attackerMob, float fromX, float fromY, Mob target, InventoryItem item) {
         return this.itemAttackerHasLineOfSightToTarget(attackerMob, fromX, fromY, target,
                 this.canDash(attackerMob) || target.getDistance(attackerMob) < this.getAttackRange(item) * 0.8F ?
-                        5F : 70F
+                        5F : 36F
                 );
     }
 
@@ -103,12 +122,12 @@ abstract public class AphSaberToolItem extends AphGreatswordToolItem implements 
     public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
         if (!attackerMob.isPlayer && this.canDash(attackerMob)) {
             int animTime = (int) ((float) this.getAttackAnimTime(item, attackerMob));
-            mapContent.setBoolean("chargeUp", true);
+            mapContent.setBoolean("charging", true);
             attackerMob.startAttackHandler((new SaberDashAttackHandler(attackerMob, slot, item, this, animTime, new Color(190, 220, 220), seed)));
         } else {
-            item.getGndData().setBoolean("chargeUp", false);
+            item.getGndData().setBoolean("charging", false);
             if (animAttack == 0) {
-                attackerMob.startAttackHandler(new SaberAttackHandler(attackerMob, slot, item, this, seed, x, y, attackerMob.isPlayer ? this.chargeLevels : this.nonPlayerChargeLevels));
+                attackerMob.startAttackHandler(new SaberAttackHandler(attackerMob, slot, item, this, seed, x, y, attackerMob.isPlayer || this.nonPlayerChargeLevels == null ? this.chargeLevels : this.nonPlayerChargeLevels));
             }
         }
         return item;
@@ -140,7 +159,7 @@ abstract public class AphSaberToolItem extends AphGreatswordToolItem implements 
     @Override
     public InventoryItem onLevelInteract(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int seed, GNDItemMap mapContent) {
         int animTime = (int) ((float) this.getAttackAnimTime(item, attackerMob));
-        mapContent.setBoolean("chargeUp", true);
+        mapContent.setBoolean("charging", true);
         attackerMob.startAttackHandler((new SaberDashAttackHandler(attackerMob, slot, item, this, animTime, new Color(190, 220, 220), seed)).startFromInteract());
         return item;
     }

@@ -12,12 +12,13 @@ import necesse.inventory.InventoryItem;
 
 public class SwampShield extends AphShieldTrinketItem {
     public SwampShield() {
-        super(Rarity.COMMON, 3, 0.5F, 6000, 0.2F, 50, 210.0F, 300);
+        super(Rarity.COMMON, 3, 0.5F, 6000, 0.2F, 50, 210.0F, 300, true);
     }
 
     public ListGameTooltips getExtraShieldTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {
         ListGameTooltips tooltips = super.getExtraShieldTooltips(item, perspective, blackboard);
-        tooltips.add(Localization.translate("itemtooltip", "swampshield", "healing", AphMagicHealing.getMagicHealingToolTipPercent(perspective, perspective, 30, 0)));
+        tooltips.add(Localization.translate("itemtooltip", "swampshield"));
+        tooltips.add(Localization.translate("itemtooltip", "swampshield2", "healing", AphMagicHealing.getMagicHealingToolTipPercent(perspective, perspective, 30, 0)));
         return tooltips;
     }
 

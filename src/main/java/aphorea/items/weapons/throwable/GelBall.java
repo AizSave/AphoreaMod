@@ -23,7 +23,7 @@ public class GelBall extends AphThrowToolItem {
 
     public GelBall() {
         super(500);
-        rarity = Rarity.COMMON;
+        rarity = Rarity.NORMAL;
         attackAnimTime.setBaseValue(500);
         attackDamage.setBaseValue(5);
         velocity.setBaseValue(100);

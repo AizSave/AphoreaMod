@@ -44,8 +44,8 @@ abstract public class AircutProjectile extends Projectile {
         super.init();
         givesLight = false;
         height = 18;
-        trailOffset = -6f;
-        setWidth(70, true);
+        trailOffset = -10f;
+        setWidth(36, true);
         piercing = 10;
         bouncing = 0;
     }
@@ -57,7 +57,7 @@ abstract public class AircutProjectile extends Projectile {
 
     @Override
     public Trail getTrail() {
-        return new Trail(this, getLevel(), getColor(), 80, 50, getHeight());
+        return new Trail(this, getLevel(), getColor(), 32, 50, getHeight());
     }
 
     @Override

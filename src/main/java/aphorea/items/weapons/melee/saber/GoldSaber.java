@@ -9,8 +9,8 @@ import necesse.level.maps.Level;
 public class GoldSaber extends AphSaberToolItem {
 
     public GoldSaber() {
-        super(500);
-        rarity = Rarity.COMMON;
+        super(600);
+        rarity = Rarity.NORMAL;
         attackDamage.setBaseValue(16)
                 .setUpgradedValue(1, 85);
         knockback.setBaseValue(150);

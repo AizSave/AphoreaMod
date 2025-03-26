@@ -313,9 +313,8 @@ unstablecore=§bRilascia un aura instabile...§0 Può essere utilizzato solo dur
 lowdspotion=NON BERLO
 
 // General Weapons & Tools
-saber=Carica rapida infligge danni x2 dopo 0.5 secondi, poi si scarica dopo altri 0.5 secondi
-saber2=Un attacco perfetto lancerà un taglio d'aria che infligge danni base. Uno buono ne lancerà anche uno debole
-saber3=Tieni premuto [input=mouse2] per caricare uno scatto e tagliare i nemici infliggendo danni base
+saber=Un attacco perfetto lancerà un taglio d'aria che infligge danni base. Uno buono ne lancerà anche uno debole
+saberdash=Tieni premuto [input=mouse2] per caricare uno scatto e tagliare i nemici infliggendo danni base
 battleaxe=Richiede molto tempo di ricarica
 battleaxe2=Premi [input=mouse2] per attiva la Furia del Berserker. Non puoi subire danni o muoverti mentre attivi l'abilità
 sling=Lancia pietre con forza
@@ -421,7 +420,6 @@ lessextraeffectmod=Le modifiche degli effetti sono il <mod>% meno efficaci
 # NEW
 runeoffury=Incrementa il tuo danno e velocità d'attacco di §7<effectNumber>§0% per 10 secondi
 runeofspeed=Scatta con §7<effectNumber>^§0 forza nella direzione in cui ti muovi e diventi invincibile per 0.5 secondi
-runeofhealing=Incrementa il recupero dlela salute massima del §7<effectNumber>§0%
 runeofresistance=Incrementa la tua armatura del §7<effectNumber>§0% per 10 secondi
 runeofresistance2=Durante il tempo di recupero, la tua armatura è ridotta della metà
 runeofvalor=Raddoppia gli effetti degli stendardi che trasporti e raddoppia la velocità abilità di §7<effectNumber>§0 secondi

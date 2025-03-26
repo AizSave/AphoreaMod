@@ -16,12 +16,14 @@ public class UnstableGelSword extends AphSwordToolItem {
 
     public UnstableGelSword() {
         super(500);
-        rarity = Rarity.UNCOMMON;
+        rarity = Rarity.COMMON;
         attackAnimTime.setBaseValue(300);
         attackDamage.setBaseValue(24)
                 .setUpgradedValue(1, 110);
-        attackRange.setBaseValue(80);
+        attackRange.setBaseValue(70);
         knockback.setBaseValue(20);
+        attackXOffset = 18;
+        attackYOffset = 18;
     }
 
     @Override

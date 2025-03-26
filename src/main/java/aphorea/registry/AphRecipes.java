@@ -1,5 +1,6 @@
 package aphorea.registry;
 
+import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.registries.RecipeTechRegistry;
 import necesse.inventory.recipe.Ingredient;
 import necesse.inventory.recipe.Recipe;
@@ -21,6 +22,7 @@ public class AphRecipes {
         TungstenAnvil();
         Alchemy();
         Landscaping();
+        FallenAnvil();
 
         // Modded
         Runes();
@@ -174,8 +176,8 @@ public class AphRecipes {
                 ),
                 AphCraftingRecipe.showAfter("ancientmedallion", 1,
                         new Ingredient("witchmedallion", 1),
-                        new Ingredient("cursedmedallion", 10),
-                        new Ingredient("ancientbar", 3)
+                        new Ingredient("cursedmedallion", 1),
+                        new Ingredient("ancientfossilbar", 3)
                 )
         );
     }
@@ -423,17 +425,6 @@ public class AphRecipes {
     public static void FallenAnvil() {
         Tech tech = RecipeTechRegistry.FALLEN_ANVIL;
 
-        addCraftingList("deepladderdown", tech,
-                AphCraftingRecipe.showAfter("fakespinelchest", 1,
-                        new Ingredient("spinelchest", 1),
-                        new Ingredient("lifespinel", 2)
-                )
-        );
-    }
-
-    public static void Alchemy() {
-        Tech tech = RecipeTechRegistry.ALCHEMY;
-
         addCraftingList("superiorpickaxe", tech,
                 AphCraftingRecipe.showBefore("icepickaxe", 1,
                         new Ingredient("woodpickaxe", 1),
@@ -441,6 +432,24 @@ public class AphRecipes {
                         new Ingredient("bloodessence", 5),
                         new Ingredient("spideressence", 5),
                         new Ingredient("ancientfossilbar", 1)
+                )
+        );
+
+        addCraftingList("causticexecutioner", tech,
+                AphCraftingRecipe.showBefore("umbrella", 1,
+                        new Ingredient("bloodessence", 5),
+                        new Ingredient("silk", 10)
+                ).setTier1()
+        );
+    }
+
+    public static void Alchemy() {
+        Tech tech = RecipeTechRegistry.ALCHEMY;
+
+        addCraftingList("fishingpotion", tech,
+                AphCraftingRecipe.showAfter("lowdspotion", 1,
+                        new Ingredient("cavespidergland", 5),
+                        new Ingredient("glassbottle", 1)
                 )
         );
     }
@@ -582,15 +591,16 @@ public class AphRecipes {
         private final int amount;
         private final Ingredient[] ingredients;
         private final boolean showAfter;
+        private GNDItemMap gndData;
+        private boolean isHidden;
 
-        private boolean hidden;
-
-        private AphCraftingRecipe(String item, int amount, boolean hidden, boolean showAfter, Ingredient... ingredients) {
+        private AphCraftingRecipe(String item, int amount, boolean isHidden, boolean showAfter, Ingredient... ingredients) {
             this.item = item;
             this.amount = amount;
-            this.hidden = hidden;
+            this.isHidden = isHidden;
             this.showAfter = showAfter;
             this.ingredients = ingredients;
+            this.gndData = null;
         }
 
         public static AphCraftingRecipe showAfter(String item, int amount, Ingredient... ingredients) {
@@ -602,7 +612,7 @@ public class AphRecipes {
         }
 
         public AphCraftingRecipe setHidden(boolean hidden) {
-            this.hidden = hidden;
+            this.isHidden = hidden;
             return this;
         }
 
@@ -610,8 +620,13 @@ public class AphRecipes {
             return setHidden(true);
         }
 
+        public AphCraftingRecipe setTier1() {
+            this.gndData = new GNDItemMap().setInt("upgradeLevel", 100);
+            return this;
+        }
+
         public void registerRecipe(String nextToItem, Tech tech) {
-            Recipe recipe = new Recipe(item, amount, tech, ingredients, hidden);
+            Recipe recipe = new Recipe(item, amount, tech, ingredients, isHidden, gndData);
 
             if (nextToItem != null) {
                 if (showAfter) {

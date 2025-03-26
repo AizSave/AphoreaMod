@@ -324,9 +324,8 @@ unstablecore=§b渗漏出一股紊乱的气息...§0 只能在白天使用
 lowdspotion=请勿饮用！！！
 
 // General Weapons & Tools
-saber=经过0.5秒快速的蓄力后，造成x2的伤害,。剩下的0.5秒内，蓄力将持续衰减。
-saber2=一次完美的蓄力攻击将会产生一道剑气，造成基础伤害.。一次凑合的蓄力攻击将会产生一道较弱的剑气。
-saber3=按住 [input=mouse2] 可为冲刺攻击蓄力，利刃将划过敌人造成基础伤害。
+saber=一次完美的蓄力攻击将会产生一道剑气，造成基础伤害.。一次凑合的蓄力攻击将会产生一道较弱的剑气。
+saberdash=按住 [input=mouse2] 可为冲刺攻击蓄力，利刃将划过敌人造成基础伤害。
 battleaxe=需要很长的蓄力时间
 battleaxe2=按下 [input=mouse2] 来激活狂战之怒. 在激活的瞬间你不能够进行移动或造成伤害。
 sling=奋力扔出石头
@@ -432,7 +431,6 @@ lessextraeffectmod=效果修改降低 <mod>%
 # NEW
 runeoffury=在10秒内，提高你 §7<effectNumber>§0% 的伤害和攻击速度
 runeofspeed=以 §7<effectNumber>^§0 的力量向你所移动的方向冲刺并且在接下来的0.5秒内无敌
-runeofhealing=提高 §7<effectNumber>§0% 的生命回复效果
 runeofresistance=在10秒内，提高 §7<effectNumber>§0% 的护甲值
 runeofresistance2=当处于冷却时，你的护甲值减半
 runeofvalor=在 §7<effectNumber>§0 秒内将你的旗帜效果和生效速度加倍

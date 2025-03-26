@@ -18,7 +18,7 @@ public class GoldenWand extends AphHealingProjectileToolItem {
 
     public GoldenWand() {
         super(300);
-        rarity = Rarity.UNCOMMON;
+        rarity = Rarity.NORMAL;
         attackAnimTime.setBaseValue(800);
 
         this.attackRange.setBaseValue(500);

@@ -18,8 +18,8 @@ import necesse.level.maps.Level;
 public class UnstableGelSaber extends AphSaberToolItem {
 
     public UnstableGelSaber() {
-        super(500);
-        rarity = Rarity.UNCOMMON;
+        super(800, true);
+        rarity = Rarity.EPIC;
         attackDamage.setBaseValue(16)
                 .setUpgradedValue(1, 85);
         attackRange.setBaseValue(80);

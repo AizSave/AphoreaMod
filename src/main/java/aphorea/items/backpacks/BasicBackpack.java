@@ -2,7 +2,7 @@ package aphorea.items.backpacks;
 
 public class BasicBackpack extends AphBackpack {
     public BasicBackpack() {
-        this.rarity = Rarity.COMMON;
+        this.rarity = Rarity.NORMAL;
     }
 
     public int getInternalInventorySize() {

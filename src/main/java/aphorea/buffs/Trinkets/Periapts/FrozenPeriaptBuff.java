@@ -12,6 +12,8 @@ import necesse.entity.mobs.MobBeforeHitEvent;
 import necesse.entity.mobs.MobWasHitEvent;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
+import necesse.entity.mobs.buffs.BuffEventSubscriber;
+import necesse.entity.mobs.buffs.staticBuffs.armorBuffs.trinketBuffs.TrinketBuff;
 import necesse.entity.particle.Particle;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
@@ -19,15 +21,14 @@ import necesse.inventory.item.trinketItem.TrinketItem;
 
 import java.awt.*;
 
-public class FrozenPeriaptBuff extends AphPeriaptActivableBuff {
+public class FrozenPeriaptBuff extends TrinketBuff {
 
     public FrozenPeriaptBuff() {
-        super("frozenperiaptactive");
+        super();
     }
 
     @Override
-    public Color getColor() {
-        return AphColors.ice;
+    public void init(ActiveBuff activeBuff, BuffEventSubscriber buffEventSubscriber) {
     }
 
     @Override
@@ -41,12 +42,14 @@ public class FrozenPeriaptBuff extends AphPeriaptActivableBuff {
         }
     }
 
+    @Override
     public void onBeforeAttacked(ActiveBuff buff, MobBeforeHitEvent event) {
         if (event.target.buffManager.hasBuff(BuffRegistry.Debuffs.FREEZING)) {
             event.damage = event.damage.setDamage(event.damage.damage * 1.2F);
         }
     }
 
+    @Override
     public void onHasAttacked(ActiveBuff buff, MobWasHitEvent event) {
         if (!event.wasPrevented && event.attacker.getAttackOwner().isPlayer) {
             Mob owner = event.attacker.getAttackOwner();
@@ -66,6 +69,7 @@ public class FrozenPeriaptBuff extends AphPeriaptActivableBuff {
         }
     }
 
+    @Override
     public ListGameTooltips getTrinketTooltip(TrinketItem trinketItem, InventoryItem item, PlayerMob perspective) {
         ListGameTooltips tooltips = super.getTrinketTooltip(trinketItem, item, perspective);
         tooltips.add(Localization.translate("itemtooltip", "frozenperiapt"));

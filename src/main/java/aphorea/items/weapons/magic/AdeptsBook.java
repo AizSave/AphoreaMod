@@ -22,7 +22,7 @@ public class AdeptsBook extends AphAreaToolItem implements ItemInteractAction {
 
     public AdeptsBook() {
         super(500, true, false, areaList);
-        rarity = Rarity.UNCOMMON;
+        rarity = Rarity.RARE;
         attackAnimTime.setBaseValue(1000);
 
         manaCost.setBaseValue(4.0F);

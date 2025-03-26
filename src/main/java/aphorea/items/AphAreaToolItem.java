@@ -72,7 +72,7 @@ abstract public class AphAreaToolItem extends AphMagicHealingToolItem {
 
     @Override
     public GameMessage getItemAttackerCanUseError(ItemAttackerMob mob, InventoryItem item) {
-        if(areaList.someType(AphAreaType.DAMAGE) || areaList.someType(AphAreaType.DEBUFF)) {
+        if (areaList.someType(AphAreaType.DAMAGE) || areaList.someType(AphAreaType.DEBUFF)) {
             return null;
         } else {
             return super.getItemAttackerCanUseError(mob, item);
@@ -137,14 +137,14 @@ abstract public class AphAreaToolItem extends AphMagicHealingToolItem {
     public int getItemAttackerAttackRange(ItemAttackerMob mob, InventoryItem item) {
         AphArea firstArea = null;
         for (AphArea area : areaList.areas) {
-            if(area.areaTypes.contains(AphAreaType.DAMAGE) || area.areaTypes.contains(AphAreaType.DEBUFF)) {
+            if (area.areaTypes.contains(AphAreaType.DAMAGE) || area.areaTypes.contains(AphAreaType.DEBUFF)) {
                 firstArea = area;
                 break;
             }
         }
-        if(firstArea == null) {
+        if (firstArea == null) {
             firstArea = areaList.areas[0];
         }
-        return (int) (firstArea.range * 0.5);
+        return (int) (firstArea.range * 0.9F);
     }
 }

@@ -313,9 +313,8 @@ unstablecore=§bLibera uma aura instável...§0 Só pode ser usado durante o dia
 lowdspotion=NÃO BEBA ISSO
 
 // General Weapons & Tools
-saber=Carga rápida que causa 2x de dano após 0,5 segundos, depois descarrega em mais 0,5 segundos
-saber2=Um ataque perfeito lançará um corte aéreo que causa dano base. Um bom ataque lançará também um corte fraco
-saber3=Mantenha pressionado [input=mouse2] para carregar um dash que corta inimigos causando dano base
+saber=Um ataque perfeito lançará um corte aéreo que causa dano base. Um bom ataque lançará também um corte fraco
+saberdash=Mantenha pressionado [input=mouse2] para carregar um dash que corta inimigos causando dano base
 battleaxe=Requer muito tempo de carregamento
 battleaxe2=Pressione [input=mouse2] para ativar a Fúria do Berserker. Você não pode sofrer dano ou se mover enquanto ativa a habilidade
 sling=Arremessa pedras com força
@@ -421,7 +420,6 @@ lessextraeffectmod=As modificações de efeito são <mod>% menos eficazes
 # NEW
 runeoffury=Aumenta seu dano e velocidade de ataque em §7<effectNumber>§0% por 10 segundos
 runeofspeed=Avança com força de §7<effectNumber>^§0 na direção em que você está se movendo e fica invencível por 0,5 segundos
-runeofhealing=Aumenta a restauração da saúde máxima em §7<effectNumber>§0%
 runeofresistance=Aumenta sua armadura em §7<effectNumber>§0% por 10 segundos
 runeofresistance2=Enquanto estiver em recarga, sua armadura será reduzida pela metade
 runeofvalor=Duplica os efeitos dos estandartes que você carrega e duplica a velocidade de suas habilidades por §7<effectNumber>§0 segundos

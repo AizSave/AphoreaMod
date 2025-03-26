@@ -31,7 +31,7 @@ public class UnstableGelveline extends AphThrowToolItem {
 
     public UnstableGelveline() {
         super(500);
-        this.rarity = Rarity.UNCOMMON;
+        this.rarity = Rarity.COMMON;
         this.attackAnimTime.setBaseValue(250);
         this.attackCooldownTime.setBaseValue(500);
         this.attackDamage.setBaseValue(topBaseDamage).setUpgradedValue(1, topTier1Damage);

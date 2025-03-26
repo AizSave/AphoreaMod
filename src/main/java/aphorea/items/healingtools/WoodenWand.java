@@ -18,7 +18,7 @@ public class WoodenWand extends AphHealingProjectileToolItem {
 
     public WoodenWand() {
         super(200);
-        rarity = Rarity.UNCOMMON;
+        rarity = Rarity.NORMAL;
         attackAnimTime.setBaseValue(800);
 
         this.attackRange.setBaseValue(500);

@@ -57,6 +57,13 @@ public abstract class AphDaggerToolItem extends SpearToolItem implements ItemInt
     }
 
     @Override
+    public ListGameTooltips getPreEnchantmentTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {
+        ListGameTooltips tooltips = super.getPreEnchantmentTooltips(item, perspective, blackboard);
+        tooltips.add(Localization.translate("itemtooltip", "dagger"));
+        return tooltips;
+    }
+
+    @Override
     public ListGameTooltips getPostEnchantmentTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {
         ListGameTooltips tooltips = super.getPostEnchantmentTooltips(item, perspective, blackboard);
         tooltips.add(Localization.translate("global", "aphorea"));
@@ -106,12 +113,12 @@ public abstract class AphDaggerToolItem extends SpearToolItem implements ItemInt
     }
 
     public void doSecondaryAttack(Level level, int x, int y, ItemAttackerMob attackerMob, InventoryItem item, ItemAttackSlot itemAttackSlot, int seed) {
-        if(level.isServer()) {
+        if (level.isServer()) {
             boolean throwItem = !loyal(item);
 
-            if(throwItem && attackerMob.isPlayer) {
+            if (throwItem && attackerMob.isPlayer) {
                 PlayerMob player = (PlayerMob) attackerMob;
-                if(player.attackSlot.isItemLocked(player.getInv())) {
+                if (player.attackSlot.isItemLocked(player.getInv())) {
                     player.getServerClient().sendChatMessage(Localization.translate("message", "cannottrhowlockeditem"));
                     return;
                 }
@@ -124,7 +131,7 @@ public abstract class AphDaggerToolItem extends SpearToolItem implements ItemInt
                 projectile.resetUniqueID(random);
                 level.entityManager.projectiles.addHidden(projectile);
                 level.getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
-                if(throwItem) {
+                if (throwItem) {
                     itemAttackSlot.setItem(null);
                 }
             }

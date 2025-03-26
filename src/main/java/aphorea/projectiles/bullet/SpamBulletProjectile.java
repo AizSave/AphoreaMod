@@ -38,8 +38,6 @@ public class SpamBulletProjectile extends BulletProjectile {
     private long spawnTime;
     private int type;
 
-    public static GameTexture texture;
-
     public AphAreaList areaList = new AphAreaList(
             new AphArea(100, 0.5F, AphColors.nature)
                     .setHealingArea(2)

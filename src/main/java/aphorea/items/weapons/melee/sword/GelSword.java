@@ -16,14 +16,14 @@ public class GelSword extends AphSwordToolItem {
 
     public GelSword() {
         super(400);
-        rarity = Rarity.COMMON;
+        rarity = Rarity.NORMAL;
         attackAnimTime.setBaseValue(300);
         attackDamage.setBaseValue(18)
                 .setUpgradedValue(1, 80);
         attackRange.setBaseValue(55);
         knockback.setBaseValue(5);
-        attackXOffset += 10;
-        attackYOffset += 15;
+        attackXOffset = 12;
+        attackYOffset = 16;
     }
 
     @Override

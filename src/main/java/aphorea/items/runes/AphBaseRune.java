@@ -30,7 +30,7 @@ public class AphBaseRune extends Item {
     }
 
     public AphBaseRune(String buffID, int tooltipsNumber, String... extraToolTips) {
-        this(Rarity.COMMON, buffID, tooltipsNumber, extraToolTips);
+        this(Rarity.NORMAL, buffID, tooltipsNumber, extraToolTips);
     }
 
     public AphBaseRune(Rarity rarity, int tooltipsNumber, String... extraToolTips) {
@@ -38,7 +38,7 @@ public class AphBaseRune extends Item {
     }
 
     public AphBaseRune(int tooltipsNumber, String... extraToolTips) {
-        this(Rarity.COMMON, null, tooltipsNumber, extraToolTips);
+        this(Rarity.NORMAL, null, tooltipsNumber, extraToolTips);
     }
 
     public AphBaseRune setInitialRune() {

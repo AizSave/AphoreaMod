@@ -26,7 +26,7 @@ import java.util.Objects;
 public class GelGreatbow extends AphGreatbowProjectileToolItem {
     public GelGreatbow() {
         super(200);
-        this.rarity = Rarity.UNCOMMON;
+        this.rarity = Rarity.NORMAL;
         this.attackAnimTime.setBaseValue(700);
         this.attackDamage.setBaseValue(10.0F).setUpgradedValue(1.0F, 45.0F);
         this.attackRange.setBaseValue(800);
