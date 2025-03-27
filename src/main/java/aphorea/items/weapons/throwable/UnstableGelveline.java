@@ -46,7 +46,7 @@ public class UnstableGelveline extends AphThrowToolItem {
         attackerMob.buffManager.forceUpdateBuffs();
 
         if (attackerMob.isServer()) {
-            level.getServer().network.sendToAllClients(new AphCustomPushPacket(attackerMob, dir.x, dir.y, (float) strength));
+            level.getServer().network.sendToClientsAtEntireLevel(new AphCustomPushPacket(attackerMob, dir.x, dir.y, (float) strength), level);
         }
 
         Projectile projectile = new UnstableGelvelineProjectile(attackDamage, this.getKnockback(item, attackerMob), this, item, level, attackerMob, attackerMob.x, attackerMob.y, x, y, this.getProjectileVelocity(item, attackerMob), 1000);

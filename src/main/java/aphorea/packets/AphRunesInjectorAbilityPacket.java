@@ -78,7 +78,7 @@ public class AphRunesInjectorAbilityPacket extends Packet {
                     }
                 } else {
                     buffAbility.runServer(server, client.playerMob, this.mouseLevelX, this.mouseLevelY);
-                    server.network.sendToAllClients(new AphRunesInjectorAbilityPacket(this.slot, this.mouseLevelX, this.mouseLevelY, buff.buff));
+                    server.network.sendToClientsAtEntireLevel(new AphRunesInjectorAbilityPacket(this.slot, this.mouseLevelX, this.mouseLevelY, buff.buff), client.getLevel());
                 }
             }
         } else {

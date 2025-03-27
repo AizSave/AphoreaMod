@@ -147,18 +147,20 @@ public class SaberAttackHandler extends GreatswordAttackHandler {
     }
 
     private void launchSaberProjectile(Point2D.Float dir, boolean exact) {
-        float velocity = exact ? 300.0F : 200.0F;
-        int distanceExtra = exact ? 7 : 3;
-        GameDamage originalDamage = this.toolItem.getAttackDamage(this.item);
-        GameDamage damage = exact ? originalDamage : originalDamage.modDamage(0.5F);
-        float finalVelocity = (float) Math.round(this.toolItem.getEnchantment(this.item).applyModifierLimited(ToolItemModifiers.VELOCITY, ToolItemModifiers.VELOCITY.defaultBuffManagerValue) * velocity * this.attackerMob.buffManager.getModifier(BuffModifiers.PROJECTILE_VELOCITY));
-        Projectile projectile = ((AphSaberToolItem) toolItem).getProjectile(this.attackerMob.getLevel(), this.attackerMob, this.attackerMob.x, this.attackerMob.y, this.attackerMob.x + dir.x * 100.0F, this.attackerMob.y + dir.y * 100.0F, finalVelocity, (int) ((float) this.toolItem.getAttackRange(this.item)) * distanceExtra, damage, 0);
-        if (projectile != null) {
-            GameRandom random = new GameRandom(this.seed);
-            projectile.resetUniqueID(random);
-            this.attackerMob.getLevel().entityManager.projectiles.addHidden(projectile);
-            if (this.attackerMob.isServer()) {
-                this.attackerMob.getLevel().getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
+        if(this.attackerMob.isServer()) {
+            float velocity = exact ? 300.0F : 200.0F;
+            int distanceExtra = exact ? 7 : 3;
+            GameDamage originalDamage = this.toolItem.getAttackDamage(this.item);
+            GameDamage damage = exact ? originalDamage : originalDamage.modDamage(0.5F);
+            float finalVelocity = (float) Math.round(this.toolItem.getEnchantment(this.item).applyModifierLimited(ToolItemModifiers.VELOCITY, ToolItemModifiers.VELOCITY.defaultBuffManagerValue) * velocity * this.attackerMob.buffManager.getModifier(BuffModifiers.PROJECTILE_VELOCITY));
+            Projectile projectile = ((AphSaberToolItem) toolItem).getProjectile(this.attackerMob.getLevel(), this.attackerMob, this.attackerMob.x, this.attackerMob.y, this.attackerMob.x + dir.x * 100.0F, this.attackerMob.y + dir.y * 100.0F, finalVelocity, (int) ((float) this.toolItem.getAttackRange(this.item)) * distanceExtra, damage, 0);
+            if (projectile != null) {
+                GameRandom random = new GameRandom(this.seed);
+                projectile.resetUniqueID(random);
+                this.attackerMob.getLevel().entityManager.projectiles.addHidden(projectile);
+                if (this.attackerMob.isServer()) {
+                    this.attackerMob.getLevel().getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
+                }
             }
         }
     }

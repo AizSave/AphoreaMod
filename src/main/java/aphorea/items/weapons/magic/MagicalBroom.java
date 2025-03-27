@@ -190,7 +190,7 @@ public class MagicalBroom extends AphToolItem {
             attackerMob.buffManager.forceUpdateBuffs();
 
             if (attackerMob.isServer()) {
-                level.getServer().network.sendToAllClients(new AphCustomPushPacket(attackerMob, dir.x, dir.y, (float) strength));
+                level.getServer().network.sendToClientsAtEntireLevel(new AphCustomPushPacket(attackerMob, dir.x, dir.y, (float) strength), level);
             } else if (attackerMob.isClient()) {
                 currentA = currentA == 0 ? 1 : 0;
                 animInverted = currentA == 1;

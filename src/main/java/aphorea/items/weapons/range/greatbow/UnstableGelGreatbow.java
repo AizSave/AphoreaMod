@@ -68,7 +68,7 @@ public class UnstableGelGreatbow extends AphGreatbowProjectileToolItem {
         attackerMob.buffManager.forceUpdateBuffs();
 
         if (attackerMob.isServer()) {
-            level.getServer().network.sendToAllClients(new AphCustomPushPacket(attackerMob, -dir.x, -dir.y, (float) strength));
+            level.getServer().network.sendToClientsAtEntireLevel(new AphCustomPushPacket(attackerMob, -dir.x, -dir.y, (float) strength), level);
         }
 
         return item;

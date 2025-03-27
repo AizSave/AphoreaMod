@@ -14,10 +14,7 @@ import aphorea.levelevents.*;
 import aphorea.mobs.friendly.WildPhosphorSlime;
 import aphorea.mobs.summon.VolatileGelSlime;
 import aphorea.objects.*;
-import aphorea.packets.AphCustomPushPacket;
-import aphorea.packets.AphRuneOfUnstableGelSlimePacket;
-import aphorea.packets.AphRunesInjectorAbilityPacket;
-import aphorea.packets.AphSingleAreaShowPacket;
+import aphorea.packets.*;
 import aphorea.projectiles.bullet.SpamBulletProjectile;
 import aphorea.projectiles.toolitem.GelProjectile;
 import aphorea.registry.*;
@@ -112,6 +109,9 @@ public class AphoreaMod {
         ObjectRegistry.registerObject("spinelclustersmall", new SpinelClusterSmallObject("spinelcluster_small", AphColors.spinel, 337.0F), -1.0F, true);
         ObjectRegistry.registerObject("fakespinelchest", new FakeSpinelChest(), -1.0F, true);
         ObjectRegistry.registerObject("spinelchest", new StorageBoxInventoryObject("spinelchest", 40, AphColors.spinel), 20.0F, true);
+        ThePillarObject.registerObject();
+        ThePillarEntranceObject.registerObject();
+        ThePillarExitObject.registerObject();
 
         RockObject gelRock;
         ObjectRegistry.registerObject("gelrock", gelRock = new RockyWallObject("gelrock", AphColors.rock, "rockygel", 0, 1, 1), -1.0F, true);
@@ -147,6 +147,7 @@ public class AphoreaMod {
         LevelEventRegistry.registerEvent("volatilegelexplosion", VolatileGelSlime.VolatileGelExplosion.class);
         LevelEventRegistry.registerEvent("spambulletexplosion", SpamBulletProjectile.SpamBulletExplosion.class);
         LevelEventRegistry.registerEvent("firepoolgroundeffect", SpamBulletProjectile.FirePoolGroundEffectEvent.class);
+        LevelEventRegistry.registerEvent("thepillarentrance", ThePillarEntranceObject.ThePillarEntranceEvent.class);
 
         // Base Runes LevelEvents
         LevelEventRegistry.registerEvent("runeofdetonationevent", AphRuneOfDetonationEvent.class);
@@ -172,6 +173,7 @@ public class AphoreaMod {
         PacketRegistry.registerPacket(AphSingleAreaShowPacket.class);
         PacketRegistry.registerPacket(LowdsPoisonBuff.LowdsPoisonBuffPacket.class);
         PacketRegistry.registerPacket(WildPhosphorSlime.PhosphorSlimeParticlesPacket.class);
+        PacketRegistry.registerPacket(AphRemoveObjectEntity.class);
 
         // Controls
         AphControls.registerCore();

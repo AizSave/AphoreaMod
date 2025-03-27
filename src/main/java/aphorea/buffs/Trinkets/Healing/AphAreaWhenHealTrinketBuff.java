@@ -46,7 +46,7 @@ abstract public class AphAreaWhenHealTrinketBuff extends TrinketBuff implements 
 
                 this.areaList.executeServer(healer);
 
-                healer.getServer().network.sendToAllClients(getPacket((PlayerMob) healer, 1));
+                healer.getServer().network.sendToClientsAtEntireLevel(getPacket((PlayerMob) healer, 1), target.getLevel());
             }
 
             healingDone.put(playerName, thisHealingDone);

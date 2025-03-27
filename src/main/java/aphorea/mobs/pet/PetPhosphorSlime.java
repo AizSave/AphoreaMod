@@ -74,7 +74,7 @@ public class PetPhosphorSlime extends PetFollowingMob {
             if (dayInSurface(getLevel())) {
                 dayCount++;
                 if (dayCount > 400) {
-                    getServer().network.sendToAllClients(new WildPhosphorSlime.PhosphorSlimeParticlesPacket(x, y));
+                    getServer().network.sendToClientsAtEntireLevel(new WildPhosphorSlime.PhosphorSlimeParticlesPacket(x, y), getLevel());
                     this.remove();
                 }
             }

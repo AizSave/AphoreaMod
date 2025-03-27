@@ -66,15 +66,39 @@ public class AphItems {
     public static final ArrayList<Item> initialRunes = new ArrayList<>();
 
     public static void registerCore() {
-        // Pickaxes Tooltips
-        replaceItem("ivypickaxe", new CustomPickaxeToolItem(450, 125, 1.5F, 18, 50, 50, 700), 100.0F);
-
         // Basic Materials
+        registerMaterials();
+
+        // Tools
+        registerTools();
+
+        // Armor
+        registerArmor();
+
+        // Trinkets
+        registerTrinkets();
+
+        // Consumables
+        registerConsumables();
+
+        // Misc
+        registerMisc();
+
+        // Runes
+        registerRunes();
+    }
+
+    public static void registerMaterials() {
         registerItem("unstablegel", (new AphMatItem(500, Item.Rarity.COMMON)).setItemCategory("materials"), 10F);
         registerItem("rockygel", (new AphMatItem(500, Item.Rarity.NORMAL)).setItemCategory("materials"), 5F);
         registerItem("stardust", (new AphMatItem(500, Item.Rarity.COMMON)).setItemCategory("materials"), 30F);
         registerItem("infectedlog", (new AphMatItem(500, "anylog")).setItemCategory("materials", "logs"), 2F);
         registerItem("spinel", (new AphMatItem(500, Item.Rarity.UNCOMMON)).setItemCategory("materials", "minerals"), 15F);
+    }
+
+    public static void registerTools() {
+        // Pickaxes Tooltips
+        replaceItem("ivypickaxe", new CustomPickaxeToolItem(450, 125, 1.5F, 18, 50, 50, 700), 100.0F);
 
         // Melee Weapons
         registerItem("woodenrod", new WoodenRod());
@@ -121,7 +145,7 @@ public class AphItems {
         registerItem("gelballgroup", new GelBallGroup());
         registerItem("unstablegelveline", new UnstableGelveline());
 
-        // Tools
+        // Work Tools
         registerItem("superiorpickaxe", new CustomPickaxeToolItem(350, 220, 6, 30, 60, 60, 1200, Item.Rarity.EPIC));
 
         // Healing Tools
@@ -139,7 +163,13 @@ public class AphItems {
         replaceItem("bannerofspeed", new AphBannerOfSpeedItem(), 200F); // REWORKED
         replaceItem("bannerofsummonspeed", new AphBannerOfSummonSpeedItem(), 200F); // REWORKED
 
-        // Armor
+        // Ammo
+        registerItem("gelarrow", new GelArrowItem(), 0.4F);
+        registerItem("unstablegelarrow", new UnstableGelArrowItem(), 2.2F);
+        registerItem("spambullet", new SpamBullet());
+    }
+
+    public static void registerArmor() {
         registerItem("rockyhelmet", new RockyHelmet());
         registerItem("rockychestplate", new RockyChestplate());
         registerItem("rockyboots", new RockyBoots());
@@ -151,8 +181,9 @@ public class AphItems {
         registerItem("swamphood", new SwampHood());
         registerItem("swampchestplate", new SwampChestplate());
         registerItem("swampboots", new SwampBoots());
+    }
 
-        // Trinkets
+    public static void registerTrinkets() {
         registerItem("floralring", new AphSimpleTrinketItem(Item.Rarity.COMMON, "floralring", 200, true), 30F);
         registerItem("gelring", new AphSimpleTrinketItem(Item.Rarity.COMMON, "gelring", 300, true), 50F);
         registerItem("heartring", new AphSimpleTrinketItem(Item.Rarity.COMMON, "heartring", 300, true));
@@ -173,17 +204,24 @@ public class AphItems {
         registerItem("healingessence", (new AphSimpleTrinketItem(Item.Rarity.RARE, "healingessence", 600, true)), -1F);
         registerItem("ninjascarf", (new AphSimpleTrinketItem(Item.Rarity.RARE, "ninjascarf", 700)), 250F);
         registerItem("adrenalinecharm", (new AphSimpleTrinketItem(Item.Rarity.RARE, "adrenalinecharm", 500)), 200F);
+    }
 
-        // Ammo
-        registerItem("gelarrow", new GelArrowItem(), 0.4F);
-        registerItem("unstablegelarrow", new UnstableGelArrowItem(), 2.2F);
-        registerItem("spambullet", new SpamBullet());
-
-        // Consumable Items
+    public static void registerConsumables() {
+        // Bosses
         registerItem("unstablecore", new UnstableCore(), 20F);
+
+        // Potions
         registerItem("lowdspotion", new LowdsPotion());
-        registerItem("initialrune", new InitialRune(), 0F);
+
+        // Permanent Buffs
         registerItem("lifespinel", new LifeSpinel(), 30F);
+
+        // Others
+        registerItem("initialrune", new InitialRune(), 0F);
+    }
+
+    public static void registerMisc() {
+        // Consumable Items
 
         // Pets
         registerItem("cuberry", new AphPetItem("petphosphorslime", Item.Rarity.LEGENDARY), 50F);
@@ -196,10 +234,12 @@ public class AphItems {
         registerItem("emeraldbackpack", new EmeraldBackpack());
         registerItem("diamondbackpack", new DiamondBackpack());
 
-        // Misc
+        // Pure Misc
         registerItem("gelslimenullifier", new GelSlimeNullifier());
         registerItem("infectedgrassseed", new AphGrassSeedItem("infectedgrasstile"), 0.2F);
+    }
 
+    public static void registerRunes() {
         // Runes Injectors
         registerItem("rusticrunesinjector", new AphRunesInjector(Item.Rarity.NORMAL, 0, 0));
         registerItem("unstablerunesinjector", new AphRunesInjector(Item.Rarity.COMMON, 0, 1));

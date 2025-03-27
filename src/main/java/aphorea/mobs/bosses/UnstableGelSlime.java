@@ -174,6 +174,10 @@ public class UnstableGelSlime extends FlyingBossMob {
         drawY += getBobbing(x, y);
         drawY += getLevel().getTile(getTileX(), getTileY()).getMobSinkingAmount(this);
 
+        if(this.inLiquid()) {
+            drawY += 20;
+        }
+
         DrawOptions drawOptions = texture.initDraw()
                 .sprite(sprite.x, sprite.y, 192)
                 .light(light)
@@ -241,11 +245,6 @@ public class UnstableGelSlime extends FlyingBossMob {
         int drawX = x - 16;
         int drawY = y - 16;
         icon.initDraw().sprite(0, 0, 32).size(32, 32).draw(drawX, drawY);
-    }
-
-    @Override
-    public boolean isHealthBarVisible() {
-        return super.isHealthBarVisible();
     }
 
     @Override

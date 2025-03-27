@@ -42,7 +42,7 @@ public class LowdsPoisonBuff extends Buff {
             buff.owner.setHealth(1);
             if (buff.owner.isPlayer) {
                 ServerClient serverClient = ((PlayerMob) buff.owner).getServerClient();
-                buff.owner.getServer().network.sendToAllClients(new LowdsPoisonBuffPacket(serverClient.slot));
+                buff.owner.getServer().network.sendToClientsAtEntireLevel(new LowdsPoisonBuffPacket(serverClient.slot), buff.owner.getLevel());
             }
         }
     }

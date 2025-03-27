@@ -31,7 +31,7 @@ public class BlankBannerItem extends AphBanner {
     @Override
     public void runServerAbility(Level level, InventoryItem item, PlayerMob player) {
         areaList.executeServer(player);
-        level.getServer().network.sendToAllClients(new AphSingleAreaShowPacket(player.x, player.y, range, color, 0.5F));
+        level.getServer().network.sendToClientsAtEntireLevel(new AphSingleAreaShowPacket(player.x, player.y, range, color, 0.5F), level);
     }
 
     public DrawOptions getStandDrawOptions(Level level, int tileX, int tileY, int drawX, int drawY, GameLight light) {

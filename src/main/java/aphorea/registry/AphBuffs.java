@@ -523,7 +523,7 @@ public class AphBuffs {
 
                     if (!possiblePoints.isEmpty()) {
                         Point point = possiblePoints.get(GameRandom.globalRandom.nextInt(possiblePoints.size()));
-                        server.network.sendToAllClients(new AphRuneOfUnstableGelSlimePacket(serverClient.slot, point.x, point.y));
+                        server.network.sendToClientsAtEntireLevel(new AphRuneOfUnstableGelSlimePacket(serverClient.slot, point.x, point.y), serverClient.getLevel());
                     }
                 }
             }
@@ -825,7 +825,7 @@ public class AphBuffs {
                                 target -> target.getLevel().entityManager.addLevelEvent(new MobHealthChangeEvent(target, (int) (target.getMaxHealth() * 0.2F)))
                         );
 
-                        level.getServer().network.sendToAllClients(new AphSingleAreaShowPacket(player.x, player.y, 500, AphColors.nature));
+                        level.getServer().network.sendToClientsAtEntireLevel(new AphSingleAreaShowPacket(player.x, player.y, 500, AphColors.nature), level);
                     }
                 }
             }

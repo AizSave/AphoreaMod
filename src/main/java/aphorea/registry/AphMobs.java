@@ -1,6 +1,7 @@
 package aphorea.registry;
 
 import aphorea.mobs.bosses.MiniUnstableGelSlime;
+import aphorea.mobs.bosses.ThePillarMob;
 import aphorea.mobs.bosses.UnstableGelSlime;
 import aphorea.mobs.friendly.WildPhosphorSlime;
 import aphorea.mobs.hostile.*;
@@ -32,6 +33,8 @@ public class AphMobs {
         // Bosses [Mobs]
         MobRegistry.registerMob("unstablegelslime", UnstableGelSlime.class, true, true);
         MobRegistry.registerMob("miniunstablegelslime", MiniUnstableGelSlime.class, true);
+
+        MobRegistry.registerMob("thepillar", ThePillarMob.class, true, true);
 
         // Summons [Mobs]
         MobRegistry.registerMob("babyunstablegelslime", BabyUnstableGelSlime.class, false);

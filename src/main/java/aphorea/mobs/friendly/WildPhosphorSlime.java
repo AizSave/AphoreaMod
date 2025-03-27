@@ -94,7 +94,7 @@ public class WildPhosphorSlime extends FriendlyMob {
             if (dayInSurface(getLevel())) {
                 dayCount++;
                 if (dayCount > 400) {
-                    getServer().network.sendToAllClients(new PhosphorSlimeParticlesPacket(x, y));
+                    getServer().network.sendToClientsAtEntireLevel(new PhosphorSlimeParticlesPacket(x, y), getLevel());
                     this.remove();
                 }
             }

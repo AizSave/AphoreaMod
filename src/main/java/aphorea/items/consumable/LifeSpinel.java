@@ -35,7 +35,7 @@ public class LifeSpinel extends ConsumableItem {
     public InventoryItem onPlace(Level level, int x, int y, PlayerMob player, int seed, InventoryItem item, GNDItemMap mapContent) {
         player.setMaxHealth(Math.min(250, player.getMaxHealthFlat() + 5));
         if (level.isServer()) {
-            level.getServer().network.sendToAllClientsExcept(new PacketPlayerGeneral(player.getServerClient()), player.getServerClient());
+            level.getServer().network.sendToClientsAtEntireLevelExcept(new PacketPlayerGeneral(player.getServerClient()), level, player.getServerClient());
         } else if (level.isClient()) {
             SoundManager.playSound(GameResources.crystalHit1, SoundEffect.effect(player));
         }

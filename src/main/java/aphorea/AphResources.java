@@ -2,6 +2,7 @@ package aphorea;
 
 import aphorea.items.weapons.magic.MagicalBroom;
 import aphorea.mobs.bosses.MiniUnstableGelSlime;
+import aphorea.mobs.bosses.ThePillarMob;
 import aphorea.mobs.bosses.UnstableGelSlime;
 import aphorea.mobs.friendly.WildPhosphorSlime;
 import aphorea.mobs.hostile.*;
@@ -75,6 +76,8 @@ public class AphResources {
         UnstableGelSlime.texture = GameTexture.fromFile("mobs/unstablegelslime");
         UnstableGelSlime.icon = GameTexture.fromFile("mobs/icons/unstablegelslime");
         MiniUnstableGelSlime.texture = GameTexture.fromFile("mobs/miniunstablegelslime");
+
+        ThePillarMob.icon = GameTexture.fromFile("mobs/icons/thepillar");
 
         // FRIENDLY
         WildPhosphorSlime.texture = GameTexture.fromFile("mobs/phosphorslime");

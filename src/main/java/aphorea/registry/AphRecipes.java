@@ -425,8 +425,8 @@ public class AphRecipes {
     public static void FallenAnvil() {
         Tech tech = RecipeTechRegistry.FALLEN_ANVIL;
 
-        addCraftingList("superiorpickaxe", tech,
-                AphCraftingRecipe.showBefore("icepickaxe", 1,
+        addCraftingList("icepickaxe", tech,
+                AphCraftingRecipe.showBefore("superiorpickaxe", 1,
                         new Ingredient("woodpickaxe", 1),
                         new Ingredient("slimeessence", 5),
                         new Ingredient("bloodessence", 5),
