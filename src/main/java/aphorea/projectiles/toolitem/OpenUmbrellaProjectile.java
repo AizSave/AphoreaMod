@@ -1,6 +1,5 @@
 package aphorea.projectiles.toolitem;
 
-import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;

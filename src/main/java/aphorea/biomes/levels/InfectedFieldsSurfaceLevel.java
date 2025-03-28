@@ -153,10 +153,9 @@ public class InfectedFieldsSurfaceLevel extends Level {
 
     @Override
     public Stream<ModifierValue<?>> getMobModifiers(Mob mob) {
-        Stream<ModifierValue<?>> modifiers = Stream.concat(
+        return Stream.concat(
                 super.getMobModifiers(mob),
                 Stream.of(new ModifierValue<>(BuffModifiers.BLINDNESS, 0.4F))
         );
-        return modifiers;
     }
 }

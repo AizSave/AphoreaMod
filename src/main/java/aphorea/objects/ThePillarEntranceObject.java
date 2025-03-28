@@ -31,8 +31,6 @@ import necesse.inventory.item.toolItem.ToolType;
 import necesse.level.gameObject.GameObject;
 import necesse.level.gameObject.StaticMultiObject;
 import necesse.level.maps.Level;
-import necesse.level.maps.LevelObject;
-import necesse.level.maps.biomes.temple.TempleArenaLevel;
 import necesse.level.maps.biomes.temple.TempleLevel;
 import necesse.level.maps.light.GameLight;
 import necesse.level.maps.regionSystem.RegionPosition;
@@ -88,13 +86,7 @@ public class ThePillarEntranceObject extends StaticMultiObject {
 
     public void interact(Level level, int x, int y, PlayerMob player) {
         if (level.isServer() && player.isServerClient()) {
-            LevelObject master = this.getMultiTile(level, 0, x, y).getMasterLevelObject(level, 0, x, y).orElse(null);
-            if (master != null) {
-                ObjectEntity objectEntity = level.entityManager.getObjectEntity(master.tileX, master.tileY);
-                if (objectEntity instanceof PortalObjectEntity) {
-                    ((PortalObjectEntity) objectEntity).use(level.getServer(), player.getServerClient());
-                }
-            }
+            player.getServerClient().sendChatMessage("Coming soon: Stay tuned for the next big AphoreaMod update!");
         }
 
         super.interact(level, x, y, player);
@@ -134,14 +126,8 @@ public class ThePillarEntranceObject extends StaticMultiObject {
             if (this.getLevel() != null) {
                 LevelIdentifier identifier = this.getLevel().getIdentifier();
                 if (identifier.isIslandPosition()) {
-                    Point destinationTile;
-                    if (identifier.getIslandDimension() == -200) {
-                        this.destinationIdentifier = new LevelIdentifier(identifier.getIslandX(), identifier.getIslandY(), -201);
-                        destinationTile = TempleArenaLevel.getExitPosition();
-                    } else {
-                        this.destinationIdentifier = new LevelIdentifier(identifier.getIslandX(), identifier.getIslandY(), -200);
-                        destinationTile = TempleLevel.getEntranceSpawnPos(identifier.getIslandX(), identifier.getIslandY());
-                    }
+                    this.destinationIdentifier = new LevelIdentifier(identifier.getIslandX(), identifier.getIslandY(), -200);
+                    Point destinationTile = TempleLevel.getEntranceSpawnPos(identifier.getIslandX(), identifier.getIslandY());
 
                     this.destinationTileX = destinationTile.x;
                     this.destinationTileY = destinationTile.y;

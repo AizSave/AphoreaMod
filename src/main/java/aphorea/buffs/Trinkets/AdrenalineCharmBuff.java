@@ -2,8 +2,6 @@ package aphorea.buffs.Trinkets;
 
 import aphorea.buffs.AphShownBuff;
 import necesse.engine.localization.Localization;
-import necesse.engine.modifiers.Modifier;
-import necesse.engine.modifiers.ModifierValue;
 import necesse.entity.mobs.MobWasHitEvent;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;

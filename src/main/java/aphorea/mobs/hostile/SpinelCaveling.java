@@ -34,8 +34,8 @@ public class SpinelCaveling extends HostileMob {
 
     public static LootTable lootTable = new LootTable(
             new OneOfTicketLootItems(
-                    19, new ChanceLootItem(0.5F, "spinel"),
-                    1, new ChanceLootItem(0.5F, "lifespinel")
+                    19, new ChanceLootItem(0.2F, "spinel"),
+                    1, new ChanceLootItem(0.2F, "lifespinel")
             )
     );
     public static HumanTexture texture;

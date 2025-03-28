@@ -1,19 +1,18 @@
 package aphorea.registry;
 
-import aphorea.buffs.Banners.*;
 import aphorea.buffs.*;
+import aphorea.buffs.Banners.*;
 import aphorea.buffs.Runes.AphBaseRuneActiveBuff;
 import aphorea.buffs.Runes.AphBaseRuneTrinketBuff;
 import aphorea.buffs.Runes.AphModifierRuneTrinketBuff;
 import aphorea.buffs.SetBonus.*;
 import aphorea.buffs.Trinkets.AdrenalineCharmBuff;
-import aphorea.buffs.Trinkets.Healing.AncientMedallionBuff;
-import aphorea.buffs.Trinkets.Healing.CursedMedallionBuff;
-import aphorea.buffs.Trinkets.Healing.FloralRingBuff;
-import aphorea.buffs.Trinkets.Healing.WitchMedallionBuff;
-import aphorea.buffs.Trinkets.Healing.HealingEssenceBuff;
+import aphorea.buffs.Trinkets.Healing.*;
 import aphorea.buffs.Trinkets.Periapts.*;
-import aphorea.buffs.TrinketsActive.*;
+import aphorea.buffs.TrinketsActive.BloodyPeriaptActiveBuff;
+import aphorea.buffs.TrinketsActive.DemonicPeriaptActiveBuff;
+import aphorea.buffs.TrinketsActive.PeriaptActiveBuff;
+import aphorea.buffs.TrinketsActive.RockyPeriaptActiveBuff;
 import aphorea.levelevents.*;
 import aphorea.mobs.runicsummons.RunicAttackingFollowingMob;
 import aphorea.mobs.runicsummons.RunicFlyingAttackingFollowingMob;

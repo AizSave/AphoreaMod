@@ -1,6 +1,5 @@
 package aphorea.packets;
 
-import aphorea.utils.AphColors;
 import necesse.engine.network.NetworkPacket;
 import necesse.engine.network.Packet;
 import necesse.engine.network.PacketReader;

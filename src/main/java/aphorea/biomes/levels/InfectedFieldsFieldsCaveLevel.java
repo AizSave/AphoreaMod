@@ -13,11 +13,13 @@ import necesse.engine.world.WorldEntity;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.level.gameObject.GameObject;
+import necesse.level.gameTile.GameTile;
 import necesse.level.maps.biomes.Biome;
 import necesse.level.maps.generationModules.*;
 import necesse.level.maps.presets.PresetUtils;
 
 import java.awt.*;
+import java.util.Objects;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
 
@@ -35,6 +37,9 @@ public class InfectedFieldsFieldsCaveLevel extends InfectedFieldsSurfaceLevel {
 
     public void generateLevel() {
         CaveGeneration cg = new CaveGeneration(this, "rocktile", "gelrock");
+
+        Point veinCenter = new Point(cg.random.getIntOffset(this.width / 2, 32), cg.random.getIntOffset(this.height / 2, 32));
+
         GameEvents.triggerEvent(new GenerateCaveLayoutEvent(this, cg), (e) -> cg.generateLevel());
         GameEvents.triggerEvent(new GeneratedCaveLayoutEvent(this, cg));
 
@@ -68,8 +73,6 @@ public class InfectedFieldsFieldsCaveLevel extends InfectedFieldsSurfaceLevel {
                 maxWidth = 0F;
         }
 
-        Point veinCenter = new Point(cg.random.getIntOffset(this.width / 2, 32), cg.random.getIntOffset(this.height / 2, 32));
-
         Consumer<LinesGeneration> veinGeneration = (lg) -> {
             CellAutomaton ca = lg.doCellularAutomaton(cg.random);
             ca.streamAliveOrdered().forEachOrdered((tile) -> {
@@ -94,12 +97,44 @@ public class InfectedFieldsFieldsCaveLevel extends InfectedFieldsSurfaceLevel {
             });
         };
 
-        veinGeneration.accept((new LinesGeneration(veinCenter.x, veinCenter.y)).addRandomArms(cg.random, cg.random.getIntBetween(2, 6), minRange, maxRange, minWidth, maxWidth));
+        veinGeneration.accept((new LinesGeneration(veinCenter.x, veinCenter.y)).addRandomArms(cg.random, cg.random.getIntBetween(3, 6), minRange, maxRange, minWidth, maxWidth));
+
+        GameObject airObject = ObjectRegistry.getObject("air");
+        airObject.placeObject(this, veinCenter.x - 1, veinCenter.y - 1, 0, false);
+        airObject.placeObject(this, veinCenter.x, veinCenter.y - 1, 0, false);
+        airObject.placeObject(this, veinCenter.x + 1, veinCenter.y - 1, 0, false);
+        airObject.placeObject(this, veinCenter.x - 1, veinCenter.y, 0, false);
+        airObject.placeObject(this, veinCenter.x, veinCenter.y, 0, false);
+        airObject.placeObject(this, veinCenter.x + 1, veinCenter.y, 0, false);
+
+        int spinelGravel = TileRegistry.getTile("spinelgravel").getID();
+        this.setTile(veinCenter.x - 2, veinCenter.y - 2, spinelGravel);
+        this.setTile(veinCenter.x - 2, veinCenter.y - 2, spinelGravel);
+        this.setTile(veinCenter.x, veinCenter.y - 2, spinelGravel);
+        this.setTile(veinCenter.x + 1, veinCenter.y - 2, spinelGravel);
+        this.setTile(veinCenter.x + 2, veinCenter.y - 2, spinelGravel);
+
+        this.setTile(veinCenter.x - 2, veinCenter.y - 1, spinelGravel);
+        this.setTile(veinCenter.x - 1, veinCenter.y - 1, spinelGravel);
+        this.setTile(veinCenter.x, veinCenter.y - 1, spinelGravel);
+        this.setTile(veinCenter.x + 1, veinCenter.y - 1, spinelGravel);
+        this.setTile(veinCenter.x + 2, veinCenter.y - 1, spinelGravel);
+
+        this.setTile(veinCenter.x - 2, veinCenter.y, spinelGravel);
+        this.setTile(veinCenter.x - 1, veinCenter.y, spinelGravel);
+        this.setTile(veinCenter.x, veinCenter.y, spinelGravel);
+        this.setTile(veinCenter.x + 1, veinCenter.y, spinelGravel);
+        this.setTile(veinCenter.x + 2, veinCenter.y, spinelGravel);
+
+        this.setTile(veinCenter.x - 2, veinCenter.y + 1, spinelGravel);
+        this.setTile(veinCenter.x - 1, veinCenter.y + 1, spinelGravel);
+        this.setTile(veinCenter.x, veinCenter.y + 1, spinelGravel);
+        this.setTile(veinCenter.x + 1, veinCenter.y + 1, spinelGravel);
+        this.setTile(veinCenter.x + 2, veinCenter.y + 1, spinelGravel);
+
+        ObjectRegistry.getObject("thepillar").placeObject(this, veinCenter.x - 1, veinCenter.y - 1, 0, false);
 
         GameEvents.triggerEvent(new GenerateCaveMiniBiomesEvent(this, cg), (e) -> {
-            GenerationTools.generateRandomSmoothTileVeins(this, cg.random, 0.1F, 2, 2.0F, 10.0F, 2.0F, 10.0F, TileRegistry.getTileID("infectedwatertile"), 1.0F, true);
-            this.liquidManager.calculateShores();
-
             GenerationTools.generateRandomSmoothVeinsL(this, cg.random, 0.005F, 4, 4.0F, 7.0F, 4.0F, 6.0F, (lg) -> {
                 CellAutomaton ca = lg.doCellularAutomaton(cg.random);
 
@@ -116,7 +151,7 @@ public class InfectedFieldsFieldsCaveLevel extends InfectedFieldsSurfaceLevel {
                 ObjectRegistry.getObject(ObjectRegistry.getObjectID("fakespinelchest")).placeObject(this, centerX, centerY, 2, false);
 
                 ca.streamAliveOrdered().forEachOrdered((tile) -> {
-                    if(Math.abs(centerX - tile.x) > 1 && Math.abs(centerY - tile.y) > 1) {
+                    if (Math.abs(centerX - tile.x) > 1 && Math.abs(centerY - tile.y) > 1) {
                         if (this.getObjectID(tile.x, tile.y) == 0 && this.getObjectID(tile.x - 1, tile.y) == 0 && this.getObjectID(tile.x + 1, tile.y) == 0 && this.getObjectID(tile.x, tile.y - 1) == 0 && this.getObjectID(tile.x, tile.y + 1) == 0 && cg.random.getChance(0.08F)) {
                             int rotation = cg.random.nextInt(4);
                             Point[] clearPoints = new Point[]{new Point(-1, -1), new Point(1, -1)};
@@ -132,13 +167,38 @@ public class InfectedFieldsFieldsCaveLevel extends InfectedFieldsSurfaceLevel {
                 });
             });
 
-            cg.generateRandomSingleRocks(ObjectRegistry.getObjectID("spinelclustersmall"), 0.02F);
-            cg.generateRandomSingleRocks(ObjectRegistry.getObjectID("spinelcluster"), 0.004F);
+            GameTile waterTile = TileRegistry.getTile("infectedwatertile");
+            GenerationTools.generateRandomSmoothVeins(this, cg.random, 0.1F, 2, 2.0F, 10.0F, 2.0F, 10.0F, (l, tileX, tileY) -> {
+                if (cg.random.getChance(1.0F) && this.getTile(tileX, tileY).getID() == cg.rockTile) {
+                    waterTile.placeTile(l, tileX, tileY, false);
+                }
+            });
+
+            this.liquidManager.calculateShores();
+
+            for (int x = 0; x < this.width; ++x) {
+                for (int y = 0; y < this.height; ++y) {
+                    GameTile tile = this.getTile(x, y);
+                    if ((tile.isLiquid || tile.getID() == cg.rockTile) && Objects.equals(this.getTile(x + 1, y).getStringID(), "air")) {
+                        if(cg.random.getChance(0.005F)) {
+                            GameObject rock = ObjectRegistry.getObject("spinelcluster");
+                            if (rock.canPlace(this, x, y, 0, false) == null) {
+                                rock.placeObject(this, x, y, 0, false);
+                            }
+                        } else if(cg.random.getChance(0.02F)) {
+                            GameObject rock = ObjectRegistry.getObject("spinelclustersmall");
+                            if (rock.canPlace(this, x, y, 0, false) == null) {
+                                rock.placeObject(this, x, y, 0, false);
+                            }
+                        }
+                    }
+                }
+            }
         });
         GameEvents.triggerEvent(new GeneratedCaveMiniBiomesEvent(this, cg));
-        GameEvents.triggerEvent(new GenerateCaveOresEvent(this, cg), (e) -> {});
+        GameEvents.triggerEvent(new GenerateCaveOresEvent(this, cg), (e) -> {
+        });
         GameEvents.triggerEvent(new GeneratedCaveOresEvent(this, cg));
-
 
         PresetGeneration presets = new PresetGeneration(this);
         GameEvents.triggerEvent(new GenerateCaveStructuresEvent(this, cg, presets), (e) -> {
@@ -156,10 +216,9 @@ public class InfectedFieldsFieldsCaveLevel extends InfectedFieldsSurfaceLevel {
 
     @Override
     public Stream<ModifierValue<?>> getMobModifiers(Mob mob) {
-        Stream<ModifierValue<?>> modifiers = Stream.concat(
+        return Stream.concat(
                 super.getMobModifiers(mob),
                 Stream.of(new ModifierValue<>(BuffModifiers.BLINDNESS, 0.6F))
         );
-        return modifiers;
     }
 }

@@ -14,7 +14,6 @@ import necesse.inventory.InventoryItem;
 import necesse.level.maps.Level;
 
 import java.awt.*;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class UmbrellaDagger extends AphDaggerToolItem {

@@ -3,7 +3,6 @@ package aphorea.items.weapons.melee.sword;
 import aphorea.items.vanillaitemtypes.weapons.AphHeavyHammerProjectileToolItem;
 import aphorea.projectiles.toolitem.VoidStoneProjectile;
 import necesse.engine.localization.Localization;
-import necesse.engine.network.PacketReader;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.util.GameBlackboard;
@@ -15,7 +14,6 @@ import necesse.entity.projectile.Projectile;
 import necesse.entity.projectile.modifiers.ResilienceOnHitProjectileModifier;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.PlayerInventorySlot;
 import necesse.level.maps.Level;
 
 public class VoidHammer extends AphHeavyHammerProjectileToolItem {

@@ -4,13 +4,9 @@ import aphorea.packets.AphSingleAreaShowPacket;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
-import necesse.engine.localization.Localization;
 import necesse.engine.network.Packet;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.entity.mobs.PlayerMob;
-import necesse.gfx.gameTooltips.ListGameTooltips;
-import necesse.inventory.InventoryItem;
-import necesse.inventory.item.trinketItem.TrinketItem;
 
 import java.awt.*;
 

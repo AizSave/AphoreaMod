@@ -1,6 +1,5 @@
 package aphorea.buffs.Trinkets.Periapts;
 
-import aphorea.buffs.Trinkets.AphPeriaptActivableBuff;
 import aphorea.utils.AphColors;
 import necesse.engine.localization.Localization;
 import necesse.engine.registries.BuffRegistry;
@@ -18,8 +17,6 @@ import necesse.entity.particle.Particle;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.trinketItem.TrinketItem;
-
-import java.awt.*;
 
 public class FrozenPeriaptBuff extends TrinketBuff {
 

@@ -5,7 +5,6 @@ import aphorea.items.vanillaitemtypes.weapons.AphThrowToolItem;
 import aphorea.packets.AphCustomPushPacket;
 import aphorea.projectiles.toolitem.UnstableGelvelineProjectile;
 import necesse.engine.localization.Localization;
-import necesse.engine.network.PacketReader;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.registries.BuffRegistry;
@@ -20,7 +19,6 @@ import necesse.entity.projectile.Projectile;
 import necesse.entity.projectile.modifiers.ResilienceOnHitProjectileModifier;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.PlayerInventorySlot;
 import necesse.level.maps.Level;
 
 import java.awt.geom.Point2D;
