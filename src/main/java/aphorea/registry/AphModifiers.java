@@ -49,8 +49,4 @@ public class AphModifiers {
         BANNER_EFFECT = new Modifier<>(BuffModifiers.LIST, "bannereffect", 1.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> Math.max(0.0F, v), Modifier.NORMAL_PERC_PARSER("bannereffect"), ModifierLimiter.NORMAL_PERC_LIMITER("bannereffect"));
         BANNER_ABILITY_SPEED = new Modifier<>(BuffModifiers.LIST, "bannerabilityspeed", 1.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> Math.max(0.0F, v), Modifier.NORMAL_PERC_PARSER("bannerabilityspeed"), ModifierLimiter.NORMAL_PERC_LIMITER("bannerabilityspeed"));
     }
-
-    public AphModifiers() {
-
-    }
 }

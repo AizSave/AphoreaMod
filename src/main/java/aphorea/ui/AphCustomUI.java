@@ -3,15 +3,27 @@ package aphorea.ui;
 import necesse.gfx.forms.Form;
 import necesse.gfx.forms.MainGameFormManager;
 
-import java.util.HashMap;
-import java.util.Map;
-
 abstract public class AphCustomUI {
-    public static Map<String, AphCustomUI> list = new HashMap<>();
-    public static AttackTrackManger attackTrackManager;
+    public final String formId;
 
-    public Form form = null;
-    public MainGameFormManager mainGameFormManager = null;
+    public Form form;
+    public MainGameFormManager mainGameFormManager;
+
+    protected AphCustomUI(String formId) {
+        this.formId = formId;
+        AphCustomUIList.list.put(formId, this);
+    }
+
+    abstract public void startForm();
 
     abstract public void updatePosition();
+
+    public void setupForm() {
+        updatePosition();
+    }
+
+    public void onWindowResized() {
+        updatePosition();
+    }
+
 }

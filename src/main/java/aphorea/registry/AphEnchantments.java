@@ -59,54 +59,58 @@ public class AphEnchantments {
 
         loyal = registerEnchantment(daggerItemEnchantments, "loyal", new ToolItemEnchantment(10, new ModifierValue<>(AphModifiers.LOYAL, true)));
 
-        EnchantingScrollItem.types.add(new EnchantingScrollItem.EnchantScrollType("healingequipment", 200, (enchantment) -> {
-            return healingEquipmentEnchantments.contains(enchantment.getID());
-        }, (random) -> {
-            return random.getOneOf(healingEquipmentEnchantments.stream().map(EnchantmentRegistry::getEnchantment).filter(Objects::nonNull).filter((e) -> {
-                return e.getEnchantCostMod() >= 1.0F;
-            }).toArray(ItemEnchantment[]::new));
-        }, (enchantment) -> {
-            return new LocalMessage("itemtooltip", "enchantingscrollhealingequipmenttip", "enchantment", enchantment.getLocalization());
-        }, (enchantment) -> {
-            return new LocalMessage("ui", "enchantscrollequipment");
-        }));
+        EnchantingScrollItem.types.add(
+                new EnchantingScrollItem.EnchantScrollType("healingequipment", 200,
+                        (enchantment) -> healingEquipmentEnchantments.contains(enchantment.getID()),
+                        (random) -> random.getOneOf(healingEquipmentEnchantments.stream()
+                                .map(EnchantmentRegistry::getEnchantment)
+                                .filter(Objects::nonNull)
+                                .filter((e) -> e.getEnchantCostMod() >= 1.0F)
+                                .toArray(ItemEnchantment[]::new)),
+                        (enchantment) -> new LocalMessage("itemtooltip", "enchantingscrollhealingequipmenttip", "enchantment", enchantment.getLocalization()),
+                        (enchantment) -> new LocalMessage("ui", "enchantscrollequipment")
+                )
+        );
 
 
-        EnchantingScrollItem.types.add(new EnchantingScrollItem.EnchantScrollType("healing", 200, (enchantment) -> {
-            return healingItemEnchantments.contains(enchantment.getID());
-        }, (random) -> {
-            return random.getOneOf(healingItemEnchantments.stream().map(EnchantmentRegistry::getEnchantment).filter(Objects::nonNull).filter((e) -> {
-                return e.getEnchantCostMod() >= 1.0F;
-            }).toArray(ItemEnchantment[]::new));
-        }, (enchantment) -> {
-            return new LocalMessage("itemtooltip", "enchantingscrollhealingtip", "enchantment", enchantment.getLocalization());
-        }, (enchantment) -> {
-            return new LocalMessage("ui", "enchantscrollequipment");
-        }));
+        EnchantingScrollItem.types.add(
+                new EnchantingScrollItem.EnchantScrollType("healing", 200,
+                        (enchantment) -> healingItemEnchantments.contains(enchantment.getID()),
+                        (random) -> random.getOneOf(healingItemEnchantments.stream()
+                                .map(EnchantmentRegistry::getEnchantment)
+                                .filter(Objects::nonNull)
+                                .filter((e) -> e.getEnchantCostMod() >= 1.0F)
+                                .toArray(ItemEnchantment[]::new)),
+                        (enchantment) -> new LocalMessage("itemtooltip", "enchantingscrollhealingtip", "enchantment", enchantment.getLocalization()),
+                        (enchantment) -> new LocalMessage("ui", "enchantscrollequipment")
+                )
+        );
 
-        EnchantingScrollItem.types.add(new EnchantingScrollItem.EnchantScrollType("area", 200, (enchantment) -> {
-            return areaItemEnchantments.contains(enchantment.getID());
-        }, (random) -> {
-            return random.getOneOf(areaItemEnchantments.stream().map(EnchantmentRegistry::getEnchantment).filter(Objects::nonNull).filter((e) -> {
-                return e.getEnchantCostMod() >= 1.0F;
-            }).toArray(ItemEnchantment[]::new));
-        }, (enchantment) -> {
-            return new LocalMessage("itemtooltip", "enchantingscrollareatip", "enchantment", enchantment.getLocalization());
-        }, (enchantment) -> {
-            return new LocalMessage("ui", "enchantscrollequipment");
-        }));
+        EnchantingScrollItem.types.add(
+                new EnchantingScrollItem.EnchantScrollType("area", 200,
+                        (enchantment) -> areaItemEnchantments.contains(enchantment.getID()),
+                        (random) -> random.getOneOf(areaItemEnchantments.stream()
+                                .map(EnchantmentRegistry::getEnchantment)
+                                .filter(Objects::nonNull)
+                                .filter((e) -> e.getEnchantCostMod() >= 1.0F)
+                                .toArray(ItemEnchantment[]::new)),
+                        (enchantment) -> new LocalMessage("itemtooltip", "enchantingscrollareatip", "enchantment", enchantment.getLocalization()),
+                        (enchantment) -> new LocalMessage("ui", "enchantscrollequipment")
+                )
+        );
 
-        EnchantingScrollItem.types.add(new EnchantingScrollItem.EnchantScrollType("dagger", 200, (enchantment) -> {
-            return daggerItemEnchantments.contains(enchantment.getID());
-        }, (random) -> {
-            return random.getOneOf(daggerItemEnchantments.stream().map(EnchantmentRegistry::getEnchantment).filter(Objects::nonNull).filter((e) -> {
-                return e.getEnchantCostMod() >= 1.0F;
-            }).toArray(ItemEnchantment[]::new));
-        }, (enchantment) -> {
-            return new LocalMessage("itemtooltip", "enchantingscrolldaggertip", "enchantment", enchantment.getLocalization());
-        }, (enchantment) -> {
-            return new LocalMessage("ui", "enchantscrollequipment");
-        }));
+        EnchantingScrollItem.types.add(
+                new EnchantingScrollItem.EnchantScrollType("dagger", 200,
+                        (enchantment) -> daggerItemEnchantments.contains(enchantment.getID()),
+                        (random) -> random.getOneOf(daggerItemEnchantments.stream()
+                                .map(EnchantmentRegistry::getEnchantment)
+                                .filter(Objects::nonNull)
+                                .filter((e) -> e.getEnchantCostMod() >= 1.0F)
+                                .toArray(ItemEnchantment[]::new)),
+                        (enchantment) -> new LocalMessage("itemtooltip", "enchantingscrolldaggertip", "enchantment", enchantment.getLocalization()),
+                        (enchantment) -> new LocalMessage("ui", "enchantscrollequipment")
+                )
+        );
 
 
     }

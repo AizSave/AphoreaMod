@@ -1,10 +1,17 @@
 package aphorea.registry;
 
+import necesse.entity.mobs.hostile.*;
+import necesse.entity.mobs.hostile.bosses.*;
+import necesse.entity.mobs.hostile.pirates.PirateCaptainMob;
 import necesse.inventory.lootTable.LootTable;
+import necesse.inventory.lootTable.LootTablePresets;
+import necesse.inventory.lootTable.lootItem.ChanceLootItem;
 import necesse.inventory.lootTable.lootItem.LootItem;
 import necesse.inventory.lootTable.lootItem.LootItemList;
 import necesse.inventory.lootTable.lootItem.RotationLootItem;
 import necesse.inventory.lootTable.presets.CaveChestLootTable;
+import necesse.inventory.lootTable.presets.DeepCaveChestLootTable;
+import necesse.inventory.lootTable.presets.DeepCaveRuinsLootTable;
 
 public class AphLootTables {
     public static LootTable infectedFieldsSurface = new LootTable();
@@ -41,4 +48,145 @@ public class AphLootTables {
         );
     }
 
+    public static void modifyLootTables() {
+        LootTablePresets.startChest.items.addAll(
+                new LootItemList(
+                        new LootItem("sling", 1),
+                        new LootItem("basicbackpack", 1),
+                        new LootItem("rusticrunesinjector", 1)
+                )
+        );
+
+        LootTablePresets.caveCryptCoffin.items.add(
+                new LootItemList(
+                        new ChanceLootItem(0.1f, "bloodyperiapt"),
+                        new ChanceLootItem(0.05f, "onyxrune")
+                )
+        );
+
+        LootTablePresets.snowCaveChest.items.add(
+                new ChanceLootItem(0.05f, "frozenperiapt")
+        );
+
+        LootTablePresets.surfaceRuinsChest.items.addAll(
+                new LootItemList(
+                        new ChanceLootItem(0.05f, "blowgun"),
+                        new ChanceLootItem(0.05f, "sling")
+                )
+        );
+
+        LootTablePresets.basicCaveChest.items.addAll(
+                new LootItemList(
+                        new ChanceLootItem(0.05f, "blowgun"),
+                        new ChanceLootItem(0.05f, "sling")
+                )
+        );
+
+        LootTablePresets.hunterChest.items.addAll(
+                new LootItemList(
+                        new ChanceLootItem(0.05f, "blowgun"),
+                        new ChanceLootItem(0.05f, "sling")
+                )
+        );
+
+        LootTablePresets.dungeonChest.items.addAll(
+                new LootItemList(
+                        new ChanceLootItem(0.1f, "runeofthunder"),
+                        new ChanceLootItem(0.05f, "heartring")
+                )
+        );
+
+        LootTablePresets.fishianBarrel.items.add(
+                new ChanceLootItem(0.25f, "tidalrune")
+        );
+
+        DeepCaveChestLootTable.extraItems.items.add(
+                new ChanceLootItem(0.02f, "abyssalrune")
+        );
+
+        DeepCaveRuinsLootTable.extraItems.items.add(
+                new ChanceLootItem(0.005f, "abyssalrune")
+        );
+
+        // Mobs loot
+
+        DeepCaveSpiritMob.lootTable.items.add(
+                new ChanceLootItem(0.05F, "runeofshadows")
+        );
+
+        FishianHookWarriorMob.lootTable.items.add(
+                new ChanceLootItem(0.01F, "tidalrune")
+        );
+
+        FishianHealerMob.lootTable.items.add(
+                new ChanceLootItem(0.01F, "tidalrune")
+        );
+
+        FishianShamanMob.lootTable.items.add(
+                new ChanceLootItem(0.01F, "tidalrune")
+        );
+
+        TrenchcoatGoblinHelmetMob.lootTable = new LootTable(
+                GoblinMob.lootTable,
+                new ChanceLootItem(0.4F, "frenzyrune")
+        );
+
+        VampireMob.lootTable.items.add(
+                new ChanceLootItem(0.01f, "onyxrune")
+        );
+
+        // Bosses loot
+
+        EvilsProtectorMob.privateLootTable.items.add(
+                new LootItem("runeofevilsprotector")
+        );
+
+        QueenSpiderMob.privateLootTable.items.add(
+                new LootItem("runeofqueenspider")
+        );
+
+        VoidWizard.privateLootTable.items.add(
+                new LootItem("runeofvoidwizard")
+        );
+
+        SwampGuardianHead.privateLootTable.items.add(
+                new LootItem("runeofswampguardian")
+        );
+
+        AncientVultureMob.privateLootTable.items.add(
+                new LootItem("runeofancientvulture")
+        );
+
+        PirateCaptainMob.privateLootTable.items.add(
+                new LootItem("runeofpiratecaptain")
+        );
+
+        ReaperMob.privateLootTable.items.add(
+                new LootItem("runeofreaper")
+        );
+
+        CryoQueenMob.privateLootTable.items.add(
+                new LootItem("runeofcryoqueen")
+        );
+
+        PestWardenHead.privateLootTable.items.add(
+                new LootItem("runeofpestwarden")
+        );
+
+        FlyingSpiritsHead.privateLootTable.items.add(
+                new LootItem("runeofsageandgrit")
+        );
+
+        FallenWizardMob.privateLootTable.items.add(
+                new LootItem("runeoffallenwizard")
+        );
+
+        MotherSlimeMob.privateLootTable.items.add(
+                new LootItem("runeofmotherslime")
+        );
+
+        SpiderEmpressMob.privateLootTable.items.add(
+                new LootItem("runeofspiderempress")
+        );
+    }
 }

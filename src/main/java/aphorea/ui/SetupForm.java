@@ -1,17 +1,18 @@
 package aphorea.ui;
 
 import necesse.engine.modLoader.annotations.ModMethodPatch;
-import necesse.engine.window.GameWindow;
 import necesse.gfx.forms.MainGameFormManager;
 import net.bytebuddy.asm.Advice;
 
-@ModMethodPatch(target = MainGameFormManager.class, name = "onWindowResized", arguments = {GameWindow.class})
-public class OnWindowResized {
+@ModMethodPatch(target = MainGameFormManager.class, name = "setup", arguments = {})
+public class SetupForm {
     @Advice.OnMethodExit
     static void onExit(@Advice.This MainGameFormManager mainGameFormManager) {
         for (AphCustomUI manager : AphCustomUIList.list.values()) {
+            manager.mainGameFormManager = mainGameFormManager;
+            manager.startForm();
             if(manager.form != null) {
-                manager.onWindowResized();
+                manager.setupForm();
             }
         }
     }

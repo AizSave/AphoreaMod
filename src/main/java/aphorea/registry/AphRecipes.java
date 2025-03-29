@@ -129,6 +129,12 @@ public class AphRecipes {
     public static void DemonicWorkstation() {
         Tech tech = RecipeTechRegistry.DEMONIC_WORKSTATION;
 
+        addCraftingList("mysteriousportal", tech,
+                AphCraftingRecipe.showAfter("unstablecore", 1,
+                        new Ingredient("unstablegel", 4),
+                        new Ingredient("gelball", 4)
+                )
+        );
         addCraftingList("chainshirt", tech,
                 AphCraftingRecipe.showAfter("bloodyperiapt", 1,
                         new Ingredient("voidshard", 10),
@@ -180,6 +186,14 @@ public class AphRecipes {
                         new Ingredient("ancientfossilbar", 3)
                 )
         );
+
+        addCraftingList("lifeelixir", tech,
+                AphCraftingRecipe.showBefore("lifespinel", 1,
+                        new Ingredient("spinel", 6),
+                        new Ingredient("stardust", 2)
+                )
+        );
+
     }
 
     public static void IronAnvil() {
@@ -387,14 +401,6 @@ public class AphRecipes {
                         new Ingredient("voidshard", 5)
                 )
         );
-
-        addCraftingList("voidbullet", tech,
-                AphCraftingRecipe.showAfter("spambullet", 50,
-                        new Ingredient("spinel", 1),
-                        new Ingredient("rockygel", 5)
-                )
-        );
-
     }
 
     public static void TungstenAnvil() {
@@ -418,6 +424,13 @@ public class AphRecipes {
                 AphCraftingRecipe.showAfter("tungstendagger", 1,
                         new Ingredient("tungstenbar", 4),
                         new Ingredient("anylog", 1)
+                )
+        );
+
+        addCraftingList("voidbullet", tech,
+                AphCraftingRecipe.showAfter("spambullet", 50,
+                        new Ingredient("spinel", 1),
+                        new Ingredient("rockygel", 5)
                 )
         );
     }

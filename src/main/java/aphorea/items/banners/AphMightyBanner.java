@@ -14,66 +14,31 @@ import necesse.entity.mobs.buffs.staticBuffs.Buff;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.miscItem.BannerItem;
-import necesse.level.maps.Level;
 
 import java.util.function.Function;
 
-public class AphBanner extends BannerItem {
-    private final int abilityTicks;
-    private float abilityCountTimer;
-    public int baseEffect;
+public class AphMightyBanner extends BannerItem {
+    public float baseEffect;
     public String[] extraToolTips;
 
-    public AphBanner(Rarity rarity, int range, Function<Mob, Buff> buff, int abilityTicks, int baseEffect, String... extraToolTips) {
+    public AphMightyBanner(Rarity rarity, int range, Function<Mob, Buff> buff, float baseEffect, String... extraToolTips) {
         super(rarity, range, buff);
-        this.abilityTicks = abilityTicks;
         this.baseEffect = baseEffect;
         this.extraToolTips = extraToolTips;
-    }
-
-    public AphBanner(Rarity rarity, int range, Function<Mob, Buff> buff, int baseEffect, String... extraToolTips) {
-        this(rarity, range, buff, 0, baseEffect, extraToolTips);
-    }
-
-    public AphBanner(Rarity rarity, int range, Function<Mob, Buff> buff, int abilityTicks) {
-        this(rarity, range, buff, abilityTicks, 0);
-    }
-
-    public int getAbilityTicks() {
-        return abilityTicks;
-    }
-
-    public float getAbilityTicks(Mob mob) {
-        float bannerAbilitySpeed = mob.buffManager.getModifier(AphModifiers.BANNER_ABILITY_SPEED);
-        return abilityTicks / bannerAbilitySpeed;
-    }
-
-    public float getAbilityCountTimer() {
-        return abilityCountTimer;
-    }
-
-    public float setAbilityCountTimer(float percent) {
-        abilityCountTimer = getAbilityTicks() * percent;
-        return abilityCountTimer;
-    }
-
-    public float setAbilityCountTimer(Mob mob, float percent) {
-        abilityCountTimer = getAbilityTicks(mob) * percent;
-        return abilityCountTimer;
     }
 
     @Override
     public ListGameTooltips getTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {
         ListGameTooltips tooltips = super.getTooltips(item, perspective, blackboard);
         addToolTips(tooltips, perspective);
-        tooltips.add(Localization.translate("global", "aphorea"));
+        tooltips.add(Localization.translate("global", "aphoreamightybanner"));
         return tooltips;
     }
 
     public void addToolTips(ListGameTooltips tooltips, PlayerMob perspective) {
         float bannerEffect = baseEffect * (perspective == null ? AphModifiers.BANNER_EFFECT.defaultBuffManagerValue : perspective.buffManager.getModifier(AphModifiers.BANNER_EFFECT));
         for (String extraToolTip : extraToolTips) {
-            tooltips.add(Localization.translate("itemtooltip", extraToolTip, "effect", String.format("%.0f", bannerEffect)));
+            tooltips.add(Localization.translate("itemtooltip", extraToolTip, "effect",  String.format("%.0f", bannerEffect), "effectfloat", bannerEffect));
         }
     }
 
@@ -90,14 +55,6 @@ public class AphBanner extends BannerItem {
         player.getLevel().entityManager.mobs.streamInRegionsInRange(player.x, player.y, getPlayerRange()).filter((m) -> !m.removed()).filter((m) -> this.shouldBuffMob(item, player, m)).filter((m) -> GameMath.diagonalMoveDistance(player.getX(), player.getY(), m.getX(), m.getY()) <= (double) getPlayerRange()).forEach((m) -> {
             this.applyBuffs(m, player);
         });
-
-        if (player.isServer() && abilityTicks != 0) {
-            abilityCountTimer++;
-            if (abilityCountTimer > getAbilityTicks(player)) {
-                runServerAbility(player.getLevel(), item, player);
-                abilityCountTimer = 0;
-            }
-        }
     }
 
     @Override
@@ -135,9 +92,6 @@ public class AphBanner extends BannerItem {
 
     public void addBuff(Buff buff, Mob mob, PlayerMob player, boolean forceOverride) {
         mob.buffManager.addBuff(new ActiveBuff(buff, mob, 100, player), false, forceOverride);
-    }
-
-    public void runServerAbility(Level level, InventoryItem item, PlayerMob player) {
     }
 
     public int getPlayerRange() {

@@ -300,6 +300,11 @@ public class UnstableGelSlime extends FlyingBossMob {
         if (buff.buff != AphBuffs.STICKY) super.addBuff(buff, sendUpdatePacket);
     }
 
+    @Override
+    public void spawnDamageText(int damage, int size, boolean isCrit) {
+        if(!buffManager.hasBuff("immortal")) super.spawnDamageText(damage, size, isCrit);
+    }
+
     public static class UnstableGelSlimeAI<T extends UnstableGelSlime> extends SelectorAINode<T> {
         static GameDamage collisionAttackDamage = new GameDamage(50);
         static int collisionAttackKnockback = 300;
@@ -346,8 +351,8 @@ public class UnstableGelSlime extends FlyingBossMob {
                         if (mob.getWorldEntity().isNight()) {
                             mob.remove();
 
-                            PacketChatMessage menssage = new PacketChatMessage(Localization.translate("message", "unstablegelslime_night"));
-                            GameUtils.streamServerClients(mob.getLevel()).forEach((j) -> j.sendPacket(menssage));
+                            PacketChatMessage message = new PacketChatMessage(Localization.translate("message", "unstablegelslime_night"));
+                            GameUtils.streamServerClients(mob.getLevel()).forEach((j) -> j.sendPacket(message));
 
                             return AINodeResult.SUCCESS;
                         } else {

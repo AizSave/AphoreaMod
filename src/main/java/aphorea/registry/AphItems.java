@@ -1,5 +1,6 @@
 package aphorea.registry;
 
+import aphorea.AphDependencies;
 import aphorea.items.ammo.GelArrowItem;
 import aphorea.items.ammo.SpamBullet;
 import aphorea.items.ammo.UnstableGelArrowItem;
@@ -86,6 +87,9 @@ public class AphItems {
 
         // Runes
         registerRunes();
+
+        // Other mods
+        registerMightyBannerItems();
     }
 
     public static void registerMaterials() {
@@ -98,7 +102,7 @@ public class AphItems {
 
     public static void registerTools() {
         // Pickaxes Tooltips
-        replaceItem("ivypickaxe", new CustomPickaxeToolItem(450, 125, 1.5F, 18, 50, 50, 700), 100.0F);
+        replaceItem("ivypickaxe", new CustomPickaxeToolItem(450, 125, 1.5F, 18, 50, 50, 700), 100.0F); // TOOL TIER CHANGE
 
         // Melee Weapons
         registerItem("woodenrod", new WoodenRod());
@@ -130,7 +134,7 @@ public class AphItems {
         registerItem("gelgreatbow", new GelGreatbow());
         registerItem("unstablegelgreatbow", new UnstableGelGreatbow());
         registerItem("thespammer", new TheSpammer(), 200F);
-        registerItem("shotgunsaber", new ShotgunSaber());
+        registerItem("shotgunsaber", new ShotgunSaber(), 200F);
 
         // Magic Weapons
         registerItem("unstablegelstaff", new UnstableGelStaff());
@@ -158,10 +162,10 @@ public class AphItems {
         // Banners
         registerItem("blankbanner", new BlankBannerItem());
         replaceItem("strikebanner", new AphStrikeBannerItem(), 50F); // REWORKED
-        replaceItem("bannerofdamage", new AphBannerOfDamageItem(), 200F); // REWORKED
-        replaceItem("bannerofdefense", new AphBannerOfDefenseItem(), 200F); // REWORKED
-        replaceItem("bannerofspeed", new AphBannerOfSpeedItem(), 200F); // REWORKED
-        replaceItem("bannerofsummonspeed", new AphBannerOfSummonSpeedItem(), 200F); // REWORKED
+        replaceItem("bannerofdamage", new AphBanner(Item.Rarity.COMMON, 480, (m) -> AphBuffs.BANNER.DAMAGE, 15, "bannerofdamageeffect"), 200F); // REWORKED
+        replaceItem("bannerofdefense", new AphBanner(Item.Rarity.COMMON, 480, (m) -> AphBuffs.BANNER.DEFENSE, 10, "bannerofdefenseeffect"), 200F); // REWORKED
+        replaceItem("bannerofspeed", new AphBanner(Item.Rarity.COMMON, 480, (m) -> AphBuffs.BANNER.SPEED, 30, "bannerofspeedeffect"), 200F); // REWORKED
+        replaceItem("bannerofsummonspeed", new AphBanner(Item.Rarity.COMMON, 480, (m) -> AphBuffs.BANNER.SUMMON_SPEED, 75, "bannerofsummonspeedeffect"), 200F); // REWORKED
 
         // Ammo
         registerItem("gelarrow", new GelArrowItem(), 0.4F);
@@ -214,7 +218,7 @@ public class AphItems {
         registerItem("lowdspotion", new LowdsPotion());
 
         // Permanent Buffs
-        registerItem("lifespinel", new LifeSpinel(), 30F);
+        registerItem("lifespinel", new LifeSpinel(), 50F);
 
         // Others
         registerItem("initialrune", new InitialRune(), 0F);
@@ -301,6 +305,28 @@ public class AphItems {
 
         // Modifier Runes Tier 3
         registerItem("ascendantrune", new AphModifierRune(Item.Rarity.EPIC, 0), 300F);
+    }
+
+    public static void registerMightyBannerItems() {
+        if(AphDependencies.checkMightyBanner()) {
+            replaceItem("banner_of_fishing", new AphMightyBanner(Item.Rarity.COMMON, 480, (m) -> AphBuffs.MIGHTY_BANNER.FISHING, 20, "banneroffishingeffect"), 200F); // REWORKED
+            replaceItem("banner_of_greater_fishing", new AphMightyBanner(Item.Rarity.RARE, 480, (m) -> AphBuffs.MIGHTY_BANNER.FISHING_GREATER, 30, "banneroffishingeffect")); // REWORKED
+
+            replaceItem("banner_of_health_regen", new AphMightyBanner(Item.Rarity.COMMON, 480, (m) -> AphBuffs.MIGHTY_BANNER.HEALTH_REGEN, 0.5F, "bannerofhealthregeneffect"), 200F); // REWORKED
+            replaceItem("banner_of_greater_health_regen", new AphMightyBanner(Item.Rarity.RARE, 480, (m) -> AphBuffs.MIGHTY_BANNER.HEALTH_REGEN_GREATER, 1F, "bannerofhealthregeneffect")); // REWORKED
+
+            replaceItem("banner_of_mana_regen", new AphMightyBanner(Item.Rarity.COMMON, 480, (m) -> AphBuffs.MIGHTY_BANNER.MANA_REGEN, 200, "bannerofmanaregeneffect"), 200F); // REWORKED
+            replaceItem("banner_of_greater_mana_regen", new AphMightyBanner(Item.Rarity.RARE, 480, (m) -> AphBuffs.MIGHTY_BANNER.MANA_REGEN_GREATER, 400, "bannerofmanaregeneffect")); // REWORKED
+
+            replaceItem("banner_of_resistance", new AphMightyBanner(Item.Rarity.COMMON, 480, (m) -> AphBuffs.MIGHTY_BANNER.RESISTANCE, 8, "bannerofresistanceeffect"), 200F); // REWORKED
+            replaceItem("banner_of_greater_resistance", new AphMightyBanner(Item.Rarity.RARE, 480, (m) -> AphBuffs.MIGHTY_BANNER.RESISTANCE_GREATER, 12, "bannerofresistanceeffect")); // REWORKED
+
+            replaceItem("banner_of_summoning", new AphMightyBanner(Item.Rarity.COMMON, 480, (m) -> AphBuffs.MIGHTY_BANNER.SUMMONING, 1, "bannerofsummoningeffect"), 200F); // REWORKED
+            replaceItem("banner_of_greater_summoning", new AphMightyBanner(Item.Rarity.RARE, 480, (m) -> AphBuffs.MIGHTY_BANNER.SUMMONING_GREATER, 2, "bannerofsummoningeffect")); // REWORKED
+
+            replaceItem("banner_of_attack_speed", new AphMightyBanner(Item.Rarity.COMMON, 480, (m) -> AphBuffs.MIGHTY_BANNER.ATTACK_SPEED, 15, "bannerofattackspeedeffect"), 200F); // REWORKED
+            replaceItem("banner_of_greater_attack_speed", new AphMightyBanner(Item.Rarity.RARE, 480, (m) -> AphBuffs.MIGHTY_BANNER.ATTACK_SPEED_GREATER, 20, "bannerofattackspeedeffect")); // REWORKED
+        }
     }
 
     private static void registerItem(String stringID, Item item, float brokerValue, boolean isObtainable) {

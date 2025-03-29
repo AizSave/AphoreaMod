@@ -48,10 +48,10 @@ abstract public class AphSaberToolItem extends AphGreatswordToolItem implements 
         this.dashRange = new IntUpgradeValue(200, 0.0F);
         this.dashRange.setBaseValue(200);
 
-        this.attackRange.setBaseValue(60);
+        this.attackRange.setBaseValue(45);
 
-        attackXOffset = 10;
-        attackYOffset = 10;
+        attackXOffset = 6;
+        attackYOffset = 6;
 
         this.keyWords.add("saber");
     }

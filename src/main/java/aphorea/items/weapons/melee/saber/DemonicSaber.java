@@ -14,6 +14,8 @@ public class DemonicSaber extends AphSaberToolItem {
         attackDamage.setBaseValue(20)
                 .setUpgradedValue(1, 120);
         knockback.setBaseValue(150);
+
+        this.attackRange.setBaseValue(60);
     }
 
     @Override

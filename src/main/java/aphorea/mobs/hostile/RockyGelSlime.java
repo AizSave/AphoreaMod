@@ -3,6 +3,7 @@ package aphorea.mobs.hostile;
 import aphorea.AphoreaMod;
 import aphorea.projectiles.mob.RockyGelSlimeLootProjectile;
 import aphorea.projectiles.mob.RockyGelSlimeProjectile;
+import aphorea.registry.AphBiomes;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.server.Server;
 import necesse.engine.network.server.ServerClient;
@@ -64,7 +65,7 @@ public class RockyGelSlime extends HostileMob {
         super.init();
         ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 12 * 32, collision_damage, collision_knockback, 40000));
 
-        if (this.getLevel().biome == AphoreaMod.INFECTED_FIELDS) {
+        if (this.getLevel().biome == AphBiomes.INFECTED_FIELDS) {
             this.setSpeed(this.getSpeed() * 1.4F);
         }
     }
@@ -158,7 +159,7 @@ public class RockyGelSlime extends HostileMob {
     public void throwRock(int targetX, int targetY, boolean dropRockyGel) {
         Projectile projectile;
         float speed = GameRandom.globalRandom.getFloatBetween(40F, 50F);
-        GameDamage damage = this.getLevel().biome == AphoreaMod.INFECTED_FIELDS ? rock_damage_if : rock_damage;
+        GameDamage damage = this.getLevel().biome == AphBiomes.INFECTED_FIELDS ? rock_damage_if : rock_damage;
 
         if (dropRockyGel) {
             projectile = new RockyGelSlimeLootProjectile(this, this.x, this.y, targetX, targetY, speed, 640, damage, rock_knockback);

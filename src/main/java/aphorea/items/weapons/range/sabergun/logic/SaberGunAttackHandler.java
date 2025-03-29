@@ -1,7 +1,7 @@
 package aphorea.items.weapons.range.sabergun.logic;
 
 import aphorea.items.weapons.range.sabergun.AphSaberGunToolItem;
-import aphorea.ui.AphCustomUI;
+import aphorea.ui.AphCustomUIList;
 import aphorea.utils.AphColors;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
@@ -61,9 +61,9 @@ public class SaberGunAttackHandler extends MousePositionAttackHandler {
         showItem.getGndData().setBoolean("charging", true);
         showItem.getGndData().setFloat("chargePercent", chargePercent);
 
-        if(attackerMob.isClient() && attackerMob.isPlayer && AphCustomUI.attackTrackManager.form.isHidden()) {
-            AphCustomUI.attackTrackManager.form.setHidden(false);
-            AphCustomUI.attackTrackManager.chargeTime = this.chargeTime;
+        if(attackerMob.isClient() && attackerMob.isPlayer && AphCustomUIList.attackTrackManager.form.isHidden()) {
+            AphCustomUIList.attackTrackManager.form.setHidden(false);
+            AphCustomUIList.attackTrackManager.chargeTime = this.chargeTime;
         }
 
         this.attackerMob.showAttackAndSendAttacker(showItem, this.lastX, this.lastY, 0, this.seed);
@@ -107,7 +107,7 @@ public class SaberGunAttackHandler extends MousePositionAttackHandler {
     }
 
     public void onEndAttack(boolean bySelf) {
-        AphCustomUI.attackTrackManager.form.setHidden(true);
+        AphCustomUIList.attackTrackManager.form.setHidden(true);
         float chargePercent = this.getChargePercent();
         if (!this.endedByInteract && chargePercent >= 0.75F) {
             if (this.attackerMob.isPlayer) {

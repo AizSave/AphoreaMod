@@ -21,8 +21,8 @@ public class AdrenalineCharmBuff extends TrinketBuff {
 
     public ListGameTooltips getTrinketTooltip(TrinketItem trinketItem, InventoryItem item, PlayerMob perspective) {
         ListGameTooltips tooltips = super.getTrinketTooltip(trinketItem, item, perspective);
-        tooltips.add(Localization.translate("itemtooltip", "adrenalinecharm"));
-        tooltips.add(Localization.translate("itemtooltip", "adrenalinechar2"));
+        tooltips.add(Localization.translate("itemtooltip", "adrenalinecharm", "damage", "5", "armor", "-5"));
+        tooltips.add(Localization.translate("itemtooltip", "adrenalinecharm2"));
         return tooltips;
     }
 
@@ -36,7 +36,7 @@ public class AdrenalineCharmBuff extends TrinketBuff {
         @Override
         public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {
             buff.addModifier(BuffModifiers.ALL_DAMAGE, 0.05F);
-            buff.addModifier(BuffModifiers.ARMOR, -0.1F);
+            buff.addModifier(BuffModifiers.ARMOR, -0.05F);
         }
 
         @Override

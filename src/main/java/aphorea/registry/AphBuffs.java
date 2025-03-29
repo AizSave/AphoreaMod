@@ -1,5 +1,6 @@
 package aphorea.registry;
 
+import aphorea.AphDependencies;
 import aphorea.buffs.*;
 import aphorea.buffs.Banners.*;
 import aphorea.buffs.Runes.AphBaseRuneActiveBuff;
@@ -7,6 +8,7 @@ import aphorea.buffs.Runes.AphBaseRuneTrinketBuff;
 import aphorea.buffs.Runes.AphModifierRuneTrinketBuff;
 import aphorea.buffs.SetBonus.*;
 import aphorea.buffs.Trinkets.AdrenalineCharmBuff;
+import aphorea.buffs.Trinkets.BannerBearerFociBuff;
 import aphorea.buffs.Trinkets.Healing.*;
 import aphorea.buffs.Trinkets.Periapts.*;
 import aphorea.buffs.TrinketsActive.BloodyPeriaptActiveBuff;
@@ -107,7 +109,6 @@ public class AphBuffs {
         public static AphBannerBuff DEFENSE;
         public static AphBannerBuff SPEED;
         public static AphBannerBuff SUMMON_SPEED;
-
     }
 
     public static void registerCore() {
@@ -169,10 +170,12 @@ public class AphBuffs {
         // Banner Buffs
         BuffRegistry.registerBuff("blankbanner", BANNER.BLANK = new BlankBannerBuff());
         BuffRegistry.registerBuff("strikebanner", BANNER.STRIKE = new AphStrikeBannerBuff());
-        BuffRegistry.registerBuff("aph_bannerofdamage", BANNER.DAMAGE = new AphBannerOfDamage());
-        BuffRegistry.registerBuff("aph_bannerofdefense", BANNER.DEFENSE = new AphBannerOfDefense());
-        BuffRegistry.registerBuff("aph_bannerofspeed", BANNER.SPEED = new AphBannerOfSpeed());
-        BuffRegistry.registerBuff("aph_bannerofsummonspeed", BANNER.SUMMON_SPEED = new AphBannerOfSummonSpeed());
+        BuffRegistry.registerBuff("aph_bannerofdamage", BANNER.DAMAGE = AphBasicBannerBuff.floatModifier(BuffModifiers.ALL_DAMAGE, 0.15F));
+        BuffRegistry.registerBuff("aph_bannerofdefense", BANNER.DEFENSE = AphBasicBannerBuff.floatModifier((value, effect) -> Math.max(0.5F, 1F - effect * value), 1, BuffModifiers.INCOMING_DAMAGE_MOD, 0.1F));
+        BuffRegistry.registerBuff("aph_bannerofspeed", BANNER.SPEED = AphBasicBannerBuff.floatModifier(BuffModifiers.SPEED, 0.3F));
+        BuffRegistry.registerBuff("aph_bannerofsummonspeed", BANNER.SUMMON_SPEED = AphBasicBannerBuff.floatModifier(BuffModifiers.SUMMONS_SPEED, 0.75F));
+
+        registerMightyBannerItems();
 
         // Potion Buffs
         BuffRegistry.registerBuff("lowdspoison", new LowdsPoisonBuff());
@@ -193,7 +196,8 @@ public class AphBuffs {
         BuffRegistry.registerBuff("cursedmedallion", new CursedMedallionBuff());
         BuffRegistry.registerBuff("ancientmedallion", new AncientMedallionBuff());
         BuffRegistry.registerBuff("healingessence", new HealingEssenceBuff());
-        BuffRegistry.registerBuff("ninjascarf", new TrinketBuff() { @Override public void init(ActiveBuff activeBuff, BuffEventSubscriber buffEventSubscriber) {} });
+        BuffRegistry.registerBuff("ninjascarf", new SimpleTrinketBuff("ninjascarf"));
+        BuffRegistry.registerBuff("bannerbearerfoci", new BannerBearerFociBuff());
         BuffRegistry.registerBuff("adrenalinecharm", new AdrenalineCharmBuff());
         BuffRegistry.registerBuff("adrenalinecharmcharge", new AdrenalineCharmBuff.AdrenalineCharmChargeBuff());
         BuffRegistry.registerBuff("test1", new SimpleTrinketBuff("test1", new ModifierValue<>(BuffModifiers.MAX_SUMMONS, 2), new ModifierValue<>(BuffModifiers.SUMMONS_SPEED, -0.2F), new ModifierValue<>(BuffModifiers.SUMMON_DAMAGE, -0.2F)));
@@ -223,9 +227,6 @@ public class AphBuffs {
         tier1ModifierRunes();
         tier2ModifierRunes();
         tier3ModifierRunes();
-
-        // In Development
-        BuffRegistry.registerBuff("bannerbearerfoci", new SimpleTrinketBuff(new String[]{"bannerbearerfoci1", "bannerbearerfoci2"}, new ModifierValue<>(AphModifiers.MAGIC_HEALING_RECEIVED, 0.3F)));
 
     }
 
@@ -1185,4 +1186,46 @@ public class AphBuffs {
         );
     }
 
+    public static class MIGHTY_BANNER {
+        public static AphBannerBuff FISHING;
+        public static AphBannerBuff FISHING_GREATER;
+
+        public static AphBannerBuff HEALTH_REGEN;
+        public static AphBannerBuff HEALTH_REGEN_GREATER;
+
+        public static AphBannerBuff MANA_REGEN;
+        public static AphBannerBuff MANA_REGEN_GREATER;
+
+        public static AphBannerBuff RESISTANCE;
+        public static AphBannerBuff RESISTANCE_GREATER;
+
+        public static AphBannerBuff SUMMONING;
+        public static AphBannerBuff SUMMONING_GREATER;
+
+        public static AphBannerBuff ATTACK_SPEED;
+        public static AphBannerBuff ATTACK_SPEED_GREATER;
+    }
+
+    public static void registerMightyBannerItems() {
+        if(AphDependencies.checkMightyBanner()) {
+            BuffRegistry.registerBuff("aph_banneroffishing_normal", MIGHTY_BANNER.FISHING = AphBasicBannerBuff.intModifier(BuffModifiers.FISHING_POWER, 20));
+            BuffRegistry.registerBuff("aph_banneroffishing_greater", MIGHTY_BANNER.FISHING_GREATER = AphBasicBannerBuff.intModifier(BuffModifiers.FISHING_POWER, 30));
+
+            BuffRegistry.registerBuff("aph_bannerofhealthregen_normal", MIGHTY_BANNER.HEALTH_REGEN = AphBasicBannerBuff.floatModifier(BuffModifiers.COMBAT_HEALTH_REGEN_FLAT, 0.5F));
+            BuffRegistry.registerBuff("aph_bannerofhealthregen_greater", MIGHTY_BANNER.HEALTH_REGEN_GREATER = AphBasicBannerBuff.floatModifier(BuffModifiers.COMBAT_HEALTH_REGEN_FLAT, 1F));
+
+            BuffRegistry.registerBuff("aph_bannerofmanaregen_normal", MIGHTY_BANNER.MANA_REGEN = AphBasicBannerBuff.floatModifier(BuffModifiers.COMBAT_MANA_REGEN, 2F));
+            BuffRegistry.registerBuff("aph_bannerofmanaregen_greater", MIGHTY_BANNER.MANA_REGEN_GREATER = AphBasicBannerBuff.floatModifier(BuffModifiers.COMBAT_MANA_REGEN, 4F));
+
+            BuffRegistry.registerBuff("aph_bannerofresistance_normal", MIGHTY_BANNER.RESISTANCE = AphBasicBannerBuff.intModifier(BuffModifiers.ARMOR_FLAT, 8));
+            BuffRegistry.registerBuff("aph_bannerofresistance_greater", MIGHTY_BANNER.RESISTANCE_GREATER = AphBasicBannerBuff.intModifier(BuffModifiers.ARMOR_FLAT, 12));
+
+            BuffRegistry.registerBuff("aph_bannerofsummoning_normal", MIGHTY_BANNER.SUMMONING = AphBasicBannerBuff.intModifier(BuffModifiers.MAX_SUMMONS, 1));
+            BuffRegistry.registerBuff("aph_bannerofsummoning_greater", MIGHTY_BANNER.SUMMONING_GREATER = AphBasicBannerBuff.intModifier(BuffModifiers.MAX_SUMMONS, 2));
+
+            BuffRegistry.registerBuff("aph_bannerofattackspeed_normal", MIGHTY_BANNER.ATTACK_SPEED = AphBasicBannerBuff.floatModifier(BuffModifiers.ATTACK_SPEED, 0.15F));
+            BuffRegistry.registerBuff("aph_bannerofattackspeed_greater", MIGHTY_BANNER.ATTACK_SPEED_GREATER = AphBasicBannerBuff.floatModifier(BuffModifiers.ATTACK_SPEED, 0.20F));
+
+        }
+    }
 }

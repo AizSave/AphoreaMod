@@ -2,13 +2,14 @@ package aphorea.methodpatches;
 
 import necesse.engine.modLoader.annotations.ModMethodPatch;
 import necesse.engine.network.PacketReader;
+import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.entity.mobs.PlayerMob;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.placeableItem.tileItem.TileItem;
 import necesse.level.maps.Level;
 import net.bytebuddy.asm.Advice;
 
-@ModMethodPatch(target = TileItem.class, name = "canPlace", arguments = {Level.class, int.class, int.class, PlayerMob.class, InventoryItem.class, PacketReader.class})
+@ModMethodPatch(target = TileItem.class, name = "canPlace", arguments = {Level.class, int.class, int.class, PlayerMob.class, InventoryItem.class, GNDItemMap.class})
 public class CanPlaceTile {
 
     @Advice.OnMethodExit

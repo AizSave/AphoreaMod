@@ -34,6 +34,7 @@ public class BlankBannerItem extends AphBanner {
         level.getServer().network.sendToClientsAtEntireLevel(new AphSingleAreaShowPacket(player.x, player.y, range, color, 0.5F), level);
     }
 
+    @Override
     public DrawOptions getStandDrawOptions(Level level, int tileX, int tileY, int drawX, int drawY, GameLight light) {
         int anim = GameUtils.getAnim(level.getWorldEntity().getTime() + (tileX * 97L) + (tileY * 151L), 5, 800);
         int xOffset = -30;
