@@ -2,7 +2,6 @@ package aphorea.mobs.hostile;
 
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.registries.MobRegistry;
-import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.*;
 import necesse.entity.mobs.ai.behaviourTree.BehaviourTreeAI;
 import necesse.entity.mobs.ai.behaviourTree.trees.CollisionPlayerChaserWandererAI;
@@ -10,49 +9,42 @@ import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.hostile.HostileMob;
 import necesse.entity.particle.FleshParticle;
 import necesse.entity.particle.Particle;
-import necesse.entity.pickup.ItemPickupEntity;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawOptions.texture.TextureDrawOptions;
 import necesse.gfx.drawOptions.texture.TextureDrawOptionsEnd;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.lootTable.LootTable;
-import necesse.inventory.lootTable.lootItem.ChanceLootItem;
-import necesse.inventory.lootTable.lootItem.OneOfTicketLootItems;
+import necesse.inventory.lootTable.lootItem.LootItem;
 import necesse.level.maps.Level;
 import necesse.level.maps.TilePosition;
 import necesse.level.maps.light.GameLight;
 
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
-public class SpinelCaveling extends HostileMob {
-    public static GameDamage collision_damage = new GameDamage(30);
+public class TungstenCaveling extends HostileMob {
+    public static GameDamage collision_damage = new GameDamage(50, 0.5F);
     public static int collision_knockback = 50;
 
-    public static LootTable lootTable = new LootTable(
-            new OneOfTicketLootItems(
-                    19, new ChanceLootItem(0.2F, "spinel"),
-                    1, new ChanceLootItem(0.2F, "lifespinel")
-            )
-    );
+    public static LootTable lootTable = new LootTable(LootItem.between("tungstenore", 1, 3));
     public static HumanTexture texture;
     public InventoryItem item;
 
-    public SpinelCaveling() {
-        super(80);
-        this.setArmor(10);
-        this.setSpeed(60);
-        this.setFriction(3.0F);
+    public TungstenCaveling() {
+        super(250);
+        this.setArmor(20);
+        this.setSpeed(40);
+        this.setFriction(4.0F);
+        this.setKnockbackModifier(0.0F);
+
         this.collision = new Rectangle(-10, -7, 20, 14);
         this.hitBox = new Rectangle(-12, -14, 24, 24);
         this.selectBox = new Rectangle(-16, -40, 32, 50);
         this.swimMaskMove = 12;
         this.swimMaskOffset = 4;
         this.swimSinkOffset = 0;
-        this.item = new InventoryItem("spinel", 0);
+        this.item = new InventoryItem("tungstenore", 1);
     }
 
     @Override
@@ -64,25 +56,12 @@ public class SpinelCaveling extends HostileMob {
     public void init() {
         super.init();
         ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 12 * 32, collision_damage, collision_knockback, 40000));
-        ArrayList<InventoryItem> items = lootTable.getNewList(new GameRandom(this.getUniqueID()), 1F);
-        if(!items.isEmpty()) {
-            this.item = items.get(0);
-        }
-        dropsLoot = false;
     }
 
     @Override
     public void spawnDeathParticles(float knockbackX, float knockbackY) {
         for (int i = 0; i < 6; ++i) {
             this.getLevel().entityManager.addParticle(new FleshParticle(this.getLevel(), texture.body, i, 8, 32, this.x, this.y, 20.0F, knockbackX, knockbackY), Particle.GType.IMPORTANT_COSMETIC);
-        }
-    }
-
-    @Override
-    protected void onDeath(Attacker attacker, HashSet<Attacker> attackers) {
-        super.onDeath(attacker, attackers);
-        if(item.getAmount() > 0) {
-            getLevel().entityManager.pickups.add(new ItemPickupEntity(getLevel(), item, x, y, 0, 0));
         }
     }
 
@@ -115,9 +94,7 @@ public class SpinelCaveling extends HostileMob {
                 bodyOptions.draw();
                 swimMask.stop();
 
-                if(item.getAmount() > 0) {
-                    itemOptions.draw();
-                }
+                itemOptions.draw();
 
                 swimMask.use();
                 leftArmOptions.draw();
@@ -127,7 +104,6 @@ public class SpinelCaveling extends HostileMob {
         TextureDrawOptions shadow = MobRegistry.Textures.caveling_shadow.initDraw().sprite(sprite.x, sprite.y, 64).light(light).pos(drawX, drawY);
         tileList.add((tm) -> shadow.draw());
     }
-
     @Override
     public int getRockSpeed() {
         return 10;

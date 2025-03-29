@@ -4,7 +4,6 @@ import aphorea.objects.*;
 import aphorea.utils.AphColors;
 import necesse.engine.registries.ObjectRegistry;
 import necesse.level.gameObject.RockObject;
-import necesse.level.gameObject.RockOreObject;
 import necesse.level.gameObject.SingleRockObject;
 import necesse.level.gameObject.furniture.StorageBoxInventoryObject;
 
@@ -52,6 +51,6 @@ public class AphObjects {
         ObjectRegistry.registerObject("gelrock", gelRock = new RockyWallObject("gelrock", AphColors.rock, "rockygel", 0, 1, 1), -1.0F, true);
         gelRock.toolTier = 1.5F;
         SingleRockObject.registerSurfaceRock(gelRock, "surfacegelrock", AphColors.rock_light, 1, 2, 1, -1.0F, true);
-        ObjectRegistry.registerObject("tungstenoregelrock", new RockOreObject(gelRock, "oremask", "tungstenore", new Color(40, 49, 57), "tungstenore"), -1.0F, true);
+        ObjectRegistry.registerObject("tungstenoregelrock", new TungstenGelRockOreObject(gelRock, "oremask", "tungstenore", new Color(40, 49, 57)), -1.0F, true);
     }
 }

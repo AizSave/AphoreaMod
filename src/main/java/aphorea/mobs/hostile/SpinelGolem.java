@@ -115,6 +115,7 @@ public class SpinelGolem extends HostileMob {
         });
     }
 
+    @Override
     public PathDoorOption getPathDoorOption() {
         if (this.getLevel() != null) {
             return this.buffManager.getModifier(BuffModifiers.CAN_BREAK_OBJECTS) ? this.getLevel().regionManager.CAN_BREAK_OBJECTS_OPTIONS : this.getLevel().regionManager.CAN_OPEN_DOORS_OPTIONS;
@@ -123,15 +124,18 @@ public class SpinelGolem extends HostileMob {
         }
     }
 
+    @Override
     public void init() {
         super.init();
         this.ai = new BehaviourTreeAI<>(this, new SpinelGolem.CrystalGolemAI<>(544, 320, this.isSummoned ? 960 : 384));
     }
 
+    @Override
     public float getAttackingMovementModifier() {
         return 0.0F;
     }
 
+    @Override
     public void tickMovement(float delta) {
         super.tickMovement(delta);
         if (!this.isServer()) {
@@ -162,11 +166,13 @@ public class SpinelGolem extends HostileMob {
 
     }
 
+    @Override
     public void clientTick() {
         super.clientTick();
         this.tickShooting();
     }
 
+    @Override
     public void serverTick() {
         super.serverTick();
         this.tickShooting();
@@ -229,6 +235,7 @@ public class SpinelGolem extends HostileMob {
 
     }
 
+    @Override
     public void spawnDeathParticles(float knockbackX, float knockbackY) {
         for (int i = 0; i < 4; ++i) {
             this.getLevel().entityManager.addParticle(new FleshParticle(this.getLevel(), MobRegistry.Textures.crystalGolem, GameRandom.globalRandom.nextInt(5), 8, 32, this.x, this.y, 20.0F, knockbackX, knockbackY), Particle.GType.IMPORTANT_COSMETIC);
@@ -236,6 +243,7 @@ public class SpinelGolem extends HostileMob {
 
     }
 
+    @Override
     public void addDrawables(List<MobDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, Level level, int x, int y, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
         super.addDrawables(list, tileList, topList, level, x, y, tickManager, camera, perspective);
         GameLight light = level.getLightLevel(x / 32, y / 32);
@@ -261,6 +269,7 @@ public class SpinelGolem extends HostileMob {
         this.addShadowDrawables(tileList, x, y, light, camera);
     }
 
+    @Override
     public void dispose() {
         super.dispose();
         if (this.warningBeam != null) {

@@ -45,6 +45,7 @@ public class GelSlime extends AphDayHostileMob {
 
     public static AphWorldData worldData = new AphWorldData();
 
+    @Override
     public boolean isValidSpawnLocation(Server server, ServerClient client, int targetX, int targetY) {
         if (client == null) {
             return false;

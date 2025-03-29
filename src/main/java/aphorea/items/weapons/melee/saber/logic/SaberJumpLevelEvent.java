@@ -91,12 +91,12 @@ public class SaberJumpLevelEvent extends MobAbilityLevelEvent {
     public void tickMovement(float delta) {
         super.tickMovement(delta);
         if (this.owner != null && !this.owner.removed()) {
-            int timeProgress = (int)Math.min(this.getTime() - this.startTime, this.animTime);
+            int timeProgress = (int) Math.min(this.getTime() - this.startTime, this.animTime);
             if (this.lastProcessTime < timeProgress) {
-                double lastPercentToMove = this.getMoveCurve((double)this.lastProcessTime / (double)this.animTime);
-                double nextPercentToMove = this.getMoveCurve((double)timeProgress / (double)this.animTime);
+                double lastPercentToMove = this.getMoveCurve((double) this.lastProcessTime / (double) this.animTime);
+                double nextPercentToMove = this.getMoveCurve((double) timeProgress / (double) this.animTime);
                 double percentToMove = nextPercentToMove - lastPercentToMove;
-                float fullDistanceToMove = (float)((double)this.distance * percentToMove);
+                float fullDistanceToMove = (float) ((double) this.distance * percentToMove);
                 this.setOwnerPos(this.owner.x + this.dirX * fullDistanceToMove, this.owner.y + this.dirY * fullDistanceToMove);
 
                 this.lastProcessTime = timeProgress;
@@ -122,19 +122,28 @@ public class SaberJumpLevelEvent extends MobAbilityLevelEvent {
     }
 
     boolean alreadyArea = false;
+
     public void over() {
         super.over();
         if (this.hudDrawElement != null) {
             this.hudDrawElement.remove();
         }
-        if(!alreadyArea) {
+        if (!alreadyArea) {
             alreadyArea = true;
             new AphAreaList(
                     new AphArea(100, new Color(0, 0, 0)).setDamageArea(damage.damage)
             ).setDamageType(damage.type).execute(this.owner);
         }
 
-        if(owner.getLevel().isSolidTile(owner.getX() / 32, owner.getY() / 32) && !owner.getLevel().isSolidTile((int) (initialX / 32), (int) (initialY / 32))) {
+        int tileX = (int) (initialX / 32);
+        int tileY = (int) (initialY / 32);
+        if (owner.getLevel().isSolidTile(owner.getX() / 32, owner.getY() / 32) &&
+                !owner.getLevel().isSolidTile(tileX, tileY) &&
+                !owner.getLevel().isSolidTile(tileX, tileY + 1) &&
+                !owner.getLevel().isSolidTile(tileX, tileY - 1) &&
+                !owner.getLevel().isSolidTile(tileX + 1, tileY) &&
+                !owner.getLevel().isSolidTile(tileX - 1, tileY)
+        ) {
             setOwnerPos(initialX, initialY);
         }
 

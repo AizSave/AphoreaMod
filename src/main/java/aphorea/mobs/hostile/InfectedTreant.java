@@ -82,6 +82,7 @@ public class InfectedTreant extends HostileMob {
         return collisionDamage;
     }
 
+    @Override
     public void init() {
         super.init();
         this.ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 6 * 32, collisionDamage, 0, 40000 * 20));
@@ -109,6 +110,7 @@ public class InfectedTreant extends HostileMob {
         }
     }
 
+    @Override
     public LootTable getLootTable() {
         return lootTable;
     }
@@ -121,12 +123,14 @@ public class InfectedTreant extends HostileMob {
         return super.onMouseHover(camera, perspective, debug);
     }
 
+    @Override
     protected void addHoverTooltips(ListGameTooltips tooltips, boolean debug) {
         if (this.getHealthPercent() != 1 && this.canTakeDamage() && this.getMaxHealth() > 1) {
             tooltips.add(this.getDisplayName() + " " + this.getHealth() + "/" + this.getMaxHealth());
         }
     }
 
+    @Override
     public void addDrawables(List<MobDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, Level level, int x, int y, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
         super.addDrawables(list, tileList, topList, level, x, y, tickManager, camera, perspective);
         GameLight light = level.getLightLevel(x / 32, y / 32);
@@ -246,6 +250,7 @@ public class InfectedTreant extends HostileMob {
         }
     }
 
+    @Override
     public boolean shouldDrawOnMap() {
         return true;
     }

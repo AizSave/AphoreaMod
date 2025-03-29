@@ -66,8 +66,10 @@ public class AphResources {
                 InfectedTreant.leavesTexture = null;
             }
         }
+
         SpinelGolem.texture = GameTexture.fromFile("mobs/spinelgolem");
         SpinelCaveling.texture = new HumanTexture(GameTexture.fromFile("mobs/spinelcaveling"), GameTexture.fromFile("mobs/spinelcavelingarms_front"), GameTexture.fromFile("mobs/spinelcavelingarms_back"));;
+        TungstenCaveling.texture = new HumanTexture(GameTexture.fromFile("mobs/tungstencaveling"), GameTexture.fromFile("mobs/tungstencavelingarms_front"), GameTexture.fromFile("mobs/tungstencavelingarms_back"));;
 
         SpinelMimic.texture = GameTexture.fromFile("mobs/spinelmimic");
         SpinelMimic.texture_shadow = GameTexture.fromFile("mobs/spinelmimic_shadow");

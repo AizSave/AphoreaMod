@@ -63,11 +63,13 @@ public class SpinelMimic extends HostileMob {
         return collisionDamage;
     }
 
+    @Override
     public void init() {
         super.init();
         this.ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 6 * 32, collisionDamage, 0, 40000 * 20));
     }
 
+    @Override
     public LootTable getLootTable() {
         return lootTable;
     }
@@ -84,6 +86,7 @@ public class SpinelMimic extends HostileMob {
         }
     }
 
+    @Override
     public void addDrawables(List<MobDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, Level level, int x, int y, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
         super.addDrawables(list, tileList, topList, level, x, y, tickManager, camera, perspective);
         GameLight light = level.getLightLevel(x / 32, y / 32);
