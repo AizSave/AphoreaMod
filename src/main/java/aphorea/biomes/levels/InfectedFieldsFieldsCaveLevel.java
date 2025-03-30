@@ -15,7 +15,6 @@ import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.level.gameObject.GameObject;
 import necesse.level.gameTile.GameTile;
 import necesse.level.maps.biomes.Biome;
-import necesse.level.maps.biomes.forest.ForestDeepCaveLevel;
 import necesse.level.maps.generationModules.*;
 import necesse.level.maps.presets.PresetUtils;
 

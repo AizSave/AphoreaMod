@@ -12,7 +12,6 @@ import java.awt.*;
 public class AphObjects {
     public static void registerCore() {
         ObjectRegistry.registerObject("witchstatue", new WitchStatue(), -1.0F, true);
-        ObjectRegistry.registerObject("spinelclustersmall", new SpinelClusterSmallObject("spinelcluster_small", AphColors.spinel, 337.0F), -1.0F, true);
         ObjectRegistry.registerObject("fakespinelchest", new FakeSpinelChest(), -1.0F, true);
         ObjectRegistry.registerObject("spinelchest", new StorageBoxInventoryObject("spinelchest", 40, AphColors.spinel), 20.0F, true);
 
@@ -44,6 +43,7 @@ public class AphObjects {
 
     public static void caveObjects() {
         SpinelClusterObject.registerCrystalCluster("spinelcluster", "spinelcluster", AphColors.spinel, 337.0F, -1.0F, true);
+        ObjectRegistry.registerObject("spinelclustersmall", new SpinelClusterSmallObject("spinelcluster_small", AphColors.spinel, 337.0F), -1.0F, true);
     }
 
     public static void gelRock() {

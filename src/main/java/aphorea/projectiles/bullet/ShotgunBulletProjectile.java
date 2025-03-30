@@ -23,6 +23,7 @@ import java.awt.*;
 import java.util.List;
 
 public class ShotgunBulletProjectile extends BulletProjectile {
+    public float armorPenPercent;
     public int spriteX;
     public static Color[] trailColors = new Color[] {
             new Color(98, 104, 113),
@@ -32,25 +33,28 @@ public class ShotgunBulletProjectile extends BulletProjectile {
     @Override
     public void setupSpawnPacket(PacketWriter writer) {
         super.setupSpawnPacket(writer);
+        writer.putNextFloat(armorPenPercent);
         writer.putNextByte((byte) spriteX);
     }
 
     @Override
     public void applySpawnPacket(PacketReader reader) {
         super.applySpawnPacket(reader);
+        armorPenPercent = reader.getNextFloat();
         spriteX = reader.getNextByte();
     }
 
     public ShotgunBulletProjectile() {
     }
 
-    public ShotgunBulletProjectile(float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, int knockback, Mob owner, int spriteX) {
+    public ShotgunBulletProjectile(float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, float armorPenPercent, int knockback, Mob owner, int spriteX) {
         super(x, y, targetX, targetY, speed, distance, damage, knockback, owner);
+        this.armorPenPercent = armorPenPercent;
         this.spriteX = spriteX;
     }
 
-    public ShotgunBulletProjectile(float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, int knockback, Mob owner) {
-        this(x, y, targetX, targetY, speed, distance, damage, knockback, owner, 0);
+    public ShotgunBulletProjectile(float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, float armorPenPercent, int knockback, Mob owner) {
+        this(x, y, targetX, targetY, speed, distance, damage, armorPenPercent, knockback, owner, 0);
     }
 
     public void init() {
@@ -88,6 +92,11 @@ public class ShotgunBulletProjectile extends BulletProjectile {
                 options.draw();
             }
         });
+    }
+
+    @Override
+    public void applyDamage(Mob mob, float x, float y) {
+        mob.isServerHit(this.getDamage().setArmorPen(mob.getArmor() * armorPenPercent), mob.x - x * -this.dx * 50.0F, mob.y - y * -this.dy * 50.0F, (float)this.knockback, this);
     }
 
 }

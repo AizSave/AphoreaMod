@@ -1,6 +1,5 @@
 package aphorea.registry;
 
-import aphorea.AphoreaMod;
 import aphorea.journal.AphJournalChallenges;
 import necesse.engine.journal.JournalEntry;
 import necesse.engine.registries.JournalRegistry;

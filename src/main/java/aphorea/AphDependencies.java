@@ -2,7 +2,6 @@ package aphorea;
 
 import necesse.engine.modLoader.ModLoader;
 import necesse.engine.modLoader.ModNextListData;
-import necesse.engine.modLoader.annotations.ModEntry;
 
 public class AphDependencies {
     public static String APHOREA_MOD_ID = "aphoreateam.aphoreamod";

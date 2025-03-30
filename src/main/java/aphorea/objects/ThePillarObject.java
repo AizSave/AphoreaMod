@@ -118,7 +118,7 @@ public class ThePillarObject extends StaticMultiObject {
         ObjectEntity objectEntity = this.getCurrentObjectEntity(level, tileX - multiX, tileY - multiY);
         if(objectEntity instanceof ThePillarObjectEntity) {
             ThePillarObjectEntity pillarObjectEntity = (ThePillarObjectEntity) objectEntity;
-            return pillarObjectEntity.getMob() == null ? 4 : (int) Math.ceil(pillarObjectEntity.getMob().getHealthPercent() / 0.2F) - 1;
+            return pillarObjectEntity.getMob() == null ? 4 : pillarObjectEntity.getMob().getParts();
         }
         return 4;
     }
@@ -221,8 +221,8 @@ public class ThePillarObject extends StaticMultiObject {
             }
 
             boolean noPlayersNearby = this.getLevel().entityManager.players
-                    .streamArea(getMobX(), getMobY(), ThePillarMob.SEARCH_PLAYERS_DISTANCE)
-                    .noneMatch(p -> p.getDistance(getMobX(), getMobY()) < ThePillarMob.SEARCH_PLAYERS_DISTANCE);
+                    .streamArea(getMobX(), getMobY(), ThePillarMob.BOSS_AREA_RADIUS)
+                    .noneMatch(p -> p.getDistance(getMobX(), getMobY()) < ThePillarMob.BOSS_AREA_RADIUS);
 
             if (noPlayersNearby) {
                 if (getMob().getHealthPercent() == 1) {

@@ -24,7 +24,7 @@ import java.awt.*;
 import java.util.List;
 
 public class TungstenCaveling extends HostileMob {
-    public static GameDamage collision_damage = new GameDamage(50, 0.5F);
+    public static GameDamage collision_damage = new GameDamage(50, 20);
     public static int collision_knockback = 50;
 
     public static LootTable lootTable = new LootTable(LootItem.between("tungstenore", 1, 3));

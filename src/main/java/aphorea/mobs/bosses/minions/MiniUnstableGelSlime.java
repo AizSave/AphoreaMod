@@ -1,4 +1,4 @@
-package aphorea.mobs.bosses;
+package aphorea.mobs.bosses.minions;
 
 import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;

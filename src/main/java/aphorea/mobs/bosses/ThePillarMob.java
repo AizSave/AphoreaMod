@@ -1,5 +1,7 @@
 package aphorea.mobs.bosses;
 
+import aphorea.levelevents.thepillar.ThePillarFallingCrystalAttackEvent;
+import aphorea.mobs.bosses.minions.HearthCrystalMob;
 import aphorea.objects.ThePillarEntranceObject;
 import aphorea.objects.ThePillarObject;
 import aphorea.packets.AphRemoveObjectEntity;
@@ -12,12 +14,26 @@ import necesse.engine.localization.message.LocalMessage;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
 import necesse.engine.network.client.Client;
+import necesse.engine.registries.MobRegistry;
 import necesse.engine.registries.MusicRegistry;
+import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
+import necesse.engine.util.GameRandom;
+import necesse.engine.util.gameAreaSearch.GameAreaStream;
 import necesse.entity.mobs.*;
+import necesse.entity.mobs.ai.behaviourTree.AINode;
+import necesse.entity.mobs.ai.behaviourTree.AINodeResult;
+import necesse.entity.mobs.ai.behaviourTree.BehaviourTreeAI;
+import necesse.entity.mobs.ai.behaviourTree.Blackboard;
+import necesse.entity.mobs.ai.behaviourTree.composites.SelectorAINode;
+import necesse.entity.mobs.ai.behaviourTree.util.FlyingAIMover;
+import necesse.entity.mobs.ai.behaviourTree.util.TargetFinderDistance;
 import necesse.entity.mobs.buffs.staticBuffs.BossNearbyBuff;
 import necesse.entity.mobs.hostile.bosses.BossMob;
 import necesse.entity.objectEntity.ObjectEntity;
+import necesse.entity.particle.Particle;
+import necesse.entity.particle.SmokePuffParticle;
+import necesse.gfx.GameResources;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameTexture;
@@ -28,16 +44,17 @@ import necesse.level.maps.IncursionLevel;
 import necesse.level.maps.Level;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 
 public class ThePillarMob extends BossMob {
-    public static int SEARCH_PLAYERS_DISTANCE = 1024;
+    public static int BOSS_AREA_RADIUS = 1024;
     private static final AphAreaList searchArea = new AphAreaList(
-            new AphArea(SEARCH_PLAYERS_DISTANCE, AphColors.spinel)
+            new AphArea(BOSS_AREA_RADIUS, AphColors.spinel)
     );
-    public static MaxHealthGetter MAX_HEALTH = new MaxHealthGetter(5000, 7500, 10000, 12500, 15000);
+    public static MaxHealthGetter MAX_HEALTH = new MaxHealthGetter(2500, 4000, 5500, 7000, 9500);
     private int aliveTimer;
     public static GameTexture icon;
 
@@ -171,9 +188,9 @@ public class ThePillarMob extends BossMob {
         int y = this.getTileY() - 1;
 
         GameObject object = this.getLevel().getObject(x, y);
-        if(object != null) {
+        if (object != null) {
             ObjectEntity objectEntity = object.getCurrentObjectEntity(getLevel(), x, y);
-            if(objectEntity instanceof ThePillarObject.ThePillarObjectEntity) {
+            if (objectEntity instanceof ThePillarObject.ThePillarObjectEntity) {
                 objectEntity.remove();
                 getServer().network.sendToClientsAtEntireLevel(new AphRemoveObjectEntity(x, y), getLevel());
 
@@ -197,4 +214,247 @@ public class ThePillarMob extends BossMob {
         }
 
     }
+
+    public int getParts() {
+        return (int) Math.ceil(this.getHealthPercent() / 0.2F) - 1;
+    }
+
+    public int projectileRate() {
+        return getParts() + 3;
+    }
+
+    public boolean hearthCrystalClose() {
+        return getLevel().entityManager.mobs.stream().anyMatch(m -> Objects.equals(m.getStringID(), "hearthcrystal") && m.getDistance(this) < BOSS_AREA_RADIUS);
+    }
+
+    @Override
+    protected void doBeforeHitLogic(MobBeforeHitEvent event) {
+        if(hearthCrystalClose()) {
+            event.damage = event.damage.setDamage(event.damage.damage / 2);
+        }
+        super.doBeforeHitLogic(event);
+    }
+
+    @Override
+    public void init() {
+        super.init();
+
+        SoundManager.playSound(GameResources.roar, SoundEffect.effect(this)
+                .volume(0.7f)
+                .pitch(GameRandom.globalRandom.getFloatBetween(1.0f, 1.1f)));
+
+        ai = new BehaviourTreeAI<>(this, new ThePillarAI<>(), new FlyingAIMover());
+    }
+
+    public static class ThePillarAI<T extends ThePillarMob> extends SelectorAINode<T> {
+        static GameDamage projectileDamage = new GameDamage(20, 20);
+
+        public ArrayList<PillarActionAiNode> stages = new ArrayList<>();
+        public int stagesUntilNow = 0;
+        public int currentStage = 0;
+        public int currentStageTick = 0;
+        public int currentStageTickDuration = 6000 / 50;
+        public boolean dragonSummoned = false;
+
+        public ThePillarAI() {
+            this.addChild(
+                    new AINode<T>() {
+
+                        @Override protected void onRootSet(AINode<T> aiNode, T mob, Blackboard<T> blackboard) {}
+
+                        @Override public void init(T mob, Blackboard<T> blackboard) {}
+
+                        @Override
+                        public AINodeResult tick(T mob, Blackboard<T> blackboard) {
+                            if(mob.hearthCrystalClose() && mob.isServer() && currentStageTick % 20 == 0) {
+                                mob.setHealth((int) (mob.getHealth() + mob.getMaxHealth() * 0.002F * streamPossibleTargets(mob).count() - 1));
+                            }
+                            if(!dragonSummoned && mob.getHealthPercent() < 0.5F) {
+                                dragonSummoned = true;
+                            }
+                            return AINodeResult.FAILURE;
+                        }
+                    }
+            );
+            this.addChild(
+                    new PillarActionAiNode() {
+                        @Override
+                        public void doTickAction(T mob, int time, int duration, float progress, Blackboard<T> blackboard) {
+                            if(time % (50 * mob.projectileRate()) == 0) summonRandomCrystal(mob);
+                        }
+
+                        @Override
+                        public int getStageDuration(T mob) {
+                            return 5000;
+                        }
+                    }
+            );
+            this.addChild(
+                    new PillarActionAiNode() {
+                        @Override
+                        public void doTickAction(T mob, int time, int duration, float progress, Blackboard<T> blackboard) {
+                            if(time % (100 * mob.projectileRate()) == 0) summonCrystalToAllTargets(mob, GameRandom.globalRandom.getFloatBetween(0F, 2F), 80);
+                        }
+
+                        @Override
+                        public int getStageDuration(T mob) {
+                            return 5000;
+                        }
+                    }
+            );
+            this.addChild(
+                    new PillarActionAiNode() {
+                        @Override
+                        public void doTickAction(T mob, int time, int duration, float progress, Blackboard<T> blackboard) {
+                            int health = 50 + (int) (50 * streamPossibleTargets(mob).count());
+                            boolean clockWise = GameRandom.globalRandom.getChance(0.5F);
+                            float angle = GameRandom.globalRandom.getFloatBetween(0, (float) (Math.PI * 2));
+                            summonHearthCrystalMoved(mob, 0.15F, angle, health, 0, 0.15F, 0.5F, clockWise);
+                            summonHearthCrystalMoved(mob, 0.15F, angle + (float) Math.PI * 2 / 3, health, 0, 0.15F, 0.5F, clockWise);
+                            summonHearthCrystalMoved(mob, 0.15F, angle + (float) Math.PI * 4 / 3, health, 0, 0.15F, 0.5F, clockWise);
+                        }
+
+                        @Override
+                        public int getStageDuration(T mob) {
+                            return 50;
+                        }
+                    }
+            );
+        }
+
+        public static int[] projectileStages = new int[] {0, 1};
+        public static int hearthPilarStage = 2;
+
+        public void selectNextStage(T mob) {
+            stagesUntilNow++;
+
+            int selected;
+            if(stagesUntilNow == 5 || stagesUntilNow % 10 == 0) {
+                selected = hearthPilarStage;
+            } else {
+                selected = selectProjectileStage();
+            }
+
+            currentStage = selected;
+            currentStageTick = 0;
+            currentStageTickDuration = stages.get(currentStage).getStageDuration(mob) / 50;
+        }
+
+        public int selectProjectileStage() {
+            int selected;
+            do {
+                selected = GameRandom.globalRandom.getIntBetween(0, projectileStages.length - 1);
+            } while (selected == currentStage);
+            return selected;
+        }
+
+        abstract public class PillarActionAiNode extends AINode<T> {
+            public final int stageNumber;
+
+            public PillarActionAiNode() {
+                this.stageNumber = stages.size();
+                stages.add(this);
+            }
+
+            @Override
+            protected void onRootSet(AINode<T> aiNode, T t, Blackboard<T> blackboard) {
+
+            }
+
+            @Override
+            public void init(T t, Blackboard<T> blackboard) {
+
+            }
+
+            @Override
+            public AINodeResult tick(T mob, Blackboard<T> blackboard) {
+                if (currentStage != stageNumber) {
+                    return AINodeResult.FAILURE;
+                } else if(currentStageTickDuration <= currentStageTick) {
+                    selectNextStage(mob);
+                    return AINodeResult.SUCCESS;
+                } else {
+                    currentStageTick++;
+                    doTickAction(mob, currentStageTick * 50, currentStageTickDuration * 50, (float) currentStageTick / currentStageTickDuration, blackboard);
+                    if(currentStageTickDuration <= currentStageTick) {
+                        selectNextStage(mob);
+                    }
+                    return AINodeResult.SUCCESS;
+                }
+            }
+
+            abstract public void doTickAction(T mob, int time, int duration, float progress, Blackboard<T> blackboard);
+
+            abstract public int getStageDuration(T mob);
+        }
+
+        public Mob getRandomTarget(T mob) {
+            ArrayList<Mob> list = new ArrayList<>();
+            streamPossibleTargets(mob).forEach(list::add);
+            return GameRandom.globalRandom.getOneOf(list);
+        }
+
+        public GameAreaStream<Mob> streamPossibleTargets(T mob) {
+            return new TargetFinderDistance<>(BOSS_AREA_RADIUS).streamPlayersInRange(new Point((int) mob.x, (int) mob.y), mob).filter((m) -> m != null && !m.removed() && (m.isHuman && m.getTeam() != -1 || m.isPlayer)).map((m) -> m);
+        }
+
+        public void summonCrystalToAllTargets(T mob, float prediction, int imprecision) {
+            streamPossibleTargets(mob).forEach(target -> summonCrystalToTarget(mob, target, target.dx * prediction, target.dy * prediction, imprecision));
+        }
+
+        public void summonCrystalAroundAllTargets(T mob, float prediction, int imprecision, float angle, float distance) {
+            streamPossibleTargets(mob).forEach(target -> summonCrystalToTarget(mob, target, target.dx * prediction + (float) Math.cos(angle) * distance, target.dy * prediction + (float) Math.sin(angle) * distance, imprecision));
+        }
+
+        public void summonCrystalToTarget(T mob, Mob target, float extraX, float extraY, int imprecision) {
+            summonFallingCrystal(mob, target.x + extraX, target.y + extraY, imprecision);
+        }
+
+        public void summonRandomCrystal(T mob) {
+            summonRandomCrystalBetweenDistances(mob, 0, 1);
+        }
+
+        public void summonRandomCrystalBetweenDistances(T mob, float minDistance, float maxDistance) {
+            summonRandomCrystalAtDistance(mob, minDistance + GameRandom.globalRandom.getFloatBetween(0, maxDistance - minDistance));
+        }
+
+        public void summonRandomCrystalAtDistance(T mob, float distance) {
+            float angle = GameRandom.globalRandom.getFloatBetween(0, (float) (Math.PI * 2));
+            int targetX = (int) (mob.x + Math.cos(angle) * BOSS_AREA_RADIUS * distance);
+            int targetY = (int) (mob.y + Math.sin(angle) * BOSS_AREA_RADIUS * distance);
+            summonFallingCrystal(mob, targetX, targetY);
+        }
+
+        public void summonFallingCrystal(T mob, float targetX, float targetY, int imprecision) {
+            summonFallingCrystal(mob, GameRandom.globalRandom.getFloatOffset(targetX, imprecision), GameRandom.globalRandom.getFloatOffset(targetY, imprecision));
+        }
+
+        public void summonFallingCrystal(T mob, float targetX, float targetY) {
+            if (mob.getDistance(targetX, targetY) <= BOSS_AREA_RADIUS) {
+                mob.getLevel().entityManager.addLevelEvent(new ThePillarFallingCrystalAttackEvent(mob, (int) targetX, (int) targetY, GameRandom.globalRandom, projectileDamage));
+            }
+        }
+
+        public void summonHearthCrystalCenter(T mob, int health, float angleOffset, float radius, float constantTime, boolean clockWise) {
+            if(mob.isServer()) {
+                HearthCrystalMob hearthCrystalMob = (HearthCrystalMob) MobRegistry.getMob("hearthcrystal", mob.getLevel());
+                hearthCrystalMob.setMaxHealth(health);
+                hearthCrystalMob.setHealth(health);
+                hearthCrystalMob.setCircularMovement(mob.getX(), mob.getY(), angleOffset, (float) BOSS_AREA_RADIUS * radius, constantTime, clockWise);
+                mob.getLevel().entityManager.addMob(hearthCrystalMob, mob.x, mob.y);
+            }
+        }
+
+        public void summonHearthCrystalMoved(T mob, float distanceFromCenter, float distanceAngle, int health, float angleOffset, float radius, float constantTime, boolean clockWise) {
+            if(mob.isServer()) {
+                HearthCrystalMob hearthCrystalMob = (HearthCrystalMob) MobRegistry.getMob("hearthcrystal", mob.getLevel());
+                hearthCrystalMob.setMaxHealth(health);
+                hearthCrystalMob.setHealth(health);
+                hearthCrystalMob.setCircularMovement(mob.getX() + (int) (BOSS_AREA_RADIUS * distanceFromCenter * Math.cos(distanceAngle)), mob.getY() + (int) (BOSS_AREA_RADIUS * distanceFromCenter * Math.sin(distanceAngle)), angleOffset, (float) BOSS_AREA_RADIUS * radius, constantTime, clockWise);
+                mob.getLevel().entityManager.addMob(hearthCrystalMob, mob.x, mob.y);
+            }
+        }
+
+    }
+
 }

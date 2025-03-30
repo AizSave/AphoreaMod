@@ -11,6 +11,7 @@ import necesse.entity.levelEvent.mobAbilityLevelEvent.MobAbilityLevelEvent;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.MobHitCooldowns;
+import necesse.level.maps.Level;
 import necesse.level.maps.hudManager.HudDrawElement;
 
 import java.awt.*;
@@ -44,10 +45,12 @@ public class SaberJumpLevelEvent extends MobAbilityLevelEvent {
         this.damage = damage;
     }
 
+    @Override
     public boolean isNetworkImportant() {
         return true;
     }
 
+    @Override
     public void setupSpawnPacket(PacketWriter writer) {
         super.setupSpawnPacket(writer);
         writer.putNextFloat(this.initialX);
@@ -67,6 +70,7 @@ public class SaberJumpLevelEvent extends MobAbilityLevelEvent {
 
     }
 
+    @Override
     public void applySpawnPacket(PacketReader reader) {
         super.applySpawnPacket(reader);
         this.initialX = reader.getNextFloat();
@@ -83,11 +87,13 @@ public class SaberJumpLevelEvent extends MobAbilityLevelEvent {
 
     }
 
+    @Override
     public void init() {
         super.init();
         this.hitCooldowns = new MobHitCooldowns();
     }
 
+    @Override
     public void tickMovement(float delta) {
         super.tickMovement(delta);
         if (this.owner != null && !this.owner.removed()) {
@@ -123,27 +129,37 @@ public class SaberJumpLevelEvent extends MobAbilityLevelEvent {
 
     boolean alreadyArea = false;
 
+    private static final int[][] NEIGHBOR_OFFSETS = {
+            {0, 0}, {1, 0}, {-1, 0}, {0, 1}, {0, -1}
+    };
+
+    private boolean checkNeighborTiles(Level level, int tileX, int tileY) {
+        for (int[] offset : NEIGHBOR_OFFSETS) {
+            if (!level.isSolidTile(tileX + offset[0], tileY + offset[1])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
     public void over() {
         super.over();
+
         if (this.hudDrawElement != null) {
             this.hudDrawElement.remove();
         }
+
         if (!alreadyArea) {
             alreadyArea = true;
-            new AphAreaList(
-                    new AphArea(100, new Color(0, 0, 0)).setDamageArea(damage.damage)
-            ).setDamageType(damage.type).execute(this.owner);
+            AphArea area = new AphArea(100, new Color(0, 0, 0))
+                    .setDamageArea(damage.damage);
+            new AphAreaList(area)
+                    .setDamageType(damage.type)
+                    .execute(this.owner);
         }
 
-        int tileX = (int) (initialX / 32);
-        int tileY = (int) (initialY / 32);
-        if (owner.getLevel().isSolidTile(owner.getX() / 32, owner.getY() / 32) &&
-                !owner.getLevel().isSolidTile(tileX, tileY) &&
-                !owner.getLevel().isSolidTile(tileX, tileY + 1) &&
-                !owner.getLevel().isSolidTile(tileX, tileY - 1) &&
-                !owner.getLevel().isSolidTile(tileX + 1, tileY) &&
-                !owner.getLevel().isSolidTile(tileX - 1, tileY)
-        ) {
+        if (!checkNeighborTiles(level, (int) (initialX / 32), (int) (initialY / 32)) && checkNeighborTiles(owner.getLevel(), owner.getX() / 32, owner.getY() / 32)) {
             setOwnerPos(initialX, initialY);
         }
 

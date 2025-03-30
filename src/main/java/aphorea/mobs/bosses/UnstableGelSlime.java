@@ -1,5 +1,6 @@
 package aphorea.mobs.bosses;
 
+import aphorea.mobs.bosses.minions.MiniUnstableGelSlime;
 import aphorea.projectiles.mob.MiniUnstableGelSlimeProjectile;
 import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;

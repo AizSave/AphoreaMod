@@ -4,6 +4,7 @@ import aphorea.items.weapons.melee.greatsword.logic.GreatswordDashLevelEvent;
 import aphorea.items.weapons.melee.saber.logic.SaberDashLevelEvent;
 import aphorea.items.weapons.melee.saber.logic.SaberJumpLevelEvent;
 import aphorea.levelevents.*;
+import aphorea.levelevents.thepillar.ThePillarFallingCrystalAttackEvent;
 import aphorea.mobs.summon.VolatileGelSlime;
 import aphorea.objects.ThePillarEntranceObject;
 import aphorea.projectiles.bullet.SpamBulletProjectile;
@@ -25,8 +26,9 @@ public class AphLevelEvents {
         LevelEventRegistry.registerEvent("volatilegelexplosion", VolatileGelSlime.VolatileGelExplosion.class);
         LevelEventRegistry.registerEvent("spambulletexplosion", SpamBulletProjectile.SpamBulletExplosion.class);
 
-        // Other
+        // The Pillar Boss
         LevelEventRegistry.registerEvent("thepillarentrance", ThePillarEntranceObject.ThePillarEntranceEvent.class);
+        LevelEventRegistry.registerEvent("thepillarfallingcrystalattack", ThePillarFallingCrystalAttackEvent.class);
 
         // Runes
         baseRunes();

@@ -1,6 +1,5 @@
 package aphorea.mobs.hostile;
 
-import aphorea.AphoreaMod;
 import aphorea.projectiles.mob.RockyGelSlimeLootProjectile;
 import aphorea.projectiles.mob.RockyGelSlimeProjectile;
 import aphorea.registry.AphBiomes;

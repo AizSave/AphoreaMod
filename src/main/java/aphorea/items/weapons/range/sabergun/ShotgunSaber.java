@@ -27,11 +27,6 @@ public class ShotgunSaber extends AphSaberGunToolItem {
     }
 
     @Override
-    public GameDamage getAttackDamage(InventoryItem item) {
-        return super.getAttackDamage(item).setArmorPen(0.8F);
-    }
-
-    @Override
     public Projectile getProjectile(Level level, int x, int y, ItemAttackerMob attackerMob, InventoryItem item) {
         float spreadPercent = spreadPercent(item.getGndData().getFloat("chargePercent"));
         GameDamage baseDamage = this.getAttackDamage(item);
@@ -56,7 +51,7 @@ public class ShotgunSaber extends AphSaberGunToolItem {
             knockback = (int) (knockback * statsMod);
         }
 
-        return new ShotgunBulletProjectile(attackerMob.x, attackerMob.y, x, y, projectileSpeed, range, damage, knockback, attackerMob, spriteX);
+        return new ShotgunBulletProjectile(attackerMob.x, attackerMob.y, x, y, projectileSpeed, range, damage, getArmorPenPercent(level, attackerMob, item), knockback, attackerMob, spriteX);
     }
 
     @Override
@@ -106,5 +101,10 @@ public class ShotgunSaber extends AphSaberGunToolItem {
     @Override
     public void addLeftClickTooltips(ListGameTooltips tooltips, InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {
         tooltips.add(Localization.translate("itemtooltip", "shotgunsaber"));
+    }
+
+    @Override
+    public float getBaseArmorPenPercent() {
+        return 0.5F;
     }
 }

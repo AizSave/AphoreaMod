@@ -25,6 +25,7 @@ public class SaberDashLevelEvent extends MobDashLevelEvent {
         super(owner, seed, dirX, dirY, distance, animTime, damage);
     }
 
+    @Override
     public void init() {
         super.init();
         if (this.level != null && this.level.isClient() && this.owner != null) {
@@ -46,6 +47,7 @@ public class SaberDashLevelEvent extends MobDashLevelEvent {
 
     }
 
+    @Override
     public Shape getHitBox() {
         Point2D.Float dir;
         if (this.owner.getDir() == 3) {

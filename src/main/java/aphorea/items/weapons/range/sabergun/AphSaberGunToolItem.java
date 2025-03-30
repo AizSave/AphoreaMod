@@ -103,14 +103,16 @@ abstract public class AphSaberGunToolItem extends ProjectileToolItem implements 
     @Override
     public void addStatTooltips(ItemStatTipList list, InventoryItem currentItem, InventoryItem lastItem, ItemAttackerMob perspective, boolean forceAdd) {
         this.addAttackDamageTip(list, currentItem, lastItem, perspective, forceAdd);
-        this.addAttackArmorPenTip(list, currentItem, lastItem, perspective);
+        if(this.getBaseArmorPenPercent() != 0) {
+            this.addAttackArmorPenTip(list, currentItem, lastItem, perspective);
+        }
         this.addAttackSpeedTip(list, currentItem, lastItem, perspective);
         this.addResilienceGainTip(list, currentItem, lastItem, perspective, forceAdd);
         this.addCritChanceTip(list, currentItem, lastItem, perspective, forceAdd);
     }
 
     public void addAttackArmorPenTip(ItemStatTipList list, InventoryItem currentItem, InventoryItem lastItem, ItemAttackerMob attackerMob) {
-        DoubleItemStatTip tip = new LocalMessageDoubleItemStatTip("itemtooltip", "attackarmorpentip", "value", getAttackDamage(currentItem).armorPen * 100.0F, 0);
+        DoubleItemStatTip tip = new LocalMessageDoubleItemStatTip("itemtooltip", "attackarmorpentip", "value", getBaseArmorPenPercent() * 100.0F, 0);
         if (lastItem != null) {
             int lastMaxSpeed = Math.max(this.getAttackAnimTime(lastItem, attackerMob), this.getAttackCooldownTime(lastItem, attackerMob));
             tip.setCompareValue(this.toAttacksPerSecond(lastMaxSpeed));
@@ -134,6 +136,12 @@ abstract public class AphSaberGunToolItem extends ProjectileToolItem implements 
     @Override
     public boolean getConstantUse(InventoryItem item) {
         return false;
+    }
+
+    abstract public float getBaseArmorPenPercent();
+
+    public float getArmorPenPercent(Level level, ItemAttackerMob attackerMob, InventoryItem item) {
+        return getBaseArmorPenPercent();
     }
 
     abstract public Projectile getProjectile(Level level, int x, int y, ItemAttackerMob attackerMob, InventoryItem item);

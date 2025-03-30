@@ -1,7 +1,7 @@
 package aphorea;
 
 import aphorea.items.weapons.magic.MagicalBroom;
-import aphorea.mobs.bosses.MiniUnstableGelSlime;
+import aphorea.mobs.bosses.minions.MiniUnstableGelSlime;
 import aphorea.mobs.bosses.ThePillarMob;
 import aphorea.mobs.bosses.UnstableGelSlime;
 import aphorea.mobs.friendly.WildPhosphorSlime;
@@ -10,6 +10,7 @@ import aphorea.mobs.pet.PetPhosphorSlime;
 import aphorea.mobs.summon.BabyUnstableGelSlime;
 import aphorea.mobs.summon.Onyx;
 import aphorea.mobs.summon.VolatileGelSlime;
+import aphorea.particles.ThePillarFallingCrystalParticle;
 import aphorea.projectiles.bullet.SpamBulletProjectile;
 import aphorea.projectiles.toolitem.AircutProjectile;
 import aphorea.projectiles.toolitem.DaggerProjectile;
@@ -44,7 +45,10 @@ public class AphResources {
         // PARTICLES
         GelProjectile.GelProjectileParticle.texture = GameTexture.fromFile("particles/gelprojectile");
         SpamBulletProjectile.FirePoolParticle.texture = GameTexture.fromFile("particles/firepool");
+        ThePillarFallingCrystalParticle.projectileTexture = GameTexture.fromFile("particles/thepillarfallingcrystalparticle");
+        ThePillarFallingCrystalParticle.shadowTexture = GameTexture.fromFile("particles/thepillarfallingcrystalparticle_shadow");
     }
+
 
     public static void mobResources() {
         // HOSTILE

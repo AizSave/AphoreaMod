@@ -1,6 +1,6 @@
 package aphorea.projectiles.mob;
 
-import aphorea.mobs.bosses.MiniUnstableGelSlime;
+import aphorea.mobs.bosses.minions.MiniUnstableGelSlime;
 import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;

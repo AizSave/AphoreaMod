@@ -1,9 +1,7 @@
 package aphorea.methodpatches;
 
-import aphorea.AphoreaMod;
 import aphorea.registry.AphBiomes;
 import necesse.engine.modLoader.annotations.ModMethodPatch;
-import necesse.engine.network.PacketReader;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.entity.mobs.PlayerMob;
 import necesse.inventory.InventoryItem;
