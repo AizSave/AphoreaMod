@@ -31,12 +31,13 @@ public class AphMightyBanner extends BannerItem {
     public ListGameTooltips getTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {
         ListGameTooltips tooltips = super.getTooltips(item, perspective, blackboard);
         addToolTips(tooltips, perspective);
+        tooltips.add(Localization.translate("itemtooltip", "inspiration"));
         tooltips.add(Localization.translate("global", "aphoreamightybanner"));
         return tooltips;
     }
 
     public void addToolTips(ListGameTooltips tooltips, PlayerMob perspective) {
-        float bannerEffect = baseEffect * (perspective == null ? AphModifiers.BANNER_EFFECT.defaultBuffManagerValue : perspective.buffManager.getModifier(AphModifiers.BANNER_EFFECT));
+        float bannerEffect = baseEffect * (perspective == null ? AphModifiers.INSPIRATION_EFFECT.defaultBuffManagerValue : perspective.buffManager.getModifier(AphModifiers.INSPIRATION_EFFECT));
         for (String extraToolTip : extraToolTips) {
             tooltips.add(Localization.translate("itemtooltip", extraToolTip, "effect",  String.format("%.0f", bannerEffect), "effectfloat", bannerEffect));
         }
@@ -78,7 +79,7 @@ public class AphMightyBanner extends BannerItem {
                 ActiveBuff antBuff = mob.buffManager.getBuff(buff.getID());
                 if (antBuff != null && antBuff.buff instanceof AphBannerBuff) {
                     AphBannerBuff bannerBuff = (AphBannerBuff) antBuff.buff;
-                    if (bannerBuff.shouldRemove(antBuff) || bannerBuff.bannerEffect <= player.buffManager.getModifier(AphModifiers.BANNER_EFFECT)) {
+                    if (bannerBuff.shouldRemove(antBuff) || bannerBuff.bannerEffect <= player.buffManager.getModifier(AphModifiers.INSPIRATION_EFFECT)) {
                         addBuff(buff, mob, player, true);
                     }
                 } else {

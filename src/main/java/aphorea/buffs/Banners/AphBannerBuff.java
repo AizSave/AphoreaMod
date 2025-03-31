@@ -16,7 +16,7 @@ public class AphBannerBuff extends VicinityBuff {
 
     public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {
         if (buff.getAttacker() != null && buff.getAttacker().getAttackOwner() != null) {
-            bannerEffect = buff.getAttacker().getAttackOwner().buffManager.getModifier(AphModifiers.BANNER_EFFECT);
+            bannerEffect = buff.getAttacker().getAttackOwner().buffManager.getModifier(AphModifiers.INSPIRATION_EFFECT);
         }
     }
 
@@ -52,6 +52,6 @@ public class AphBannerBuff extends VicinityBuff {
         if (ab.getAttacker() == null || ab.getAttacker().getAttackOwner() == null) {
             return false;
         }
-        return ab.getAttacker().getAttackOwner().buffManager.getModifier(AphModifiers.BANNER_EFFECT) < bannerEffect;
+        return ab.getAttacker().getAttackOwner().buffManager.getModifier(AphModifiers.INSPIRATION_EFFECT) < bannerEffect;
     }
 }

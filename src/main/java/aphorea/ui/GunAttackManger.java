@@ -8,19 +8,19 @@ import necesse.gfx.forms.Form;
 
 import java.awt.*;
 
-public class AttackTrackManger extends AphCustomUI {
+public class GunAttackManger extends AphCustomUI {
     public static final int TICK_MS = 25;
 
     public float chargePercent;
     public int chargeTime;
 
-    public AttackTrackManger(String formId) {
+    public GunAttackManger(String formId) {
         super(formId);
     }
 
     @Override
     public void startForm() {
-        this.form = mainGameFormManager.addComponent(new AttackTrackManger.AttackTrackForm(this.formId, AphResources.attackTrackTexture.getWidth() + 20, AphResources.attackTrackTexture.getHeight() + 20));
+        this.form = mainGameFormManager.addComponent(new GunAttackManger.AttackTrackForm(this.formId, AphResources.gunAttackTrackTexture.getWidth() + 20, AphResources.gunAttackTrackTexture.getHeight() + 20));
     }
 
     @Override
@@ -44,14 +44,14 @@ public class AttackTrackManger extends AphCustomUI {
 
         @Override
         public void draw(TickManager tickManager, PlayerMob perspective, Rectangle renderBox) {
-            AphResources.attackTrackTexture.initDraw().pos(this.getX() + 10, this.getY() + 10).draw();
+            AphResources.gunAttackTrackTexture.initDraw().pos(this.getX() + 10, this.getY() + 10).draw();
             int width = this.getWidth() - 20;
             int height = this.getWidth() / 2 - 20;
-            float timeSinceStart = AphCustomUIList.attackTrackManager.chargePercent * AphCustomUIList.attackTrackManager.chargeTime;
-            float currentProgress = (timeSinceStart + TICK_MS) / AphCustomUIList.attackTrackManager.chargeTime;
-            AphResources.attackThumbTexture.initDraw().pos(
-                    (int) ((width - 2) * (barX(currentProgress) + 1)) / 2 + this.getX() + 10 - AphResources.attackThumbTexture.getWidth() / 2,
-                    (int) (height * Math.abs(barY(currentProgress)) * 0.7F) + this.getY() + 10 - AphResources.attackThumbTexture.getHeight() / 2
+            float timeSinceStart = AphCustomUIList.gunSaberAttack.chargePercent * AphCustomUIList.gunSaberAttack.chargeTime;
+            float currentProgress = (timeSinceStart + TICK_MS) / AphCustomUIList.gunSaberAttack.chargeTime;
+            AphResources.gunAttackThumbTexture.initDraw().pos(
+                    (int) ((width - 2) * (barX(currentProgress) + 1)) / 2 + this.getX() + 10 - AphResources.gunAttackThumbTexture.getWidth() / 2,
+                    (int) (height * Math.abs(barY(currentProgress)) * 0.7F) + this.getY() + 10 - AphResources.gunAttackThumbTexture.getHeight() / 2
             ).draw();
         }
     }

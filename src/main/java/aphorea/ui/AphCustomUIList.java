@@ -5,9 +5,9 @@ import java.util.Map;
 
 abstract public class AphCustomUIList {
     public static Map<String, AphCustomUI> list = new HashMap<>();
-    public static AttackTrackManger attackTrackManager;
+    public static GunAttackManger gunSaberAttack;
 
     static {
-        attackTrackManager = new AttackTrackManger("attacktrackmanager");
+        gunSaberAttack = new GunAttackManger("gunattack");
     }
 }

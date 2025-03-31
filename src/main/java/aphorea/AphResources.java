@@ -26,12 +26,12 @@ import necesse.gfx.gameTexture.GameTextureSection;
 import java.io.FileNotFoundException;
 
 public class AphResources {
-    public static GameTexture attackTrackTexture;
-    public static GameTexture attackThumbTexture;
+    public static GameTexture gunAttackTrackTexture;
+    public static GameTexture gunAttackThumbTexture;
 
     public static void initResources() {
-        attackTrackTexture = GameTexture.fromFile("ui/attacktrack");
-        attackThumbTexture = GameTexture.fromFile("ui/attackthumb");
+        gunAttackTrackTexture = GameTexture.fromFile("ui/gunattacktrack");
+        gunAttackThumbTexture = GameTexture.fromFile("ui/gunattackthumb");
 
         // MOBS
         mobResources();

@@ -18,6 +18,7 @@ import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.inventory.lootTable.LootTable;
 import necesse.inventory.lootTable.lootItem.ChanceLootItem;
+import necesse.inventory.lootTable.lootItem.ChanceLootItemList;
 import necesse.inventory.lootTable.lootItem.LootItem;
 import necesse.inventory.lootTable.lootItem.RotationLootItem;
 import necesse.inventory.lootTable.presets.CaveChestLootTable;
@@ -39,11 +40,16 @@ public class SpinelMimic extends HostileMob {
     public static LootTable lootTable = new LootTable(
             new LootItem("spinelchest"),
             RotationLootItem.globalLootRotation(
-                    new ChanceLootItem(0.5F, "cursedmedallion")
+                    new LootItem("ninjascarf"),
+                    new LootItem("adrenalinecharm"),
+                    new LootItem("shotgunsaber"),
+                    new LootItem("cursedmedallion")
             ),
-            CaveChestLootTable.potions,
-            CaveChestLootTable.bars,
-            CaveChestLootTable.extraItems
+            RotationLootItem.globalLootRotation(
+                    CaveChestLootTable.potions,
+                    CaveChestLootTable.bars,
+                    CaveChestLootTable.extraItems
+            )
     );
 
     int adjustY = 22;

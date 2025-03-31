@@ -51,7 +51,7 @@ public class SpinelGolem extends HostileMob {
     public static GameTexture texture;
 
     public static GameDamage damage = new GameDamage(20.0F);
-    public static int chargeTime = 300;
+    public static int chargeTime = 600;
     public static int stickTime = 100;
     protected long shootTime;
     protected Mob shootTarget;
@@ -64,7 +64,7 @@ public class SpinelGolem extends HostileMob {
 
     public static LootTable lootTable = new LootTable(
             new OneOfTicketLootItems(
-                    19, new LootItem("spinel"),
+                    5, new LootItem("spinel"),
                     1, new LootItem("lifespinel")
             )
     );

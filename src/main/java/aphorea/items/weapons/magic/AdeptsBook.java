@@ -27,12 +27,7 @@ public class AdeptsBook extends AphAreaToolItem implements ItemInteractAction {
 
         manaCost.setBaseValue(4.0F);
 
-        this.attackXOffset = 2;
-        this.attackYOffset = 8;
-    }
-
-    @Override
-    public void draw(InventoryItem item, PlayerMob perspective, int x, int y, boolean inInventory) {
-        super.draw(item, perspective, x, y, inInventory);
+        this.attackXOffset = -4;
+        this.attackYOffset = 10;
     }
 }

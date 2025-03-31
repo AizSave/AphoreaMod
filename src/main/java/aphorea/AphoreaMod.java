@@ -3,6 +3,8 @@ package aphorea;
 import aphorea.journal.AphJournalChallenges;
 import aphorea.registry.*;
 import necesse.engine.modLoader.annotations.ModEntry;
+import necesse.engine.registries.VersionMigration;
+import necesse.engine.util.GameUtils;
 import necesse.gfx.GameColor;
 
 import java.awt.*;
@@ -18,6 +20,12 @@ public class AphoreaMod {
 
     public void init() throws Exception {
         System.out.println("AphoreaMod starting...");
+
+        // Version Migration
+        VersionMigration.oldItemStringIDs = GameUtils.concat(VersionMigration.oldItemStringIDs, new String[][] {
+                { "inspirationfoci", "bannerbearerfoci" }
+        });
+
 
         // Enchantments
         AphEnchantments.registerCore();

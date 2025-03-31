@@ -39,7 +39,7 @@ public class ThePillarFallingCrystalAttackEvent extends MobAbilityLevelEvent imp
         this.x = x;
         this.y = y;
         this.damage = damage;
-        this.turnIntoObject = GameRandom.globalRandom.getChance(0.25F);
+        this.turnIntoObject = GameRandom.globalRandom.getChance(0.2F);
     }
 
     public void applySpawnPacket(PacketReader reader) {

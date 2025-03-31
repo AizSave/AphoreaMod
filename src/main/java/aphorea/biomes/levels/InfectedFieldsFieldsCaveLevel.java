@@ -203,7 +203,9 @@ public class InfectedFieldsFieldsCaveLevel extends InfectedFieldsSurfaceLevel {
 
         PresetGeneration presets = new PresetGeneration(this);
         GameEvents.triggerEvent(new GenerateCaveStructuresEvent(this, cg, presets), (e) -> {
-            presets.findRandomValidPositionAndApply(cg.random, 200, new InfectedLootLake(cg.random), 40, false, false);
+            for (int i = 0; i < 2; i++) {
+                presets.findRandomValidPositionAndApply(cg.random, 200, new InfectedLootLake(cg.random), 40, false, false);
+            }
         });
 
         GameEvents.triggerEvent(new GeneratedCaveStructuresEvent(this, cg, presets));

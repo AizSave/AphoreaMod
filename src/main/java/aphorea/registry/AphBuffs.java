@@ -11,7 +11,7 @@ import aphorea.buffs.Runes.AphBaseRuneTrinketBuff;
 import aphorea.buffs.Runes.AphModifierRuneTrinketBuff;
 import aphorea.buffs.SetBonus.*;
 import aphorea.buffs.Trinkets.AdrenalineCharmBuff;
-import aphorea.buffs.Trinkets.BannerBearerFociBuff;
+import aphorea.buffs.Trinkets.InspirationFociBuff;
 import aphorea.buffs.Trinkets.Healing.*;
 import aphorea.buffs.Trinkets.Periapts.*;
 import aphorea.buffs.TrinketsActive.BloodyPeriaptActiveBuff;
@@ -199,7 +199,7 @@ public class AphBuffs {
         BuffRegistry.registerBuff("ancientmedallion", new AncientMedallionBuff());
         BuffRegistry.registerBuff("healingessence", new HealingEssenceBuff());
         BuffRegistry.registerBuff("ninjascarf", new SimpleTrinketBuff("ninjascarf"));
-        BuffRegistry.registerBuff("bannerbearerfoci", new BannerBearerFociBuff());
+        BuffRegistry.registerBuff("inspirationfoci", new InspirationFociBuff());
         BuffRegistry.registerBuff("adrenalinecharm", new AdrenalineCharmBuff());
         BuffRegistry.registerBuff("adrenalinecharmcharge", new AdrenalineCharmBuff.AdrenalineCharmChargeBuff());
         BuffRegistry.registerBuff("test1", new SimpleTrinketBuff("test1", new ModifierValue<>(BuffModifiers.MAX_SUMMONS, 2), new ModifierValue<>(BuffModifiers.SUMMONS_SPEED, -0.2F), new ModifierValue<>(BuffModifiers.SUMMON_DAMAGE, -0.2F)));
@@ -353,7 +353,7 @@ public class AphBuffs {
 
         });
         // On duration
-        BuffRegistry.registerBuff("runeofvaloractive", new AphBaseRuneActiveBuff(baseEffectNumber, 10000, new ModifierValue<>(AphModifiers.BANNER_EFFECT, 1F), new ModifierValue<>(AphModifiers.BANNER_ABILITY_SPEED, 1F)) {
+        BuffRegistry.registerBuff("runeofvaloractive", new AphBaseRuneActiveBuff(baseEffectNumber, 10000, new ModifierValue<>(AphModifiers.INSPIRATION_EFFECT, 1F), new ModifierValue<>(AphModifiers.INSPIRATION_ABILITY_SPEED, 1F)) {
 
             @Override
             public void clientTick(ActiveBuff buff) {

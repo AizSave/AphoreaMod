@@ -61,9 +61,9 @@ public class SaberGunAttackHandler extends MousePositionAttackHandler {
         showItem.getGndData().setBoolean("charging", true);
         showItem.getGndData().setFloat("chargePercent", chargePercent);
 
-        if(attackerMob.isClient() && attackerMob.isPlayer && AphCustomUIList.attackTrackManager.form.isHidden()) {
-            AphCustomUIList.attackTrackManager.form.setHidden(false);
-            AphCustomUIList.attackTrackManager.chargeTime = this.chargeTime;
+        if(attackerMob.isClient() && attackerMob.isPlayer && AphCustomUIList.gunSaberAttack.form.isHidden()) {
+            AphCustomUIList.gunSaberAttack.form.setHidden(false);
+            AphCustomUIList.gunSaberAttack.chargeTime = this.chargeTime;
         }
 
         this.attackerMob.showAttackAndSendAttacker(showItem, this.lastX, this.lastY, 0, this.seed);
@@ -107,7 +107,7 @@ public class SaberGunAttackHandler extends MousePositionAttackHandler {
     }
 
     public void onEndAttack(boolean bySelf) {
-        AphCustomUIList.attackTrackManager.form.setHidden(true);
+        AphCustomUIList.gunSaberAttack.form.setHidden(true);
         float chargePercent = this.getChargePercent();
         if (!this.endedByInteract && chargePercent >= 0.75F) {
             if (this.attackerMob.isPlayer) {

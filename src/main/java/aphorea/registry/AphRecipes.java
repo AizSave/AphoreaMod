@@ -159,7 +159,7 @@ public class AphRecipes {
         );
 
         addCraftingList("balancedfoci", tech,
-                AphCraftingRecipe.showAfter("bannerbearerfoci", 1,
+                AphCraftingRecipe.showAfter("inspirationfoci", 1,
                         new Ingredient("anybasicfoci", 1),
                         new Ingredient("blankbanner", 1),
                         new Ingredient("voidshard", 3)
@@ -488,6 +488,10 @@ public class AphRecipes {
                 ),
                 AphCraftingRecipe.showAfter("spinelcluster", 1,
                         new Ingredient("spinel", 2)
+                ),
+                AphCraftingRecipe.showAfter("tungstenoredeeprock", 1,
+                        new Ingredient("rockygel", 2),
+                        new Ingredient("tungstenore", 3)
                 )
         );
     }

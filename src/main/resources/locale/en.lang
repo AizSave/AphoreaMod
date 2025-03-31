@@ -16,12 +16,13 @@ magichealinggrace=<mod>% magic healing grace
 // Area
 arearange=<mod>% area range
 
-// Banner Damage
-bannerdamage=<mod>% banner damage
-bannercritchance=<mod>% banner crit chance
-bannercritdamage=<mod>% banner crit damage
-bannereffect=<mod>% banner effect
-bannerabilityspeed=<mod>% banner ability speed
+// Inspiration Damage
+# NEW
+inspirationdamage=<mod>% inspiration damage
+inspirationcritchance=<mod>% inspiration crit chance
+inspirationcritdamage=<mod>% inspiration crit damage
+inspirationeffect=<mod>% inspiration effect
+inspirationabilityspeed=<mod>% inspiration ability speed
 
 // Others
 loyal=The dagger is not lost when thrown
@@ -213,7 +214,7 @@ ringofhealth=Ring of Health
 swampshield=Swamp Shield
 witchmedallion=Witch Medallion
 iceboots=Ice Boots
-bannerbearerfoci=Banner-bearer Foci
+inspirationfoci=Inspiration Foci
 # NEW
 cursedmedallion=Cursed Medallion
 ancientmedallion=Ancient Medallion
@@ -329,6 +330,7 @@ attackarmorpentip=Armor pen: <value>%
 magichealinggrace=§aMagic Healing Grace:§0 Heals yourself with a % of the Magic Healing intended for allies
 # NEW
 cursedbuff=§bCursed:§0 §6+25%§0 Incoming Damage
+inspiration=§9Inspiration§0 stats improves the effects of banners
 
 // Misc
 gelslimenullifier=They will stop bothering you with a simple click!
@@ -357,7 +359,7 @@ stikybuff3=Makes the enemy Sticky for 3 seconds
 projectilearea=When the projectile ends, it deals area damage
 
 // Melee Weapons
-saber=If correctly charged, your attack will unleash an aircut
+saber=Charge to max for full damage and to unleash an aircut
 saberdash=Hold [input=mouse2] to charge up a dash to slice through enemies
 battleaxe=Requires a lot of charge time
 battleaxe2=Press [input=mouse2] to activate the Berserker Rush
@@ -420,7 +422,7 @@ rockyperiapt2=Press [input=trinketability] to gain 10 Armor for 10 seconds
 unstableperiapt=Summons two Baby Unstable Gel Slimes. Deals 8 Summoner Damage
 unstableperiapt2=Makes you immune to the Sticky debuff
 bloodyperiapt=Press [input=trinketability] to gain a boost of Speed and Attack Speed for 10 seconds
-bloodyperiapt1=Also, the weapons 'Blood Bolt' and 'Blood Volley' will steal §73%§0 of life
+bloodyperiapt2=Also, the weapons 'Blood Bolt' and 'Blood Volley' will steal §73%§0 of life
 demonicperiapt=Press [input=trinketability] to gain a boost of Speed and Attack Speed for 10 seconds
 demonicperiapt2=Also, all magic weapons will steal §73%§0 of life
 abysmalperiapt=Magic weapons will steal §73%§0 of life
@@ -434,8 +436,8 @@ gelring=§7+30%§0 Magic Healing received
 heartring=§7+20§0 max health
 swampshield=Only protects attacks in the direction they are received
 swampshield2=Magic Heal yourself with the §7<healing>§0 of the damage you prevent
-bannerbearerfoci1=§7+40%§0 banner effect and §7+20%§0 banner ability speed
-bannerbearerfoci2=§6-20%§0 all non-banner damage and §6-1§0 max summons
+inspirationfoci1=§7+40%§0 inspiration effect and §7+20%§0 inspiration ability speed
+inspirationfoci2=§6-20%§0 all non-banner damage and §6-1§0 max summons
 iceboots=Makes you slide as if you were on ice, but grants +50% movement speed and +4 armor
 # NEW
 healingessence=§7+<percent>&§0 Magic Healing per life essence
@@ -583,7 +585,10 @@ golddaggergoblin=Gold Dagger Goblin
 infectedtreant=Infected Treant
 spinelgolem=Spinel Golem
 spinelcaveling=Spinel Caveling
+tungstencaveling=Tungsten Caveling
 spinelmimic=Spinel Mimic
+thepillar=The Pillar
+hearthcrystal=Hearth Crystal
 
 // Friendly
 wildphosphorslime=Wild Phosphor Slime

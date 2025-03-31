@@ -44,17 +44,16 @@ import necesse.level.maps.IncursionLevel;
 import necesse.level.maps.Level;
 
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.*;
 import java.util.List;
-import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class ThePillarMob extends BossMob {
     public static int BOSS_AREA_RADIUS = 1024;
     private static final AphAreaList searchArea = new AphAreaList(
             new AphArea(BOSS_AREA_RADIUS, AphColors.spinel)
     );
-    public static MaxHealthGetter MAX_HEALTH = new MaxHealthGetter(2500, 4000, 5500, 7000, 9500);
+    public static MaxHealthGetter MAX_HEALTH = new MaxHealthGetter(3000, 4000, 5000, 6500, 8000);
     private int aliveTimer;
     public static GameTexture icon;
 
@@ -256,6 +255,8 @@ public class ThePillarMob extends BossMob {
         public int currentStageTickDuration = 6000 / 50;
         public boolean dragonSummoned = false;
 
+        public Map<String, Object> saveData = new HashMap<>();
+
         public ThePillarAI() {
             this.addChild(
                     new AINode<T>() {
@@ -269,7 +270,7 @@ public class ThePillarMob extends BossMob {
                             if(mob.hearthCrystalClose() && mob.isServer() && currentStageTick % 20 == 0) {
                                 mob.setHealth((int) (mob.getHealth() + mob.getMaxHealth() * 0.002F * streamPossibleTargets(mob).count() - 1));
                             }
-                            if(!dragonSummoned && mob.getHealthPercent() < 0.5F) {
+                            if(!dragonSummoned && mob.getHealthPercent() <= 0.6F) {
                                 dragonSummoned = true;
                             }
                             return AINodeResult.FAILURE;
@@ -306,12 +307,76 @@ public class ThePillarMob extends BossMob {
                     new PillarActionAiNode() {
                         @Override
                         public void doTickAction(T mob, int time, int duration, float progress, Blackboard<T> blackboard) {
-                            int health = 50 + (int) (50 * streamPossibleTargets(mob).count());
+                            if(time % (200 * mob.projectileRate()) == 0) summonCrystalToAllTargets(mob, GameRandom.globalRandom.getFloatBetween(0F, 2F), 80);
+                            if(time % (300 * mob.projectileRate()) == 0) {
+                                float angle = GameRandom.globalRandom.getFloatBetween(0, (float) (Math.PI * 2));
+                                float prediction = GameRandom.globalRandom.getFloatBetween(0F, 0.5F);
+                                for (int i = 0; i < 12; i++) {
+                                    summonCrystalAroundAllTargets(mob, prediction, 5, angle + (float) Math.PI * i / 6, 100);
+                                }
+                            }
+                        }
+
+                        @Override
+                        public int getStageDuration(T mob) {
+                            return 5000;
+                        }
+                    }
+            );
+            this.addChild(
+                    new PillarActionAiNode() {
+                        @Override
+                        public void doTickAction(T mob, int time, int duration, float progress, Blackboard<T> blackboard) {
+                            int health = 50 + (int) (25 * streamPossibleTargets(mob).count());
                             boolean clockWise = GameRandom.globalRandom.getChance(0.5F);
-                            float angle = GameRandom.globalRandom.getFloatBetween(0, (float) (Math.PI * 2));
-                            summonHearthCrystalMoved(mob, 0.15F, angle, health, 0, 0.15F, 0.5F, clockWise);
-                            summonHearthCrystalMoved(mob, 0.15F, angle + (float) Math.PI * 2 / 3, health, 0, 0.15F, 0.5F, clockWise);
-                            summonHearthCrystalMoved(mob, 0.15F, angle + (float) Math.PI * 4 / 3, health, 0, 0.15F, 0.5F, clockWise);
+                            switch (GameRandom.globalRandom.getIntBetween(0, 5)) {
+                                case 0: {
+                                    float angle = GameRandom.globalRandom.getFloatBetween(0, (float) (Math.PI * 2));
+                                    summonHearthCrystalMoved(mob, 0.15F, angle, health, 0, 0.15F, 0.5F, clockWise);
+                                    summonHearthCrystalMoved(mob, 0.15F, angle + (float) Math.PI * 2 / 3, health, 0, 0.15F, 0.5F, clockWise);
+                                    summonHearthCrystalMoved(mob, 0.15F, angle + (float) Math.PI * 4 / 3, health, 0, 0.15F, 0.5F, clockWise);
+                                    break;
+                                }
+                                case 1: {
+                                    float angle = GameRandom.globalRandom.getFloatBetween(0, (float) (Math.PI * 2));
+
+                                    summonHearthCrystalMoved(mob, 0.15F, angle, health, 0, 0.15F, 0.5F, clockWise);
+                                    summonHearthCrystalMoved(mob, 0.15F, angle + (float) Math.PI * 2 / 3, health, (float) Math.PI * 2 / 3, 0.15F, 0.5F, clockWise);
+                                    summonHearthCrystalMoved(mob, 0.15F, angle + (float) Math.PI * 4 / 3, health, (float) Math.PI * 4 / 3, 0.15F, 0.5F, clockWise);
+                                    break;
+                                }
+                                case 2: {
+                                    summonHearthCrystalCenter(mob, health, 0, 0.15F, 0.5F, clockWise);
+                                    summonHearthCrystalCenter(mob, health, (float) Math.PI * 2 / 3, 0.15F, 0.5F, clockWise);
+                                    summonHearthCrystalCenter(mob, health, (float) Math.PI * 4 / 3, 0.15F, 0.5F, clockWise);
+                                    break;
+                                }
+                                case 3: {
+                                    summonHearthCrystalCenter(mob, health / 2, 0, 0.25F, 0.35F, !clockWise);
+                                    summonHearthCrystalCenter(mob, health, 0, 0.15F, 0.65F, clockWise);
+                                    summonHearthCrystalCenter(mob, health, (float) Math.PI, 0.15F, 0.65F, clockWise);
+                                    break;
+                                }
+                                case 4: {
+                                    float angle = GameRandom.globalRandom.getFloatBetween(0, (float) (Math.PI * 2));
+                                    float distanceFromCenter = GameRandom.globalRandom.getFloatBetween(0.05F, 0.2F);
+
+                                    summonHearthCrystalMoved(mob, distanceFromCenter, angle, health, 0, 0.15F, 0.5F, clockWise);
+                                    summonHearthCrystalMoved(mob, distanceFromCenter, angle + (float) Math.PI * 2 / 3, health, 0, 0.15F, 0.5F, clockWise);
+                                    summonHearthCrystalMoved(mob, distanceFromCenter, angle + (float) Math.PI * 4 / 3, health, 0, 0.15F, 0.5F, clockWise);
+                                    break;
+                                }
+                                case 5: {
+                                    float angle = GameRandom.globalRandom.getFloatBetween(0, (float) (Math.PI * 2));
+                                    float distanceFromCenter = GameRandom.globalRandom.getFloatBetween(0.05F, 0.2F);
+
+                                    summonHearthCrystalMoved(mob, distanceFromCenter, angle, health, 0, 0.15F, 0.5F, clockWise);
+                                    summonHearthCrystalMoved(mob, distanceFromCenter, angle + (float) Math.PI * 2 / 3, health, (float) Math.PI * 2 / 3, 0.15F, 0.5F, clockWise);
+                                    summonHearthCrystalMoved(mob, distanceFromCenter, angle + (float) Math.PI * 4 / 3, health, (float) Math.PI * 4 / 3, 0.15F, 0.5F, clockWise);
+                                    break;
+                                }
+
+                            }
                         }
 
                         @Override
@@ -320,10 +385,46 @@ public class ThePillarMob extends BossMob {
                         }
                     }
             );
+
+            this.addChild(
+                    new PillarActionAiNode() {
+                        @Override
+                        public void startStage(T mob) {
+                            super.startStage(mob);
+                            saveData.put("startAngle", GameRandom.globalRandom.getFloatBetween(0, (float) Math.PI * 2));
+                            saveData.put("clockWise", GameRandom.globalRandom.getChance(0.5F));
+                        }
+
+                        @Override
+                        public void doTickAction(T mob, int time, int duration, float progress, Blackboard<T> blackboard) {
+                            if(time % (100 * mob.projectileRate()) == 0) summonRandomCrystal(mob);
+                            float startAngle = (float) saveData.get("startAngle");
+                            boolean clockWise = (boolean) saveData.get("clockWise");
+                            float angleProgress = startAngle + progress * (float) Math.PI * 4 * (clockWise ? 1 : -1);
+                            float distance = BOSS_AREA_RADIUS * (0.05F + progress * 0.9F);
+                            for (int i = 0; i < 12; i++) {
+                                float targetX = mob.x + distance * (float) Math.cos(angleProgress + (float) Math.PI * i / 6);
+                                float targetY = mob.y + distance * (float) Math.sin(angleProgress + (float) Math.PI * i / 6);
+                                summonFallingCrystal(mob, targetX, targetY, 4);
+                            }
+                        }
+
+                        @Override
+                        public int getStageDuration(T mob) {
+                            return 10000;
+                        }
+                    }
+            );
         }
 
-        public static int[] projectileStages = new int[] {0, 1};
-        public static int hearthPilarStage = 2;
+        public static ArrayList<Integer> projectileStages = new ArrayList<>();
+        public static ArrayList<Integer> projectileBulkStages = new ArrayList<>();
+        public static int hearthPilarStage = 3;
+
+        static {
+            Collections.addAll(projectileStages, 0, 1, 2);
+            Collections.addAll(projectileBulkStages, 4);
+        }
 
         public void selectNextStage(T mob) {
             stagesUntilNow++;
@@ -331,19 +432,22 @@ public class ThePillarMob extends BossMob {
             int selected;
             if(stagesUntilNow == 5 || stagesUntilNow % 10 == 0) {
                 selected = hearthPilarStage;
+            } else if (stagesUntilNow % 5 == 0) {
+                selected = selectStage(projectileBulkStages);
             } else {
-                selected = selectProjectileStage();
+                selected = selectStage(projectileStages);
             }
 
             currentStage = selected;
             currentStageTick = 0;
             currentStageTickDuration = stages.get(currentStage).getStageDuration(mob) / 50;
+            stages.get(currentStage).startStage(mob);
         }
 
-        public int selectProjectileStage() {
+        public int selectStage(ArrayList<Integer> stages) {
             int selected;
             do {
-                selected = GameRandom.globalRandom.getIntBetween(0, projectileStages.length - 1);
+                selected = GameRandom.globalRandom.getOneOf(stages);
             } while (selected == currentStage);
             return selected;
         }
@@ -386,6 +490,8 @@ public class ThePillarMob extends BossMob {
             abstract public void doTickAction(T mob, int time, int duration, float progress, Blackboard<T> blackboard);
 
             abstract public int getStageDuration(T mob);
+
+            public void startStage(T mob) {}
         }
 
         public Mob getRandomTarget(T mob) {

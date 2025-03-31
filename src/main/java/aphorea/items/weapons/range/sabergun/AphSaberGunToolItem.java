@@ -4,7 +4,7 @@ import aphorea.items.weapons.range.sabergun.logic.SaberGunAttackHandler;
 import aphorea.items.weapons.range.sabergun.logic.SaberGunDashAttackHandler;
 import aphorea.registry.AphBuffs;
 import aphorea.ui.AphCustomUIList;
-import aphorea.ui.AttackTrackManger;
+import aphorea.ui.GunAttackManger;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.registries.DamageTypeRegistry;
@@ -204,12 +204,12 @@ abstract public class AphSaberGunToolItem extends ProjectileToolItem implements 
     public void showAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, int animAttack, int seed, GNDItemMap mapContent) {
         if(level.isClient() && level.getClient().getPlayer().getUniqueID() == attackerMob.getUniqueID()) {
             super.showAttack(level, x, y, attackerMob, attackHeight, item, animAttack, seed, mapContent);
-            AphCustomUIList.attackTrackManager.chargePercent = item.getGndData().getFloat("chargePercent");
+            AphCustomUIList.gunSaberAttack.chargePercent = item.getGndData().getFloat("chargePercent");
         }
     }
 
 
     public static float spreadPercent(float chargePercent) {
-        return Math.abs(AttackTrackManger.barX(chargePercent));
+        return Math.abs(GunAttackManger.barX(chargePercent));
     }
 }

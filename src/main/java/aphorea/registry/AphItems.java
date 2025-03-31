@@ -205,7 +205,7 @@ public class AphItems {
         registerItem("witchmedallion", new AphSimpleTrinketItem(Item.Rarity.COMMON, "witchmedallion", 300, true), 100F);
         registerItem("swampshield", new SwampShield());
         registerItem("iceboots", (new AphSimpleTrinketItem(Item.Rarity.COMMON, "iceboots", 300)).addDisabledBy("spikedboots", "spikedbatboots"));
-        registerItem("bannerbearerfoci", (new AphSimpleTrinketItem(Item.Rarity.COMMON, "bannerbearerfoci", 500)).addDisables("magicfoci", "rangefoci", "meleefoci", "summonfoci").addDisabledBy("magicfoci", "rangefoci", "meleefoci", "summonfoci"));
+        registerItem("inspirationfoci", (new AphSimpleTrinketItem(Item.Rarity.COMMON, "inspirationfoci", 500)).addDisables("magicfoci", "rangefoci", "meleefoci", "summonfoci").addDisabledBy("magicfoci", "rangefoci", "meleefoci", "summonfoci"));
         registerItem("cursedmedallion", (new AphSimpleTrinketItem(Item.Rarity.RARE, "cursedmedallion", 500, true)), 200F);
         registerItem("ancientmedallion", (new AphSimpleTrinketItem(Item.Rarity.EPIC, "ancientmedallion", 700, true)).addDisables("witchmedallion", "cursedmedallion"), -1F);
         registerItem("healingessence", (new AphSimpleTrinketItem(Item.Rarity.RARE, "healingessence", 600, true)), -1F);

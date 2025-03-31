@@ -47,11 +47,4 @@ public class GoldenWand extends AphHealingProjectileToolItem {
     public void showAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, int animAttack, int seed, GNDItemMap mapContent) {
         SoundManager.playSound(GameResources.magicbolt1, SoundEffect.effect(attackerMob).volume(1.0F).pitch(1.0F));
     }
-
-    @Override
-    public ListGameTooltips getPreEnchantmentTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {
-        ListGameTooltips tooltips = super.getPreEnchantmentTooltips(item, perspective, blackboard);
-        tooltips.add(Localization.translate("itemtooltip", "goldenwand"));
-        return tooltips;
-    }
 }
