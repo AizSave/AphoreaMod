@@ -28,7 +28,6 @@ public class SaberGunAttackHandler extends MousePositionAttackHandler {
     public InventoryItem item;
     public int seed;
     public boolean endedByInteract;
-    protected int endAttackBuffer;
 
     public SaberGunAttackHandler(ItemAttackerMob attackerMob, ItemAttackSlot slot, InventoryItem item, AphSaberGunToolItem toolItem, int chargeTime, int seed) {
         super(attackerMob, slot, 20);
@@ -47,12 +46,14 @@ public class SaberGunAttackHandler extends MousePositionAttackHandler {
         return (float) this.getTimeSinceStart() / this.chargeTime;
     }
 
+    @Override
     public Point getNextItemAttackerLevelPos(Mob currentTarget) {
         InventoryItem attackItem = this.item.copy();
         attackItem.getGndData().setFloat("skillPercent", 1.0F);
         return ((ItemAttackerWeaponItem) attackItem.item).getItemAttackerAttackPosition(this.attackerMob.getLevel(), this.attackerMob, currentTarget, -1, attackItem);
     }
 
+    @Override
     public void onUpdate() {
         super.onUpdate();
 
@@ -61,20 +62,16 @@ public class SaberGunAttackHandler extends MousePositionAttackHandler {
         showItem.getGndData().setBoolean("charging", true);
         showItem.getGndData().setFloat("chargePercent", chargePercent);
 
-        if(attackerMob.isClient() && attackerMob.isPlayer && AphCustomUIList.gunSaberAttack.form.isHidden()) {
-            AphCustomUIList.gunSaberAttack.form.setHidden(false);
-            AphCustomUIList.gunSaberAttack.chargeTime = this.chargeTime;
+        if(attackerMob.isClient() && attackerMob.isPlayer && AphCustomUIList.gunAttack.form.isHidden()) {
+            AphCustomUIList.gunAttack.form.setHidden(false);
+            AphCustomUIList.gunAttack.chargeTime = this.chargeTime;
         }
 
         this.attackerMob.showAttackAndSendAttacker(showItem, this.lastX, this.lastY, 0, this.seed);
 
-        if (chargePercent >= 1.5F && !this.attackerMob.isPlayer) {
-            this.endAttackBuffer += this.updateInterval;
-            if (this.endAttackBuffer >= 350) {
-                this.endAttackBuffer = 0;
-                this.attackerMob.endAttackHandler(true);
-                return;
-            }
+        if (chargePercent >= 15F && !this.attackerMob.isPlayer) {
+            this.attackerMob.endAttackHandler(true);
+            return;
         }
         if (chargePercent >= 0.75F && !this.fullyCharged) {
             this.fullyCharged = true;
@@ -96,18 +93,21 @@ public class SaberGunAttackHandler extends MousePositionAttackHandler {
 
     }
 
+    @Override
     public void onMouseInteracted(int levelX, int levelY) {
         this.endedByInteract = true;
         this.attackerMob.endAttackHandler(false);
     }
 
+    @Override
     public void onControllerInteracted(float aimX, float aimY) {
         this.endedByInteract = true;
         this.attackerMob.endAttackHandler(false);
     }
 
+    @Override
     public void onEndAttack(boolean bySelf) {
-        AphCustomUIList.gunSaberAttack.form.setHidden(true);
+        AphCustomUIList.gunAttack.form.setHidden(true);
         float chargePercent = this.getChargePercent();
         if (!this.endedByInteract && chargePercent >= 0.75F) {
             if (this.attackerMob.isPlayer) {
@@ -127,6 +127,7 @@ public class SaberGunAttackHandler extends MousePositionAttackHandler {
                 SoundManager.playSound(GameResources.shotgun, SoundEffect.effect(this.attackerMob));
             }
 
+            this.attackerMob.showAttackAndSendAttacker(attackItem, this.lastX, this.lastY, 0, this.seed);
             this.toolItem.doAttack(this.attackerMob.getLevel(), this.lastX, this.lastY, this.attackerMob, attackItem, this.seed);
 
             for (ActiveBuff b : this.attackerMob.buffManager.getArrayBuffs()) {

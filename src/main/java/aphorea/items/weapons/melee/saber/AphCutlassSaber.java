@@ -4,6 +4,7 @@ import aphorea.projectiles.toolitem.AircutProjectile;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
+import necesse.inventory.InventoryItem;
 import necesse.level.maps.Level;
 import necesse.level.maps.incursion.IncursionData;
 
@@ -21,10 +22,17 @@ public class AphCutlassSaber extends AphSaberToolItem {
         this.attackYOffset = 8;
         this.canBeUsedForRaids = true;
         this.maxRaidTier = IncursionData.ITEM_TIER_UPGRADE_CAP;
+
+        chargeAnimTime.setBaseValue(500);
     }
 
     @Override
-    public Projectile getProjectile(Level level, ItemAttackerMob attackerMob, float x, float y, float targetX, float targetY, float finalVelocity, int distance, GameDamage damage, int knockback) {
-        return new AircutProjectile.GoldAircutProjectile(level, attackerMob, x, y, targetX, targetY, finalVelocity, distance, damage, knockback);
+    public Projectile getProjectile(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent) {
+        return new AircutProjectile.GoldAircutProjectile(level, attackerMob, x, y, targetX, targetY,
+                400 * powerPercent,
+                (int) (500 * powerPercent),
+                this.getAttackDamage(item).modDamage(powerPercent),
+                (int) (getKnockback(item, attackerMob) * powerPercent)
+        );
     }
 }

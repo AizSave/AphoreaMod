@@ -184,12 +184,12 @@ public class MagicalBroom extends AphToolItem {
     @Override
     public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
         if (animAttack == 0) {
-            int strength = 50;
-            Point2D.Float dir = GameMath.normalize((float) x - attackerMob.x, (float) y - attackerMob.y);
             attackerMob.buffManager.addBuff(new ActiveBuff(BuffRegistry.FOW_ACTIVE, attackerMob, 0.15F, null), level.isServer());
             attackerMob.buffManager.forceUpdateBuffs();
 
             if (attackerMob.isServer()) {
+                int strength = 50;
+                Point2D.Float dir = GameMath.normalize((float) x - attackerMob.x, (float) y - attackerMob.y);
                 level.getServer().network.sendToClientsAtEntireLevel(new AphCustomPushPacket(attackerMob, dir.x, dir.y, (float) strength), level);
             } else if (attackerMob.isClient()) {
                 currentA = currentA == 0 ? 1 : 0;

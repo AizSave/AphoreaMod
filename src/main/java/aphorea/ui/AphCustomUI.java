@@ -4,6 +4,8 @@ import necesse.gfx.forms.Form;
 import necesse.gfx.forms.MainGameFormManager;
 
 abstract public class AphCustomUI {
+    public static final int TICK_MS = 25;
+
     public final String formId;
 
     public Form form;

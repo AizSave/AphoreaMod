@@ -1,13 +1,16 @@
 package aphorea.items.weapons.melee.saber;
 
-import aphorea.items.vanillaitemtypes.weapons.AphGreatswordToolItem;
+import aphorea.items.vanillaitemtypes.weapons.AphSwordToolItem;
 import aphorea.items.weapons.melee.saber.logic.SaberAttackHandler;
-import aphorea.items.weapons.melee.saber.logic.SaberChargeLevel;
 import aphorea.items.weapons.melee.saber.logic.SaberDashAttackHandler;
 import aphorea.registry.AphBuffs;
+import aphorea.ui.AphCustomUIList;
+import aphorea.ui.SaberAttackUIManger;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
+import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.util.GameBlackboard;
+import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
@@ -25,70 +28,33 @@ import necesse.level.maps.Level;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.List;
 
 
-abstract public class AphSaberToolItem extends AphGreatswordToolItem implements ItemInteractAction {
+abstract public class AphSaberToolItem extends AphSwordToolItem implements ItemInteractAction {
 
     public IntUpgradeValue dashRange;
-    public SaberChargeLevel[] nonPlayerChargeLevels;
     public boolean isAuto;
 
-    public AphSaberToolItem(int enchantCost, SaberChargeLevel[] chargeLevels, SaberChargeLevel[] nonPlayerChargeLevels, boolean isAuto) {
-        super(enchantCost, chargeLevels);
+    protected IntUpgradeValue chargeAnimTime = new IntUpgradeValue(true, 600, 0.0F);
 
-        this.nonPlayerChargeLevels = nonPlayerChargeLevels;
+    public AphSaberToolItem(int enchantCost, boolean isAuto) {
+        super(enchantCost);
+
         this.isAuto = isAuto;
-
         this.enchantCost.setUpgradedValue(1.0F, 500);
-
+        this.attackAnimTime.setBaseValue(200);
         this.dashRange = new IntUpgradeValue(200, 0.0F);
         this.dashRange.setBaseValue(200);
-
         this.attackRange.setBaseValue(45);
-
         attackXOffset = 6;
         attackYOffset = 6;
 
         this.keyWords.add("saber");
     }
 
-    public AphSaberToolItem(int enchantCost, boolean isAuto) {
-        this(enchantCost, isAuto ? getAutoChargeLevels() : getChargeLevels(), isAuto ? null : getAutoChargeLevels(), isAuto);
-    }
-
     public AphSaberToolItem(int enchantCost) {
         this(enchantCost, false);
-    }
-
-    public static SaberChargeLevel[] getChargeLevels(float timeModifier) {
-        List<SaberChargeLevel> levels = new ArrayList<>(Arrays.asList(getAutoChargeLevels(timeModifier)));
-        levels.add(levels.get(3));
-        levels.add(levels.get(2));
-        levels.add(levels.get(1));
-        levels.add(levels.get(0));
-        return levels.toArray(new SaberChargeLevel[0]);
-    }
-
-    public static SaberChargeLevel[] getChargeLevels() {
-        return getChargeLevels(1F);
-    }
-
-    public static SaberChargeLevel[] getAutoChargeLevels(float timeModifier) {
-        return new SaberChargeLevel[]{
-                new SaberChargeLevel((int) (80 * timeModifier), 1.0F, new Color(255, 255, 255)),
-                new SaberChargeLevel((int) (90 * timeModifier), 1.25F, new Color(255, 255, 0)),
-                new SaberChargeLevel((int) (100 * timeModifier), 1.5F, new Color(255, 128, 0)),
-                new SaberChargeLevel((int) (120 * timeModifier), 1.75F, new Color(255, 0, 0)),
-                new SaberChargeLevel((int) (120 * timeModifier), 2F, new Color(47, 0, 0))
-        };
-    }
-
-    public static SaberChargeLevel[] getAutoChargeLevels() {
-        return getAutoChargeLevels(1F);
     }
 
     @Override
@@ -110,28 +76,67 @@ abstract public class AphSaberToolItem extends AphGreatswordToolItem implements 
         return this.itemAttackerHasLineOfSightToTarget(attackerMob, fromX, fromY, target,
                 this.canDash(attackerMob) || target.getDistance(attackerMob) < this.getAttackRange(item) * 0.8F ?
                         5F : 36F
-                );
+        );
     }
 
     @Override
     public int getItemAttackerAttackRange(ItemAttackerMob mob, InventoryItem item) {
-        return !mob.isPlayer && this.canDash(mob) ? (int)((float)this.dashRange.getValue(this.getUpgradeTier(item)) * 0.8F) : super.getItemAttackerAttackRange(mob, item) * 6;
+        return !mob.isPlayer && this.canDash(mob) ? (int) ((float) this.dashRange.getValue(this.getUpgradeTier(item)) * 0.8F) : super.getItemAttackerAttackRange(mob, item) * 6;
+    }
+
+    public void superOnAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
+        shotProjectile(level, x, y, attackerMob, item, seed);
+        super.onAttack(level, x, y, attackerMob, attackHeight, item, slot, animAttack, seed, mapContent);
+    }
+
+    public void shotProjectile(Level level, int x, int y, ItemAttackerMob attackerMob, InventoryItem item, int seed) {
+        float powerPercent = chargePercent(item);
+        if (powerPercent >= 0.92F) {
+            powerPercent = 1F;
+        }
+        if (powerPercent >= 0.5F) {
+            Projectile projectile = this.getProjectile(level, attackerMob.getX(), attackerMob.getY(), x, y, attackerMob, item, (powerPercent - 0.375F) * 1.6F);
+            GameRandom random = new GameRandom(seed);
+            projectile.resetUniqueID(random);
+
+            level.entityManager.projectiles.addHidden(projectile);
+            if (level.isServer()) {
+                level.getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
+            }
+        }
+    }
+
+
+    public int getChargeAnimTime(InventoryItem item, ItemAttackerMob attackerMob) {
+        GNDItemMap gndData = item.getGndData();
+        return gndData.hasKey("chargeAnimTime") ? gndData.getInt("chargeAnimTime") : this.chargeAnimTime.getValue(this.getUpgradeTier(item));
     }
 
     @Override
     public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
         if (!attackerMob.isPlayer && this.canDash(attackerMob)) {
-            int animTime = (int) ((float) this.getAttackAnimTime(item, attackerMob));
+            int animTime = (int) ((float) this.getChargeAnimTime(item, attackerMob));
             mapContent.setBoolean("charging", true);
             attackerMob.startAttackHandler((new SaberDashAttackHandler(attackerMob, slot, item, this, animTime, new Color(190, 220, 220), seed)));
         } else {
+            int animTime = (int) ((float) this.getChargeAnimTime(item, attackerMob));
             item.getGndData().setBoolean("charging", false);
-            if (animAttack == 0) {
-                attackerMob.startAttackHandler(new SaberAttackHandler(attackerMob, slot, item, this, seed, x, y, attackerMob.isPlayer || this.nonPlayerChargeLevels == null ? this.chargeLevels : this.nonPlayerChargeLevels));
-            }
+            attackerMob.startAttackHandler((new SaberAttackHandler(attackerMob, slot, item, this, animTime, isAuto, seed)));
+
         }
         return item;
     }
+
+    public void showAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, int animAttack, int seed, GNDItemMap mapContent) {
+        if (item.getGndData().getBoolean("charged")) {
+            super.showAttack(level, x, y, attackerMob, attackHeight, item, animAttack, seed, mapContent);
+        }
+        if (level.isClient() && level.getClient().getPlayer().getUniqueID() == attackerMob.getUniqueID()) {
+            super.showAttack(level, x, y, attackerMob, attackHeight, item, animAttack, seed, mapContent);
+            AphCustomUIList.saberAttack.chargePercent = item.getGndData().getFloat("chargePercent");
+        }
+    }
+
     @Override
     public String getTranslatedTypeName() {
         return Localization.translate("item", "saber");
@@ -158,7 +163,7 @@ abstract public class AphSaberToolItem extends AphGreatswordToolItem implements 
 
     @Override
     public InventoryItem onLevelInteract(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int seed, GNDItemMap mapContent) {
-        int animTime = (int) ((float) this.getAttackAnimTime(item, attackerMob));
+        int animTime = (int) ((float) this.getChargeAnimTime(item, attackerMob));
         mapContent.setBoolean("charging", true);
         attackerMob.startAttackHandler((new SaberDashAttackHandler(attackerMob, slot, item, this, animTime, new Color(190, 220, 220), seed)).startFromInteract());
         return item;
@@ -178,5 +183,17 @@ abstract public class AphSaberToolItem extends AphGreatswordToolItem implements 
         };
     }
 
-    abstract public Projectile getProjectile(Level level, ItemAttackerMob attackerMob, float x, float y, float targetX, float targetY, float finalVelocity, int distance, GameDamage damage, int knockback);
+    abstract public Projectile getProjectile(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent);
+
+    public static float chargePercent(InventoryItem item) {
+        return SaberAttackUIManger.barPercent(item.getGndData().getFloat("attackPercent", 0F));
+    }
+
+    public GameDamage getAttackDamage(InventoryItem item) {
+        float powerPercent = chargePercent(item) * 0.5F + 0.5F;
+        if (powerPercent >= 0.92F) {
+            powerPercent = 1F;
+        }
+        return super.getAttackDamage(item).modDamage(powerPercent);
+    }
 }

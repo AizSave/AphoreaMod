@@ -1,5 +1,7 @@
-package aphorea.ui;
+package aphorea.methodpatches;
 
+import aphorea.ui.AphCustomUI;
+import aphorea.ui.AphCustomUIList;
 import necesse.engine.modLoader.annotations.ModMethodPatch;
 import necesse.engine.window.GameWindow;
 import necesse.gfx.forms.MainGameFormManager;

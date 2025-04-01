@@ -16,10 +16,10 @@ import necesse.level.maps.Level;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class UmbrellaDagger extends AphDaggerToolItem {
+public class LostUmbrellaDagger extends AphDaggerToolItem {
     protected GameTexture attackOpenTexture;
 
-    public UmbrellaDagger() {
+    public LostUmbrellaDagger() {
         super(300);
         this.rarity = Rarity.EPIC;
         this.attackAnimTime.setBaseValue(500);
@@ -32,7 +32,7 @@ public class UmbrellaDagger extends AphDaggerToolItem {
 
     @Override
     public Projectile getProjectile(Level level, int x, int y, ItemAttackerMob attackerMob, InventoryItem item, float throwingVelocity, boolean shouldDrop) {
-        return new DaggerProjectile.UmbrellaDaggerProjectile(level, attackerMob,
+        return new DaggerProjectile.LostUmbrellaDaggerProjectile(level, attackerMob,
                 attackerMob.x, attackerMob.y,
                 x, y,
                 100 * throwingVelocity, projectileRange(),

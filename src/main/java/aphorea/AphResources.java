@@ -26,10 +26,12 @@ import necesse.gfx.gameTexture.GameTextureSection;
 import java.io.FileNotFoundException;
 
 public class AphResources {
+    public static GameTexture saberAttackTexture;
     public static GameTexture gunAttackTrackTexture;
     public static GameTexture gunAttackThumbTexture;
 
     public static void initResources() {
+        saberAttackTexture = GameTexture.fromFile("ui/saberattack");
         gunAttackTrackTexture = GameTexture.fromFile("ui/gunattacktrack");
         gunAttackThumbTexture = GameTexture.fromFile("ui/gunattackthumb");
 
@@ -108,13 +110,14 @@ public class AphResources {
         AircutProjectile.GoldAircutProjectile.texture = GameTexture.fromFile("projectiles/aircutgold");
         AircutProjectile.UnstableGelAircutProjectile.texture = GameTexture.fromFile("projectiles/aircutunstablegel");
         AircutProjectile.DemonicAircutProjectile.texture = GameTexture.fromFile("projectiles/aircutdemonic");
+        AircutProjectile.RedAircutProjectile.texture = GameTexture.fromFile("projectiles/aircutred");
 
         DaggerProjectile.CopperDaggerProjectile.texture = GameTexture.fromFile("player/weapons/copperdagger");
         DaggerProjectile.IronDaggerProjectile.texture = GameTexture.fromFile("player/weapons/irondagger");
         DaggerProjectile.GoldDaggerProjectile.texture = GameTexture.fromFile("player/weapons/golddagger");
         DaggerProjectile.DemonicDaggerProjectile.texture = GameTexture.fromFile("player/weapons/demonicdagger");
         DaggerProjectile.TungstenDaggerProjectile.texture = GameTexture.fromFile("player/weapons/tungstendagger");
-        DaggerProjectile.UmbrellaDaggerProjectile.texture = GameTexture.fromFile("player/weapons/umbrella");
+        DaggerProjectile.LostUmbrellaDaggerProjectile.texture = GameTexture.fromFile("player/weapons/umbrella");
     }
 
 }

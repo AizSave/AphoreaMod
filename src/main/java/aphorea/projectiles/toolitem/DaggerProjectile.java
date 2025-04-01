@@ -218,7 +218,7 @@ abstract public class DaggerProjectile extends Projectile {
         }
     }
 
-    public static class UmbrellaDaggerProjectile extends DaggerProjectile {
+    public static class LostUmbrellaDaggerProjectile extends DaggerProjectile {
 
         public static GameTexture texture;
 
@@ -230,11 +230,11 @@ abstract public class DaggerProjectile extends Projectile {
             return AphColors.palettePinkWitch[0];
         }
 
-        public UmbrellaDaggerProjectile(Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, int knockback, boolean shouldDrop, String stringItemID, GNDItemMap gndData) {
+        public LostUmbrellaDaggerProjectile(Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, int knockback, boolean shouldDrop, String stringItemID, GNDItemMap gndData) {
             super(level, owner, x, y, targetX, targetY, speed, distance, damage, knockback, shouldDrop, stringItemID, gndData);
         }
 
-        public UmbrellaDaggerProjectile() {
+        public LostUmbrellaDaggerProjectile() {
         }
 
         @Override
@@ -245,7 +245,7 @@ abstract public class DaggerProjectile extends Projectile {
                     float angle = (float) Math.toRadians(this.getAngle() - 90);
                     float newTargetX = (float) (x + 100 * Math.cos(angle));
                     float newTargetY = (float) (y + 100 * Math.sin(angle));
-                    Projectile projectile = new OpenUmbrellaProjectile(level, getOwner(), x, y, newTargetX, newTargetY, speed / 2, distance / 4, getDamage(), knockback);
+                    Projectile projectile = new OpenLostUmbrellaProjectile(level, getOwner(), x, y, newTargetX, newTargetY, speed / 2, distance / 4, getDamage(), knockback);
                     projectile.resetUniqueID(GameRandom.globalRandom);
                     level.entityManager.projectiles.addHidden(projectile);
                     level.getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));

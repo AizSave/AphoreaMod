@@ -119,6 +119,7 @@ public class AphItems {
         registerItem("goldsaber", new GoldSaber());
         registerItem("unstablegelsaber", new UnstableGelSaber(), 500F);
         registerItem("demonicsaber", new DemonicSaber());
+        registerItem("redsaber", new RedSaber());
         registerItem("broom", new Broom(), 50F);
         registerItem("voidhammer", new VoidHammer());
         registerItem("copperdagger", new CopperDagger(), 15F);
@@ -127,7 +128,7 @@ public class AphItems {
         registerItem("demonicdagger", new DemonicDagger());
         registerItem("tungstendagger", new TungstenDagger());
         replaceItem("cutlass", new AphCutlassSaber(), 500F); // REWORKED
-        registerItem("umbrella", new UmbrellaDagger());
+        registerItem("lostumbrella", new LostUmbrellaDagger());
 
         // Range Weapons
         registerItem("blowgun", new Blowgun());

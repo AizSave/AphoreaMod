@@ -41,7 +41,12 @@ public class UnstableGelSaber extends AphSaberToolItem {
     }
 
     @Override
-    public Projectile getProjectile(Level level, ItemAttackerMob attackerMob, float x, float y, float targetX, float targetY, float finalVelocity, int distance, GameDamage damage, int knockback) {
-        return new AircutProjectile.UnstableGelAircutProjectile(level, attackerMob, x, y, targetX, targetY, finalVelocity, distance, damage, knockback);
+    public Projectile getProjectile(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent) {
+        return new AircutProjectile.UnstableGelAircutProjectile(level, attackerMob, x, y, targetX, targetY,
+                300 * powerPercent,
+                (int) (400 * powerPercent),
+                this.getAttackDamage(item).modDamage(powerPercent),
+                (int) (getKnockback(item, attackerMob) * powerPercent)
+        );
     }
 }

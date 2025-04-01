@@ -449,7 +449,12 @@ public class AphRecipes {
         );
 
         addCraftingList("causticexecutioner", tech,
-                AphCraftingRecipe.showBefore("umbrella", 1,
+                AphCraftingRecipe.showBefore("redsaber", 1,
+                        new Ingredient("bloodessence", 4),
+                        new Ingredient("nightsteelbar", 10),
+                        new Ingredient("phantomdust", 5)
+                ).setTier1(),
+                AphCraftingRecipe.showBefore("lostumbrella", 1,
                         new Ingredient("bloodessence", 5),
                         new Ingredient("silk", 10)
                 ).setTier1()

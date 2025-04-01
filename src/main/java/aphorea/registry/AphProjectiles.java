@@ -35,8 +35,9 @@ public class AphProjectiles {
         ProjectileRegistry.registerProjectile("copperaircut", AircutProjectile.CopperAircutProjectile.class, null, null);
         ProjectileRegistry.registerProjectile("ironaircut", AircutProjectile.IronAircutProjectile.class, null, null);
         ProjectileRegistry.registerProjectile("goldaircut", AircutProjectile.GoldAircutProjectile.class, null, null);
-        ProjectileRegistry.registerProjectile("demonicaircut", AircutProjectile.DemonicAircutProjectile.class, null, null);
         ProjectileRegistry.registerProjectile("unstablegelaircut", AircutProjectile.UnstableGelAircutProjectile.class, null, null);
+        ProjectileRegistry.registerProjectile("demonicaircut", AircutProjectile.DemonicAircutProjectile.class, null, null);
+        ProjectileRegistry.registerProjectile("redaircut", AircutProjectile.RedAircutProjectile.class, null, null);
 
         // Daggers
         ProjectileRegistry.registerProjectile("copperdagger", DaggerProjectile.CopperDaggerProjectile.class, null, null);
@@ -44,8 +45,8 @@ public class AphProjectiles {
         ProjectileRegistry.registerProjectile("golddagger", DaggerProjectile.GoldDaggerProjectile.class, null, null);
         ProjectileRegistry.registerProjectile("demonicdagger", DaggerProjectile.DemonicDaggerProjectile.class, null, null);
         ProjectileRegistry.registerProjectile("tungstendagger", DaggerProjectile.TungstenDaggerProjectile.class, null, null);
-        ProjectileRegistry.registerProjectile("umbrelladagger", DaggerProjectile.UmbrellaDaggerProjectile.class, null, null);
-        ProjectileRegistry.registerProjectile("openumbrella", OpenUmbrellaProjectile.class, "umbrella_open", null);
+        ProjectileRegistry.registerProjectile("lostumbrelladagger", DaggerProjectile.LostUmbrellaDaggerProjectile.class, null, null);
+        ProjectileRegistry.registerProjectile("openlostumbrella", OpenLostUmbrellaProjectile.class, "umbrella_open", null);
 
         // Mobs
         ProjectileRegistry.registerProjectile("pinkwitch", PinkWitchProjectile.class, null, null);

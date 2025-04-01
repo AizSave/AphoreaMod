@@ -52,7 +52,7 @@ abstract public class AircutProjectile extends Projectile {
 
     @Override
     public Color getParticleColor() {
-        return null;
+        return getColor();
     }
 
     @Override
@@ -179,6 +179,34 @@ abstract public class AircutProjectile extends Projectile {
         }
 
         public DemonicAircutProjectile() {
+        }
+    }
+
+    public static class RedAircutProjectile extends AircutProjectile {
+
+        public static GameTexture texture;
+
+        Color getColor() {
+            return new Color(255, 98, 98);
+        }
+
+        GameTexture getTexture() {
+            return texture;
+        }
+
+        public RedAircutProjectile(Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, int knockback) {
+            super(level, owner, x, y, targetX, targetY, speed, distance, damage, knockback);
+        }
+
+        public RedAircutProjectile() {
+        }
+
+        @Override
+        public void init() {
+            super.init();
+            setWidth(56, true);
+            piercing = 20;
+            givesLight = true;
         }
     }
 }

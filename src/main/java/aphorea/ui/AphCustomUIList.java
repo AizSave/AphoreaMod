@@ -5,9 +5,11 @@ import java.util.Map;
 
 abstract public class AphCustomUIList {
     public static Map<String, AphCustomUI> list = new HashMap<>();
-    public static GunAttackManger gunSaberAttack;
+    public static GunAttackUIManger gunAttack;
+    public static SaberAttackUIManger saberAttack;
 
     static {
-        gunSaberAttack = new GunAttackManger("gunattack");
+        gunAttack = new GunAttackUIManger("gunattack");
+        saberAttack = new SaberAttackUIManger("saberattack");
     }
 }

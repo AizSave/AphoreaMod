@@ -60,12 +60,12 @@ public class GelGreatbow extends AphGreatbowProjectileToolItem {
     @Override
     public InventoryItem superOnAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
         super.superOnAttack(level, x, y, attackerMob, attackHeight, item, slot, animAttack, seed, mapContent);
-        int strength = 50;
-        Point2D.Float dir = GameMath.normalize((float) x - attackerMob.x, (float) y - attackerMob.y);
         attackerMob.buffManager.addBuff(new ActiveBuff(BuffRegistry.FOW_ACTIVE, attackerMob, 0.15F, null), level.isServer());
         attackerMob.buffManager.forceUpdateBuffs();
 
         if (attackerMob.isServer()) {
+            int strength = 50;
+            Point2D.Float dir = GameMath.normalize((float) x - attackerMob.x, (float) y - attackerMob.y);
             level.getServer().network.sendToClientsAtEntireLevel(new AphCustomPushPacket(attackerMob, -dir.x, -dir.y, (float) strength), level);
         }
 
