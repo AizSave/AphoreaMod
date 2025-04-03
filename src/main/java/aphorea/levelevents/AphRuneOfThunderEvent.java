@@ -101,7 +101,7 @@ public class AphRuneOfThunderEvent extends HitboxEffectEvent implements Attacker
                     float prevX = targetX;
                     float prevY = targetY;
 
-                    LightningTrail trail = new LightningTrail(new TrailVector(prevX, prevY, 0, 0, i == 0 ? 20 : GameRandom.globalRandom.getFloatBetween(10, 15), 0), this.level, this.level.isCave ? AphColors.palettePinkWitch[2] : AphColors.lighting);
+                    LightningTrail trail = new LightningTrail(new TrailVector(prevX, prevY, 0, 0, i == 0 ? 20 : GameRandom.globalRandom.getFloatBetween(10, 15), 0), this.level, this.level.isCave ? AphColors.dark_magic : AphColors.lighting);
                     this.level.entityManager.addTrail(trail);
 
                     for (int j = i == 0 ? 1 : i + 2; j < 10; j++) {

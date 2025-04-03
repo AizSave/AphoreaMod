@@ -1,6 +1,6 @@
 package aphorea.items;
 
-import aphorea.items.healingtools.AphMagicHealingToolItem;
+import aphorea.items.tools.healing.AphMagicHealingToolItem;
 import aphorea.registry.AphEnchantments;
 import aphorea.registry.AphModifiers;
 import aphorea.utils.area.AphArea;

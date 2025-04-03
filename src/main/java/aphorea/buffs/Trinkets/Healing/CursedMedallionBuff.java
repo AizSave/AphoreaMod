@@ -1,6 +1,7 @@
 package aphorea.buffs.Trinkets.Healing;
 
 import aphorea.packets.AphSingleAreaShowPacket;
+import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
 import necesse.engine.localization.Localization;
@@ -14,7 +15,7 @@ import java.awt.*;
 
 public class CursedMedallionBuff extends AphAreaWhenHealTrinketBuff {
     static int range = 200;
-    static Color color = new Color(0, 0, 0);
+    static Color color = AphColors.black;
 
     public static AphAreaList areaList = new AphAreaList(
             new AphArea(range, color).setDebuffArea(5000, "cursed")

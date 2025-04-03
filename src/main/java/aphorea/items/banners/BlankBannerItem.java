@@ -19,7 +19,7 @@ import java.awt.*;
 
 public class BlankBannerItem extends AphBanner {
     static int range = 200;
-    static Color color = AphColors.nature;
+    static Color color = AphColors.green;
     public static AphAreaList areaList = new AphAreaList(
             new AphArea(range, 0.5F, color).setHealingArea(4)
     );

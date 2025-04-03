@@ -227,7 +227,7 @@ abstract public class DaggerProjectile extends Projectile {
         }
 
         Color getColor() {
-            return AphColors.palettePinkWitch[0];
+            return AphColors.pink_witch;
         }
 
         public LostUmbrellaDaggerProjectile(Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, int knockback, boolean shouldDrop, String stringItemID, GNDItemMap gndData) {

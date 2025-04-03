@@ -45,12 +45,12 @@ public class PinkWitchProjectile extends FollowingProjectile {
 
     @Override
     public Color getParticleColor() {
-        return AphColors.palettePinkWitch[2];
+        return AphColors.dark_magic;
     }
 
     @Override
     public Trail getTrail() {
-        return new Trail(this, getLevel(), AphColors.palettePinkWitch[2], 26, 500, getHeight());
+        return new Trail(this, getLevel(), AphColors.dark_magic, 26, 500, getHeight());
     }
 
     @Override

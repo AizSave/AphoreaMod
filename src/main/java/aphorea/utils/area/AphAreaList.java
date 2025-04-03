@@ -13,6 +13,7 @@ import necesse.inventory.InventoryItem;
 import necesse.inventory.item.*;
 import necesse.inventory.item.toolItem.ToolItem;
 import necesse.level.maps.Level;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
@@ -20,7 +21,7 @@ import java.util.Arrays;
 public class AphAreaList {
     public AphArea[] areas;
 
-    public AphAreaList(AphArea... areas) {
+    public AphAreaList(@NotNull AphArea... areas) {
         this.areas = areas;
 
         for (int i = 0; i < areas.length; i++) {
@@ -31,7 +32,7 @@ public class AphAreaList {
         }
     }
 
-    public AphAreaList add(AphArea... areas) {
+    public AphAreaList add(@NotNull AphArea... areas) {
         for (int i = 0; i < areas.length; i++) {
             areas[i].position = i;
             areas[i].antRange = i == 0 ? 0 : areas[i - 1].range;
@@ -57,7 +58,7 @@ public class AphAreaList {
         executeClient(level, x, y, 1);
     }
 
-    public void executeServer(Mob attacker, float x, float y, float rangeModifier, @Nullable InventoryItem item, @Nullable ToolItem toolItem) {
+    public void executeServer(@NotNull Mob attacker, float x, float y, float rangeModifier, @Nullable InventoryItem item, @Nullable ToolItem toolItem) {
         if (attacker.isServer()) {
             int range = Math.round(this.areas[this.areas.length - 1].range * rangeModifier);
 
@@ -84,7 +85,7 @@ public class AphAreaList {
         executeServer(attacker, attacker.x, attacker.y);
     }
 
-    public void execute(Mob attacker, float x, float y, float rangeModifier, @Nullable InventoryItem item, @Nullable ToolItem toolItem) {
+    public void execute(@NotNull Mob attacker, float x, float y, float rangeModifier, @Nullable InventoryItem item, @Nullable ToolItem toolItem) {
         if(attacker.isServer()) {
             executeServer(attacker, x, y, rangeModifier, item, toolItem);
         }

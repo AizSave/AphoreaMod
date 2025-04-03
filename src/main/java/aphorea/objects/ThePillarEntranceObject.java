@@ -43,7 +43,7 @@ import java.util.Set;
 public class ThePillarEntranceObject extends StaticMultiObject {
     protected ThePillarEntranceObject(int multiX, int multiY, int multiWidth, int multiHeight, int[] multiIDs, Rectangle fullCollision) {
         super(multiX, multiY, multiWidth, multiHeight, multiIDs, fullCollision, "thepillarentrance");
-        this.mapColor = new Color(122, 102, 60);
+        this.mapColor = AphColors.spinel_light;
         this.displayMapTooltip = true;
         this.toolType = ToolType.UNBREAKABLE;
         this.isLightTransparent = true;

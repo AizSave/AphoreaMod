@@ -26,8 +26,8 @@ public class ShotgunBulletProjectile extends BulletProjectile {
     public float armorPenPercent;
     public int spriteX;
     public static Color[] trailColors = new Color[] {
-            new Color(98, 104, 113),
-            new Color(255, 0, 0, 128)
+            AphColors.iron,
+            AphColors.withAlpha(AphColors.red, 128)
     };
 
     @Override

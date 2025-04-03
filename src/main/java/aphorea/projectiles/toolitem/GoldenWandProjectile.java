@@ -1,6 +1,6 @@
 package aphorea.projectiles.toolitem;
 
-import aphorea.items.healingtools.AphHealingProjectileToolItem;
+import aphorea.items.tools.healing.AphHealingProjectileToolItem;
 import aphorea.utils.AphColors;
 import aphorea.utils.AphDistances;
 import aphorea.utils.area.AphArea;
@@ -104,23 +104,6 @@ public class GoldenWandProjectile extends FollowingProjectile {
 
     @Override
     public void addDrawables(List<LevelSortedDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, OrderableDrawables overlayList, Level level, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
-        if (removed()) return;
-        GameLight light = level.getLightLevel(this);
-        int drawX = camera.getDrawX(x) - texture.getWidth() / 2;
-        int drawY = camera.getDrawY(y);
-        TextureDrawOptions options = texture.initDraw()
-                .light(light)
-                .rotate(getAngle(), texture.getWidth() / 2, 2)
-                .pos(drawX, drawY - (int) getHeight());
-
-        list.add(new EntityDrawable(this) {
-            @Override
-            public void draw(TickManager tickManager) {
-                options.draw();
-            }
-        });
-
-        addShadowDrawables(tileList, drawX, drawY, light, getAngle(), texture.getWidth() / 2, 2);
     }
 
     @Override

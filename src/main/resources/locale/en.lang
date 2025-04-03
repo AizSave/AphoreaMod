@@ -125,6 +125,8 @@ ironsaber=Iron Saber
 goldsaber=Gold Saber
 demonicsaber=Demonic Saber
 unstablegelsaber=Unstable Gel Saber
+# NEW
+crimsonkora=Crimson Kora
 
 // Battleaxes
 battleaxe=Battleaxe
@@ -376,6 +378,7 @@ blowgun=Shoots seeds
 // Single Melee Weapons
 woodenrod=Magic Heal yourself with §7<healing>§0 every 10 attacks
 voidhammer=When the projectile bounces or hits an enemy, it targets the nearest one, hitting up to 3 times
+crimsonkora=Hold [input=mouse2] to charge a devastating but slow attack
 
 // Single Range Weapons
 firesling=Burns the enemies

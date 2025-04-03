@@ -1,6 +1,7 @@
 package aphorea.objects;
 
 import aphorea.registry.AphTech;
+import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.camera.GameCamera;
@@ -21,7 +22,7 @@ public class RunesTable extends AphCraftingStationObject {
 
     public RunesTable() {
         super(new Rectangle(32, 32));
-        this.mapColor = new Color(130, 139, 152);
+        this.mapColor = AphColors.wood;
         this.isLightTransparent = true;
     }
 

@@ -135,7 +135,7 @@ public class AphBuffs {
                         pos.x = owner.x + GameMath.sin(angle) * (distance - distance / 2.0F * lifePercent);
                         pos.y = owner.y + GameMath.cos(angle) * distY - 20.0F * lifePercent;
                     }).color((options, lifeTime, timeAlive, lifePercent) -> {
-                        options.color(AphColors.palettePinkWitch[2]);
+                        options.color(AphColors.dark_magic);
                         if (lifePercent > 0.5F) {
                             options.alpha(2.0F * (1.0F - lifePercent));
                         }
@@ -269,7 +269,7 @@ public class AphBuffs {
                 super.clientTick(buff);
                 Mob owner = buff.owner;
                 if (owner.isVisible() && GameRandom.globalRandom.nextInt(2) == 0) {
-                    owner.getLevel().entityManager.addParticle(owner.x + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(AphColors.anger).height(16.0F);
+                    owner.getLevel().entityManager.addParticle(owner.x + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(AphColors.red).height(16.0F);
                 }
             }
         });
@@ -390,7 +390,7 @@ public class AphBuffs {
                 if (player.getDistance(targetX, targetY) > range) {
                     preventUsage = true;
                     if (level.isClient()) {
-                        new AphAreaList(new AphArea(range, level.isCave ? AphColors.palettePinkWitch[2] : AphColors.lighting)).executeClient(level, player.x, player.y, 1F, 1F, 0F);
+                        new AphAreaList(new AphArea(range, level.isCave ? AphColors.dark_magic : AphColors.lighting)).executeClient(level, player.x, player.y, 1F, 1F, 0F);
                     }
                 } else if (level.isServer()) {
                     player.getLevel().entityManager.addLevelEvent(new AphRuneOfThunderEvent(player, targetX, targetY, getEffectNumber(player) / 100));
@@ -589,7 +589,7 @@ public class AphBuffs {
                 super.clientTick(buff);
                 Mob owner = buff.owner;
                 if (owner.isVisible() && GameRandom.globalRandom.nextInt(2) == 0) {
-                    owner.getLevel().entityManager.addParticle(owner.x + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(AphColors.palettePinkWitch[2]).height(16.0F);
+                    owner.getLevel().entityManager.addParticle(owner.x + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(AphColors.dark_magic).height(16.0F);
                 }
             }
 
@@ -614,7 +614,7 @@ public class AphBuffs {
                 super.clientTick(buff);
                 Mob owner = buff.owner;
                 if (owner.isVisible() && GameRandom.globalRandom.nextInt(2) == 0) {
-                    owner.getLevel().entityManager.addParticle(owner.x + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(AphColors.nature).height(16.0F);
+                    owner.getLevel().entityManager.addParticle(owner.x + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(AphColors.green).height(16.0F);
                 }
             }
 
@@ -794,7 +794,7 @@ public class AphBuffs {
 
                 player.setPos(player.x + speedX, player.y + speedY, true);
 
-                player.getLevel().entityManager.addParticle(player.x + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), player.y + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(player.dx / 2, player.dy / 2).color(AphColors.nature).height(16.0F);
+                player.getLevel().entityManager.addParticle(player.x + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), player.y + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(player.dx / 2, player.dy / 2).color(AphColors.green).height(16.0F);
             }
 
             @Override
@@ -827,7 +827,7 @@ public class AphBuffs {
                                 target -> target.getLevel().entityManager.addLevelEvent(new MobHealthChangeEvent(target, (int) (target.getMaxHealth() * 0.2F)))
                         );
 
-                        level.getServer().network.sendToClientsAtEntireLevel(new AphSingleAreaShowPacket(player.x, player.y, 500, AphColors.nature), level);
+                        level.getServer().network.sendToClientsAtEntireLevel(new AphSingleAreaShowPacket(player.x, player.y, 500, AphColors.green), level);
                     }
                 }
             }
@@ -989,7 +989,7 @@ public class AphBuffs {
                 updateBuff(buff);
                 Mob owner = buff.owner;
                 if (owner.isVisible() && bound == 0 || GameRandom.globalRandom.nextInt(bound) == 0) {
-                    owner.getLevel().entityManager.addParticle(owner.x + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(new Color(0, 0, 0)).height(16.0F);
+                    owner.getLevel().entityManager.addParticle(owner.x + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(AphColors.black).height(16.0F);
                 }
             }
 

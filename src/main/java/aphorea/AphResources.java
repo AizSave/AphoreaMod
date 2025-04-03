@@ -1,6 +1,6 @@
 package aphorea;
 
-import aphorea.items.weapons.magic.MagicalBroom;
+import aphorea.items.tools.weapons.magic.MagicalBroom;
 import aphorea.mobs.bosses.minions.MiniUnstableGelSlime;
 import aphorea.mobs.bosses.ThePillarMob;
 import aphorea.mobs.bosses.UnstableGelSlime;
@@ -27,13 +27,21 @@ import java.io.FileNotFoundException;
 
 public class AphResources {
     public static GameTexture saberAttackTexture;
+
     public static GameTexture gunAttackTrackTexture;
     public static GameTexture gunAttackThumbTexture;
 
+    public static GameTexture glacialSaberAttackTrackTexture;
+    public static GameTexture glacialSaberAttackThumbTexture;
+
     public static void initResources() {
         saberAttackTexture = GameTexture.fromFile("ui/saberattack");
+
         gunAttackTrackTexture = GameTexture.fromFile("ui/gunattacktrack");
         gunAttackThumbTexture = GameTexture.fromFile("ui/gunattackthumb");
+
+        glacialSaberAttackTrackTexture = GameTexture.fromFile("ui/glacialsaberattacktrack");
+        glacialSaberAttackThumbTexture = GameTexture.fromFile("ui/glacialsaberattackthumb");
 
         // MOBS
         mobResources();
@@ -110,14 +118,14 @@ public class AphResources {
         AircutProjectile.GoldAircutProjectile.texture = GameTexture.fromFile("projectiles/aircutgold");
         AircutProjectile.UnstableGelAircutProjectile.texture = GameTexture.fromFile("projectiles/aircutunstablegel");
         AircutProjectile.DemonicAircutProjectile.texture = GameTexture.fromFile("projectiles/aircutdemonic");
-        AircutProjectile.RedAircutProjectile.texture = GameTexture.fromFile("projectiles/aircutred");
+        AircutProjectile.CrimsonAircutProjectile.texture = GameTexture.fromFile("projectiles/aircutcrimson");
 
         DaggerProjectile.CopperDaggerProjectile.texture = GameTexture.fromFile("player/weapons/copperdagger");
         DaggerProjectile.IronDaggerProjectile.texture = GameTexture.fromFile("player/weapons/irondagger");
         DaggerProjectile.GoldDaggerProjectile.texture = GameTexture.fromFile("player/weapons/golddagger");
         DaggerProjectile.DemonicDaggerProjectile.texture = GameTexture.fromFile("player/weapons/demonicdagger");
         DaggerProjectile.TungstenDaggerProjectile.texture = GameTexture.fromFile("player/weapons/tungstendagger");
-        DaggerProjectile.LostUmbrellaDaggerProjectile.texture = GameTexture.fromFile("player/weapons/umbrella");
+        DaggerProjectile.LostUmbrellaDaggerProjectile.texture = GameTexture.fromFile("player/weapons/lostumbrella");
     }
 
 }

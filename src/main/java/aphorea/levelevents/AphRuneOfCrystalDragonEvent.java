@@ -1,5 +1,6 @@
 package aphorea.levelevents;
 
+import aphorea.utils.AphColors;
 import necesse.engine.network.Packet;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
@@ -141,7 +142,7 @@ public class AphRuneOfCrystalDragonEvent extends MobAbilityLevelEvent {
 
     private void updateTrail(RayLinkedList<LevelObjectHit> rays, float delta) {
         if (this.beamHandler == null) {
-            this.beamHandler = (new ParticleBeamHandler(this.level)).color(new Color(200, 200, 255)).thickness(160, 80).speed(100.0F).sprite(new GameSprite(GameResources.chains, 7, 0, 32));
+            this.beamHandler = (new ParticleBeamHandler(this.level)).color(AphColors.diamond).thickness(160, 80).speed(100.0F).sprite(new GameSprite(GameResources.chains, 7, 0, 32));
         }
 
         this.beamHandler.update(rays, delta);

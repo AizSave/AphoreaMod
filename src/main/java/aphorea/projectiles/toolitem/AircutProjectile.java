@@ -182,23 +182,23 @@ abstract public class AircutProjectile extends Projectile {
         }
     }
 
-    public static class RedAircutProjectile extends AircutProjectile {
+    public static class CrimsonAircutProjectile extends AircutProjectile {
 
         public static GameTexture texture;
 
         Color getColor() {
-            return new Color(255, 98, 98);
+            return AphColors.crimson_kora;
         }
 
         GameTexture getTexture() {
             return texture;
         }
 
-        public RedAircutProjectile(Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, int knockback) {
+        public CrimsonAircutProjectile(Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, int knockback) {
             super(level, owner, x, y, targetX, targetY, speed, distance, damage, knockback);
         }
 
-        public RedAircutProjectile() {
+        public CrimsonAircutProjectile() {
         }
 
         @Override

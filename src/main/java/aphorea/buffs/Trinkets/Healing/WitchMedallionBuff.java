@@ -12,7 +12,7 @@ import java.awt.*;
 
 public class WitchMedallionBuff extends AphAreaWhenHealTrinketBuff {
     static int range = 200;
-    static Color color = AphColors.palettePinkWitch[2];
+    static Color color = AphColors.dark_magic;
 
     public static AphAreaList areaList = new AphAreaList(
             new AphArea(range, color).setDamageArea(15).setArmorPen(5)

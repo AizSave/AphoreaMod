@@ -1,6 +1,6 @@
 package aphorea.projectiles.toolitem;
 
-import aphorea.items.healingtools.AphHealingProjectileToolItem;
+import aphorea.items.tools.healing.AphHealingProjectileToolItem;
 import aphorea.utils.AphColors;
 import aphorea.utils.AphDistances;
 import aphorea.utils.magichealing.AphMagicHealing;
@@ -27,7 +27,7 @@ import java.util.stream.Stream;
 
 public class WoodenWandProjectile extends FollowingProjectile {
 
-    Color color = AphColors.nature;
+    Color color = AphColors.green;
     AphHealingProjectileToolItem toolItem;
     InventoryItem item;
     int healing;

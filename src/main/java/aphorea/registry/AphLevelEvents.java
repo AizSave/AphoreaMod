@@ -1,8 +1,8 @@
 package aphorea.registry;
 
-import aphorea.items.weapons.melee.greatsword.logic.GreatswordDashLevelEvent;
-import aphorea.items.weapons.melee.saber.logic.SaberDashLevelEvent;
-import aphorea.items.weapons.melee.saber.logic.SaberJumpLevelEvent;
+import aphorea.items.tools.weapons.melee.greatsword.logic.GreatswordDashLevelEvent;
+import aphorea.items.tools.weapons.melee.saber.logic.SaberDashLevelEvent;
+import aphorea.items.tools.weapons.melee.saber.logic.SaberJumpLevelEvent;
 import aphorea.levelevents.*;
 import aphorea.levelevents.thepillar.ThePillarFallingCrystalAttackEvent;
 import aphorea.mobs.summon.VolatileGelSlime;

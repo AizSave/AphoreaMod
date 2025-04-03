@@ -39,7 +39,7 @@ public class SpamBulletProjectile extends BulletProjectile {
     private int type;
 
     public AphAreaList areaList = new AphAreaList(
-            new AphArea(100, 0.5F, AphColors.nature)
+            new AphArea(100, 0.5F, AphColors.green)
                     .setHealingArea(2)
     );
 

@@ -51,6 +51,6 @@ public class AphObjects {
         ObjectRegistry.registerObject("gelrock", gelRock = new RockyWallObject("gelrock", AphColors.rock, "rockygel", 0, 1, 1), -1.0F, true);
         gelRock.toolTier = 1.5F;
         SingleRockObject.registerSurfaceRock(gelRock, "surfacegelrock", AphColors.rock_light, 1, 2, 1, -1.0F, true);
-        ObjectRegistry.registerObject("tungstenoregelrock", new TungstenGelRockOreObject(gelRock, "oremask", "tungstenore", new Color(40, 49, 57)), -1.0F, true);
+        ObjectRegistry.registerObject("tungstenoregelrock", new TungstenGelRockOreObject(gelRock, "oremask", "tungstenore", AphColors.tungsten), -1.0F, true);
     }
 }

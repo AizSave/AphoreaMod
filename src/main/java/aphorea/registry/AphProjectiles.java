@@ -37,7 +37,7 @@ public class AphProjectiles {
         ProjectileRegistry.registerProjectile("goldaircut", AircutProjectile.GoldAircutProjectile.class, null, null);
         ProjectileRegistry.registerProjectile("unstablegelaircut", AircutProjectile.UnstableGelAircutProjectile.class, null, null);
         ProjectileRegistry.registerProjectile("demonicaircut", AircutProjectile.DemonicAircutProjectile.class, null, null);
-        ProjectileRegistry.registerProjectile("redaircut", AircutProjectile.RedAircutProjectile.class, null, null);
+        ProjectileRegistry.registerProjectile("crimsonaircut", AircutProjectile.CrimsonAircutProjectile.class, null, null);
 
         // Daggers
         ProjectileRegistry.registerProjectile("copperdagger", DaggerProjectile.CopperDaggerProjectile.class, null, null);
@@ -46,7 +46,7 @@ public class AphProjectiles {
         ProjectileRegistry.registerProjectile("demonicdagger", DaggerProjectile.DemonicDaggerProjectile.class, null, null);
         ProjectileRegistry.registerProjectile("tungstendagger", DaggerProjectile.TungstenDaggerProjectile.class, null, null);
         ProjectileRegistry.registerProjectile("lostumbrelladagger", DaggerProjectile.LostUmbrellaDaggerProjectile.class, null, null);
-        ProjectileRegistry.registerProjectile("openlostumbrella", OpenLostUmbrellaProjectile.class, "umbrella_open", null);
+        ProjectileRegistry.registerProjectile("openlostumbrella", OpenLostUmbrellaProjectile.class, "lostumbrella_open", null);
 
         // Mobs
         ProjectileRegistry.registerProjectile("pinkwitch", PinkWitchProjectile.class, null, null);

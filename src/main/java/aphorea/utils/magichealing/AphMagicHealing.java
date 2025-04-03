@@ -1,6 +1,6 @@
 package aphorea.utils.magichealing;
 
-import aphorea.items.healingtools.AphMagicHealingToolItem;
+import aphorea.items.tools.healing.AphMagicHealingToolItem;
 import aphorea.registry.AphModifiers;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.MobHealthChangeEvent;
 import necesse.entity.mobs.Mob;
@@ -10,6 +10,7 @@ import necesse.inventory.item.DoubleItemStatTip;
 import necesse.inventory.item.ItemStatTipList;
 import necesse.inventory.item.LocalMessageDoubleItemStatTip;
 import necesse.inventory.item.toolItem.ToolItem;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
@@ -19,7 +20,7 @@ public class AphMagicHealing {
 
     static Map<Mob, Long> cooldowns = new HashMap<>();
 
-    public static boolean canHealMob(Mob healer, Mob target) {
+    public static boolean canHealMob(Mob healer, @NotNull Mob target) {
         return target.getHealthPercent() != 1 && (healer == target || !target.canBeTargeted(healer, healer.isPlayer ? ((PlayerMob) healer).getNetworkClient() : null)) && (!cooldowns.containsKey(target) || target.getWorldTime() >= cooldowns.get(target));
     }
 
@@ -61,6 +62,7 @@ public class AphMagicHealing {
         return healing + (healer == null ? 0 : healer.buffManager.getModifier(AphModifiers.MAGIC_HEALING_FLAT)) + (target == null ? 0 : target.buffManager.getModifier(AphModifiers.MAGIC_HEALING_RECEIVED_FLAT));
     }
 
+    @NotNull
     public static String getMagicHealingToolTip(@Nullable Mob healerMob, int healing, @Nullable InventoryItem item, @Nullable ToolItem toolItem) {
         int received = getMagicHealing(healerMob, healerMob, healing, toolItem, item);
         int normal = getMagicHealing(healerMob, null, healing, toolItem, item);

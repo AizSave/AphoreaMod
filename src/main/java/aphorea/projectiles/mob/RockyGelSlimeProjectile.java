@@ -1,5 +1,6 @@
 package aphorea.projectiles.mob;
 
+import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.GameDamage;
@@ -51,12 +52,12 @@ public class RockyGelSlimeProjectile extends Projectile {
 
     @Override
     public Trail getTrail() {
-        return new Trail(this, this.getLevel(), new Color(50, 50, 50), 16.0F, 150, 18.0F);
+        return new Trail(this, this.getLevel(), AphColors.rock, 16.0F, 150, 18.0F);
     }
 
     @Override
     public Color getParticleColor() {
-        return new Color(50, 50, 50);
+        return AphColors.rock;
     }
 
     @Override

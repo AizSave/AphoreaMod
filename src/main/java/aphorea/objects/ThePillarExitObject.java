@@ -1,5 +1,6 @@
 package aphorea.objects;
 
+import aphorea.utils.AphColors;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.server.Server;
 import necesse.engine.network.server.ServerClient;
@@ -18,7 +19,7 @@ import java.awt.*;
 public class ThePillarExitObject extends StaticMultiObject {
     protected ThePillarExitObject(int multiX, int multiY, int multiWidth, int multiHeight, int[] multiIDs, Rectangle fullCollision) {
         super(multiX, multiY, multiWidth, multiHeight, multiIDs, fullCollision, "templeexit");
-        this.mapColor = new Color(122, 102, 60);
+        this.mapColor = AphColors.spinel_light;
         this.displayMapTooltip = true;
         this.lightLevel = 100;
         this.toolType = ToolType.UNBREAKABLE;

@@ -1,6 +1,11 @@
 package aphorea.utils;
 
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+
 public class AphMaths {
+    @NotNull
+    @Contract(pure = true)
     static public float[] perpendicularVector(float p1x, float p1y, float p2x, float p2y) {
         float Vx = p1y - p2y;
         float Vy = -p1x + p2x;
@@ -11,6 +16,8 @@ public class AphMaths {
         return vector;
     }
 
+    @NotNull
+    @Contract(value = "_, _ -> new", pure = true)
     static public float[] normalVector(float Vx, float Vy) {
         float magnitude = (float) Math.sqrt(Vx * Vx + Vy * Vy);
         if (magnitude == 0) {
@@ -19,6 +26,7 @@ public class AphMaths {
         return new float[]{Vx / magnitude, Vy / magnitude};
     }
 
+    @NotNull
     static public float[] perpendicularNormalVector(float p1x, float p1y, float p2x, float p2y) {
         float[] perpendicular = perpendicularVector(p1x, p1y, p2x, p2y);
         return normalVector(perpendicular[0], perpendicular[1]);

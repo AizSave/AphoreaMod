@@ -17,6 +17,7 @@ import necesse.inventory.item.upgradeUtils.FloatUpgradeValue;
 import necesse.inventory.item.upgradeUtils.IntUpgradeValue;
 import necesse.level.maps.CollisionFilter;
 import necesse.level.maps.Level;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.awt.*;
@@ -54,7 +55,8 @@ public class AphArea {
         this(range, adjustAlpha(alpha, colors));
     }
 
-    private static Color[] adjustAlpha(float alpha, Color... colors) {
+    @NotNull
+    private static Color[] adjustAlpha(float alpha, @NotNull Color... colors) {
         Color[] adjustedColors = new Color[colors.length];
         for (int i = 0; i < colors.length; i++) {
             Color original = colors[i];
@@ -167,7 +169,7 @@ public class AphArea {
         return (item == null || !(item.item instanceof ToolItem)) ? areaHealing.getValue(0) : areaHealing.getValue(item.item.getUpgradeTier(item));
     }
 
-    public void executeServer(Mob attacker, Mob target, float x, float y, float modRange, InventoryItem item, ToolItem toolItem) {
+    public void executeServer(Mob attacker, @NotNull Mob target, float x, float y, float modRange, InventoryItem item, ToolItem toolItem) {
         float distance = target.getDistance(x, y);
         if ((position == 0 == isCenter(attacker, target, distance)) || (inRange(distance, modRange) && inVision(target, x, y))) {
             if (this.areaTypes.contains(AphAreaType.DAMAGE) && target != attacker && canAreaAttack(attacker, target)) {
@@ -203,11 +205,11 @@ public class AphArea {
         return distance <= (range * modRange) && distance > (antRange * modRange);
     }
 
-    public static boolean inVision(Mob target, float x, float y) {
+    public static boolean inVision(@NotNull Mob target, float x, float y) {
         return !target.getLevel().collides(new Line2D.Float(x, y, target.x, target.y), new CollisionFilter().projectileCollision());
     }
 
-    public static boolean canAreaAttack(Mob attacker, Mob target) {
+    public static boolean canAreaAttack(Mob attacker, @NotNull Mob target) {
         return target.canBeTargeted(attacker, attacker.isPlayer ? ((PlayerMob) attacker).getNetworkClient() : null);
     }
 }

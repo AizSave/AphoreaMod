@@ -40,6 +40,7 @@ public class SpinelMimic extends HostileMob {
     public static LootTable lootTable = new LootTable(
             new LootItem("spinelchest"),
             RotationLootItem.globalLootRotation(
+                    new LootItem("brokenkora"),
                     new LootItem("ninjascarf"),
                     new LootItem("adrenalinecharm"),
                     new LootItem("shotgunsaber"),

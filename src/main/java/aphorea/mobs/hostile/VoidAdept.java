@@ -37,10 +37,10 @@ public class VoidAdept extends HostileMob {
     public final CoordinateMobAbility teleportAbility;
     public final CoordinateMobAbility teleportParticle;
     public static AphAreaList showAttackRange = new AphAreaList(
-            new AphArea(250, new Color(255, 255, 255))
+            new AphArea(250, AphColors.lighter_gray)
     ).setDamageType(DamageTypeRegistry.MAGIC);
     public static AphAreaList attackArea = new AphAreaList(
-            new AphArea(250, AphColors.palettePinkWitch[2]).setDamageArea(40).setArmorPen(10)
+            new AphArea(250, AphColors.dark_magic).setDamageArea(40).setArmorPen(10)
     ).setDamageType(DamageTypeRegistry.MAGIC);
 
 
@@ -70,8 +70,8 @@ public class VoidAdept extends HostileMob {
         this.teleportAbility = this.registerAbility(new CoordinateMobAbility() {
             protected void run(int x, int y) {
                 if (VoidAdept.this.isClient()) {
-                    VoidAdept.this.getLevel().entityManager.addParticle(new SmokePuffParticle(VoidAdept.this.getLevel(), VoidAdept.this.x, VoidAdept.this.y, AphColors.palettePinkWitch[2]), Particle.GType.CRITICAL);
-                    VoidAdept.this.getLevel().entityManager.addParticle(new SmokePuffParticle(VoidAdept.this.getLevel(), (float) x, (float) y, AphColors.palettePinkWitch[2]), Particle.GType.CRITICAL);
+                    VoidAdept.this.getLevel().entityManager.addParticle(new SmokePuffParticle(VoidAdept.this.getLevel(), VoidAdept.this.x, VoidAdept.this.y, AphColors.dark_magic), Particle.GType.CRITICAL);
+                    VoidAdept.this.getLevel().entityManager.addParticle(new SmokePuffParticle(VoidAdept.this.getLevel(), (float) x, (float) y, AphColors.dark_magic), Particle.GType.CRITICAL);
                 }
 
                 VoidAdept.this.setPos((float) x, (float) y, true);
@@ -81,7 +81,7 @@ public class VoidAdept extends HostileMob {
         this.teleportParticle = this.registerAbility(new CoordinateMobAbility() {
             protected void run(int x, int y) {
                 if (VoidAdept.this.isClient()) {
-                    VoidAdept.this.getLevel().entityManager.addParticle(new SmokePuffParticle(VoidAdept.this.getLevel(), (float) x, (float) y, AphColors.palettePinkWitch[2]), Particle.GType.CRITICAL);
+                    VoidAdept.this.getLevel().entityManager.addParticle(new SmokePuffParticle(VoidAdept.this.getLevel(), (float) x, (float) y, AphColors.dark_magic), Particle.GType.CRITICAL);
                 }
             }
         });

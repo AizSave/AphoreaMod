@@ -2,6 +2,7 @@ package aphorea;
 
 import aphorea.journal.AphJournalChallenges;
 import aphorea.registry.*;
+import aphorea.utils.AphColors;
 import necesse.engine.modLoader.annotations.ModEntry;
 import necesse.engine.registries.VersionMigration;
 import necesse.engine.util.GameUtils;
@@ -105,7 +106,7 @@ public class AphoreaMod {
         AphLootTables.modifyLootTables();
 
         try {
-            Supplier<Color> newColor = () -> new Color(100, 250, 250);
+            Supplier<Color> newColor = () -> AphColors.normal_rarity;
 
             Field description = GameColor.class.getDeclaredField("color");
             description.setAccessible(true);

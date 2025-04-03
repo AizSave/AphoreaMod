@@ -155,8 +155,7 @@ public class SpinelGolem extends HostileMob {
                 }
 
                 int alpha = GameMath.limit(GameMath.lerp((float) timer / (float) (chargeTime + stickTime), 255, 0), 0, 255);
-                Color color = new Color(AphColors.spinel.getRed(), AphColors.spinel.getGreen(), AphColors.spinel.getBlue(), alpha);
-                this.warningBeam.color(color);
+                this.warningBeam.color(AphColors.withAlpha(AphColors.spinel, alpha));
                 this.warningBeam.update(rays, delta);
             } else if (this.warningBeam != null) {
                 this.warningBeam.dispose();

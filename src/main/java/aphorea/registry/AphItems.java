@@ -24,41 +24,38 @@ import aphorea.items.consumable.InitialRune;
 import aphorea.items.consumable.LifeSpinel;
 import aphorea.items.consumable.LowdsPotion;
 import aphorea.items.consumable.UnstableCore;
-import aphorea.items.healingtools.*;
+import aphorea.items.tools.healing.*;
 import aphorea.items.misc.GelSlimeNullifier;
 import aphorea.items.runes.AphBaseRune;
 import aphorea.items.runes.AphModifierRune;
 import aphorea.items.runes.AphRunesInjector;
+import aphorea.items.tools.weapons.melee.sword.*;
 import aphorea.items.trinkets.SwampShield;
 import aphorea.items.vanillaitemtypes.AphGrassSeedItem;
 import aphorea.items.vanillaitemtypes.AphMatItem;
 import aphorea.items.vanillaitemtypes.AphPetItem;
 import aphorea.items.vanillaitemtypes.AphSimpleTrinketItem;
-import aphorea.items.weapons.magic.AdeptsBook;
-import aphorea.items.weapons.magic.MagicalBroom;
-import aphorea.items.weapons.magic.UnstableGelStaff;
-import aphorea.items.weapons.melee.battleaxe.DemonicBattleaxe;
-import aphorea.items.weapons.melee.battleaxe.UnstableGelBattleaxe;
-import aphorea.items.weapons.melee.dagger.*;
-import aphorea.items.weapons.melee.glaive.WoodenRod;
-import aphorea.items.weapons.melee.greatsword.UnstableGelGreatsword;
-import aphorea.items.weapons.melee.saber.*;
-import aphorea.items.weapons.melee.sword.Broom;
-import aphorea.items.weapons.melee.sword.GelSword;
-import aphorea.items.weapons.melee.sword.UnstableGelSword;
-import aphorea.items.weapons.melee.sword.VoidHammer;
-import aphorea.items.weapons.range.TheSpammer;
-import aphorea.items.weapons.range.blowgun.Blowgun;
-import aphorea.items.weapons.range.greatbow.GelGreatbow;
-import aphorea.items.weapons.range.greatbow.UnstableGelGreatbow;
-import aphorea.items.weapons.range.sabergun.ShotgunSaber;
-import aphorea.items.weapons.range.sling.FireSling;
-import aphorea.items.weapons.range.sling.FrozenSling;
-import aphorea.items.weapons.range.sling.Sling;
-import aphorea.items.weapons.summoner.VolatileGelStaff;
-import aphorea.items.weapons.throwable.GelBall;
-import aphorea.items.weapons.throwable.GelBallGroup;
-import aphorea.items.weapons.throwable.UnstableGelveline;
+import aphorea.items.tools.weapons.magic.AdeptsBook;
+import aphorea.items.tools.weapons.magic.MagicalBroom;
+import aphorea.items.tools.weapons.magic.UnstableGelStaff;
+import aphorea.items.tools.weapons.melee.battleaxe.DemonicBattleaxe;
+import aphorea.items.tools.weapons.melee.battleaxe.UnstableGelBattleaxe;
+import aphorea.items.tools.weapons.melee.dagger.*;
+import aphorea.items.tools.weapons.melee.glaive.WoodenRod;
+import aphorea.items.tools.weapons.melee.greatsword.UnstableGelGreatsword;
+import aphorea.items.tools.weapons.melee.saber.*;
+import aphorea.items.tools.weapons.range.TheSpammer;
+import aphorea.items.tools.weapons.range.blowgun.Blowgun;
+import aphorea.items.tools.weapons.range.greatbow.GelGreatbow;
+import aphorea.items.tools.weapons.range.greatbow.UnstableGelGreatbow;
+import aphorea.items.tools.weapons.range.sabergun.ShotgunSaber;
+import aphorea.items.tools.weapons.range.sling.FireSling;
+import aphorea.items.tools.weapons.range.sling.FrozenSling;
+import aphorea.items.tools.weapons.range.sling.Sling;
+import aphorea.items.tools.weapons.summoner.VolatileGelStaff;
+import aphorea.items.tools.weapons.throwable.GelBall;
+import aphorea.items.tools.weapons.throwable.GelBallGroup;
+import aphorea.items.tools.weapons.throwable.UnstableGelveline;
 import necesse.engine.registries.ItemRegistry;
 import necesse.inventory.item.Item;
 import necesse.inventory.item.toolItem.pickaxeToolItem.CustomPickaxeToolItem;
@@ -119,7 +116,6 @@ public class AphItems {
         registerItem("goldsaber", new GoldSaber());
         registerItem("unstablegelsaber", new UnstableGelSaber(), 500F);
         registerItem("demonicsaber", new DemonicSaber());
-        registerItem("redsaber", new RedSaber());
         registerItem("broom", new Broom(), 50F);
         registerItem("voidhammer", new VoidHammer());
         registerItem("copperdagger", new CopperDagger(), 15F);
@@ -128,7 +124,10 @@ public class AphItems {
         registerItem("demonicdagger", new DemonicDagger());
         registerItem("tungstendagger", new TungstenDagger());
         replaceItem("cutlass", new AphCutlassSaber(), 500F); // REWORKED
+        registerItem("glacialsaber", new GlacialSaber());
         registerItem("lostumbrella", new LostUmbrellaDagger());
+        registerItem("brokenkora", new BrokenKora(), 200F);
+        registerItem("crimsonkora", new CrimsonKora());
 
         // Range Weapons
         registerItem("blowgun", new Blowgun());
@@ -341,10 +340,6 @@ public class AphItems {
         registerItem(stringID, item, brokerValue, true);
     }
 
-    private static void registerItem(String stringID, Item item, boolean isObtainable) {
-        registerItem(stringID, item, -1F, isObtainable);
-    }
-
     private static void registerItem(String stringID, Item item) {
         registerItem(stringID, item, -1F, true);
     }
@@ -355,10 +350,6 @@ public class AphItems {
 
     private static void replaceItem(String stringID, Item item, float brokerValue) {
         replaceItem(stringID, item, brokerValue, true);
-    }
-
-    private static void replaceItem(String stringID, Item item, boolean isObtainable) {
-        replaceItem(stringID, item, -1F, isObtainable);
     }
 
     private static void replaceItem(String stringID, Item item) {

@@ -16,7 +16,7 @@ import java.awt.*;
 
 public class AncientMedallionBuff extends AphAreaWhenHealTrinketBuff {
     static int range = 300;
-    static Color color = new Color(AphColors.palettePinkWitch[2].getRed() / 2, AphColors.palettePinkWitch[2].getGreen() / 2, AphColors.palettePinkWitch[2].getBlue() / 2);
+    static Color color = AphColors.darker_magic;
 
     public static AphAreaList areaList = new AphAreaList(
             new AphArea(range, color).setDamageArea(30).setArmorPen(10)
