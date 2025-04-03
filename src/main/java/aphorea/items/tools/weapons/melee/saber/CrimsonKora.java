@@ -33,7 +33,7 @@ public class CrimsonKora extends AphSaberToolItem {
     public CrimsonKora() {
         super(800);
         rarity = Rarity.EPIC;
-        attackDamage.setBaseValue(70).setUpgradedValue(1, 75);
+        attackDamage.setBaseValue(70).setUpgradedValue(1, 70);
         knockback.setBaseValue(200);
 
         this.attackRange.setBaseValue(80);
