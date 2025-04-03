@@ -8,10 +8,10 @@ public class BrokenKora extends AphSwordToolItem {
     public BrokenKora() {
         super(500);
         rarity = Rarity.NORMAL;
-        attackDamage.setBaseValue(80);
+        attackDamage.setBaseValue(50);
         knockback.setBaseValue(50);
 
-        attackRange.setBaseValue(25);
+        attackRange.setBaseValue(40);
 
         attackXOffset = 10;
         attackYOffset = 10;
