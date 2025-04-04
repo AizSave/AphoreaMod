@@ -62,7 +62,7 @@ public class SaberAttackHandler extends MousePositionAttackHandler {
         showItem.getGndData().setBoolean("charging", true);
         showItem.getGndData().setFloat("chargePercent", SaberAttackUIManger.barPercent(chargePercent));
 
-        if(attackerMob.isClient() && attackerMob.isPlayer && AphCustomUIList.saberAttack.form.isHidden()) {
+        if (attackerMob.isClient() && attackerMob.isPlayer && AphCustomUIList.saberAttack.form.isHidden()) {
             AphCustomUIList.saberAttack.form.setHidden(false);
             AphCustomUIList.saberAttack.chargeTime = this.chargeTime;
         }
@@ -70,14 +70,14 @@ public class SaberAttackHandler extends MousePositionAttackHandler {
         this.attackerMob.showAttackAndSendAttacker(showItem, this.lastX, this.lastY, 0, this.seed);
 
         if (chargePercent >= 1) {
-            if(!this.attackerMob.isPlayer || isAuto) {
+            if (!this.attackerMob.isPlayer || isAuto) {
                 this.attackerMob.endAttackHandler(true);
             }
-        } else if(chargePercent >= 0.9F && !this.fullyCharged) {
+        } else if (chargePercent >= 0.9F && !this.fullyCharged) {
             this.fullyCharged = true;
             SoundManager.playSound(GameResources.cling, SoundEffect.effect(this.attackerMob).volume(0.2F).pitch(1.0F));
         }
-        
+
     }
 
     @Override
