@@ -16,8 +16,6 @@ import necesse.entity.mobs.MobHitCooldowns;
 import necesse.level.maps.Level;
 import necesse.level.maps.hudManager.HudDrawElement;
 
-import java.awt.*;
-
 public class SaberJumpLevelEvent extends MobAbilityLevelEvent {
     protected float initialX;
     protected float initialY;

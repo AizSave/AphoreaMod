@@ -31,8 +31,6 @@ import necesse.entity.mobs.ai.behaviourTree.util.TargetFinderDistance;
 import necesse.entity.mobs.buffs.staticBuffs.BossNearbyBuff;
 import necesse.entity.mobs.hostile.bosses.BossMob;
 import necesse.entity.objectEntity.ObjectEntity;
-import necesse.entity.particle.Particle;
-import necesse.entity.particle.SmokePuffParticle;
 import necesse.gfx.GameResources;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawables.OrderableDrawables;
@@ -44,9 +42,8 @@ import necesse.level.maps.IncursionLevel;
 import necesse.level.maps.Level;
 
 import java.awt.*;
-import java.util.*;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.*;
 
 public class ThePillarMob extends BossMob {
     public static int BOSS_AREA_RADIUS = 1024;

@@ -5,7 +5,6 @@ import aphorea.registry.AphBuffs;
 import aphorea.registry.AphDamageType;
 import aphorea.registry.AphModifiers;
 import aphorea.utils.AphColors;
-import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
 import aphorea.utils.area.AphFlatArea;
 import necesse.engine.localization.Localization;

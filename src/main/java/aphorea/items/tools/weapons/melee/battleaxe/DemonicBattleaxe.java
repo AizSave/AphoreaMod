@@ -2,8 +2,6 @@ package aphorea.items.tools.weapons.melee.battleaxe;
 
 import aphorea.utils.AphColors;
 
-import java.awt.*;
-
 public class DemonicBattleaxe extends AphBattleaxeToolItem {
 
     public DemonicBattleaxe() {

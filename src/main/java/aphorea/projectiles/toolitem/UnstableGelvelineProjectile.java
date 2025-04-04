@@ -1,6 +1,5 @@
 package aphorea.projectiles.toolitem;
 
-import aphorea.items.tools.healing.AphHealingProjectileToolItem;
 import aphorea.items.tools.weapons.throwable.UnstableGelveline;
 import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
@@ -20,7 +19,6 @@ import necesse.gfx.drawables.EntityDrawable;
 import necesse.gfx.drawables.LevelSortedDrawable;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.item.toolItem.ToolItem;
 import necesse.level.maps.Level;
 import necesse.level.maps.LevelObjectHit;
 import necesse.level.maps.light.GameLight;

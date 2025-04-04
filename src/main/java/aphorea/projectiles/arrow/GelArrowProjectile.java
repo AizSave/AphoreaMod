@@ -1,6 +1,5 @@
 package aphorea.projectiles.arrow;
 
-import aphorea.items.tools.weapons.throwable.UnstableGelveline;
 import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;

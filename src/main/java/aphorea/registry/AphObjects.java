@@ -7,8 +7,6 @@ import necesse.level.gameObject.RockObject;
 import necesse.level.gameObject.SingleRockObject;
 import necesse.level.gameObject.furniture.StorageBoxInventoryObject;
 
-import java.awt.*;
-
 public class AphObjects {
     public static void registerCore() {
         ObjectRegistry.registerObject("witchstatue", new WitchStatue(), -1.0F, true);

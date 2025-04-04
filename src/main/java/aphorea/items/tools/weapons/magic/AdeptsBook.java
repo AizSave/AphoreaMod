@@ -5,8 +5,6 @@ import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
 import necesse.engine.registries.DamageTypeRegistry;
-import necesse.entity.mobs.PlayerMob;
-import necesse.inventory.InventoryItem;
 import necesse.inventory.item.ItemInteractAction;
 
 import java.awt.*;

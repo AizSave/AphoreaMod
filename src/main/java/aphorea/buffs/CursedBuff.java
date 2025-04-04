@@ -9,8 +9,6 @@ import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.buffs.staticBuffs.Buff;
 import necesse.entity.particle.Particle.GType;
 
-import java.awt.*;
-
 public class CursedBuff extends Buff {
     public CursedBuff() {
         this.isImportant = true;

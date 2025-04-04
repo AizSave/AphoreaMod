@@ -1,9 +1,9 @@
 package aphorea;
 
 import aphorea.items.tools.weapons.magic.MagicalBroom;
-import aphorea.mobs.bosses.minions.MiniUnstableGelSlime;
 import aphorea.mobs.bosses.ThePillarMob;
 import aphorea.mobs.bosses.UnstableGelSlime;
+import aphorea.mobs.bosses.minions.MiniUnstableGelSlime;
 import aphorea.mobs.friendly.WildPhosphorSlime;
 import aphorea.mobs.hostile.*;
 import aphorea.mobs.pet.PetPhosphorSlime;

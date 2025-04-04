@@ -1,7 +1,6 @@
 package aphorea.items.tools.weapons.melee.saber;
 
 import aphorea.projectiles.toolitem.AircutProjectile;
-import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.inventory.InventoryItem;

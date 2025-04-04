@@ -1,7 +1,6 @@
 package aphorea.items.ammo;
 
 import aphorea.items.vanillaitemtypes.AphArrowItem;
-import aphorea.projectiles.arrow.GelArrowProjectile;
 import aphorea.projectiles.arrow.UnstableGelArrowProjectile;
 import necesse.engine.localization.Localization;
 import necesse.engine.util.GameBlackboard;

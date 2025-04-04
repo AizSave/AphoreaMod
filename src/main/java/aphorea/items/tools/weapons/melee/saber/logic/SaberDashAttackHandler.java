@@ -161,9 +161,9 @@ public class SaberDashAttackHandler extends MousePositionAttackHandler {
             chargePercent = Math.min(chargePercent, 1.0F);
             LevelEvent event;
             if(attackerMob.buffManager.hasBuff("ninjascarf") && !attackerMob.getLevel().isTrialRoom) {
-                event = new SaberJumpLevelEvent(this.attackerMob, this.seed, dir.x, dir.y, this.getChargeDistance(chargePercent), (int) (200.0F * chargePercent), this.saberItem.getAttackDamage(this.item));
+                event = new SaberJumpLevelEvent(this.attackerMob, this.seed, dir.x, dir.y, this.getChargeDistance(chargePercent), (int) (200.0F * chargePercent), this.saberItem.getAttackDamage(this.item).modDamage(saberItem.getDashDamageMultiplier(item)));
             } else {
-                event = new SaberDashLevelEvent(this.attackerMob, this.seed, dir.x, dir.y, this.getChargeDistance(chargePercent), (int) (200.0F * chargePercent), this.saberItem.getAttackDamage(this.item));
+                event = new SaberDashLevelEvent(this.attackerMob, this.seed, dir.x, dir.y, this.getChargeDistance(chargePercent), (int) (200.0F * chargePercent), this.saberItem.getAttackDamage(this.item).modDamage(saberItem.getDashDamageMultiplier(item)));
             }
             this.attackerMob.addAndSendAttackerLevelEvent(event);
             this.attackerMob.buffManager.addBuff(new ActiveBuff(AphBuffs.SABER_DASH_COOLDOWN, this.attackerMob, 3.0F, null), this.attackerMob.isServer());

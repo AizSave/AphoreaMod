@@ -2,7 +2,6 @@ package aphorea.buffs.Trinkets.Healing;
 
 import aphorea.packets.AphSingleAreaShowPacket;
 import aphorea.utils.AphColors;
-import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
 import aphorea.utils.area.AphFlatArea;
 import necesse.engine.network.Packet;

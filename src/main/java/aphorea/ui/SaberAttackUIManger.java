@@ -12,8 +12,12 @@ public class SaberAttackUIManger extends AphCustomUI {
     public float chargePercent;
     public int chargeTime;
 
-    public static int width = 66;
-    public static int height = 24;
+    public static int baseWidth = 66;
+    public static int baseHeight = 24;
+
+    public static int getLoweredY() {
+        return (int) (34 * getZoom());
+    }
 
     public SaberAttackUIManger(String formId) {
         super(formId);
@@ -21,21 +25,37 @@ public class SaberAttackUIManger extends AphCustomUI {
 
     @Override
     public void startForm() {
-        this.form = mainGameFormManager.addComponent(new SaberAttackUIManger.AttackTrackForm(this.formId, width, height));
+        this.form = mainGameFormManager.addComponent(new SaberAttackUIManger.AttackTrackForm(this.formId, getWidth(), getHeight()));
     }
 
     @Override
     public void updatePosition() {
         this.form.setPosition(
                 WindowManager.getWindow().getHudWidth() / 2 - this.form.getWidth() / 2,
-                WindowManager.getWindow().getHudHeight() / 2 + 6
+                WindowManager.getWindow().getHudHeight() / 2 - this.form.getHeight() / 2 + getLoweredY()
         );
+    }
+
+    @Override
+    public int getWidth() {
+        return (int) (AphResources.glacialSaberAttackTrackTexture.getWidth() * getZoom());
+    }
+
+    @Override
+    public int getHeight() {
+        return (int) (AphResources.glacialSaberAttackTrackTexture.getHeight() * getZoom());
     }
 
     @Override
     public void setupForm() {
         this.form.setHidden(true);
         super.setupForm();
+    }
+
+    @Override
+    public void onWindowResized() {
+        updatePosition();
+        updateSize();
     }
 
     public class AttackTrackForm extends Form {
@@ -45,10 +65,16 @@ public class SaberAttackUIManger extends AphCustomUI {
 
         @Override
         public void draw(TickManager tickManager, PlayerMob perspective, Rectangle renderBox) {
-            float timeSinceStart = SaberAttackUIManger.this.chargePercent * SaberAttackUIManger.this.chargeTime;
-            float currentProgress = (timeSinceStart + TICK_MS) / SaberAttackUIManger.this.chargeTime;
-            AphResources.saberAttackTexture.initDraw()
-                    .sprite(0, 30 - Math.round(barPercent(currentProgress) * 30), width, height)
+            int width = (int) (baseWidth * getZoom());
+            int height = (int) (baseHeight * getZoom());
+
+            int realHeight = (int) (baseHeight * 31 * getZoom());
+
+            float progressX = barPercent(showProgress(SaberAttackUIManger.this.chargePercent, SaberAttackUIManger.this.chargeTime));
+
+            getResizedTexture("saberattack", AphResources.saberAttackTexture, width, realHeight)
+                    .initDraw()
+                    .sprite(0, (int) (30 - 30 * progressX), width, height)
                     .pos(this.getX(), this.getY())
                     .draw();
 

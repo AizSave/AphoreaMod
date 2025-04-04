@@ -15,7 +15,6 @@ import necesse.gfx.GameResources;
 import necesse.gfx.gameTexture.GameSprite;
 import necesse.level.maps.LevelObjectHit;
 
-import java.awt.*;
 import java.awt.geom.Point2D;
 
 public class AphRuneOfCrystalDragonEvent extends MobAbilityLevelEvent {

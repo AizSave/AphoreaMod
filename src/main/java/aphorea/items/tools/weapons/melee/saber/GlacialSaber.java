@@ -32,7 +32,7 @@ public class GlacialSaber extends AphSaberToolItem {
     public GlacialSaber() {
         super(500);
         rarity = Rarity.NORMAL;
-        attackDamage.setBaseValue(40)
+        attackDamage.setBaseValue(52)
                 .setUpgradedValue(1, 80);
         knockback.setBaseValue(75);
 
@@ -93,12 +93,17 @@ public class GlacialSaber extends AphSaberToolItem {
     }
 
     @Override
+    public float getDashDamageMultiplier(InventoryItem item) {
+        return 2;
+    }
+
+    @Override
     public float chargePercent(InventoryItem item) {
-        return 1F - Math.abs(GlacialSaberAttackUIManger.barPercent(item.getGndData().getFloat("realChargePercent", 1F)));
+        return 1F - Math.abs(GlacialSaberAttackUIManger.barPercent(item.getGndData().getFloat("realChargePercent", 0F)));
     }
 
     public static float calcSownChargePercent(float chargePercent) {
-        return Math.min(chargePercent / 0.75F, 1F);
+        return Math.min(chargePercent / 0.25F, 1F);
     }
 
     @Override
@@ -163,11 +168,11 @@ public class GlacialSaber extends AphSaberToolItem {
 
             this.attackerMob.showAttackAndSendAttacker(showItem, this.lastX, this.lastY, 0, this.seed);
 
-            if (chargePercent >= 1.5F && (!this.attackerMob.isPlayer || isAuto)) {
+            if (chargePercent >= 1F && (!this.attackerMob.isPlayer || isAuto)) {
                 this.attackerMob.endAttackHandler(true);
                 return;
             }
-            if (chargePercent >= 0.6F && !this.fullyCharged) {
+            if (chargePercent >= 0.25F && !this.fullyCharged) {
                 this.fullyCharged = true;
 
                 int particles = 35;
@@ -181,7 +186,7 @@ public class GlacialSaber extends AphSaberToolItem {
                     this.attackerMob.getLevel().entityManager.addParticle(this.attackerMob, typeSwitcher.next()).movesFriction(dx, dy, 0.8F).color(AphColors.ice).heightMoves(0.0F, 30.0F).lifeTime(500);
                 }
 
-                SoundManager.playSound(GameResources.cling, SoundEffect.effect(this.attackerMob).volume(0.5F).pitch(1.0F));
+                SoundManager.playSound(GameResources.cling, SoundEffect.effect(this.attackerMob).volume(0.2F).pitch(1.0F));
 
             }
 
@@ -203,7 +208,7 @@ public class GlacialSaber extends AphSaberToolItem {
         public void onEndAttack(boolean bySelf) {
             AphCustomUIList.glacialSaberAttack.form.setHidden(true);
             float chargePercent = this.getChargePercent();
-            if (!this.endedByInteract && chargePercent >= 0.75F) {
+            if (!this.endedByInteract && chargePercent >= 0.25F) {
                 if (this.attackerMob.isPlayer) {
                     ((PlayerMob) this.attackerMob).constantAttack = true;
                 }

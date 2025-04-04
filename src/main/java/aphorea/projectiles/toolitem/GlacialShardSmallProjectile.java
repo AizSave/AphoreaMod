@@ -2,9 +2,11 @@ package aphorea.projectiles.toolitem;
 
 import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
+import necesse.engine.registries.BuffRegistry;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
+import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.projectile.Projectile;
 import necesse.entity.trails.Trail;
 import necesse.gfx.camera.GameCamera;
@@ -75,5 +77,11 @@ public class GlacialShardSmallProjectile extends Projectile {
         });
 
         addShadowDrawables(tileList, drawX, drawY, light, getAngle(), texture.getWidth() / 2, 2);
+    }
+
+    @Override
+    public void addHit(Mob target) {
+        super.addHit(target);
+        target.addBuff(new ActiveBuff(BuffRegistry.Debuffs.FROSTBURN, target, 2000, this), true);
     }
 }

@@ -211,6 +211,6 @@ abstract public class AphSaberGunToolItem extends ProjectileToolItem implements 
 
 
     public static float spreadPercent(float chargePercent) {
-        return Math.abs(GunAttackUIManger.barX(chargePercent));
+        return Math.abs(GunAttackUIManger.barPercent(chargePercent));
     }
 }

@@ -78,7 +78,7 @@ public class CrimsonKora extends AphSaberToolItem {
         item.getGndData().setBoolean("charging", false);
         item.getGndData().setFloat("modifyDamage", 1F);
         item.getGndData().setBoolean("doDash", false);
-        attackerMob.startAttackHandler((new SaberAttackHandler(attackerMob, slot, item, this, animTime, false, seed)));
+        attackerMob.startAttackHandler((new CrimsonKoraAttackHandler(attackerMob, slot, item, this, animTime, false, seed)));
         return item;
 
     }
@@ -86,11 +86,14 @@ public class CrimsonKora extends AphSaberToolItem {
     @Override
     public void showAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, int animAttack, int seed, GNDItemMap mapContent) {
         super.showAttack(level, x, y, attackerMob, attackHeight, item, animAttack, seed, mapContent);
-        if (level.isClient() && item.getGndData().getBoolean("charged") && !item.getGndData().getBoolean("charging") && item.getGndData().getFloat("modifyDamage", 1F) == 2F) {
+        if (level.isClient() && item.getGndData().getBoolean("charged") && !item.getGndData().getBoolean("charging")) {
+            float damagePercent = item.getGndData().getFloat("modifyDamage", 1F);
             float chargePercent = chargePercent(item);
-            level.getClient().startCameraShake(attackerMob.x, attackerMob.y, (int) (1000 * chargePercent), 40, 3.0F * chargePercent, 3.0F * chargePercent, true);
+            float shownEffect = chargePercent * damagePercent * 0.5F;
+
+            level.getClient().startCameraShake(attackerMob.x, attackerMob.y, (int) (1000 * shownEffect), 40, 3.0F * shownEffect, 3.0F * shownEffect, true);
             if (chargePercent > 0.6F) {
-                SoundManager.playSound(GameResources.electricExplosion, SoundEffect.effect(attackerMob).volume(chargePercent - 0.3F));
+                SoundManager.playSound(GameResources.electricExplosion, SoundEffect.effect(attackerMob).volume(shownEffect - 0.3F));
             }
         }
     }
@@ -101,7 +104,7 @@ public class CrimsonKora extends AphSaberToolItem {
         item.getGndData().setBoolean("charging", false);
         item.getGndData().setFloat("modifyDamage", 2F);
         item.getGndData().setBoolean("doDash", true);
-        attackerMob.startAttackHandler((new CrimsonKoraGrandAttackHandler(attackerMob, slot, item, this, animTime, false, seed)).startFromInteract());
+        attackerMob.startAttackHandler((new CrimsonKoraAttackHandler(attackerMob, slot, item, this, animTime, false, seed)).startFromInteract());
         return item;
     }
 
@@ -123,10 +126,10 @@ public class CrimsonKora extends AphSaberToolItem {
         return tooltips;
     }
 
-    public static class CrimsonKoraGrandAttackHandler extends SaberAttackHandler {
+    public static class CrimsonKoraAttackHandler extends SaberAttackHandler {
         ParticleTypeSwitcher spinningTypeSwitcher;
 
-        public CrimsonKoraGrandAttackHandler(ItemAttackerMob attackerMob, ItemAttackSlot slot, InventoryItem item, AphSaberToolItem toolItem, int chargeTime, boolean isAuto, int seed) {
+        public CrimsonKoraAttackHandler(ItemAttackerMob attackerMob, ItemAttackSlot slot, InventoryItem item, AphSaberToolItem toolItem, int chargeTime, boolean isAuto, int seed) {
             super(attackerMob, slot, item, toolItem, chargeTime, isAuto, seed);
             this.spinningTypeSwitcher = new ParticleTypeSwitcher(Particle.GType.COSMETIC);
         }
@@ -135,11 +138,15 @@ public class CrimsonKora extends AphSaberToolItem {
         public void onUpdate() {
             super.onUpdate();
 
+            float damagePercent = item.getGndData().getFloat("modifyDamage", 1F);
             float chargePercent = SaberAttackUIManger.barPercent(this.getChargePercent());
-            attackerMob.getLevel().lightManager.refreshParticleLightFloat(attackerMob.x, attackerMob.y, AphColors.crimson_kora_light, 1F, 50 + (int) (150 * chargePercent));
+            float shownEffect = chargePercent * damagePercent * 0.5F;
+
+
+            attackerMob.getLevel().lightManager.refreshParticleLightFloat(attackerMob.x, attackerMob.y, AphColors.crimson_kora_light, 1F, 50 + (int) (150 * shownEffect));
 
             if (attackerMob.isClient()) {
-                for (int i = 0; i < (3 * chargePercent); ++i) {
+                for (int i = 0; i < (3 * shownEffect); ++i) {
                     attackerMob.getLevel().entityManager.addParticle(
                                     attackerMob.x + GameRandom.globalRandom.floatGaussian() * 4,
                                     attackerMob.y + GameRandom.globalRandom.floatGaussian() * 4,
@@ -153,10 +160,8 @@ public class CrimsonKora extends AphSaberToolItem {
                             .color(AphColors.crimson_kora);
                 }
 
-                attackerMob.getLevel().getClient().startCameraShake(attackerMob.x, attackerMob.y, 100, 40, 0.3F * chargePercent + 0.2F, 0.5F * chargePercent, true);
+                attackerMob.getLevel().getClient().startCameraShake(attackerMob.x, attackerMob.y, 50, 40, 0.3F * shownEffect + 0.2F, 0.3F * shownEffect + 0.2F, true);
             }
-
-
         }
     }
 }

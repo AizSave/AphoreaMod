@@ -12,27 +12,51 @@ public class GunAttackUIManger extends AphCustomUI {
     public float chargePercent;
     public int chargeTime;
 
+    public static int getBorderAdded() {
+        return (int) (10 * getZoom());
+    }
+
+    public static int getLoweredY() {
+        return (int) (34 * getZoom());
+    }
+
     public GunAttackUIManger(String formId) {
         super(formId);
     }
 
     @Override
     public void startForm() {
-        this.form = mainGameFormManager.addComponent(new GunAttackUIManger.AttackTrackForm(this.formId, AphResources.gunAttackTrackTexture.getWidth() + 20, AphResources.gunAttackTrackTexture.getHeight() + 20));
+        this.form = mainGameFormManager.addComponent(new GunAttackUIManger.AttackTrackForm(this.formId, getWidth(), getHeight()));
     }
 
     @Override
     public void updatePosition() {
         this.form.setPosition(
                 WindowManager.getWindow().getHudWidth() / 2 - this.form.getWidth() / 2,
-                WindowManager.getWindow().getHudHeight() / 2 + 6
+                WindowManager.getWindow().getHudHeight() / 2 - this.form.getHeight() / 2 + getLoweredY()
         );
+    }
+
+    @Override
+    public int getWidth() {
+        return (int) (AphResources.gunAttackTrackTexture.getWidth() * getZoom()) + getBorderAdded() * 2;
+    }
+
+    @Override
+    public int getHeight() {
+        return (int) (AphResources.gunAttackTrackTexture.getHeight() * getZoom()) + getBorderAdded() * 2;
     }
 
     @Override
     public void setupForm() {
         this.form.setHidden(true);
         super.setupForm();
+    }
+
+    @Override
+    public void onWindowResized() {
+        updatePosition();
+        updateSize();
     }
 
     public class AttackTrackForm extends Form {
@@ -42,28 +66,44 @@ public class GunAttackUIManger extends AphCustomUI {
 
         @Override
         public void draw(TickManager tickManager, PlayerMob perspective, Rectangle renderBox) {
-            AphResources.gunAttackTrackTexture.initDraw().pos(this.getX() + 10, this.getY() + 10).draw();
-            int width = this.getWidth() - 20;
-            int height = this.getWidth() / 2 - 20;
-            float timeSinceStart = GunAttackUIManger.this.chargePercent * GunAttackUIManger.this.chargeTime;
-            float currentProgress = (timeSinceStart + TICK_MS) / GunAttackUIManger.this.chargeTime;
-            AphResources.gunAttackThumbTexture.initDraw().pos(
-                    (int) ((width - 2) * (barX(currentProgress) + 1)) / 2 + this.getX() + 10 - AphResources.gunAttackThumbTexture.getWidth() / 2,
-                    (int) (height * Math.abs(barY(currentProgress)) * 0.7F) + this.getY() + 10 - AphResources.gunAttackThumbTexture.getHeight() / 2
-            ).draw();
+            int trackWidth = (int) (AphResources.gunAttackTrackTexture.getWidth() * getZoom());
+            int trackHeight = (int) (AphResources.gunAttackTrackTexture.getHeight() * getZoom());
+
+            getResizedTexture("gunattacktrack", AphResources.gunAttackTrackTexture, trackWidth, trackHeight)
+                    .initDraw()
+                    .pos(
+                            this.getX() + getBorderAdded(),
+                            this.getY() + getBorderAdded()
+                    ).draw();
+
+            int thumbWidth = (int) (AphResources.gunAttackThumbTexture.getWidth() * getZoom());
+            int thumbHeight = (int) (AphResources.gunAttackThumbTexture.getHeight() * getZoom());
+
+            int midX = getWidth() / 2 + this.getX() - thumbWidth / 2;
+            int midY = getHeight() / 2 + this.getY() - thumbHeight / 2;
+
+            float progressX = barPercent(showProgress(GunAttackUIManger.this.chargePercent, GunAttackUIManger.this.chargeTime));
+            float progressY = barY(showProgress(GunAttackUIManger.this.chargePercent, GunAttackUIManger.this.chargeTime));
+
+            getResizedTexture("gunattackthumb", AphResources.gunAttackThumbTexture, thumbWidth, thumbHeight)
+                    .initDraw()
+                    .pos(
+                            midX + (int) (trackWidth * progressX * 0.5F),
+                            midY + (int) (trackHeight * (progressY - 1) * 0.5F)
+                    ).draw();
         }
     }
 
-    public static float barX(float chargePercent) {
+    public static float barPercent(float chargePercent) {
         float cycleLength = 2F;
-        float radians = (chargePercent / cycleLength) * (float)Math.PI * 2F;
-        return (float)(Math.cos(radians));
+        float radians = (chargePercent / cycleLength) * (float) Math.PI * 2F;
+        return (float) (Math.cos(radians));
     }
 
     public static float barY(float chargePercent) {
         float cycleLength = 2F;
-        float radians = (chargePercent / cycleLength) * (float)Math.PI * 2F;
-        return (float)(Math.sin(radians));
+        float radians = (chargePercent / cycleLength) * (float) Math.PI * 2F;
+        return Math.abs((float) Math.sin(radians));
     }
 
 }

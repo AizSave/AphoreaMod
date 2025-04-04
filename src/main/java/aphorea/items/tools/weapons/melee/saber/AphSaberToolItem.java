@@ -1,8 +1,8 @@
 package aphorea.items.tools.weapons.melee.saber;
 
-import aphorea.items.vanillaitemtypes.weapons.AphSwordToolItem;
 import aphorea.items.tools.weapons.melee.saber.logic.SaberAttackHandler;
 import aphorea.items.tools.weapons.melee.saber.logic.SaberDashAttackHandler;
+import aphorea.items.vanillaitemtypes.weapons.AphSwordToolItem;
 import aphorea.registry.AphBuffs;
 import aphorea.ui.AphCustomUIList;
 import aphorea.ui.SaberAttackUIManger;
@@ -10,8 +10,6 @@ import aphorea.utils.AphColors;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.network.packet.PacketSpawnProjectile;
-import necesse.engine.sound.SoundEffect;
-import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameBlackboard;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.GameDamage;
@@ -20,7 +18,6 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
 import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
-import necesse.gfx.GameResources;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawOptions.DrawOptions;
 import necesse.gfx.gameTooltips.ListGameTooltips;
@@ -156,6 +153,10 @@ abstract public class AphSaberToolItem extends AphSwordToolItem implements ItemI
 
     public boolean canDash(ItemAttackerMob attackerMob) {
         return !attackerMob.isRiding() && !attackerMob.buffManager.hasBuff(AphBuffs.SABER_DASH_COOLDOWN);
+    }
+
+    public float getDashDamageMultiplier(InventoryItem item) {
+        return 1;
     }
 
     @Override

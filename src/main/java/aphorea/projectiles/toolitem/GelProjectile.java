@@ -5,7 +5,6 @@ import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
-import necesse.engine.network.server.ServerClient;
 import necesse.engine.util.GameRandom;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.GroundEffectEvent;
 import necesse.entity.mobs.GameDamage;
@@ -93,7 +92,6 @@ public class GelProjectile extends Projectile {
     public void addHit(Mob target) {
         super.addHit(target);
         target.addBuff(new ActiveBuff(AphBuffs.STICKY, target, 1000, this), true);
-
     }
 
     @Override
