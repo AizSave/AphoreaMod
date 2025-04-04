@@ -1,10 +1,14 @@
 package aphorea.projectiles.toolitem;
 
+import aphorea.items.tools.healing.AphHealingProjectileToolItem;
+import aphorea.items.tools.weapons.throwable.UnstableGelveline;
 import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
+import aphorea.utils.area.AphFlatArea;
 import necesse.engine.gameLoop.tickManager.TickManager;
+import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
@@ -17,7 +21,6 @@ import necesse.gfx.drawables.LevelSortedDrawable;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.toolItem.ToolItem;
-import necesse.inventory.item.upgradeUtils.FloatUpgradeValue;
 import necesse.level.maps.Level;
 import necesse.level.maps.LevelObjectHit;
 import necesse.level.maps.light.GameLight;
@@ -26,10 +29,10 @@ import java.awt.*;
 import java.util.List;
 
 public class UnstableGelvelineProjectile extends Projectile {
+    UnstableGelveline toolItem;
+    InventoryItem item;
 
     Color color = AphColors.unstableGel;
-    ToolItem toolItem;
-    InventoryItem item;
 
     AphAreaList areaList = new AphAreaList(
             new AphArea(100, color)
@@ -38,11 +41,14 @@ public class UnstableGelvelineProjectile extends Projectile {
     public UnstableGelvelineProjectile() {
     }
 
-    public UnstableGelvelineProjectile(FloatUpgradeValue attackDamage, int knockback, ToolItem toolItem, InventoryItem item, Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance) {
+    public UnstableGelvelineProjectile(GameDamage attackDamage, int knockback, UnstableGelveline toolItem, InventoryItem item, Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance) {
         this.knockback = knockback;
 
-        this.setDamage(toolItem.getAttackDamage(item));
+        this.setDamage(attackDamage);
         this.knockback = knockback;
+
+        this.toolItem = toolItem;
+        this.item = item;
 
         this.setLevel(level);
         this.setOwner(owner);
@@ -52,8 +58,9 @@ public class UnstableGelvelineProjectile extends Projectile {
         this.speed = speed;
         this.distance = distance;
 
+
         areaList = new AphAreaList(
-                new AphArea(100, color).setDamageArea((float) toolItem.getAttackDamageValue(item, owner) * 0.5F)
+                new AphFlatArea(100, color).setDamageArea(attackDamage.modDamage(0.5F))
         );
     }
 
@@ -89,7 +96,9 @@ public class UnstableGelvelineProjectile extends Projectile {
     @Override
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
         super.doHitLogic(mob, object, x, y);
-        areaList.execute(getOwner(), x, y);
+        if (this.traveledDistance >= (float)this.distance || (this.amountHit() >= this.piercing && (this.bounced >= this.getTotalBouncing() || !this.canBounce))) {
+            areaList.execute(getOwner(), x, y, 1F, item, toolItem);
+        }
     }
 
 

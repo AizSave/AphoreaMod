@@ -98,7 +98,7 @@ public class UnstableGelProjectile extends Projectile {
     @Override
     public void onHit(Mob mob, LevelObjectHit object, float x, float y, boolean fromPacket, ServerClient packetSubmitter) {
         super.onHit(mob, object, x, y, fromPacket, packetSubmitter);
-        if (mob == null && object != null && this.bounced < this.getTotalBouncing() && this.canBounce && generation < 2) {
+        if (this.isServer() && mob == null && object != null && this.bounced < this.getTotalBouncing() && this.canBounce && generation < 2) {
             newProjectile();
         }
     }
@@ -107,11 +107,7 @@ public class UnstableGelProjectile extends Projectile {
         Projectile projectile = getProjectile();
 
         this.getLevel().entityManager.projectiles.addHidden(projectile);
-
-        if (this.getLevel().isServer() && this.getOwner().isPlayer) {
-            this.getLevel().getServer().network.sendToClientsWithEntityExcept(new PacketSpawnProjectile(projectile), projectile, ((PlayerMob) this.getOwner()).getServerClient());
-        }
-
+        this.getLevel().getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
     }
 
     private Projectile getProjectile() {
@@ -128,9 +124,7 @@ public class UnstableGelProjectile extends Projectile {
         );
 
         GameRandom random = new GameRandom(seed);
-
         projectile.resetUniqueID(random);
-
         projectile.moveDist(40);
         return projectile;
     }

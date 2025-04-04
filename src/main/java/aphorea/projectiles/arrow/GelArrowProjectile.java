@@ -1,9 +1,11 @@
 package aphorea.projectiles.arrow;
 
+import aphorea.items.tools.weapons.throwable.UnstableGelveline;
 import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
+import aphorea.utils.area.AphFlatArea;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.sound.SoundEffect;
@@ -22,6 +24,7 @@ import necesse.gfx.drawables.EntityDrawable;
 import necesse.gfx.drawables.LevelSortedDrawable;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.inventory.InventoryItem;
+import necesse.inventory.item.toolItem.ToolItem;
 import necesse.level.maps.Level;
 import necesse.level.maps.LevelObjectHit;
 import necesse.level.maps.light.GameLight;
@@ -30,6 +33,8 @@ import java.awt.*;
 import java.util.List;
 
 public class GelArrowProjectile extends Projectile {
+    ToolItem toolItem;
+    InventoryItem item;
 
     Color color = AphColors.gel;
 
@@ -40,9 +45,12 @@ public class GelArrowProjectile extends Projectile {
     public GelArrowProjectile() {
     }
 
-    public GelArrowProjectile(GameDamage damage, int knockback, float areaDamage, Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance) {
+    public GelArrowProjectile(GameDamage damage, int knockback, ToolItem toolItem, InventoryItem item, Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance) {
         this.setDamage(damage);
         this.knockback = knockback;
+
+        this.toolItem = toolItem;
+        this.item = item;
 
         this.setLevel(level);
         this.setOwner(owner);
@@ -53,7 +61,7 @@ public class GelArrowProjectile extends Projectile {
         this.distance = distance;
 
         this.areaList = new AphAreaList(
-                new AphArea(50, color).setDamageArea(areaDamage)
+                new AphFlatArea(50, color).setDamageArea(damage.modDamage(0.5F))
         );
     }
 
@@ -120,6 +128,6 @@ public class GelArrowProjectile extends Projectile {
 
     @Override
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
-        areaList.execute(getOwner(), x, y);
+        areaList.execute(getOwner(), x, y, 1F, item, toolItem);
     }
 }

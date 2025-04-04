@@ -6,6 +6,7 @@ import aphorea.registry.AphModifiers;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
+import aphorea.utils.area.AphFlatArea;
 import necesse.engine.localization.Localization;
 import necesse.engine.util.GameUtils;
 import necesse.entity.mobs.PlayerMob;
@@ -21,7 +22,7 @@ public class BlankBannerItem extends AphBanner {
     static int range = 200;
     static Color color = AphColors.green;
     public static AphAreaList areaList = new AphAreaList(
-            new AphArea(range, 0.5F, color).setHealingArea(4)
+            new AphFlatArea(range, 0.5F, color).setHealingArea(4)
     );
 
     public BlankBannerItem() {

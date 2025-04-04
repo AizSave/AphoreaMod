@@ -10,6 +10,7 @@ import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
+import necesse.inventory.item.toolItem.ToolItem;
 
 public class GelArrowItem extends AphArrowItem {
     public GelArrowItem() {
@@ -18,7 +19,14 @@ public class GelArrowItem extends AphArrowItem {
 
     @Override
     public Projectile getProjectile(float x, float y, float targetX, float targetY, float velocity, int range, GameDamage damage, int knockback, ItemAttackerMob owner) {
-        return new GelArrowProjectile(damage, knockback, damage.damage / 2, owner.getLevel(), owner, x, y, targetX, targetY, velocity, range);
+        ToolItem toolItem = null;
+        InventoryItem item = null;
+        if(owner.isPlayer) {
+            PlayerMob player = (PlayerMob) owner;
+            item = player.attackSlot.getItem(player.getInv());
+            toolItem = (ToolItem) item.item;
+        }
+        return new GelArrowProjectile(damage, knockback, toolItem, item, owner.getLevel(), owner, x, y, targetX, targetY, velocity, range);
     }
 
     @Override

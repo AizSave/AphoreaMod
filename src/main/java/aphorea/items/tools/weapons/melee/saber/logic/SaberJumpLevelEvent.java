@@ -4,6 +4,7 @@ import aphorea.methodpatches.PlayerFlyingHeight;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
+import aphorea.utils.area.AphFlatArea;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
 import necesse.engine.util.GameMath;
@@ -153,8 +154,7 @@ public class SaberJumpLevelEvent extends MobAbilityLevelEvent {
 
         if (!alreadyArea) {
             alreadyArea = true;
-            AphArea area = new AphArea(100, AphColors.black)
-                    .setDamageArea(damage.damage);
+            AphArea area = new AphFlatArea(100, AphColors.black).setDamageArea(damage.damage);
             new AphAreaList(area)
                     .setDamageType(damage.type)
                     .execute(this.owner);

@@ -5,8 +5,10 @@ import aphorea.utils.AphColors;
 import aphorea.utils.AphDistances;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
+import aphorea.utils.area.AphFlatArea;
 import aphorea.utils.magichealing.AphMagicHealing;
 import necesse.engine.gameLoop.tickManager.TickManager;
+import necesse.engine.network.server.ServerClient;
 import necesse.engine.util.GameUtils;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
@@ -74,7 +76,7 @@ public class GoldenWandProjectile extends FollowingProjectile {
         this.setWidth(0, 5);
 
         this.areaList = new AphAreaList(
-                new AphArea(100, color).setHealingArea(healing)
+                new AphFlatArea(100, color).setHealingArea(healing)
         );
     }
 
@@ -108,7 +110,10 @@ public class GoldenWandProjectile extends FollowingProjectile {
 
     @Override
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
-        areaList.execute(getOwner(), x, y);
+        super.doHitLogic(mob, object, x, y);
+        if (this.traveledDistance >= (float)this.distance || (this.amountHit() >= this.piercing && (this.bounced >= this.getTotalBouncing() || !this.canBounce))) {
+            areaList.execute(getOwner(), x, y, 1F, item, toolItem);
+        }
     }
 
     @Override

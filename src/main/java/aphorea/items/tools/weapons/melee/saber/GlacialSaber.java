@@ -1,7 +1,8 @@
 package aphorea.items.tools.weapons.melee.saber;
 
 import aphorea.items.tools.weapons.melee.saber.logic.SaberDashAttackHandler;
-import aphorea.projectiles.toolitem.AircutProjectile;
+import aphorea.projectiles.toolitem.GlacialShardBigProjectile;
+import aphorea.projectiles.toolitem.GlacialShardMediumProjectile;
 import aphorea.ui.AphCustomUIList;
 import aphorea.ui.GlacialSaberAttackUIManger;
 import aphorea.utils.AphColors;
@@ -40,19 +41,21 @@ public class GlacialSaber extends AphSaberToolItem {
 
     @Override
     public Projectile getProjectile(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent) {
-        if(powerPercent >= 0.7F) {
-            return new AircutProjectile.CrimsonAircutProjectile(level, attackerMob, x, y, targetX, targetY,
+        if(powerPercent > 0.75F) {
+            powerPercent = (powerPercent - 0.375F) * 1.6F;
+            return new GlacialShardBigProjectile(level, attackerMob, x, y, targetX, targetY,
                     200,
                     400,
                     this.getAttackDamage(item),
-                    getKnockback(item, attackerMob)
+                    (int) (getKnockback(item, attackerMob) * powerPercent)
             );
         } else {
-            return new AircutProjectile.DemonicAircutProjectile(level, attackerMob, x, y, targetX, targetY,
-                    1,
-                    4,
-                    this.getAttackDamage(item),
-                    getKnockback(item, attackerMob)
+            powerPercent = Math.max(powerPercent, 0.1F);
+            return new GlacialShardMediumProjectile(level, attackerMob, x, y, targetX, targetY,
+                    150,
+                    300,
+                    this.getAttackDamage(item).modDamage(0.5F),
+                    (int) (getKnockback(item, attackerMob) * powerPercent)
             );
         }
     }
@@ -63,7 +66,7 @@ public class GlacialSaber extends AphSaberToolItem {
         if (powerPercent >= 0.92F) {
             powerPercent = 1F;
         }
-        Projectile projectile = this.getProjectile(level, attackerMob.getX(), attackerMob.getY(), x, y, attackerMob, item, (powerPercent - 0.375F) * 1.6F);
+        Projectile projectile = this.getProjectile(level, attackerMob.getX(), attackerMob.getY(), x, y, attackerMob, item, powerPercent);
         GameRandom random = new GameRandom(seed);
         projectile.resetUniqueID(random);
 

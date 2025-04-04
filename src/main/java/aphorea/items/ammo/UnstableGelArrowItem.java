@@ -1,6 +1,7 @@
 package aphorea.items.ammo;
 
 import aphorea.items.vanillaitemtypes.AphArrowItem;
+import aphorea.projectiles.arrow.GelArrowProjectile;
 import aphorea.projectiles.arrow.UnstableGelArrowProjectile;
 import necesse.engine.localization.Localization;
 import necesse.engine.util.GameBlackboard;
@@ -10,6 +11,7 @@ import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
+import necesse.inventory.item.toolItem.ToolItem;
 
 public class UnstableGelArrowItem extends AphArrowItem {
     public UnstableGelArrowItem() {
@@ -18,7 +20,14 @@ public class UnstableGelArrowItem extends AphArrowItem {
 
     @Override
     public Projectile getProjectile(float x, float y, float targetX, float targetY, float velocity, int range, GameDamage damage, int knockback, ItemAttackerMob owner) {
-        return new UnstableGelArrowProjectile(damage, knockback, damage.damage / 2, owner.getLevel(), owner, x, y, targetX, targetY, velocity, range);
+        ToolItem toolItem = null;
+        InventoryItem item = null;
+        if(owner.isPlayer) {
+            PlayerMob player = (PlayerMob) owner;
+            item = player.attackSlot.getItem(player.getInv());
+            toolItem = (ToolItem) item.item;
+        }
+        return new UnstableGelArrowProjectile(damage, knockback, toolItem, item, owner.getLevel(), owner, x, y, targetX, targetY, velocity, range);
     }
 
     @Override

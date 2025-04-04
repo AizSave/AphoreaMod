@@ -4,6 +4,7 @@ import aphorea.packets.AphSingleAreaShowPacket;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
+import aphorea.utils.area.AphFlatArea;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.Packet;
 import necesse.engine.registries.DamageTypeRegistry;
@@ -19,7 +20,7 @@ public class AncientMedallionBuff extends AphAreaWhenHealTrinketBuff {
     static Color color = AphColors.darker_magic;
 
     public static AphAreaList areaList = new AphAreaList(
-            new AphArea(range, color).setDamageArea(30).setArmorPen(10)
+            new AphFlatArea(range, color).setDamageArea(30).setArmorPen(10)
                     .setDebuffArea(5000, "cursed")
     ).setDamageType(DamageTypeRegistry.MAGIC);
 

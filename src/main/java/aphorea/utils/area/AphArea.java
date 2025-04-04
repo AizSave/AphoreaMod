@@ -40,8 +40,8 @@ public class AphArea {
     int buffDuration = 1000;
     int debuffDuration = 1000;
 
-    public FloatUpgradeValue areaDamage;
-    public IntUpgradeValue areaHealing;
+    public FloatUpgradeValue areaDamage = new FloatUpgradeValue(0, 0.2F);
+    public IntUpgradeValue areaHealing = new IntUpgradeValue(0, 0.2F);
     public String[] buffs;
     public String[] debuffs;
 
@@ -72,12 +72,8 @@ public class AphArea {
         return this;
     }
 
-    public AphArea setDamageArea(float damage) {
-        return setDamageArea(new FloatUpgradeValue(0, 0.2F).setBaseValue(damage));
-    }
-
     public AphArea setDamageArea(float damage, float tier1Damage) {
-        return setDamageArea(new FloatUpgradeValue(0, 0.2F).setBaseValue(damage).setUpgradedValue(1, tier1Damage));
+        return setDamageArea(areaDamage.setBaseValue(damage).setUpgradedValue(1, tier1Damage));
     }
 
     public AphArea setArmorPen(int armorPen) {
@@ -92,12 +88,8 @@ public class AphArea {
         return this;
     }
 
-    public AphArea setHealingArea(int healing) {
-        return setHealingArea(new IntUpgradeValue(0, 0.2F).setBaseValue(healing));
-    }
-
     public AphArea setHealingArea(int healing, int tier1Healing) {
-        return setHealingArea(new IntUpgradeValue(0, 0.2F).setBaseValue(healing).setUpgradedValue(1, tier1Healing));
+        return setHealingArea(areaHealing.setBaseValue(healing).setUpgradedValue(1, tier1Healing));
     }
 
     public AphArea setBuffArea(int duration, String... buffs) {

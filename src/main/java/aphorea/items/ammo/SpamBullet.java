@@ -10,6 +10,7 @@ import necesse.entity.projectile.Projectile;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.bulletItem.BulletItem;
+import necesse.inventory.item.toolItem.ToolItem;
 
 public class SpamBullet extends BulletItem {
     public SpamBullet() {
@@ -18,7 +19,14 @@ public class SpamBullet extends BulletItem {
 
     @Override
     public Projectile getProjectile(float x, float y, float targetX, float targetY, float velocity, int range, GameDamage damage, int knockback, Mob owner) {
-        return new SpamBulletProjectile(x, y, targetX, targetY, velocity, range, damage, knockback, owner);
+        ToolItem toolItem = null;
+        InventoryItem item = null;
+        if(owner.isPlayer) {
+            PlayerMob player = (PlayerMob) owner;
+            item = player.attackSlot.getItem(player.getInv());
+            toolItem = (ToolItem) item.item;
+        }
+        return new SpamBulletProjectile(x, y, targetX, targetY, velocity, range, damage, knockback, toolItem, item, owner);
     }
 
     @Override

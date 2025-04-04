@@ -1,29 +1,19 @@
-package aphorea.projectiles.arrow;
+package aphorea.projectiles.toolitem;
 
-import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
-import aphorea.utils.area.AphArea;
-import aphorea.utils.area.AphAreaList;
-import aphorea.utils.area.AphFlatArea;
 import necesse.engine.gameLoop.tickManager.TickManager;
-import necesse.engine.registries.DamageTypeRegistry;
-import necesse.engine.sound.SoundEffect;
-import necesse.engine.sound.SoundManager;
+import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
-import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.projectile.Projectile;
 import necesse.entity.trails.Trail;
-import necesse.gfx.GameResources;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawOptions.texture.TextureDrawOptions;
 import necesse.gfx.drawables.EntityDrawable;
 import necesse.gfx.drawables.LevelSortedDrawable;
 import necesse.gfx.drawables.OrderableDrawables;
-import necesse.inventory.InventoryItem;
-import necesse.inventory.item.toolItem.ToolItem;
 import necesse.level.maps.Level;
 import necesse.level.maps.LevelObjectHit;
 import necesse.level.maps.light.GameLight;
@@ -31,26 +21,13 @@ import necesse.level.maps.light.GameLight;
 import java.awt.*;
 import java.util.List;
 
-public class UnstableGelArrowProjectile extends Projectile {
-    ToolItem toolItem;
-    InventoryItem item;
+public class GlacialShardBigProjectile extends Projectile {
+    public int projectilesAmount;
 
-    Color color = AphColors.unstableGel;
-
-    AphAreaList areaList = new AphAreaList(
-            new AphArea(75, color)
-    ).setDamageType(DamageTypeRegistry.RANGED);
-
-    public UnstableGelArrowProjectile() {
+    public GlacialShardBigProjectile() {
     }
 
-    public UnstableGelArrowProjectile(GameDamage damage, int knockback, ToolItem toolItem, InventoryItem item, Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance) {
-        this.setDamage(damage);
-        this.knockback = knockback;
-
-        this.toolItem = toolItem;
-        this.item = item;
-
+    public GlacialShardBigProjectile(Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, int knockback) {
         this.setLevel(level);
         this.setOwner(owner);
         this.x = x;
@@ -58,53 +35,30 @@ public class UnstableGelArrowProjectile extends Projectile {
         this.setTarget(targetX, targetY);
         this.speed = speed;
         this.distance = distance;
-
-        this.areaList = new AphAreaList(
-                new AphFlatArea(75, color).setDamageArea(damage.modDamage(0.5F))
-        );
+        this.setDamage(damage);
+        this.knockback = knockback;
     }
 
     @Override
     public void init() {
         super.init();
-
+        givesLight = false;
+        height = 14;
+        trailOffset = -14f;
+        setWidth(14, true);
         piercing = 0;
         bouncing = 0;
-        this.canHitMobs = true;
-
-
-        this.givesLight = false;
-        this.heightBasedOnDistance = true;
-        this.setWidth(8);
+        projectilesAmount = 6;
     }
-
-    @Override
-    public void addHit(Mob target) {
-        super.addHit(target);
-        target.addBuff(new ActiveBuff(AphBuffs.STICKY, target, 2000, this), true);
-    }
-
-    @Override
-    public void dropItem() {
-        if (GameRandom.globalRandom.getChance(0.5F)) {
-            this.getLevel().entityManager.pickups.add((new InventoryItem("gelarrow")).getPickupEntity(this.getLevel(), this.x, this.y));
-        }
-    }
-
-    @Override
-    protected void playHitSound(float x, float y) {
-        SoundManager.playSound(GameResources.slimesplash, SoundEffect.effect(x, y));
-    }
-
 
     @Override
     public Color getParticleColor() {
-        return color;
+        return null;
     }
 
     @Override
     public Trail getTrail() {
-        return new Trail(this, getLevel(), color, 26, 500, getHeight());
+        return new Trail(this, getLevel(), AphColors.ice, 22, 100, getHeight());
     }
 
     @Override
@@ -130,6 +84,32 @@ public class UnstableGelArrowProjectile extends Projectile {
 
     @Override
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
-        areaList.execute(getOwner(), x, y, 1F, item, toolItem);
+        super.doHitLogic(mob, object, x, y);
+        if (this.isServer() && (this.traveledDistance >= (float)this.distance || (this.amountHit() >= this.piercing && (this.bounced >= this.getTotalBouncing() || !this.canBounce)))) {
+            float randomAngle = GameRandom.globalRandom.getFloatBetween(0F, (float) (Math.PI * 2));
+            for (int i = 0; i < projectilesAmount; i++) {
+                Projectile projectile = getProjectile(randomAngle + ((float) Math.PI * 2 * i) / projectilesAmount);
+                this.getLevel().entityManager.projectiles.addHidden(projectile);
+                this.getLevel().getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
+            }
+        }
     }
+
+    private Projectile getProjectile(float angle) {
+        float targetX = this.x + 100 * (float) Math.cos(angle);
+        float targetY = this.y + 100 * (float) Math.sin(angle);
+        Projectile projectile = new GlacialShardSmallProjectile(
+                this.getLevel(), this.getOwner(),
+                this.x, this.y,
+                targetX, targetY,
+                50,
+                50,
+                this.getDamage().modDamage(0.5F),
+                this.knockback
+        );
+
+        projectile.resetUniqueID(GameRandom.globalRandom);
+        return projectile;
+    }
+
 }

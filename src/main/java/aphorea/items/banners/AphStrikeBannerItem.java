@@ -7,6 +7,7 @@ import aphorea.registry.AphModifiers;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
+import aphorea.utils.area.AphFlatArea;
 import necesse.engine.localization.Localization;
 import necesse.engine.util.GameUtils;
 import necesse.entity.mobs.PlayerMob;
@@ -22,7 +23,7 @@ public class AphStrikeBannerItem extends AphBanner {
     static int range = 200;
     static Color color = AphColors.blood;
     public static AphAreaList areaList = new AphAreaList(
-            new AphArea(range, 0.5F, color).setDamageArea(30).setArmorPen(5)
+            new AphFlatArea(range, 0.5F, color).setDamageArea(30).setArmorPen(5)
     ).setDamageType(AphDamageType.BANNER);
 
     public AphStrikeBannerItem() {

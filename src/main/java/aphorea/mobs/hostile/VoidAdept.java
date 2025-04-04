@@ -4,6 +4,7 @@ import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
+import aphorea.utils.area.AphFlatArea;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.util.GameRandom;
@@ -40,7 +41,7 @@ public class VoidAdept extends HostileMob {
             new AphArea(250, AphColors.lighter_gray)
     ).setDamageType(DamageTypeRegistry.MAGIC);
     public static AphAreaList attackArea = new AphAreaList(
-            new AphArea(250, AphColors.dark_magic).setDamageArea(40).setArmorPen(10)
+            new AphFlatArea(250, AphColors.dark_magic).setDamageArea(40).setArmorPen(10)
     ).setDamageType(DamageTypeRegistry.MAGIC);
 
 

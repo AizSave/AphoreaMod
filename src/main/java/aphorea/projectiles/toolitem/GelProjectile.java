@@ -5,6 +5,7 @@ import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
+import necesse.engine.network.server.ServerClient;
 import necesse.engine.util.GameRandom;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.GroundEffectEvent;
 import necesse.entity.mobs.GameDamage;
@@ -98,14 +99,16 @@ public class GelProjectile extends Projectile {
     @Override
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
         super.doHitLogic(mob, object, x, y);
-        if (this.isServer()) {
-            Mob owner = this.getOwner();
-            if (owner != null && !owner.removed()) {
-                GelProjectileGroundEffectEvent event = new GelProjectileGroundEffectEvent(owner, (int) x, (int) y, GameRandom.globalRandom);
-                this.getLevel().entityManager.addLevelEvent(event);
+        if (this.traveledDistance >= (float)this.distance || (this.amountHit() >= this.piercing && (this.bounced >= this.getTotalBouncing() || !this.canBounce))) {
+            if (this.isServer()) {
+                Mob owner = this.getOwner();
+                if (owner != null && !owner.removed()) {
+                    GelProjectileGroundEffectEvent event = new GelProjectileGroundEffectEvent(owner, (int) x, (int) y, GameRandom.globalRandom);
+                    this.getLevel().entityManager.addLevelEvent(event);
+                }
             }
-
         }
+
     }
 
     public static class GelProjectileGroundEffectEvent extends GroundEffectEvent {
