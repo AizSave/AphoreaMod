@@ -1,5 +1,6 @@
 package aphorea.buffs;
 
+import aphorea.items.tools.weapons.melee.battleaxe.AphBattleaxeToolItem;
 import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import aphorea.utils.AphTimeout;
@@ -46,14 +47,10 @@ public class BerserkerRushBuff extends Buff {
             owner.getLevel().entityManager.addParticle(owner.x + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(AphColors.red).height(16.0F);
         }
 
-        if (owner.isPlayer) {
-            PlayerMob player = (PlayerMob) owner;
-
-            if (player.isAttacking && player.attackSlot != null && player.attackSlot.getItem(player.getInv()).item.getStringID().contains("battleaxe")) {
-                buff.setModifier(BuffModifiers.ATTACK_MOVEMENT_MOD, 0F);
-            } else {
-                buff.setModifier(BuffModifiers.ATTACK_MOVEMENT_MOD, 1F);
-            }
+        if (owner.isPlayer && !(((PlayerMob) owner).getSelectedItem().item instanceof AphBattleaxeToolItem)) {
+            buff.remove();
+        } else {
+            buff.setModifier(BuffModifiers.SPEED, 0.2F * AdrenalineBuff.getAdrenalineLevel(buff.owner));
         }
     }
 
@@ -61,14 +58,10 @@ public class BerserkerRushBuff extends Buff {
     public void serverTick(ActiveBuff buff) {
         super.serverTick(buff);
         Mob owner = buff.owner;
-        if (owner.isPlayer) {
-            PlayerMob player = (PlayerMob) owner;
-
-            if (player.isAttacking && player.attackSlot.getItem(player.getInv()).item.getStringID().contains("battleaxe")) {
-                buff.setModifier(BuffModifiers.ATTACK_MOVEMENT_MOD, 0F);
-            } else {
-                buff.setModifier(BuffModifiers.ATTACK_MOVEMENT_MOD, 1F);
-            }
+        if (owner.isPlayer && !(((PlayerMob) owner).getSelectedItem().item instanceof AphBattleaxeToolItem)) {
+            buff.remove();
+        } else {
+            buff.setModifier(BuffModifiers.SPEED, 0.1F * AdrenalineBuff.getAdrenalineLevel(buff.owner));
         }
     }
 

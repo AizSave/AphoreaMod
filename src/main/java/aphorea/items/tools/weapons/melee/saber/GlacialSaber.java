@@ -30,10 +30,10 @@ import java.awt.*;
 public class GlacialSaber extends AphSaberToolItem {
 
     public GlacialSaber() {
-        super(500);
-        rarity = Rarity.NORMAL;
+        super(1450);
+        rarity = Rarity.UNCOMMON;
         attackDamage.setBaseValue(52)
-                .setUpgradedValue(1, 80);
+                .setUpgradedValue(1, 76);
         knockback.setBaseValue(75);
 
         this.attackRange.setBaseValue(75);

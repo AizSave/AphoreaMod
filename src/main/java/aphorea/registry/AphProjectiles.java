@@ -33,6 +33,8 @@ public class AphProjectiles {
         ProjectileRegistry.registerProjectile("bigglacialshard", GlacialShardBigProjectile.class, "glacialshard_big", "glacialshard_big_shadow");
         ProjectileRegistry.registerProjectile("mediumglacialshard", GlacialShardMediumProjectile.class, "glacialshard_medium", "glacialshard_medium_shadow");
         ProjectileRegistry.registerProjectile("smallglacialshard", GlacialShardSmallProjectile.class, "glacialshard_small", "glacialshard_small_shadow");
+        ProjectileRegistry.registerProjectile("honey", HoneyProjectile.class, "honey", "honey_shadow");
+        ProjectileRegistry.registerProjectile("blueberry", BlueBerryProjectile.class, "blueberry", "blueberry_shadow");
 
         // Aircuts
         ProjectileRegistry.registerProjectile("copperaircut", AircutProjectile.CopperAircutProjectile.class, null, null);

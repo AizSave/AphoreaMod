@@ -13,7 +13,7 @@ import necesse.level.maps.Level;
 public class WoodenWand extends AphHealingProjectileToolItem {
 
     public WoodenWand() {
-        super(200);
+        super(100);
         rarity = Rarity.NORMAL;
         attackAnimTime.setBaseValue(800);
 
@@ -24,7 +24,7 @@ public class WoodenWand extends AphHealingProjectileToolItem {
         attackXOffset += 10;
         attackYOffset += 15;
 
-        magicHealing.setBaseValue(6).setUpgradedValue(1, 8);
+        magicHealing.setBaseValue(6).setUpgradedValue(1, 22);
     }
 
     @Override

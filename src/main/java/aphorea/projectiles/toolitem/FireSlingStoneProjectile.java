@@ -23,8 +23,6 @@ public class FireSlingStoneProjectile extends SlingStoneProjectile {
 
     int count = 0;
 
-    public static GameTexture texture_2;
-
     public FireSlingStoneProjectile() {
     }
 
@@ -49,18 +47,18 @@ public class FireSlingStoneProjectile extends SlingStoneProjectile {
     @Override
     public void addDrawables(List<LevelSortedDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, OrderableDrawables overlayList, Level level, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
         if (removed()) return;
-        GameTexture actualTexture = count >= 10 ? texture : texture_2;
         GameLight light = level.getLightLevel(this);
-        int drawX = camera.getDrawX(x) - actualTexture.getWidth() / 2;
+        int drawX = camera.getDrawX(x) - texture.getWidth() / 4;
         int drawY = camera.getDrawY(y);
 
         count++;
         if (count >= 20) {
             count = 0;
         }
-        TextureDrawOptions options = actualTexture.initDraw()
+        TextureDrawOptions options = texture.initDraw()
+                .sprite(count >= 10 ? 0 : 1, 0, 32, 64)
                 .light(light)
-                .rotate(getAngle(), actualTexture.getWidth() / 2, 2)
+                .rotate(getAngle(), texture.getWidth() / 4, 2)
                 .pos(drawX, drawY - (int) getHeight());
 
         list.add(new EntityDrawable(this) {

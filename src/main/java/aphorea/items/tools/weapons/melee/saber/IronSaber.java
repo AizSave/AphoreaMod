@@ -9,7 +9,7 @@ import necesse.level.maps.Level;
 public class IronSaber extends AphSaberToolItem {
 
     public IronSaber() {
-        super(500);
+        super(300);
         rarity = Rarity.NORMAL;
         attackDamage.setBaseValue(20)
                 .setUpgradedValue(1, 80);

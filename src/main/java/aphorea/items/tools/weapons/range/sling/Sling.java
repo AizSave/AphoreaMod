@@ -11,7 +11,7 @@ public class Sling extends AphSlingToolItem {
         super(100);
         this.rarity = Rarity.NORMAL;
         this.attackAnimTime.setBaseValue(1200);
-        this.attackDamage.setBaseValue(15.0F).setUpgradedValue(1.0F, 135.0F);
+        this.attackDamage.setBaseValue(20.0F).setUpgradedValue(1.0F, 100.0F);
         this.attackRange.setBaseValue(500);
         this.velocity.setBaseValue(100);
         this.attackXOffset = 8;

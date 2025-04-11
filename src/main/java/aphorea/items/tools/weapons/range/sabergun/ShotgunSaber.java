@@ -19,7 +19,7 @@ import necesse.level.maps.Level;
 public class ShotgunSaber extends AphSaberGunToolItem {
 
     public ShotgunSaber() {
-        super(1600);
+        super(1300);
         rarity = Rarity.RARE;
         attackDamage.setBaseValue(14)
                 .setUpgradedValue(1, 32);

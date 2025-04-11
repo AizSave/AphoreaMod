@@ -29,7 +29,7 @@ import java.util.HashSet;
 import java.util.List;
 
 public class SpinelCaveling extends HostileMob {
-    public static GameDamage collision_damage = new GameDamage(30);
+    public static GameDamage collision_damage = new GameDamage(40);
     public static int collision_knockback = 50;
 
     public static LootTable lootTable = new LootTable(
@@ -42,7 +42,7 @@ public class SpinelCaveling extends HostileMob {
     public InventoryItem item;
 
     public SpinelCaveling() {
-        super(80);
+        super(120);
         this.setArmor(10);
         this.setSpeed(60);
         this.setFriction(3.0F);
@@ -110,17 +110,17 @@ public class SpinelCaveling extends HostileMob {
         final TextureDrawOptionsEnd leftArmOptions = texture.leftArms.initDraw().sprite(sprite.x, sprite.y, 64).addMaskShader(swimMask).spelunkerLight(light, hasSpelunker, this.getID(), this).pos(drawX, drawY);
         list.add(new MobDrawable() {
             public void draw(TickManager tickManager) {
+                boolean hasObject = item.getAmount() > 0;
+
                 swimMask.use();
-                rightArmOptions.draw();
+                if(hasObject) rightArmOptions.draw();
                 bodyOptions.draw();
                 swimMask.stop();
 
-                if(item.getAmount() > 0) {
-                    itemOptions.draw();
-                }
+                if(hasObject) itemOptions.draw();
 
                 swimMask.use();
-                leftArmOptions.draw();
+                if(hasObject) leftArmOptions.draw();
                 swimMask.stop();
             }
         });

@@ -16,17 +16,20 @@ import aphorea.projectiles.toolitem.AircutProjectile;
 import aphorea.projectiles.toolitem.DaggerProjectile;
 import aphorea.projectiles.toolitem.FireSlingStoneProjectile;
 import aphorea.projectiles.toolitem.GelProjectile;
+import necesse.engine.journal.JournalEntry;
 import necesse.engine.registries.MobRegistry;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.HumanTexture;
 import necesse.gfx.GameResources;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.gameTexture.GameTextureSection;
+import org.lwjgl.BufferUtils;
 
 import java.io.FileNotFoundException;
+import java.nio.ByteBuffer;
 
 public class AphResources {
-    public static GameTexture saberAttackTexture;
+    public static GameTexture[] saberAttackTexture = new GameTexture[31];
 
     public static GameTexture gunAttackTrackTexture;
     public static GameTexture gunAttackThumbTexture;
@@ -35,7 +38,9 @@ public class AphResources {
     public static GameTexture glacialSaberAttackThumbTexture;
 
     public static void initResources() {
-        saberAttackTexture = GameTexture.fromFile("ui/saberattack");
+        for (int i = 0; i < 31; i++) {
+            saberAttackTexture[i] = new GameTexture(GameTexture.fromFile("ui/saberattack"), 0, 24 * i, 66, 24);
+        }
 
         gunAttackTrackTexture = GameTexture.fromFile("ui/gunattacktrack");
         gunAttackThumbTexture = GameTexture.fromFile("ui/gunattackthumb");
@@ -111,8 +116,6 @@ public class AphResources {
 
 
     private static void projectileResources() {
-        FireSlingStoneProjectile.texture_2 = GameTexture.fromFile("projectiles/slingfirestone_2");
-
         AircutProjectile.CopperAircutProjectile.texture = GameTexture.fromFile("projectiles/aircutcopper");
         AircutProjectile.IronAircutProjectile.texture = GameTexture.fromFile("projectiles/aircutiron");
         AircutProjectile.GoldAircutProjectile.texture = GameTexture.fromFile("projectiles/aircutgold");
@@ -127,5 +130,4 @@ public class AphResources {
         DaggerProjectile.TungstenDaggerProjectile.texture = GameTexture.fromFile("player/weapons/tungstendagger");
         DaggerProjectile.LostUmbrellaDaggerProjectile.texture = GameTexture.fromFile("player/weapons/lostumbrella");
     }
-
 }

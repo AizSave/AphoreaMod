@@ -15,8 +15,8 @@ import necesse.inventory.item.trinketItem.TrinketItem;
 
 import java.util.LinkedList;
 
-public class HealingEssenceBuff extends TrinketBuff {
-    public HealingEssenceBuff() {
+public class EssenceofHealingBuff extends TrinketBuff {
+    public EssenceofHealingBuff() {
     }
 
     public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {
@@ -25,7 +25,7 @@ public class HealingEssenceBuff extends TrinketBuff {
 
     public ListGameTooltips getTrinketTooltip(TrinketItem trinketItem, InventoryItem item, PlayerMob perspective) {
         ListGameTooltips tooltips = super.getTrinketTooltip(trinketItem, item, perspective);
-        tooltips.add(Localization.translate("itemtooltip", "healingessence", "percent", 10));
+        tooltips.add(Localization.translate("itemtooltip", "essenceofhealing", "percent", 10));
         return tooltips;
     }
 

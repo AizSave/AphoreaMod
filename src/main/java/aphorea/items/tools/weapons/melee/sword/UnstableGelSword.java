@@ -15,11 +15,11 @@ import necesse.level.maps.Level;
 public class UnstableGelSword extends AphSwordToolItem {
 
     public UnstableGelSword() {
-        super(500);
+        super(400);
         rarity = Rarity.COMMON;
         attackAnimTime.setBaseValue(300);
         attackDamage.setBaseValue(24)
-                .setUpgradedValue(1, 110);
+                .setUpgradedValue(1, 86);
         attackRange.setBaseValue(70);
         knockback.setBaseValue(20);
         attackXOffset = 18;

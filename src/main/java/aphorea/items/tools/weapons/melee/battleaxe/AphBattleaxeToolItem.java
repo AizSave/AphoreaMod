@@ -1,11 +1,16 @@
 package aphorea.items.tools.weapons.melee.battleaxe;
 
+import aphorea.buffs.AdrenalineBuff;
 import aphorea.items.tools.weapons.melee.battleaxe.logic.BattleaxeAttackHandler;
+import aphorea.items.tools.weapons.melee.saber.logic.SaberDashAttackHandler;
 import aphorea.items.vanillaitemtypes.weapons.AphGreatswordToolItem;
 import aphorea.registry.AphBuffs;
+import aphorea.utils.AphColors;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.util.GameBlackboard;
+import necesse.entity.levelEvent.mobAbilityLevelEvent.ToolItemMobAbilityEvent;
+import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.attackHandler.GreatswordChargeLevel;
 import necesse.entity.mobs.buffs.ActiveBuff;
@@ -19,15 +24,10 @@ import necesse.level.maps.Level;
 import java.awt.*;
 
 abstract public class AphBattleaxeToolItem extends AphGreatswordToolItem implements ItemInteractAction {
-    public GreatswordChargeLevel[] rushChargeLevels;
     boolean isCharging;
 
-    public AphBattleaxeToolItem(int enchantCost, GreatswordChargeLevel[] chargeLevels, GreatswordChargeLevel[] rushChargeLevels) {
+    public AphBattleaxeToolItem(int enchantCost, GreatswordChargeLevel[] chargeLevels) {
         super(enchantCost, chargeLevels);
-        this.rushChargeLevels = rushChargeLevels;
-        if (rushChargeLevels.length == 0) {
-            throw new IllegalArgumentException("Must have at least one charge level for battleaxes berserker rush");
-        }
         this.keyWords.add("battleaxe");
         this.keyWords.remove("sword");
     }
@@ -47,9 +47,11 @@ abstract public class AphBattleaxeToolItem extends AphGreatswordToolItem impleme
 
     @Override
     public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
-        GreatswordChargeLevel[] charge = attackerMob.buffManager.hasBuff("berserkerrush") ? this.rushChargeLevels : this.chargeLevels;
-
-        attackerMob.startAttackHandler(new BattleaxeAttackHandler(attackerMob, slot, item, this, seed, x, y, charge));
+        if (!attackerMob.isPlayer && this.canLevelInteract(level, x, y, attackerMob, item)) {
+            onLevelInteract(level, x, y, attackerMob, attackHeight, item, slot, getLevelInteractAttackAnimTime(item, attackerMob), mapContent);
+        } else {
+            attackerMob.startAttackHandler(new BattleaxeAttackHandler(attackerMob, slot, item, this, seed, x, y, attackerMob.buffManager.hasBuff(AphBuffs.BERSERKER_RUSH) ? (1 + 0.1F * AdrenalineBuff.getAdrenalineLevel(attackerMob)) : 1, this.chargeLevels));
+        }
 
         return item;
     }
@@ -66,15 +68,31 @@ abstract public class AphBattleaxeToolItem extends AphGreatswordToolItem impleme
     }
 
     @Override
+    public int getLevelInteractAttackAnimTime(InventoryItem item, ItemAttackerMob attackerMob) {
+        return 1000;
+    }
+
+    @Override
     public boolean canLevelInteract(Level level, int x, int y, ItemAttackerMob attackerMob, InventoryItem item) {
-        return !attackerMob.isRiding() && !attackerMob.isAttacking && !this.isCharging && !attackerMob.buffManager.hasBuff("berserkerrush") && !attackerMob.buffManager.hasBuff("berserkerrushcooldown");
+        return !attackerMob.isRiding() && !attackerMob.isAttacking && !this.isCharging && !attackerMob.buffManager.hasBuff(AphBuffs.BERSERKER_RUSH) && !attackerMob.buffManager.hasBuff(AphBuffs.BERSERKER_RUSH_COOLDOWN);
     }
 
     @Override
     public InventoryItem onLevelInteract(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int seed, GNDItemMap mapContent) {
         attackerMob.addBuff(new ActiveBuff(AphBuffs.BERSERKER_RUSH, attackerMob, 11.0F, null), true);
 
+        for (int i = 0; i < 3; i++) {
+            attackerMob.addBuff(new ActiveBuff(AphBuffs.ADRENALINE, attackerMob, 4000, null), false);
+        }
+
         return item;
     }
 
+    @Override
+    public void hitMob(InventoryItem item, ToolItemMobAbilityEvent event, Level level, Mob target, Mob attacker) {
+        if(attacker.buffManager.hasBuff(AphBuffs.BERSERKER_RUSH) && target.isHostile) {
+            attacker.addBuff(new ActiveBuff(AphBuffs.ADRENALINE, attacker, 3000, null), true);
+        }
+        super.hitMob(item, event, level, target, attacker);
+    }
 }

@@ -65,6 +65,10 @@ infectedgrasstile=Infected Grass
 spinelgravel=Spinel Gravel
 
 
+[tech]
+runes=Runes
+
+
 [object]
 witchstatue=Witch Statue
 runestable=Runes Table
@@ -77,6 +81,10 @@ infectedtree=Infected Tree
 infectedgrass=Infected Grass
 spinelchest=Spinel Chest
 fakespinelchest=Fake Spinel Chest
+thepillar=The Pillar
+thepillarentrance=The Pillar Entrance
+thepillarexit=The Pillar Exit
+
 
 
 [itemcategory]
@@ -103,8 +111,9 @@ lifespinel=Life Spinel
 
 // Consumables
 unstablecore=Unstable Core
-lowdspotion=Lowd's Potion
 initialrune=Initial Rune
+# NEW
+venomextract=Venom Extract
 
 // Swords
 gelsword=Gel Sword
@@ -128,6 +137,8 @@ goldsaber=Gold Saber
 demonicsaber=Demonic Saber
 unstablegelsaber=Unstable Gel Saber
 # NEW
+honeysaber=Honey Saber
+glacialsaber=Glacial Saber
 crimsonkora=Crimson Kora
 
 // Battleaxes
@@ -218,11 +229,11 @@ ringofhealth=Ring of Health
 swampshield=Swamp Shield
 witchmedallion=Witch Medallion
 iceboots=Ice Boots
-inspirationfoci=Inspiration Foci
 # NEW
+inspirationfoci=Inspiration Foci
 cursedmedallion=Cursed Medallion
 ancientmedallion=Ancient Medallion
-healingessence=Healing Essence
+essenceofhealing=Essence of Healing
 ninjascarf=Ninja Scarf
 adrenalinecharm=Adrenaline Charm
 
@@ -335,6 +346,7 @@ magichealinggrace=§aMagic Healing Grace:§0 Heals yourself with a % of the Magi
 # NEW
 cursedbuff=§bCursed:§0 §6+25%§0 Incoming Damage
 inspiration=§9Inspiration§0 stats improves the effects of banners
+adrenaline=§6Adrenaline:§0 +5% Damage, -5% Armor. Can stack up to 5 times
 
 // Misc
 gelslimenullifier=They will stop bothering you with a simple click!
@@ -350,9 +362,10 @@ stored=Stored items: <items>
 // Consumables
 deleteditem=This item has been removed, use this item to recover the materials before it is permanently removed
 unstablecore=§bReleases an unstable aura...§0 Can only be used during the day
-lowdspotion=DO NOT DRINK THIS
 # NEW
-lifespinel=Permanently increases max health by 5 up to 250
+venomextract=Lowd says drink it, don't do it
+venomextractdesc=You can't have more than 1 HP
+lifespinel=Permanently increases max health by 5 up to 320
 
 // General Weapons
 spinsecondaryattack=Press [input=mouse2] to make the next attack an area attack
@@ -365,7 +378,7 @@ projectilearea=When the projectile ends, it deals area damage
 // Melee Weapons
 saber=Charge to max for full damage and to unleash an aircut
 saberdash=Hold [input=mouse2] to charge up a dash to slice through enemies
-battleaxe=Requires a lot of charge time
+battleaxe=Takes a long time to charge
 battleaxe2=Press [input=mouse2] to activate the Berserker Rush
 # NEW
 dagger=Hold [input=mouse2] to throw the dagger
@@ -390,6 +403,7 @@ unstablegelgreatbow=Turns Stone Arrows and Gel Arrows into Unstable Gel Arrows
 # NEW
 thespammer=Can shot Spam Bullets
 shotgunsaber=Aim near center for more powerful, accurate, and piercing shots
+honeysaber=Charge to max for full damage and to shot honey and blueberries
 
 // Single Magic Weapons
 unstablegelstaff=When projectiles bounces off walls, they duplicate
@@ -441,15 +455,14 @@ gelring=§7+30%§0 Magic Healing received
 heartring=§7+20§0 max health
 swampshield=Only protects attacks in the direction they are received
 swampshield2=Magic Heal yourself with the §7<healing>§0 of the damage you prevent
-inspirationfoci1=§7+40%§0 inspiration effect and §7+20%§0 inspiration ability speed
-inspirationfoci2=§6-20%§0 all non-banner damage and §6-1§0 max summons
 iceboots=Makes you slide as if you were on ice, but grants +50% movement speed and +4 armor
 # NEW
-healingessence=§7+<percent>&§0 Magic Healing per life essence
-healingessence2=-§680%§0 life essence duration
+inspirationfoci1=§7+40%§0 inspiration effect and §7+20%§0 inspiration ability speed
+inspirationfoci2=§6-20%§0 all non-banner damage and §6-1§0 max summons
+essenceofhealing=§7+<percent>&§0 Magic Healing per life essence
+essenceofhealing2=-§680%§0 life essence duration
 ninjascarf=Converts Saber Dashes into Saber Jumps
-adrenalinecharm=Every hit received will increase your damage by §7<damage>%§0 and reduce your armor by §6<armor>%§0 for 20 seconds
-adrenalinecharm2=Can stack up to 5 times
+adrenalinecharm=Every hit received will give you Adrenaline for 20 seconds
 
 // Set Bonus
 goldhatsetbonus=If you're still, your ranged attack speed is greatly increased
@@ -611,13 +624,13 @@ petphosphorslime=Phosphor Slime
 [buff]
 stun=Stunned
 sticky=Sticky
+honeyed=Honeyed
 berserkerrush=Berserker Rush
 berserkerrushcooldown=Berserker Rush on Cooldown
 spinattackcooldown=Spin Attack on Cooldown
 periaptcooldown=Periapt Ability on Cooldown
 periaptactive=Periapt Ability Active
-saberdashcooldown=Dash Cooldown
-lowdspoison=Lowd's Poison
+saberdashcooldown=Saber Dash Cooldown
 stop=Stopped
 immortal=Immortal
 immortalcooldown=Immortal Cooldown
@@ -625,8 +638,9 @@ fallenstun=Fallen Stun
 runesinjectoractive=Runes Injector Active
 runesinjectorcooldown=Runes Injector Cooldown
 # NEW
+venomextract=Venom Extract
 cursed=Cursed
-adrenalinecharmcharge=Adrenaline Charm Charge
+adrenaline=Adrenaline
 
 
 [message]

@@ -155,7 +155,7 @@ public class ThePillarEntranceObject extends StaticMultiObject {
 
                 return true;
             }, true);
-            this.runClearMobs(client);
+            this.runClearMobs(getLevel(), getX(), getY());
         }
 
         public void startRevealAnimation(int runTimeMilliseconds) {

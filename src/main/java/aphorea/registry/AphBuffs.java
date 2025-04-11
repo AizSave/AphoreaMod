@@ -75,12 +75,15 @@ import java.util.stream.Collectors;
 
 public class AphBuffs {
 
+    public static Buff ADRENALINE;
+
     public static Buff IMMORTAL;
     public static Buff STOP;
 
     public static Buff STUN;
     public static Buff FALLEN_STUN;
     public static Buff STICKY;
+    public static Buff HONEYED;
     public static Buff CURSED;
 
     public static Buff DAGGER_ATTACK;
@@ -149,11 +152,14 @@ public class AphBuffs {
             }
         });
         BuffRegistry.registerBuff("sticky", STICKY = new StickyBuff());
+        BuffRegistry.registerBuff("honeyed", HONEYED = new HoneyedBuff());
         BuffRegistry.registerBuff("cursed", CURSED = new CursedBuff());
         BuffRegistry.registerBuff("daggerattack", DAGGER_ATTACK = new DaggerAttackBuff());
         BuffRegistry.registerBuff("berserkerrush", BERSERKER_RUSH = new BerserkerRushBuff());
         BuffRegistry.registerBuff("periaptactive", PERIAPT_ACTIVE = new PeriaptActiveBuff());
         BuffRegistry.registerBuff("saberdashactive", SABER_DASH_ACTIVE = new HiddenCooldownBuff());
+
+        BuffRegistry.registerBuff("adrenaline", ADRENALINE = new AdrenalineBuff());
 
         // Common Cooldowns
         BuffRegistry.registerBuff("immortalcooldown", INMORTAL_COOLDOWN = new HiddenCooldownBuff());
@@ -180,7 +186,7 @@ public class AphBuffs {
         registerMightyBannerItems();
 
         // Potion Buffs
-        BuffRegistry.registerBuff("lowdspoison", new LowdsPoisonBuff());
+        BuffRegistry.registerBuff("venomextract", new VenomExtractBuff());
 
         // Trinket Buffs
         BuffRegistry.registerBuff("unstableperiapt", new UnstablePeriaptBuff());
@@ -197,11 +203,10 @@ public class AphBuffs {
         BuffRegistry.registerBuff("iceboots", new SimpleTrinketBuff("iceboots", new ModifierValue<>(BuffModifiers.FRICTION, -0.75F), new ModifierValue<>(BuffModifiers.SPEED, 0.5F), new ModifierValue<>(BuffModifiers.ARMOR_FLAT, 4)));
         BuffRegistry.registerBuff("cursedmedallion", new CursedMedallionBuff());
         BuffRegistry.registerBuff("ancientmedallion", new AncientMedallionBuff());
-        BuffRegistry.registerBuff("healingessence", new HealingEssenceBuff());
+        BuffRegistry.registerBuff("essenceofhealing", new EssenceofHealingBuff());
         BuffRegistry.registerBuff("ninjascarf", new SimpleTrinketBuff("ninjascarf"));
         BuffRegistry.registerBuff("inspirationfoci", new InspirationFociBuff());
         BuffRegistry.registerBuff("adrenalinecharm", new AdrenalineCharmBuff());
-        BuffRegistry.registerBuff("adrenalinecharmcharge", new AdrenalineCharmBuff.AdrenalineCharmChargeBuff());
         BuffRegistry.registerBuff("test1", new SimpleTrinketBuff("test1", new ModifierValue<>(BuffModifiers.MAX_SUMMONS, 2), new ModifierValue<>(BuffModifiers.SUMMONS_SPEED, -0.2F), new ModifierValue<>(BuffModifiers.SUMMON_DAMAGE, -0.2F)));
         BuffRegistry.registerBuff("test2", new SimpleTrinketBuff("test2", new ModifierValue<>(BuffModifiers.MAX_SUMMONS, 3), new ModifierValue<>(BuffModifiers.SUMMONS_SPEED, -0.2F), new ModifierValue<>(BuffModifiers.SUMMON_DAMAGE, -0.2F)));
 

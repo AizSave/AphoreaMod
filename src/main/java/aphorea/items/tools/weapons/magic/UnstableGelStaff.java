@@ -39,10 +39,10 @@ public class UnstableGelStaff extends AphMagicProjectileSecondaryAreaToolItem im
     ).setDamageType(DamageTypeRegistry.MAGIC);
 
     public UnstableGelStaff() {
-        super(500, areaList, 800, 6.0F);
+        super(400, areaList, 800, 6.0F);
         rarity = Rarity.COMMON;
         attackAnimTime.setBaseValue(800);
-        attackDamage.setBaseValue(30).setUpgradedValue(1, 100);
+        attackDamage.setBaseValue(30).setUpgradedValue(1, 80);
         velocity.setBaseValue(100);
         knockback.setBaseValue(0);
         attackRange.setBaseValue(600);

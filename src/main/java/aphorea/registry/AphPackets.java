@@ -1,6 +1,6 @@
 package aphorea.registry;
 
-import aphorea.buffs.LowdsPoisonBuff;
+import aphorea.buffs.VenomExtractBuff;
 import aphorea.mobs.friendly.WildPhosphorSlime;
 import aphorea.packets.*;
 import necesse.engine.registries.PacketRegistry;
@@ -16,7 +16,7 @@ public class AphPackets {
 
     public static void clientOnly() {
         PacketRegistry.registerPacket(AphSingleAreaShowPacket.class);
-        PacketRegistry.registerPacket(LowdsPoisonBuff.LowdsPoisonBuffPacket.class);
+        PacketRegistry.registerPacket(VenomExtractBuff.VenomExtractBuffPacket.class);
         PacketRegistry.registerPacket(WildPhosphorSlime.PhosphorSlimeParticlesPacket.class);
         PacketRegistry.registerPacket(AphRemoveObjectEntity.class);
     }

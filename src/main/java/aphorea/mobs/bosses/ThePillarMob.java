@@ -50,7 +50,7 @@ public class ThePillarMob extends BossMob {
     private static final AphAreaList searchArea = new AphAreaList(
             new AphArea(BOSS_AREA_RADIUS, AphColors.spinel)
     );
-    public static MaxHealthGetter MAX_HEALTH = new MaxHealthGetter(3000, 4000, 5000, 6500, 8000);
+    public static MaxHealthGetter MAX_HEALTH = new MaxHealthGetter(5000, 6000, 7000, 8500, 10000);
     private int aliveTimer;
     public static GameTexture icon;
 

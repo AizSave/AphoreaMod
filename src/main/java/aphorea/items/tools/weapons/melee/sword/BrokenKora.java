@@ -6,7 +6,7 @@ import necesse.inventory.InventoryItem;
 public class BrokenKora extends AphSwordToolItem {
 
     public BrokenKora() {
-        super(500);
+        super(1000);
         rarity = Rarity.NORMAL;
         attackDamage.setBaseValue(50);
         knockback.setBaseValue(50);

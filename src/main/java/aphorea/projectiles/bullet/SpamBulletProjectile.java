@@ -42,6 +42,7 @@ public class SpamBulletProjectile extends BulletProjectile {
 
     private long spawnTime;
     private int type;
+    private boolean clockWise;
 
     public AphAreaList areaList = new AphAreaList(
             new AphFlatArea(100, 0.5F, AphColors.green)
@@ -66,7 +67,11 @@ public class SpamBulletProjectile extends BulletProjectile {
         this.trailOffset = 0.0F;
 
         this.spawnTime = this.getWorldEntity().getTime();
-        this.type = (new GameRandom(this.getUniqueID())).nextInt(texture.getWidth() / 32);
+
+        GameRandom gameRandom = new GameRandom(this.getUniqueID());
+        this.type = gameRandom.nextInt(texture.getWidth() / 32);
+
+        this.clockWise = gameRandom.nextBoolean();
 
         if (type == 1 || type == 4) {
             this.doesImpactDamage = false;
@@ -106,7 +111,7 @@ public class SpamBulletProjectile extends BulletProjectile {
     }
 
     public float getAngle() {
-        return (float) (this.getWorldEntity().getTime() - this.spawnTime);
+        return (float) (this.getWorldEntity().getTime() - this.spawnTime) * (clockWise ? 1 : -1);
     }
 
     @Override

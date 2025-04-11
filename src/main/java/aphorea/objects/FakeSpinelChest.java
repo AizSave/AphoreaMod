@@ -108,9 +108,6 @@ public class FakeSpinelChest extends GameObject {
             mob.setDir(level.objectLayer.getObjectRotation(tileX, tileY));
             level.entityManager.addMob(mob, tileX * 32 + 16, tileY * 32 + 16);
         }
-        if (level.isClient()) {
-            level.entityManager.addParticle(new SmokePuffParticle(level, tileX * 32 + 16, tileY * 32 + 32, AphColors.spinel), Particle.GType.CRITICAL);
-        }
         level.objectLayer.setObject(tileX, tileY, 0);
     }
 

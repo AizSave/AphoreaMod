@@ -20,7 +20,7 @@ public class LostUmbrellaDagger extends AphDaggerToolItem {
     protected GameTexture attackOpenTexture;
 
     public LostUmbrellaDagger() {
-        super(300);
+        super(1900);
         this.rarity = Rarity.EPIC;
         this.attackAnimTime.setBaseValue(500);
 

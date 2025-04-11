@@ -13,7 +13,7 @@ import necesse.level.maps.Level;
 public class GoldenWand extends AphHealingProjectileToolItem {
 
     public GoldenWand() {
-        super(300);
+        super(350);
         rarity = Rarity.NORMAL;
         attackAnimTime.setBaseValue(800);
 
@@ -24,7 +24,7 @@ public class GoldenWand extends AphHealingProjectileToolItem {
         attackXOffset += 10;
         attackYOffset += 15;
 
-        magicHealing.setBaseValue(8).setUpgradedValue(1, 10);
+        magicHealing.setBaseValue(8).setUpgradedValue(1, 20);
     }
 
     @Override

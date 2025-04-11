@@ -1,7 +1,10 @@
 package aphorea.items.tools.weapons.melee.battleaxe.logic;
 
+import necesse.engine.network.PacketReader;
+import necesse.engine.network.PacketWriter;
 import necesse.engine.util.GameMath;
 import necesse.engine.util.GameRandom;
+import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.attackHandler.GreatswordAttackHandler;
 import necesse.entity.mobs.attackHandler.GreatswordChargeLevel;
 import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
@@ -13,9 +16,28 @@ import necesse.inventory.item.toolItem.swordToolItem.greatswordToolItem.Greatswo
 import java.awt.*;
 
 public class BattleaxeAttackHandler extends GreatswordAttackHandler {
+    float speedModifier;
 
-    public BattleaxeAttackHandler(ItemAttackerMob attackerMob, ItemAttackSlot slot, InventoryItem item, GreatswordToolItem toolItem, int seed, int startX, int startY, GreatswordChargeLevel... chargeLevels) {
+    public BattleaxeAttackHandler(ItemAttackerMob attackerMob, ItemAttackSlot slot, InventoryItem item, GreatswordToolItem toolItem, int seed, int startX, int startY, float speedModifier, GreatswordChargeLevel... chargeLevels) {
         super(attackerMob, slot, item, toolItem, seed, startX, startY, chargeLevels);
+        this.speedModifier = speedModifier;
+    }
+
+    @Override
+    public void onUpdatePacket(PacketReader reader) {
+        super.onUpdatePacket(reader);
+        this.speedModifier = reader.getNextFloat();
+    }
+
+    @Override
+    protected void setupClientUpdatePacket(PlayerMob player, PacketWriter writer) {
+        super.setupClientUpdatePacket(player, writer);
+        writer.putNextFloat(speedModifier);
+    }
+
+    @Override
+    public long getTimeSinceStart() {
+        return (long) (super.getTimeSinceStart() * speedModifier);
     }
 
     @Override

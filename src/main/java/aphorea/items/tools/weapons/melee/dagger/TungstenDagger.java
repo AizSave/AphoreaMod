@@ -11,7 +11,7 @@ import java.awt.*;
 
 public class TungstenDagger extends AphDaggerToolItem {
     public TungstenDagger() {
-        super(400);
+        super(1300);
         this.rarity = Rarity.UNCOMMON;
         this.attackAnimTime.setBaseValue(300);
 

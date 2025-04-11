@@ -28,7 +28,7 @@ public class GelGreatbow extends AphGreatbowProjectileToolItem {
         super(200);
         this.rarity = Rarity.NORMAL;
         this.attackAnimTime.setBaseValue(700);
-        this.attackDamage.setBaseValue(10.0F).setUpgradedValue(1.0F, 45.0F);
+        this.attackDamage.setBaseValue(15.0F).setUpgradedValue(1.0F, 65.0F);
         this.attackRange.setBaseValue(800);
         this.velocity.setBaseValue(300);
         this.attackXOffset = 10;

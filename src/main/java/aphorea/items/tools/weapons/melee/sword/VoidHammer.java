@@ -18,8 +18,9 @@ import necesse.level.maps.Level;
 
 public class VoidHammer extends AphHeavyHammerProjectileToolItem {
     public VoidHammer() {
-        super(450);
+        super(650);
         this.attackRange.setBaseValue(400);
+        this.attackDamage.setBaseValue(18.0F).setUpgradedValue(1.0F, 50.0F);
 
         this.rarity = Rarity.RARE;
 

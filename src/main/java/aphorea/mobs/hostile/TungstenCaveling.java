@@ -32,7 +32,7 @@ public class TungstenCaveling extends HostileMob {
     public InventoryItem item;
 
     public TungstenCaveling() {
-        super(250);
+        super(400);
         this.setArmor(20);
         this.setSpeed(40);
         this.setFriction(4.0F);

@@ -6,10 +6,11 @@ import necesse.entity.projectile.Projectile;
 import necesse.inventory.InventoryItem;
 import necesse.level.maps.Level;
 
+
 public class DemonicSaber extends AphSaberToolItem {
 
     public DemonicSaber() {
-        super(800);
+        super(400);
         rarity = Rarity.COMMON;
         attackDamage.setBaseValue(30)
                 .setUpgradedValue(1, 85);

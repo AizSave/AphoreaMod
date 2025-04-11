@@ -14,7 +14,6 @@ public class VolatileGelStaff extends AphSummonToolItem {
         this.summonType = "summonedmobtemp";
         this.rarity = Rarity.COMMON;
         this.attackDamage.setBaseValue(80.0F).setUpgradedValue(1.0F, 160.0F);
-        this.manaCost.setBaseValue(5).setUpgradedValue(1, 5);
     }
 
     @Override

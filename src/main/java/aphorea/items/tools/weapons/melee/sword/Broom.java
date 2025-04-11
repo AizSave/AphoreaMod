@@ -5,7 +5,7 @@ import aphorea.items.vanillaitemtypes.weapons.AphSwordToolItem;
 public class Broom extends AphSwordToolItem {
 
     public Broom() {
-        super(500);
+        super(200);
         rarity = Rarity.NORMAL;
         attackDamage.setBaseValue(16)
                 .setUpgradedValue(1, 80);

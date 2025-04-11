@@ -75,7 +75,7 @@ public class ThePillarExitObject extends StaticMultiObject {
 
         public void use(Server server, ServerClient client) {
             this.teleportClientToAroundDestination(client, null, true);
-            this.runClearMobs(client);
+            this.runClearMobs(getLevel(), getX(), getY());
         }
     }
 

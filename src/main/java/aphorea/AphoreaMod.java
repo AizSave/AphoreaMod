@@ -23,8 +23,9 @@ public class AphoreaMod {
         System.out.println("AphoreaMod starting...");
 
         // Version Migration
-        VersionMigration.oldItemStringIDs = GameUtils.concat(VersionMigration.oldItemStringIDs, new String[][] {
-                { "inspirationfoci", "bannerbearerfoci" }
+        VersionMigration.oldItemStringIDs = GameUtils.concat(VersionMigration.oldItemStringIDs, new String[][]{
+                {"inspirationfoci", "bannerbearerfoci"},
+                {"venomextract", "lowdspotion"}
         });
 
 

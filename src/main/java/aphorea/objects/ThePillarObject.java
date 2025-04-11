@@ -2,12 +2,14 @@ package aphorea.objects;
 
 import aphorea.mobs.bosses.ThePillarMob;
 import aphorea.utils.AphColors;
+import necesse.engine.Settings;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
 import necesse.engine.registries.ItemRegistry;
 import necesse.engine.registries.ObjectRegistry;
+import necesse.engine.window.WindowManager;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.objectEntity.ObjectEntity;
@@ -40,12 +42,12 @@ public class ThePillarObject extends StaticMultiObject {
         this.objectHealth = Integer.MAX_VALUE;
         this.toolType = ToolType.UNBREAKABLE;
         this.isLightTransparent = false;
-        this.hoverHitbox = new Rectangle(0, -32, 32, 64);
+        this.hoverHitbox = new Rectangle(0, 0, 32, 32);
         this.setItemCategory("objects", "misc");
         this.setCraftingCategory("objects", "misc");
     }
 
-    public static int[] registerObject() {
+    public static void registerObject() {
         int[] ids = new int[6];
         Rectangle collision = new Rectangle(0, 0, 96, 64);
         ids[0] = ObjectRegistry.registerObject("thepillar", new ThePillarObject(0, 0, 3, 2, ids, collision), 0.0F, false);
@@ -54,7 +56,6 @@ public class ThePillarObject extends StaticMultiObject {
         ids[3] = ObjectRegistry.registerObject("thepillar4", new ThePillarObject(0, 1, 3, 2, ids, collision), 0.0F, false);
         ids[4] = ObjectRegistry.registerObject("thepillar5", new ThePillarObject(1, 1, 3, 2, ids, collision), 0.0F, false);
         ids[5] = ObjectRegistry.registerObject("thepillar6", new ThePillarObject(2, 1, 3, 2, ids, collision), 0.0F, false);
-        return ids;
     }
 
     @Override
@@ -73,8 +74,18 @@ public class ThePillarObject extends StaticMultiObject {
     @Override
     public void addDrawables(List<LevelSortedDrawable> list, OrderableDrawables tileList, Level level, int tileX, int tileY, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
         if (multiY == 0) {
+            float alpha = 1.0F;
+            if (perspective != null && !Settings.hideUI && !Settings.hideCursor) {
+                Rectangle alphaRec = new Rectangle(tileX * 32 - 32, tileY * 32 - 128, 96, 128);
+                if (perspective.getCollision().intersects(alphaRec)) {
+                    alpha = 0.5F;
+                } else if (alphaRec.contains(camera.getX() + WindowManager.getWindow().mousePos().sceneX, camera.getY() + WindowManager.getWindow().mousePos().sceneY)) {
+                    alpha = 0.5F;
+                }
+            }
+
             GameTexture texture = this.texture.getDamagedTexture(this, level, tileX, tileY);
-            final DrawOptions[] options = this.getMultiTextureDrawOptionsCustom(texture, level, tileX, tileY, camera);
+            final DrawOptions[] options = this.getMultiTextureDrawOptionsCustom(texture, level, tileX, tileY, camera, alpha);
             for (DrawOptions drawOptions : options) {
                 list.add(new LevelSortedDrawable(this, tileX, tileY) {
                     public int getSortY() {
@@ -89,11 +100,11 @@ public class ThePillarObject extends StaticMultiObject {
         }
     }
 
-    protected DrawOptions[] getMultiTextureDrawOptionsCustom(GameTexture texture, Level level, int tileX, int tileY, GameCamera camera) {
-        return this.getMultiTextureDrawOptionsCustom(new GameSprite(texture), level, tileX, tileY, camera);
+    protected DrawOptions[] getMultiTextureDrawOptionsCustom(GameTexture texture, Level level, int tileX, int tileY, GameCamera camera, float alpha) {
+        return this.getMultiTextureDrawOptionsCustom(new GameSprite(texture), level, tileX, tileY, camera, alpha);
     }
 
-    protected DrawOptions[] getMultiTextureDrawOptionsCustom(GameSprite sprite, Level level, int tileX, int tileY, GameCamera camera) {
+    protected DrawOptions[] getMultiTextureDrawOptionsCustom(GameSprite sprite, Level level, int tileX, int tileY, GameCamera camera, float alpha) {
         GameLight light = level.getLightLevel(tileX, tileY);
         int drawX = camera.getTileDrawX(tileX);
         int drawY = camera.getTileDrawY(tileY);
@@ -102,14 +113,14 @@ public class ThePillarObject extends StaticMultiObject {
 
         int parts = getParts(level, tileX, tileY);
         int startHeight = drawY - 80 - 20 * parts + 64;
-        drawOptions.add(sprite.initDrawSection(startX, startX + 32, 0, 40, false).size(32, 40).light(light).pos(drawX, startHeight));
+        drawOptions.add(sprite.initDrawSection(startX, startX + 32, 0, 40, false).alpha(alpha).size(32, 40).light(light).pos(drawX, startHeight));
         if (isActive(level, tileX, tileY)) {
-            drawOptions.add(sprite.initDrawSection(startX, startX + 32, 100, 140, false).size(32, 40).light(light).pos(drawX, startHeight + 40));
+            drawOptions.add(sprite.initDrawSection(startX, startX + 32, 100, 140, false).alpha(alpha).size(32, 40).light(light).pos(drawX, startHeight + 40));
         } else {
-            drawOptions.add(sprite.initDrawSection(startX, startX + 32, 40, 80, false).size(32, 40).light(light).pos(drawX, startHeight + 40));
+            drawOptions.add(sprite.initDrawSection(startX, startX + 32, 40, 80, false).alpha(alpha).size(32, 40).light(light).pos(drawX, startHeight + 40));
         }
         for (int i = 0; i < parts; i++) {
-            drawOptions.add(sprite.initDrawSection(startX, startX + 32, 160, 180, false).size(32, 20).light(light).pos(drawX, startHeight + 80 + 20 * i));
+            drawOptions.add(sprite.initDrawSection(startX, startX + 32, 160, 180, false).alpha(alpha).size(32, 20).light(light).pos(drawX, startHeight + 80 + 20 * i));
         }
         return drawOptions.toArray(new DrawOptions[0]);
     }

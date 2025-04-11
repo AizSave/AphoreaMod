@@ -64,4 +64,17 @@ abstract public class AphCustomUI {
         }
         return texture;
     }
+
+    public static GameTexture getResizedTextures(String string, GameTexture[] originalTexture, int width, int height, int index) {
+        String id = string + index + "-" + String.format("%.1f", getZoom() / 2);
+        GameTexture texture = textureMap.get(id);
+        if(texture == null) {
+            for (int i = 0; i < originalTexture.length; i++) {
+                String textureId = string + i + "-" + String.format("%.1f", getZoom() / 2);
+                textureMap.put(textureId, originalTexture[i].resize(width, height));
+            }
+        }
+        return textureMap.get(id);
+    }
+
 }

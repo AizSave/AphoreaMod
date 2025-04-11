@@ -33,7 +33,7 @@ public class LifeSpinel extends ConsumableItem {
 
     @Override
     public InventoryItem onPlace(Level level, int x, int y, PlayerMob player, int seed, InventoryItem item, GNDItemMap mapContent) {
-        player.setMaxHealth(Math.min(250, player.getMaxHealthFlat() + 5));
+        player.setMaxHealth(Math.min(320, player.getMaxHealthFlat() + 5));
         if (level.isServer()) {
             level.getServer().network.sendToClientsAtEntireLevelExcept(new PacketPlayerGeneral(player.getServerClient()), level, player.getServerClient());
         } else if (level.isClient()) {
@@ -49,7 +49,7 @@ public class LifeSpinel extends ConsumableItem {
 
     @Override
     public String canPlace(Level level, int x, int y, PlayerMob player, InventoryItem item, GNDItemMap mapContent) {
-        return player.getMaxHealthFlat() >= 250 ? "incorrecthealth" : null;
+        return player.getMaxHealthFlat() >= 320 ? "incorrecthealth" : null;
     }
 
     @Override

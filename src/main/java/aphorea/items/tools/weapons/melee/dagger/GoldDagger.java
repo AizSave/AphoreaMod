@@ -11,7 +11,7 @@ import java.awt.*;
 
 public class GoldDagger extends AphDaggerToolItem {
     public GoldDagger() {
-        super(300);
+        super(350);
         this.rarity = Rarity.NORMAL;
         this.attackAnimTime.setBaseValue(500);
 

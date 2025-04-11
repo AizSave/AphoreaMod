@@ -15,11 +15,11 @@ import necesse.level.maps.Level;
 public class GelSword extends AphSwordToolItem {
 
     public GelSword() {
-        super(400);
+        super(200);
         rarity = Rarity.NORMAL;
         attackAnimTime.setBaseValue(300);
         attackDamage.setBaseValue(18)
-                .setUpgradedValue(1, 80);
+                .setUpgradedValue(1, 90);
         attackRange.setBaseValue(55);
         knockback.setBaseValue(5);
         attackXOffset = 12;

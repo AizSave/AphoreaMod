@@ -12,10 +12,10 @@ import necesse.level.maps.Level;
 
 public class FrozenSling extends AphSlingToolItem {
     public FrozenSling() {
-        super(100);
+        super(500);
         this.rarity = Rarity.NORMAL;
         this.attackAnimTime.setBaseValue(1200);
-        this.attackDamage.setBaseValue(30.0F).setUpgradedValue(1.0F, 150.0F);
+        this.attackDamage.setBaseValue(50.0F).setUpgradedValue(1.0F, 92.0F);
         this.attackRange.setBaseValue(500);
         this.velocity.setBaseValue(100);
         this.attackXOffset = 8;

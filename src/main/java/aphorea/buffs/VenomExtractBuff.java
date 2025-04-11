@@ -1,6 +1,8 @@
 package aphorea.buffs;
 
 import aphorea.utils.AphColors;
+import necesse.engine.localization.Localization;
+import necesse.engine.localization.message.StaticMessage;
 import necesse.engine.network.NetworkPacket;
 import necesse.engine.network.Packet;
 import necesse.engine.network.PacketReader;
@@ -20,8 +22,8 @@ import necesse.entity.mobs.buffs.staticBuffs.Buff;
 import necesse.entity.particle.Particle;
 import necesse.level.maps.Level;
 
-public class LowdsPoisonBuff extends Buff {
-    public LowdsPoisonBuff() {
+public class VenomExtractBuff extends Buff {
+    public VenomExtractBuff() {
         this.isImportant = true;
         this.canCancel = false;
         this.isVisible = true;
@@ -42,21 +44,21 @@ public class LowdsPoisonBuff extends Buff {
             buff.owner.setHealth(1);
             if (buff.owner.isPlayer) {
                 ServerClient serverClient = ((PlayerMob) buff.owner).getServerClient();
-                buff.owner.getServer().network.sendToClientsAtEntireLevel(new LowdsPoisonBuffPacket(serverClient.slot), buff.owner.getLevel());
+                buff.owner.getServer().network.sendToClientsAtEntireLevel(new VenomExtractBuffPacket(serverClient.slot), buff.owner.getLevel());
             }
         }
     }
 
-    public static class LowdsPoisonBuffPacket extends Packet {
+    public static class VenomExtractBuffPacket extends Packet {
         public final int slot;
 
-        public LowdsPoisonBuffPacket(byte[] data) {
+        public VenomExtractBuffPacket(byte[] data) {
             super(data);
             PacketReader reader = new PacketReader(this);
             this.slot = reader.getNextByteUnsigned();
         }
 
-        public LowdsPoisonBuffPacket(int slot) {
+        public VenomExtractBuffPacket(int slot) {
             this.slot = slot;
             PacketWriter writer = new PacketWriter(this);
             writer.putNextByteUnsigned(slot);
@@ -86,6 +88,15 @@ public class LowdsPoisonBuff extends Buff {
             }
 
         }
+    }
+
+    @Override
+    public void updateLocalDisplayName() {
+        super.updateLocalDisplayName();
+        this.displayName = this.isVisible ? new StaticMessage(
+                Localization.translate("buff", this.getLocalizationKey()) + "\n" +
+                        Localization.translate("itemtooltip", this.getLocalizationKey() + "desc")
+        ) : new StaticMessage(this.getStringID());
     }
 
 }

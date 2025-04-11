@@ -13,7 +13,7 @@ import java.awt.*;
 
 public class CopperDagger extends AphDaggerToolItem {
     public CopperDagger() {
-        super(300);
+        super(200);
         this.rarity = Rarity.NORMAL;
         this.attackAnimTime.setBaseValue(500);
 

@@ -16,12 +16,12 @@ import necesse.level.maps.Level;
 public class HealingStaff extends AphAreaToolItem implements ItemInteractAction {
 
     static AphAreaList areaList = new AphAreaList(
-            new AphArea(120, AphColors.pink_witch_dark).setHealingArea(10, 12),
-            new AphArea(120, AphColors.pink_witch).setHealingArea(6, 8)
+            new AphArea(120, AphColors.pink_witch_dark).setHealingArea(10, 20),
+            new AphArea(120, AphColors.pink_witch).setHealingArea(6, 12)
     );
 
     public HealingStaff() {
-        super(500, false, true, areaList);
+        super(650, false, true, areaList);
         rarity = Rarity.COMMON;
         attackAnimTime.setBaseValue(1000);
 

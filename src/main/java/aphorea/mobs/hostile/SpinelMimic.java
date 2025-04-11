@@ -29,7 +29,7 @@ import java.util.List;
 public class SpinelMimic extends HostileMob {
     public static GameTexture texture;
     public static GameTexture texture_shadow;
-    public static GameDamage collisionDamage = new GameDamage(80.0F);
+    public static GameDamage collisionDamage = new GameDamage(60.0F);
     public float jump = 0;
 
     static public float jumpHeight = 30;
@@ -54,7 +54,7 @@ public class SpinelMimic extends HostileMob {
     int adjustY = 22;
 
     public SpinelMimic() {
-        super(140);
+        super(300);
         this.setArmor(20);
         this.setSpeed(60.0F);
         this.setFriction(5.0F);

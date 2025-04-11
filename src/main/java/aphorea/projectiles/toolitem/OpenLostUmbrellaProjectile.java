@@ -62,7 +62,7 @@ public class OpenLostUmbrellaProjectile extends Projectile {
         int drawY = camera.getDrawY(y);
         TextureDrawOptions options = texture.initDraw()
                 .light(light)
-                .rotate(getAngle() + 45, 2, 2)
+                .rotate(getAngle() + 45, texture.getWidth() / 2, 2)
                 .alpha(traveledDistance / distance * 0.4F + 0.4F)
                 .pos(drawX, drawY - (int) getHeight());
 

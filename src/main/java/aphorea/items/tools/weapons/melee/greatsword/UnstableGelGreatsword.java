@@ -16,7 +16,7 @@ import necesse.level.maps.Level;
 public class UnstableGelGreatsword extends AphGreatswordSecondarySpinToolItem implements ItemInteractAction {
 
     public UnstableGelGreatsword() {
-        super(500, 300, getThreeChargeLevels(500, 600, 700, AphColors.unstableGel_very_light, AphColors.unstableGel_light, AphColors.unstableGel), AphColors.unstableGel);
+        super(400, 300, getThreeChargeLevels(500, 600, 700, AphColors.unstableGel_very_light, AphColors.unstableGel_light, AphColors.unstableGel), AphColors.unstableGel);
         rarity = Rarity.COMMON;
         attackDamage.setBaseValue(50)
                 .setUpgradedValue(1, 160);
@@ -29,14 +29,14 @@ public class UnstableGelGreatsword extends AphGreatswordSecondarySpinToolItem im
     @Override
     public ListGameTooltips getPreEnchantmentTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {
         ListGameTooltips tooltips = super.getPreEnchantmentTooltips(item, perspective, blackboard);
-        tooltips.add(Localization.translate("itemtooltip", "stikybuff3"));
+        tooltips.add(Localization.translate("itemtooltip", "stikybuff2"));
         return tooltips;
     }
 
     @Override
     public void hitMob(InventoryItem item, ToolItemMobAbilityEvent event, Level level, Mob target, Mob attacker) {
         super.hitMob(item, event, level, target, attacker);
-        target.addBuff(new ActiveBuff(AphBuffs.STICKY, target, 3000, attacker), true);
+        target.addBuff(new ActiveBuff(AphBuffs.STICKY, target, 2000, attacker), true);
     }
 
 }

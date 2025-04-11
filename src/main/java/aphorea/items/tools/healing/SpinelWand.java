@@ -17,7 +17,7 @@ import necesse.level.maps.Level;
 public class SpinelWand extends AphHealingProjectileToolItem {
 
     public SpinelWand() {
-        super(400);
+        super(1300);
         rarity = Rarity.UNCOMMON;
         attackAnimTime.setBaseValue(600);
 
@@ -28,7 +28,7 @@ public class SpinelWand extends AphHealingProjectileToolItem {
         attackXOffset += 10;
         attackYOffset += 15;
 
-        magicHealing.setBaseValue(10).setUpgradedValue(1, 12);
+        magicHealing.setBaseValue(10).setUpgradedValue(1, 18);
     }
 
     public Projectile[] getProjectiles(Level level, int x, int y, ItemAttackerMob attackerMob, InventoryItem item) {

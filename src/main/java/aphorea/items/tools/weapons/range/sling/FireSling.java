@@ -12,10 +12,10 @@ import necesse.level.maps.Level;
 
 public class FireSling extends AphSlingToolItem {
     public FireSling() {
-        super(100);
+        super(200);
         this.rarity = Rarity.NORMAL;
         this.attackAnimTime.setBaseValue(1200);
-        this.attackDamage.setBaseValue(20.0F).setUpgradedValue(1.0F, 140.0F);
+        this.attackDamage.setBaseValue(25.0F).setUpgradedValue(1.0F, 96.0F);
         this.attackRange.setBaseValue(500);
         this.velocity.setBaseValue(100);
         this.attackXOffset = 8;

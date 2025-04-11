@@ -9,7 +9,7 @@ import necesse.level.maps.Level;
 public class CopperSaber extends AphSaberToolItem {
 
     public CopperSaber() {
-        super(500);
+        super(200);
         rarity = Rarity.NORMAL;
         attackDamage.setBaseValue(17)
                 .setUpgradedValue(1, 93);

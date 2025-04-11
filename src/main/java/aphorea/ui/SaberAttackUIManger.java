@@ -5,6 +5,7 @@ import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.window.WindowManager;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.forms.Form;
+import necesse.gfx.gameTexture.GameTexture;
 
 import java.awt.*;
 
@@ -65,16 +66,11 @@ public class SaberAttackUIManger extends AphCustomUI {
 
         @Override
         public void draw(TickManager tickManager, PlayerMob perspective, Rectangle renderBox) {
-            int width = (int) (baseWidth * getZoom());
-            int height = (int) (baseHeight * getZoom());
+            float progress = barPercent(showProgress(SaberAttackUIManger.this.chargePercent, SaberAttackUIManger.this.chargeTime));
+            int spriteY = (int) (30 - 30 * progress);
 
-            int realHeight = (int) (baseHeight * 31 * getZoom());
-
-            float progressX = barPercent(showProgress(SaberAttackUIManger.this.chargePercent, SaberAttackUIManger.this.chargeTime));
-
-            getResizedTexture("saberattack", AphResources.saberAttackTexture, width, realHeight)
+            getResizedTextures("saberattack", AphResources.saberAttackTexture, (int) (baseWidth * getZoom()), (int) (baseHeight * getZoom()), spriteY)
                     .initDraw()
-                    .sprite(0, (int) (30 - 30 * progressX), width, height)
                     .pos(this.getX(), this.getY())
                     .draw();
 

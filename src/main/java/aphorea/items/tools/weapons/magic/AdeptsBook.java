@@ -19,7 +19,7 @@ public class AdeptsBook extends AphAreaToolItem implements ItemInteractAction {
     ).setDamageType(DamageTypeRegistry.MAGIC);
 
     public AdeptsBook() {
-        super(500, true, false, areaList);
+        super(650, true, false, areaList);
         rarity = Rarity.RARE;
         attackAnimTime.setBaseValue(1000);
 

@@ -46,7 +46,7 @@ public class MagicalBroom extends AphToolItem {
     int currentA;
 
     public MagicalBroom() {
-        super(500);
+        super(650);
         this.setItemCategory("equipment", "weapons", "magicweapons");
         this.setItemCategory(ItemCategory.equipmentManager, "weapons", "magicweapons");
         this.setItemCategory(ItemCategory.craftingManager, "equipment", "weapons", "magicweapons");
@@ -59,7 +59,7 @@ public class MagicalBroom extends AphToolItem {
         rarity = Rarity.COMMON;
         attackAnimTime.setBaseValue(300);
         attackDamage.setBaseValue(26)
-                .setUpgradedValue(1, 120);
+                .setUpgradedValue(1, 82);
         attackRange.setBaseValue(160);
         knockback.setBaseValue(250);
         manaCost.setBaseValue(1.0F);

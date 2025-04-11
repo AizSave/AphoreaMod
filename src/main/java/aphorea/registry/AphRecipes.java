@@ -289,8 +289,8 @@ public class AphRecipes {
                 )
         );
 
-        addCraftingList("superiorhealthpotion", tech,
-                AphCraftingRecipe.showBefore("unstablegelsword", 1,
+        addCraftingList("frostboomerang", tech,
+                AphCraftingRecipe.showAfter("unstablegelsword", 1,
                         new Ingredient("gelsword", 1),
                         new Ingredient("unstablegel", 10)
                 ),
@@ -401,6 +401,14 @@ public class AphRecipes {
                         new Ingredient("voidshard", 5)
                 )
         );
+
+        addCraftingList("ivyspear", tech,
+                AphCraftingRecipe.showAfter("honeysaber", 1,
+                        new Ingredient("honey", 6),
+                        new Ingredient("blueberry", 16),
+                        new Ingredient("swampsludge", 4)
+                )
+        );
     }
 
     public static void TungstenAnvil() {
@@ -423,6 +431,7 @@ public class AphRecipes {
         addCraftingList("tungstensword", tech,
                 AphCraftingRecipe.showAfter("tungstendagger", 1,
                         new Ingredient("tungstenbar", 4),
+                        new Ingredient("goldbar", 2),
                         new Ingredient("anylog", 1)
                 )
         );
@@ -431,6 +440,28 @@ public class AphRecipes {
                 AphCraftingRecipe.showAfter("spambullet", 50,
                         new Ingredient("spinel", 1),
                         new Ingredient("rockygel", 5)
+                )
+        );
+
+        addCraftingList("goldenwand", tech,
+                AphCraftingRecipe.showAfter("spinelwand", 1,
+                        new Ingredient("goldenwand", 1),
+                        new Ingredient("lifespinel", 1),
+                        new Ingredient("spinel", 6)
+                )
+        );
+
+        addCraftingList("essenceofrebirth", tech,
+                AphCraftingRecipe.showAfter("essenceofhealing", 1,
+                        new Ingredient("spinel", 20)
+                )
+        );
+
+        addCraftingList("glacialboomerang", tech,
+                AphCraftingRecipe.showAfter("glacialsaber", 1,
+                        new Ingredient("coppersaber", 1),
+                        new Ingredient("glacialbar", 8),
+                        new Ingredient("glacialshard", 4)
                 )
         );
     }
@@ -466,7 +497,7 @@ public class AphRecipes {
         Tech tech = RecipeTechRegistry.ALCHEMY;
 
         addCraftingList("fishingpotion", tech,
-                AphCraftingRecipe.showAfter("lowdspotion", 1,
+                AphCraftingRecipe.showAfter("venomextract", 1,
                         new Ingredient("cavespidergland", 5),
                         new Ingredient("glassbottle", 1)
                 )
@@ -495,7 +526,7 @@ public class AphRecipes {
                 AphCraftingRecipe.showAfter("spinelcluster", 1,
                         new Ingredient("spinel", 2)
                 ),
-                AphCraftingRecipe.showAfter("tungstenoredeeprock", 1,
+                AphCraftingRecipe.showAfter("tungstenoregelrock", 1,
                         new Ingredient("rockygel", 2),
                         new Ingredient("tungstenore", 3)
                 )

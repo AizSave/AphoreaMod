@@ -28,12 +28,13 @@ public class UnstableGelveline extends AphThrowToolItem {
     float topTier1Damage = 80;
 
     public UnstableGelveline() {
-        super(500);
+        super(400);
         this.rarity = Rarity.COMMON;
         this.attackAnimTime.setBaseValue(250);
         this.attackCooldownTime.setBaseValue(500);
         this.attackDamage.setBaseValue(topBaseDamage).setUpgradedValue(1, topTier1Damage);
         this.velocity.setBaseValue(200);
+        this.attackRange.setBaseValue(1000);
     }
 
     @Override
@@ -47,7 +48,7 @@ public class UnstableGelveline extends AphThrowToolItem {
             level.getServer().network.sendToClientsAtEntireLevel(new AphCustomPushPacket(attackerMob, dir.x, dir.y, (float) strength), level);
         }
 
-        Projectile projectile = new UnstableGelvelineProjectile(getAttackDamage(item), this.getKnockback(item, attackerMob), this, item, level, attackerMob, attackerMob.x, attackerMob.y, x, y, this.getProjectileVelocity(item, attackerMob), 1000);
+        Projectile projectile = new UnstableGelvelineProjectile(getAttackDamage(item), this.getKnockback(item, attackerMob), this, item, level, attackerMob, attackerMob.x, attackerMob.y, x, y, this.getProjectileVelocity(item, attackerMob), this.getAttackRange(item));
         projectile.setModifier(new ResilienceOnHitProjectileModifier(this.getResilienceGain(item)));
         projectile.resetUniqueID(new GameRandom(seed));
         level.entityManager.projectiles.addHidden(projectile);

@@ -16,12 +16,12 @@ public class WoodenRod extends AphGlaiveToolItem {
     int attackCount = 0;
 
     public WoodenRod() {
-        super(300);
+        super(200);
         rarity = Rarity.NORMAL;
         attackAnimTime.setBaseValue(500);
         attackDamage.setBaseValue(5)
-                .setUpgradedValue(1, 30);
-        attackRange.setBaseValue(223);
+                .setUpgradedValue(1, 60);
+        attackRange.setBaseValue(220);
         knockback.setBaseValue(40);
 
         attackXOffset = 86;
