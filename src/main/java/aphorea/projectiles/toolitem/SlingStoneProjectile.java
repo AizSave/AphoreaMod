@@ -41,7 +41,7 @@ public class SlingStoneProjectile extends Projectile {
     public void init() {
         super.init();
         givesLight = false;
-        height = 28;
+        height = 14;
         trailOffset = -14f;
         setWidth(28, true);
         piercing = 0;
