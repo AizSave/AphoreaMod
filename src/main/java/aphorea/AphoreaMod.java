@@ -4,6 +4,7 @@ import aphorea.journal.AphJournalChallenges;
 import aphorea.registry.*;
 import aphorea.utils.AphColors;
 import necesse.engine.modLoader.annotations.ModEntry;
+import necesse.engine.registries.ItemRegistry;
 import necesse.engine.registries.VersionMigration;
 import necesse.engine.util.GameUtils;
 import necesse.gfx.GameColor;

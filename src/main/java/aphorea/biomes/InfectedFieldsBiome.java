@@ -1,10 +1,11 @@
 package aphorea.biomes;
 
-import aphorea.biomes.levels.InfectedFieldsFieldsCaveLevel;
+import aphorea.biomes.levels.InfectedFieldsCaveLevel;
 import aphorea.biomes.levels.InfectedFieldsSurfaceLevel;
 import necesse.engine.AbstractMusicList;
 import necesse.engine.MusicList;
 import necesse.engine.network.server.Server;
+import necesse.engine.registries.ItemRegistry;
 import necesse.engine.registries.MusicRegistry;
 import necesse.engine.world.WorldEntity;
 import necesse.entity.mobs.PlayerMob;
@@ -36,7 +37,7 @@ public class InfectedFieldsBiome extends Biome {
     }
 
     public Level getNewCaveLevel(int islandX, int islandY, int dimension, Server server, WorldEntity worldEntity) {
-        return new InfectedFieldsFieldsCaveLevel(islandX, islandY, dimension, worldEntity, this);
+        return new InfectedFieldsCaveLevel(islandX, islandY, dimension, worldEntity, this);
     }
 
     public Level getNewDeepCaveLevel(int islandX, int islandY, int dimension, Server server, WorldEntity worldEntity) {
@@ -68,12 +69,33 @@ public class InfectedFieldsBiome extends Biome {
     }
 
     static {
-        surfaceMobs = (new MobSpawnTable().add(100, "infectedtreant").add(20, "rockygelslime").add(1, "stabbybush"));
-        caveMobs = (new MobSpawnTable());
-        deepCaveMobs = (new MobSpawnTable());
+        surfaceMobs = new MobSpawnTable().add(100, "infectedtreant").add(20, "rockygelslime").add(1, "stabbybush");
+        caveMobs = new MobSpawnTable();
+        deepCaveMobs = new MobSpawnTable();
 
-        surfaceFish = (new FishingLootTable());
-        surfaceCritters = (new MobSpawnTable());
-        caveCritters = (new MobSpawnTable());
+        final int woodTrashTickets = 200 / 10;
+
+        surfaceFish = new FishingLootTable()
+                .startCustom(300).onlyTile("infectedwatertile").end("rockfish")
+                .startCustom(100).onlyTile("infectedwatertile").end("goldspear")
+
+                // Trash
+                .startCustom(400).onlyTile("infectedwatertile").end(
+                        (spot, random) -> ItemRegistry.getItem("infectedlog").getDefaultLootItem(random, random.getIntBetween(1, 3))
+                )
+
+                // Wood trash
+                .startCustom(woodTrashTickets).onlyTile("infectedwatertile").end("woodaxe")
+                .startCustom(woodTrashTickets).onlyTile("infectedwatertile").end("woodpickaxe")
+                .startCustom(woodTrashTickets).onlyTile("infectedwatertile").end("woodshovel")
+                .startCustom(woodTrashTickets).onlyTile("infectedwatertile").end("woodfishingrod")
+                .startCustom(woodTrashTickets).onlyTile("infectedwatertile").end("woodsword")
+                .startCustom(woodTrashTickets).onlyTile("infectedwatertile").end("woodspear")
+                .startCustom(woodTrashTickets).onlyTile("infectedwatertile").end("woodboomerang")
+                .startCustom(woodTrashTickets).onlyTile("infectedwatertile").end("woodbow")
+                .startCustom(woodTrashTickets).onlyTile("infectedwatertile").end("woodstaff")
+                .startCustom(woodTrashTickets).onlyTile("infectedwatertile").end("woodshield");
+        surfaceCritters = new MobSpawnTable();
+        caveCritters = new MobSpawnTable();
     }
 }

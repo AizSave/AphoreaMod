@@ -13,26 +13,23 @@ import necesse.engine.util.LevelIdentifier;
 import necesse.engine.world.WorldEntity;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.BuffModifiers;
-import necesse.inventory.lootTable.LootTable;
 import necesse.level.gameObject.GameObject;
 import necesse.level.gameObject.furniture.InventoryObject;
 import necesse.level.gameTile.GameTile;
 import necesse.level.maps.biomes.Biome;
-import necesse.level.maps.biomes.forest.ForestCaveLevel;
 import necesse.level.maps.generationModules.*;
 import necesse.level.maps.presets.PresetUtils;
 
 import java.awt.*;
-import java.util.Objects;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
 
-public class InfectedFieldsFieldsCaveLevel extends InfectedFieldsSurfaceLevel {
-    public InfectedFieldsFieldsCaveLevel(LevelIdentifier identifier, int width, int height, WorldEntity worldEntity) {
+public class InfectedFieldsCaveLevel extends InfectedFieldsSurfaceLevel {
+    public InfectedFieldsCaveLevel(LevelIdentifier identifier, int width, int height, WorldEntity worldEntity) {
         super(identifier, width, height, worldEntity);
     }
 
-    public InfectedFieldsFieldsCaveLevel(int islandX, int islandY, int dimension, WorldEntity worldEntity, Biome biome) {
+    public InfectedFieldsCaveLevel(int islandX, int islandY, int dimension, WorldEntity worldEntity, Biome biome) {
         super(new LevelIdentifier(islandX, islandY, dimension), 300, 300, worldEntity);
         this.biome = biome;
         this.isCave = true;

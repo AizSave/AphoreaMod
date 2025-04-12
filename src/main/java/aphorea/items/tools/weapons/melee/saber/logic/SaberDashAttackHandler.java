@@ -162,6 +162,7 @@ public class SaberDashAttackHandler extends MousePositionAttackHandler {
             LevelEvent event;
             if(attackerMob.buffManager.hasBuff("ninjascarf") && !attackerMob.getLevel().isTrialRoom) {
                 event = new SaberJumpLevelEvent(this.attackerMob, this.seed, dir.x, dir.y, this.getChargeDistance(chargePercent), (int) (200.0F * chargePercent), this.saberItem.getAttackDamage(this.item).modDamage(saberItem.getDashDamageMultiplier(item)));
+                this.attackerMob.buffManager.addBuff(new ActiveBuff(AphBuffs.IMMORTAL, this.attackerMob, 0.25F, null), this.attackerMob.isServer());
             } else {
                 event = new SaberDashLevelEvent(this.attackerMob, this.seed, dir.x, dir.y, this.getChargeDistance(chargePercent), (int) (200.0F * chargePercent), this.saberItem.getAttackDamage(this.item).modDamage(saberItem.getDashDamageMultiplier(item)));
             }
