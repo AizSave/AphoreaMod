@@ -58,7 +58,7 @@ abstract public class AphMagicProjectileSecondaryAreaToolItem extends AphMagicPr
 
         float rangeModifier = 1 + this.getEnchantment(item).getModifier(AphModifiers.TOOL_AREA_RANGE);
 
-        areaList.execute(attackerMob, x, y, rangeModifier, item, this);
+        areaList.execute(attackerMob, attackerMob.x, attackerMob.y, rangeModifier, item, this);
         attackDamage.setBaseValue(attackDamage0).setUpgradedValue(1, attackDamage1);
 
         return item;

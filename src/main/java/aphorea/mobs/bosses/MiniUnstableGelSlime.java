@@ -78,7 +78,6 @@ public class MiniUnstableGelSlime extends FlyingHostileMob {
             this.getLevel().entityManager.addParticle(new SmokePuffParticle(this.getLevel(), this.x, this.y, AphColors.unstableGel), Particle.GType.CRITICAL);
         }
 
-
         countTP = 0;
     }
 
