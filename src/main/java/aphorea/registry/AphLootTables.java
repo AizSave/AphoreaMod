@@ -16,6 +16,7 @@ import necesse.inventory.lootTable.presets.DeepCaveRuinsLootTable;
 public class AphLootTables {
     public static LootTable infectedFieldsSurface = new LootTable();
     public static LootTable infectedLootLake = new LootTable();
+    public static LootTable infectedCaveForest = new LootTable();
 
     public static final RotationLootItem basicChestAllMainItems = RotationLootItem.presetRotation(
             new LootItem("zephyrcharm"), new LootItem("shinebelt"), new LootItem("heavyhammer"), new LootItem("noblehorseshoe"),
@@ -42,6 +43,22 @@ public class AphLootTables {
                         LootItem.between("spinel", 4, 6),
                         LootItem.between("lifespinel", 1, 2),
                         basicChestAllMainItems,
+                        CaveChestLootTable.potions,
+                        CaveChestLootTable.extraItems
+                )
+        );
+
+        infectedCaveForest.items.addAll(
+                new LootItemList(
+                        RotationLootItem.globalLootRotation(
+                                new LootItem("brokenkora"),
+                                new LootItem("ninjascarf"),
+                                new LootItem("adrenalinecharm"),
+                                new LootItem("shotgunsaber"),
+                                new LootItem("cursedmedallion")
+                        ),
+                        LootItem.between("spinel", 2, 3),
+                        LootItem.between("lifespinel", 0, 1),
                         CaveChestLootTable.potions,
                         CaveChestLootTable.extraItems
                 )

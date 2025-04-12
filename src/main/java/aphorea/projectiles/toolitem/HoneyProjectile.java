@@ -96,9 +96,14 @@ public class HoneyProjectile extends Projectile {
     }
 
     @Override
-    public void addHit(Mob target) {
-        super.addHit(target);
-        target.addBuff(new ActiveBuff(AphBuffs.HONEYED, target, 2000, this), true);
+    public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
+        super.doHitLogic(mob, object, x, y);
+        if (this.isServer()) {
+            if (mob != null) {
+                mob.addBuff(new ActiveBuff(AphBuffs.HONEYED, mob, 2000, this), true);
+            }
+        }
     }
+
 
 }

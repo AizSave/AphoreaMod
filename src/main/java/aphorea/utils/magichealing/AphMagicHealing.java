@@ -24,13 +24,26 @@ public class AphMagicHealing {
         return target.getHealthPercent() != 1 && (healer == target || !target.canBeTargeted(healer, healer.isPlayer ? ((PlayerMob) healer).getNetworkClient() : null)) && (!cooldowns.containsKey(target) || target.getWorldTime() >= cooldowns.get(target));
     }
 
+    public static void healMob(Mob healer, Mob target, int healing) {
+        healMob(healer, target, healing, null, null);
+    }
+
     public static void healMob(Mob healer, Mob target, int healing, @Nullable InventoryItem item, @Nullable ToolItem toolItem) {
-        int magicalHealing = AphMagicHealing.getMagicHealing(healer, target, healing, toolItem, item);
-        int realHealing = Math.min(magicalHealing, target.getMaxHealth() - target.getHealth());
+        healMobExecute(healer, target, AphMagicHealing.getMagicHealing(healer, target, healing, toolItem, item), item, toolItem);
+    }
+
+    public static void healMobExecute(Mob healer, Mob target, int healing) {
+        healMobExecute(healer, target, healing, null, null);
+    }
+
+    public static void healMobExecute(Mob healer, Mob target, int healing, @Nullable InventoryItem item, @Nullable ToolItem toolItem) {
+        int realHealing = Math.min(healing, target.getMaxHealth() - target.getHealth());
         if (realHealing > 0) {
             target.getLevel().entityManager.addLevelEvent(new MobHealthChangeEvent(target, realHealing));
 
-            healer.buffManager.getArrayBuffs().stream().filter(buff -> buff.buff instanceof AphMagicHealingFunctions).forEach(buff -> ((AphMagicHealingFunctions) buff.buff).onMagicalHealing(healer, target, healing, realHealing, toolItem, item));
+            healer.buffManager.getArrayBuffs().stream().filter(buff -> buff.buff instanceof AphMagicHealingFunctions)
+                    .forEach(buff -> ((AphMagicHealingFunctions) buff.buff).onMagicalHealing(healer, target, healing, realHealing, toolItem, item));
+
             if (toolItem instanceof AphMagicHealingFunctions) {
                 ((AphMagicHealingFunctions) toolItem).onMagicalHealing(healer, target, healing, realHealing, toolItem, item);
             }
@@ -38,8 +51,7 @@ public class AphMagicHealing {
             cooldowns.put(target, target.getWorldTime() + 50);
 
             if (healer.getID() != target.getID()) {
-                float healGrace = healer.buffManager.getModifier(AphModifiers.MAGIC_HEALING_GRACE) + (toolItem == null || item == null ? 0 : toolItem.getEnchantment(item).getModifier(AphModifiers.TOOL_MAGIC_HEALING_GRACE));
-                int magicalHealingGrace = (int) Math.floor(realHealing * healGrace);
+                int magicalHealingGrace = (int) (realHealing * getHealingGrace(healer, toolItem, item));
                 int realHealingGrace = Math.min(magicalHealingGrace, healer.getMaxHealth() - healer.getHealth());
                 if (realHealingGrace > 0) {
                     target.getLevel().entityManager.addLevelEvent(new MobHealthChangeEvent(healer, realHealingGrace));
@@ -49,51 +61,74 @@ public class AphMagicHealing {
     }
 
 
+
     public static int getMagicHealing(@Nullable Mob healer, @Nullable Mob target, int healing) {
         return getMagicHealing(healer, target, healing, null, null);
     }
 
     public static int getMagicHealing(@Nullable Mob healer, @Nullable Mob target, int healing, @Nullable ToolItem toolItem, @Nullable InventoryItem item) {
-        return (int) (getFlatMagicHealing(healer, target, healing) * ((healer == null ? 1.0F : healer.buffManager.getModifier(AphModifiers.MAGIC_HEALING) + (toolItem == null || item == null ? 0 : toolItem.getEnchantment(item).getModifier(AphModifiers.TOOL_MAGIC_HEALING))) + (target == null ? 1.0F : target.buffManager.getModifier(AphModifiers.MAGIC_HEALING_RECEIVED) + (healer == target ? (toolItem == null || item == null ? 0 : toolItem.getEnchantment(item).getModifier(AphModifiers.TOOL_MAGIC_HEALING_RECEIVED)) : 0)) - 1));
+        return (int) (getFlatMagicHealing(healer, target, healing) * getMagicHealingMod(healer, target, toolItem, item));
+    }
+
+    public static float getMagicHealingMod(@Nullable Mob healer, @Nullable Mob target, @Nullable ToolItem toolItem, @Nullable InventoryItem item) {
+        float mod = 1F;
+        if(healer != null) {
+            mod += healer.buffManager.getModifier(AphModifiers.MAGIC_HEALING);
+        }
+        if(target != null) {
+            mod += target.buffManager.getModifier(AphModifiers.MAGIC_HEALING_RECEIVED);
+        }
+        if(toolItem != null && item != null) {
+            mod += toolItem.getEnchantment(item).getModifier(AphModifiers.TOOL_MAGIC_HEALING);
+            if(healer == target) {
+                mod += toolItem.getEnchantment(item).getModifier(AphModifiers.TOOL_MAGIC_HEALING_RECEIVED);
+            }
+        }
+
+        return mod;
     }
 
 
-    protected static int getFlatMagicHealing(@Nullable Mob healer, @Nullable Mob target, int healing) {
-        return healing + (healer == null ? 0 : healer.buffManager.getModifier(AphModifiers.MAGIC_HEALING_FLAT)) + (target == null ? 0 : target.buffManager.getModifier(AphModifiers.MAGIC_HEALING_RECEIVED_FLAT));
+    public static int getFlatMagicHealing(@Nullable Mob healer, @Nullable Mob target, int healing) {
+        return healing + getFlatMagicHealingMod(healer, target);
     }
 
-    @NotNull
-    public static String getMagicHealingToolTip(@Nullable Mob healerMob, int healing, @Nullable InventoryItem item, @Nullable ToolItem toolItem) {
-        int received = getMagicHealing(healerMob, healerMob, healing, toolItem, item);
-        int normal = getMagicHealing(healerMob, null, healing, toolItem, item);
-        if (received == normal) {
-            return String.valueOf(normal);
+    public static int getFlatMagicHealingMod(@Nullable Mob healer, @Nullable Mob target) {
+        int mod = 0;
+        if(healer != null) {
+            mod += healer.buffManager.getModifier(AphModifiers.MAGIC_HEALING_FLAT);
+        }
+        if(target != null) {
+            mod += target.buffManager.getModifier(AphModifiers.MAGIC_HEALING_RECEIVED_FLAT);
+        }
+
+        return mod;
+    }
+
+    public static float getHealingGrace(@Nullable Mob healer, @Nullable ToolItem toolItem, @Nullable InventoryItem item) {
+        float grace = 0;
+        if(healer != null) {
+            grace += healer.buffManager.getModifier(AphModifiers.MAGIC_HEALING_GRACE);
+        }
+        if(toolItem != null && item != null) {
+            grace += toolItem.getEnchantment(item).getModifier(AphModifiers.TOOL_MAGIC_HEALING_GRACE);
+        }
+        return grace;
+    }
+
+    public static String getMagicHealingToolTipPercent(@Nullable Mob healer, @Nullable Mob target, float healingPercent) {
+        return getMagicHealingToolTipPercent(healer, target, healingPercent, null, null);
+    }
+
+    public static String getMagicHealingToolTipPercent(@Nullable Mob healer, @Nullable Mob target, float healingPercent, @Nullable ToolItem toolItem, @Nullable InventoryItem item) {
+        final float finalHealingPercent = healingPercent * getMagicHealingMod(healer, target, toolItem, item);
+
+        if (finalHealingPercent < 0) {
+            return "0%";
         } else {
-            return received + " | " + normal;
+            String value = String.format("%.2f", finalHealingPercent * 100);
+            return (value.endsWith(".00") ? value.substring(0, value.length() - 3) : value) + "%";
         }
-    }
-
-    public static String getMagicHealingToolTipPercent(@Nullable Mob healer, @Nullable Mob target, float healingPercent, int healing) {
-        return getMagicHealingToolTipPercent(healer, target, healingPercent, healing, null, null);
-    }
-
-    public static String getMagicHealingToolTipPercent(@Nullable Mob healer, @Nullable Mob target, float healingPercent, int healing, @Nullable ToolItem toolItem, @Nullable InventoryItem item) {
-        String toolTip;
-        healingPercent *= ((healer == null ? 1.0F : healer.buffManager.getModifier(AphModifiers.MAGIC_HEALING) + (toolItem == null || item == null ? 0 : toolItem.getEnchantment(item).getModifier(AphModifiers.TOOL_MAGIC_HEALING))) + (target == null ? 1.0F : target.buffManager.getModifier(AphModifiers.MAGIC_HEALING_RECEIVED) + (healer == target ? (toolItem == null || item == null ? 0 : toolItem.getEnchantment(item).getModifier(AphModifiers.TOOL_MAGIC_HEALING_RECEIVED)) : 0)) - 1);
-
-        if (healingPercent < 0) {
-            toolTip = "0%";
-        } else {
-            toolTip = (int) healingPercent + "%";
-        }
-
-        healing += (healer == null ? 0 : healer.buffManager.getModifier(AphModifiers.MAGIC_HEALING_FLAT)) + (target == null ? 0 : target.buffManager.getModifier(AphModifiers.MAGIC_HEALING_RECEIVED_FLAT));
-        if (healing > 0) {
-            toolTip += " +" + healing;
-        } else if (healing < 0) {
-            toolTip += " -" + healing;
-        }
-        return toolTip;
     }
 
     public static void addMagicHealingTip(AphMagicHealingToolItem aphoreaMagicHealingToolItem, ItemStatTipList list, InventoryItem currentItem, InventoryItem lastItem, Mob perspective) {

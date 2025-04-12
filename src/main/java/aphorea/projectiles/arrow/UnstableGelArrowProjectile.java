@@ -78,11 +78,6 @@ public class UnstableGelArrowProjectile extends Projectile {
         this.setWidth(8);
     }
 
-    @Override
-    public void addHit(Mob target) {
-        super.addHit(target);
-        target.addBuff(new ActiveBuff(AphBuffs.STICKY, target, 2000, this), true);
-    }
 
     @Override
     public void dropItem() {
@@ -131,5 +126,10 @@ public class UnstableGelArrowProjectile extends Projectile {
     @Override
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
         areaList.execute(getOwner(), x, y, 1F, item, toolItem);
+        if (this.isServer()) {
+            if (mob != null) {
+                mob.addBuff(new ActiveBuff(AphBuffs.STICKY, mob, 2000, this), true);
+            }
+        }
     }
 }

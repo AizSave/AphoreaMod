@@ -50,7 +50,7 @@ import java.util.List;
 public class SpinelGolem extends HostileMob {
     public static GameTexture texture;
 
-    public static GameDamage damage = new GameDamage(20.0F);
+    public static GameDamage damage = new GameDamage(20F, 40F);
     public static int chargeTime = 600;
     public static int stickTime = 100;
     protected long shootTime;

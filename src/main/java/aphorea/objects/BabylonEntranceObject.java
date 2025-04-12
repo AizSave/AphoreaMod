@@ -40,18 +40,17 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
-public class ThePillarEntranceObject extends StaticMultiObject {
-    protected ThePillarEntranceObject(int multiX, int multiY, int multiWidth, int multiHeight, int[] multiIDs, Rectangle fullCollision) {
-        super(multiX, multiY, multiWidth, multiHeight, multiIDs, fullCollision, "thepillarentrance");
+public class BabylonEntranceObject extends StaticMultiObject {
+    protected BabylonEntranceObject(int multiX, int multiY, int multiWidth, int multiHeight, int[] multiIDs, Rectangle fullCollision) {
+        super(multiX, multiY, multiWidth, multiHeight, multiIDs, fullCollision, "babylonentrance");
         this.mapColor = AphColors.spinel_light;
         this.displayMapTooltip = true;
         this.toolType = ToolType.UNBREAKABLE;
         this.isLightTransparent = true;
     }
 
-    public void addDrawables(List<LevelSortedDrawable> list, OrderableDrawables tileList, Level level, int tileX, int tileY, TickManager tickManager, GameCamera
-            camera, PlayerMob perspective) {
-        ThePillarEntranceObjectEntity oe = this.getMultiTile(level, 0, tileX, tileY).getMasterLevelObject(level, 0, tileX, tileY).map((o) -> o.getCurrentObjectEntity(ThePillarEntranceObjectEntity.class)).orElse(null);
+    public void addDrawables(List<LevelSortedDrawable> list, OrderableDrawables tileList, Level level, int tileX, int tileY, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
+        BabylonEntranceObjectEntity oe = this.getMultiTile(level, 0, tileX, tileY).getMasterLevelObject(level, 0, tileX, tileY).map((o) -> o.getCurrentObjectEntity(BabylonEntranceObjectEntity.class)).orElse(null);
         GameLight light = level.getLightLevel(tileX, tileY);
         int drawX = camera.getTileDrawX(tileX);
         int drawY = camera.getTileDrawY(tileY);
@@ -93,18 +92,18 @@ public class ThePillarEntranceObject extends StaticMultiObject {
     }
 
     public ObjectEntity getNewObjectEntity(Level level, int x, int y) {
-        return this.isMultiTileMaster() ? new ThePillarEntranceObjectEntity(level, x, y) : super.getNewObjectEntity(level, x, y);
+        return this.isMultiTileMaster() ? new BabylonEntranceObjectEntity(level, x, y) : super.getNewObjectEntity(level, x, y);
     }
 
     public static int[] registerObject() {
         int[] ids = new int[6];
         Rectangle collision = new Rectangle(96, 64);
-        ids[0] = ObjectRegistry.registerObject("thepillarentrance", new ThePillarEntranceObject(0, 0, 3, 2, ids, collision), 0.0F, false);
-        ids[1] = ObjectRegistry.registerObject("thepillarentrance2", new ThePillarEntranceObject(1, 0, 3, 2, ids, collision), 0.0F, false);
-        ids[2] = ObjectRegistry.registerObject("thepillarentrance3", new ThePillarEntranceObject(2, 0, 3, 2, ids, collision), 0.0F, false);
-        ids[3] = ObjectRegistry.registerObject("thepillarentrance4", new ThePillarEntranceObject(0, 1, 3, 2, ids, collision), 0.0F, false);
-        ids[4] = ObjectRegistry.registerObject("thepillarentrance5", new ThePillarEntranceObject(1, 1, 3, 2, ids, collision), 0.0F, false);
-        ids[5] = ObjectRegistry.registerObject("thepillarentrance6", new ThePillarEntranceObject(2, 1, 3, 2, ids, collision), 0.0F, false);
+        ids[0] = ObjectRegistry.registerObject("babylonentrance", new BabylonEntranceObject(0, 0, 3, 2, ids, collision), 0.0F, false);
+        ids[1] = ObjectRegistry.registerObject("babylonntrance2", new BabylonEntranceObject(1, 0, 3, 2, ids, collision), 0.0F, false);
+        ids[2] = ObjectRegistry.registerObject("babylonntrance3", new BabylonEntranceObject(2, 0, 3, 2, ids, collision), 0.0F, false);
+        ids[3] = ObjectRegistry.registerObject("babylonntrance4", new BabylonEntranceObject(0, 1, 3, 2, ids, collision), 0.0F, false);
+        ids[4] = ObjectRegistry.registerObject("babylonntrance5", new BabylonEntranceObject(1, 1, 3, 2, ids, collision), 0.0F, false);
+        ids[5] = ObjectRegistry.registerObject("babylonntrance6", new BabylonEntranceObject(2, 1, 3, 2, ids, collision), 0.0F, false);
         return ids;
     }
 
@@ -113,12 +112,12 @@ public class ThePillarEntranceObject extends StaticMultiObject {
         return Collections.emptyList();
     }
 
-    public static class ThePillarEntranceObjectEntity extends PortalObjectEntity {
+    public static class BabylonEntranceObjectEntity extends PortalObjectEntity {
         private long revealAnimationStartTime;
         private int revealAnimationRunTime;
 
-        public ThePillarEntranceObjectEntity(Level level, int x, int y) {
-            super(level, "thepillarentrance", x, y, level.getIdentifier(), 50, 50);
+        public BabylonEntranceObjectEntity(Level level, int x, int y) {
+            super(level, "babylonentrance", x, y, level.getIdentifier(), 50, 50);
         }
 
         public void init() {
@@ -142,7 +141,7 @@ public class ThePillarEntranceObject extends StaticMultiObject {
 
         public void use(Server server, ServerClient client) {
             this.teleportClientToAroundDestination(client, (level) -> {
-                GameObject exit = ObjectRegistry.getObject(ObjectRegistry.getObjectID("thepillarexit"));
+                GameObject exit = ObjectRegistry.getObject(ObjectRegistry.getObjectID("babylonexit"));
                 if (exit != null) {
                     exit.placeObject(level, this.destinationTileX - 1, this.destinationTileY, 0, false);
                     PortalObjectEntity exitEntity = (PortalObjectEntity) level.entityManager.getObjectEntity(this.destinationTileX - 1, this.destinationTileY);
@@ -179,17 +178,17 @@ public class ThePillarEntranceObject extends StaticMultiObject {
         }
     }
 
-    public static class ThePillarEntranceEvent extends LevelEvent {
+    public static class BabylonEntranceEvent extends LevelEvent {
         public static int ANIMATION_TIME = 10000;
         public long startTime;
         public int tileX;
         public int tileY;
         protected SoundPlayer secondStageRumble;
 
-        public ThePillarEntranceEvent() {
+        public BabylonEntranceEvent() {
         }
 
-        public ThePillarEntranceEvent(int tileX, int tileY) {
+        public BabylonEntranceEvent(int tileX, int tileY) {
             this.tileX = tileX;
             this.tileY = tileY;
         }
@@ -218,10 +217,10 @@ public class ThePillarEntranceObject extends StaticMultiObject {
                 }
             }
 
-            ObjectRegistry.getObject("thepillarentrance").placeObject(this.level, this.tileX - 1, this.tileY, 0, false);
+            ObjectRegistry.getObject("babylonentrance").placeObject(this.level, this.tileX - 1, this.tileY, 0, false);
             ObjectEntity entity = this.level.entityManager.getObjectEntity(this.tileX - 1, this.tileY);
-            if (entity instanceof ThePillarEntranceObjectEntity) {
-                ((ThePillarEntranceObjectEntity) entity).startRevealAnimation(ANIMATION_TIME);
+            if (entity instanceof BabylonEntranceObjectEntity) {
+                ((BabylonEntranceObjectEntity) entity).startRevealAnimation(ANIMATION_TIME);
             }
 
             this.startTime = this.level.getWorldEntity().getTime();

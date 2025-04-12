@@ -5,8 +5,10 @@ import necesse.engine.registries.BuffRegistry;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.ActiveBuff;
+import necesse.entity.mobs.buffs.staticBuffs.Buff;
 import necesse.entity.trails.Trail;
 import necesse.level.maps.Level;
+import necesse.level.maps.LevelObjectHit;
 
 public class FrozenSlingStoneProjectile extends SlingStoneProjectile {
 
@@ -24,9 +26,13 @@ public class FrozenSlingStoneProjectile extends SlingStoneProjectile {
 
 
     @Override
-    public void addHit(Mob target) {
-        super.addHit(target);
-
-        target.addBuff(new ActiveBuff(BuffRegistry.Debuffs.FREEZING, target, 10000, this), true);
+    public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
+        super.doHitLogic(mob, object, x, y);
+        if (this.isServer()) {
+            if (mob != null) {
+                mob.addBuff(new ActiveBuff(BuffRegistry.Debuffs.FREEZING, mob, 10000, this), true);
+            }
+        }
     }
+
 }

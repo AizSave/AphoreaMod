@@ -90,16 +90,20 @@ public class UnstableGelProjectile extends Projectile {
     }
 
     @Override
-    public void addHit(Mob target) {
-        super.addHit(target);
-        target.addBuff(new ActiveBuff(AphBuffs.STICKY, target, 2000, this), true);
-    }
-
-    @Override
     public void onHit(Mob mob, LevelObjectHit object, float x, float y, boolean fromPacket, ServerClient packetSubmitter) {
         super.onHit(mob, object, x, y, fromPacket, packetSubmitter);
         if (this.isServer() && mob == null && object != null && this.bounced < this.getTotalBouncing() && this.canBounce && generation < 2) {
             newProjectile();
+        }
+    }
+
+    @Override
+    public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
+        super.doHitLogic(mob, object, x, y);
+        if (this.isServer()) {
+            if (mob != null) {
+                mob.addBuff(new ActiveBuff(AphBuffs.STICKY, mob, 2000, this), true);
+            }
         }
     }
 

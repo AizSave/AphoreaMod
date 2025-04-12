@@ -85,20 +85,19 @@ public class GlacialShardBigProjectile extends Projectile {
     }
 
     @Override
-    public void addHit(Mob target) {
-        super.addHit(target);
-        target.addBuff(new ActiveBuff(BuffRegistry.Debuffs.FROSTBURN, target, 5000, this), true);
-    }
-
-    @Override
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
         super.doHitLogic(mob, object, x, y);
-        if (this.isServer() && (this.traveledDistance >= (float)this.distance || (this.amountHit() >= this.piercing && (this.bounced >= this.getTotalBouncing() || !this.canBounce)))) {
-            float randomAngle = GameRandom.globalRandom.getFloatBetween(0F, (float) (Math.PI * 2));
-            for (int i = 0; i < projectilesAmount; i++) {
-                Projectile projectile = getProjectile(randomAngle + ((float) Math.PI * 2 * i) / projectilesAmount);
-                this.getLevel().entityManager.projectiles.addHidden(projectile);
-                this.getLevel().getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
+        if (this.isServer()) {
+            if(this.traveledDistance >= (float)this.distance || (this.amountHit() >= this.piercing && (this.bounced >= this.getTotalBouncing() || !this.canBounce))) {
+                float randomAngle = GameRandom.globalRandom.getFloatBetween(0F, (float) (Math.PI * 2));
+                for (int i = 0; i < projectilesAmount; i++) {
+                    Projectile projectile = getProjectile(randomAngle + ((float) Math.PI * 2 * i) / projectilesAmount);
+                    this.getLevel().entityManager.projectiles.addHidden(projectile);
+                    this.getLevel().getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
+                }
+            }
+            if (mob != null) {
+                mob.addBuff(new ActiveBuff(BuffRegistry.Debuffs.FROSTBURN, mob, 5000, this), true);
             }
         }
     }

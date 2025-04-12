@@ -4,9 +4,9 @@ import aphorea.items.tools.weapons.melee.greatsword.logic.GreatswordDashLevelEve
 import aphorea.items.tools.weapons.melee.saber.logic.SaberDashLevelEvent;
 import aphorea.items.tools.weapons.melee.saber.logic.SaberJumpLevelEvent;
 import aphorea.levelevents.*;
-import aphorea.levelevents.thepillar.ThePillarFallingCrystalAttackEvent;
+import aphorea.levelevents.babylon.BabylonTowerFallingCrystalAttackEvent;
 import aphorea.mobs.summon.VolatileGelSlime;
-import aphorea.objects.ThePillarEntranceObject;
+import aphorea.objects.BabylonEntranceObject;
 import aphorea.projectiles.bullet.SpamBulletProjectile;
 import aphorea.projectiles.toolitem.GelProjectile;
 import necesse.engine.registries.LevelEventRegistry;
@@ -26,9 +26,9 @@ public class AphLevelEvents {
         LevelEventRegistry.registerEvent("volatilegelexplosion", VolatileGelSlime.VolatileGelExplosion.class);
         LevelEventRegistry.registerEvent("spambulletexplosion", SpamBulletProjectile.SpamBulletExplosion.class);
 
-        // The Pillar Boss
-        LevelEventRegistry.registerEvent("thepillarentrance", ThePillarEntranceObject.ThePillarEntranceEvent.class);
-        LevelEventRegistry.registerEvent("thepillarfallingcrystalattack", ThePillarFallingCrystalAttackEvent.class);
+        // Babylon Boss
+        LevelEventRegistry.registerEvent("babylonentrance", BabylonEntranceObject.BabylonEntranceEvent.class);
+        LevelEventRegistry.registerEvent("babylontowerfallingcrystalattack", BabylonTowerFallingCrystalAttackEvent.class);
 
         // Runes
         baseRunes();

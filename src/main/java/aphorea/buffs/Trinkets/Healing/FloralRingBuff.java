@@ -25,7 +25,7 @@ public class FloralRingBuff extends TrinketBuff {
     public void serverTick(ActiveBuff buff) {
         super.serverTick(buff);
         if (count == 0) {
-            AphMagicHealing.healMob(buff.owner, buff.owner, 3, null, null);
+            AphMagicHealing.healMob(buff.owner, buff.owner, 3);
             count = 100;
         }
         count--;

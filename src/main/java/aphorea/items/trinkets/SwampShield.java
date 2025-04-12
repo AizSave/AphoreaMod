@@ -12,30 +12,23 @@ import necesse.inventory.InventoryItem;
 
 public class SwampShield extends AphShieldTrinketItem {
     public SwampShield() {
-        super(Rarity.COMMON, 3, 0.5F, 6000, 0.2F, 50, 210.0F, 300, true);
+        super(Rarity.COMMON, 2, 0.5F, 6000, 0.2F, 50, 240.0F, 300, true);
+        isPerfectBlocker = true;
     }
 
     public ListGameTooltips getExtraShieldTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {
         ListGameTooltips tooltips = super.getExtraShieldTooltips(item, perspective, blackboard);
         tooltips.add(Localization.translate("itemtooltip", "swampshield"));
-        tooltips.add(Localization.translate("itemtooltip", "swampshield2", "healing", AphMagicHealing.getMagicHealingToolTipPercent(perspective, perspective, 30, 0)));
+        tooltips.add(Localization.translate("itemtooltip", "swampshield2", "healing", AphMagicHealing.getMagicHealingToolTipPercent(perspective, perspective, 0.05F)));
         return tooltips;
     }
 
-    public void onShieldHit(InventoryItem item, Mob mob, MobWasHitEvent hitEvent) {
-        super.onShieldHit(item, mob, hitEvent);
-        if (mob.isServer() && !hitEvent.wasPrevented) {
-            Mob attackOwner = hitEvent.attacker != null ? hitEvent.attacker.getAttackOwner() : null;
-            boolean hasOwnerInChain = hitEvent.attacker != null && hitEvent.attacker.isInAttackOwnerChain(mob);
-            if (attackOwner != null && !hasOwnerInChain) {
-                float finalDamageMultiplier = this.getShieldFinalDamageMultiplier(item, mob);
-                if (finalDamageMultiplier > 0.0F) {
-                    float healing = (hitEvent.damage / finalDamageMultiplier) * 0.3F;
-                    AphMagicHealing.healMob(mob, mob, (int) healing, null, null);
-                }
-            }
+    @Override
+    public void onPerfectBlock(Mob mob) {
+        super.onPerfectBlock(mob);
+        if(mob.isServer()) {
+            float healing = mob.getMaxHealth() * 0.05F * AphMagicHealing.getMagicHealingMod(mob, mob, null, null);
+            AphMagicHealing.healMobExecute(mob, mob, (int) healing);
         }
-
     }
-
 }

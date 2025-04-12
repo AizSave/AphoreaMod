@@ -1,6 +1,7 @@
 package aphorea.biomes.levels;
 
 import aphorea.biomes.presets.InfectedLootLake;
+import aphorea.registry.AphLootTables;
 import necesse.engine.GameEvents;
 import necesse.engine.events.worldGeneration.*;
 import necesse.engine.localization.message.GameMessage;
@@ -12,9 +13,12 @@ import necesse.engine.util.LevelIdentifier;
 import necesse.engine.world.WorldEntity;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.BuffModifiers;
+import necesse.inventory.lootTable.LootTable;
 import necesse.level.gameObject.GameObject;
+import necesse.level.gameObject.furniture.InventoryObject;
 import necesse.level.gameTile.GameTile;
 import necesse.level.maps.biomes.Biome;
+import necesse.level.maps.biomes.forest.ForestCaveLevel;
 import necesse.level.maps.generationModules.*;
 import necesse.level.maps.presets.PresetUtils;
 
@@ -44,6 +48,8 @@ public class InfectedFieldsFieldsCaveLevel extends InfectedFieldsSurfaceLevel {
         GameEvents.triggerEvent(new GeneratedCaveLayoutEvent(this, cg));
 
         GameObject crystalClusterSmall = ObjectRegistry.getObject("spinelclustersmall");
+        GameObject infectedGrass = ObjectRegistry.getObject("infectedgrass");
+        InventoryObject barrel = (InventoryObject) ObjectRegistry.getObject("barrel");
 
         float minRange, maxRange, minWidth, maxWidth;
         int veinType = cg.random.getIntBetween(0, 2);
@@ -132,7 +138,7 @@ public class InfectedFieldsFieldsCaveLevel extends InfectedFieldsSurfaceLevel {
         this.setTile(veinCenter.x + 1, veinCenter.y + 1, spinelGravel);
         this.setTile(veinCenter.x + 2, veinCenter.y + 1, spinelGravel);
 
-        ObjectRegistry.getObject("thepillar").placeObject(this, veinCenter.x - 1, veinCenter.y - 1, 0, false);
+        ObjectRegistry.getObject("babylontower").placeObject(this, veinCenter.x - 1, veinCenter.y - 1, 0, false);
 
         GameEvents.triggerEvent(new GenerateCaveMiniBiomesEvent(this, cg), (e) -> {
             GenerationTools.generateRandomSmoothVeinsL(this, cg.random, 0.005F, 4, 4.0F, 7.0F, 4.0F, 6.0F, (lg) -> {
@@ -167,6 +173,39 @@ public class InfectedFieldsFieldsCaveLevel extends InfectedFieldsSurfaceLevel {
                 });
             });
 
+            GenerationTools.generateRandomSmoothVeinsL(this, cg.random, 0.008F, 4, 6.0F, 9.0F, 6.0F, 8.0F, (lg) -> {
+                CellAutomaton ca = lg.doCellularAutomaton(cg.random);
+
+                ca.streamAliveOrdered().forEachOrdered((tile) -> {
+                    cg.addIllegalCrateTile(tile.x, tile.y);
+                    this.setTile(tile.x, tile.y, TileRegistry.getTileID("infectedgrasstile"));
+                    this.setObject(tile.x, tile.y, 0);
+                });
+
+                int centerX = lg.x1 + (lg.x2 - lg.x1) / 2;
+                int centerY = lg.y1 + (lg.y2 - lg.y1) / 2;
+
+                barrel.placeObject(this, centerX, centerY, 2, false);
+                AphLootTables.infectedCaveForest.applyToLevel(cg.random, 1, this, centerX, centerY);
+
+                ca.streamAliveOrdered().forEachOrdered((tile) -> {
+                    if (Math.abs(centerX - tile.x) > 1 && Math.abs(centerY - tile.y) > 1) {
+                        if (this.getObjectID(tile.x, tile.y) == 0 && this.getObjectID(tile.x - 1, tile.y) == 0 && this.getObjectID(tile.x + 1, tile.y) == 0 && this.getObjectID(tile.x, tile.y - 1) == 0 && this.getObjectID(tile.x, tile.y + 1) == 0 && cg.random.getChance(0.12F)) {
+                            int rotation = cg.random.nextInt(4);
+                            Point[] clearPoints = new Point[]{new Point(-1, -1), new Point(1, -1)};
+                            if (this.getRelativeAnd(tile.x, tile.y, PresetUtils.getRotatedPoints(0, 0, rotation, clearPoints), (tileX, tileY) -> ca.isAlive(tileX, tileY) && this.getObjectID(tileX, tileY) == 0)) {
+                                ObjectRegistry.getObject(ObjectRegistry.getObjectID("infectedtree")).placeObject(this, tile.x, tile.y, rotation, false);
+                            }
+                            if (cg.random.getChance(0.3F) && infectedGrass.canPlace(this, tile.x, tile.y, 0, false) == null) {
+                                infectedGrass.placeObject(this, tile.x, tile.y, 0, false);
+                            }
+                        }
+                    }
+                });
+
+                ca.spawnMobs(this, cg.random, "infectedtreant", 25, 45, 1, 2);
+            });
+
             GameTile waterTile = TileRegistry.getTile("infectedwatertile");
             GenerationTools.generateRandomSmoothVeins(this, cg.random, 0.1F, 2, 2.0F, 10.0F, 2.0F, 10.0F, (l, tileX, tileY) -> {
                 if (cg.random.getChance(1.0F) && this.getTile(tileX, tileY).getID() == cg.rockTile) {
@@ -176,16 +215,16 @@ public class InfectedFieldsFieldsCaveLevel extends InfectedFieldsSurfaceLevel {
 
             this.liquidManager.calculateShores();
 
-            for (int x = 0; x < this.width; ++x) {
-                for (int y = 0; y < this.height; ++y) {
+            for (int x = 0; x < this.width; x++) {
+                for (int y = 0; y < this.height; y++) {
                     GameTile tile = this.getTile(x, y);
-                    if ((tile.isLiquid || tile.getID() == cg.rockTile) && Objects.equals(this.getTile(x + 1, y).getStringID(), "air")) {
-                        if(cg.random.getChance(0.005F)) {
+                    if (tile.getID() == cg.rockTile && this.getObject(x + 1, y).getID() == 0) {
+                        if (!tile.isLiquid && cg.random.getChance(0.005F)) {
                             GameObject rock = ObjectRegistry.getObject("spinelcluster");
                             if (rock.canPlace(this, x, y, 0, false) == null) {
                                 rock.placeObject(this, x, y, 0, false);
                             }
-                        } else if(cg.random.getChance(0.02F)) {
+                        } else if (cg.random.getChance(0.02F)) {
                             GameObject rock = ObjectRegistry.getObject("spinelclustersmall");
                             if (rock.canPlace(this, x, y, 0, false) == null) {
                                 rock.placeObject(this, x, y, 0, false);
@@ -203,9 +242,7 @@ public class InfectedFieldsFieldsCaveLevel extends InfectedFieldsSurfaceLevel {
 
         PresetGeneration presets = new PresetGeneration(this);
         GameEvents.triggerEvent(new GenerateCaveStructuresEvent(this, cg, presets), (e) -> {
-            for (int i = 0; i < 2; i++) {
-                presets.findRandomValidPositionAndApply(cg.random, 200, new InfectedLootLake(cg.random), 40, false, false);
-            }
+            presets.findRandomValidPositionAndApply(cg.random, 200, new InfectedLootLake(cg.random), 40, false, false);
         });
 
         GameEvents.triggerEvent(new GeneratedCaveStructuresEvent(this, cg, presets));

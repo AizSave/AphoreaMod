@@ -8,6 +8,9 @@ import aphorea.items.armor.Gold.GoldHat;
 import aphorea.items.armor.Rocky.RockyBoots;
 import aphorea.items.armor.Rocky.RockyChestplate;
 import aphorea.items.armor.Rocky.RockyHelmet;
+import aphorea.items.armor.Spinel.SpinelBoots;
+import aphorea.items.armor.Spinel.SpinelChestplate;
+import aphorea.items.armor.Spinel.SpinelHelmet;
 import aphorea.items.armor.Swamp.SwampBoots;
 import aphorea.items.armor.Swamp.SwampChestplate;
 import aphorea.items.armor.Swamp.SwampHood;
@@ -178,17 +181,29 @@ public class AphItems {
     }
 
     public static void registerArmor() {
+        // Rocky
         registerItem("rockyhelmet", new RockyHelmet());
         registerItem("rockychestplate", new RockyChestplate());
         registerItem("rockyboots", new RockyBoots());
+
+        // Gold
         registerItem("goldhat", new GoldHat());
+
+        // Witch
         registerItem("pinkwitchhat", new PinkWitchHat(), 100F);
         registerItem("magicalsuit", new MagicalSuit());
         registerItem("magicalboots", new MagicalBoots());
+
+        // Swamp
         registerItem("swampmask", new SwampMask());
         registerItem("swamphood", new SwampHood());
         registerItem("swampchestplate", new SwampChestplate());
         registerItem("swampboots", new SwampBoots());
+
+        // Spinel
+        registerItem("spinelhelmet", new SpinelHelmet());
+        registerItem("spinelchestplate", new SpinelChestplate());
+        registerItem("spinelboots", new SpinelBoots());
     }
 
     public static void registerTrinkets() {

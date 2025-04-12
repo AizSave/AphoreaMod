@@ -28,9 +28,9 @@ public class AphModifiers {
     public static final Modifier<Float> INSPIRATION_ABILITY_SPEED;
 
     static {
-        MAGIC_HEALING = new Modifier<>(BuffModifiers.LIST, "magichealing", 1.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> Math.max(0.0F, v), Modifier.NORMAL_PERC_PARSER("magichealing"), ModifierLimiter.NORMAL_PERC_LIMITER("magichealing"));
+        MAGIC_HEALING = new Modifier<>(BuffModifiers.LIST, "magichealing", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> Math.max(0.0F, v), Modifier.NORMAL_PERC_PARSER("magichealing"), ModifierLimiter.NORMAL_PERC_LIMITER("magichealing"));
         MAGIC_HEALING_FLAT = new Modifier<>(BuffModifiers.LIST, "magichealingflat", 0, 0, Modifier.INT_ADD_APPEND, Modifier.NORMAL_FLAT_INT_PARSER("magichealingflat"), ModifierLimiter.NORMAL_FLAT_INT_LIMITER("magichealingflat"));
-        MAGIC_HEALING_RECEIVED = new Modifier<>(BuffModifiers.LIST, "magichealingreceived", 1.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> Math.max(0.0F, v), Modifier.NORMAL_PERC_PARSER("magichealingreceived"), ModifierLimiter.NORMAL_PERC_LIMITER("magichealingreceived"));
+        MAGIC_HEALING_RECEIVED = new Modifier<>(BuffModifiers.LIST, "magichealingreceived", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> Math.max(0.0F, v), Modifier.NORMAL_PERC_PARSER("magichealingreceived"), ModifierLimiter.NORMAL_PERC_LIMITER("magichealingreceived"));
         MAGIC_HEALING_RECEIVED_FLAT = new Modifier<>(BuffModifiers.LIST, "magichealingreceivedflat", 0, 0, Modifier.INT_ADD_APPEND, Modifier.NORMAL_FLAT_INT_PARSER("magichealingreceivedflat"), ModifierLimiter.NORMAL_FLAT_INT_LIMITER("magichealingreceivedflat"));
         MAGIC_HEALING_GRACE = new Modifier<>(BuffModifiers.LIST, "magichealinggrace", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> Math.max(0.0F, v), Modifier.NORMAL_PERC_PARSER("magichealinggrace"), ModifierLimiter.NORMAL_PERC_LIMITER("magichealinggrace"));
 

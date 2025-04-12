@@ -1,6 +1,6 @@
 package aphorea.mobs.bosses.minions;
 
-import aphorea.mobs.bosses.ThePillarMob;
+import aphorea.mobs.bosses.BabylonTowerMob;
 import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
@@ -79,7 +79,7 @@ public class HearthCrystalMob extends HostileMob {
     @Override
     public void clientTick() {
         super.clientTick();
-        if(notPillarClose()) {
+        if(notBabylonTowerClose()) {
             this.remove();
         } else {
             long time = this.getTime();
@@ -91,7 +91,7 @@ public class HearthCrystalMob extends HostileMob {
     @Override
     public void serverTick() {
         super.serverTick();
-        if(notPillarClose()) {
+        if(notBabylonTowerClose()) {
             this.remove();
         } else {
             long time = this.getTime();
@@ -143,8 +143,8 @@ public class HearthCrystalMob extends HostileMob {
         return false;
     }
 
-    public boolean notPillarClose() {
-        return getLevel().entityManager.mobs.stream().noneMatch(m -> Objects.equals(m.getStringID(), "thepillar") && m.getDistance(this) < ThePillarMob.BOSS_AREA_RADIUS);
+    public boolean notBabylonTowerClose() {
+        return getLevel().entityManager.mobs.stream().noneMatch(m -> Objects.equals(m.getStringID(), "babylontower") && m.getDistance(this) < BabylonTowerMob.BOSS_AREA_RADIUS);
     }
 
     @Override

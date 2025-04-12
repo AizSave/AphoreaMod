@@ -105,6 +105,7 @@ public class AphBuffs {
         public static SetBonusBuff WITCH;
         public static SetBonusBuff SWAMP_MASK;
         public static SetBonusBuff SWAMP_HOOP;
+        public static SetBonusBuff SPINEL_HELMET;
     }
 
     public static class BANNER {
@@ -114,6 +115,10 @@ public class AphBuffs {
         public static AphBannerBuff DEFENSE;
         public static AphBannerBuff SPEED;
         public static AphBannerBuff SUMMON_SPEED;
+    }
+
+    public static class POTION {
+        public static Buff VENOM_EXTRACT;
     }
 
     public static void registerCore() {
@@ -174,6 +179,7 @@ public class AphBuffs {
         BuffRegistry.registerBuff("pinkwitchsetbonus", SET_BONUS.WITCH = new PinkWitchSetBonusBuff());
         BuffRegistry.registerBuff("swampmasksetbonus", SET_BONUS.SWAMP_MASK = new SwampMaskSetBonusBuff());
         BuffRegistry.registerBuff("swamphoodsetbonus", SET_BONUS.SWAMP_HOOP = new SwampHoodSetBonusBuff());
+        BuffRegistry.registerBuff("spinelhelmetsetbonus", SET_BONUS.SPINEL_HELMET = new SpinelHelmetSetBonusBuff());
 
         // Banner Buffs
         BuffRegistry.registerBuff("blankbanner", BANNER.BLANK = new BlankBannerBuff());
@@ -186,7 +192,7 @@ public class AphBuffs {
         registerMightyBannerItems();
 
         // Potion Buffs
-        BuffRegistry.registerBuff("venomextract", new VenomExtractBuff());
+        BuffRegistry.registerBuff("venomextract", POTION.VENOM_EXTRACT = new VenomExtractBuff());
 
         // Trinket Buffs
         BuffRegistry.registerBuff("unstableperiapt", new UnstablePeriaptBuff());
@@ -207,8 +213,6 @@ public class AphBuffs {
         BuffRegistry.registerBuff("ninjascarf", new SimpleTrinketBuff("ninjascarf"));
         BuffRegistry.registerBuff("inspirationfoci", new InspirationFociBuff());
         BuffRegistry.registerBuff("adrenalinecharm", new AdrenalineCharmBuff());
-        BuffRegistry.registerBuff("test1", new SimpleTrinketBuff("test1", new ModifierValue<>(BuffModifiers.MAX_SUMMONS, 2), new ModifierValue<>(BuffModifiers.SUMMONS_SPEED, -0.2F), new ModifierValue<>(BuffModifiers.SUMMON_DAMAGE, -0.2F)));
-        BuffRegistry.registerBuff("test2", new SimpleTrinketBuff("test2", new ModifierValue<>(BuffModifiers.MAX_SUMMONS, 3), new ModifierValue<>(BuffModifiers.SUMMONS_SPEED, -0.2F), new ModifierValue<>(BuffModifiers.SUMMON_DAMAGE, -0.2F)));
 
         // Trinket Active Buffs
         BuffRegistry.registerBuff("rockyperiaptactive", new RockyPeriaptActiveBuff());

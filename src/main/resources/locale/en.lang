@@ -81,9 +81,9 @@ infectedtree=Infected Tree
 infectedgrass=Infected Grass
 spinelchest=Spinel Chest
 fakespinelchest=Fake Spinel Chest
-thepillar=The Pillar
-thepillarentrance=The Pillar Entrance
-thepillarexit=The Pillar Exit
+babylontower=Babylon Tower
+babylonentrance=Babylon Entrance
+babylonexit=Babylon Exit
 
 
 
@@ -454,19 +454,21 @@ floralring=Magic Heal yourself with §7<healing>§0 every 5 seconds
 gelring=§7+30%§0 Magic Healing received
 heartring=§7+20§0 max health
 swampshield=Only protects attacks in the direction they are received
-swampshield2=Magic Heal yourself with the §7<healing>§0 of the damage you prevent
+swampshield2=On perfect block: Magic Heal yourself with the §7<healing>§0 of your max health
 iceboots=Makes you slide as if you were on ice, but grants +50% movement speed and +4 armor
 # NEW
 inspirationfoci1=§7+40%§0 inspiration effect and §7+20%§0 inspiration ability speed
 inspirationfoci2=§6-20%§0 all non-banner damage and §6-1§0 max summons
 essenceofhealing=§7+<percent>&§0 Magic Healing per life essence
-essenceofhealing2=-§680%§0 life essence duration
+essenceofhealing2=§7<flat>&§0 Magic Healing per 2 life essences
+essenceofhealing3=§6-80%§0 life essence duration, capped to -50%
 ninjascarf=Converts Saber Dashes into Saber Jumps
 adrenalinecharm=Every hit received will give you Adrenaline for 20 seconds
 
 // Set Bonus
 goldhatsetbonus=If you're still, your ranged attack speed is greatly increased
 pinkwitchsetbonus=Increases Magic Attack Speed, Mana Regeneration, and Armor the lower your health is
+spinelhelmetsetbonus=Magic Heal yourself with §7<healing>§0 of weapon damage dealt to hostile mobs
 
 // Banners
 strikebannereffect=§7+<effect>%§0 health regen (in and out of combat)
@@ -605,7 +607,7 @@ spinelgolem=Spinel Golem
 spinelcaveling=Spinel Caveling
 tungstencaveling=Tungsten Caveling
 spinelmimic=Spinel Mimic
-thepillar=The Pillar
+babylontower=Babylon Tower
 hearthcrystal=Hearth Crystal
 
 // Friendly

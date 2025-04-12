@@ -1,9 +1,9 @@
 package aphorea.mobs.bosses;
 
-import aphorea.levelevents.thepillar.ThePillarFallingCrystalAttackEvent;
+import aphorea.levelevents.babylon.BabylonTowerFallingCrystalAttackEvent;
 import aphorea.mobs.bosses.minions.HearthCrystalMob;
-import aphorea.objects.ThePillarEntranceObject;
-import aphorea.objects.ThePillarObject;
+import aphorea.objects.BabylonEntranceObject;
+import aphorea.objects.BabylonTowerObject;
 import aphorea.packets.AphRemoveObjectEntity;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
@@ -45,7 +45,7 @@ import java.awt.*;
 import java.util.List;
 import java.util.*;
 
-public class ThePillarMob extends BossMob {
+public class BabylonTowerMob extends BossMob {
     public static int BOSS_AREA_RADIUS = 1024;
     private static final AphAreaList searchArea = new AphAreaList(
             new AphArea(BOSS_AREA_RADIUS, AphColors.spinel)
@@ -57,7 +57,7 @@ public class ThePillarMob extends BossMob {
     protected MobHealthScaling scaling = new MobHealthScaling(this);
 
 
-    public ThePillarMob() {
+    public BabylonTowerMob() {
         super(10000);
         this.difficultyChanges.setMaxHealth(MAX_HEALTH);
         this.setArmor(10);
@@ -101,7 +101,7 @@ public class ThePillarMob extends BossMob {
         }
     }
 
-    public void keepAlive(ThePillarObject.ThePillarObjectEntity entity) {
+    public void keepAlive(BabylonTowerObject.BabylonTowerObjectEntity entity) {
         this.aliveTimer = 20;
         this.setPos(entity.getMobX(), entity.getMobY(), true);
     }
@@ -186,15 +186,15 @@ public class ThePillarMob extends BossMob {
         GameObject object = this.getLevel().getObject(x, y);
         if (object != null) {
             ObjectEntity objectEntity = object.getCurrentObjectEntity(getLevel(), x, y);
-            if (objectEntity instanceof ThePillarObject.ThePillarObjectEntity) {
+            if (objectEntity instanceof BabylonTowerObject.BabylonTowerObjectEntity) {
                 objectEntity.remove();
                 getServer().network.sendToClientsAtEntireLevel(new AphRemoveObjectEntity(x, y), getLevel());
 
                 boolean openingStaircase = false;
                 if (!(this.getLevel() instanceof IncursionLevel)) {
                     Point entrancePosition = new Point(x + 1, y + 2);
-                    if (!this.getLevel().getLevelObject(entrancePosition.x, entrancePosition.y).getMultiTile().getMasterObject().getStringID().equals("thepillarentrance")) {
-                        this.getLevel().entityManager.addLevelEvent(new ThePillarEntranceObject.ThePillarEntranceEvent(x + 1, y + 2));
+                    if (!this.getLevel().getLevelObject(entrancePosition.x, entrancePosition.y).getMultiTile().getMasterObject().getStringID().equals("babylonentrance")) {
+                        this.getLevel().entityManager.addLevelEvent(new BabylonEntranceObject.BabylonEntranceEvent(x + 1, y + 2));
                         openingStaircase = true;
                     }
                 }
@@ -239,13 +239,13 @@ public class ThePillarMob extends BossMob {
                 .volume(0.7f)
                 .pitch(GameRandom.globalRandom.getFloatBetween(1.0f, 1.1f)));
 
-        ai = new BehaviourTreeAI<>(this, new ThePillarAI<>(), new FlyingAIMover());
+        ai = new BehaviourTreeAI<>(this, new BabylonTowerAI<>(), new FlyingAIMover());
     }
 
-    public static class ThePillarAI<T extends ThePillarMob> extends SelectorAINode<T> {
-        static GameDamage projectileDamage = new GameDamage(20, 20);
+    public static class BabylonTowerAI<T extends BabylonTowerMob> extends SelectorAINode<T> {
+        static GameDamage projectileDamage = new GameDamage(20F, 60F);
 
-        public ArrayList<PillarActionAiNode> stages = new ArrayList<>();
+        public ArrayList<BabylonTowerActionAiNode> stages = new ArrayList<>();
         public int stagesUntilNow = 0;
         public int currentStage = 0;
         public int currentStageTick = 0;
@@ -254,7 +254,7 @@ public class ThePillarMob extends BossMob {
 
         public Map<String, Object> saveData = new HashMap<>();
 
-        public ThePillarAI() {
+        public BabylonTowerAI() {
             this.addChild(
                     new AINode<T>() {
 
@@ -275,7 +275,7 @@ public class ThePillarMob extends BossMob {
                     }
             );
             this.addChild(
-                    new PillarActionAiNode() {
+                    new BabylonTowerActionAiNode() {
                         @Override
                         public void doTickAction(T mob, int time, int duration, float progress, Blackboard<T> blackboard) {
                             if(time % (50 * mob.projectileRate()) == 0) summonRandomCrystal(mob);
@@ -288,7 +288,7 @@ public class ThePillarMob extends BossMob {
                     }
             );
             this.addChild(
-                    new PillarActionAiNode() {
+                    new BabylonTowerActionAiNode() {
                         @Override
                         public void doTickAction(T mob, int time, int duration, float progress, Blackboard<T> blackboard) {
                             if(time % (100 * mob.projectileRate()) == 0) summonCrystalToAllTargets(mob, GameRandom.globalRandom.getFloatBetween(0F, 2F), 80);
@@ -301,7 +301,7 @@ public class ThePillarMob extends BossMob {
                     }
             );
             this.addChild(
-                    new PillarActionAiNode() {
+                    new BabylonTowerActionAiNode() {
                         @Override
                         public void doTickAction(T mob, int time, int duration, float progress, Blackboard<T> blackboard) {
                             if(time % (200 * mob.projectileRate()) == 0) summonCrystalToAllTargets(mob, GameRandom.globalRandom.getFloatBetween(0F, 2F), 80);
@@ -321,7 +321,7 @@ public class ThePillarMob extends BossMob {
                     }
             );
             this.addChild(
-                    new PillarActionAiNode() {
+                    new BabylonTowerActionAiNode() {
                         @Override
                         public void doTickAction(T mob, int time, int duration, float progress, Blackboard<T> blackboard) {
                             int health = 50 + (int) (25 * streamPossibleTargets(mob).count());
@@ -384,7 +384,7 @@ public class ThePillarMob extends BossMob {
             );
 
             this.addChild(
-                    new PillarActionAiNode() {
+                    new BabylonTowerActionAiNode() {
                         @Override
                         public void startStage(T mob) {
                             super.startStage(mob);
@@ -449,10 +449,10 @@ public class ThePillarMob extends BossMob {
             return selected;
         }
 
-        abstract public class PillarActionAiNode extends AINode<T> {
+        abstract public class BabylonTowerActionAiNode extends AINode<T> {
             public final int stageNumber;
 
-            public PillarActionAiNode() {
+            public BabylonTowerActionAiNode() {
                 this.stageNumber = stages.size();
                 stages.add(this);
             }
@@ -534,7 +534,7 @@ public class ThePillarMob extends BossMob {
 
         public void summonFallingCrystal(T mob, float targetX, float targetY) {
             if (mob.getDistance(targetX, targetY) <= BOSS_AREA_RADIUS) {
-                mob.getLevel().entityManager.addLevelEvent(new ThePillarFallingCrystalAttackEvent(mob, (int) targetX, (int) targetY, GameRandom.globalRandom, projectileDamage));
+                mob.getLevel().entityManager.addLevelEvent(new BabylonTowerFallingCrystalAttackEvent(mob, (int) targetX, (int) targetY, GameRandom.globalRandom, projectileDamage));
             }
         }
 

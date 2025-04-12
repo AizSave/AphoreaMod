@@ -1,6 +1,6 @@
 package aphorea.objects;
 
-import aphorea.mobs.bosses.ThePillarMob;
+import aphorea.mobs.bosses.BabylonTowerMob;
 import aphorea.utils.AphColors;
 import necesse.engine.Settings;
 import necesse.engine.gameLoop.tickManager.TickManager;
@@ -31,11 +31,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ThePillarObject extends StaticMultiObject {
+public class BabylonTowerObject extends StaticMultiObject {
     protected int yOffset = -3;
 
-    public ThePillarObject(int multiX, int multiY, int multiWidth, int multiHeight, int[] multiIDs, Rectangle fullCollision) {
-        super(multiX, multiY, multiWidth, multiHeight, multiIDs, fullCollision, "thepillar");
+    public BabylonTowerObject(int multiX, int multiY, int multiWidth, int multiHeight, int[] multiIDs, Rectangle fullCollision) {
+        super(multiX, multiY, multiWidth, multiHeight, multiIDs, fullCollision, "babylontower");
         this.stackSize = 1;
         this.rarity = Item.Rarity.LEGENDARY;
         this.mapColor = AphColors.spinel;
@@ -50,12 +50,12 @@ public class ThePillarObject extends StaticMultiObject {
     public static void registerObject() {
         int[] ids = new int[6];
         Rectangle collision = new Rectangle(0, 0, 96, 64);
-        ids[0] = ObjectRegistry.registerObject("thepillar", new ThePillarObject(0, 0, 3, 2, ids, collision), 0.0F, false);
-        ids[1] = ObjectRegistry.registerObject("thepillar2", new ThePillarObject(1, 0, 3, 2, ids, collision), 0.0F, false);
-        ids[2] = ObjectRegistry.registerObject("thepillar3", new ThePillarObject(2, 0, 3, 2, ids, collision), 0.0F, false);
-        ids[3] = ObjectRegistry.registerObject("thepillar4", new ThePillarObject(0, 1, 3, 2, ids, collision), 0.0F, false);
-        ids[4] = ObjectRegistry.registerObject("thepillar5", new ThePillarObject(1, 1, 3, 2, ids, collision), 0.0F, false);
-        ids[5] = ObjectRegistry.registerObject("thepillar6", new ThePillarObject(2, 1, 3, 2, ids, collision), 0.0F, false);
+        ids[0] = ObjectRegistry.registerObject("babylontower", new BabylonTowerObject(0, 0, 3, 2, ids, collision), 0.0F, false);
+        ids[1] = ObjectRegistry.registerObject("babylontower2", new BabylonTowerObject(1, 0, 3, 2, ids, collision), 0.0F, false);
+        ids[2] = ObjectRegistry.registerObject("babylontower3", new BabylonTowerObject(2, 0, 3, 2, ids, collision), 0.0F, false);
+        ids[3] = ObjectRegistry.registerObject("babylontower4", new BabylonTowerObject(0, 1, 3, 2, ids, collision), 0.0F, false);
+        ids[4] = ObjectRegistry.registerObject("babylontower5", new BabylonTowerObject(1, 1, 3, 2, ids, collision), 0.0F, false);
+        ids[5] = ObjectRegistry.registerObject("babylontower6", new BabylonTowerObject(2, 1, 3, 2, ids, collision), 0.0F, false);
     }
 
     @Override
@@ -68,7 +68,7 @@ public class ThePillarObject extends StaticMultiObject {
 
     public boolean isActive(Level level, int tileX, int tileY) {
         GameObject object = level.getObject(tileX - multiX, tileY - multiY);
-        return object != null && object.getCurrentObjectEntity(level, tileX - multiX, tileY - multiY) instanceof ThePillarObjectEntity;
+        return object != null && object.getCurrentObjectEntity(level, tileX - multiX, tileY - multiY) instanceof BabylonTowerObjectEntity;
     }
 
     @Override
@@ -127,9 +127,9 @@ public class ThePillarObject extends StaticMultiObject {
 
     public int getParts(Level level, int tileX, int tileY) {
         ObjectEntity objectEntity = this.getCurrentObjectEntity(level, tileX - multiX, tileY - multiY);
-        if(objectEntity instanceof ThePillarObjectEntity) {
-            ThePillarObjectEntity pillarObjectEntity = (ThePillarObjectEntity) objectEntity;
-            return pillarObjectEntity.getMob() == null ? 4 : pillarObjectEntity.getMob().getParts();
+        if(objectEntity instanceof BabylonTowerObjectEntity) {
+            BabylonTowerObjectEntity babylonTowerObjectEntity = (BabylonTowerObjectEntity) objectEntity;
+            return babylonTowerObjectEntity.getMob() == null ? 4 : babylonTowerObjectEntity.getMob().getParts();
         }
         return 4;
     }
@@ -165,7 +165,7 @@ public class ThePillarObject extends StaticMultiObject {
         Item item = ItemRegistry.getItem("lifespinel");
         if (!player.isItemOnCooldown(item)) {
             if (player.getInv().removeItems(item, 1, false, false, false, false, "use") > 0) {
-                level.entityManager.objectEntities.add(new ThePillarObjectEntity(level, x - multiX, y - multiY));
+                level.entityManager.objectEntities.add(new BabylonTowerObjectEntity(level, x - multiX, y - multiY));
             }
         }
     }
@@ -175,11 +175,11 @@ public class ThePillarObject extends StaticMultiObject {
         return isActive(level, x, y) ? Collections.emptyList() : super.getProjectileCollisions(level, x, y, rotation);
     }
 
-    public static class ThePillarObjectEntity extends ObjectEntity {
+    public static class BabylonTowerObjectEntity extends ObjectEntity {
         private int bossID = -1;
 
-        public ThePillarObjectEntity(Level level, int x, int y) {
-            super(level, "thepillar", x, y);
+        public BabylonTowerObjectEntity(Level level, int x, int y) {
+            super(level, "babylontower", x, y);
         }
 
         public float getMobX() {
@@ -205,7 +205,7 @@ public class ThePillarObject extends StaticMultiObject {
         public void clientTick() {
             super.clientTick();
 
-            ThePillarMob m = this.getMob();
+            BabylonTowerMob m = this.getMob();
             if (m != null) {
                 m.keepAlive(this);
             }
@@ -215,7 +215,7 @@ public class ThePillarObject extends StaticMultiObject {
 
         public void serverTick() {
             super.serverTick();
-            ThePillarMob m = this.getMob();
+            BabylonTowerMob m = this.getMob();
             if (m == null) {
                 m = this.generateMobID();
                 this.markDirty();
@@ -232,8 +232,8 @@ public class ThePillarObject extends StaticMultiObject {
             }
 
             boolean noPlayersNearby = this.getLevel().entityManager.players
-                    .streamArea(getMobX(), getMobY(), ThePillarMob.BOSS_AREA_RADIUS)
-                    .noneMatch(p -> p.getDistance(getMobX(), getMobY()) < ThePillarMob.BOSS_AREA_RADIUS);
+                    .streamArea(getMobX(), getMobY(), BabylonTowerMob.BOSS_AREA_RADIUS)
+                    .noneMatch(p -> p.getDistance(getMobX(), getMobY()) < BabylonTowerMob.BOSS_AREA_RADIUS);
 
             if (noPlayersNearby) {
                 if (getMob().getHealthPercent() == 1) {
@@ -245,30 +245,30 @@ public class ThePillarObject extends StaticMultiObject {
             }
         }
 
-        private ThePillarMob generateMobID() {
-            ThePillarMob lastMob = this.getMob();
+        private BabylonTowerMob generateMobID() {
+            BabylonTowerMob lastMob = this.getMob();
             if (lastMob != null) {
                 lastMob.remove();
             }
 
-            ThePillarMob m = new ThePillarMob();
+            BabylonTowerMob m = new BabylonTowerMob();
             this.getLevel().entityManager.addMob(m, getMobX(), getMobY());
             this.bossID = m.getUniqueID();
             return m;
         }
 
-        private ThePillarMob getMob() {
+        private BabylonTowerMob getMob() {
             if (this.bossID == -1) {
                 return null;
             } else {
                 Mob m = this.getLevel().entityManager.mobs.get(this.bossID, false);
-                return m != null ? (ThePillarMob) m : null;
+                return m != null ? (BabylonTowerMob) m : null;
             }
         }
 
         public void remove() {
             super.remove();
-            ThePillarMob m = this.getMob();
+            BabylonTowerMob m = this.getMob();
             if (m != null) {
                 m.remove();
             }

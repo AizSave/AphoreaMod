@@ -16,7 +16,7 @@ import necesse.level.maps.light.GameLight;
 
 import java.util.List;
 
-public class ThePillarFallingCrystalParticle extends Particle {
+public class BabylonTowerFallingCrystalParticle extends Particle {
     protected static final int[] frameTimes = new int[]{30, 30, 30, 30, 30, 60, 60, 60, 60, 60, 60, 120, 120, 120, 120};
     private final long spawnTime;
     private final long delay;
@@ -25,7 +25,7 @@ public class ThePillarFallingCrystalParticle extends Particle {
     public static GameTexture projectileTexture;
     public static GameTexture shadowTexture;
 
-    public ThePillarFallingCrystalParticle(Level level, float x, float y, long spawnTime, long delay) {
+    public BabylonTowerFallingCrystalParticle(Level level, float x, float y, long spawnTime, long delay) {
         super(level, x, y, delay + 1500L);
         this.spawnTime = spawnTime;
         this.delay = delay;

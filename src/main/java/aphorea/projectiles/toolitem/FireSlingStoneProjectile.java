@@ -15,6 +15,7 @@ import necesse.gfx.drawables.LevelSortedDrawable;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.level.maps.Level;
+import necesse.level.maps.LevelObjectHit;
 import necesse.level.maps.light.GameLight;
 
 import java.util.List;
@@ -70,10 +71,14 @@ public class FireSlingStoneProjectile extends SlingStoneProjectile {
     }
 
     @Override
-    public void addHit(Mob target) {
-        super.addHit(target);
-
-        target.addBuff(new ActiveBuff(BuffRegistry.Debuffs.ON_FIRE, target, 10000, this), true);
+    public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
+        super.doHitLogic(mob, object, x, y);
+        if (this.isServer()) {
+            if (mob != null) {
+                mob.addBuff(new ActiveBuff(BuffRegistry.Debuffs.ON_FIRE, mob, 10000, this), true);
+            }
+        }
     }
+
 
 }

@@ -41,7 +41,7 @@ public class VoidAdept extends HostileMob {
             new AphArea(250, AphColors.lighter_gray)
     ).setDamageType(DamageTypeRegistry.MAGIC);
     public static AphAreaList attackArea = new AphAreaList(
-            new AphFlatArea(250, AphColors.dark_magic).setDamageArea(40).setArmorPen(10)
+            new AphFlatArea(250, AphColors.dark_magic).setDamageArea(50).setArmorPen(10)
     ).setDamageType(DamageTypeRegistry.MAGIC);
 
 
@@ -55,7 +55,7 @@ public class VoidAdept extends HostileMob {
     public int attackCount = 0;
 
     public VoidAdept() {
-        super(75);
+        super(80);
         this.attackCooldown = 2000;
         this.attackAnimTime = 1500;
         this.setSpeed(40.0F);

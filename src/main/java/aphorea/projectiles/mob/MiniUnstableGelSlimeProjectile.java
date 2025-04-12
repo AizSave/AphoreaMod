@@ -4,6 +4,7 @@ import aphorea.mobs.bosses.minions.MiniUnstableGelSlime;
 import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
+import necesse.engine.registries.BuffRegistry;
 import necesse.engine.registries.MobRegistry;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
@@ -85,14 +86,13 @@ public class MiniUnstableGelSlimeProjectile extends Projectile {
         if (this.isServer()) {
             MiniUnstableGelSlime spawnMob = (MiniUnstableGelSlime) MobRegistry.getMob("miniunstablegelslime", this.getLevel());
             spawnMob.addBuff(new ActiveBuff(AphBuffs.STUN, spawnMob, 500, spawnMob), true);
+
             this.getLevel().entityManager.addMob(spawnMob, x, y);
+            if (mob != null) {
+                ActiveBuff ab = new ActiveBuff(BuffRegistry.Debuffs.BROKEN_ARMOR, mob, 5.0F, this.getOwner());
+                mob.addBuff(ab, true);
+                spawnMob.addBuff(new ActiveBuff(AphBuffs.STICKY, spawnMob, 2F, spawnMob), true);
+            }
         }
-    }
-
-    @Override
-    public void addHit(Mob target) {
-        super.addHit(target);
-        target.addBuff(new ActiveBuff(AphBuffs.STICKY, target, 500, this), true);
-
     }
 }

@@ -28,9 +28,9 @@ public class AphObjects {
     }
 
     public static void multiTileObjects() {
-        ThePillarObject.registerObject();
-        ThePillarEntranceObject.registerObject();
-        ThePillarExitObject.registerObject();
+        BabylonTowerObject.registerObject();
+        BabylonEntranceObject.registerObject();
+        BabylonExitObject.registerObject();
     }
 
     public static void surfaceObjects() {

@@ -45,7 +45,7 @@ public class InfectedGrassObject extends GrassObject {
             return true;
         } else {
             int tileID = level.getTileID(x, y);
-            return tileID == TileRegistry.swampRockID || tileID == TileRegistry.swampGrassID || tileID == TileRegistry.overgrownSwampGrassID;
+            return tileID == TileRegistry.getTileID("infectedgrasstile");
         }
     }
 }

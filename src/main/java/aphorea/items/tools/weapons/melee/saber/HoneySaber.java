@@ -3,10 +3,14 @@ package aphorea.items.tools.weapons.melee.saber;
 import aphorea.projectiles.toolitem.AircutProjectile;
 import aphorea.projectiles.toolitem.BlueBerryProjectile;
 import aphorea.projectiles.toolitem.HoneyProjectile;
+import aphorea.registry.AphBuffs;
 import necesse.engine.localization.Localization;
 import necesse.engine.util.GameBlackboard;
 import necesse.engine.util.GameRandom;
+import necesse.entity.levelEvent.mobAbilityLevelEvent.ToolItemMobAbilityEvent;
+import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
+import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.gfx.gameTooltips.ListGameTooltips;
@@ -98,5 +102,11 @@ public class HoneySaber extends AphSaberToolItem {
         tooltips.add(Localization.translate("itemtooltip", "honeysaber"));
         tooltips.add(Localization.translate("itemtooltip", "saberdash"));
         return tooltips;
+    }
+
+    @Override
+    public void hitMob(InventoryItem item, ToolItemMobAbilityEvent event, Level level, Mob target, Mob attacker) {
+        super.hitMob(item, event, level, target, attacker);
+        target.addBuff(new ActiveBuff(AphBuffs.HONEYED, target, 2000, attacker), true);
     }
 }

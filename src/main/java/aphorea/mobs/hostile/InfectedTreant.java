@@ -40,7 +40,7 @@ import java.util.function.Supplier;
 public class InfectedTreant extends HostileMob {
     public static GameTexture texture;
     public static GameTexture texture_shadow;
-    public static GameDamage collisionDamage = new GameDamage(50.0F);
+    public static GameDamage collisionDamage = new GameDamage(50F, 30F);
     public int doAlpha = 0;
     public float jump = 0;
 
@@ -227,6 +227,7 @@ public class InfectedTreant extends HostileMob {
         }
 
         if (prevent) {
+            event.damage = event.damage.modDamage(0);
             event.prevent();
         }
 

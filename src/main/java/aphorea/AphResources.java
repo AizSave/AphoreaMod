@@ -1,7 +1,7 @@
 package aphorea;
 
 import aphorea.items.tools.weapons.magic.MagicalBroom;
-import aphorea.mobs.bosses.ThePillarMob;
+import aphorea.mobs.bosses.BabylonTowerMob;
 import aphorea.mobs.bosses.UnstableGelSlime;
 import aphorea.mobs.bosses.minions.MiniUnstableGelSlime;
 import aphorea.mobs.friendly.WildPhosphorSlime;
@@ -10,23 +10,19 @@ import aphorea.mobs.pet.PetPhosphorSlime;
 import aphorea.mobs.summon.BabyUnstableGelSlime;
 import aphorea.mobs.summon.Onyx;
 import aphorea.mobs.summon.VolatileGelSlime;
-import aphorea.particles.ThePillarFallingCrystalParticle;
+import aphorea.particles.BabylonTowerFallingCrystalParticle;
 import aphorea.projectiles.bullet.SpamBulletProjectile;
 import aphorea.projectiles.toolitem.AircutProjectile;
 import aphorea.projectiles.toolitem.DaggerProjectile;
-import aphorea.projectiles.toolitem.FireSlingStoneProjectile;
 import aphorea.projectiles.toolitem.GelProjectile;
-import necesse.engine.journal.JournalEntry;
 import necesse.engine.registries.MobRegistry;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.HumanTexture;
 import necesse.gfx.GameResources;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.gameTexture.GameTextureSection;
-import org.lwjgl.BufferUtils;
 
 import java.io.FileNotFoundException;
-import java.nio.ByteBuffer;
 
 public class AphResources {
     public static GameTexture[] saberAttackTexture = new GameTexture[31];
@@ -60,8 +56,8 @@ public class AphResources {
         // PARTICLES
         GelProjectile.GelProjectileParticle.texture = GameTexture.fromFile("particles/gelprojectile");
         SpamBulletProjectile.FirePoolParticle.texture = GameTexture.fromFile("particles/firepool");
-        ThePillarFallingCrystalParticle.projectileTexture = GameTexture.fromFile("particles/thepillarfallingcrystalparticle");
-        ThePillarFallingCrystalParticle.shadowTexture = GameTexture.fromFile("particles/thepillarfallingcrystalparticle_shadow");
+        BabylonTowerFallingCrystalParticle.projectileTexture = GameTexture.fromFile("particles/babylontowerfallingcrystalparticle");
+        BabylonTowerFallingCrystalParticle.shadowTexture = GameTexture.fromFile("particles/babylontowerfallingcrystalparticle_shadow");
     }
 
 
@@ -98,7 +94,7 @@ public class AphResources {
         UnstableGelSlime.icon = GameTexture.fromFile("mobs/icons/unstablegelslime");
         MiniUnstableGelSlime.texture = GameTexture.fromFile("mobs/miniunstablegelslime");
 
-        ThePillarMob.icon = GameTexture.fromFile("mobs/icons/thepillar");
+        BabylonTowerMob.icon = GameTexture.fromFile("mobs/icons/babylontower");
 
         // FRIENDLY
         WildPhosphorSlime.texture = GameTexture.fromFile("mobs/phosphorslime");
