@@ -18,7 +18,7 @@ public class CanPlaceObject {
     static void onExit(@Advice.This ObjectItem objectItem, @Advice.Argument(0) Level level, @Advice.Return(readOnly = false) String returnValue) {
         if ("infectedfieldscave".equals(level.getStringID()) && objectItem.getObject().lightLevel > 0) {
             returnValue = "nolight";
-        } else if(level.biome == AphBiomes.INFECTED_FIELDS && Objects.equals(objectItem.getStringID(), "deepladderdown")) {
+        } else if (level.biome == AphBiomes.INFECTED_FIELDS && Objects.equals(objectItem.getStringID(), "deepladderdown")) {
             returnValue = "nodeepcave";
         }
     }

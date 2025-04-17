@@ -1,8 +1,6 @@
 package aphorea.projectiles.mob;
 
-import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
-import necesse.engine.network.server.ServerClient;
 import necesse.engine.registries.BuffRegistry;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;

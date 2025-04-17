@@ -4,6 +4,7 @@ import aphorea.registry.AphLootTables;
 import necesse.engine.registries.TileRegistry;
 import necesse.engine.util.GameRandom;
 import necesse.inventory.lootTable.LootTable;
+import necesse.level.maps.biomes.forest.ForestCaveLevel;
 import necesse.level.maps.presets.Preset;
 
 public class InfectedLootLake extends Preset {

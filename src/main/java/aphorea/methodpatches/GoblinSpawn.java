@@ -20,7 +20,7 @@ public class GoblinSpawn {
         if (daggerGoblin) {
             String daggerType;
             float randomDagger = GameRandom.globalRandom.getFloatBetween(0, 1);
-            if (randomDagger < 0.50) {
+            if (randomDagger < 0.55) {
                 daggerType = "copper";
             } else if (randomDagger < 0.85) {
                 daggerType = "iron";

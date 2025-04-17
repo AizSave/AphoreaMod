@@ -2,10 +2,8 @@ package aphorea.items.tools.weapons.melee.battleaxe;
 
 import aphorea.buffs.AdrenalineBuff;
 import aphorea.items.tools.weapons.melee.battleaxe.logic.BattleaxeAttackHandler;
-import aphorea.items.tools.weapons.melee.saber.logic.SaberDashAttackHandler;
 import aphorea.items.vanillaitemtypes.weapons.AphGreatswordToolItem;
 import aphorea.registry.AphBuffs;
-import aphorea.utils.AphColors;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.util.GameBlackboard;
@@ -41,6 +39,7 @@ abstract public class AphBattleaxeToolItem extends AphGreatswordToolItem impleme
         ListGameTooltips tooltips = super.getPreEnchantmentTooltips(item, perspective, blackboard);
         tooltips.add(Localization.translate("itemtooltip", "battleaxe"));
         tooltips.add(Localization.translate("itemtooltip", "battleaxe2"));
+        tooltips.add(Localization.translate("itemtooltip", "battleaxe3"));
         return tooltips;
     }
 
@@ -90,7 +89,7 @@ abstract public class AphBattleaxeToolItem extends AphGreatswordToolItem impleme
 
     @Override
     public void hitMob(InventoryItem item, ToolItemMobAbilityEvent event, Level level, Mob target, Mob attacker) {
-        if(attacker.buffManager.hasBuff(AphBuffs.BERSERKER_RUSH) && target.isHostile) {
+        if (attacker.buffManager.hasBuff(AphBuffs.BERSERKER_RUSH) && target.isHostile) {
             attacker.addBuff(new ActiveBuff(AphBuffs.ADRENALINE, attacker, 3000, null), true);
         }
         super.hitMob(item, event, level, target, attacker);

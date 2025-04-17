@@ -62,7 +62,7 @@ public class SaberGunAttackHandler extends MousePositionAttackHandler {
         showItem.getGndData().setBoolean("charging", true);
         showItem.getGndData().setFloat("chargePercent", chargePercent);
 
-        if(attackerMob.isClient() && attackerMob.isPlayer && AphCustomUIList.gunAttack.form.isHidden()) {
+        if (attackerMob.isClient() && attackerMob.isPlayer && AphCustomUIList.gunAttack.form.isHidden()) {
             AphCustomUIList.gunAttack.form.setHidden(false);
             AphCustomUIList.gunAttack.chargeTime = this.chargeTime;
         }

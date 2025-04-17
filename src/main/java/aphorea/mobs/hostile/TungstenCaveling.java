@@ -104,6 +104,7 @@ public class TungstenCaveling extends HostileMob {
         TextureDrawOptions shadow = MobRegistry.Textures.caveling_shadow.initDraw().sprite(sprite.x, sprite.y, 64).light(light).pos(drawX, drawY);
         tileList.add((tm) -> shadow.draw());
     }
+
     @Override
     public int getRockSpeed() {
         return 10;

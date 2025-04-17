@@ -191,9 +191,4 @@ public class MiniUnstableGelSlime extends FlyingHostileMob {
         if (buff.buff != AphBuffs.STICKY) super.addBuff(buff, sendUpdatePacket);
     }
 
-    @Override
-    public void spawnDamageText(int damage, int size, boolean isCrit) {
-        if(!buffManager.hasBuff("immortal")) super.spawnDamageText(damage, size, isCrit);
-    }
-
 }

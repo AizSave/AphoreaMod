@@ -92,7 +92,10 @@ abstract public class AphSaberGunToolItem extends ProjectileToolItem implements 
         return tooltips;
     }
 
-    public void addLeftClickTooltips(ListGameTooltips tooltips, InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {};
+    public void addLeftClickTooltips(ListGameTooltips tooltips, InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {
+    }
+
+    ;
 
     @Override
     public ListGameTooltips getPostEnchantmentTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {
@@ -104,7 +107,7 @@ abstract public class AphSaberGunToolItem extends ProjectileToolItem implements 
     @Override
     public void addStatTooltips(ItemStatTipList list, InventoryItem currentItem, InventoryItem lastItem, ItemAttackerMob perspective, boolean forceAdd) {
         this.addAttackDamageTip(list, currentItem, lastItem, perspective, forceAdd);
-        if(this.getBaseArmorPenPercent() != 0) {
+        if (this.getBaseArmorPenPercent() != 0) {
             this.addAttackArmorPenTip(list, currentItem, lastItem, perspective);
         }
         this.addAttackSpeedTip(list, currentItem, lastItem, perspective);
@@ -203,7 +206,7 @@ abstract public class AphSaberGunToolItem extends ProjectileToolItem implements 
 
     @Override
     public void showAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, int animAttack, int seed, GNDItemMap mapContent) {
-        if(level.isClient() && level.getClient().getPlayer().getUniqueID() == attackerMob.getUniqueID()) {
+        if (level.isClient() && level.getClient().getPlayer().getUniqueID() == attackerMob.getUniqueID()) {
             super.showAttack(level, x, y, attackerMob, attackHeight, item, animAttack, seed, mapContent);
             AphCustomUIList.gunAttack.chargePercent = item.getGndData().getFloat("chargePercent");
         }

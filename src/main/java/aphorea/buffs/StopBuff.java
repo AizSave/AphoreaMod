@@ -25,6 +25,8 @@ public class StopBuff extends Buff {
     public void onBeforeHit(ActiveBuff buff, MobBeforeHitEvent event) {
         event.prevent();
         event.damage = new GameDamage(0);
+        event.playHitSound = false;
+        event.showDamageTip = false;
     }
 
     public void onWasHit(ActiveBuff buff, MobWasHitEvent event) {

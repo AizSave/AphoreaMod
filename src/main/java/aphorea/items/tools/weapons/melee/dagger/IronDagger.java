@@ -15,9 +15,9 @@ public class IronDagger extends AphDaggerToolItem {
         this.rarity = Rarity.NORMAL;
         this.attackAnimTime.setBaseValue(500);
 
-        this.attackDamage.setBaseValue(24.0F).setUpgradedValue(1.0F, 93.0F);
+        this.attackDamage.setBaseValue(24.0F).setUpgradedValue(1.0F, 90.0F);
 
-        this.attackRange.setBaseValue(36);
+        this.attackRange.setBaseValue(40);
         this.knockback.setBaseValue(25);
     }
 

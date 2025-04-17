@@ -32,9 +32,9 @@ public class BabyUnstableGelSlime extends AttackingFollowingMob {
         super(5);
         this.setSpeed(40);
         this.setFriction(2);
-        collision = new Rectangle(-10, -7, 20, 14);
-        hitBox = new Rectangle(-12, -14, 24, 24);
-        selectBox = new Rectangle(-13, -14, 26, 24);
+        collision = new Rectangle(-5, -4, 10, 8);
+        hitBox = new Rectangle(-7, -6, 14, 12);
+        selectBox = new Rectangle(-7, -4 - 14, 14, 14);
     }
 
     @Override

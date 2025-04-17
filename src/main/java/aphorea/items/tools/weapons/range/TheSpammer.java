@@ -43,12 +43,12 @@ public class TheSpammer extends GunProjectileToolItem {
             Point newTarget = this.controlledRangePosition(spreadRandom, player, x, y, item, this.controlledMinRange, this.controlledInaccuracy);
             x = newTarget.x;
             y = newTarget.y;
-            range = (int)player.getDistance((float)x, (float)y);
+            range = (int) player.getDistance((float) x, (float) y);
         } else {
             range = this.getAttackRange(item);
         }
 
-        Projectile projectile = this.getProjectile(item, bullet, player.x, player.y, (float)x, (float)y, range, player);
+        Projectile projectile = this.getProjectile(item, bullet, player.x, player.y, (float) x, (float) y, range, player);
         projectile.setModifier(new ResilienceOnHitProjectileModifier(this.getResilienceGain(item)));
         projectile.dropItem = consumeAmmo;
         projectile.getUniqueID(random);

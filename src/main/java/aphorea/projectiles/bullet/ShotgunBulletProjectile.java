@@ -25,7 +25,7 @@ import java.util.List;
 public class ShotgunBulletProjectile extends BulletProjectile {
     public float armorPenPercent;
     public int spriteX;
-    public static Color[] trailColors = new Color[] {
+    public static Color[] trailColors = new Color[]{
             AphColors.iron,
             AphColors.withAlpha(AphColors.red, 128)
     };
@@ -96,7 +96,7 @@ public class ShotgunBulletProjectile extends BulletProjectile {
 
     @Override
     public void applyDamage(Mob mob, float x, float y) {
-        mob.isServerHit(this.getDamage().setArmorPen(mob.getArmor() * armorPenPercent), mob.x - x * -this.dx * 50.0F, mob.y - y * -this.dy * 50.0F, (float)this.knockback, this);
+        mob.isServerHit(this.getDamage().setArmorPen(mob.getArmor() * armorPenPercent), mob.x - x * -this.dx * 50.0F, mob.y - y * -this.dy * 50.0F, (float) this.knockback, this);
     }
 
 }

@@ -37,11 +37,11 @@ public class ShotgunSaber extends AphSaberGunToolItem {
         int range = getAttackRange(item);
         int knockback = getKnockback(item, attackerMob);
 
-        if(spreadPercent <= 0.2F) {
+        if (spreadPercent <= 0.2F) {
             damage = baseDamage.setDamage(baseDamage.damage * 1.25F);
             spriteX = 1;
         } else {
-            float statsMod =  (1 - spreadPercent + 0.1F) * 0.4F + 0.6F;
+            float statsMod = (1 - spreadPercent + 0.1F) * 0.4F + 0.6F;
 
             damage = baseDamage.setDamage(baseDamage.damage * statsMod);
             spriteX = 0;
@@ -73,7 +73,7 @@ public class ShotgunSaber extends AphSaberGunToolItem {
     public void doAttack(Level level, int x, int y, ItemAttackerMob attackerMob, InventoryItem item, int seed) {
         boolean shouldFire;
         if (attackerMob instanceof AmmoUserMob) {
-            AmmoConsumed consumed = ((AmmoUserMob)attackerMob).removeAmmo(ItemRegistry.getItem("simplebullet"), 1, "bulletammo");
+            AmmoConsumed consumed = ((AmmoUserMob) attackerMob).removeAmmo(ItemRegistry.getItem("simplebullet"), 1, "bulletammo");
             shouldFire = consumed.amount >= 1;
         } else {
             shouldFire = true;
@@ -85,6 +85,7 @@ public class ShotgunSaber extends AphSaberGunToolItem {
             for (int i = 0; i < projectilesNumber; i++) {
                 Projectile projectile = this.getProjectile(level, x, y, attackerMob, item);
                 projectile.moveDist(GameRandom.globalRandom.getFloatOffset(10, 20));
+                projectile.height -= 2;
                 GameRandom random = new GameRandom(seed);
                 projectile.resetUniqueID(random);
 

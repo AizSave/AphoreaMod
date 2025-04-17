@@ -22,6 +22,7 @@ abstract public class AphShieldTrinketItem extends ShieldTrinketItem {
         super(rarity, armorValue, minSlowModifier, msToDepleteStamina, staminaUsageOnBlock, damageTakenPercent, angleCoverage, enchantCost);
         this.healingEnchantments = healingEnchantments;
     }
+
     public AphShieldTrinketItem(Rarity rarity, int armorValue, float minSlowModifier, int msToDepleteStamina, float staminaUsageOnBlock, int damageTakenPercent, float angleCoverage, int enchantCost) {
         this(rarity, armorValue, minSlowModifier, msToDepleteStamina, staminaUsageOnBlock, damageTakenPercent, angleCoverage, enchantCost, false);
     }

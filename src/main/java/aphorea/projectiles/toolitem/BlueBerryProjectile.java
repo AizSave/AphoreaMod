@@ -1,15 +1,12 @@
 package aphorea.projectiles.toolitem;
 
-import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
-import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.projectile.Projectile;
-import necesse.entity.projectile.StoneProjectile;
 import necesse.entity.trails.Trail;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawOptions.texture.TextureDrawOptions;

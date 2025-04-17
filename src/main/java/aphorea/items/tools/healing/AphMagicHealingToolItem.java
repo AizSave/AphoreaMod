@@ -93,7 +93,7 @@ abstract public class AphMagicHealingToolItem extends AphToolItem {
         if (!this.magicHealing.hasMoreThanOneValue() && !this.attackDamage.hasMoreThanOneValue()) {
             return Localization.translate("ui", "itemnotupgradable");
         } else {
-            return this.getUpgradeTier(item) >= (float)IncursionData.ITEM_TIER_UPGRADE_CAP ? Localization.translate("ui", "itemupgradelimit") : null;
+            return this.getUpgradeTier(item) >= (float) IncursionData.ITEM_TIER_UPGRADE_CAP ? Localization.translate("ui", "itemupgradelimit") : null;
         }
     }
 }

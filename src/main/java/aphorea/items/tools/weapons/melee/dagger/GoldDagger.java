@@ -13,11 +13,11 @@ public class GoldDagger extends AphDaggerToolItem {
     public GoldDagger() {
         super(350);
         this.rarity = Rarity.NORMAL;
-        this.attackAnimTime.setBaseValue(500);
+        this.attackAnimTime.setBaseValue(450);
 
-        this.attackDamage.setBaseValue(26.0F).setUpgradedValue(1.0F, 94.0F);
+        this.attackDamage.setBaseValue(26.0F).setUpgradedValue(1.0F, 88.0F);
 
-        this.attackRange.setBaseValue(38);
+        this.attackRange.setBaseValue(40);
         this.knockback.setBaseValue(25);
     }
 

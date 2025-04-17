@@ -12,7 +12,10 @@ public class AphObjectItem extends ObjectItem {
     public AphObjectItem(GameObject object, boolean dropAsMatDeathPenalty) {
         super(object, dropAsMatDeathPenalty);
     }
-    public AphObjectItem(GameObject object) {super(object);}
+
+    public AphObjectItem(GameObject object) {
+        super(object);
+    }
 
     @Override
     public ListGameTooltips getTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {

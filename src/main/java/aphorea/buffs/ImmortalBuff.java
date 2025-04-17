@@ -49,6 +49,8 @@ public class ImmortalBuff extends Buff {
     public void onBeforeHit(ActiveBuff buff, MobBeforeHitEvent event) {
         event.prevent();
         event.damage = new GameDamage(0);
+        event.playHitSound = false;
+        event.showDamageTip = false;
     }
 
     @Override

@@ -225,7 +225,7 @@ public class BabylonTowerMob extends BossMob {
 
     @Override
     protected void doBeforeHitLogic(MobBeforeHitEvent event) {
-        if(hearthCrystalClose()) {
+        if (hearthCrystalClose()) {
             event.damage = event.damage.setDamage(event.damage.damage / 2);
         }
         super.doBeforeHitLogic(event);
@@ -258,16 +258,20 @@ public class BabylonTowerMob extends BossMob {
             this.addChild(
                     new AINode<T>() {
 
-                        @Override protected void onRootSet(AINode<T> aiNode, T mob, Blackboard<T> blackboard) {}
+                        @Override
+                        protected void onRootSet(AINode<T> aiNode, T mob, Blackboard<T> blackboard) {
+                        }
 
-                        @Override public void init(T mob, Blackboard<T> blackboard) {}
+                        @Override
+                        public void init(T mob, Blackboard<T> blackboard) {
+                        }
 
                         @Override
                         public AINodeResult tick(T mob, Blackboard<T> blackboard) {
-                            if(mob.hearthCrystalClose() && mob.isServer() && currentStageTick % 20 == 0) {
+                            if (mob.hearthCrystalClose() && mob.isServer() && currentStageTick % 20 == 0) {
                                 mob.setHealth((int) (mob.getHealth() + mob.getMaxHealth() * 0.002F * streamPossibleTargets(mob).count() - 1));
                             }
-                            if(!dragonSummoned && mob.getHealthPercent() <= 0.6F) {
+                            if (!dragonSummoned && mob.getHealthPercent() <= 0.6F) {
                                 dragonSummoned = true;
                             }
                             return AINodeResult.FAILURE;
@@ -278,7 +282,7 @@ public class BabylonTowerMob extends BossMob {
                     new BabylonTowerActionAiNode() {
                         @Override
                         public void doTickAction(T mob, int time, int duration, float progress, Blackboard<T> blackboard) {
-                            if(time % (50 * mob.projectileRate()) == 0) summonRandomCrystal(mob);
+                            if (time % (50 * mob.projectileRate()) == 0) summonRandomCrystal(mob);
                         }
 
                         @Override
@@ -291,7 +295,8 @@ public class BabylonTowerMob extends BossMob {
                     new BabylonTowerActionAiNode() {
                         @Override
                         public void doTickAction(T mob, int time, int duration, float progress, Blackboard<T> blackboard) {
-                            if(time % (100 * mob.projectileRate()) == 0) summonCrystalToAllTargets(mob, GameRandom.globalRandom.getFloatBetween(0F, 2F), 80);
+                            if (time % (100 * mob.projectileRate()) == 0)
+                                summonCrystalToAllTargets(mob, GameRandom.globalRandom.getFloatBetween(0F, 2F), 80);
                         }
 
                         @Override
@@ -304,8 +309,9 @@ public class BabylonTowerMob extends BossMob {
                     new BabylonTowerActionAiNode() {
                         @Override
                         public void doTickAction(T mob, int time, int duration, float progress, Blackboard<T> blackboard) {
-                            if(time % (200 * mob.projectileRate()) == 0) summonCrystalToAllTargets(mob, GameRandom.globalRandom.getFloatBetween(0F, 2F), 80);
-                            if(time % (300 * mob.projectileRate()) == 0) {
+                            if (time % (200 * mob.projectileRate()) == 0)
+                                summonCrystalToAllTargets(mob, GameRandom.globalRandom.getFloatBetween(0F, 2F), 80);
+                            if (time % (300 * mob.projectileRate()) == 0) {
                                 float angle = GameRandom.globalRandom.getFloatBetween(0, (float) (Math.PI * 2));
                                 float prediction = GameRandom.globalRandom.getFloatBetween(0F, 0.5F);
                                 for (int i = 0; i < 12; i++) {
@@ -394,7 +400,7 @@ public class BabylonTowerMob extends BossMob {
 
                         @Override
                         public void doTickAction(T mob, int time, int duration, float progress, Blackboard<T> blackboard) {
-                            if(time % (100 * mob.projectileRate()) == 0) summonRandomCrystal(mob);
+                            if (time % (100 * mob.projectileRate()) == 0) summonRandomCrystal(mob);
                             float startAngle = (float) saveData.get("startAngle");
                             boolean clockWise = (boolean) saveData.get("clockWise");
                             float angleProgress = startAngle + progress * (float) Math.PI * 4 * (clockWise ? 1 : -1);
@@ -427,7 +433,7 @@ public class BabylonTowerMob extends BossMob {
             stagesUntilNow++;
 
             int selected;
-            if(stagesUntilNow == 5 || stagesUntilNow % 10 == 0) {
+            if (stagesUntilNow == 5 || stagesUntilNow % 10 == 0) {
                 selected = hearthPilarStage;
             } else if (stagesUntilNow % 5 == 0) {
                 selected = selectStage(projectileBulkStages);
@@ -471,13 +477,13 @@ public class BabylonTowerMob extends BossMob {
             public AINodeResult tick(T mob, Blackboard<T> blackboard) {
                 if (currentStage != stageNumber) {
                     return AINodeResult.FAILURE;
-                } else if(currentStageTickDuration <= currentStageTick) {
+                } else if (currentStageTickDuration <= currentStageTick) {
                     selectNextStage(mob);
                     return AINodeResult.SUCCESS;
                 } else {
                     currentStageTick++;
                     doTickAction(mob, currentStageTick * 50, currentStageTickDuration * 50, (float) currentStageTick / currentStageTickDuration, blackboard);
-                    if(currentStageTickDuration <= currentStageTick) {
+                    if (currentStageTickDuration <= currentStageTick) {
                         selectNextStage(mob);
                     }
                     return AINodeResult.SUCCESS;
@@ -488,7 +494,8 @@ public class BabylonTowerMob extends BossMob {
 
             abstract public int getStageDuration(T mob);
 
-            public void startStage(T mob) {}
+            public void startStage(T mob) {
+            }
         }
 
         public Mob getRandomTarget(T mob) {
@@ -539,7 +546,7 @@ public class BabylonTowerMob extends BossMob {
         }
 
         public void summonHearthCrystalCenter(T mob, int health, float angleOffset, float radius, float constantTime, boolean clockWise) {
-            if(mob.isServer()) {
+            if (mob.isServer()) {
                 HearthCrystalMob hearthCrystalMob = (HearthCrystalMob) MobRegistry.getMob("hearthcrystal", mob.getLevel());
                 hearthCrystalMob.setMaxHealth(health);
                 hearthCrystalMob.setHealth(health);
@@ -549,7 +556,7 @@ public class BabylonTowerMob extends BossMob {
         }
 
         public void summonHearthCrystalMoved(T mob, float distanceFromCenter, float distanceAngle, int health, float angleOffset, float radius, float constantTime, boolean clockWise) {
-            if(mob.isServer()) {
+            if (mob.isServer()) {
                 HearthCrystalMob hearthCrystalMob = (HearthCrystalMob) MobRegistry.getMob("hearthcrystal", mob.getLevel());
                 hearthCrystalMob.setMaxHealth(health);
                 hearthCrystalMob.setHealth(health);

@@ -43,7 +43,7 @@ public class InfectedGrassTile extends TerrainSplatterTile {
     public static void addSimulateGrow(Level level, int tileX, int tileY, double growChance, long ticks, String growObjectID, GrassTile.CanPlacePredicate canPlace, SimulatePriorityList list, boolean sendChanges) {
         if (level.getObjectID(tileX, tileY) == 0) {
             double runs = Math.max(1.0, GameMath.getRunsForSuccess(growChance, GameRandom.globalRandom.nextDouble()));
-            long remainingTicks = (long)((double)ticks - runs);
+            long remainingTicks = (long) ((double) ticks - runs);
             if (remainingTicks > 0L) {
                 GameObject obj = ObjectRegistry.getObject(ObjectRegistry.getObjectID(growObjectID));
                 if (canPlace.check(obj, level, tileX, tileY, 0)) {
@@ -83,7 +83,7 @@ public class InfectedGrassTile extends TerrainSplatterTile {
 
     public Point getTerrainSprite(GameTextureSection terrainTexture, Level level, int tileX, int tileY) {
         int tile;
-        synchronized(this.drawRandom) {
+        synchronized (this.drawRandom) {
             tile = this.drawRandom.seeded(getTileSeed(tileX, tileY)).nextInt(terrainTexture.getHeight() / 32);
         }
 

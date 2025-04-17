@@ -40,9 +40,9 @@ import java.util.function.Supplier;
 public class InfectedTreant extends HostileMob {
     public static GameTexture texture;
     public static GameTexture texture_shadow;
-    public static GameDamage collisionDamage = new GameDamage(50F, 30F);
+    public static GameDamage collisionDamage = new GameDamage(60F, 40F);
     public int doAlpha = 0;
-    public float jump = 0;
+    public int jump = 0;
 
     public static int weaveTime = 250;
     public static float weaveAmount = 0.02F;
@@ -54,7 +54,7 @@ public class InfectedTreant extends HostileMob {
     protected final GameRandom drawRandom;
 
     static public float jumpHeight = 20;
-    static public float jumpDurationMod = 2;
+    static public int jumpDuration = 8;
 
     public boolean mirrored;
     public int spriteY;
@@ -78,11 +78,6 @@ public class InfectedTreant extends HostileMob {
     }
 
     @Override
-    public GameDamage getCollisionDamage(Mob target) {
-        return collisionDamage;
-    }
-
-    @Override
     public void init() {
         super.init();
         this.ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 6 * 32, collisionDamage, 0, 40000 * 20));
@@ -100,13 +95,45 @@ public class InfectedTreant extends HostileMob {
                     Point2D.Double windDir = getLevel().weatherLayer.getWindDirNormalized();
                     float buffer = 0.016666668F * windAmount * windSpeed;
 
-                    while(buffer >= 1.0F || GameRandom.globalRandom.getChance(buffer)) {
+                    while (buffer >= 1.0F || GameRandom.globalRandom.getChance(buffer)) {
                         --buffer;
                         this.spawnLeafParticles(getLevel(), (int) (x / 32), (int) (y / 32), leavesMinHeight, 1, windDir, windAmount * windSpeed);
                     }
                 }
             }
+        }
+        if (dx == 0 && dy == 0) {
+            jump = 0;
+        } else {
+            jump++;
 
+            if (jump > jumpDuration) {
+                jump = 0;
+            }
+        }
+        if (jump == 0) {
+            this.setFriction(20);
+        } else {
+            this.setFriction(0);
+        }
+    }
+
+    @Override
+    public void serverTick() {
+        super.serverTick();
+        if (dx == 0 && dy == 0) {
+            jump = 0;
+        } else {
+            jump++;
+
+            if (jump > jumpDuration) {
+                jump = 0;
+            }
+        }
+        if (jump == 0) {
+            this.setFriction(20);
+        } else {
+            this.setFriction(0);
         }
     }
 
@@ -126,7 +153,7 @@ public class InfectedTreant extends HostileMob {
     @Override
     protected void addHoverTooltips(ListGameTooltips tooltips, boolean debug) {
         if (this.getHealthPercent() != 1 && this.canTakeDamage() && this.getMaxHealth() > 1) {
-            tooltips.add(this.getDisplayName() + " " + this.getHealth() + "/" + this.getMaxHealth());
+            super.addHoverTooltips(tooltips, debug);
         }
     }
 
@@ -136,20 +163,8 @@ public class InfectedTreant extends HostileMob {
         GameLight light = level.getLightLevel(x / 32, y / 32);
         int drawX = camera.getDrawX(x) - 64;
         int drawY = camera.getDrawY(y) - 110;
-        int addedY;
-        if (dx == 0 && dy == 0) {
-            jump = 0;
-        } else {
-            jump += 0.1F;
 
-            if (jump > jumpDurationMod) {
-                jump = 0;
-            }
-
-            addedY = (int) (Math.sin(jump / jumpDurationMod * Math.PI) * jumpHeight);
-            drawY -= addedY;
-        }
-
+        drawY -= (int) (Math.sin((float) jump / jumpDuration * Math.PI) * jumpHeight);
         drawY += getBobbing(x, y);
         drawY += getLevel().getTile(getTileX(), getTileY()).getMobSinkingAmount(this);
 
@@ -183,7 +198,7 @@ public class InfectedTreant extends HostileMob {
     }
 
     protected void addShadowDrawables(OrderableDrawables list, int x, int y, GameLight light, GameCamera camera, float alpha) {
-        if (!(Boolean)this.buffManager.getModifier(BuffModifiers.INVISIBILITY) && !this.isRiding()) {
+        if (!(Boolean) this.buffManager.getModifier(BuffModifiers.INVISIBILITY) && !this.isRiding()) {
             TextureDrawOptions shadowOptions = this.getShadowDrawOptions(x, y, light, camera, alpha);
             if (shadowOptions != null) {
                 list.add((tm) -> shadowOptions.draw());
@@ -197,7 +212,8 @@ public class InfectedTreant extends HostileMob {
         int drawX = camera.getDrawX(x) - shadowTexture.getWidth() / 2;
         int drawY = camera.getDrawY(y) - shadowTexture.getHeight() / 8 + 4;
         drawY += this.getBobbing(x, y);
-        return shadowTexture.initDraw().sprite(0, spriteY, shadowTexture.getWidth(), shadowTexture.getHeight() / 4).alpha(alpha).light(light)                .mirror(mirrored, false).pos(drawX, drawY);
+        return shadowTexture.initDraw().sprite(0, spriteY, shadowTexture.getWidth(), shadowTexture.getHeight() / 4).alpha(alpha).light(light)
+                .mirror(mirrored, false).pos(drawX, drawY);
     }
 
     @Override
@@ -207,13 +223,6 @@ public class InfectedTreant extends HostileMob {
         int leaves = GameRandom.globalRandom.getIntBetween(0, 2);
         this.spawnLeafParticles(getLevel(), (int) x, (int) y, leavesMinHeight, leaves, new Point2D.Double(), 0.0F);
         return super.isHit(event, attacker);
-    }
-
-    @Override
-    protected void doBeforeHitCalculatedLogic(MobBeforeHitCalculatedEvent event) {
-        super.doBeforeHitCalculatedLogic(event);
-
-
     }
 
     @Override
@@ -229,6 +238,8 @@ public class InfectedTreant extends HostileMob {
         if (prevent) {
             event.damage = event.damage.modDamage(0);
             event.prevent();
+            event.playHitSound = false;
+            event.showDamageTip = false;
         }
 
         super.doBeforeHitLogic(event);

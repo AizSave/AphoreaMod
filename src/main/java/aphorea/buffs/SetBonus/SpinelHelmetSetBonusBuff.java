@@ -30,7 +30,7 @@ public class SpinelHelmetSetBonusBuff extends SetBonusBuff {
         super.onBeforeAttacked(buff, event);
         if (!event.isPrevented() && event.damage.damage > 0 && buff.owner.isServer() && event.target != null && event.target.isHostile) {
             float healing = event.damage.damage * 0.01F * AphMagicHealing.getMagicHealingMod(buff.owner, buff.owner, null, null) + savedAmount;
-            if(healing < 1) {
+            if (healing < 1) {
                 savedAmount = healing;
             } else {
                 savedAmount = 0;

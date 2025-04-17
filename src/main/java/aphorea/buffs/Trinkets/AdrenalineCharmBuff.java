@@ -1,13 +1,11 @@
 package aphorea.buffs.Trinkets;
 
-import aphorea.buffs.AphShownBuff;
 import aphorea.registry.AphBuffs;
 import necesse.engine.localization.Localization;
 import necesse.entity.mobs.MobWasHitEvent;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
-import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.buffs.staticBuffs.armorBuffs.trinketBuffs.TrinketBuff;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;

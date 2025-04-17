@@ -239,8 +239,8 @@ abstract public class DaggerProjectile extends Projectile {
 
         @Override
         public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
-            if(mob != null) {
-                if(this.isServer()) {
+            if (mob != null) {
+                if (this.isServer()) {
                     Level level = getLevel();
                     float angle = (float) Math.toRadians(this.getAngle() - 90);
                     float newTargetX = (float) (x + 100 * Math.cos(angle));
@@ -249,7 +249,7 @@ abstract public class DaggerProjectile extends Projectile {
                     projectile.resetUniqueID(GameRandom.globalRandom);
                     level.entityManager.projectiles.addHidden(projectile);
                     level.getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
-                    if(shouldDrop && stringItemID != null && gndData != null) {
+                    if (shouldDrop && stringItemID != null && gndData != null) {
                         if (this.amountHit() < this.piercing) {
                             return;
                         } else {

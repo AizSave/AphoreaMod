@@ -79,7 +79,7 @@ public class HearthCrystalMob extends HostileMob {
     @Override
     public void clientTick() {
         super.clientTick();
-        if(notBabylonTowerClose()) {
+        if (notBabylonTowerClose()) {
             this.remove();
         } else {
             long time = this.getTime();
@@ -91,7 +91,7 @@ public class HearthCrystalMob extends HostileMob {
     @Override
     public void serverTick() {
         super.serverTick();
-        if(notBabylonTowerClose()) {
+        if (notBabylonTowerClose()) {
             this.remove();
         } else {
             long time = this.getTime();

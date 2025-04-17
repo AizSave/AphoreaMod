@@ -41,7 +41,7 @@ public class GlacialSaber extends AphSaberToolItem {
 
     @Override
     public Projectile getProjectile(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent) {
-        if(powerPercent > 0.75F) {
+        if (powerPercent > 0.75F) {
             powerPercent = (powerPercent - 0.375F) * 1.6F;
             return new GlacialShardBigProjectile(level, attackerMob, x, y, targetX, targetY,
                     200,
@@ -161,7 +161,7 @@ public class GlacialSaber extends AphSaberToolItem {
             showItem.getGndData().setFloat("chargePercent", calcSownChargePercent(chargePercent));
             showItem.getGndData().setFloat("realChargePercent", chargePercent);
 
-            if(attackerMob.isClient() && attackerMob.isPlayer && AphCustomUIList.glacialSaberAttack.form.isHidden()) {
+            if (attackerMob.isClient() && attackerMob.isPlayer && AphCustomUIList.glacialSaberAttack.form.isHidden()) {
                 AphCustomUIList.glacialSaberAttack.form.setHidden(false);
                 AphCustomUIList.glacialSaberAttack.chargeTime = this.chargeTime;
             }

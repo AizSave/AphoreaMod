@@ -14,6 +14,7 @@ import necesse.inventory.lootTable.presets.DeepCaveChestLootTable;
 import necesse.inventory.lootTable.presets.DeepCaveRuinsLootTable;
 
 public class AphLootTables {
+    public static LootTable runeInventorHouse = new LootTable();
     public static LootTable infectedFieldsSurface = new LootTable();
     public static LootTable infectedLootLake = new LootTable();
     public static LootTable infectedCaveForest = new LootTable();
@@ -27,6 +28,14 @@ public class AphLootTables {
     );
 
     static {
+        runeInventorHouse.items.addAll(
+                new LootItemList(
+                        new LootItem("runestutorialbook", 1),
+                        new LootItem("rusticrunesinjector", 1),
+                        new LootItem("ironbar", 2)
+                )
+        );
+
         infectedFieldsSurface.items.addAll(
                 new LootItemList(
                         basicChestAllMainItems,
@@ -69,8 +78,7 @@ public class AphLootTables {
         LootTablePresets.startChest.items.addAll(
                 new LootItemList(
                         new LootItem("sling", 1),
-                        new LootItem("basicbackpack", 1),
-                        new LootItem("rusticrunesinjector", 1)
+                        new LootItem("basicbackpack", 1)
                 )
         );
 

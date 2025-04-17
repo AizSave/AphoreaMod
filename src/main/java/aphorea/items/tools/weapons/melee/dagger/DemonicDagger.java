@@ -15,7 +15,7 @@ public class DemonicDagger extends AphDaggerToolItem {
         this.rarity = Rarity.COMMON;
         this.attackAnimTime.setBaseValue(400);
 
-        this.attackDamage.setBaseValue(27.0F).setUpgradedValue(1.0F, 95.0F);
+        this.attackDamage.setBaseValue(27.0F).setUpgradedValue(1.0F, 86.0F);
 
         this.attackRange.setBaseValue(40);
         this.knockback.setBaseValue(25);

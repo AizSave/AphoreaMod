@@ -13,7 +13,7 @@ public class SetupForm {
         for (AphCustomUI manager : AphCustomUIList.list.values()) {
             manager.mainGameFormManager = mainGameFormManager;
             manager.startForm();
-            if(manager.form != null) {
+            if (manager.form != null) {
                 manager.setupForm();
             }
         }

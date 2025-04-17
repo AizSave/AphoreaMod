@@ -82,11 +82,11 @@ public class BabylonTowerFallingCrystalParticle extends Particle {
             float rotation = 0.0F;
             float sizeMod = 1.0F;
             if (frame == 0) {
-                rotation = (float)((double)eventTime / 4.0);
-                sizeMod += (float)(Math.sin((double)eventTime / 80.0) / 10.0);
+                rotation = (float) ((double) eventTime / 4.0);
+                sizeMod += (float) (Math.sin((double) eventTime / 80.0) / 10.0);
             }
 
-            TextureDrawOptions shadowOptions = shadowTexture.initDraw().sprite(frame, 0, 128, 192).mirror(this.mirror, false).rotate(rotation, (int)(64.0F * sizeMod), (int)(96.0F * sizeMod)).size((int)(128.0F * sizeMod), (int)(192.0F * sizeMod)).light(light).posMiddle(drawX, drawY);
+            TextureDrawOptions shadowOptions = shadowTexture.initDraw().sprite(frame, 0, 128, 192).mirror(this.mirror, false).rotate(rotation, (int) (64.0F * sizeMod), (int) (96.0F * sizeMod)).size((int) (128.0F * sizeMod), (int) (192.0F * sizeMod)).light(light).posMiddle(drawX, drawY);
             tileList.add((tm) -> {
                 shadowOptions.draw();
             });

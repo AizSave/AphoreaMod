@@ -4,7 +4,6 @@ import aphorea.journal.AphJournalChallenges;
 import aphorea.registry.*;
 import aphorea.utils.AphColors;
 import necesse.engine.modLoader.annotations.ModEntry;
-import necesse.engine.registries.ItemRegistry;
 import necesse.engine.registries.VersionMigration;
 import necesse.engine.util.GameUtils;
 import necesse.gfx.GameColor;
@@ -30,14 +29,20 @@ public class AphoreaMod {
         });
 
 
-        // Enchantments
-        AphEnchantments.registerCore();
+        // Data
+        AphData.registerCore();
 
-        // Journal Challenges
-        AphJournalChallenges.registerCore();
+        // LevelEvents
+        AphLevelEvents.registerCore();
 
-        // Damage Types
-        AphDamageType.registerCore();
+        // Packets
+        AphPackets.registerCore();
+
+        // Listeners
+        AphListeners.addListeners();
+
+        // Controls
+        AphControls.registerCore();
 
         // Containers
         AphContainers.registerCore();
@@ -45,8 +50,17 @@ public class AphoreaMod {
         // Item Category
         AphItemCategories.registerCore();
 
-        // Data
-        AphData.registerCore();
+        // Enchantments
+        AphEnchantments.registerCore();
+
+        // Damage Types
+        AphDamageType.registerCore();
+
+        // Items
+        AphItems.registerCore();
+
+        // Global Ingredients
+        AphGlobalIngredients.registerCore();
 
         // Tiles
         AphTiles.registerCore();
@@ -57,12 +71,6 @@ public class AphoreaMod {
         // Recipe Tech
         AphTech.registerCore();
 
-        // Items
-        AphItems.registerCore();
-
-        // Global Ingredients
-        AphGlobalIngredients.registerCore();
-
         // Mobs
         AphMobs.registerCore();
 
@@ -72,20 +80,14 @@ public class AphoreaMod {
         // Buffs
         AphBuffs.registerCore();
 
-        // LevelEvents
-        AphLevelEvents.registerCore();
-
-        // Packets
-        AphPackets.registerCore();
-
-        // Controls
-        AphControls.registerCore();
-
         // Biomes
         AphBiomes.registerCore();
 
         // Levels
         AphLevels.registerCore();
+
+        // Journal Challenges
+        AphJournalChallenges.registerCore();
 
         // Journal
         AphJournal.registerCore();
@@ -101,10 +103,10 @@ public class AphoreaMod {
         // Recipes
         AphRecipes.initRecipes();
 
-        // Spawn tables
+        // Spawn mob tables
         AphSpawnTables.modifySpawnTables();
 
-        // LootTables
+        // Loot tables
         AphLootTables.modifyLootTables();
 
         try {

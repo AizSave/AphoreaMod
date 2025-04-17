@@ -40,7 +40,7 @@ abstract public class AphHealingProjectileToolItem extends AphMagicHealingToolIt
 
     public int getProjectileVelocity(InventoryItem item, Mob mob) {
         int velocity = this.getFlatVelocity(item);
-        return Math.round(this.getEnchantment(item).applyModifierLimited(ToolItemModifiers.VELOCITY, ToolItemModifiers.VELOCITY.defaultBuffManagerValue) * (float)velocity * mob.buffManager.getModifier(BuffModifiers.PROJECTILE_VELOCITY));
+        return Math.round(this.getEnchantment(item).applyModifierLimited(ToolItemModifiers.VELOCITY, ToolItemModifiers.VELOCITY.defaultBuffManagerValue) * (float) velocity * mob.buffManager.getModifier(BuffModifiers.PROJECTILE_VELOCITY));
     }
 
     @Override
@@ -95,25 +95,25 @@ abstract public class AphHealingProjectileToolItem extends AphMagicHealingToolIt
     }
 
     public static Point controlledRangePosition(GameRandom random, int startX, int startY, int targetX, int targetY, int attackRange, int controlledMinRange, int controlledInaccuracy) {
-        float fX = (float)targetX;
-        float fY = (float)targetY;
-        float range = (float)(new Point(startX, startY)).distance((double)fX, (double)fY);
-        Point2D.Float norm = GameMath.normalize(fX - (float)startX, fY - (float)startY);
-        if (range > (float)attackRange) {
-            fX = (float)((int)((float)startX + norm.x * (float)attackRange));
-            fY = (float)((int)((float)startY + norm.y * (float)attackRange));
-        } else if (range < (float)controlledMinRange) {
-            fX = (float)((int)((float)startX + norm.x * (float)controlledMinRange));
-            fY = (float)((int)((float)startY + norm.y * (float)controlledMinRange));
+        float fX = (float) targetX;
+        float fY = (float) targetY;
+        float range = (float) (new Point(startX, startY)).distance((double) fX, (double) fY);
+        Point2D.Float norm = GameMath.normalize(fX - (float) startX, fY - (float) startY);
+        if (range > (float) attackRange) {
+            fX = (float) ((int) ((float) startX + norm.x * (float) attackRange));
+            fY = (float) ((int) ((float) startY + norm.y * (float) attackRange));
+        } else if (range < (float) controlledMinRange) {
+            fX = (float) ((int) ((float) startX + norm.x * (float) controlledMinRange));
+            fY = (float) ((int) ((float) startY + norm.y * (float) controlledMinRange));
         }
 
-        float prcRange = (float)(new Point(startX, startY)).distance((double)fX, (double)fY) / (float)attackRange;
+        float prcRange = (float) (new Point(startX, startY)).distance((double) fX, (double) fY) / (float) attackRange;
         if (controlledInaccuracy > 0) {
-            fX += (random.nextFloat() * 2.0F - 1.0F) * (float)controlledInaccuracy * prcRange;
-            fY += (random.nextFloat() * 2.0F - 1.0F) * (float)controlledInaccuracy * prcRange;
+            fX += (random.nextFloat() * 2.0F - 1.0F) * (float) controlledInaccuracy * prcRange;
+            fY += (random.nextFloat() * 2.0F - 1.0F) * (float) controlledInaccuracy * prcRange;
         }
 
-        return new Point((int)fX, (int)fY);
+        return new Point((int) fX, (int) fY);
     }
 
     @Override

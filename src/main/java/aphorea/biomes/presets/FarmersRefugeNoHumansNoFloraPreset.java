@@ -8,6 +8,7 @@ import necesse.inventory.lootTable.LootTable;
 import necesse.inventory.lootTable.LootTablePresets;
 import necesse.inventory.lootTable.lootItem.LootItem;
 import necesse.inventory.lootTable.presets.PaintingSelectionTable;
+import necesse.level.maps.biomes.forest.ForestSurfaceLevel;
 import necesse.level.maps.presets.Preset;
 import necesse.level.maps.presets.PresetUtils;
 import necesse.level.maps.presets.set.FurnitureSet;
@@ -30,7 +31,7 @@ public class FarmersRefugeNoHumansNoFloraPreset extends Preset {
             try {
                 ObjectEntity objEnt = level.entityManager.getObjectEntity(levelX, levelY);
                 if (objEnt instanceof SignObjectEntity) {
-                    ((SignObjectEntity) objEnt).setText(HumanMob.getRandomName(random, random.getOneOf(HumanMob.maleNames, HumanMob.femaleNames, HumanMob.femaleNames, HumanMob.elderNames)) + "'s & " + HumanMob.getRandomName(random, random.getOneOf(HumanMob.maleNames, HumanMob.femaleNames, HumanMob.femaleNames, HumanMob.elderNames)) + "'s Cottage");
+                    ((SignObjectEntity) objEnt).setText(HumanMob.getRandomName(random, random.getOneOf(HumanMob.maleNames, HumanMob.femaleNames, HumanMob.neutralNames, HumanMob.elderNames)) + "'s & " + HumanMob.getRandomName(random, random.getOneOf(HumanMob.maleNames, HumanMob.femaleNames, HumanMob.femaleNames, HumanMob.elderNames)) + "'s Cottage");
                 } else if (level.isServer()) {
                     throw new NullPointerException("Could not find a sign objectEntity for preset at " + levelX + ", " + levelY);
                 }

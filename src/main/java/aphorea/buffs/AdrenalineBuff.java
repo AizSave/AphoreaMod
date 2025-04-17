@@ -19,7 +19,7 @@ public class AdrenalineBuff extends AphShownBuff {
     }
 
     public static int getAdrenalineLevel(Mob mob) {
-        if(!mob.buffManager.hasBuff(AphBuffs.ADRENALINE)) {
+        if (!mob.buffManager.hasBuff(AphBuffs.ADRENALINE)) {
             return 0;
         }
         return mob.buffManager.getBuff(AphBuffs.ADRENALINE).getStacks();

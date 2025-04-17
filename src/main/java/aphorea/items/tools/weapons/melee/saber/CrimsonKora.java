@@ -33,7 +33,7 @@ public class CrimsonKora extends AphSaberToolItem {
     public CrimsonKora() {
         super(1900);
         rarity = Rarity.EPIC;
-        attackDamage.setBaseValue(70).setUpgradedValue(1, 70);
+        attackDamage.setBaseValue(90).setUpgradedValue(1, 90);
         knockback.setBaseValue(200);
 
         this.attackRange.setBaseValue(80);
@@ -49,7 +49,7 @@ public class CrimsonKora extends AphSaberToolItem {
         return new AircutProjectile.CrimsonAircutProjectile(level, attackerMob, x, y, targetX, targetY,
                 300 * powerPercent,
                 (int) (400 * powerPercent),
-                this.getAttackDamage(item).modDamage(item.getGndData().getFloat("modifyDamage", 1F)).modDamage(powerPercent),
+                this.getAttackDamage(item).modDamage(item.getGndData().getFloat("modifyDamage", 1F)).modDamage(powerPercent * 0.75F),
                 (int) (getKnockback(item, attackerMob) * powerPercent)
         );
     }
@@ -154,7 +154,7 @@ public class CrimsonKora extends AphSaberToolItem {
                             ).movesFriction(
                                     GameRandom.globalRandom.floatGaussian() * 4 + attackerMob.dx * 0.1F,
                                     GameRandom.globalRandom.floatGaussian() * 4 + attackerMob.dy * 0.1F,
-                             0.5F
+                                    0.5F
                             )
                             .heightMoves(12 + GameRandom.globalRandom.floatGaussian() * 4, 2 + GameRandom.globalRandom.floatGaussian() * 2)
                             .color(AphColors.crimson_kora);

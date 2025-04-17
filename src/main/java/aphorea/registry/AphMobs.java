@@ -10,10 +10,7 @@ import aphorea.mobs.pet.PetPhosphorSlime;
 import aphorea.mobs.runicsummons.RunicBat;
 import aphorea.mobs.runicsummons.RunicUnstableGelSlime;
 import aphorea.mobs.runicsummons.RunicVultureHatchling;
-import aphorea.mobs.summon.BabyUnstableGelSlime;
-import aphorea.mobs.summon.Onyx;
-import aphorea.mobs.summon.UndeadSkeleton;
-import aphorea.mobs.summon.VolatileGelSlime;
+import aphorea.mobs.summon.*;
 import necesse.engine.registries.MobRegistry;
 
 public class AphMobs {
@@ -44,6 +41,7 @@ public class AphMobs {
         MobRegistry.registerMob("volatilegelslime", VolatileGelSlime.class, false);
         MobRegistry.registerMob("undeadskeleton", UndeadSkeleton.class, false);
         MobRegistry.registerMob("onyx", Onyx.class, false);
+        MobRegistry.registerMob("livingsapling", LivingSapling.class, false);
 
         // Runic Summons [Mobs]
         MobRegistry.registerMob("runicunstablegelslime", RunicUnstableGelSlime.class, false);

@@ -61,7 +61,6 @@ public class AphMagicHealing {
     }
 
 
-
     public static int getMagicHealing(@Nullable Mob healer, @Nullable Mob target, int healing) {
         return getMagicHealing(healer, target, healing, null, null);
     }
@@ -72,15 +71,15 @@ public class AphMagicHealing {
 
     public static float getMagicHealingMod(@Nullable Mob healer, @Nullable Mob target, @Nullable ToolItem toolItem, @Nullable InventoryItem item) {
         float mod = 1F;
-        if(healer != null) {
+        if (healer != null) {
             mod += healer.buffManager.getModifier(AphModifiers.MAGIC_HEALING);
         }
-        if(target != null) {
+        if (target != null) {
             mod += target.buffManager.getModifier(AphModifiers.MAGIC_HEALING_RECEIVED);
         }
-        if(toolItem != null && item != null) {
+        if (toolItem != null && item != null) {
             mod += toolItem.getEnchantment(item).getModifier(AphModifiers.TOOL_MAGIC_HEALING);
-            if(healer == target) {
+            if (healer == target) {
                 mod += toolItem.getEnchantment(item).getModifier(AphModifiers.TOOL_MAGIC_HEALING_RECEIVED);
             }
         }
@@ -95,10 +94,10 @@ public class AphMagicHealing {
 
     public static int getFlatMagicHealingMod(@Nullable Mob healer, @Nullable Mob target) {
         int mod = 0;
-        if(healer != null) {
+        if (healer != null) {
             mod += healer.buffManager.getModifier(AphModifiers.MAGIC_HEALING_FLAT);
         }
-        if(target != null) {
+        if (target != null) {
             mod += target.buffManager.getModifier(AphModifiers.MAGIC_HEALING_RECEIVED_FLAT);
         }
 
@@ -107,10 +106,10 @@ public class AphMagicHealing {
 
     public static float getHealingGrace(@Nullable Mob healer, @Nullable ToolItem toolItem, @Nullable InventoryItem item) {
         float grace = 0;
-        if(healer != null) {
+        if (healer != null) {
             grace += healer.buffManager.getModifier(AphModifiers.MAGIC_HEALING_GRACE);
         }
-        if(toolItem != null && item != null) {
+        if (toolItem != null && item != null) {
             grace += toolItem.getEnchantment(item).getModifier(AphModifiers.TOOL_MAGIC_HEALING_GRACE);
         }
         return grace;

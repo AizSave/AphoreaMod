@@ -5,7 +5,6 @@ import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.window.WindowManager;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.forms.Form;
-import necesse.gfx.gameTexture.GameTexture;
 
 import java.awt.*;
 

@@ -1,6 +1,5 @@
 package aphorea.items.tools.weapons.melee.saber;
 
-import aphorea.projectiles.toolitem.AircutProjectile;
 import aphorea.projectiles.toolitem.BlueBerryProjectile;
 import aphorea.projectiles.toolitem.HoneyProjectile;
 import aphorea.registry.AphBuffs;
@@ -72,7 +71,7 @@ public class HoneySaber extends AphSaberToolItem {
 
 
     public Projectile getProjectile(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent, boolean isHoney) {
-        if(isHoney) {
+        if (isHoney) {
             return new HoneyProjectile(level, attackerMob, x, y, targetX, targetY,
                     150 * powerPercent,
                     (int) (300 * powerPercent),

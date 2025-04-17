@@ -107,7 +107,7 @@ public class GoldenWandProjectile extends FollowingProjectile {
     @Override
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
         super.doHitLogic(mob, object, x, y);
-        if (this.traveledDistance >= (float)this.distance || (this.amountHit() >= this.piercing && (this.bounced >= this.getTotalBouncing() || !this.canBounce))) {
+        if (this.traveledDistance >= (float) this.distance || (this.amountHit() >= this.piercing && (this.bounced >= this.getTotalBouncing() || !this.canBounce))) {
             areaList.execute(getOwner(), x, y, 1F, item, toolItem);
         }
     }

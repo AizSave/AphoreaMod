@@ -2,7 +2,9 @@
 
 [global]
 aphorea=§!Aphorea Mod
+aphorearework=§!Aphorea Mod Rework
 aphoreamightybanner=§!Aphorea Mod x Mighty Banner Mod
+aphoreasummonerexpansion=§!Aphorea Mod x Summoner Expansion
 
 
 [buffmodifiers]
@@ -347,6 +349,7 @@ magichealinggrace=§aMagic Healing Grace:§0 Heals yourself with a % of the Magi
 cursedbuff=§bCursed:§0 §6+25%§0 Incoming Damage
 inspiration=§9Inspiration§0 stats improves the effects of banners
 adrenaline=§6Adrenaline:§0 +5% Damage, -5% Armor. Can stack up to 5 times
+livingsapling=§7Living Sapling:§0 Magic Heal owner with §73§0 every 10 attacks
 
 // Misc
 gelslimenullifier=They will stop bothering you with a simple click!
@@ -379,8 +382,9 @@ projectilearea=When the projectile ends, it deals area damage
 saber=Charge to max for full damage and to unleash an aircut
 saberdash=Hold [input=mouse2] to charge up a dash to slice through enemies
 battleaxe=Takes a long time to charge
-battleaxe2=Press [input=mouse2] to activate the Berserker Rush
+battleaxe2=Press [input=mouse2] to activate the Berserker Rush and gain 3 Adrenaline temporarily
 # NEW
+battleaxe3=Gain Adrenaline temporarily by hitting enemies during Rush, improving movement and attack speed
 dagger=Hold [input=mouse2] to throw the dagger
 
 // Range Weapons
@@ -458,7 +462,7 @@ swampshield2=On perfect block: Magic Heal yourself with the §7<healing>§0 of y
 iceboots=Makes you slide as if you were on ice, but grants +50% movement speed and +4 armor
 # NEW
 inspirationfoci1=§7+40%§0 inspiration effect and §7+20%§0 inspiration ability speed
-inspirationfoci2=§6-20%§0 all non-banner damage and §6-1§0 max summons
+inspirationfoci2=§6-20%§0 all non-inspiration damage and §6-1§0 max summons
 essenceofhealing=§7+<percent>&§0 Magic Healing per life essence
 essenceofhealing2=§7<flat>&§0 Magic Healing per 2 life essences
 essenceofhealing3=§6-80%§0 life essence duration, capped to -50%
@@ -479,6 +483,8 @@ bannerofdamageeffect=§7+<effect>%§0 damage
 bannerofdefenseeffect=§7-<effect>%§0 incoming damage
 bannerofspeedeffect=§7+<effect>%§0 movement speed
 bannerofsummonspeedeffect=§7+<effect>%§0 summon movement speed
+
+// Mighty Banners
 # NEW
 banneroffishingeffect=§7+<effect>§0 fishing power
 bannerofhealthregeneffect=§7+<effectfloat>§0 combat health regen
@@ -486,6 +492,16 @@ bannerofmanaregeneffect=§7+<effect>%§0 combat mana regen
 bannerofresistanceeffect=§7+<effect>§0 armor
 bannerofsummoningeffect=§7+<effect>§0 max summons
 bannerofattackspeedeffect=§7+<effect>%§0 attack speed
+
+// Summoner Expansion Banners
+# NEW
+bannerofresilienceeffect=§7+<effect>%§0 max resilience\nRegen §7+<effect>§0 resilience per second
+bannerofbouncingeffect=§7+<effect>§0 projectile bounces
+bannerofessenceeffect=§7+<effect>%§0 life essence duration
+bannerofstaminaeffect=§7+<effect>%§0 stamina capacity\n§7+<effect2>%§0 stamina regen\n§7-<effect2>%§0 stamina usage
+bannerofpickingeffect=§7+<effectfloat>§0 pickup range
+bannerofdashingeffect=§7+<effect>§0 dash stacks\n§7-<effect2>%§0 dash cooldown
+bannerofmanaeffect=§7+<effect>%§0 max mana\n§7<effect2>%§0 mana regen
 
 // Runes (General)
 baserune=§iBase Rune
@@ -518,7 +534,7 @@ runeoffury=Increase your damage and attack speed by §7<effectNumber>§0% for 10
 runeofspeed=Dash with §7<effectNumber>§0 strength in the direction you are moving and become invincible for 0.5 seconds
 runeofresistance=Increases your armor by §7<effectNumber>§0% for 10 seconds
 runeofresistance2=While on cooldown, your armor is reduced by half
-runeofvalor=Doubles the effects of banners you carry and doubles their ability speed for §7<effectNumber>§0 seconds
+runeofvalor=+100% inspiration for §7<effectNumber>§0 seconds
 runeofdetonation=Explodes, dealing more damage and knocking back enemies the closer they are
 runeofdetonation2=The maximum damage is §7<effectNumber>§0% of the mobs' max health as damage
 runeofthunder=After two seconds, a lightning strikes your cursor's initial position

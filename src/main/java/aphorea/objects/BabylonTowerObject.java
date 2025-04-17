@@ -127,7 +127,7 @@ public class BabylonTowerObject extends StaticMultiObject {
 
     public int getParts(Level level, int tileX, int tileY) {
         ObjectEntity objectEntity = this.getCurrentObjectEntity(level, tileX - multiX, tileY - multiY);
-        if(objectEntity instanceof BabylonTowerObjectEntity) {
+        if (objectEntity instanceof BabylonTowerObjectEntity) {
             BabylonTowerObjectEntity babylonTowerObjectEntity = (BabylonTowerObjectEntity) objectEntity;
             return babylonTowerObjectEntity.getMob() == null ? 4 : babylonTowerObjectEntity.getMob().getParts();
         }

@@ -65,6 +65,6 @@ public class BattleaxeAttackHandler extends GreatswordAttackHandler {
         float dx = GameMath.sin(angle);
         float dy = GameMath.cos(angle);
         int range = GameRandom.globalRandom.getIntBetween(0, (int) (this.toolItem.getAttackRange(this.item) * 0.5F));
-        this.attackerMob.getLevel().entityManager.addParticle(this.attackerMob.x + (float)offsetX + dx * (float)range + GameRandom.globalRandom.floatGaussian() * 3.0F, this.attackerMob.y + 4.0F + GameRandom.globalRandom.floatGaussian() * 4.0F, Particle.GType.IMPORTANT_COSMETIC).movesConstant(this.attackerMob.dx, this.attackerMob.dy).color(color).height(20.0F - dy * (float)range - (float)offsetY);
+        this.attackerMob.getLevel().entityManager.addParticle(this.attackerMob.x + (float) offsetX + dx * (float) range + GameRandom.globalRandom.floatGaussian() * 3.0F, this.attackerMob.y + 4.0F + GameRandom.globalRandom.floatGaussian() * 4.0F, Particle.GType.IMPORTANT_COSMETIC).movesConstant(this.attackerMob.dx, this.attackerMob.dy).color(color).height(20.0F - dy * (float) range - (float) offsetY);
     }
 }

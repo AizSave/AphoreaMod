@@ -61,7 +61,7 @@ public class LostUmbrellaDagger extends AphDaggerToolItem {
 
     @Override
     public ItemAttackDrawOptions setupItemSpriteAttackDrawOptions(ItemAttackDrawOptions options, InventoryItem item, PlayerMob player, int mobDir, float attackDirX, float attackDirY, float attackProgress, Color itemColor) {
-        if(attackProgress < 0.5F) {
+        if (attackProgress < 0.5F) {
             return super.setupItemSpriteAttackDrawOptions(options, item, player, mobDir, attackDirX, attackDirY, attackProgress, itemColor);
         } else {
             ItemAttackDrawOptions.AttackItemSprite itemSprite = options.itemSprite(new GameSprite(attackOpenTexture));
@@ -78,7 +78,7 @@ public class LostUmbrellaDagger extends AphDaggerToolItem {
     public ArrayList<Shape> getHitboxes(InventoryItem item, AttackAnimMob mob, int aimX, int aimY, ToolItemMobAbilityEvent event, boolean forDebug) {
         float attackProgress = mob.getAttackAnimProgress();
 
-        if(attackProgress < 0.5F) {
+        if (attackProgress < 0.5F) {
             this.width = 8.0F;
         } else {
             this.width = 46.0F;

@@ -113,7 +113,7 @@ public class InfectedFieldsSurfaceLevel extends Level {
             });
 
             float chanceToAddMiniBiome = 0.9F;
-            while(!miniBiomesTicketList.isEmpty() && ig.random.getChance(chanceToAddMiniBiome)) {
+            while (!miniBiomesTicketList.isEmpty() && ig.random.getChance(chanceToAddMiniBiome)) {
                 Runnable miniBiome = miniBiomesTicketList.getAndRemoveRandomObject(ig.random);
                 miniBiome.run();
                 chanceToAddMiniBiome -= 0.15F;

@@ -4,8 +4,7 @@ import aphorea.AphDependencies;
 import aphorea.buffs.*;
 import aphorea.buffs.Banners.AphBannerBuff;
 import aphorea.buffs.Banners.AphBasicBannerBuff;
-import aphorea.buffs.Banners.AphStrikeBannerBuff;
-import aphorea.buffs.Banners.BlankBannerBuff;
+import aphorea.buffs.Banners.AphMightyBasicBannerBuff;
 import aphorea.buffs.Runes.AphBaseRuneActiveBuff;
 import aphorea.buffs.Runes.AphBaseRuneTrinketBuff;
 import aphorea.buffs.Runes.AphModifierRuneTrinketBuff;
@@ -182,14 +181,15 @@ public class AphBuffs {
         BuffRegistry.registerBuff("spinelhelmetsetbonus", SET_BONUS.SPINEL_HELMET = new SpinelHelmetSetBonusBuff());
 
         // Banner Buffs
-        BuffRegistry.registerBuff("blankbanner", BANNER.BLANK = new BlankBannerBuff());
-        BuffRegistry.registerBuff("strikebanner", BANNER.STRIKE = new AphStrikeBannerBuff());
+        BuffRegistry.registerBuff("blankbanner", BANNER.BLANK = AphBasicBannerBuff.floatModifier(BuffModifiers.HEALTH_REGEN, 0.1F));
+        BuffRegistry.registerBuff("strikebanner", BANNER.STRIKE = new AphBasicBannerBuff(
+                AphBasicBannerBuff.AphBasicBannerBuffModifier.floatModifier(BuffModifiers.HEALTH_REGEN, 0.1F),
+                AphBasicBannerBuff.AphBasicBannerBuffModifier.floatModifier(BuffModifiers.COMBAT_HEALTH_REGEN, 0.1F)
+        ));
         BuffRegistry.registerBuff("aph_bannerofdamage", BANNER.DAMAGE = AphBasicBannerBuff.floatModifier(BuffModifiers.ALL_DAMAGE, 0.15F));
         BuffRegistry.registerBuff("aph_bannerofdefense", BANNER.DEFENSE = AphBasicBannerBuff.floatModifier((value, effect) -> Math.max(0.5F, 1F - effect * value), 1, BuffModifiers.INCOMING_DAMAGE_MOD, 0.1F));
         BuffRegistry.registerBuff("aph_bannerofspeed", BANNER.SPEED = AphBasicBannerBuff.floatModifier(BuffModifiers.SPEED, 0.3F));
         BuffRegistry.registerBuff("aph_bannerofsummonspeed", BANNER.SUMMON_SPEED = AphBasicBannerBuff.floatModifier(BuffModifiers.SUMMONS_SPEED, 0.75F));
-
-        registerMightyBannerItems();
 
         // Potion Buffs
         BuffRegistry.registerBuff("venomextract", POTION.VENOM_EXTRACT = new VenomExtractBuff());
@@ -239,20 +239,25 @@ public class AphBuffs {
         tier2ModifierRunes();
         tier3ModifierRunes();
 
+        // Other Mods
+        registerMightyBannerBuffs();
+        registerSummonerExpansionBuffs();
     }
 
     public static void runesInjectors() {
-        // Non-effect Injectors
-        BuffRegistry.registerBuff("rusticrunesinjector", new AphModifierRuneTrinketBuff());
-        BuffRegistry.registerBuff("demonicrunesinjector", new AphModifierRuneTrinketBuff());
-        BuffRegistry.registerBuff("tungstenrunesinjector", new AphModifierRuneTrinketBuff());
-        BuffRegistry.registerBuff("ancientrunesinjector", new AphModifierRuneTrinketBuff());
+        BuffRegistry.registerBuff("rusticrunesinjector", new AphModifierRuneTrinketBuff()
+                .setEffectNumberVariation(-0.2F)
+        );
 
-        // Unstable Injector
         BuffRegistry.registerBuff("unstablerunesinjector", new AphModifierRuneTrinketBuff()
                 .setHealthCost(0.1F)
                 .setEffectNumberVariation(0.2F)
         );
+
+        BuffRegistry.registerBuff("demonicrunesinjector", new AphModifierRuneTrinketBuff());
+        BuffRegistry.registerBuff("tungstenrunesinjector", new AphModifierRuneTrinketBuff());
+        BuffRegistry.registerBuff("ancientrunesinjector", new AphModifierRuneTrinketBuff());
+
     }
 
     public static void tier0BaseRunes() {
@@ -262,7 +267,7 @@ public class AphBuffs {
         baseEffectNumber = 40;
         // On activation
         BuffRegistry.registerBuff("runeoffury", new AphBaseRuneTrinketBuff(baseEffectNumber, 10000, "runeoffuryactive")
-                .setHealthCost(0.25F)
+                .setHealthCost(0.2F)
         );
         // On duration
         BuffRegistry.registerBuff("runeoffuryactive", new AphBaseRuneActiveBuff(baseEffectNumber, 20000) {
@@ -284,7 +289,7 @@ public class AphBuffs {
         });
 
         // RUNE OF SPEED
-        baseEffectNumber = 120;
+        baseEffectNumber = 200;
         extraEffectNumberMod = 1.5F;
         // On activation
         BuffRegistry.registerBuff("runeofspeed", new AphBaseRuneTrinketBuff(baseEffectNumber, extraEffectNumberMod, 5000) {
@@ -325,7 +330,7 @@ public class AphBuffs {
         // On activation
         BuffRegistry.registerBuff("runeofresistance", new AphBaseRuneTrinketBuff(baseEffectNumber, 10000, "runeofresistanceactive"));
         // On duration
-        BuffRegistry.registerBuff("runeofresistanceactive", new AphBaseRuneActiveBuff(baseEffectNumber, 20000, "runeofresistancecooldown") {
+        BuffRegistry.registerBuff("runeofresistanceactive", new AphBaseRuneActiveBuff(baseEffectNumber, 10000, "runeofresistancecooldown") {
             @Override
             public void initExtraModifiers(ActiveBuff buff, float effectNumber) {
                 super.initExtraModifiers(buff, effectNumber);
@@ -375,7 +380,7 @@ public class AphBuffs {
         });
 
         // RUNE OF DETONATION
-        baseEffectNumber = 50;
+        baseEffectNumber = 60;
         // On activation
         BuffRegistry.registerBuff("runeofdetonation", new AphBaseRuneTrinketBuff(baseEffectNumber, 8000) {
 
@@ -388,7 +393,7 @@ public class AphBuffs {
         }.setHealthCost(0.05F));
 
         // RUNE OF THUNDER
-        baseEffectNumber = 50;
+        baseEffectNumber = 60;
         // On activation
         BuffRegistry.registerBuff("runeofthunder", new AphBaseRuneTrinketBuff(baseEffectNumber, 10000) {
 
@@ -1217,25 +1222,61 @@ public class AphBuffs {
         public static AphBannerBuff ATTACK_SPEED_GREATER;
     }
 
-    public static void registerMightyBannerItems() {
-        if(AphDependencies.checkMightyBanner()) {
-            BuffRegistry.registerBuff("aph_banneroffishing_normal", MIGHTY_BANNER.FISHING = AphBasicBannerBuff.intModifier(BuffModifiers.FISHING_POWER, 20));
-            BuffRegistry.registerBuff("aph_banneroffishing_greater", MIGHTY_BANNER.FISHING_GREATER = AphBasicBannerBuff.intModifier(BuffModifiers.FISHING_POWER, 30));
+    public static void registerMightyBannerBuffs() {
+        if (AphDependencies.checkMightyBanner()) {
+            BuffRegistry.registerBuff("aph_banneroffishing_normal", MIGHTY_BANNER.FISHING = AphMightyBasicBannerBuff.intModifier(BuffModifiers.FISHING_POWER, 20));
+            BuffRegistry.registerBuff("aph_banneroffishing_greater", MIGHTY_BANNER.FISHING_GREATER = AphMightyBasicBannerBuff.intModifier(BuffModifiers.FISHING_POWER, 30));
 
-            BuffRegistry.registerBuff("aph_bannerofhealthregen_normal", MIGHTY_BANNER.HEALTH_REGEN = AphBasicBannerBuff.floatModifier(BuffModifiers.COMBAT_HEALTH_REGEN_FLAT, 0.5F));
-            BuffRegistry.registerBuff("aph_bannerofhealthregen_greater", MIGHTY_BANNER.HEALTH_REGEN_GREATER = AphBasicBannerBuff.floatModifier(BuffModifiers.COMBAT_HEALTH_REGEN_FLAT, 1F));
+            BuffRegistry.registerBuff("aph_bannerofhealthregen_normal", MIGHTY_BANNER.HEALTH_REGEN = AphMightyBasicBannerBuff.floatModifier(BuffModifiers.COMBAT_HEALTH_REGEN_FLAT, 0.5F));
+            BuffRegistry.registerBuff("aph_bannerofhealthregen_greater", MIGHTY_BANNER.HEALTH_REGEN_GREATER = AphMightyBasicBannerBuff.floatModifier(BuffModifiers.COMBAT_HEALTH_REGEN_FLAT, 1F));
 
-            BuffRegistry.registerBuff("aph_bannerofmanaregen_normal", MIGHTY_BANNER.MANA_REGEN = AphBasicBannerBuff.floatModifier(BuffModifiers.COMBAT_MANA_REGEN, 2F));
-            BuffRegistry.registerBuff("aph_bannerofmanaregen_greater", MIGHTY_BANNER.MANA_REGEN_GREATER = AphBasicBannerBuff.floatModifier(BuffModifiers.COMBAT_MANA_REGEN, 4F));
+            BuffRegistry.registerBuff("aph_bannerofmanaregen_normal", MIGHTY_BANNER.MANA_REGEN = AphMightyBasicBannerBuff.floatModifier(BuffModifiers.COMBAT_MANA_REGEN, 2F));
+            BuffRegistry.registerBuff("aph_bannerofmanaregen_greater", MIGHTY_BANNER.MANA_REGEN_GREATER = AphMightyBasicBannerBuff.floatModifier(BuffModifiers.COMBAT_MANA_REGEN, 4F));
 
-            BuffRegistry.registerBuff("aph_bannerofresistance_normal", MIGHTY_BANNER.RESISTANCE = AphBasicBannerBuff.intModifier(BuffModifiers.ARMOR_FLAT, 8));
-            BuffRegistry.registerBuff("aph_bannerofresistance_greater", MIGHTY_BANNER.RESISTANCE_GREATER = AphBasicBannerBuff.intModifier(BuffModifiers.ARMOR_FLAT, 12));
+            BuffRegistry.registerBuff("aph_bannerofresistance_normal", MIGHTY_BANNER.RESISTANCE = AphMightyBasicBannerBuff.intModifier(BuffModifiers.ARMOR_FLAT, 8));
+            BuffRegistry.registerBuff("aph_bannerofresistance_greater", MIGHTY_BANNER.RESISTANCE_GREATER = AphMightyBasicBannerBuff.intModifier(BuffModifiers.ARMOR_FLAT, 12));
 
-            BuffRegistry.registerBuff("aph_bannerofsummoning_normal", MIGHTY_BANNER.SUMMONING = AphBasicBannerBuff.intModifier(BuffModifiers.MAX_SUMMONS, 1));
-            BuffRegistry.registerBuff("aph_bannerofsummoning_greater", MIGHTY_BANNER.SUMMONING_GREATER = AphBasicBannerBuff.intModifier(BuffModifiers.MAX_SUMMONS, 2));
+            BuffRegistry.registerBuff("aph_bannerofsummoning_normal", MIGHTY_BANNER.SUMMONING = AphMightyBasicBannerBuff.intModifier(BuffModifiers.MAX_SUMMONS, 1));
+            BuffRegistry.registerBuff("aph_bannerofsummoning_greater", MIGHTY_BANNER.SUMMONING_GREATER = AphMightyBasicBannerBuff.intModifier(BuffModifiers.MAX_SUMMONS, 2));
 
-            BuffRegistry.registerBuff("aph_bannerofattackspeed_normal", MIGHTY_BANNER.ATTACK_SPEED = AphBasicBannerBuff.floatModifier(BuffModifiers.ATTACK_SPEED, 0.15F));
-            BuffRegistry.registerBuff("aph_bannerofattackspeed_greater", MIGHTY_BANNER.ATTACK_SPEED_GREATER = AphBasicBannerBuff.floatModifier(BuffModifiers.ATTACK_SPEED, 0.20F));
+            BuffRegistry.registerBuff("aph_bannerofattackspeed_normal", MIGHTY_BANNER.ATTACK_SPEED = AphMightyBasicBannerBuff.floatModifier(BuffModifiers.ATTACK_SPEED, 0.15F));
+            BuffRegistry.registerBuff("aph_bannerofattackspeed_greater", MIGHTY_BANNER.ATTACK_SPEED_GREATER = AphMightyBasicBannerBuff.floatModifier(BuffModifiers.ATTACK_SPEED, 0.20F));
+
+        }
+    }
+
+    public static class SUMMONER_EXPANSION {
+        public static AphBannerBuff BANNER_RESILIENCE;
+        public static AphBannerBuff BANNER_BOUNCING;
+        public static AphBannerBuff BANNER_ESSENCE;
+        public static AphBannerBuff BANNER_STAMINA;
+        public static AphBannerBuff BANNER_PICKING;
+        public static AphBannerBuff BANNER_DASHING;
+        public static AphBannerBuff BANNER_MANA;
+    }
+
+    public static void registerSummonerExpansionBuffs() {
+        if (AphDependencies.checkMightyBanner()) {
+            BuffRegistry.registerBuff("aph_bannerofresilience", SUMMONER_EXPANSION.BANNER_RESILIENCE = new AphBasicBannerBuff(
+                    AphBasicBannerBuff.AphBasicBannerBuffModifier.floatModifier(BuffModifiers.MAX_RESILIENCE, 0.1F),
+                    AphBasicBannerBuff.AphBasicBannerBuffModifier.floatModifier(BuffModifiers.RESILIENCE_REGEN_FLAT, 0.1F)
+            ));
+            BuffRegistry.registerBuff("aph_bannerofbouncing", SUMMONER_EXPANSION.BANNER_BOUNCING = AphBasicBannerBuff.intModifier(BuffModifiers.PROJECTILE_BOUNCES, 4));
+            BuffRegistry.registerBuff("aph_bannerofessence", SUMMONER_EXPANSION.BANNER_ESSENCE = AphBasicBannerBuff.floatModifier(BuffModifiers.LIFE_ESSENCE_DURATION, 2F));
+            BuffRegistry.registerBuff("aph_bannerofstamina", SUMMONER_EXPANSION.BANNER_STAMINA = new AphBasicBannerBuff(
+                    AphBasicBannerBuff.AphBasicBannerBuffModifier.floatModifier(BuffModifiers.STAMINA_CAPACITY, 0.4F),
+                    AphBasicBannerBuff.AphBasicBannerBuffModifier.floatModifier(BuffModifiers.STAMINA_REGEN, 0.1F),
+                    AphBasicBannerBuff.AphBasicBannerBuffModifier.floatModifier(BuffModifiers.STAMINA_USAGE, -0.1F)
+            ));
+            BuffRegistry.registerBuff("aph_bannerofpicking", SUMMONER_EXPANSION.BANNER_PICKING = AphBasicBannerBuff.floatModifier(BuffModifiers.ITEM_PICKUP_RANGE, 8F));
+            BuffRegistry.registerBuff("aph_bannerofdashing", SUMMONER_EXPANSION.BANNER_DASHING = new AphBasicBannerBuff(
+                    AphBasicBannerBuff.AphBasicBannerBuffModifier.intModifier(BuffModifiers.DASH_STACKS, 1),
+                    AphBasicBannerBuff.AphBasicBannerBuffModifier.floatModifier(BuffModifiers.DASH_COOLDOWN, -0.1F)
+            ));
+            BuffRegistry.registerBuff("aph_bannerofmana", SUMMONER_EXPANSION.BANNER_MANA = new AphBasicBannerBuff(
+                    AphBasicBannerBuff.AphBasicBannerBuffModifier.floatModifier(BuffModifiers.MAX_MANA, 0.1F),
+                    AphBasicBannerBuff.AphBasicBannerBuffModifier.floatModifier(BuffModifiers.MANA_REGEN, 0.25F)
+            ));
 
         }
     }

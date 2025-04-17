@@ -26,6 +26,7 @@ abstract public class AphCustomUI {
     abstract public void updatePosition();
 
     abstract public int getWidth();
+
     abstract public int getHeight();
 
     public void updateSize() {
@@ -41,7 +42,8 @@ abstract public class AphCustomUI {
         updatePosition();
     }
 
-    public void onUpdateSceneSize() {}
+    public void onUpdateSceneSize() {
+    }
 
     public static float getZoom() {
         return Settings.sceneSize;
@@ -58,7 +60,7 @@ abstract public class AphCustomUI {
     public static GameTexture getResizedTexture(String string, GameTexture originalTexture, int width, int height) {
         String id = string + "-" + String.format("%.1f", getZoom() / 2);
         GameTexture texture = textureMap.get(id);
-        if(texture == null) {
+        if (texture == null) {
             texture = originalTexture.resize(width, height);
             textureMap.put(id, texture);
         }
@@ -68,7 +70,7 @@ abstract public class AphCustomUI {
     public static GameTexture getResizedTextures(String string, GameTexture[] originalTexture, int width, int height, int index) {
         String id = string + index + "-" + String.format("%.1f", getZoom() / 2);
         GameTexture texture = textureMap.get(id);
-        if(texture == null) {
+        if (texture == null) {
             for (int i = 0; i < originalTexture.length; i++) {
                 String textureId = string + i + "-" + String.format("%.1f", getZoom() / 2);
                 textureMap.put(textureId, originalTexture[i].resize(width, height));

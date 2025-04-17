@@ -72,9 +72,9 @@ public class PinkWitch extends FlyingHostileMob {
         setSpeed(60);
         setFriction(1);
 
-        collision = new Rectangle(-18, -18, 36, 36);
-        hitBox = new Rectangle(-26, -26, 52, 48);
-        selectBox = new Rectangle(-26, -42, 52, 69);
+        collision = new Rectangle(-18, -14, 36, 32);
+        hitBox = new Rectangle(-26, -22, 52, 48);
+        selectBox = new Rectangle(-26, -42, 52, 68);
     }
 
     @Override

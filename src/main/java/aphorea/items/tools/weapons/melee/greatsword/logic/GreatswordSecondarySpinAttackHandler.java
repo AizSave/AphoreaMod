@@ -71,7 +71,7 @@ public class GreatswordSecondarySpinAttackHandler<T extends AphGreatswordSeconda
                         float distance = GreatswordSecondarySpinAttackHandler.this.getChargeDistance(GreatswordSecondarySpinAttackHandler.this.getChargePercent());
                         if (distance > 0.0F) {
                             Point2D.Float dir = GameMath.normalize((float) GreatswordSecondarySpinAttackHandler.this.lastX - GreatswordSecondarySpinAttackHandler.this.attackerMob.x, (float) GreatswordSecondarySpinAttackHandler.this.lastY - GreatswordSecondarySpinAttackHandler.this.attackerMob.y);
-                            final DrawOptions drawOptions = HUD.getArrowHitboxIndicator(GreatswordSecondarySpinAttackHandler.this.attackerMob.x, GreatswordSecondarySpinAttackHandler.this.attackerMob.y, dir.x, dir.y, (int) distance, 50, new Color(0, 0, 0, 0),new Color(220, 255, 255, 100), new Color(0, 0, 0, 100), camera);
+                            final DrawOptions drawOptions = HUD.getArrowHitboxIndicator(GreatswordSecondarySpinAttackHandler.this.attackerMob.x, GreatswordSecondarySpinAttackHandler.this.attackerMob.y, dir.x, dir.y, (int) distance, 50, new Color(0, 0, 0, 0), new Color(220, 255, 255, 100), new Color(0, 0, 0, 100), camera);
                             list.add(new SortedDrawable() {
                                 public int getPriority() {
                                     return 1000;
@@ -154,7 +154,7 @@ public class GreatswordSecondarySpinAttackHandler<T extends AphGreatswordSeconda
             this.attackerMob.showAttackAndSendAttacker(attackItem, this.lastX, this.lastY, 0, this.seed);
             Point2D.Float dir = GameMath.normalize((float) this.lastX - this.attackerMob.x, (float) this.lastY - this.attackerMob.y);
             chargePercent = Math.min(chargePercent, 1.0F);
-                GreatswordDashLevelEvent event = new GreatswordDashLevelEvent(this.attackerMob, attackItem, this.seed, dir.x, dir.y, this.getChargeDistance(chargePercent), (int) (200.0F * chargePercent), this.toolItem.getAttackDamage(this.item));
+            GreatswordDashLevelEvent event = new GreatswordDashLevelEvent(this.attackerMob, attackItem, this.seed, dir.x, dir.y, this.getChargeDistance(chargePercent), (int) (200.0F * chargePercent), this.toolItem.getAttackDamage(this.item));
             this.attackerMob.addAndSendAttackerLevelEvent(event);
             this.attackerMob.buffManager.addBuff(new ActiveBuff(AphBuffs.SPIN_ATTACK_COOLDOWN, this.attackerMob, 3.0F, null), this.attackerMob.isServer());
         }

@@ -7,6 +7,7 @@ import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.gfx.drawOptions.itemAttack.ItemAttackDrawOptions;
 import necesse.inventory.InventoryItem;
+import necesse.inventory.item.toolItem.swordToolItem.CopperSwordToolItem;
 import necesse.level.maps.Level;
 
 import java.awt.*;
@@ -19,7 +20,7 @@ public class CopperDagger extends AphDaggerToolItem {
 
         this.attackDamage.setBaseValue(20.0F).setUpgradedValue(1.0F, 90.0F);
 
-        this.attackRange.setBaseValue(36);
+        this.attackRange.setBaseValue(40);
         this.knockback.setBaseValue(25);
     }
 

@@ -175,7 +175,7 @@ public class UnstableGelSlime extends FlyingBossMob {
         drawY += getBobbing(x, y);
         drawY += getLevel().getTile(getTileX(), getTileY()).getMobSinkingAmount(this);
 
-        if(this.inLiquid()) {
+        if (this.inLiquid()) {
             drawY += 20;
         }
 
@@ -299,11 +299,6 @@ public class UnstableGelSlime extends FlyingBossMob {
     @Override
     public void addBuff(ActiveBuff buff, boolean sendUpdatePacket) {
         if (buff.buff != AphBuffs.STICKY) super.addBuff(buff, sendUpdatePacket);
-    }
-
-    @Override
-    public void spawnDamageText(int damage, int size, boolean isCrit) {
-        if(!buffManager.hasBuff("immortal")) super.spawnDamageText(damage, size, isCrit);
     }
 
     public static class UnstableGelSlimeAI<T extends UnstableGelSlime> extends SelectorAINode<T> {

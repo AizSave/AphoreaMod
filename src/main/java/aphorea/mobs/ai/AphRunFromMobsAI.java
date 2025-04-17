@@ -51,7 +51,7 @@ public class AphRunFromMobsAI<T extends Mob> extends MoveTaskAINode<T> {
         this.runDistance = runDistance;
         this.runFromMob = runFromMob;
     }
-    
+
     @Override
     protected void onRootSet(AINode<T> root, T mob, Blackboard<T> blackboard) {
     }

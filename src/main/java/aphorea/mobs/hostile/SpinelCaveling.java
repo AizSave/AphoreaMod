@@ -65,7 +65,7 @@ public class SpinelCaveling extends HostileMob {
         super.init();
         ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 12 * 32, collision_damage, collision_knockback, 40000));
         ArrayList<InventoryItem> items = lootTable.getNewList(new GameRandom(this.getUniqueID()), 1F);
-        if(!items.isEmpty()) {
+        if (!items.isEmpty()) {
             this.item = items.get(0);
         }
         dropsLoot = false;
@@ -81,7 +81,7 @@ public class SpinelCaveling extends HostileMob {
     @Override
     protected void onDeath(Attacker attacker, HashSet<Attacker> attackers) {
         super.onDeath(attacker, attackers);
-        if(item.getAmount() > 0) {
+        if (item.getAmount() > 0) {
             getLevel().entityManager.pickups.add(new ItemPickupEntity(getLevel(), item, x, y, 0, 0));
         }
     }
@@ -113,14 +113,14 @@ public class SpinelCaveling extends HostileMob {
                 boolean hasObject = item.getAmount() > 0;
 
                 swimMask.use();
-                if(hasObject) rightArmOptions.draw();
+                if (hasObject) rightArmOptions.draw();
                 bodyOptions.draw();
                 swimMask.stop();
 
-                if(hasObject) itemOptions.draw();
+                if (hasObject) itemOptions.draw();
 
                 swimMask.use();
-                if(hasObject) leftArmOptions.draw();
+                if (hasObject) leftArmOptions.draw();
                 swimMask.stop();
             }
         });

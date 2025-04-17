@@ -86,10 +86,10 @@ public class AphAreaList {
     }
 
     public void execute(@NotNull Mob attacker, float x, float y, float rangeModifier, @Nullable InventoryItem item, @Nullable ToolItem toolItem) {
-        if(attacker.isServer()) {
+        if (attacker.isServer()) {
             executeServer(attacker, x, y, rangeModifier, item, toolItem);
         }
-        if(attacker.isClient()) {
+        if (attacker.isClient()) {
             executeClient(attacker.getLevel(), x, y, rangeModifier);
         }
     }

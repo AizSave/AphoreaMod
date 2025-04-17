@@ -3,10 +3,8 @@ package aphorea.items.trinkets;
 import aphorea.items.vanillaitemtypes.AphShieldTrinketItem;
 import aphorea.utils.magichealing.AphMagicHealing;
 import necesse.engine.localization.Localization;
-import necesse.engine.network.packet.PacketHitMob;
 import necesse.engine.util.GameBlackboard;
 import necesse.entity.mobs.Mob;
-import necesse.entity.mobs.MobWasHitEvent;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
@@ -27,7 +25,7 @@ public class SwampShield extends AphShieldTrinketItem {
     @Override
     public void onPerfectBlock(Mob mob) {
         super.onPerfectBlock(mob);
-        if(mob.isServer()) {
+        if (mob.isServer()) {
             float healing = mob.getMaxHealth() * 0.05F * AphMagicHealing.getMagicHealingMod(mob, mob, null, null);
             AphMagicHealing.healMobExecute(mob, mob, (int) healing);
         }

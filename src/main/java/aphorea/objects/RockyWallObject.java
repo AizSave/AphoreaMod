@@ -21,7 +21,7 @@ public class RockyWallObject extends RockObject {
 
     @Override
     public void onDestroyed(Level level, int layerID, int x, int y, Attacker attacker, ServerClient client, ArrayList<ItemPickupEntity> itemsDropped) {
-        if(new GameRandom().seeded(getTileSeed(x, y)).getChance(0.05F)) {
+        if (new GameRandom().seeded(getTileSeed(x, y)).getChance(0.05F)) {
             if (level.isServer()) {
                 level.entityManager.addMob(MobRegistry.getMob("rockygelslime", level), x * 32 + 16, y * 32 + 16);
             }

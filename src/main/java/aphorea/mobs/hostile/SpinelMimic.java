@@ -30,10 +30,10 @@ public class SpinelMimic extends HostileMob {
     public static GameTexture texture;
     public static GameTexture texture_shadow;
     public static GameDamage collisionDamage = new GameDamage(60.0F);
-    public float jump = 0;
+    public int jump = 0;
 
     static public float jumpHeight = 30;
-    static public float jumpDurationMod = 1;
+    static public int jumpDuration = 12;
 
     public static LootTable lootTable = new LootTable(
             new LootItem("spinelchest"),
@@ -92,25 +92,51 @@ public class SpinelMimic extends HostileMob {
     }
 
     @Override
+    public void clientTick() {
+        super.clientTick();
+        if (dx == 0 && dy == 0) {
+            jump = 0;
+        } else {
+            jump++;
+
+            if (jump > jumpDuration) {
+                jump = 0;
+            }
+        }
+        if (jump == 0) {
+            this.setFriction(20);
+        } else {
+            this.setFriction(0);
+        }
+    }
+
+    @Override
+    public void serverTick() {
+        super.serverTick();
+        if (dx == 0 && dy == 0) {
+            jump = 0;
+        } else {
+            jump++;
+
+            if (jump > jumpDuration) {
+                jump = 0;
+            }
+        }
+        if (jump == 0) {
+            this.setFriction(20);
+        } else {
+            this.setFriction(0);
+        }
+    }
+
+    @Override
     public void addDrawables(List<MobDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, Level level, int x, int y, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
         super.addDrawables(list, tileList, topList, level, x, y, tickManager, camera, perspective);
         GameLight light = level.getLightLevel(x / 32, y / 32);
         int drawX = camera.getDrawX(x) - 16;
         int drawY = camera.getDrawY(y) - 32 - adjustY;
-        int addedY;
-        if (dx == 0 && dy == 0) {
-            jump = 0;
-        } else {
-            jump += 0.1F;
 
-            if (jump > jumpDurationMod) {
-                jump = 0;
-            }
-
-            addedY = (int) (Math.sin(jump / jumpDurationMod * Math.PI) * jumpHeight);
-            drawY -= addedY;
-        }
-
+        drawY -= (int) (Math.sin((float) jump / jumpDuration * Math.PI) * jumpHeight);
         drawY += getBobbing(x, y);
         drawY += getLevel().getTile(getTileX(), getTileY()).getMobSinkingAmount(this);
 
@@ -132,7 +158,7 @@ public class SpinelMimic extends HostileMob {
 
     @Override
     protected void addShadowDrawables(OrderableDrawables list, int x, int y, GameLight light, GameCamera camera) {
-        if (!(Boolean)this.buffManager.getModifier(BuffModifiers.INVISIBILITY) && !this.isRiding()) {
+        if (!(Boolean) this.buffManager.getModifier(BuffModifiers.INVISIBILITY) && !this.isRiding()) {
             TextureDrawOptions shadowOptions = this.getShadowDrawOptions(x, y, light, camera);
             if (shadowOptions != null) {
                 list.add((tm) -> shadowOptions.draw());

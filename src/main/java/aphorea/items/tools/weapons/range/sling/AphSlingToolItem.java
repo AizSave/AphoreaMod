@@ -112,7 +112,7 @@ abstract public class AphSlingToolItem extends ProjectileToolItem {
     public void doAttack(Level level, int x, int y, ItemAttackerMob attackerMob, InventoryItem item, int seed) {
         boolean shouldFire;
         if (attackerMob instanceof AmmoUserMob) {
-            AmmoConsumed consumed = ((AmmoUserMob)attackerMob).removeAmmo(ItemRegistry.getItem("stone"), 1, "stone");
+            AmmoConsumed consumed = ((AmmoUserMob) attackerMob).removeAmmo(ItemRegistry.getItem("stone"), 1, "stone");
             shouldFire = consumed.amount >= 1;
         } else {
             shouldFire = true;

@@ -17,9 +17,7 @@ import necesse.entity.mobs.DeathMessageTable;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.ActiveBuff;
-import necesse.entity.mobs.hostile.bosses.VoidWizard;
 import necesse.entity.particle.Particle;
-import necesse.entity.projectile.VoidWizardMissileProjectile;
 import necesse.gfx.GameResources;
 
 import java.awt.geom.Ellipse2D;

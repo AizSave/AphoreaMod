@@ -43,7 +43,7 @@ public class AphCustomPushPacket extends Packet {
         this.dirX = dirX;
         this.dirY = dirY;
         this.strength = strength;
-        if(color == null) {
+        if (color == null) {
             this.r = -1;
             this.g = -1;
             this.b = -1;
@@ -75,7 +75,7 @@ public class AphCustomPushPacket extends Packet {
             Mob target = GameUtils.getLevelMob(this.mobUniqueID, client.getLevel());
             if (target != null) {
                 Color color = null;
-                if(r != -1) {
+                if (r != -1) {
                     color = new Color(r, g, b, a);
                 }
                 applyToMob(target.getLevel(), target, this.dirX, this.dirY, this.strength, color);
@@ -97,9 +97,9 @@ public class AphCustomPushPacket extends Packet {
             mob.dy = forceY;
         }
 
-        if(color != null && level != null && level.isClient()) {
-            for(int i = 0; i < 30; ++i) {
-                level.entityManager.addParticle(mob.x + (float) GameRandom.globalRandom.nextGaussian() * 15.0F + forceX / 10.0F, mob.y + (float)GameRandom.globalRandom.nextGaussian() * 20.0F + forceY / 10.0F, Particle.GType.IMPORTANT_COSMETIC).movesConstant(forceX * GameRandom.globalRandom.getFloatBetween(0.8F, 1.2F) / 10.0F, forceY * GameRandom.globalRandom.getFloatBetween(0.8F, 1.2F) / 10.0F).color(color).height(18.0F).lifeTime(700);
+        if (color != null && level != null && level.isClient()) {
+            for (int i = 0; i < 30; ++i) {
+                level.entityManager.addParticle(mob.x + (float) GameRandom.globalRandom.nextGaussian() * 15.0F + forceX / 10.0F, mob.y + (float) GameRandom.globalRandom.nextGaussian() * 20.0F + forceY / 10.0F, Particle.GType.IMPORTANT_COSMETIC).movesConstant(forceX * GameRandom.globalRandom.getFloatBetween(0.8F, 1.2F) / 10.0F, forceY * GameRandom.globalRandom.getFloatBetween(0.8F, 1.2F) / 10.0F).color(color).height(18.0F).lifeTime(700);
             }
         }
 

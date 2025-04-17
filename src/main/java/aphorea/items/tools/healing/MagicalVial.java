@@ -98,7 +98,7 @@ public class MagicalVial extends AphMagicHealingToolItem {
 
     @Override
     public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob mob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
-        if(mob.isPlayer) {
+        if (mob.isPlayer) {
             PlayerMob player = (PlayerMob) mob;
 
             Mob target = GameUtils.streamNetworkClients(level).filter(c -> c.playerMob != null).map(c -> c.playerMob)

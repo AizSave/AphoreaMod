@@ -88,7 +88,7 @@ public class GlacialShardBigProjectile extends Projectile {
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
         super.doHitLogic(mob, object, x, y);
         if (this.isServer()) {
-            if(this.traveledDistance >= (float)this.distance || (this.amountHit() >= this.piercing && (this.bounced >= this.getTotalBouncing() || !this.canBounce))) {
+            if (this.traveledDistance >= (float) this.distance || (this.amountHit() >= this.piercing && (this.bounced >= this.getTotalBouncing() || !this.canBounce))) {
                 float randomAngle = GameRandom.globalRandom.getFloatBetween(0F, (float) (Math.PI * 2));
                 for (int i = 0; i < projectilesAmount; i++) {
                     Projectile projectile = getProjectile(randomAngle + ((float) Math.PI * 2 * i) / projectilesAmount);

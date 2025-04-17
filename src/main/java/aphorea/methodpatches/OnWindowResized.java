@@ -12,7 +12,7 @@ public class OnWindowResized {
     @Advice.OnMethodExit
     static void onExit(@Advice.This MainGameFormManager mainGameFormManager) {
         for (AphCustomUI manager : AphCustomUIList.list.values()) {
-            if(manager.form != null) {
+            if (manager.form != null) {
                 manager.onWindowResized();
             }
         }

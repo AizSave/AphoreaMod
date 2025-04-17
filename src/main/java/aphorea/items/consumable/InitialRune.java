@@ -67,7 +67,7 @@ public class InitialRune extends AphConsumableItem {
 
     @Override
     public GameSprite getItemSprite(InventoryItem item, PlayerMob perspective) {
-        if(perspective != null) {
+        if (perspective != null) {
             int sprite = (int) ((perspective.getWorldTime() / 200) % AphItems.initialRunes.size());
             return AphItems.initialRunes.get(sprite).getItemSprite(item, perspective);
         } else {

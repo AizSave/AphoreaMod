@@ -15,7 +15,7 @@ public class TungstenDagger extends AphDaggerToolItem {
         this.rarity = Rarity.UNCOMMON;
         this.attackAnimTime.setBaseValue(300);
 
-        this.attackDamage.setBaseValue(40.0F).setUpgradedValue(1.0F, 100.0F);
+        this.attackDamage.setBaseValue(40.0F).setUpgradedValue(1.0F, 80.0F);
 
         this.attackRange.setBaseValue(42);
         this.knockback.setBaseValue(25);

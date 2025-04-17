@@ -1,4 +1,4 @@
-package aphorea.items.banners;
+package aphorea.items.banners.logic;
 
 import aphorea.buffs.Banners.AphBannerBuff;
 import aphorea.registry.AphModifiers;
@@ -14,52 +14,26 @@ import necesse.entity.mobs.buffs.staticBuffs.Buff;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.miscItem.BannerItem;
-import necesse.level.maps.Level;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 
 public class AphBanner extends BannerItem {
-    private final int abilityTicks;
-    private float abilityCountTimer;
-    public int baseEffect;
+    public float[] baseEffect;
     public String[] extraToolTips;
 
-    public AphBanner(Rarity rarity, int range, Function<Mob, Buff> buff, int abilityTicks, int baseEffect, String... extraToolTips) {
+    protected boolean addFloatReplacements;
+
+    public AphBanner(Rarity rarity, int range, Function<Mob, Buff> buff, float[] baseEffect, String... extraToolTips) {
         super(rarity, range, buff);
-        this.abilityTicks = abilityTicks;
         this.baseEffect = baseEffect;
         this.extraToolTips = extraToolTips;
+        this.addFloatReplacements = false;
     }
 
-    public AphBanner(Rarity rarity, int range, Function<Mob, Buff> buff, int baseEffect, String... extraToolTips) {
-        this(rarity, range, buff, 0, baseEffect, extraToolTips);
-    }
-
-    public AphBanner(Rarity rarity, int range, Function<Mob, Buff> buff, int abilityTicks) {
-        this(rarity, range, buff, abilityTicks, 0);
-    }
-
-    public int getAbilityTicks() {
-        return abilityTicks;
-    }
-
-    public float getAbilityTicks(Mob mob) {
-        float abilitySpeed = mob.buffManager.getModifier(AphModifiers.INSPIRATION_ABILITY_SPEED);
-        return abilityTicks / abilitySpeed;
-    }
-
-    public float getAbilityCountTimer() {
-        return abilityCountTimer;
-    }
-
-    public float setAbilityCountTimer(float percent) {
-        abilityCountTimer = getAbilityTicks() * percent;
-        return abilityCountTimer;
-    }
-
-    public float setAbilityCountTimer(Mob mob, float percent) {
-        abilityCountTimer = getAbilityTicks(mob) * percent;
-        return abilityCountTimer;
+    public AphBanner(Rarity rarity, int range, Function<Mob, Buff> buff, float baseEffect, String... extraToolTips) {
+        this(rarity, range, buff, new float[]{baseEffect}, extraToolTips);
     }
 
     @Override
@@ -72,10 +46,29 @@ public class AphBanner extends BannerItem {
     }
 
     public void addToolTips(ListGameTooltips tooltips, PlayerMob perspective) {
-        float bannerEffect = baseEffect * (perspective == null ? AphModifiers.INSPIRATION_EFFECT.defaultBuffManagerValue : perspective.buffManager.getModifier(AphModifiers.INSPIRATION_EFFECT));
-        for (String extraToolTip : extraToolTips) {
-            tooltips.add(Localization.translate("itemtooltip", extraToolTip, "effect", String.format("%.0f", bannerEffect)));
+        String[] effectReplacements = getEffectReplacements(perspective);
+
+        if (extraToolTips.length == 0) {
+            tooltips.add(Localization.translate("itemtooltip", getStringID() + "effect", effectReplacements));
+        } else {
+            for (String extraToolTip : extraToolTips) {
+                tooltips.add(Localization.translate("itemtooltip", extraToolTip, effectReplacements));
+            }
         }
+    }
+
+    public String[] getEffectReplacements(PlayerMob perspective) {
+        List<String> replacements = new ArrayList<>();
+        for (int i = 0; i < baseEffect.length; i++) {
+            replacements.add("effect" + (i == 0 ? "" : (i + 1)));
+            float value = baseEffect[i] * (perspective == null ? AphModifiers.INSPIRATION_EFFECT.defaultBuffManagerValue : perspective.buffManager.getModifier(AphModifiers.INSPIRATION_EFFECT));
+            replacements.add(String.format("%.0f", Math.floor(value)));
+            if (addFloatReplacements) {
+                replacements.add("effectfloat" + (i == 0 ? "" : (i + 1)));
+                replacements.add(String.format("%.2f", value));
+            }
+        }
+        return replacements.toArray(new String[0]);
     }
 
     @Override
@@ -91,14 +84,6 @@ public class AphBanner extends BannerItem {
         player.getLevel().entityManager.mobs.streamInRegionsInRange(player.x, player.y, getPlayerRange()).filter((m) -> !m.removed()).filter((m) -> this.shouldBuffMob(item, player, m)).filter((m) -> GameMath.diagonalMoveDistance(player.getX(), player.getY(), m.getX(), m.getY()) <= (double) getPlayerRange()).forEach((m) -> {
             this.applyBuffs(m, player);
         });
-
-        if (player.isServer() && abilityTicks != 0) {
-            abilityCountTimer++;
-            if (abilityCountTimer > getAbilityTicks(player)) {
-                runServerAbility(player.getLevel(), item, player);
-                abilityCountTimer = 0;
-            }
-        }
     }
 
     @Override
@@ -138,10 +123,12 @@ public class AphBanner extends BannerItem {
         mob.buffManager.addBuff(new ActiveBuff(buff, mob, 100, player), false, forceOverride);
     }
 
-    public void runServerAbility(Level level, InventoryItem item, PlayerMob player) {
-    }
-
     public int getPlayerRange() {
         return range * 2;
+    }
+
+    public AphBanner addFloatReplacements(boolean addFloatReplacements) {
+        this.addFloatReplacements = addFloatReplacements;
+        return this;
     }
 }

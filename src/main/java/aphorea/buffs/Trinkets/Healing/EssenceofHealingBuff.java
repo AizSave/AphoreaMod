@@ -50,11 +50,12 @@ public class EssenceofHealingBuff extends TrinketBuff {
     }
 
     int currentEssences = 0;
+
     public void updateBuff(ActiveBuff buff) {
         PlayerMob player = (PlayerMob) buff.owner;
         if (player.buffManager.hasBuff(BuffRegistry.LIFE_ESSENCE)) {
             int lifeEssences = player.buffManager.getBuff(BuffRegistry.LIFE_ESSENCE).getStacks() / 15;
-            if(lifeEssences != currentEssences) {
+            if (lifeEssences != currentEssences) {
                 buff.setModifier(AphModifiers.MAGIC_HEALING, lifeEssences * 0.1F);
                 if ((lifeEssences / 2) != (currentEssences / 2)) {
                     buff.setModifier(AphModifiers.MAGIC_HEALING_FLAT, lifeEssences / 2);

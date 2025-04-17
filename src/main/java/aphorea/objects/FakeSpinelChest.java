@@ -10,8 +10,6 @@ import necesse.entity.mobs.Attacker;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.BuffModifiers;
-import necesse.entity.particle.Particle;
-import necesse.entity.particle.SmokePuffParticle;
 import necesse.entity.pickup.ItemPickupEntity;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawOptions.texture.SharedTextureDrawOptions;

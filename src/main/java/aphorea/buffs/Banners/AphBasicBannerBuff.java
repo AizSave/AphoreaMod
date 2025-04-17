@@ -16,6 +16,7 @@ public class AphBasicBannerBuff extends AphBannerBuff {
         this.baseValue = baseValue;
         this.modifiers = modifiers;
     }
+
     public AphBasicBannerBuff(AphBasicBannerBuffModifier... modifiers) {
         this((value, effect) -> value * effect, 0, modifiers);
     }
@@ -24,7 +25,7 @@ public class AphBasicBannerBuff extends AphBannerBuff {
         return new AphBasicBannerBuff(getValue, baseValue, AphBasicBannerBuffModifier.floatModifier(floatModifier, value));
     }
 
-    public static AphBasicBannerBuff intModifier(BiFunction<Float, Float, Float> getValue, float baseValue, Modifier<Integer> intModifier, float value) {
+    public static AphBasicBannerBuff intModifier(BiFunction<Float, Float, Float> getValue, float baseValue, Modifier<Integer> intModifier, int value) {
         return new AphBasicBannerBuff(getValue, baseValue, AphBasicBannerBuffModifier.intModifier(intModifier, value));
     }
 
@@ -32,7 +33,7 @@ public class AphBasicBannerBuff extends AphBannerBuff {
         return new AphBasicBannerBuff(AphBasicBannerBuffModifier.floatModifier(floatModifier, value));
     }
 
-    public static AphBasicBannerBuff intModifier(Modifier<Integer> intModifier, float value) {
+    public static AphBasicBannerBuff intModifier(Modifier<Integer> intModifier, int value) {
         return new AphBasicBannerBuff(AphBasicBannerBuffModifier.intModifier(intModifier, value));
     }
 
@@ -41,55 +42,18 @@ public class AphBasicBannerBuff extends AphBannerBuff {
         giveEffects(buff);
     }
 
-    @Override
-    public void clientTick(ActiveBuff buff) {
-        super.clientTick(buff);
-        if(buff.buff.getStringID().endsWith("_normal")) {
-            giveEffects(buff);
-        }
-    }
-
-    @Override
-    public void serverTick(ActiveBuff buff) {
-        super.serverTick(buff);
-        if(buff.buff.getStringID().endsWith("_normal")) {
-            giveEffects(buff);
-        }
-    }
-
     public void giveEffects(ActiveBuff buff) {
-        if(buff.buff.getStringID().endsWith("_normal") && buff.owner.buffManager.hasBuff(buff.buff.getStringID().replace("_normal", "_greater"))) {
-            for (AphBasicBannerBuffModifier modifier : modifiers) {
-                if(modifier.floatModifier != null) {
-                    buff.setModifier(modifier.floatModifier, baseValue);
-                }
-                if(modifier.intModifier != null) {
-                    buff.setModifier(modifier.intModifier, (int) (baseValue));
-                }
-            }
-
-            onInactive();
-            return;
-        }
-
         for (AphBasicBannerBuffModifier modifier : modifiers) {
             float calculatedValue = getValue.apply(modifier.value, bannerEffect);
-            if(modifier.floatModifier != null) {
+            if (modifier.floatModifier != null) {
                 buff.setModifier(modifier.floatModifier, calculatedValue);
             }
-            if(modifier.intModifier != null) {
+            if (modifier.intModifier != null) {
                 buff.setModifier(modifier.intModifier, (int) (calculatedValue));
             }
         }
-
-        onActive();
     }
 
-    public void onActive() {
-    }
-
-    public void onInactive() {
-    }
 
     public static class AphBasicBannerBuffModifier {
         public Modifier<Float> floatModifier;
@@ -106,7 +70,7 @@ public class AphBasicBannerBuff extends AphBannerBuff {
             return new AphBasicBannerBuffModifier(floatModifier, null, value);
         }
 
-        public static AphBasicBannerBuffModifier intModifier(Modifier<Integer> intModifier, float value) {
+        public static AphBasicBannerBuffModifier intModifier(Modifier<Integer> intModifier, int value) {
             return new AphBasicBannerBuffModifier(null, intModifier, value);
         }
     }

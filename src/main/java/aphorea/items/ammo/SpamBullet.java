@@ -21,7 +21,7 @@ public class SpamBullet extends BulletItem {
     public Projectile getProjectile(float x, float y, float targetX, float targetY, float velocity, int range, GameDamage damage, int knockback, Mob owner) {
         ToolItem toolItem = null;
         InventoryItem item = null;
-        if(owner.isPlayer) {
+        if (owner.isPlayer) {
             PlayerMob player = (PlayerMob) owner;
             item = player.attackSlot.getItem(player.getInv());
             toolItem = (ToolItem) item.item;

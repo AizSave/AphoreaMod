@@ -40,7 +40,7 @@ public class BabylonExitObject extends StaticMultiObject {
             if (master != null) {
                 ObjectEntity objectEntity = level.entityManager.getObjectEntity(master.tileX, master.tileY);
                 if (objectEntity instanceof PortalObjectEntity) {
-                    ((PortalObjectEntity)objectEntity).use(level.getServer(), player.getServerClient());
+                    ((PortalObjectEntity) objectEntity).use(level.getServer(), player.getServerClient());
                 }
             }
         }

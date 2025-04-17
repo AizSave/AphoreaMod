@@ -11,7 +11,7 @@ public class UpdateSceneSize {
     @Advice.OnMethodExit
     static void onExit(@Advice.This GameWindow gameWindow) {
         for (AphCustomUI manager : AphCustomUIList.list.values()) {
-            if(manager.form != null) {
+            if (manager.form != null) {
                 manager.onUpdateSceneSize();
             }
         }
