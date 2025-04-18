@@ -1,4 +1,4 @@
-package aphorea.containers;
+package aphorea.containers.initialrune;
 
 import aphorea.registry.AphItems;
 import necesse.engine.input.InputEvent;

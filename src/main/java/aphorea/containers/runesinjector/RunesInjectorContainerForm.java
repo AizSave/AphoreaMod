@@ -1,4 +1,4 @@
-package aphorea.containers;
+package aphorea.containers.runesinjector;
 
 import necesse.engine.Settings;
 import necesse.engine.network.client.Client;

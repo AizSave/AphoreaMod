@@ -1,4 +1,4 @@
-package aphorea.containers;
+package aphorea.containers.initialrune;
 
 import necesse.engine.Settings;
 import necesse.engine.gameLoop.tickManager.TickManager;

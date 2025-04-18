@@ -266,6 +266,10 @@ rubybackpack=Ruby Backpack
 emeraldbackpack=Emerald Backpack
 diamondbackpack=Diamond Backpack
 
+// Books
+# NEW
+runestutorialbook=Runes Tutorial Book
+
 // Runes Injectors
 runesinjector=Runes Injector
 rusticrunesinjector=Rustic Runes Injector
@@ -708,3 +712,22 @@ findthespammer=[item=thespammer] Find The Spammer
 
 [controls]
 runesinjectorability=Runes Injector Ability
+
+
+[runestutorialbook]
+# NEW
+openheader=Opening the Runes Injector
+opentext=To make use of runes, you'll need a Runes Injector. These special devices can be opened to insert runes. Each injector has one slot for a Base Rune and multiple slots for Modifier Runes, depending on its capacity. You're free to add as many Modifier Runes as the injector allows, experiment to find the best combinations!
+equipheader=Equipping the Injector
+equiptext=To activate your runes, the Runes Injector must be equipped in a Trinkets slot. Once equipped, simply press G (or the key assigned in settings) to trigger its effects. Make sure the injector is properly configured and ready before jumping into action!
+
+runesheader=What Are Runes?
+runestext=Runes are mystical stones that provide powerful effects when inserted into a Runes Injector. Their strength and behavior depend on how they're combined, mastering their use is key to unlocking your full potential.
+baserunesheader=Base Runes
+baserunestext=Every Runes Injector requires exactly one Base Rune to function. The Base Rune defines the main effect of the injector and acts as the core of your setup. You'll notice a green number next to the effect, this represents its effect value, which can be increased or decreased with modifiers.
+modifierrunesheader=Modifier Runes
+modifierrunestext=Modifier Runes are used to customize and enhance the effect of your Base Rune. They can tweak the effect value, change how it behaves, or add special properties. However, Modifier Runes always come with trade-offs: no modifier is purely beneficial, so choose wisely!
+
+tableheader=The Runes Table
+tabletext=The Runes Table is your go-to station for crafting a wide variety of runes. Most standard runes can be made here, but remember: some powerful runes can only be found through exploration. Keep your eyes open, adventure rewards the curious!
+crafttext=In Rune Workshop, you'll find everything you need to get started. Combine the contents with your Initial Rune and a Base Rune you can craft in the Runes Table, and you'll have a fully functional Runes Injector ready to equip!

@@ -24,6 +24,8 @@ import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.gameTexture.GameTextureSection;
 
 import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Supplier;
 
 public class AphResources {
@@ -35,7 +37,12 @@ public class AphResources {
     public static GameTexture glacialSaberAttackTrackTexture;
     public static GameTexture glacialSaberAttackThumbTexture;
 
+    // Max Width = 855px
+    public static Map<String, GameTexture> bookTextures = new HashMap<>();
+
     public static void initResources() {
+
+        // UI WEAPONS
         for (int i = 0; i < 31; i++) {
             saberAttackTexture[i] = new GameTexture(GameTexture.fromFile("ui/saberattack"), 0, 24 * i, 66, 24);
         }
@@ -45,6 +52,14 @@ public class AphResources {
 
         glacialSaberAttackTrackTexture = GameTexture.fromFile("ui/glacialsaberattacktrack");
         glacialSaberAttackThumbTexture = GameTexture.fromFile("ui/glacialsaberattackthumb");
+
+        // BOOK TEXTURES
+        bookTextures.put("runestutorial_open", GameTexture.fromFile("ui/books/runestutorial_open"));
+        bookTextures.put("runestutorial_equip", GameTexture.fromFile("ui/books/runestutorial_equip"));
+        bookTextures.put("runestutorial_baserunes", GameTexture.fromFile("ui/books/runestutorial_baserunes"));
+        bookTextures.put("runestutorial_modifierrunes", GameTexture.fromFile("ui/books/runestutorial_modifierrunes"));
+        bookTextures.put("runestutorial_table", GameTexture.fromFile("ui/books/runestutorial_table"));
+        bookTextures.put("runestutorial_craft", GameTexture.fromFile("ui/books/runestutorial_craft"));
 
         // MOBS
         mobResources();

@@ -28,7 +28,9 @@ import aphorea.items.consumable.InitialRune;
 import aphorea.items.consumable.LifeSpinel;
 import aphorea.items.consumable.UnstableCore;
 import aphorea.items.consumable.VenomExtract;
+import aphorea.items.misc.AphWrittenBook;
 import aphorea.items.misc.GelSlimeNullifier;
+import aphorea.items.misc.books.RunesTutorialBook;
 import aphorea.items.runes.AphBaseRune;
 import aphorea.items.runes.AphModifierRune;
 import aphorea.items.runes.AphRunesInjector;
@@ -265,7 +267,7 @@ public class AphItems {
         registerItem("diamondbackpack", new DiamondBackpack());
 
         // Books
-        registerItem("runestutorialbook", (new AphMatItem(1, Item.Rarity.NORMAL)));
+        registerItem("runestutorialbook", new RunesTutorialBook());
 
         // Pure Misc
         registerItem("gelslimenullifier", new GelSlimeNullifier());

@@ -1,4 +1,4 @@
-package aphorea.containers;
+package aphorea.containers.initialrune;
 
 import aphorea.data.AphPlayerData;
 import aphorea.data.AphPlayerDataList;
