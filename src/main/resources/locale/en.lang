@@ -362,9 +362,11 @@ enchantingscrollhealingtip=Used to enchant an healing tool with <enchantment>\n�
 enchantingscrollareatip=Used to enchant an area-effect tool with <enchantment>\n§!Aphorea Mod
 enchantingscrolldaggertip=Used to enchant a dagger weapon with <enchantment>\n§!Aphorea Mod
 backpack=It is a new inventory that stores all the items you collect
-backpack2=§9Do not have backpacks with items in the inventory when you are going to create a better backpack
 backpackslots=Capacity of <slots> items
 stored=Stored items: <items>
+# NEW
+backpackcraft=Must be empty to craft a better backpack
+
 
 // Consumables
 deleteditem=This item has been removed, use this item to recover the materials before it is permanently removed

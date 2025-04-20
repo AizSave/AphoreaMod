@@ -1,4 +1,4 @@
-package aphorea.levelevents;
+package aphorea.levelevents.runes;
 
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;

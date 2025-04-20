@@ -1,30 +1,21 @@
 package aphorea.items.backpacks;
 
-import aphorea.utils.AphColors;
-import necesse.engine.GameState;
 import necesse.engine.localization.Localization;
 import necesse.engine.util.ComparableSequence;
 import necesse.engine.util.GameBlackboard;
-import necesse.engine.world.GameClock;
-import necesse.engine.world.WorldSettings;
-import necesse.entity.Entity;
 import necesse.entity.mobs.PlayerMob;
-import necesse.gfx.gameFont.FontOptions;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.Inventory;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.InventorySlot;
 import necesse.inventory.item.Item;
+import necesse.inventory.item.miscItem.InternalInventoryItemInterface;
 import necesse.inventory.item.miscItem.PouchItem;
+import necesse.inventory.recipe.IngredientCounter;
+import necesse.inventory.recipe.IngredientUser;
 import necesse.level.maps.Level;
-import necesse.level.maps.hudManager.floatText.UniqueFloatText;
-
-import java.util.function.Consumer;
 
 abstract public class AphBackpack extends PouchItem {
-    boolean pickupAutoEnabled = false;
-    boolean messageInventoryFull = false;
-
     public AphBackpack() {
         this.rarity = Rarity.COMMON;
     }
@@ -34,7 +25,7 @@ abstract public class AphBackpack extends PouchItem {
         ListGameTooltips tooltips = super.getTooltips(item, perspective, blackboard);
         tooltips.add(Localization.translate("itemtooltip", "backpackslots", "slots", getInternalInventorySize()));
         tooltips.add(Localization.translate("itemtooltip", "backpack"));
-        tooltips.add(Localization.translate("itemtooltip", "backpack2"));
+        tooltips.add(Localization.translate("itemtooltip", "backpackcraft"));
         tooltips.add(Localization.translate("itemtooltip", "rclickinvopentip"));
         tooltips.add(Localization.translate("itemtooltip", "stored", "items", this.getStoredItemAmounts(item)));
         tooltips.add(Localization.translate("global", "aphorea"));
@@ -50,7 +41,7 @@ abstract public class AphBackpack extends PouchItem {
     @Override
     public boolean isValidRequestItem(Item item) {
         if (item == null) return false;
-        return !item.getStringID().contains("backpack") && !item.getStringID().equals("coin");
+        return !(item instanceof InternalInventoryItemInterface);
     }
 
     @Override
@@ -113,42 +104,22 @@ abstract public class AphBackpack extends PouchItem {
         }
     }
 
+    public boolean canBeUsedForCrafting(InventoryItem item) {
+        Inventory internalInventory = this.getInternalInventory(item);
+        return internalInventory.streamSlots().allMatch(InventorySlot::isSlotClear);
+    }
+
     @Override
-    public void setPouchPickupDisabled(InventoryItem item, boolean disabled) {
-        if (pickupAutoEnabled && disabled) {
-            messageInventoryFull = true;
-        } else {
-            super.setPouchPickupDisabled(item, disabled);
+    public void countIngredientAmount(Level level, PlayerMob player, Inventory inventory, int inventorySlot, InventoryItem item, String purpose, IngredientCounter handler) {
+        if (canBeUsedForCrafting(item)) {
+            super.countIngredientAmount(level, player, inventory, inventorySlot, item, purpose, handler);
         }
     }
 
     @Override
-    public void tick(Inventory inventory, int slot, InventoryItem item, GameClock clock, GameState state, Entity entity, WorldSettings worldSettings, Consumer<InventoryItem> setItem) {
-        if (entity.isServer()) {
-            if (inventory != null && inventory.streamSlots().noneMatch(InventorySlot::isSlotClear)) {
-                if (!pickupAutoEnabled) {
-                    pickupAutoEnabled = true;
-                    setPouchPickupDisabled(item, false);
-                }
-            } else if (pickupAutoEnabled) {
-                pickupAutoEnabled = false;
-                setPouchPickupDisabled(item, true);
-            }
+    public void useIngredientAmount(Level level, PlayerMob player, Inventory inventory, int inventorySlot, InventoryItem item, String purpose, IngredientUser handler) {
+        if (canBeUsedForCrafting(item)) {
+            super.useIngredientAmount(level, player, inventory, inventorySlot, item, purpose, handler);
         }
-        if (messageInventoryFull && entity.isClient()) {
-            messageInventoryFull = false;
-
-            UniqueFloatText text = new UniqueFloatText(entity.getX(), entity.getY() - 20, Localization.translate("message", "pickupenabledinventoryfull"), (new FontOptions(16)).outline().color(AphColors.fail_message), "pickupenabledinventoryfull") {
-                public int getAnchorX() {
-                    return entity.getX();
-                }
-
-                public int getAnchorY() {
-                    return entity.getY() - 20;
-                }
-            };
-            entity.getLevel().hudManager.addElement(text);
-        }
-        super.tick(inventory, slot, item, clock, state, entity, worldSettings, setItem);
     }
 }

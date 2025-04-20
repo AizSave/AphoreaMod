@@ -3,8 +3,9 @@ package aphorea.registry;
 import aphorea.items.tools.weapons.melee.greatsword.logic.GreatswordDashLevelEvent;
 import aphorea.items.tools.weapons.melee.saber.logic.SaberDashLevelEvent;
 import aphorea.items.tools.weapons.melee.saber.logic.SaberJumpLevelEvent;
-import aphorea.levelevents.*;
+import aphorea.levelevents.AphExperimentalLevelEvent;
 import aphorea.levelevents.babylon.BabylonTowerFallingCrystalAttackEvent;
+import aphorea.levelevents.runes.*;
 import aphorea.mobs.summon.VolatileGelSlime;
 import aphorea.objects.BabylonEntranceObject;
 import aphorea.projectiles.bullet.SpamBulletProjectile;
@@ -33,6 +34,10 @@ public class AphLevelEvents {
         // Runes
         baseRunes();
         modifierRunes();
+
+
+
+        LevelEventRegistry.registerEvent("experimental", AphExperimentalLevelEvent.class);
     }
 
     public static void baseRunes() {

@@ -1,4 +1,4 @@
-package aphorea.levelevents;
+package aphorea.levelevents.runes;
 
 import aphorea.methodpatches.PlayerFlyingHeight;
 import aphorea.utils.AphColors;

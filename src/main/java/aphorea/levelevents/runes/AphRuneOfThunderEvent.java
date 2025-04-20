@@ -1,4 +1,4 @@
-package aphorea.levelevents;
+package aphorea.levelevents.runes;
 
 import aphorea.particles.AphRuneOfThunderParticle;
 import aphorea.registry.AphBuffs;

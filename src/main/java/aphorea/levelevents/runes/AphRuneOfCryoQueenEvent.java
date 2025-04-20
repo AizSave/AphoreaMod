@@ -1,4 +1,4 @@
-package aphorea.levelevents;
+package aphorea.levelevents.runes;
 
 import aphorea.projectiles.rune.RuneOfCryoQueenProjectile;
 import necesse.engine.network.PacketReader;

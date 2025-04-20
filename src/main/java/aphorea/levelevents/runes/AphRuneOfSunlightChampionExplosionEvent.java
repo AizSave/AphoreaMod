@@ -1,4 +1,4 @@
-package aphorea.levelevents;
+package aphorea.levelevents.runes;
 
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.util.GameRandom;

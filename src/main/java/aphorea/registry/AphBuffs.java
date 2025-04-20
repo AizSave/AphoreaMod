@@ -17,7 +17,7 @@ import aphorea.buffs.TrinketsActive.BloodyPeriaptActiveBuff;
 import aphorea.buffs.TrinketsActive.DemonicPeriaptActiveBuff;
 import aphorea.buffs.TrinketsActive.PeriaptActiveBuff;
 import aphorea.buffs.TrinketsActive.RockyPeriaptActiveBuff;
-import aphorea.levelevents.*;
+import aphorea.levelevents.runes.*;
 import aphorea.mobs.runicsummons.RunicAttackingFollowingMob;
 import aphorea.mobs.runicsummons.RunicFlyingAttackingFollowingMob;
 import aphorea.packets.AphRuneOfUnstableGelSlimePacket;
@@ -242,6 +242,11 @@ public class AphBuffs {
         // Other Mods
         registerMightyBannerBuffs();
         registerSummonerExpansionBuffs();
+
+
+
+
+        BuffRegistry.registerBuff("experimentalbuff", new ExperimentalBuff());
     }
 
     public static void runesInjectors() {
