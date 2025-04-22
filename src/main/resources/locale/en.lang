@@ -108,6 +108,7 @@ unstablegel=Unstable Gel
 stardust=Stardust
 # NEW
 infectedlog=Infected Log
+infectedalloy=Infected Alloy
 spinel=Spinel
 lifespinel=Life Spinel
 
@@ -199,6 +200,8 @@ unstablegelveline=Unstable Gelveline
 
 // Summon weapons
 volatilegelstaff=Volatile Gel Staff
+# NEW
+infectedwoodstaff=Infected Wood Staff
 
 // Banners
 blankbanner=Blank Banner
@@ -238,6 +241,7 @@ ancientmedallion=Ancient Medallion
 essenceofhealing=Essence of Healing
 ninjascarf=Ninja Scarf
 adrenalinecharm=Adrenaline Charm
+spinelshield=Spinel Shield
 
 // Armor
 rockyboots=Rocky Boots
@@ -251,6 +255,10 @@ swampboots=Swamp Boots
 swampchestplate=Swamp Chestplate
 swampmask=Swamp Mask
 swamphood=Swamp Hood
+# NEW
+spinelhelmet=Spinel Helmet
+spinelchestplate=Spinel Chestplate
+spinelboots=Spinel Boots
 
 // Misc
 gelslimenullifier=Gel Slime Nullifier

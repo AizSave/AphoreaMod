@@ -60,11 +60,8 @@ public class AphLootTables {
         infectedCaveForest.items.addAll(
                 new LootItemList(
                         RotationLootItem.globalLootRotation(
-                                new LootItem("brokenkora"),
-                                new LootItem("ninjascarf"),
-                                new LootItem("adrenalinecharm"),
-                                new LootItem("shotgunsaber"),
-                                new LootItem("cursedmedallion")
+                                new LootItem("infectedalloy"),
+                                new LootItem("infectedwoodstaff")
                         ),
                         LootItem.between("spinel", 2, 3),
                         LootItem.between("lifespinel", 0, 1),

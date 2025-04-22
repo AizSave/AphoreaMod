@@ -1,6 +1,6 @@
 package aphorea.levelevents.runes;
 
-import aphorea.particles.AphRuneOfThunderParticle;
+import aphorea.particles.RuneOfThunderParticle;
 import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import necesse.engine.network.PacketReader;
@@ -67,7 +67,7 @@ public class AphRuneOfThunderEvent extends HitboxEffectEvent implements Attacker
         this.hitsObjects = false;
         this.hits = new HashSet<>();
         if (this.isClient()) {
-            this.level.entityManager.addParticle(new AphRuneOfThunderParticle(this.level, targetX, targetY, this.getWorldEntity().getTime()), Particle.GType.CRITICAL);
+            this.level.entityManager.addParticle(new RuneOfThunderParticle(this.level, targetX, targetY, this.getWorldEntity().getTime()), Particle.GType.CRITICAL);
         }
 
         showedLightning = false;

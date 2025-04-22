@@ -13,6 +13,8 @@ import aphorea.buffs.Trinkets.AdrenalineCharmBuff;
 import aphorea.buffs.Trinkets.Healing.*;
 import aphorea.buffs.Trinkets.InspirationFociBuff;
 import aphorea.buffs.Trinkets.Periapts.*;
+import aphorea.buffs.TrinketsActive.SpinelShieldActiveBuff;
+import aphorea.buffs.Trinkets.SpinelShieldBuff;
 import aphorea.buffs.TrinketsActive.BloodyPeriaptActiveBuff;
 import aphorea.buffs.TrinketsActive.DemonicPeriaptActiveBuff;
 import aphorea.buffs.TrinketsActive.PeriaptActiveBuff;
@@ -206,13 +208,15 @@ public class AphBuffs {
         BuffRegistry.registerBuff("gelring", new SimpleTrinketBuff("gelring", new ModifierValue<>(AphModifiers.MAGIC_HEALING_RECEIVED, 0.3F)));
         BuffRegistry.registerBuff("heartring", new SimpleTrinketBuff("heartring", new ModifierValue<>(BuffModifiers.MAX_HEALTH_FLAT, 20)));
         BuffRegistry.registerBuff("witchmedallion", new WitchMedallionBuff());
-        BuffRegistry.registerBuff("iceboots", new SimpleTrinketBuff("iceboots", new ModifierValue<>(BuffModifiers.FRICTION, -0.75F), new ModifierValue<>(BuffModifiers.SPEED, 0.5F), new ModifierValue<>(BuffModifiers.ARMOR_FLAT, 4)));
+        BuffRegistry.registerBuff("iceboots", new SimpleTrinketBuff("iceboots", new ModifierValue<>(BuffModifiers.FRICTION, -0.75F).max(0.5F), new ModifierValue<>(BuffModifiers.SPEED, 0.5F), new ModifierValue<>(BuffModifiers.ARMOR_FLAT, 4)));
         BuffRegistry.registerBuff("cursedmedallion", new CursedMedallionBuff());
         BuffRegistry.registerBuff("ancientmedallion", new AncientMedallionBuff());
         BuffRegistry.registerBuff("essenceofhealing", new EssenceofHealingBuff());
         BuffRegistry.registerBuff("ninjascarf", new SimpleTrinketBuff("ninjascarf"));
         BuffRegistry.registerBuff("inspirationfoci", new InspirationFociBuff());
         BuffRegistry.registerBuff("adrenalinecharm", new AdrenalineCharmBuff());
+        BuffRegistry.registerBuff("spinelshield", new SpinelShieldBuff());
+        BuffRegistry.registerBuff("spinelshieldactive", new SpinelShieldActiveBuff());
 
         // Trinket Active Buffs
         BuffRegistry.registerBuff("rockyperiaptactive", new RockyPeriaptActiveBuff());
@@ -242,11 +246,6 @@ public class AphBuffs {
         // Other Mods
         registerMightyBannerBuffs();
         registerSummonerExpansionBuffs();
-
-
-
-
-        BuffRegistry.registerBuff("experimentalbuff", new ExperimentalBuff());
     }
 
     public static void runesInjectors() {

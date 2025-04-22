@@ -111,10 +111,12 @@ public class AphItems {
         registerItem("stardust", (new AphMatItem(500, Item.Rarity.COMMON)).setItemCategory("materials"), 30F);
         registerItem("infectedlog", (new AphMatItem(500, "anylog")).setItemCategory("materials", "logs"), 2F);
         registerItem("spinel", (new AphMatItem(500, Item.Rarity.UNCOMMON)).setItemCategory("materials", "minerals"), 15F);
+        registerItem("infectedalloy", (new AphMatItem(100, Item.Rarity.RARE)).setItemCategory("materials"), 50F);
+
     }
 
     public static void registerTools() {
-        // Pickaxes Tooltips
+        // Pickaxes ToolTier
         replaceItem("ivypickaxe", new CustomPickaxeToolItem(450, 125, 1.5F, 18, 50, 50, 700), 100.0F); // TOOL TIER CHANGE
 
         // Melee Weapons
@@ -236,8 +238,9 @@ public class AphItems {
         registerItem("cursedmedallion", (new AphSimpleTrinketItem(Item.Rarity.RARE, "cursedmedallion", 500, true)), 200F);
         registerItem("ancientmedallion", (new AphSimpleTrinketItem(Item.Rarity.EPIC, "ancientmedallion", 700, true)).addDisables("witchmedallion", "cursedmedallion"), -1F);
         registerItem("essenceofhealing", (new AphSimpleTrinketItem(Item.Rarity.RARE, "essenceofhealing", 600, true)), -1F);
-        registerItem("ninjascarf", (new AphSimpleTrinketItem(Item.Rarity.RARE, "ninjascarf", 700)), 250F);
+        registerItem("ninjascarf", (new AphSimpleTrinketItem(Item.Rarity.RARE, "ninjascarf", 500)), 250F);
         registerItem("adrenalinecharm", (new AphSimpleTrinketItem(Item.Rarity.RARE, "adrenalinecharm", 500)), 200F);
+        registerItem("spinelshield", new AphSimpleTrinketItem(Item.Rarity.RARE, "spinelshield", 600));
     }
 
     public static void registerConsumables() {
@@ -267,7 +270,7 @@ public class AphItems {
         registerItem("diamondbackpack", new DiamondBackpack());
 
         // Books
-        registerItem("runestutorialbook", new RunesTutorialBook());
+        registerItem("runestutorialbook", new RunesTutorialBook(), 20F);
 
         // Pure Misc
         registerItem("gelslimenullifier", new GelSlimeNullifier());

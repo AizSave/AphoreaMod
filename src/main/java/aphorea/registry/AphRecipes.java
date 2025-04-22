@@ -289,7 +289,7 @@ public class AphRecipes {
                 )
         );
 
-        addCraftingList("frostboomerang", tech,
+        addCraftingList("froststaff", tech,
                 AphCraftingRecipe.showAfter("unstablegelsword", 1,
                         new Ingredient("gelsword", 1),
                         new Ingredient("unstablegel", 10)
@@ -443,17 +443,37 @@ public class AphRecipes {
                 )
         );
 
-        addCraftingList("goldenwand", tech,
+        addCraftingList("shadowbolt", tech,
+                AphCraftingRecipe.showAfter("infectedwoodstaff", 1,
+                        new Ingredient("infectedalloy", 1),
+                        new Ingredient("infectedlog", 12),
+                        new Ingredient("infectedsapling", 3)
+                ),
                 AphCraftingRecipe.showAfter("spinelwand", 1,
                         new Ingredient("goldenwand", 1),
                         new Ingredient("lifespinel", 1),
                         new Ingredient("spinel", 6)
+                ),
+                AphCraftingRecipe.showAfter("spinelhelmet", 1,
+                        new Ingredient("lifespinel", 1),
+                        new Ingredient("spinel", 18)
+                ),
+                AphCraftingRecipe.showAfter("spinelchestplate", 1,
+                        new Ingredient("lifespinel", 2),
+                        new Ingredient("spinel", 24)
+                ),
+                AphCraftingRecipe.showAfter("spinelboots", 1,
+                        new Ingredient("spinel", 12)
                 )
         );
 
         addCraftingList("essenceofrebirth", tech,
                 AphCraftingRecipe.showAfter("essenceofhealing", 1,
-                        new Ingredient("spinel", 20)
+                        new Ingredient("spinel", 12)
+                ),
+                AphCraftingRecipe.showAfter("spinelshield", 1,
+                        new Ingredient("tungstenshield", 1),
+                        new Ingredient("spinel", 12)
                 )
         );
 

@@ -3,7 +3,7 @@ package aphorea.registry;
 import aphorea.items.tools.weapons.melee.greatsword.logic.GreatswordDashLevelEvent;
 import aphorea.items.tools.weapons.melee.saber.logic.SaberDashLevelEvent;
 import aphorea.items.tools.weapons.melee.saber.logic.SaberJumpLevelEvent;
-import aphorea.levelevents.AphExperimentalLevelEvent;
+import aphorea.levelevents.AphSpinelShieldEvent;
 import aphorea.levelevents.babylon.BabylonTowerFallingCrystalAttackEvent;
 import aphorea.levelevents.runes.*;
 import aphorea.mobs.summon.VolatileGelSlime;
@@ -27,6 +27,9 @@ public class AphLevelEvents {
         LevelEventRegistry.registerEvent("volatilegelexplosion", VolatileGelSlime.VolatileGelExplosion.class);
         LevelEventRegistry.registerEvent("spambulletexplosion", SpamBulletProjectile.SpamBulletExplosion.class);
 
+        // Trinkets
+        LevelEventRegistry.registerEvent("spinelshield", AphSpinelShieldEvent.class);
+
         // Babylon Boss
         LevelEventRegistry.registerEvent("babylonentrance", BabylonEntranceObject.BabylonEntranceEvent.class);
         LevelEventRegistry.registerEvent("babylontowerfallingcrystalattack", BabylonTowerFallingCrystalAttackEvent.class);
@@ -34,10 +37,6 @@ public class AphLevelEvents {
         // Runes
         baseRunes();
         modifierRunes();
-
-
-
-        LevelEventRegistry.registerEvent("experimental", AphExperimentalLevelEvent.class);
     }
 
     public static void baseRunes() {

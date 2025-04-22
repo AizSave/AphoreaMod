@@ -12,6 +12,7 @@ import aphorea.mobs.summon.LivingSapling;
 import aphorea.mobs.summon.Onyx;
 import aphorea.mobs.summon.VolatileGelSlime;
 import aphorea.particles.BabylonTowerFallingCrystalParticle;
+import aphorea.particles.SpinelShieldParticle;
 import aphorea.projectiles.bullet.SpamBulletProjectile;
 import aphorea.projectiles.toolitem.AircutProjectile;
 import aphorea.projectiles.toolitem.DaggerProjectile;
@@ -75,6 +76,7 @@ public class AphResources {
         SpamBulletProjectile.FirePoolParticle.texture = GameTexture.fromFile("particles/firepool");
         BabylonTowerFallingCrystalParticle.projectileTexture = GameTexture.fromFile("particles/babylontowerfallingcrystalparticle");
         BabylonTowerFallingCrystalParticle.shadowTexture = GameTexture.fromFile("particles/babylontowerfallingcrystalparticle_shadow");
+        SpinelShieldParticle.texture = GameTexture.fromFile("particles/spinelshield");
     }
 
 
@@ -92,9 +94,7 @@ public class AphResources {
 
         SpinelGolem.texture = GameTexture.fromFile("mobs/spinelgolem");
         SpinelCaveling.texture = new HumanTexture(GameTexture.fromFile("mobs/spinelcaveling"), GameTexture.fromFile("mobs/spinelcavelingarms_front"), GameTexture.fromFile("mobs/spinelcavelingarms_back"));
-        ;
         TungstenCaveling.texture = new HumanTexture(GameTexture.fromFile("mobs/tungstencaveling"), GameTexture.fromFile("mobs/tungstencavelingarms_front"), GameTexture.fromFile("mobs/tungstencavelingarms_back"));
-        ;
 
         SpinelMimic.texture = GameTexture.fromFile("mobs/spinelmimic");
         SpinelMimic.texture_shadow = GameTexture.fromFile("mobs/spinelmimic_shadow");

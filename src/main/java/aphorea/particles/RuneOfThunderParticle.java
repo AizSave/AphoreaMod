@@ -14,11 +14,11 @@ import necesse.level.maps.light.GameLight;
 
 import java.util.List;
 
-public class AphRuneOfThunderParticle extends Particle {
+public class RuneOfThunderParticle extends Particle {
     private final long spawnTime;
     private final boolean mirror;
 
-    public AphRuneOfThunderParticle(Level level, float x, float y, long spawnTime) {
+    public RuneOfThunderParticle(Level level, float x, float y, long spawnTime) {
         super(level, x, y, 2000);
         this.spawnTime = spawnTime;
         this.mirror = GameRandom.globalRandom.nextBoolean();
