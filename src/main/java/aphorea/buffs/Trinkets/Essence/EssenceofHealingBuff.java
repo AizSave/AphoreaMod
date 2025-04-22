@@ -1,4 +1,4 @@
-package aphorea.buffs.Trinkets.Healing;
+package aphorea.buffs.Trinkets.Essence;
 
 import aphorea.registry.AphModifiers;
 import necesse.engine.localization.Localization;

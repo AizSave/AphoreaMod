@@ -1,4 +1,4 @@
-package aphorea.buffs.Trinkets;
+package aphorea.buffs.Trinkets.Periapt;
 
 import aphorea.registry.AphBuffs;
 import aphorea.utils.AphTimeout;

@@ -73,8 +73,8 @@ public class AphJournal {
 
         // Cave
         JournalEntry infectedFieldsCave = new JournalEntry(AphBiomes.INFECTED_FIELDS, JournalRegistry.LevelType.CAVE);
-        infectedFieldsCave.addMobEntries("rockygelslime", "spinelcaveling", "spinelgolem", "spinelmimic");
-        infectedFieldsCave.addTreasureEntry(AphLootTables.infectedLootLake, AphLootTables.infectedCaveForest);
+        infectedFieldsCave.addMobEntries("rockygelslime", "infectedtreant", "spinelcaveling", "spinelgolem", "spinelmimic");
+        infectedFieldsCave.addTreasureEntry(AphLootTables.infectedCaveForest, AphLootTables.infectedLootLake);
         infectedFieldsCave.addEntryChallenges(AphJournalChallenges.INFECTED_CAVE_CHALLENGES_ID);
         JournalRegistry.registerJournalEntry("infectedfieldscave", infectedFieldsCave);
     }

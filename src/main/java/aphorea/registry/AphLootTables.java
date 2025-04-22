@@ -59,10 +59,7 @@ public class AphLootTables {
 
         infectedCaveForest.items.addAll(
                 new LootItemList(
-                        RotationLootItem.globalLootRotation(
-                                new LootItem("infectedalloy"),
-                                new LootItem("infectedwoodstaff")
-                        ),
+                        new LootItem("infectedalloy"),
                         LootItem.between("spinel", 2, 3),
                         LootItem.between("lifespinel", 0, 1),
                         CaveChestLootTable.potions,

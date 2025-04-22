@@ -16,7 +16,7 @@ public class GeneratedIslandStructuresListener extends GameEventListener<Generat
 
         PresetGeneration presets = new PresetGeneration(event.level);
 
-        if(initialIsland) {
+        if (initialIsland) {
             presets.addOccupiedSpace(
                     event.level.width / 2 - 25,
                     event.level.height / 2 - 25,

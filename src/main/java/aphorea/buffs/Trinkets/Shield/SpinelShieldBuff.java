@@ -1,4 +1,4 @@
-package aphorea.buffs.Trinkets;
+package aphorea.buffs.Trinkets.Shield;
 
 import aphorea.levelevents.AphSpinelShieldEvent;
 import aphorea.utils.AphColors;
@@ -92,7 +92,7 @@ public class SpinelShieldBuff extends TrinketBuff implements ActiveBuffAbility {
                     int angle = (int) (360.0F + GameRandom.globalRandom.nextFloat() * 360.0F);
                     float dx = (float) Math.sin(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
                     float dy = (float) Math.cos(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
-                    player.getLevel().entityManager.addParticle( player.moveX * 3 + player.x - dx,  player.moveY * 3 + player.y - dy, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(dx, dy, 0.8F).color(GameRandom.globalRandom.getOneOf(AphColors.spinel_light, AphColors.spinel)).heightMoves(10.0F, 20.0F, 5F, 0F, 10F, 0F).lifeTime(250);
+                    player.getLevel().entityManager.addParticle(player.moveX * 3 + player.x - dx, player.moveY * 3 + player.y - dy, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(dx, dy, 0.8F).color(GameRandom.globalRandom.getOneOf(AphColors.spinel_light, AphColors.spinel)).heightMoves(10.0F, 20.0F, 5F, 0F, 10F, 0F).lifeTime(250);
                 }
             }
         }

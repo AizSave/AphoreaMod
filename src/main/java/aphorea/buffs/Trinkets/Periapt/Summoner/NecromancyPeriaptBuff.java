@@ -1,4 +1,4 @@
-package aphorea.buffs.Trinkets.Periapts;
+package aphorea.buffs.Trinkets.Periapt.Summoner;
 
 import necesse.engine.localization.Localization;
 import necesse.engine.registries.DamageTypeRegistry;

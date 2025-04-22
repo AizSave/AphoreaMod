@@ -2,7 +2,6 @@ package aphorea.mobs.hostile;
 
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.entity.mobs.GameDamage;
-import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.MobDrawable;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.ai.behaviourTree.BehaviourTreeAI;
@@ -29,7 +28,7 @@ import java.util.List;
 public class SpinelMimic extends HostileMob {
     public static GameTexture texture;
     public static GameTexture texture_shadow;
-    public static GameDamage collisionDamage = new GameDamage(60.0F);
+    public static GameDamage damage = new GameDamage(60.0F, 20F);
     public int jump = 0;
 
     static public float jumpHeight = 30;
@@ -64,14 +63,9 @@ public class SpinelMimic extends HostileMob {
     }
 
     @Override
-    public GameDamage getCollisionDamage(Mob target) {
-        return collisionDamage;
-    }
-
-    @Override
     public void init() {
         super.init();
-        this.ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 6 * 32, collisionDamage, 0, 40000 * 20));
+        this.ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 6 * 32, damage, 0, 40000 * 20));
     }
 
     @Override

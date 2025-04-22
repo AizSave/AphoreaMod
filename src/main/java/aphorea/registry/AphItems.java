@@ -28,7 +28,6 @@ import aphorea.items.consumable.InitialRune;
 import aphorea.items.consumable.LifeSpinel;
 import aphorea.items.consumable.UnstableCore;
 import aphorea.items.consumable.VenomExtract;
-import aphorea.items.misc.AphWrittenBook;
 import aphorea.items.misc.GelSlimeNullifier;
 import aphorea.items.misc.books.RunesTutorialBook;
 import aphorea.items.runes.AphBaseRune;
@@ -220,27 +219,47 @@ public class AphItems {
     }
 
     public static void registerTrinkets() {
+        // Foci
+        registerItem("inspirationfoci", (new AphSimpleTrinketItem(Item.Rarity.COMMON, "inspirationfoci", 500)).addDisables("magicfoci", "rangefoci", "meleefoci", "summonfoci").addDisabledBy("magicfoci", "rangefoci", "meleefoci", "summonfoci"));
+
+        // Boots
+        registerItem("iceboots", (new AphSimpleTrinketItem(Item.Rarity.COMMON, "iceboots", 300)).addDisabledBy("spikedboots", "spikedbatboots"));
+
+        // Essence
+        registerItem("essenceofhealing", (new AphSimpleTrinketItem(Item.Rarity.RARE, "essenceofhealing", 300, true)), -1F);
+
+        // Ring
         registerItem("floralring", new AphSimpleTrinketItem(Item.Rarity.COMMON, "floralring", 200, true), 30F);
         registerItem("gelring", new AphSimpleTrinketItem(Item.Rarity.COMMON, "gelring", 300, true), 50F);
         registerItem("heartring", new AphSimpleTrinketItem(Item.Rarity.COMMON, "heartring", 300, true));
         registerItem("ringofhealth", (new AphSimpleTrinketItem(Item.Rarity.UNCOMMON, new String[]{"floralring", "gelring", "heartring"}, 400, true)).addDisables("floralring", "gelring", "heartring"));
-        registerItem("rockyperiapt", new AphSimpleTrinketItem(Item.Rarity.COMMON, "rockyperiapt", 300));
+
+        // Periapt
+        registerItem("rockyperiapt", new AphSimpleTrinketItem(Item.Rarity.COMMON, "rockyperiapt", 200));
+        registerItem("frozenperiapt", new AphSimpleTrinketItem(Item.Rarity.COMMON, "frozenperiapt", 300));
         registerItem("bloodyperiapt", new AphSimpleTrinketItem(Item.Rarity.COMMON, "bloodyperiapt", 300).addDisabledBy("demonicperiapt", "abysmalperiapt"));
         registerItem("demonicperiapt", new AphSimpleTrinketItem(Item.Rarity.COMMON, "demonicperiapt", 400).addDisabledBy("abysmalperiapt"));
         registerItem("abysmalperiapt", new AphSimpleTrinketItem(Item.Rarity.UNCOMMON, "abysmalperiapt", 500));
-        registerItem("frozenperiapt", new AphSimpleTrinketItem(Item.Rarity.COMMON, "frozenperiapt", 300));
+
+        // Summoning Periapt
         registerItem("unstableperiapt", new AphSimpleTrinketItem(Item.Rarity.COMMON, "unstableperiapt", 300), 100F);
         registerItem("necromancyperiapt", new AphSimpleTrinketItem(Item.Rarity.UNCOMMON, "necromancyperiapt", 500));
+
+        // Medallion
         registerItem("witchmedallion", new AphSimpleTrinketItem(Item.Rarity.COMMON, "witchmedallion", 300, true), 100F);
+        registerItem("cursedmedallion", (new AphSimpleTrinketItem(Item.Rarity.RARE, "cursedmedallion", 1000, true)), 200F);
+        registerItem("ancientmedallion", (new AphSimpleTrinketItem(Item.Rarity.EPIC, "ancientmedallion", 1200, true)).addDisables("witchmedallion", "cursedmedallion"), -1F);
+
+        // Shield
         registerItem("swampshield", new SwampShield());
-        registerItem("iceboots", (new AphSimpleTrinketItem(Item.Rarity.COMMON, "iceboots", 300)).addDisabledBy("spikedboots", "spikedbatboots"));
-        registerItem("inspirationfoci", (new AphSimpleTrinketItem(Item.Rarity.COMMON, "inspirationfoci", 500)).addDisables("magicfoci", "rangefoci", "meleefoci", "summonfoci").addDisabledBy("magicfoci", "rangefoci", "meleefoci", "summonfoci"));
-        registerItem("cursedmedallion", (new AphSimpleTrinketItem(Item.Rarity.RARE, "cursedmedallion", 500, true)), 200F);
-        registerItem("ancientmedallion", (new AphSimpleTrinketItem(Item.Rarity.EPIC, "ancientmedallion", 700, true)).addDisables("witchmedallion", "cursedmedallion"), -1F);
-        registerItem("essenceofhealing", (new AphSimpleTrinketItem(Item.Rarity.RARE, "essenceofhealing", 600, true)), -1F);
-        registerItem("ninjascarf", (new AphSimpleTrinketItem(Item.Rarity.RARE, "ninjascarf", 500)), 250F);
-        registerItem("adrenalinecharm", (new AphSimpleTrinketItem(Item.Rarity.RARE, "adrenalinecharm", 500)), 200F);
         registerItem("spinelshield", new AphSimpleTrinketItem(Item.Rarity.RARE, "spinelshield", 600));
+
+        // Charm
+        registerItem("adrenalinecharm", (new AphSimpleTrinketItem(Item.Rarity.RARE, "adrenalinecharm", 400)), 200F);
+        registerItem("bloomrushcharm", new AphSimpleTrinketItem(Item.Rarity.RARE, "bloomrushcharm", 500).addDisables("zephyrcharm", "adrenalinecharm"));
+
+        // Ninja
+        registerItem("ninjascarf", (new AphSimpleTrinketItem(Item.Rarity.RARE, "ninjascarf", 400)), 250F);
     }
 
     public static void registerConsumables() {

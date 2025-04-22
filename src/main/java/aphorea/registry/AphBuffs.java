@@ -9,16 +9,21 @@ import aphorea.buffs.Runes.AphBaseRuneActiveBuff;
 import aphorea.buffs.Runes.AphBaseRuneTrinketBuff;
 import aphorea.buffs.Runes.AphModifierRuneTrinketBuff;
 import aphorea.buffs.SetBonus.*;
-import aphorea.buffs.Trinkets.AdrenalineCharmBuff;
-import aphorea.buffs.Trinkets.Healing.*;
-import aphorea.buffs.Trinkets.InspirationFociBuff;
-import aphorea.buffs.Trinkets.Periapts.*;
-import aphorea.buffs.TrinketsActive.SpinelShieldActiveBuff;
-import aphorea.buffs.Trinkets.SpinelShieldBuff;
-import aphorea.buffs.TrinketsActive.BloodyPeriaptActiveBuff;
-import aphorea.buffs.TrinketsActive.DemonicPeriaptActiveBuff;
-import aphorea.buffs.TrinketsActive.PeriaptActiveBuff;
-import aphorea.buffs.TrinketsActive.RockyPeriaptActiveBuff;
+import aphorea.buffs.Trinkets.Charm.AdrenalineCharmBuff;
+import aphorea.buffs.Trinkets.Charm.BloomrushCharmBuff;
+import aphorea.buffs.Trinkets.Essence.EssenceofHealingBuff;
+import aphorea.buffs.Trinkets.Foci.InspirationFociBuff;
+import aphorea.buffs.Trinkets.Meallion.AncientMedallionBuff;
+import aphorea.buffs.Trinkets.Meallion.CursedMedallionBuff;
+import aphorea.buffs.Trinkets.Meallion.WitchMedallionBuff;
+import aphorea.buffs.Trinkets.Periapt.*;
+import aphorea.buffs.Trinkets.Periapt.Summoner.NecromancyPeriaptBuff;
+import aphorea.buffs.Trinkets.Periapt.Summoner.UnstablePeriaptBuff;
+import aphorea.buffs.Trinkets.Ring.FloralRingBuff;
+import aphorea.buffs.Trinkets.Shield.SpinelShieldBuff;
+import aphorea.buffs.TrinketsActive.*;
+import aphorea.items.trinkets.SwampShield;
+import aphorea.items.vanillaitemtypes.AphSimpleTrinketItem;
 import aphorea.levelevents.runes.*;
 import aphorea.mobs.runicsummons.RunicAttackingFollowingMob;
 import aphorea.mobs.runicsummons.RunicFlyingAttackingFollowingMob;
@@ -65,6 +70,7 @@ import necesse.gfx.GameResources;
 import necesse.gfx.camera.MainGameCamera;
 import necesse.gfx.gameFont.FontManager;
 import necesse.inventory.InventoryItem;
+import necesse.inventory.item.Item;
 import necesse.level.maps.Level;
 
 import java.awt.*;
@@ -197,26 +203,7 @@ public class AphBuffs {
         BuffRegistry.registerBuff("venomextract", POTION.VENOM_EXTRACT = new VenomExtractBuff());
 
         // Trinket Buffs
-        BuffRegistry.registerBuff("unstableperiapt", new UnstablePeriaptBuff());
-        BuffRegistry.registerBuff("necromancyperiapt", new NecromancyPeriaptBuff());
-        BuffRegistry.registerBuff("rockyperiapt", new RockyPeriaptBuff());
-        BuffRegistry.registerBuff("bloodyperiapt", new BloodyPeriaptBuff());
-        BuffRegistry.registerBuff("demonicperiapt", new DemonicPeriaptBuff());
-        BuffRegistry.registerBuff("abysmalperiapt", new AbysmalPeriaptBuff());
-        BuffRegistry.registerBuff("frozenperiapt", new FrozenPeriaptBuff());
-        BuffRegistry.registerBuff("floralring", new FloralRingBuff());
-        BuffRegistry.registerBuff("gelring", new SimpleTrinketBuff("gelring", new ModifierValue<>(AphModifiers.MAGIC_HEALING_RECEIVED, 0.3F)));
-        BuffRegistry.registerBuff("heartring", new SimpleTrinketBuff("heartring", new ModifierValue<>(BuffModifiers.MAX_HEALTH_FLAT, 20)));
-        BuffRegistry.registerBuff("witchmedallion", new WitchMedallionBuff());
-        BuffRegistry.registerBuff("iceboots", new SimpleTrinketBuff("iceboots", new ModifierValue<>(BuffModifiers.FRICTION, -0.75F).max(0.5F), new ModifierValue<>(BuffModifiers.SPEED, 0.5F), new ModifierValue<>(BuffModifiers.ARMOR_FLAT, 4)));
-        BuffRegistry.registerBuff("cursedmedallion", new CursedMedallionBuff());
-        BuffRegistry.registerBuff("ancientmedallion", new AncientMedallionBuff());
-        BuffRegistry.registerBuff("essenceofhealing", new EssenceofHealingBuff());
-        BuffRegistry.registerBuff("ninjascarf", new SimpleTrinketBuff("ninjascarf"));
-        BuffRegistry.registerBuff("inspirationfoci", new InspirationFociBuff());
-        BuffRegistry.registerBuff("adrenalinecharm", new AdrenalineCharmBuff());
-        BuffRegistry.registerBuff("spinelshield", new SpinelShieldBuff());
-        BuffRegistry.registerBuff("spinelshieldactive", new SpinelShieldActiveBuff());
+        trinketBuffs();
 
         // Trinket Active Buffs
         BuffRegistry.registerBuff("rockyperiaptactive", new RockyPeriaptActiveBuff());
@@ -246,6 +233,51 @@ public class AphBuffs {
         // Other Mods
         registerMightyBannerBuffs();
         registerSummonerExpansionBuffs();
+    }
+
+    public static void trinketBuffs() {
+        // Foci
+        BuffRegistry.registerBuff("inspirationfoci", new InspirationFociBuff());
+
+        // Boots
+        BuffRegistry.registerBuff("iceboots", new SimpleTrinketBuff("iceboots", new ModifierValue<>(BuffModifiers.FRICTION, -0.75F).max(0.5F), new ModifierValue<>(BuffModifiers.SPEED, 0.5F), new ModifierValue<>(BuffModifiers.ARMOR_FLAT, 4)));
+
+        // Essence
+        BuffRegistry.registerBuff("essenceofhealing", new EssenceofHealingBuff());
+
+        // Ring
+        BuffRegistry.registerBuff("floralring", new FloralRingBuff());
+        BuffRegistry.registerBuff("gelring", new SimpleTrinketBuff("gelring", new ModifierValue<>(AphModifiers.MAGIC_HEALING_RECEIVED, 0.3F)));
+        BuffRegistry.registerBuff("heartring", new SimpleTrinketBuff("heartring", new ModifierValue<>(BuffModifiers.MAX_HEALTH_FLAT, 20)));
+
+        // Periapt
+        BuffRegistry.registerBuff("rockyperiapt", new RockyPeriaptBuff());
+        BuffRegistry.registerBuff("frozenperiapt", new FrozenPeriaptBuff());
+        BuffRegistry.registerBuff("bloodyperiapt", new BloodyPeriaptBuff());
+        BuffRegistry.registerBuff("demonicperiapt", new DemonicPeriaptBuff());
+        BuffRegistry.registerBuff("abysmalperiapt", new AbysmalPeriaptBuff());
+
+        // Summoning Periapt
+        BuffRegistry.registerBuff("unstableperiapt", new UnstablePeriaptBuff());
+        BuffRegistry.registerBuff("necromancyperiapt", new NecromancyPeriaptBuff());
+
+        // Medallion
+        BuffRegistry.registerBuff("witchmedallion", new WitchMedallionBuff());
+        BuffRegistry.registerBuff("cursedmedallion", new CursedMedallionBuff());
+        BuffRegistry.registerBuff("ancientmedallion", new AncientMedallionBuff());
+
+        // Shield
+        BuffRegistry.registerBuff("spinelshield", new SpinelShieldBuff());
+        BuffRegistry.registerBuff("spinelshieldactive", new SpinelShieldActiveBuff());
+
+        // Charm
+        BuffRegistry.registerBuff("adrenalinecharm", new AdrenalineCharmBuff());
+        BuffRegistry.registerBuff("bloomrushcharm", new BloomrushCharmBuff());
+
+        // Ninja
+        BuffRegistry.registerBuff("ninjascarf", new SimpleTrinketBuff("ninjascarf"));
+
+
     }
 
     public static void runesInjectors() {

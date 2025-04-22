@@ -80,18 +80,15 @@ abstract public class AphBattleaxeToolItem extends AphGreatswordToolItem impleme
     public InventoryItem onLevelInteract(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int seed, GNDItemMap mapContent) {
         attackerMob.addBuff(new ActiveBuff(AphBuffs.BERSERKER_RUSH, attackerMob, 11.0F, null), true);
 
-        for (int i = 0; i < 3; i++) {
-            attackerMob.addBuff(new ActiveBuff(AphBuffs.ADRENALINE, attackerMob, 4000, null), false);
-        }
+        AdrenalineBuff.giveAdrenaline(attackerMob, 3, 4000, false);
 
         return item;
     }
 
     @Override
     public void hitMob(InventoryItem item, ToolItemMobAbilityEvent event, Level level, Mob target, Mob attacker) {
-        if (attacker.buffManager.hasBuff(AphBuffs.BERSERKER_RUSH) && target.isHostile) {
-            attacker.addBuff(new ActiveBuff(AphBuffs.ADRENALINE, attacker, 3000, null), true);
-        }
+        AdrenalineBuff.giveAdrenaline(attacker, 3000, true);
+
         super.hitMob(item, event, level, target, attacker);
     }
 }

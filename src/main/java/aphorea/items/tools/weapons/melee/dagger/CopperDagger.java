@@ -7,7 +7,6 @@ import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.gfx.drawOptions.itemAttack.ItemAttackDrawOptions;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.item.toolItem.swordToolItem.CopperSwordToolItem;
 import necesse.level.maps.Level;
 
 import java.awt.*;

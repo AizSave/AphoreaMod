@@ -22,10 +22,20 @@ import necesse.level.maps.light.GameLight;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Supplier;
 
 public class LivingSapling extends AttackingFollowingMob {
+    public static Map<Integer, Integer> hitCount = new HashMap<>();
+
+    public static int getHitCount(Mob mob) {
+        return hitCount.getOrDefault(mob.getUniqueID(), 0);
+    }
+    public static void setHitCount(Mob mob, int amount) {
+        hitCount.put(mob.getUniqueID(), amount);
+    }
 
     public static GameTexture texture;
     public static GameTexture texture_shadow;
@@ -58,16 +68,15 @@ public class LivingSapling extends AttackingFollowingMob {
     public void init() {
         super.init();
         this.ai = new BehaviourTreeAI<>(this, new PlayerFollowerCollisionChaserAI<LivingSapling>(10 * 32, this.summonDamage, 30, 1000, 640, 64) {
-            int attacks = 0;
-
             @Override
             public boolean attackTarget(LivingSapling mob, Mob target) {
-                if (isServer()) {
-                    attacks++;
-                    if (attacks >= 2) {
+                if (isServer() && target.isHostile) {
+                    int attacks = getHitCount(getAttackOwner()) + 1;
+                    if (attacks >= 10) {
                         attacks = 0;
                         AphMagicHealing.healMob(getAttackOwner(), getAttackOwner(), 4);
                     }
+                    setHitCount(getAttackOwner(), attacks);
                 }
                 return super.attackTarget(mob, target);
             }

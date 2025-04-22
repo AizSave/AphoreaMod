@@ -18,6 +18,16 @@ public class AdrenalineBuff extends AphShownBuff {
         return 5;
     }
 
+    public static void giveAdrenaline(Mob mob, int levels, int duration, boolean sendPacket) {
+        for (int i = 0; i < levels; i++) {
+            giveAdrenaline(mob, duration, sendPacket);
+        }
+    }
+
+    public static void giveAdrenaline(Mob mob, int duration, boolean sendPacket) {
+        mob.buffManager.addBuff(new ActiveBuff(AphBuffs.ADRENALINE, mob, duration, null), sendPacket);
+    }
+
     public static int getAdrenalineLevel(Mob mob) {
         if (!mob.buffManager.hasBuff(AphBuffs.ADRENALINE)) {
             return 0;

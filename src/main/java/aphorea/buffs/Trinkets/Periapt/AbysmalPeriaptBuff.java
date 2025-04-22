@@ -1,4 +1,4 @@
-package aphorea.buffs.Trinkets.Periapts;
+package aphorea.buffs.Trinkets.Periapt;
 
 import aphorea.utils.AphColors;
 import necesse.engine.localization.Localization;

@@ -7,17 +7,19 @@ import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.staticBuffs.armorBuffs.trinketBuffs.TrinketBuff;
 import necesse.entity.mobs.itemAttacker.FollowPosition;
+import necesse.entity.mobs.itemAttacker.MobFollower;
 import necesse.entity.mobs.summon.summonFollowingMob.attackingFollowingMob.AttackingFollowingMob;
 import necesse.inventory.item.ItemStatTip;
 
 import java.util.LinkedList;
+import java.util.Objects;
 
 abstract public class AphSummoningTrinketBuff extends TrinketBuff {
 
-    String buffId;
-    String mobId;
-    int mobQuantity;
-    GameDamage damage;
+    public String buffId;
+    public String mobId;
+    public int mobQuantity;
+    public GameDamage damage;
 
     public AphSummoningTrinketBuff(String buffId, String mobId, int mobQuantity, GameDamage damage) {
         this.buffId = buffId;
@@ -40,7 +42,7 @@ abstract public class AphSummoningTrinketBuff extends TrinketBuff {
             for (int i = 0; i < summonMobs; i++) {
                 AttackingFollowingMob mob = (AttackingFollowingMob) MobRegistry.getMob(mobId, buff.owner.getLevel());
 
-                player.serverFollowersManager.addFollower(buffId, mob, FollowPosition.WALK_CLOSE, buffId, 1, 2, null, true);
+                player.serverFollowersManager.addFollower(buffId, mob, FollowPosition.WALK_CLOSE, buffId, 1, mobQuantity, null, true);
                 mob.updateDamage(damage);
                 mob.getLevel().entityManager.addMob(mob, buff.owner.x, buff.owner.y);
             }

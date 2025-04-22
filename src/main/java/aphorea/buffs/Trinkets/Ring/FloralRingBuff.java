@@ -1,4 +1,4 @@
-package aphorea.buffs.Trinkets.Healing;
+package aphorea.buffs.Trinkets.Ring;
 
 import aphorea.utils.magichealing.AphMagicHealing;
 import necesse.engine.localization.Localization;

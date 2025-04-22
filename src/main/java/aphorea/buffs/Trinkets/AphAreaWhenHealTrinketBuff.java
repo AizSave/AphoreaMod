@@ -1,4 +1,4 @@
-package aphorea.buffs.Trinkets.Healing;
+package aphorea.buffs.Trinkets;
 
 import aphorea.utils.area.AphAreaList;
 import aphorea.utils.magichealing.AphMagicHealingFunctions;

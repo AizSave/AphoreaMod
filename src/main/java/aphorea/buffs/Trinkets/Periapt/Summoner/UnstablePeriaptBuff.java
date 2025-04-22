@@ -1,4 +1,4 @@
-package aphorea.buffs.Trinkets.Periapts;
+package aphorea.buffs.Trinkets.Periapt.Summoner;
 
 import aphorea.buffs.Trinkets.AphSummoningTrinketBuff;
 import aphorea.registry.AphBuffs;

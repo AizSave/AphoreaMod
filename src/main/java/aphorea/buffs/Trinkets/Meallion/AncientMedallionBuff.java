@@ -1,5 +1,6 @@
-package aphorea.buffs.Trinkets.Healing;
+package aphorea.buffs.Trinkets.Meallion;
 
+import aphorea.buffs.Trinkets.AphAreaWhenHealTrinketBuff;
 import aphorea.packets.AphSingleAreaShowPacket;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphAreaList;

@@ -118,11 +118,11 @@ public class BookContainerForm<T extends BookContainer> extends ContainerFormSwi
 
         for (int i = 0; i < bookPage.pageInstructions.length; i++) {
             AphWrittenBook.PageInstruction pageInstruction = bookPage.pageInstructions[i];
-            if(i != 0) {
+            if (i != 0) {
                 currentY += pageInstruction.topPadding();
             }
             currentY += pageInstruction.execute(currentY, pageContent);
-            if(i != (bookPage.pageInstructions.length - 1)) {
+            if (i != (bookPage.pageInstructions.length - 1)) {
                 currentY += pageInstruction.bottomPadding();
             }
         }

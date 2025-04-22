@@ -11,7 +11,7 @@ import necesse.inventory.InventoryItem;
 
 public class SwampShield extends AphShieldTrinketItem {
     public SwampShield() {
-        super(Rarity.COMMON, 2, 0.5F, 6000, 0.2F, 50, 240.0F, 300, true);
+        super(Rarity.COMMON, 2, 0.5F, 6000, 0.2F, 50, 240.0F, 400, true);
         isPerfectBlocker = true;
     }
 

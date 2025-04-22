@@ -1,4 +1,4 @@
-package aphorea.buffs.Trinkets;
+package aphorea.buffs.Trinkets.Foci;
 
 import aphorea.registry.AphModifiers;
 import necesse.engine.localization.Localization;

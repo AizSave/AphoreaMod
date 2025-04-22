@@ -50,7 +50,7 @@ public class BerserkerRushBuff extends Buff {
         if (owner.isPlayer && !(((PlayerMob) owner).getSelectedItem().item instanceof AphBattleaxeToolItem)) {
             buff.remove();
         } else {
-            buff.setModifier(BuffModifiers.SPEED, 0.2F * AdrenalineBuff.getAdrenalineLevel(buff.owner));
+            updateBuffs(buff, AdrenalineBuff.getAdrenalineLevel(buff.owner));
         }
     }
 
@@ -61,8 +61,12 @@ public class BerserkerRushBuff extends Buff {
         if (owner.isPlayer && !(((PlayerMob) owner).getSelectedItem().item instanceof AphBattleaxeToolItem)) {
             buff.remove();
         } else {
-            buff.setModifier(BuffModifiers.SPEED, 0.1F * AdrenalineBuff.getAdrenalineLevel(buff.owner));
+            updateBuffs(buff, AdrenalineBuff.getAdrenalineLevel(buff.owner));
         }
+    }
+
+    public void updateBuffs(ActiveBuff buff, int level) {
+        buff.setModifier(BuffModifiers.SPEED, 0.2F * level);
     }
 
     public void onRemoved(ActiveBuff buff) {

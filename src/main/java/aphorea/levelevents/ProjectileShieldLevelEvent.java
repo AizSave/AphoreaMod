@@ -1,21 +1,14 @@
 package aphorea.levelevents;
 
-import aphorea.buffs.Trinkets.SpinelShieldBuff;
+import aphorea.buffs.Trinkets.Shield.SpinelShieldBuff;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
 import necesse.engine.util.GameMath;
 import necesse.engine.util.GameRandom;
 import necesse.engine.util.LineHitbox;
-import necesse.entity.levelEvent.mobAbilityLevelEvent.HitboxEffectEvent;
 import necesse.entity.mobs.Mob;
-import necesse.entity.mobs.PlayerMob;
-import necesse.entity.projectile.Projectile;
 
-import java.awt.*;
 import java.awt.geom.Point2D;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.stream.Stream;
 
 abstract public class ProjectileShieldLevelEvent extends ProjectileHitboxEffectEvent {
 

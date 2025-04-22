@@ -1,6 +1,5 @@
-package aphorea.buffs.Trinkets.Periapts;
+package aphorea.buffs.Trinkets.Periapt;
 
-import aphorea.buffs.Trinkets.AphPeriaptActivableBuff;
 import aphorea.utils.AphColors;
 import necesse.engine.localization.Localization;
 import necesse.engine.util.GameRandom;
