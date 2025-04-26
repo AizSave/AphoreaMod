@@ -7,12 +7,10 @@ import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.staticBuffs.armorBuffs.trinketBuffs.TrinketBuff;
 import necesse.entity.mobs.itemAttacker.FollowPosition;
-import necesse.entity.mobs.itemAttacker.MobFollower;
 import necesse.entity.mobs.summon.summonFollowingMob.attackingFollowingMob.AttackingFollowingMob;
 import necesse.inventory.item.ItemStatTip;
 
 import java.util.LinkedList;
-import java.util.Objects;
 
 abstract public class AphSummoningTrinketBuff extends TrinketBuff {
 

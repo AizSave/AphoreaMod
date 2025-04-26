@@ -33,6 +33,7 @@ public class LivingSapling extends AttackingFollowingMob {
     public static int getHitCount(Mob mob) {
         return hitCount.getOrDefault(mob.getUniqueID(), 0);
     }
+
     public static void setHitCount(Mob mob, int amount) {
         hitCount.put(mob.getUniqueID(), amount);
     }
@@ -81,6 +82,7 @@ public class LivingSapling extends AttackingFollowingMob {
                 return super.attackTarget(mob, target);
             }
         });
+        jump = 0;
     }
 
     @Override
@@ -98,7 +100,7 @@ public class LivingSapling extends AttackingFollowingMob {
         if (jump == 0) {
             this.setFriction(20);
         } else {
-            this.setFriction(0);
+            this.setFriction(0.1F);
         }
     }
 
@@ -117,7 +119,7 @@ public class LivingSapling extends AttackingFollowingMob {
         if (jump == 0) {
             this.setFriction(20);
         } else {
-            this.setFriction(0);
+            this.setFriction(0.1F);
         }
     }
 

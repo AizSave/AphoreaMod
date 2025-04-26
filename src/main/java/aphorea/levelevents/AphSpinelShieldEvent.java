@@ -36,12 +36,12 @@ public class AphSpinelShieldEvent extends ProjectileShieldLevelEvent implements 
         super.init();
 
         if (isClient()) {
-            SoundManager.playSound(GameResources.cling, SoundEffect.effect(owner.x, owner.y));
+            SoundManager.playSound(GameResources.cling, SoundEffect.effect(owner));
             for (int i = 0; i < 20; i++) {
                 int angle = (int) (360.0F + GameRandom.globalRandom.nextFloat() * 360.0F);
                 float dx = (float) Math.sin(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
                 float dy = (float) Math.cos(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
-                owner.getLevel().entityManager.addParticle(owner, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(dx, dy, 0.8F).color(GameRandom.globalRandom.getOneOf(AphColors.spinel_light, AphColors.spinel)).heightMoves(10.0F, 20.0F, 10F, 2F, 0F, 0F).lifeTime(500);
+                owner.getLevel().entityManager.addParticle(owner, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(dx, dy, 0.8F).color(GameRandom.globalRandom.getOneOf(AphColors.spinel_light, AphColors.spinel)).heightMoves(10.0F, 20.0F, 2F, 0.5F, 0F, 0F).lifeTime(500);
             }
         }
     }
@@ -84,7 +84,7 @@ public class AphSpinelShieldEvent extends ProjectileShieldLevelEvent implements 
                 int angle = (int) (360.0F + GameRandom.globalRandom.nextFloat() * 360.0F);
                 float dx = (float) Math.sin(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
                 float dy = (float) Math.cos(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
-                mob.getLevel().entityManager.addParticle(mob.x, mob.y, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(dx, dy, 0.8F).color(GameRandom.globalRandom.getOneOf(AphColors.spinel_light, AphColors.spinel)).heightMoves(10.0F, 20.0F, 10F, 2F, 0F, 0F).lifeTime(500);
+                mob.getLevel().entityManager.addParticle(mob.x, mob.y, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(dx, dy, 0.8F).color(GameRandom.globalRandom.getOneOf(AphColors.spinel_light, AphColors.spinel)).heightMoves(10.0F, 20.0F, 2F, 0.5F, 0F, 0F).lifeTime(500);
             }
         }
     }
@@ -96,8 +96,8 @@ public class AphSpinelShieldEvent extends ProjectileShieldLevelEvent implements 
             float modifier = target.getKnockbackModifier();
             if (modifier != 0.0F) {
                 StaminaBuff.useStaminaAndGetValid(owner, 0.01F);
-                float knockback = 150.0F / modifier;
-                target.isServerHit(new GameDamage(0.0F), this.owner.x - target.x, this.owner.y - target.y, knockback, this.owner);
+                float knockback = 50.0F / modifier;
+                target.isServerHit(new GameDamage(0.0F), target.x - this.owner.x, target.y - this.owner.y, knockback, this.owner);
             }
         }
     }
@@ -111,7 +111,7 @@ public class AphSpinelShieldEvent extends ProjectileShieldLevelEvent implements 
                 int angle = (int) (360.0F + GameRandom.globalRandom.nextFloat() * 360.0F);
                 float dx = (float) Math.sin(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
                 float dy = (float) Math.cos(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
-                projectile.getLevel().entityManager.addParticle(projectile.x, projectile.y, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(dx, dy, 0.8F).color(GameRandom.globalRandom.getOneOf(AphColors.spinel_light, AphColors.spinel)).heightMoves(10.0F, 20.0F, 10F, 2F, 0F, 0F).lifeTime(500);
+                projectile.getLevel().entityManager.addParticle(projectile.x, projectile.y, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(dx, dy, 0.8F).color(GameRandom.globalRandom.getOneOf(AphColors.spinel_light, AphColors.spinel)).heightMoves(10.0F, 20.0F, 2F, 0.5F, 0F, 0F).lifeTime(500);
             }
         }
         projectile.remove();

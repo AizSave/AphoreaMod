@@ -12,6 +12,7 @@ import aphorea.mobs.summon.LivingSapling;
 import aphorea.mobs.summon.Onyx;
 import aphorea.mobs.summon.VolatileGelSlime;
 import aphorea.particles.BabylonTowerFallingCrystalParticle;
+import aphorea.particles.NarcissistParticle;
 import aphorea.particles.SpinelShieldParticle;
 import aphorea.projectiles.bullet.SpamBulletProjectile;
 import aphorea.projectiles.toolitem.AircutProjectile;
@@ -77,6 +78,7 @@ public class AphResources {
         BabylonTowerFallingCrystalParticle.projectileTexture = GameTexture.fromFile("particles/babylontowerfallingcrystalparticle");
         BabylonTowerFallingCrystalParticle.shadowTexture = GameTexture.fromFile("particles/babylontowerfallingcrystalparticle_shadow");
         SpinelShieldParticle.texture = GameTexture.fromFile("particles/spinelshield");
+        NarcissistParticle.texture = GameTexture.fromFile("player/weapons/narcissist");
     }
 
 

@@ -5,6 +5,9 @@ import aphorea.items.ammo.GelArrowItem;
 import aphorea.items.ammo.SpamBullet;
 import aphorea.items.ammo.UnstableGelArrowItem;
 import aphorea.items.armor.Gold.GoldHat;
+import aphorea.items.armor.Infected.InfectedBoots;
+import aphorea.items.armor.Infected.InfectedChestplate;
+import aphorea.items.armor.Infected.InfectedHat;
 import aphorea.items.armor.Rocky.RockyBoots;
 import aphorea.items.armor.Rocky.RockyChestplate;
 import aphorea.items.armor.Rocky.RockyHelmet;
@@ -52,7 +55,7 @@ import aphorea.items.tools.weapons.range.sabergun.ShotgunSaber;
 import aphorea.items.tools.weapons.range.sling.FireSling;
 import aphorea.items.tools.weapons.range.sling.FrozenSling;
 import aphorea.items.tools.weapons.range.sling.Sling;
-import aphorea.items.tools.weapons.summoner.InfectedWoodStaff;
+import aphorea.items.tools.weapons.summoner.InfectedStaff;
 import aphorea.items.tools.weapons.summoner.VolatileGelStaff;
 import aphorea.items.tools.weapons.throwable.GelBall;
 import aphorea.items.tools.weapons.throwable.GelBallGroup;
@@ -107,11 +110,10 @@ public class AphItems {
     public static void registerMaterials() {
         registerItem("unstablegel", (new AphMatItem(500, Item.Rarity.COMMON)).setItemCategory("materials"), 10F);
         registerItem("rockygel", (new AphMatItem(500, Item.Rarity.NORMAL)).setItemCategory("materials"), 5F);
-        registerItem("stardust", (new AphMatItem(500, Item.Rarity.COMMON)).setItemCategory("materials"), 30F);
+        registerItem("stardust", (new AphMatItem(500, Item.Rarity.COMMON)).setItemCategory("materials"), 15F);
         registerItem("infectedlog", (new AphMatItem(500, "anylog")).setItemCategory("materials", "logs"), 2F);
         registerItem("spinel", (new AphMatItem(500, Item.Rarity.UNCOMMON)).setItemCategory("materials", "minerals"), 15F);
-        registerItem("infectedalloy", (new AphMatItem(100, Item.Rarity.RARE)).setItemCategory("materials"), 50F);
-
+        registerItem("infectedalloy", (new AphMatItem(500, Item.Rarity.RARE)).setItemCategory("materials"), 30F);
     }
 
     public static void registerTools() {
@@ -139,6 +141,7 @@ public class AphItems {
         registerItem("tungstendagger", new TungstenDagger());
         replaceItem("cutlass", new AphCutlassSaber(), 500F); // REWORKED
         registerItem("honeysaber", new HoneySaber());
+        registerItem("thenarcissist", new TheNarcissist());
         registerItem("glacialsaber", new GlacialSaber());
         registerItem("lostumbrella", new LostUmbrellaDagger());
         registerItem("brokenkora", new BrokenKora(), 200F);
@@ -161,7 +164,7 @@ public class AphItems {
 
         // Summoner Weapons
         registerItem("volatilegelstaff", new VolatileGelStaff());
-        registerItem("infectedwoodstaff", new InfectedWoodStaff());
+        registerItem("infectedstaff", new InfectedStaff());
 
         // Throwable Weapons
         registerItem("gelball", new GelBall(), 2F);
@@ -212,6 +215,11 @@ public class AphItems {
         registerItem("swampchestplate", new SwampChestplate());
         registerItem("swampboots", new SwampBoots());
 
+        // Infected
+        registerItem("infectedhat", new InfectedHat());
+        registerItem("infectedchestplate", new InfectedChestplate());
+        registerItem("infectedboots", new InfectedBoots());
+
         // Spinel
         registerItem("spinelhelmet", new SpinelHelmet());
         registerItem("spinelchestplate", new SpinelChestplate());
@@ -244,10 +252,11 @@ public class AphItems {
         // Summoning Periapt
         registerItem("unstableperiapt", new AphSimpleTrinketItem(Item.Rarity.COMMON, "unstableperiapt", 300), 100F);
         registerItem("necromancyperiapt", new AphSimpleTrinketItem(Item.Rarity.UNCOMMON, "necromancyperiapt", 500));
+        registerItem("infectedperiapt", new AphSimpleTrinketItem(Item.Rarity.UNCOMMON, "infectedperiapt", 500));
 
         // Medallion
         registerItem("witchmedallion", new AphSimpleTrinketItem(Item.Rarity.COMMON, "witchmedallion", 300, true), 100F);
-        registerItem("cursedmedallion", (new AphSimpleTrinketItem(Item.Rarity.RARE, "cursedmedallion", 1000, true)), 200F);
+        registerItem("cursedmedallion", (new AphSimpleTrinketItem(Item.Rarity.UNCOMMON, "cursedmedallion", 1000, true)), 200F);
         registerItem("ancientmedallion", (new AphSimpleTrinketItem(Item.Rarity.EPIC, "ancientmedallion", 1200, true)).addDisables("witchmedallion", "cursedmedallion"), -1F);
 
         // Shield
@@ -255,11 +264,11 @@ public class AphItems {
         registerItem("spinelshield", new AphSimpleTrinketItem(Item.Rarity.RARE, "spinelshield", 600));
 
         // Charm
-        registerItem("adrenalinecharm", (new AphSimpleTrinketItem(Item.Rarity.RARE, "adrenalinecharm", 400)), 200F);
-        registerItem("bloomrushcharm", new AphSimpleTrinketItem(Item.Rarity.RARE, "bloomrushcharm", 500).addDisables("zephyrcharm", "adrenalinecharm"));
+        registerItem("adrenalinecharm", (new AphSimpleTrinketItem(Item.Rarity.UNCOMMON, "adrenalinecharm", 400)), 200F);
+        registerItem("bloomrushcharm", new AphSimpleTrinketItem(Item.Rarity.UNCOMMON, "bloomrushcharm", 500).addDisables("zephyrcharm", "adrenalinecharm"));
 
         // Ninja
-        registerItem("ninjascarf", (new AphSimpleTrinketItem(Item.Rarity.RARE, "ninjascarf", 400)), 250F);
+        registerItem("ninjascarf", (new AphSimpleTrinketItem(Item.Rarity.UNCOMMON, "ninjascarf", 400)), 200F);
     }
 
     public static void registerConsumables() {

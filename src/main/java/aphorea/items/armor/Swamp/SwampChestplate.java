@@ -10,7 +10,7 @@ import necesse.inventory.item.armorItem.ArmorModifiers;
 
 public class SwampChestplate extends AphChestArmorItem {
     public SwampChestplate() {
-        super(5, 400, Rarity.COMMON, "swampchestplate", "swampchestplatearms");
+        super(5, 400, Rarity.COMMON, "swampchest", "swamparms");
     }
 
     public ArmorModifiers getArmorModifiers(InventoryItem item, Mob mob) {

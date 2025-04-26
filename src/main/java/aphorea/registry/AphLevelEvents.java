@@ -3,6 +3,7 @@ package aphorea.registry;
 import aphorea.items.tools.weapons.melee.greatsword.logic.GreatswordDashLevelEvent;
 import aphorea.items.tools.weapons.melee.saber.logic.SaberDashLevelEvent;
 import aphorea.items.tools.weapons.melee.saber.logic.SaberJumpLevelEvent;
+import aphorea.levelevents.AphNarcissistEvent;
 import aphorea.levelevents.AphSpinelShieldEvent;
 import aphorea.levelevents.babylon.BabylonTowerFallingCrystalAttackEvent;
 import aphorea.levelevents.runes.*;
@@ -29,6 +30,9 @@ public class AphLevelEvents {
 
         // Trinkets
         LevelEventRegistry.registerEvent("spinelshield", AphSpinelShieldEvent.class);
+
+        // Weapons
+        LevelEventRegistry.registerEvent("narcissist", AphNarcissistEvent.class);
 
         // Babylon Boss
         LevelEventRegistry.registerEvent("babylonentrance", BabylonEntranceObject.BabylonEntranceEvent.class);

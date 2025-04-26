@@ -60,12 +60,14 @@ public class SpinelMimic extends HostileMob {
         this.collision = new Rectangle(-10, 14 - adjustY, 20, 10);
         this.hitBox = new Rectangle(-14, 10 - adjustY, 28, 14);
         this.selectBox = new Rectangle(-16, -6 - adjustY, 32, 32);
+        this.setKnockbackModifier(0);
     }
 
     @Override
     public void init() {
         super.init();
         this.ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 6 * 32, damage, 0, 40000 * 20));
+        this.jump = 0;
     }
 
     @Override
@@ -100,7 +102,7 @@ public class SpinelMimic extends HostileMob {
         if (jump == 0) {
             this.setFriction(20);
         } else {
-            this.setFriction(0);
+            this.setFriction(0.1F);
         }
     }
 
@@ -119,7 +121,7 @@ public class SpinelMimic extends HostileMob {
         if (jump == 0) {
             this.setFriction(20);
         } else {
-            this.setFriction(0);
+            this.setFriction(0.1F);
         }
     }
 

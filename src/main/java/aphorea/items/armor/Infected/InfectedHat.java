@@ -1,4 +1,4 @@
-package aphorea.items.armor.Spinel;
+package aphorea.items.armor.Infected;
 
 import aphorea.items.vanillaitemtypes.armor.AphSetHelmetArmorItem;
 import aphorea.registry.AphModifiers;
@@ -9,13 +9,13 @@ import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.armorItem.ArmorModifiers;
 
-public class SpinelHelmet extends AphSetHelmetArmorItem {
-    public SpinelHelmet() {
-        super(24, DamageTypeRegistry.MELEE, 1300, Rarity.UNCOMMON, "spinelhelmet", "spinelchestplate", "spinelboots", "spinelhelmetsetbonus");
+public class InfectedHat extends AphSetHelmetArmorItem {
+    public InfectedHat() {
+        super(12, DamageTypeRegistry.MELEE, 1300, Rarity.UNCOMMON, "infectedhat", "infectedchestplate", "infectedboots", "infectedsetbonus");
         this.hairDrawOptions = HairDrawMode.NO_HAIR;
     }
 
     public ArmorModifiers getArmorModifiers(InventoryItem item, Mob mob) {
-        return new ArmorModifiers(new ModifierValue<>(AphModifiers.MAGIC_HEALING_RECEIVED, 0.3F), new ModifierValue<>(BuffModifiers.SPEED, -0.02F), new ModifierValue<>(BuffModifiers.ALL_DAMAGE, -0.1F), new ModifierValue<>(BuffModifiers.BLINDNESS, 0.4F));
+        return new ArmorModifiers(new ModifierValue<>(AphModifiers.MAGIC_HEALING_RECEIVED, 0.1F), new ModifierValue<>(BuffModifiers.MAX_SUMMONS, 1));
     }
 }

@@ -17,13 +17,12 @@ import aphorea.buffs.Trinkets.Meallion.AncientMedallionBuff;
 import aphorea.buffs.Trinkets.Meallion.CursedMedallionBuff;
 import aphorea.buffs.Trinkets.Meallion.WitchMedallionBuff;
 import aphorea.buffs.Trinkets.Periapt.*;
+import aphorea.buffs.Trinkets.Periapt.Summoner.InfectedPeriaptBuff;
 import aphorea.buffs.Trinkets.Periapt.Summoner.NecromancyPeriaptBuff;
 import aphorea.buffs.Trinkets.Periapt.Summoner.UnstablePeriaptBuff;
 import aphorea.buffs.Trinkets.Ring.FloralRingBuff;
 import aphorea.buffs.Trinkets.Shield.SpinelShieldBuff;
 import aphorea.buffs.TrinketsActive.*;
-import aphorea.items.trinkets.SwampShield;
-import aphorea.items.vanillaitemtypes.AphSimpleTrinketItem;
 import aphorea.levelevents.runes.*;
 import aphorea.mobs.runicsummons.RunicAttackingFollowingMob;
 import aphorea.mobs.runicsummons.RunicFlyingAttackingFollowingMob;
@@ -70,7 +69,6 @@ import necesse.gfx.GameResources;
 import necesse.gfx.camera.MainGameCamera;
 import necesse.gfx.gameFont.FontManager;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.item.Item;
 import necesse.level.maps.Level;
 
 import java.awt.*;
@@ -112,6 +110,7 @@ public class AphBuffs {
         public static SetBonusBuff WITCH;
         public static SetBonusBuff SWAMP_MASK;
         public static SetBonusBuff SWAMP_HOOP;
+        public static SetBonusBuff INFECTED;
         public static SetBonusBuff SPINEL_HELMET;
     }
 
@@ -173,7 +172,9 @@ public class AphBuffs {
 
         BuffRegistry.registerBuff("adrenaline", ADRENALINE = new AdrenalineBuff());
 
-        // Common Cooldowns
+        BuffRegistry.registerBuff("narcissist", new NarcissistBuff());
+
+        // Cooldowns
         BuffRegistry.registerBuff("immortalcooldown", INMORTAL_COOLDOWN = new HiddenCooldownBuff());
         BuffRegistry.registerBuff("berserkerrushcooldown", BERSERKER_RUSH_COOLDOWN = new AphShownCooldownBuff());
         BuffRegistry.registerBuff("spinattackcooldown", SPIN_ATTACK_COOLDOWN = new AphShownCooldownBuff());
@@ -186,6 +187,7 @@ public class AphBuffs {
         BuffRegistry.registerBuff("pinkwitchsetbonus", SET_BONUS.WITCH = new PinkWitchSetBonusBuff());
         BuffRegistry.registerBuff("swampmasksetbonus", SET_BONUS.SWAMP_MASK = new SwampMaskSetBonusBuff());
         BuffRegistry.registerBuff("swamphoodsetbonus", SET_BONUS.SWAMP_HOOP = new SwampHoodSetBonusBuff());
+        BuffRegistry.registerBuff("infectedsetbonus", SET_BONUS.INFECTED = new InfectedSetBonusBuff());
         BuffRegistry.registerBuff("spinelhelmetsetbonus", SET_BONUS.SPINEL_HELMET = new SpinelHelmetSetBonusBuff());
 
         // Banner Buffs
@@ -260,6 +262,7 @@ public class AphBuffs {
         // Summoning Periapt
         BuffRegistry.registerBuff("unstableperiapt", new UnstablePeriaptBuff());
         BuffRegistry.registerBuff("necromancyperiapt", new NecromancyPeriaptBuff());
+        BuffRegistry.registerBuff("infectedperiapt", new InfectedPeriaptBuff());
 
         // Medallion
         BuffRegistry.registerBuff("witchmedallion", new WitchMedallionBuff());

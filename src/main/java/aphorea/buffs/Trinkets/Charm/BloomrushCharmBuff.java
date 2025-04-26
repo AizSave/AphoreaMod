@@ -1,7 +1,6 @@
 package aphorea.buffs.Trinkets.Charm;
 
 import aphorea.buffs.AdrenalineBuff;
-import aphorea.registry.AphBuffs;
 import necesse.engine.localization.Localization;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.registries.MobRegistry;

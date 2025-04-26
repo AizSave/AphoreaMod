@@ -25,7 +25,6 @@ import necesse.gfx.gameTexture.GameTextureSection;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.item.toolItem.axeToolItem.AxeToolItem;
 import necesse.inventory.lootTable.LootTable;
-import necesse.inventory.lootTable.lootItem.ChanceLootItem;
 import necesse.inventory.lootTable.lootItem.LootItem;
 import necesse.level.gameObject.GameObject;
 import necesse.level.gameObject.TreeObject;
@@ -62,7 +61,7 @@ public class InfectedTreant extends HostileMob {
 
 
     public static LootTable lootTable = new LootTable(
-            new ChanceLootItem(0.5F, "infectedalloy"),
+            LootItem.between("infectedalloy", 1, 2),
             LootItem.between("infectedlog", 4, 5),
             LootItem.between("infectedsapling", 1, 2)
     );
@@ -83,6 +82,7 @@ public class InfectedTreant extends HostileMob {
     public void init() {
         super.init();
         this.ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 6 * 32, collisionDamage, 0, 40000 * 20));
+        jump = 0;
     }
 
     @Override
@@ -116,7 +116,7 @@ public class InfectedTreant extends HostileMob {
         if (jump == 0) {
             this.setFriction(20);
         } else {
-            this.setFriction(0);
+            this.setFriction(0.1F);
         }
     }
 
@@ -135,7 +135,7 @@ public class InfectedTreant extends HostileMob {
         if (jump == 0) {
             this.setFriction(20);
         } else {
-            this.setFriction(0);
+            this.setFriction(0.1F);
         }
     }
 

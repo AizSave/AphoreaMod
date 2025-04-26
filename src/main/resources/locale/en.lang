@@ -125,6 +125,7 @@ broom=Broom
 voidhammer=Void Hammer
 # NEW
 brokenkora=Broken Kora
+thenarcissist=The Narcissist
 
 // Greatswords
 unstablegelgreatsword=Unstable Gel Greatsword
@@ -201,7 +202,7 @@ unstablegelveline=Unstable Gelveline
 // Summon weapons
 volatilegelstaff=Volatile Gel Staff
 # NEW
-infectedwoodstaff=Infected Wood Staff
+infectedstaff=Infected Staff
 
 // Banners
 blankbanner=Blank Banner
@@ -242,6 +243,8 @@ essenceofhealing=Essence of Healing
 ninjascarf=Ninja Scarf
 adrenalinecharm=Adrenaline Charm
 spinelshield=Spinel Shield
+bloomrushcharm=Bloomrush Charm
+infectedperiapt=Infected Periapt
 
 // Armor
 rockyboots=Rocky Boots
@@ -256,6 +259,9 @@ swampchestplate=Swamp Chestplate
 swampmask=Swamp Mask
 swamphood=Swamp Hood
 # NEW
+infectedhat=Infected Hat
+infectedchestplate=Infected Chestplate
+infectedboots=Infected Boots
 spinelhelmet=Spinel Helmet
 spinelchestplate=Spinel Chestplate
 spinelboots=Spinel Boots
@@ -375,7 +381,6 @@ stored=Stored items: <items>
 # NEW
 backpackcraft=Must be empty to craft a better backpack
 
-
 // Consumables
 deleteditem=This item has been removed, use this item to recover the materials before it is permanently removed
 unstablecore=§bReleases an unstable aura...§0 Can only be used during the day
@@ -409,9 +414,11 @@ threearrows=Shoots three arrows at once
 blowgun=Shoots seeds
 
 // Single Melee Weapons
-woodenrod=Magic Heal yourself with §7<healing>§0 every 10 attacks
+woodenrod="Perform a 3-hit combo to unleash a spinning sword attack on the third strike, magic healing you §7<healing>§0 with each hit
 voidhammer=When the projectile bounces or hits an enemy, it targets the nearest one, hitting up to 3 times
+# NEW
 crimsonkora=Hold [input=mouse2] to charge a devastating but slow attack
+thenarcissist=
 
 // Single Range Weapons
 firesling=Burns the enemies
@@ -425,6 +432,10 @@ honeysaber=Charge to max for full damage and to shot honey and blueberries
 
 // Single Magic Weapons
 unstablegelstaff=When projectiles bounces off walls, they duplicate
+
+// Single Summoner Weapons
+# NEW
+infectedstaff=Summons two Living Saplings per invocation
 
 // Single Throwable Weapons
 gelball=Throws a gel ball
@@ -456,7 +467,7 @@ areawhenheal=Executes this area for every <magichealing> Magic Healing done
 // Trinkets
 rockyperiapt=§7+5§0 Armor, but §6-5%§0 Movement Speed
 rockyperiapt2=Press [input=trinketability] to gain 10 Armor for 10 seconds
-unstableperiapt=Summons two Baby Unstable Gel Slimes. Deals 8 Summoner Damage
+unstableperiapt=Summons two Baby Unstable Gel Slimes (6 Summoner Damage)
 unstableperiapt2=Makes you immune to the Sticky debuff
 bloodyperiapt=Press [input=trinketability] to gain a boost of Speed and Attack Speed for 10 seconds
 bloodyperiapt2=Also, the weapons 'Blood Bolt' and 'Blood Volley' will steal §73%§0 of life
@@ -464,7 +475,7 @@ demonicperiapt=Press [input=trinketability] to gain a boost of Speed and Attack 
 demonicperiapt2=Also, all magic weapons will steal §73%§0 of life
 abysmalperiapt=Magic weapons will steal §73%§0 of life
 necromancyperiapt=Every time you or one of your summons kills a hostile mob you summon a Undead Skeleton
-necromancyperiapt2=Deals 20 Summoner Damage. Lasts 10 seconds and there can be a maximum of 3 at a time
+necromancyperiapt2=20 Summoner Damage. Lasts 10 seconds and there can be a maximum of 3 at a time
 frozenperiapt=Melee and Ranged weapons will Freeze for 3 seconds
 frozenperiapt2=Deal more damage to mobs affected by Frezze
 frozenperiapt3=Makes you immune to the Freeze and Frostslow debuffs
@@ -482,10 +493,14 @@ essenceofhealing2=§7<flat>&§0 Magic Healing per 2 life essences
 essenceofhealing3=§6-80%§0 life essence duration, capped to -50%
 ninjascarf=Converts Saber Dashes into Saber Jumps
 adrenalinecharm=Every hit received will give you Adrenaline for 20 seconds
+infectedperiapt=Summons two Living Saplings (8 Summoner Damage)
+bloomrushcharm=Decrease stamina usage by 10% for each Adrenaline you have\nSummon a Living Sapling (8 Summoner Damage) for each Adrenaline you have
 
 // Set Bonus
 goldhatsetbonus=If you're still, your ranged attack speed is greatly increased
 pinkwitchsetbonus=Increases Magic Attack Speed, Mana Regeneration, and Armor the lower your health is
+# NEW
+infectedsetbonus=Summon three Living Saplings (8 Summoner Damage)
 spinelhelmetsetbonus=Magic Heal yourself with §7<healing>§0 of weapon damage dealt to hostile mobs
 
 // Banners

@@ -444,10 +444,27 @@ public class AphRecipes {
         );
 
         addCraftingList("shadowbolt", tech,
-                AphCraftingRecipe.showAfter("infectedwoodstaff", 1,
-                        new Ingredient("infectedalloy", 1),
+                AphCraftingRecipe.showAfter("infectedstaff", 1,
+                        new Ingredient("infectedalloy", 2),
                         new Ingredient("infectedlog", 12),
                         new Ingredient("infectedsapling", 3)
+                ),
+                AphCraftingRecipe.showAfter("infectedhat", 1,
+                        new Ingredient("infectedalloy", 3),
+                        new Ingredient("infectedsapling", 9)
+                ),
+                AphCraftingRecipe.showAfter("infectedchestplate", 1,
+                        new Ingredient("infectedalloy", 4),
+                        new Ingredient("infectedsapling", 12)
+                ),
+                AphCraftingRecipe.showAfter("infectedboots", 1,
+                        new Ingredient("infectedalloy", 2),
+                        new Ingredient("infectedsapling", 6)
+                ),
+                AphCraftingRecipe.showAfter("thenarcissist", 1,
+                        new Ingredient("goldsword", 1),
+                        new Ingredient("lifespinel", 1),
+                        new Ingredient("spinel", 6)
                 ),
                 AphCraftingRecipe.showAfter("spinelwand", 1,
                         new Ingredient("goldenwand", 1),
@@ -474,6 +491,15 @@ public class AphRecipes {
                 AphCraftingRecipe.showAfter("spinelshield", 1,
                         new Ingredient("tungstenshield", 1),
                         new Ingredient("spinel", 12)
+                ),
+                AphCraftingRecipe.showAfter("bloomrushcharm", 1,
+                        new Ingredient("zephyrcharm", 1),
+                        new Ingredient("adrenalinecharm", 1),
+                        new Ingredient("infectedalloy", 1)
+                ),
+                AphCraftingRecipe.showAfter("infectedperiapt", 1,
+                        new Ingredient("unstableperiapt", 1),
+                        new Ingredient("infectedalloy", 2)
                 )
         );
 

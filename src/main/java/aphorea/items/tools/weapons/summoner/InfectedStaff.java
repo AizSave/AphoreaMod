@@ -10,11 +10,10 @@ import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
 import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.item.toolItem.summonToolItem.SkeletonStaffToolItem;
 import necesse.level.maps.Level;
 
-public class InfectedWoodStaff extends AphSummonToolItem {
-    public InfectedWoodStaff() {
+public class InfectedStaff extends AphSummonToolItem {
+    public InfectedStaff() {
         super("livingsapling", FollowPosition.WALK_CLOSE, 0.5F, 400);
         this.rarity = Rarity.UNCOMMON;
         this.attackDamage.setBaseValue(8).setUpgradedValue(1.0F, 20);
@@ -23,6 +22,7 @@ public class InfectedWoodStaff extends AphSummonToolItem {
     @Override
     public ListGameTooltips getPreEnchantmentTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {
         ListGameTooltips tooltips = super.getPreEnchantmentTooltips(item, perspective, blackboard);
+        tooltips.add(Localization.translate("itemtooltip", "infectedstaff"));
         tooltips.add(Localization.translate("itemtooltip", "livingsapling"));
         return tooltips;
     }

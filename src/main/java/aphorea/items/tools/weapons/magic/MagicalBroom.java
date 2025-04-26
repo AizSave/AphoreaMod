@@ -64,8 +64,8 @@ public class MagicalBroom extends AphToolItem {
         knockback.setBaseValue(250);
         manaCost.setBaseValue(1.0F);
 
-        attackYOffset = 155; // 140
-        attackXOffset = 30; // 30
+        attackYOffset = 155;
+        attackXOffset = 30;
 
         currentA = 0;
     }
