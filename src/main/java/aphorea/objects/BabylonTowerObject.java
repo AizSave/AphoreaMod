@@ -1,14 +1,18 @@
 package aphorea.objects;
 
+import aphorea.journal.ActivateBabylonTowerJournalChallenge;
 import aphorea.mobs.bosses.BabylonTowerMob;
 import aphorea.utils.AphColors;
 import necesse.engine.Settings;
 import necesse.engine.gameLoop.tickManager.TickManager;
+import necesse.engine.journal.JournalChallenge;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
 import necesse.engine.registries.ItemRegistry;
+import necesse.engine.registries.JournalChallengeRegistry;
 import necesse.engine.registries.ObjectRegistry;
+import necesse.engine.util.GameUtils;
 import necesse.engine.window.WindowManager;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
@@ -166,6 +170,15 @@ public class BabylonTowerObject extends StaticMultiObject {
         if (!player.isItemOnCooldown(item)) {
             if (player.getInv().removeItems(item, 1, false, false, false, false, "use") > 0) {
                 level.entityManager.objectEntities.add(new BabylonTowerObjectEntity(level, x - multiX, y - multiY));
+                if(player.isServer()) {
+                    JournalChallenge challenge = JournalChallengeRegistry.getChallenge("activatebabylontower");
+                    if(challenge instanceof ActivateBabylonTowerJournalChallenge) {
+                        ((ActivateBabylonTowerJournalChallenge) challenge).onBabylonTowerActivated(player.getServerClient());
+                        GameUtils.streamServerClients(level).filter(m -> m.playerMob != player && m.playerMob.getDistance(x, y) <= BabylonTowerMob.BOSS_AREA_RADIUS).forEach(
+                                serverClient -> ((ActivateBabylonTowerJournalChallenge) challenge).onBabylonTowerActivated(serverClient)
+                        );
+                    }
+                }
             }
         }
     }

@@ -226,7 +226,7 @@ public class BabylonTowerMob extends BossMob {
     @Override
     protected void doBeforeHitLogic(MobBeforeHitEvent event) {
         if (hearthCrystalClose()) {
-            event.damage = event.damage.setDamage(event.damage.damage / 2);
+            event.damage = event.damage.setDamage(event.damage.damage * 0.8F);
         }
         super.doBeforeHitLogic(event);
     }

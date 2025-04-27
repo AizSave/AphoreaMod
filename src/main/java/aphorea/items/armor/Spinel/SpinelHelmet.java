@@ -12,7 +12,7 @@ import necesse.inventory.item.armorItem.ArmorModifiers;
 public class SpinelHelmet extends AphSetHelmetArmorItem {
     public SpinelHelmet() {
         super(24, DamageTypeRegistry.MELEE, 1300, Rarity.UNCOMMON, "spinelhelmet", "spinelchestplate", "spinelboots", "spinelhelmetsetbonus");
-        this.hairDrawOptions = HairDrawMode.NO_HAIR;
+        this.hairDrawOptions = HairDrawMode.NO_HEAD;
     }
 
     public ArmorModifiers getArmorModifiers(InventoryItem item, Mob mob) {

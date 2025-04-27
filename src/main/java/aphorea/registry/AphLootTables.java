@@ -18,6 +18,7 @@ public class AphLootTables {
     public static LootTable infectedFieldsSurface = new LootTable();
     public static LootTable infectedLootLake = new LootTable();
     public static LootTable infectedCaveForest = new LootTable();
+    public static LootTable infectedCaveVariousTreasures = new LootTable();
 
     public static final RotationLootItem basicChestAllMainItems = RotationLootItem.presetRotation(
             new LootItem("zephyrcharm"), new LootItem("shinebelt"), new LootItem("heavyhammer"), new LootItem("noblehorseshoe"),
@@ -65,6 +66,19 @@ public class AphLootTables {
                         CaveChestLootTable.potions,
                         CaveChestLootTable.extraItems
                 )
+        );
+
+        infectedCaveVariousTreasures.items.addAll(
+                new LootItemList(
+                        RotationLootItem.globalLootRotation(
+                                new LootItem("brokenkora"),
+                                new LootItem("ninjascarf"),
+                                new LootItem("adrenalinecharm"),
+                                new LootItem("shotgunsaber"),
+                                new LootItem("cursedmedallion")
+                        )
+                )
+
         );
     }
 

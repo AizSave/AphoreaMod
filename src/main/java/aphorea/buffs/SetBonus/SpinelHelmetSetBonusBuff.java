@@ -2,6 +2,7 @@ package aphorea.buffs.SetBonus;
 
 import aphorea.utils.magichealing.AphMagicHealing;
 import necesse.engine.localization.Localization;
+import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.util.GameBlackboard;
 import necesse.entity.mobs.MobBeforeHitEvent;
 import necesse.entity.mobs.buffs.ActiveBuff;
@@ -28,7 +29,7 @@ public class SpinelHelmetSetBonusBuff extends SetBonusBuff {
     @Override
     public void onBeforeAttacked(ActiveBuff buff, MobBeforeHitEvent event) {
         super.onBeforeAttacked(buff, event);
-        if (!event.isPrevented() && event.damage.damage > 0 && buff.owner.isServer() && event.target != null && event.target.isHostile) {
+        if (buff.owner.isServer() && !event.isPrevented() && event.damage.type == DamageTypeRegistry.MELEE && event.damage.damage > 0 && event.target != null && event.target.isHostile) {
             float healing = event.damage.damage * 0.01F * AphMagicHealing.getMagicHealingMod(buff.owner, buff.owner, null, null) + savedAmount;
             if (healing < 1) {
                 savedAmount = healing;

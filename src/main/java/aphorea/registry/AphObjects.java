@@ -13,13 +13,20 @@ public class AphObjects {
         ObjectRegistry.registerObject("fakespinelchest", new FakeSpinelChest(), -1.0F, true);
         ObjectRegistry.registerObject("spinelchest", new StorageBoxInventoryObject("spinelchest", 40, AphColors.spinel), 20.0F, true);
 
+        // Trial Rooms
+        ObjectRegistry.registerObject("infectedtrialentrance", new InfectedTrialEntranceObject(), -1F, false);
+
+        // Tech
         tech();
 
+        // Multi Tile Objects
         multiTileObjects();
 
+        // Biome Objects
         surfaceObjects();
         caveObjects();
 
+        // Rocks
         gelRock();
     }
 

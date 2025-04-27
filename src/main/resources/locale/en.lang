@@ -501,7 +501,7 @@ goldhatsetbonus=If you're still, your ranged attack speed is greatly increased
 pinkwitchsetbonus=Increases Magic Attack Speed, Mana Regeneration, and Armor the lower your health is
 # NEW
 infectedsetbonus=Summon three Living Saplings (8 Summoner Damage)
-spinelhelmetsetbonus=Magic Heal yourself with §7<healing>§0 of weapon damage dealt to hostile mobs
+spinelhelmetsetbonus=Magic Heal yourself with §7<healing>§0 of melee damage dealt to hostile mobs
 
 // Banners
 strikebannereffect=§7+<effect>%§0 health regen (in and out of combat)
@@ -722,16 +722,23 @@ infectedfields=Infected Fields
 infectedfieldssurface=Infected Fields Surface
 infectedfieldscave=Infected Fields Cave
 
-
-// Challenges
+// Forest Surface Challenges
 killgelslimesforest=[mob=gelslime] Kill 25 Gel Slimes in the forest
 pickupfloralring=[item=floralring] Cut a lot of grass in the forest to obtain the Floral Ring
 killunstablegelslime=[mob=unstablegelslime] Kill 1 Unstable Gel Slime
 
+// Swamp Surface Challenges
+# NEW
+killpinkwitchesswamp=[mob=pinkwitch] At night, kill 5 Pink Witches on the surface of the swamp
+
+// Infected Fields Surface Challenges
+# NEW
 pickupinfectedlogs=[item=infectedlog] Chop to pick up 100 Infected Logs
 
+// Infected Fields Cave Challenges
+# NEW
 pickupspinel=[item=spinel] Pick up 40 Spinel
-pickuplifespinel=[item=lifespinel] Pick up 5 Life Spinel
+activatebabylontower=[item=lifespinel] Place a Life Spinel on the Babylon Tower
 findthespammer=[item=thespammer] Find The Spammer
 
 

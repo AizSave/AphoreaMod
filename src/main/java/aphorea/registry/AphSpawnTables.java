@@ -14,7 +14,7 @@ public class AphSpawnTables {
                 .add(10, "rockygelslime");
 
         SwampBiome.surfaceMobs
-                .addLimited(1, "pinkwitch", 1, 1024 * 32);
+                .addLimited(1, "pinkwitch", 1, 2048 * 32);
 
         DungeonBiome.defaultDungeonMobs
                 .add(5, "voidadept");

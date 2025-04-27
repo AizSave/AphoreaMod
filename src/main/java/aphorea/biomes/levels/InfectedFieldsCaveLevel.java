@@ -1,6 +1,7 @@
 package aphorea.biomes.levels;
 
 import aphorea.biomes.presets.InfectedLootLake;
+import aphorea.objects.InfectedTrialEntranceObject;
 import aphorea.registry.AphLootTables;
 import necesse.engine.GameEvents;
 import necesse.engine.events.worldGeneration.*;
@@ -13,14 +14,18 @@ import necesse.engine.util.LevelIdentifier;
 import necesse.engine.world.WorldEntity;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.BuffModifiers;
+import necesse.entity.objectEntity.ObjectEntity;
+import necesse.inventory.lootTable.LootTable;
 import necesse.level.gameObject.GameObject;
 import necesse.level.gameObject.furniture.InventoryObject;
 import necesse.level.gameTile.GameTile;
 import necesse.level.maps.biomes.Biome;
 import necesse.level.maps.generationModules.*;
+import necesse.level.maps.levelBuffManager.LevelModifiers;
 import necesse.level.maps.presets.PresetUtils;
 
 import java.awt.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
 
@@ -170,7 +175,9 @@ public class InfectedFieldsCaveLevel extends InfectedFieldsSurfaceLevel {
                 });
             });
 
+            AtomicInteger forestTotal = new AtomicInteger();
             GenerationTools.generateRandomSmoothVeinsL(this, cg.random, 0.008F, 4, 6.0F, 9.0F, 6.0F, 8.0F, (lg) -> {
+                int forestNumber = forestTotal.getAndIncrement();
                 CellAutomaton ca = lg.doCellularAutomaton(cg.random);
 
                 ca.streamAliveOrdered().forEachOrdered((tile) -> {
@@ -182,8 +189,30 @@ public class InfectedFieldsCaveLevel extends InfectedFieldsSurfaceLevel {
                 int centerX = lg.x1 + (lg.x2 - lg.x1) / 2;
                 int centerY = lg.y1 + (lg.y2 - lg.y1) / 2;
 
-                barrel.placeObject(this, centerX, centerY, 2, false);
-                AphLootTables.infectedCaveForest.applyToLevel(cg.random, 1, this, centerX, centerY);
+                if (forestNumber == 3 || (cg.random.getChance(0.1F) && forestNumber > 3)) {
+                    int trialEntranceID = ObjectRegistry.getObjectID("infectedtrialentrance");
+                    this.setObject(centerX, centerY, trialEntranceID);
+                    ObjectEntity objectEntity = this.entityManager.getObjectEntity(centerX, centerY);
+                    if (objectEntity instanceof InfectedTrialEntranceObject.InfectedTrialEntranceObjectEntity) {
+                        int variousTreasuresLoot = cg.random.getIntBetween(0, 1);
+                        for (int i = 0; i < 2; ++i) {
+                            LootTable lootTable;
+                            if (i == variousTreasuresLoot) {
+                                lootTable = new LootTable(
+                                        AphLootTables.infectedCaveVariousTreasures,
+                                        AphLootTables.infectedCaveForest
+                                );
+                            } else {
+                                lootTable = AphLootTables.infectedCaveForest;
+                            }
+                            ((InfectedTrialEntranceObject.InfectedTrialEntranceObjectEntity) objectEntity).addLootList(lootTable.getNewList(cg.random, this.buffManager.getModifier(LevelModifiers.LOOT), forestNumber));
+                        }
+                    }
+                } else {
+                    barrel.placeObject(this, centerX, centerY, 2, false);
+                    AphLootTables.infectedCaveForest.applyToLevel(cg.random, 1, this, centerX, centerY);
+                }
+
 
                 ca.streamAliveOrdered().forEachOrdered((tile) -> {
                     if (Math.abs(centerX - tile.x) > 1 && Math.abs(centerY - tile.y) > 1) {

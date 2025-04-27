@@ -250,7 +250,7 @@ public class AphItems {
         registerItem("abysmalperiapt", new AphSimpleTrinketItem(Item.Rarity.UNCOMMON, "abysmalperiapt", 500));
 
         // Summoning Periapt
-        registerItem("unstableperiapt", new AphSimpleTrinketItem(Item.Rarity.COMMON, "unstableperiapt", 300), 100F);
+        registerItem("unstableperiapt", new AphSimpleTrinketItem(Item.Rarity.COMMON, "unstableperiapt", 300).addDisabledBy("necromancyperiapt", "infectedperiapt"), 100F);
         registerItem("necromancyperiapt", new AphSimpleTrinketItem(Item.Rarity.UNCOMMON, "necromancyperiapt", 500));
         registerItem("infectedperiapt", new AphSimpleTrinketItem(Item.Rarity.UNCOMMON, "infectedperiapt", 500));
 

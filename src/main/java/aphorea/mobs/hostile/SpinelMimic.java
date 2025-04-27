@@ -1,5 +1,6 @@
 package aphorea.mobs.hostile;
 
+import aphorea.registry.AphLootTables;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.MobDrawable;
@@ -36,13 +37,7 @@ public class SpinelMimic extends HostileMob {
 
     public static LootTable lootTable = new LootTable(
             new LootItem("spinelchest"),
-            RotationLootItem.globalLootRotation(
-                    new LootItem("brokenkora"),
-                    new LootItem("ninjascarf"),
-                    new LootItem("adrenalinecharm"),
-                    new LootItem("shotgunsaber"),
-                    new LootItem("cursedmedallion")
-            ),
+            AphLootTables.infectedCaveVariousTreasures,
             RotationLootItem.globalLootRotation(
                     CaveChestLootTable.potions,
                     CaveChestLootTable.bars,

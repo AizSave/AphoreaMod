@@ -21,8 +21,8 @@ public class AphCutlassSaber extends AphSaberToolItem {
         this.attackRange.setBaseValue(65);
         this.knockback.setBaseValue(80);
 
-        this.attackXOffset = 8;
-        this.attackYOffset = 8;
+        this.attackXOffset = 10;
+        this.attackYOffset = 20;
         this.canBeUsedForRaids = true;
         this.maxRaidTier = IncursionData.ITEM_TIER_UPGRADE_CAP;
 

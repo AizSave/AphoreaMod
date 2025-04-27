@@ -1,12 +1,10 @@
 package aphorea.buffs.Trinkets.Periapt.Summoner;
 
 import aphorea.buffs.Trinkets.AphSummoningTrinketBuff;
-import aphorea.registry.AphBuffs;
 import necesse.engine.localization.Localization;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.PlayerMob;
-import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.trinketItem.TrinketItem;
