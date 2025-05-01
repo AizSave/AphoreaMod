@@ -57,10 +57,14 @@ public class AphAbilityBanner extends AphBanner {
         if (extraToolTips.length == 0) {
             tooltips.add(Localization.translate("itemtooltip", getStringID() + "effect", effectReplacements));
             tooltips.add(Localization.translate("itemtooltip", getStringID() + "ability", "time", abilitySeconds));
+            addExtraTooltips(tooltips, perspective);
         } else {
             for (String extraToolTip : extraToolTips) {
                 tooltips.add(Localization.translate("itemtooltip", extraToolTip, effectReplacements, "time", abilitySeconds));
             }
         }
+    }
+
+    public void addExtraTooltips(ListGameTooltips tooltips, PlayerMob perspective) {
     }
 }

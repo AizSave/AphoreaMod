@@ -38,6 +38,7 @@ import aphorea.items.runes.AphModifierRune;
 import aphorea.items.runes.AphRunesInjector;
 import aphorea.items.tools.healing.*;
 import aphorea.items.tools.weapons.magic.AdeptsBook;
+import aphorea.items.tools.weapons.magic.MagicHarp;
 import aphorea.items.tools.weapons.magic.MagicalBroom;
 import aphorea.items.tools.weapons.magic.UnstableGelStaff;
 import aphorea.items.tools.weapons.melee.battleaxe.DemonicBattleaxe;
@@ -47,7 +48,8 @@ import aphorea.items.tools.weapons.melee.glaive.WoodenRod;
 import aphorea.items.tools.weapons.melee.greatsword.UnstableGelGreatsword;
 import aphorea.items.tools.weapons.melee.saber.*;
 import aphorea.items.tools.weapons.melee.sword.*;
-import aphorea.items.tools.weapons.range.TheSpammer;
+import aphorea.items.tools.weapons.range.bow.SpinelCrossbow;
+import aphorea.items.tools.weapons.range.gun.TheSpammer;
 import aphorea.items.tools.weapons.range.blowgun.Blowgun;
 import aphorea.items.tools.weapons.range.greatbow.GelGreatbow;
 import aphorea.items.tools.weapons.range.greatbow.UnstableGelGreatbow;
@@ -143,6 +145,7 @@ public class AphItems {
         registerItem("honeysaber", new HoneySaber());
         registerItem("thenarcissist", new TheNarcissist());
         registerItem("glacialsaber", new GlacialSaber());
+        registerItem("cryokatana", new CryoKatana());
         registerItem("lostumbrella", new LostUmbrellaDagger());
         registerItem("brokenkora", new BrokenKora(), 200F);
         registerItem("crimsonkora", new CrimsonKora());
@@ -156,11 +159,13 @@ public class AphItems {
         registerItem("unstablegelgreatbow", new UnstableGelGreatbow());
         registerItem("thespammer", new TheSpammer(), 200F);
         registerItem("shotgunsaber", new ShotgunSaber(), 200F);
+        registerItem("spinelcrossbow", new SpinelCrossbow());
 
         // Magic Weapons
         registerItem("unstablegelstaff", new UnstableGelStaff());
         registerItem("magicalbroom", new MagicalBroom());
         registerItem("adeptsbook", new AdeptsBook(), 200F);
+        registerItem("magicharp", new MagicHarp());
 
         // Summoner Weapons
         registerItem("volatilegelstaff", new VolatileGelStaff());

@@ -34,11 +34,11 @@ public class AphArea {
     public int position;
     public Set<AphAreaType> areaTypes = new HashSet<>();
     public DamageType damageType;
-    float baseCritChance = 0;
-    int armorPen = 0;
+    public float baseCritChance = 0;
+    public int armorPen = 0;
 
-    int buffDuration = 1000;
-    int debuffDuration = 1000;
+    public int buffDuration = 1000;
+    public int debuffDuration = 1000;
 
     public FloatUpgradeValue areaDamage = new FloatUpgradeValue(0, 0.2F);
     public IntUpgradeValue areaHealing = new IntUpgradeValue(0, 0.2F);
@@ -171,7 +171,7 @@ public class AphArea {
                 AphMagicHealing.healMob(attacker, target, this.getHealing(item), item, toolItem);
             }
             if (attacker.isServer()) {
-                if (this.areaTypes.contains(AphAreaType.BUFF) && target != attacker && target.isSameTeam(attacker)) {
+                if (this.areaTypes.contains(AphAreaType.BUFF) && (target == attacker || target.isSameTeam(attacker))) {
                     Arrays.stream(buffs).forEach(
                             buffID -> {
                                 target.buffManager.addBuff(new ActiveBuff(BuffRegistry.getBuff(buffID), target, buffDuration, attacker), true);

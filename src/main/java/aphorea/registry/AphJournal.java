@@ -34,7 +34,7 @@ public class AphJournal {
         forestSurfaceJournal.addMobEntries("unstablegelslime");
 
         JournalEntry swampSurfaceJournal = JournalRegistry.getJournalEntry("swampsurface");
-        forestSurfaceJournal.addEntryChallenges(AphJournalChallenges.APH_SWAMP_SURFACE_CHALLENGES_ID);
+        swampSurfaceJournal.addEntryChallenges(AphJournalChallenges.APH_SWAMP_SURFACE_CHALLENGES_ID);
         swampSurfaceJournal.addMobEntries("pinkwitch");
     }
 

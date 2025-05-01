@@ -537,6 +537,14 @@ public class AphRecipes {
                         new Ingredient("silk", 10)
                 ).setTier1()
         );
+
+
+        addCraftingList("cryoglaive", tech,
+                AphCraftingRecipe.showAfter("cryokatana", 1,
+                        new Ingredient("reinforcedkatana", 1),
+                        new Ingredient("cryoessence", 20)
+                ).setTier1()
+        );
     }
 
     public static void Alchemy() {

@@ -66,7 +66,7 @@ public class TheNarcissist extends AphSwordToolItem {
         int animTime = this.getAttackAnimTime(item, attackerMob);
         if (combo == 2) {
             if (level.isServer()) {
-                attackerMob.buffManager.addBuff(new ActiveBuff(BuffRegistry.getBuff("narcissist"), attackerMob, animTime, null), true);
+                attackerMob.buffManager.addBuff(new ActiveBuff(BuffRegistry.getBuff("narcissistbuff"), attackerMob, animTime, null), true);
                 attackerMob.getLevel().entityManager.addLevelEvent(new AphNarcissistEvent(attackerMob, (float) Math.atan2(y - attackerMob.y, x - attackerMob.x), attackHeight, this.getAttackDamage(item)));
 
             }

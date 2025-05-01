@@ -1,4 +1,4 @@
-package aphorea.items.tools.weapons.range;
+package aphorea.items.tools.weapons.range.gun;
 
 import necesse.engine.localization.Localization;
 import necesse.engine.network.PacketReader;

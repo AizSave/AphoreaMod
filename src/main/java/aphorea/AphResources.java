@@ -19,6 +19,7 @@ import aphorea.projectiles.toolitem.AircutProjectile;
 import aphorea.projectiles.toolitem.DaggerProjectile;
 import aphorea.projectiles.toolitem.GelProjectile;
 import necesse.engine.registries.MobRegistry;
+import necesse.engine.sound.gameSound.GameSound;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.HumanTexture;
 import necesse.gfx.GameResources;
@@ -79,6 +80,9 @@ public class AphResources {
         BabylonTowerFallingCrystalParticle.shadowTexture = GameTexture.fromFile("particles/babylontowerfallingcrystalparticle_shadow");
         SpinelShieldParticle.texture = GameTexture.fromFile("particles/spinelshield");
         NarcissistParticle.texture = GameTexture.fromFile("player/weapons/narcissist");
+
+        // SOUNDS
+        SOUNDS.initSoundResources();
     }
 
 
@@ -155,5 +159,32 @@ public class AphResources {
             }
         }
         return null;
+    }
+
+    public static class SOUNDS {
+        public static class HARP {
+            public static GameSound Do;
+            public static GameSound Re;
+            public static GameSound Mi;
+            public static GameSound Fa;
+            public static GameSound Sol;
+            public static GameSound La;
+            public static GameSound Si;
+
+            public static GameSound[] All;
+        }
+
+        public static void initSoundResources() {
+            HARP.Do = GameSound.fromFile("do_harp");
+            HARP.Re = GameSound.fromFile("re_harp");
+            HARP.Mi = GameSound.fromFile("mi_harp");
+            HARP.Fa = GameSound.fromFile("fa_harp");
+            HARP.Sol = GameSound.fromFile("sol_harp");
+            HARP.La = GameSound.fromFile("la_harp");
+            HARP.Si = GameSound.fromFile("si_harp");
+            HARP.All = new GameSound[] {
+                    HARP.Do, HARP.Re, HARP.Mi, HARP.Fa, HARP.Sol, HARP.La, HARP.Si
+            };
+        }
     }
 }

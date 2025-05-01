@@ -52,14 +52,14 @@ public class AphMightyBasicBannerBuff extends AphBasicBannerBuff {
         }
     }
 
-    public void giveEffects(ActiveBuff buff) {
-        if (buff.buff.getStringID().endsWith("_normal") && buff.owner.buffManager.hasBuff(buff.buff.getStringID().replace("_normal", "_greater"))) {
+    public void giveEffects(ActiveBuff ab) {
+        if (ab.buff.getStringID().endsWith("_normal") && ab.owner.buffManager.hasBuff(ab.buff.getStringID().replace("_normal", "_greater"))) {
             for (AphBasicBannerBuffModifier modifier : modifiers) {
                 if (modifier.floatModifier != null) {
-                    buff.setModifier(modifier.floatModifier, baseValue);
+                    ab.setModifier(modifier.floatModifier, baseValue);
                 }
                 if (modifier.intModifier != null) {
-                    buff.setModifier(modifier.intModifier, (int) (baseValue));
+                    ab.setModifier(modifier.intModifier, (int) (baseValue));
                 }
             }
 
@@ -67,7 +67,7 @@ public class AphMightyBasicBannerBuff extends AphBasicBannerBuff {
             return;
         }
 
-        super.giveEffects(buff);
+        super.giveEffects(ab);
         onActive();
     }
 

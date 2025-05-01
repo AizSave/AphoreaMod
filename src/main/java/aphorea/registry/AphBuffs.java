@@ -172,7 +172,8 @@ public class AphBuffs {
 
         BuffRegistry.registerBuff("adrenaline", ADRENALINE = new AdrenalineBuff());
 
-        BuffRegistry.registerBuff("narcissist", new NarcissistBuff());
+        BuffRegistry.registerBuff("narcissistbuff", new NarcissistBuff());
+        BuffRegistry.registerBuff("harpbuff", new HarpBuff());
 
         // Cooldowns
         BuffRegistry.registerBuff("immortalcooldown", INMORTAL_COOLDOWN = new HiddenCooldownBuff());

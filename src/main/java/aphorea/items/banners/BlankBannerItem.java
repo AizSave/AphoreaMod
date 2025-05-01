@@ -9,6 +9,7 @@ import aphorea.utils.area.AphFlatArea;
 import necesse.engine.util.GameUtils;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.drawOptions.DrawOptions;
+import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
@@ -39,5 +40,10 @@ public class BlankBannerItem extends AphAbilityBanner {
         int yOffset = -32;
 
         return this.holdTexture.initDraw().sprite(anim, 2, 128).light(light).pos(drawX - 16 + xOffset, drawY - 40 + yOffset + (anim % 2 != 0 ? 0 : 2));
+    }
+
+    @Override
+    public void addExtraTooltips(ListGameTooltips tooltips, PlayerMob perspective) {
+        areaList.addAreasToolTip(tooltips, perspective, true, null, null);
     }
 }

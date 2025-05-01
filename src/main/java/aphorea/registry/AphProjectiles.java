@@ -20,6 +20,7 @@ public class AphProjectiles {
         ProjectileRegistry.registerProjectile("spambullet", SpamBulletProjectile.class, "spambullet", "ball_shadow");
         ProjectileRegistry.registerProjectile("shotgunbullet", ShotgunBulletProjectile.class, "shotgunbullet", null);
 
+        // Tools
         ProjectileRegistry.registerProjectile("gel", GelProjectile.class, "gel", "ball_shadow");
         ProjectileRegistry.registerProjectile("unstablegel", UnstableGelProjectile.class, "unstablegel", "unstablegel_shadow");
         ProjectileRegistry.registerProjectile("slingstone", SlingStoneProjectile.class, "slingstone", "ball_shadow");
@@ -35,6 +36,8 @@ public class AphProjectiles {
         ProjectileRegistry.registerProjectile("smallglacialshard", GlacialShardSmallProjectile.class, "glacialshard_small", "glacialshard_small_shadow");
         ProjectileRegistry.registerProjectile("honey", HoneyProjectile.class, "honey", "honey_shadow");
         ProjectileRegistry.registerProjectile("blueberry", BlueBerryProjectile.class, "blueberry", "blueberry_shadow");
+        ProjectileRegistry.registerProjectile("musicalnote", MusicalNoteProjectile.class, "musicalnote", "musicalnote_shadow");
+        ProjectileRegistry.registerProjectile("spinelarrow", SpinelArrowProjectile.class, "spinelarrow", "spinelarrow_shadow");
 
         // Aircuts
         ProjectileRegistry.registerProjectile("copperaircut", AircutProjectile.CopperAircutProjectile.class, null, null);

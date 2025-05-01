@@ -101,26 +101,25 @@ public class AphBanner extends BannerItem {
     }
 
     public void applyBuffs(Mob mob, PlayerMob player) {
-        Buff buff = this.buff.apply(mob);
+        ActiveBuff newBuff = new ActiveBuff(this.buff.apply(mob), mob, 100, player);
         if (buff != null) {
-            if (mob.buffManager.hasBuff(buff.getID())) {
-                ActiveBuff antBuff = mob.buffManager.getBuff(buff.getID());
+            if (mob.buffManager.hasBuff(newBuff.buff.getID())) {
+                ActiveBuff antBuff = mob.buffManager.getBuff(newBuff.buff.getID());
                 if (antBuff != null && antBuff.buff instanceof AphBannerBuff) {
-                    AphBannerBuff bannerBuff = (AphBannerBuff) antBuff.buff;
-                    if (bannerBuff.shouldRemove(antBuff) || bannerBuff.bannerEffect <= player.buffManager.getModifier(AphModifiers.INSPIRATION_EFFECT)) {
-                        addBuff(buff, mob, player, true);
+                    if (AphBannerBuff.shouldChange(antBuff, newBuff)) {
+                        addBuff(newBuff, mob, player, true);
                     }
                 } else {
-                    addBuff(buff, mob, player, true);
+                    addBuff(newBuff, mob, player, true);
                 }
             } else {
-                addBuff(buff, mob, player, false);
+                addBuff(newBuff, mob, player, false);
             }
         }
     }
 
-    public void addBuff(Buff buff, Mob mob, PlayerMob player, boolean forceOverride) {
-        mob.buffManager.addBuff(new ActiveBuff(buff, mob, 100, player), false, forceOverride);
+    public void addBuff(ActiveBuff ab, Mob mob, PlayerMob player, boolean forceOverride) {
+        mob.buffManager.addBuff(ab, false, forceOverride);
     }
 
     public int getPlayerRange() {

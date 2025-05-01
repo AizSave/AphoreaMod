@@ -31,7 +31,7 @@ loyal=The dagger is not lost when thrown
 
 
 [stats]
-banner_damage=Banner damage
+inspiration_damage=Inspiration damage
 
 
 [enchantment]
@@ -126,6 +126,7 @@ voidhammer=Void Hammer
 # NEW
 brokenkora=Broken Kora
 thenarcissist=The Narcissist
+cryokatana=Cryo Katana
 
 // Greatswords
 unstablegelgreatsword=Unstable Gel Greatsword
@@ -164,6 +165,12 @@ lostumbrella=Lost Umbrella
 unstablegelstaff=Unstable Gel Staff
 magicalbroom=Magical Broom
 adeptsbook=Adept's Book
+# NEW
+magicharp=Magic Harp
+
+// Bows
+# NEW
+spinelcrossbow=Spinel Crossbow
 
 // Guns
 # NEW
@@ -355,7 +362,7 @@ line=--------------------
 magichealingtip=Magic healing: §7<health>
 rangetip=Range: §9<range>
 areatip=§aArea <number>
-bannerdamagetip=Banner damage: <value>
+inspirationdamagetip=Inspiration damage: <value>
 areabuff=Apply <buff> to allys
 areadebuff=Apply <buff> to enemies
 areabuffdisplay=<buff> for <duration> seconds
@@ -365,7 +372,7 @@ attackarmorpentip=Armor pen: <value>%
 magichealinggrace=§aMagic Healing Grace:§0 Heals yourself with a % of the Magic Healing intended for allies
 # NEW
 cursedbuff=§bCursed:§0 §6+25%§0 Incoming Damage
-inspiration=§9Inspiration§0 stats improves the effects of banners
+inspiration=§9Inspiration:§0 Improves the effects of banners and music tools
 adrenaline=§6Adrenaline:§0 +5% Damage, -5% Armor. Can stack up to 5 times
 livingsapling=§7Living Sapling:§0 Magic Heal owner with §73§0 every 10 attacks
 
@@ -432,6 +439,8 @@ honeysaber=Charge to max for full damage and to shot honey and blueberries
 
 // Single Magic Weapons
 unstablegelstaff=When projectiles bounces off walls, they duplicate
+# NEW
+magicharp=Harp Inspiration: Increased damage, crit chance, speed, resistance, health regen and mana regen
 
 // Single Summoner Weapons
 # NEW
@@ -488,8 +497,8 @@ iceboots=Makes you slide as if you were on ice, but grants +50% movement speed a
 # NEW
 inspirationfoci1=§7+40%§0 inspiration effect and §7+20%§0 inspiration ability speed
 inspirationfoci2=§6-20%§0 all non-inspiration damage and §6-1§0 max summons
-essenceofhealing=§7+<percent>&§0 Magic Healing per life essence
-essenceofhealing2=§7<flat>&§0 Magic Healing per 2 life essences
+essenceofhealing=§7+<percent>%&§0 Magic Healing per life essence
+essenceofhealing2=§7<flat>§0 Magic Healing per 2 life essences
 essenceofhealing3=§6-80%§0 life essence duration, capped to -50%
 ninjascarf=Converts Saber Dashes into Saber Jumps
 adrenalinecharm=Every hit received will give you Adrenaline for 20 seconds
@@ -688,6 +697,7 @@ runesinjectorcooldown=Runes Injector Cooldown
 venomextract=Venom Extract
 cursed=Cursed
 adrenaline=Adrenaline
+harpbuff=Harp Inspiration
 
 
 [message]

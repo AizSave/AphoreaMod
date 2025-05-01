@@ -27,7 +27,7 @@ public class EssenceofHealingBuff extends TrinketBuff {
     public ListGameTooltips getTrinketTooltip(TrinketItem trinketItem, InventoryItem item, PlayerMob perspective) {
         ListGameTooltips tooltips = super.getTrinketTooltip(trinketItem, item, perspective);
         tooltips.add(Localization.translate("itemtooltip", "essenceofhealing", "percent", 10));
-        tooltips.add(Localization.translate("itemtooltip", "essenceofhealing2", "percent", 1));
+        tooltips.add(Localization.translate("itemtooltip", "essenceofhealing2", "flat", 1));
         tooltips.add(Localization.translate("itemtooltip", "essenceofhealing3"));
         return tooltips;
     }

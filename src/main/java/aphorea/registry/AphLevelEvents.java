@@ -32,7 +32,7 @@ public class AphLevelEvents {
         LevelEventRegistry.registerEvent("spinelshield", AphSpinelShieldEvent.class);
 
         // Weapons
-        LevelEventRegistry.registerEvent("narcissist", AphNarcissistEvent.class);
+        LevelEventRegistry.registerEvent("narcissistbuff", AphNarcissistEvent.class);
 
         // Babylon Boss
         LevelEventRegistry.registerEvent("babylonentrance", BabylonEntranceObject.BabylonEntranceEvent.class);

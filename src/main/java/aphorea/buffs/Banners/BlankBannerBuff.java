@@ -8,8 +8,8 @@ public class BlankBannerBuff extends AphBannerBuff {
     public BlankBannerBuff() {
     }
 
-    public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {
-        super.init(buff, eventSubscriber);
-        buff.setModifier(BuffModifiers.HEALTH_REGEN, 0.10F * bannerEffect);
+    public void init(ActiveBuff ab, BuffEventSubscriber eventSubscriber) {
+        super.init(ab, eventSubscriber);
+        ab.setModifier(BuffModifiers.HEALTH_REGEN, 0.10F * getInspirationEffect(ab));
     }
 }

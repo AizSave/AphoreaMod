@@ -42,14 +42,14 @@ public class AphBasicBannerBuff extends AphBannerBuff {
         giveEffects(buff);
     }
 
-    public void giveEffects(ActiveBuff buff) {
+    public void giveEffects(ActiveBuff ab) {
         for (AphBasicBannerBuffModifier modifier : modifiers) {
-            float calculatedValue = getValue.apply(modifier.value, bannerEffect);
+            float calculatedValue = getValue.apply(modifier.value, getInspirationEffect(ab));
             if (modifier.floatModifier != null) {
-                buff.setModifier(modifier.floatModifier, calculatedValue);
+                ab.setModifier(modifier.floatModifier, calculatedValue);
             }
             if (modifier.intModifier != null) {
-                buff.setModifier(modifier.intModifier, (int) (calculatedValue));
+                ab.setModifier(modifier.intModifier, (int) (calculatedValue));
             }
         }
     }

@@ -12,14 +12,11 @@ import necesse.gfx.gameTooltips.ListGameTooltips;
 import java.io.FileNotFoundException;
 
 public class AphBannerBuff extends VicinityBuff {
-    public float bannerEffect = 1F;
-
+    @Override
     public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {
-        if (buff.getAttacker() != null && buff.getAttacker().getAttackOwner() != null) {
-            bannerEffect = buff.getAttacker().getAttackOwner().buffManager.getModifier(AphModifiers.INSPIRATION_EFFECT);
-        }
     }
 
+    @Override
     public void updateLocalDisplayName() {
         this.displayName = new LocalMessage("item", getRealName());
     }
@@ -48,10 +45,11 @@ public class AphBannerBuff extends VicinityBuff {
         return tooltips;
     }
 
-    public boolean shouldRemove(ActiveBuff ab) {
-        if (ab.getAttacker() == null || ab.getAttacker().getAttackOwner() == null) {
-            return false;
-        }
-        return ab.getAttacker().getAttackOwner().buffManager.getModifier(AphModifiers.INSPIRATION_EFFECT) < bannerEffect;
+    public float getInspirationEffect(ActiveBuff ab) {
+        return ab.owner == null ? 1 : ab.owner.buffManager.getModifier(AphModifiers.INSPIRATION_EFFECT);
+    }
+
+    public static boolean shouldChange(ActiveBuff antAb, ActiveBuff newAb) {
+        return (antAb.owner == null ? 1 : antAb.owner.buffManager.getModifier(AphModifiers.INSPIRATION_EFFECT)) < (newAb.owner == null ? 1 : newAb.owner.buffManager.getModifier(AphModifiers.INSPIRATION_EFFECT));
     }
 }

@@ -15,7 +15,7 @@ public class AphFlatArea extends AphArea {
         super(range, alpha, colors);
     }
 
-    public AphArea setDamageArea(GameDamage gameDamage) {
+    public AphFlatArea setDamageArea(GameDamage gameDamage) {
         this.areaTypes.add(AphAreaType.DAMAGE);
         this.areaDamage.setBaseValue(gameDamage.damage);
         this.damageType = gameDamage.type;
@@ -24,12 +24,14 @@ public class AphFlatArea extends AphArea {
         return this;
     }
 
-    public AphArea setDamageArea(float damage) {
-        return setDamageArea(areaDamage.setBaseValue(damage));
+    public AphFlatArea setDamageArea(float damage) {
+        setDamageArea(areaDamage.setBaseValue(damage));
+        return this;
     }
 
-    public AphArea setHealingArea(int healing) {
-        return setHealingArea(areaHealing.setBaseValue(healing));
+    public AphFlatArea setHealingArea(int healing) {
+        setHealingArea(areaHealing.setBaseValue(healing));
+        return this;
     }
 
     @Override

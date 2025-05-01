@@ -1,5 +1,6 @@
 package aphorea.registry;
 
+import aphorea.buffs.HarpBuff;
 import aphorea.mobs.bosses.BabylonTowerMob;
 import aphorea.mobs.bosses.UnstableGelSlime;
 import aphorea.mobs.bosses.minions.HearthCrystalMob;
