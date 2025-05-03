@@ -3,6 +3,7 @@ package aphorea.mobs.bosses.minions;
 import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
+import necesse.engine.registries.BuffRegistry;
 import necesse.engine.util.GameRandom;
 import necesse.engine.util.GameUtils;
 import necesse.engine.util.gameAreaSearch.GameAreaStream;
@@ -38,7 +39,7 @@ public class MiniUnstableGelSlime extends FlyingHostileMob {
     boolean initialTP = false;
     int countTP;
 
-    public static GameDamage attack = new GameDamage(30);
+    public static GameDamage attack = new GameDamage(20);
     public static int attack_knockback = 50;
 
     public void setInitialTP(Boolean initialTP) {
@@ -70,7 +71,7 @@ public class MiniUnstableGelSlime extends FlyingHostileMob {
         super.init();
         ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 1024 * 32, attack, attack_knockback, 40000), new FlyingAIMover());
 
-        this.addBuff(new ActiveBuff(AphBuffs.IMMORTAL, this, 1000, this), true);
+        this.addBuff(new ActiveBuff(BuffRegistry.INVULNERABLE_ACTIVE, this, 500, this), true);
 
         if (GameRandom.globalRandom.getChance(0.5F) && this.initialTP) {
             this.executeTeleport();
@@ -145,7 +146,7 @@ public class MiniUnstableGelSlime extends FlyingHostileMob {
         DrawOptions drawOptions = texture.initDraw()
                 .sprite(sprite.x, sprite.y, 64)
                 .light(light)
-                .alpha(this.buffManager.hasBuff(AphBuffs.IMMORTAL) ? 0.6F : 1)
+                .alpha(this.buffManager.hasBuff(BuffRegistry.INVULNERABLE_ACTIVE) ? 0.6F : 1)
                 .pos(drawX, drawY);
 
         list.add(new MobDrawable() {

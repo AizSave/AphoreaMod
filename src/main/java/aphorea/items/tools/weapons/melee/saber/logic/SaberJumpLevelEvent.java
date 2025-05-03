@@ -1,18 +1,21 @@
 package aphorea.items.tools.weapons.melee.saber.logic;
 
 import aphorea.methodpatches.PlayerFlyingHeight;
+import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
 import aphorea.utils.area.AphFlatArea;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
+import necesse.engine.registries.BuffRegistry;
 import necesse.engine.util.GameMath;
 import necesse.engine.util.GameRandom;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.MobAbilityLevelEvent;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.MobHitCooldowns;
+import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.level.maps.Level;
 import necesse.level.maps.hudManager.HudDrawElement;
 
@@ -91,6 +94,11 @@ public class SaberJumpLevelEvent extends MobAbilityLevelEvent {
     public void init() {
         super.init();
         this.hitCooldowns = new MobHitCooldowns();
+
+        if (this.owner != null) {
+            this.owner.buffManager.addBuff(new ActiveBuff(BuffRegistry.INVULNERABLE_ACTIVE, this.owner, this.animTime + 200, null), false);
+            this.owner.addBuff(new ActiveBuff(AphBuffs.SABER_DASH_ACTIVE, this.owner, this.animTime, null), false);
+        }
     }
 
     @Override

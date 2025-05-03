@@ -41,7 +41,7 @@ public class RapierDashLevelEvent extends MobDashLevelEvent {
         }
 
         if (this.owner != null) {
-            this.owner.buffManager.addBuff(new ActiveBuff(BuffRegistry.INVULNERABLE_ACTIVE, this.owner, this.animTime, null), false);
+            this.owner.buffManager.addBuff(new ActiveBuff(BuffRegistry.INVULNERABLE_ACTIVE, this.owner, this.animTime + 200, null), false);
         }
 
     }

@@ -86,7 +86,6 @@ public class AphBuffs {
 
     public static Buff ADRENALINE;
 
-    public static Buff IMMORTAL;
     public static Buff STOP;
 
     public static Buff STUN;
@@ -101,7 +100,6 @@ public class AphBuffs {
     public static Buff SABER_DASH_ACTIVE;
     public static Buff RUNE_INJECTOR_ACTIVE;
 
-    public static Buff INMORTAL_COOLDOWN;
     public static Buff BERSERKER_RUSH_COOLDOWN;
     public static Buff SPIN_ATTACK_COOLDOWN;
     public static Buff PERIAPT_COOLDOWN;
@@ -134,7 +132,6 @@ public class AphBuffs {
 
     public static void registerCore() {
         // Common Buffs
-        BuffRegistry.registerBuff("immortal", IMMORTAL = new ImmortalBuff());
         BuffRegistry.registerBuff("stop", STOP = new StopBuff());
         BuffRegistry.registerBuff("stun", STUN = new StunBuff());
         BuffRegistry.registerBuff("fallenstun", FALLEN_STUN = new StunBuff() {
@@ -181,7 +178,6 @@ public class AphBuffs {
         BuffRegistry.registerBuff("harpbuff", new HarpBuff());
 
         // Cooldowns
-        BuffRegistry.registerBuff("immortalcooldown", INMORTAL_COOLDOWN = new HiddenCooldownBuff());
         BuffRegistry.registerBuff("berserkerrushcooldown", BERSERKER_RUSH_COOLDOWN = new AphShownCooldownBuff());
         BuffRegistry.registerBuff("spinattackcooldown", SPIN_ATTACK_COOLDOWN = new AphShownCooldownBuff());
         BuffRegistry.registerBuff("periaptcooldown", PERIAPT_COOLDOWN = new AphShownCooldownBuff());
@@ -348,7 +344,7 @@ public class AphBuffs {
                 PacketForceOfWind.applyToMob(level, player, dir.x, dir.y, strength);
                 player.buffManager.addBuff(new ActiveBuff(BuffRegistry.FOW_ACTIVE, player, 0.15F, null), level.isServer());
                 player.buffManager.forceUpdateBuffs();
-                player.buffManager.addBuff(new ActiveBuff(AphBuffs.IMMORTAL, player, 500, null), false);
+                player.buffManager.addBuff(new ActiveBuff(BuffRegistry.INVULNERABLE_ACTIVE, player, 500, null), false);
                 if (level.isServer()) {
                     ServerClient serverClient = player.getServerClient();
                     player.getServer().network.sendToClientsWithEntityExcept(new PacketForceOfWind(player, player.moveX, player.moveY, strength), player, serverClient);
@@ -507,10 +503,7 @@ public class AphBuffs {
                     if (cooldownBuff != null) {
                         buff.owner.buffManager.addBuff(new ActiveBuff(cooldownBuff, buff.owner, 30000, null), true);
                     }
-                    if (buff.owner.buffManager.hasBuff(INMORTAL_COOLDOWN)) {
-                        buff.owner.buffManager.removeBuff(INMORTAL_COOLDOWN, true);
-                    }
-                    buff.owner.buffManager.addBuff(new ActiveBuff(AphBuffs.IMMORTAL, buff.owner, 3000, null), true);
+                    buff.owner.buffManager.addBuff(new ActiveBuff(BuffRegistry.INVULNERABLE_ACTIVE, buff.owner, 3000, null), true);
                     buff.owner.buffManager.addBuff(new ActiveBuff(AphBuffs.RUNE_INJECTOR_COOLDOWN, buff.owner, 30000, null), true);
 
                 }

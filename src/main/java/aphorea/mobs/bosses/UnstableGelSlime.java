@@ -182,7 +182,7 @@ public class UnstableGelSlime extends FlyingBossMob {
         DrawOptions drawOptions = texture.initDraw()
                 .sprite(sprite.x, sprite.y, 192)
                 .light(light)
-                .alpha(this.buffManager.hasBuff(AphBuffs.IMMORTAL) ? 0.6F : 1)
+                .alpha(this.buffManager.hasBuff(BuffRegistry.INVULNERABLE_ACTIVE) ? 0.6F : 1)
                 .pos(drawX, drawY);
 
         list.add(new MobDrawable() {
@@ -302,12 +302,12 @@ public class UnstableGelSlime extends FlyingBossMob {
     }
 
     public static class UnstableGelSlimeAI<T extends UnstableGelSlime> extends SelectorAINode<T> {
-        static GameDamage collisionAttackDamage = new GameDamage(50);
+        static GameDamage collisionAttackDamage = new GameDamage(30);
         static int collisionAttackKnockback = 300;
 
         static int defaultMaxAngerTeleportCooldownDuration = 3000;
 
-        static GameDamage unstableGelSlimeProjectileDamage = new GameDamage(30);
+        static GameDamage unstableGelSlimeProjectileDamage = new GameDamage(20);
         static int unstableGelSlimeProjectileKnockback = 200;
 
         static int defaultThrowSlimesNumber = 2;
@@ -384,7 +384,7 @@ public class UnstableGelSlime extends FlyingBossMob {
                             blackboard.put("currentTarget", mob);
 
                             mob.addBuff(new ActiveBuff(BuffRegistry.getBuff("unstablegelslimerush"), mob, 3000, mob), true);
-                            mob.addBuff(new ActiveBuff(AphBuffs.IMMORTAL, mob, 1000, mob), true);
+                            mob.addBuff(new ActiveBuff(BuffRegistry.INVULNERABLE_ACTIVE, mob, 500, mob), true);
 
                             Point point = getTeleportPoint(mob);
                             if (point != null) {
@@ -424,7 +424,7 @@ public class UnstableGelSlime extends FlyingBossMob {
                         blackboard.put("currentTarget", mob);
 
                         mob.addBuff(new ActiveBuff(BuffRegistry.getBuff("unstablegelslimerush"), mob, 3000, mob), true);
-                        mob.addBuff(new ActiveBuff(AphBuffs.IMMORTAL, mob, 1000, mob), true);
+                        mob.addBuff(new ActiveBuff(BuffRegistry.INVULNERABLE_ACTIVE, mob, 500, mob), true);
 
                         Point point = getTeleportPoint(mob);
                         if (point == null) {
@@ -495,7 +495,7 @@ public class UnstableGelSlime extends FlyingBossMob {
 
                 private void applyTemporaryBuffs(T mob, int duration) {
                     mob.addBuff(new ActiveBuff(AphBuffs.STUN, mob, duration, mob), true);
-                    mob.addBuff(new ActiveBuff(AphBuffs.IMMORTAL, mob, duration, mob), true);
+                    mob.addBuff(new ActiveBuff(BuffRegistry.INVULNERABLE_ACTIVE, mob, duration, mob), true);
                 }
 
                 private void prepareSlimeThrow(T mob) {

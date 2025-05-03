@@ -120,7 +120,6 @@ public class HearthCrystalMob extends HostileMob {
         DrawOptions drawOptions = ItemRegistry.getItem("lifespinel")
                 .getItemSprite(null, null).initDraw()
                 .light(light)
-                .alpha(this.buffManager.hasBuff(AphBuffs.IMMORTAL) ? 0.6F : 1)
                 .pos(drawX, drawY);
 
         list.add(new MobDrawable() {

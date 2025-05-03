@@ -584,7 +584,7 @@ runeofthunder=After two seconds, a lightning strikes your cursor's initial posit
 runeofthunder2=The lightning deals §7<effectNumber>§0% of the mobs' health as damage and stun for 2 seconds
 runeofwinter=Frost-slows enemies within a 500 range for §7<effectNumber>§0 seconds
 runeofimmortality=If you die within the next §7<effectNumber>§0 seconds, you will survive with max health
-runeofimmortality2=If this happens, you will be immortal for 3 seconds, but the cooldown will be 30 seconds
+runeofimmortality2=If this happens, you will be invulnerable for 3 seconds, but the cooldown will be 30 seconds
 runeofimmortality3=While on cooldown, your max health is reduced by half
 runeofshadows=For §7<effectNumber>§0 seconds, you will become invisible but also intimidated, preventing you from taking any actions
 
@@ -693,8 +693,6 @@ periaptcooldown=Periapt Ability on Cooldown
 periaptactive=Periapt Ability Active
 saberdashcooldown=Saber Dash Cooldown
 stop=Stopped
-immortal=Immortal
-immortalcooldown=Immortal Cooldown
 fallenstun=Fallen Stun
 runesinjectoractive=Runes Injector Active
 runesinjectorcooldown=Runes Injector Cooldown
