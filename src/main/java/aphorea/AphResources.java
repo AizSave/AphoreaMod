@@ -22,6 +22,7 @@ import necesse.engine.registries.MobRegistry;
 import necesse.engine.sound.gameSound.GameSound;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.HumanTexture;
+import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.GameResources;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.gameTexture.GameTextureSection;
@@ -79,7 +80,7 @@ public class AphResources {
         BabylonTowerFallingCrystalParticle.projectileTexture = GameTexture.fromFile("particles/babylontowerfallingcrystalparticle");
         BabylonTowerFallingCrystalParticle.shadowTexture = GameTexture.fromFile("particles/babylontowerfallingcrystalparticle_shadow");
         SpinelShieldParticle.texture = GameTexture.fromFile("particles/spinelshield");
-        NarcissistParticle.texture = GameTexture.fromFile("player/weapons/narcissist");
+        NarcissistParticle.texture = GameTexture.fromFile("player/weapons/thenarcissist");
 
         // SOUNDS
         SOUNDS.initSoundResources();

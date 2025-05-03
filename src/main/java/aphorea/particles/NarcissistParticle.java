@@ -19,14 +19,18 @@ public class NarcissistParticle extends Particle {
     public static GameTexture texture;
     public float startX;
     public float startY;
+    public float moveX;
+    public float moveY;
     public float startAngle;
     public Mob owner;
 
     public NarcissistParticle(Level level, Mob owner, float startX, float startY, float startAngle) {
-        super(level, startX, startY, 2000);
+        super(level, startX, startY, 5000);
         this.owner = owner;
         this.startX = startX;
         this.startY = startY;
+        this.moveX = 0;
+        this.moveY = 0;
         this.startAngle = startAngle;
     }
 
@@ -53,11 +57,11 @@ public class NarcissistParticle extends Particle {
     }
 
     public float getPosX() {
-        return AphNarcissistEvent.getX(startX, startAngle, getLifeCyclePercent());
+        return AphNarcissistEvent.getX(startX, startAngle, getLifeCyclePercent()) + moveX;
     }
 
     public float getPosY() {
-        return AphNarcissistEvent.getY(startY, startAngle, getLifeCyclePercent());
+        return AphNarcissistEvent.getY(startY, startAngle, getLifeCyclePercent()) + moveY;
     }
 
     public float getStartAngle() {

@@ -92,6 +92,7 @@ public class CrimsonKora extends AphSaberToolItem {
             float shownEffect = chargePercent * damagePercent * 0.5F;
 
             level.getClient().startCameraShake(attackerMob.x, attackerMob.y, (int) (1000 * shownEffect), 40, 3.0F * shownEffect, 3.0F * shownEffect, true);
+            SoundManager.playSound(GameResources.shake, SoundEffect.effect(attackerMob).volume(shownEffect - 0.3F));
             if (chargePercent > 0.6F) {
                 SoundManager.playSound(GameResources.electricExplosion, SoundEffect.effect(attackerMob).volume(shownEffect - 0.3F));
             }

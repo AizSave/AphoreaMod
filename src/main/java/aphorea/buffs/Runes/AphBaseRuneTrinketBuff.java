@@ -104,7 +104,7 @@ public class AphBaseRuneTrinketBuff extends TrinketBuff {
 
     public void runServer(Server server, PlayerMob player, int targetX, int targetY) {
         initRun(player.getLevel(), player, targetX, targetY);
-        run(player.getLevel(), player, targetX, targetY);
+        if (!preventUsage) run(player.getLevel(), player, targetX, targetY);
         if (!preventUsage) {
             int duration = getDuration(player);
             if (duration > 0) {
@@ -129,7 +129,7 @@ public class AphBaseRuneTrinketBuff extends TrinketBuff {
 
     public void runClient(Client client, PlayerMob player, int targetX, int targetY) {
         initRun(client.getLevel(), player, targetX, targetY);
-        run(client.getLevel(), player, targetX, targetY);
+        if (!preventUsage) run(client.getLevel(), player, targetX, targetY);
         if (!preventUsage) {
             List<AphModifierRuneTrinketBuff> modifiersList = getRuneModifiers(player)
                     .collect(Collectors.toList());

@@ -1,6 +1,7 @@
 package aphorea.registry;
 
 import aphorea.items.tools.weapons.melee.greatsword.logic.GreatswordDashLevelEvent;
+import aphorea.items.tools.weapons.melee.rapier.logic.RapierDashLevelEvent;
 import aphorea.items.tools.weapons.melee.saber.logic.SaberDashLevelEvent;
 import aphorea.items.tools.weapons.melee.saber.logic.SaberJumpLevelEvent;
 import aphorea.levelevents.AphNarcissistEvent;
@@ -22,6 +23,7 @@ public class AphLevelEvents {
         // Dash
         LevelEventRegistry.registerEvent("saberdash", SaberDashLevelEvent.class);
         LevelEventRegistry.registerEvent("saberjump", SaberJumpLevelEvent.class);
+        LevelEventRegistry.registerEvent("rapierdash", RapierDashLevelEvent.class);
         LevelEventRegistry.registerEvent("greatsworddash", GreatswordDashLevelEvent.class);
 
         // Explosion

@@ -14,6 +14,6 @@ public class SpinelBoots extends AphBootsArmorItem {
     }
 
     public ArmorModifiers getArmorModifiers(InventoryItem item, Mob mob) {
-        return new ArmorModifiers(new ModifierValue<>(AphModifiers.MAGIC_HEALING, 0.1F), new ModifierValue<>(BuffModifiers.SPEED, -0.01F));
+        return new ArmorModifiers(new ModifierValue<>(AphModifiers.MAGIC_HEALING, 0.1F), new ModifierValue<>(BuffModifiers.SPEED, -0.03F));
     }
 }

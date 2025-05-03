@@ -16,6 +16,7 @@ import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
 import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.gfx.drawOptions.itemAttack.ItemAttackDrawOptions;
+import necesse.gfx.gameTexture.GameSprite;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.enchants.Enchantable;
@@ -41,10 +42,19 @@ public abstract class AphDaggerToolItem extends SpearToolItem implements ItemInt
     }
 
     @Override
+    public GameSprite getWorldItemSprite(InventoryItem item, PlayerMob perspective) {
+        GameSprite attackSprite = this.getAttackSprite(item, perspective);
+        return attackSprite != null && Math.max(attackSprite.width, attackSprite.height) >= 32 ? attackSprite : this.getItemSprite(item, perspective);
+    }
+
+    public int getItemAttackerMinimumAttackRange(ItemAttackerMob attackerMob, InventoryItem item) {
+        return 0;
+    }
+
+    @Override
     public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
         attackerMob.buffManager.addBuff(new ActiveBuff(AphBuffs.DAGGER_ATTACK, attackerMob, this.getAttackAnimTime(item, attackerMob), null), false);
         return super.onAttack(level, x, y, attackerMob, attackHeight, item, slot, animAttack, seed, mapContent);
-
     }
 
     @Override

@@ -1,14 +1,12 @@
 package aphorea.items.tools.weapons.magic;
 
-import aphorea.items.vanillaitemtypes.AphToolItem;
+import aphorea.items.vanillaitemtypes.weapons.AphSwordToolItem;
 import aphorea.packets.AphCustomPushPacket;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.registries.BuffRegistry;
 import necesse.engine.registries.DamageTypeRegistry;
-import necesse.engine.registries.EnchantmentRegistry;
 import necesse.engine.util.GameMath;
-import necesse.engine.util.GameRandom;
 import necesse.engine.util.LineHitbox;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.ToolItemMobAbilityEvent;
 import necesse.entity.mobs.AttackAnimMob;
@@ -20,9 +18,6 @@ import necesse.gfx.drawOptions.itemAttack.ItemAttackDrawOptions;
 import necesse.gfx.gameTexture.GameSprite;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.enchants.Enchantable;
-import necesse.inventory.enchants.ItemEnchantment;
-import necesse.inventory.enchants.ToolItemEnchantment;
 import necesse.inventory.item.ItemCategory;
 import necesse.inventory.item.ItemStatTipList;
 import necesse.level.maps.Level;
@@ -31,10 +26,8 @@ import java.awt.*;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
-import java.util.Set;
-import java.util.function.Function;
 
-public class MagicalBroom extends AphToolItem {
+public class MagicalBroom extends AphSwordToolItem {
 
     public static GameTexture worldTexture;
 
@@ -50,7 +43,6 @@ public class MagicalBroom extends AphToolItem {
         this.setItemCategory("equipment", "weapons", "magicweapons");
         this.setItemCategory(ItemCategory.equipmentManager, "weapons", "magicweapons");
         this.setItemCategory(ItemCategory.craftingManager, "equipment", "weapons", "magicweapons");
-        this.keyWords.add("broom");
         damageType = DamageTypeRegistry.MAGIC;
         this.width = 15.0F;
         this.showAttackAllDirections = true;
@@ -68,6 +60,8 @@ public class MagicalBroom extends AphToolItem {
         attackXOffset = 30;
 
         currentA = 0;
+
+        this.keyWords.remove("sword");
     }
 
     @Override
@@ -115,36 +109,27 @@ public class MagicalBroom extends AphToolItem {
         return itemSprite.itemEnd();
     }
 
-    public Function<Float, Float> getSwingDirection(InventoryItem item, AttackAnimMob mob) {
-        int attackDir = mob.getDir();
-        float animSwingAngle = 180.0F;
-        float animSwingAngleOffset = 0.0F;
-        Function<Float, Float> angleGetter;
-        if (attackDir == 0) {
-            if (this.getAnimInverted(item)) {
-                angleGetter = (progress) -> -progress * animSwingAngle - animSwingAngleOffset;
-            } else {
-                angleGetter = (progress) -> 180.0F + progress * animSwingAngle + animSwingAngleOffset;
-            }
-        } else if (attackDir == 1) {
-            if (this.getAnimInverted(item)) {
-                angleGetter = (progress) -> 90.0F - progress * animSwingAngle - animSwingAngleOffset;
-            } else {
-                angleGetter = (progress) -> 270.0F + progress * animSwingAngle + animSwingAngleOffset;
-            }
-        } else if (attackDir == 2) {
-            if (this.getAnimInverted(item)) {
-                angleGetter = (progress) -> 180.0F - progress * animSwingAngle - animSwingAngleOffset;
-            } else {
-                angleGetter = (progress) -> progress * animSwingAngle + animSwingAngleOffset;
-            }
-        } else if (this.getAnimInverted(item)) {
-            angleGetter = (progress) -> 90.0F + progress * animSwingAngle + animSwingAngleOffset;
-        } else {
-            angleGetter = (progress) -> 270.0F - progress * animSwingAngle - animSwingAngleOffset;
-        }
+    @Override
+    public void setDrawAttackRotation(InventoryItem item, ItemAttackDrawOptions drawOptions, float attackDirX, float attackDirY, float attackProgress) {
+        drawOptions.pointRotation(drawOptions.dir == 0 || drawOptions.dir == 2 ? 0 : attackDirX, drawOptions.dir == 0 || drawOptions.dir == 2 ? attackDirY : 0, getSwingRotationOffset(item, drawOptions.dir, getSwingRotationAngle(item, drawOptions.dir)));
+    }
 
-        return angleGetter;
+    @Override
+    public float getHitboxSwingAngle(InventoryItem item, int dir) {
+        return 180;
+    }
+
+    @Override
+    public float getSwingRotationAngle(InventoryItem item, int dir) {
+        return 180;
+    }
+
+    @Override
+    public float getSwingRotationOffset(InventoryItem item, int dir, float swingAngle) {
+        if (dir == 0 || dir == 2) {
+            return (swingAngle - 90.0F) / 2.0F;
+        }
+        return 0;
     }
 
     @Override
@@ -209,22 +194,7 @@ public class MagicalBroom extends AphToolItem {
     }
 
     @Override
-    public ToolItemEnchantment getRandomEnchantment(GameRandom random, InventoryItem item) {
-        return Enchantable.getRandomEnchantment(random, EnchantmentRegistry.meleeItemEnchantments, this.getEnchantmentID(item), ToolItemEnchantment.class);
-    }
-
-    @Override
-    public boolean isValidEnchantment(InventoryItem item, ItemEnchantment enchantment) {
-        return EnchantmentRegistry.meleeItemEnchantments.contains(enchantment.getID());
-    }
-
-    @Override
-    public Set<Integer> getValidEnchantmentIDs(InventoryItem item) {
-        return EnchantmentRegistry.meleeItemEnchantments;
-    }
-
-    @Override
     public String getTranslatedTypeName() {
-        return Localization.translate("item", "broom");
+        return Localization.translate("item", "magicweapon");
     }
 }

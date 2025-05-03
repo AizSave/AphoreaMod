@@ -45,6 +45,8 @@ public class AphArea {
     public String[] buffs;
     public String[] debuffs;
 
+    public boolean directExecuteHealing = false;
+
     public AphArea(float range, Color... colors) {
         this.range = range;
         this.colors = colors;
@@ -108,6 +110,11 @@ public class AphArea {
         return this;
     }
 
+    public AphArea setDirectExecuteHealing(boolean directExecuteHealing) {
+        this.directExecuteHealing = directExecuteHealing;
+        return this;
+    }
+
     public void showParticles(Level level, float x, float y, AphAreaList areaList, Color[] forcedColors, float rangeModifier, float borderParticleModifier, float innerParticleModifier, int particleTime) {
         int range = Math.round(this.range * rangeModifier);
         int antRange = Math.round(this.antRange * rangeModifier);
@@ -168,7 +175,11 @@ public class AphArea {
                 target.isServerHit(getDamage(item), target.x - attacker.x, target.y - attacker.y, 0, attacker);
             }
             if (this.areaTypes.contains(AphAreaType.HEALING) && (target == attacker || AphMagicHealing.canHealMob(attacker, target))) {
-                AphMagicHealing.healMob(attacker, target, this.getHealing(item), item, toolItem);
+                if(directExecuteHealing) {
+                    AphMagicHealing.healMobExecute(attacker, target, this.getHealing(item), item, toolItem);
+                } else {
+                    AphMagicHealing.healMob(attacker, target, this.getHealing(item), item, toolItem);
+                }
             }
             if (attacker.isServer()) {
                 if (this.areaTypes.contains(AphAreaType.BUFF) && (target == attacker || target.isSameTeam(attacker))) {

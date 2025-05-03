@@ -16,6 +16,6 @@ public class SpinelHelmet extends AphSetHelmetArmorItem {
     }
 
     public ArmorModifiers getArmorModifiers(InventoryItem item, Mob mob) {
-        return new ArmorModifiers(new ModifierValue<>(AphModifiers.MAGIC_HEALING_RECEIVED, 0.3F), new ModifierValue<>(BuffModifiers.SPEED, -0.02F), new ModifierValue<>(BuffModifiers.ALL_DAMAGE, -0.1F), new ModifierValue<>(BuffModifiers.BLINDNESS, 0.4F));
+        return new ArmorModifiers(new ModifierValue<>(AphModifiers.MAGIC_HEALING_RECEIVED, 0.3F), new ModifierValue<>(BuffModifiers.SPEED, -0.05F), new ModifierValue<>(BuffModifiers.ALL_DAMAGE, -0.1F), new ModifierValue<>(BuffModifiers.BLINDNESS, 0.4F));
     }
 }

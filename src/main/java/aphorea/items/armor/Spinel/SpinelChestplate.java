@@ -14,6 +14,6 @@ public class SpinelChestplate extends AphChestArmorItem {
     }
 
     public ArmorModifiers getArmorModifiers(InventoryItem item, Mob mob) {
-        return new ArmorModifiers(new ModifierValue<>(AphModifiers.MAGIC_HEALING, 0.2F), new ModifierValue<>(BuffModifiers.SPEED, -0.03F));
+        return new ArmorModifiers(new ModifierValue<>(AphModifiers.MAGIC_HEALING, 0.2F), new ModifierValue<>(BuffModifiers.SPEED, -0.02F));
     }
 }

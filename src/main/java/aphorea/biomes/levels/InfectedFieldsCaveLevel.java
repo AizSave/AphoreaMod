@@ -203,7 +203,10 @@ public class InfectedFieldsCaveLevel extends InfectedFieldsSurfaceLevel {
                                         AphLootTables.infectedCaveForest
                                 );
                             } else {
-                                lootTable = AphLootTables.infectedCaveForest;
+                                lootTable = new LootTable(
+                                        AphLootTables.infectedCaveForestVariousTreasures,
+                                        AphLootTables.infectedCaveForest
+                                );
                             }
                             ((InfectedTrialEntranceObject.InfectedTrialEntranceObjectEntity) objectEntity).addLootList(lootTable.getNewList(cg.random, this.buffManager.getModifier(LevelModifiers.LOOT), forestNumber));
                         }

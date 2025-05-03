@@ -13,6 +13,7 @@ import necesse.engine.registries.BuffRegistry;
 import necesse.engine.util.GameBlackboard;
 import necesse.engine.util.GameUtils;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.ToolItemMobAbilityEvent;
+import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
@@ -29,16 +30,17 @@ public class TheNarcissist extends AphSwordToolItem {
         super(1000);
         this.rarity = Rarity.RARE;
         this.attackAnimTime.setBaseValue(200);
-        this.attackDamage.setBaseValue(25.0F).setUpgradedValue(1.0F, 90.0F);
-        this.attackRange.setBaseValue(80);
+        this.attackDamage.setBaseValue(30.0F).setUpgradedValue(1.0F, 60.0F);
+        this.attackRange.setBaseValue(85);
         this.knockback.setBaseValue(100);
         this.resilienceGain.setBaseValue(1.0F);
         this.attackXOffset = 8;
         this.attackYOffset = 8;
     }
 
-    public float getHitboxSwingAngleOffset(InventoryItem item, int dir, float swingAngle) {
-        return 0.0F;
+    @Override
+    public float getHitboxSwingAngle(InventoryItem item, int dir) {
+        return 180;
     }
 
     @Override
@@ -47,30 +49,27 @@ public class TheNarcissist extends AphSwordToolItem {
     }
 
     @Override
-    public float getHitboxSwingAngle(InventoryItem item, int dir) {
-        return 180;
-    }
-
     public boolean getAnimInverted(InventoryItem item) {
-        return getCombo(item) == 1;
+        return getCombo(item) == 1 || getCombo(item) == 3;
     }
 
+    @Override
     public int getFlatItemCooldownTime(InventoryItem item) {
-        return item.getGndData().getInt("lastCombo") == 2 ? 2000 : this.getFlatAttackAnimTime(item) * 2;
+        return item.getGndData().getInt("lastCombo") == 4 ? 5000 : this.getFlatAttackAnimTime(item) * 2;
     }
 
+    @Override
     public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
         int combo = getComboAndCalc(item, attackerMob);
         item.getGndData().setInt("lastCombo", combo);
 
         int animTime = this.getAttackAnimTime(item, attackerMob);
-        if (combo == 2) {
+        if (combo == 4) {
             if (level.isServer()) {
                 attackerMob.buffManager.addBuff(new ActiveBuff(BuffRegistry.getBuff("narcissistbuff"), attackerMob, animTime, null), true);
-                attackerMob.getLevel().entityManager.addLevelEvent(new AphNarcissistEvent(attackerMob, (float) Math.atan2(y - attackerMob.y, x - attackerMob.x), attackHeight, this.getAttackDamage(item)));
-
+                attackerMob.getLevel().entityManager.addLevelEvent(new AphNarcissistEvent(attackerMob, (float) Math.atan2(y - attackerMob.y, x - attackerMob.x), attackHeight, this.getDefaultAttackDamage(item)));
             }
-
+            item.getGndData().setInt("lastCombo", 4);
         } else {
             ToolItemMobAbilityEvent event = new ToolItemMobAbilityEvent(attackerMob, seed, item, x - attackerMob.getX(), y - attackerMob.getY() + attackHeight, animTime, animTime, combo == 1 ? new HashMap<>() : null);
             attackerMob.addAndSendAttackerLevelEvent(event);
@@ -80,13 +79,24 @@ public class TheNarcissist extends AphSwordToolItem {
     }
 
     @Override
+    public void showAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, int animAttack, int seed, GNDItemMap mapContent) {
+        super.showAttack(level, x, y, attackerMob, attackHeight, item, animAttack, seed, mapContent);
+        if(level.isClient()) {
+            int lastCombo = item.getGndData().getInt("lastCombo");
+            if(0 < lastCombo && lastCombo < 4) {
+                level.getClient().startCameraShake(attackerMob.x, attackerMob.y, 500, 40, (float) lastCombo / 2, (float) lastCombo / 4, true);
+            }
+        }
+    }
+
+    @Override
     public ListGameTooltips getPreEnchantmentTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {
         ListGameTooltips tooltips = super.getPreEnchantmentTooltips(item, perspective, blackboard);
         tooltips.add(Localization.translate("itemtooltip", "thenarcissist"));
         return tooltips;
     }
 
-    private static final int MAX_COMBO = 2;
+    private static final int MAX_COMBO = 4;
     private static final long COMBO_TIMEOUT = 6L;
 
     public int getCombo(InventoryItem item) {
@@ -118,6 +128,16 @@ public class TheNarcissist extends AphSwordToolItem {
         super.hitMob(item, event, level, target, attacker);
         item.getGndData().setBoolean("mobAttacked", true);
         attacker.getServer().network.sendToClientsAtEntireLevel(new NarcissistHitMob(attacker), level);
+    }
+
+    @Override
+    public GameDamage getAttackDamage(InventoryItem item) {
+        float modDamage = 1 + 0.2F * item.getGndData().getInt("lastCombo", 0);
+        return super.getAttackDamage(item).modDamage(modDamage);
+    }
+
+    public GameDamage getDefaultAttackDamage(InventoryItem item) {
+        return super.getAttackDamage(item);
     }
 
     public static class NarcissistHitMob extends Packet {

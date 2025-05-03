@@ -2,13 +2,13 @@ package aphorea.levelevents;
 
 import aphorea.particles.NarcissistParticle;
 import aphorea.utils.AphColors;
-import aphorea.utils.magichealing.AphMagicHealing;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameRandom;
+import necesse.engine.util.GameUtils;
 import necesse.engine.util.LineHitbox;
 import necesse.entity.ParticleTypeSwitcher;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.HitboxEffectEvent;
@@ -20,18 +20,22 @@ import necesse.gfx.GameResources;
 import necesse.level.maps.LevelObjectHit;
 
 import java.awt.*;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
 public class AphNarcissistEvent extends HitboxEffectEvent implements Attacker {
-    public static int maxLifeTime = 2000;
+    public static int maxLifeTime = 5000;
     private int lifeTime = 0;
     public float startX;
     public float startY;
+    public float moveX;
+    public float moveY;
     public float startAngle;
     public GameDamage damage;
     private HashMap<Integer, Long> mobHits;
 
+    public NarcissistParticle particle;
 
     public AphNarcissistEvent() {
     }
@@ -40,6 +44,8 @@ public class AphNarcissistEvent extends HitboxEffectEvent implements Attacker {
         super(owner, new GameRandom());
         this.startX = owner.x;
         this.startY = owner.y - attackHeight;
+        this.moveX = 0;
+        this.moveY = 0;
         this.startAngle = startAngle;
         this.damage = damage;
 
@@ -52,7 +58,7 @@ public class AphNarcissistEvent extends HitboxEffectEvent implements Attacker {
         mobHits = new HashMap<>();
 
         if (isClient()) {
-            getLevel().entityManager.addParticle(new NarcissistParticle(getLevel(), owner, startX, startY, startAngle), Particle.GType.CRITICAL);
+            getLevel().entityManager.addParticle(particle = new NarcissistParticle(getLevel(), owner, startX, startY, startAngle), Particle.GType.CRITICAL);
         }
     }
 
@@ -61,6 +67,8 @@ public class AphNarcissistEvent extends HitboxEffectEvent implements Attacker {
         super.setupSpawnPacket(writer);
         writer.putNextFloat(startX);
         writer.putNextFloat(startY);
+        writer.putNextFloat(moveX);
+        writer.putNextFloat(moveY);
         writer.putNextShortUnsigned(this.lifeTime);
         writer.putNextFloat(startAngle);
         writer.putNextInt(DamageTypeRegistry.getDamageTypeID(damage.type.getStringID()));
@@ -80,6 +88,8 @@ public class AphNarcissistEvent extends HitboxEffectEvent implements Attacker {
         super.applySpawnPacket(reader);
         this.startX = reader.getNextFloat();
         this.startY = reader.getNextFloat();
+        this.moveX = reader.getNextFloat();
+        this.moveY = reader.getNextFloat();
         this.lifeTime = reader.getNextShortUnsigned();
         this.startAngle = reader.getNextFloat();
         this.damage = new GameDamage(DamageTypeRegistry.getDamageType(reader.getNextInt()), reader.getNextFloat(), reader.getNextFloat());
@@ -182,6 +192,27 @@ public class AphNarcissistEvent extends HitboxEffectEvent implements Attacker {
     }
 
     @Override
+    public void tickMovement(float delta) {
+        float percent = easeInSine(getLifePercent());
+
+        // Track closest
+        Mob closestMob = GameUtils.streamTargetsRange(owner, (int) getX(), (int) getY(), (int) (500 * percent))
+                .min(Comparator.comparingDouble(m -> m.getDistance(getX(), getY())))
+                .orElse(null);
+
+        // Move to the closest mob if exists
+        if (closestMob != null) {
+            float angle = (float) Math.atan2(closestMob.y - getY(), closestMob.x - getX());
+            moveX += (float) (Math.cos(angle) * 50 * percent * delta / 250);
+            moveY += (float) (Math.sin(angle) * 50 * percent * delta / 250);
+            if (isClient()) {
+                particle.moveX = moveX;
+                particle.moveY = moveY;
+            }
+        }
+    }
+
+    @Override
     public boolean canHit(Mob mob) {
         if (!super.canHit(mob)) return false;
         if (!this.mobHits.containsKey(mob.getHitCooldownUniqueID())) {
@@ -222,17 +253,14 @@ public class AphNarcissistEvent extends HitboxEffectEvent implements Attacker {
     public void serverHit(Mob mob, boolean clientSubmitted) {
         this.startCooldown(mob);
         mob.isServerHit(damage, mob.x - getX(), mob.y - getY(), 50, this.owner);
-        if (mob.isHostile) {
-            AphMagicHealing.healMob(owner, owner, 1);
-        }
     }
 
     public float getX() {
-        return getX(startX, startAngle, getLifePercent());
+        return getX(startX, startAngle, getLifePercent()) + moveX;
     }
 
     public float getY() {
-        return getY(startY, startAngle, getLifePercent());
+        return getY(startY, startAngle, getLifePercent()) + moveY;
     }
 
     public float getAngle() {
@@ -287,7 +315,7 @@ public class AphNarcissistEvent extends HitboxEffectEvent implements Attacker {
 
     public static float getAngle(float startAngle, float lifePercent) {
         int dir = getDir(startAngle);
-        return angleOffSet(dir) + easeInSine(lifePercent) * (float) Math.toRadians(360 * 4) * (dir == 3 ? -1 : 1);
+        return angleOffSet(dir) + easeInSine(lifePercent) * (float) Math.toRadians(3600) * (dir == 3 ? -1 : 1);
     }
 
     public static float distanceTraveled(float lifePercent) {

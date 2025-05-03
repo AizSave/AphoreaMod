@@ -161,6 +161,9 @@ tungstendagger=Tungsten Dagger
 # NEW
 lostumbrella=Lost Umbrella
 
+// Rapiers
+lightrapier=Light Rapier
+
 // Magic weapons
 unstablegelstaff=Unstable Gel Staff
 magicalbroom=Magical Broom
@@ -270,6 +273,7 @@ infectedhat=Infected Hat
 infectedchestplate=Infected Chestplate
 infectedboots=Infected Boots
 spinelhelmet=Spinel Helmet
+spinelhat=Spinel Hat
 spinelchestplate=Spinel Chestplate
 spinelboots=Spinel Boots
 
@@ -425,7 +429,7 @@ woodenrod="Perform a 3-hit combo to unleash a spinning sword attack on the third
 voidhammer=When the projectile bounces or hits an enemy, it targets the nearest one, hitting up to 3 times
 # NEW
 crimsonkora=Hold [input=mouse2] to charge a devastating but slow attack
-thenarcissist=
+thenarcissist=Chain 4 attacks to unleash a spinning sword throw on the fifth hit!\n+20% Damage for each chained attack
 
 // Single Range Weapons
 firesling=Burns the enemies
@@ -511,6 +515,7 @@ pinkwitchsetbonus=Increases Magic Attack Speed, Mana Regeneration, and Armor the
 # NEW
 infectedsetbonus=Summon three Living Saplings (8 Summoner Damage)
 spinelhelmetsetbonus=Magic Heal yourself with §7<healing>§0 of melee damage dealt to hostile mobs
+spinelhatsetbonus=Magic Heal yourself and all close allys\nwith §7<healing>§0 of magic damage dealt to hostile mobs
 
 // Banners
 strikebannereffect=§7+<effect>%§0 health regen (in and out of combat)

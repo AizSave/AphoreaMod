@@ -8,7 +8,7 @@ import necesse.entity.mobs.buffs.staticBuffs.Buff;
 public class NarcissistBuff extends Buff {
     @Override
     public void init(ActiveBuff activeBuff, BuffEventSubscriber buffEventSubscriber) {
-        activeBuff.setModifier(BuffModifiers.SPEED, -0.25F);
+        activeBuff.setModifier(BuffModifiers.SPEED, -0.5F);
         activeBuff.setModifier(BuffModifiers.INTIMIDATED, true);
     }
 

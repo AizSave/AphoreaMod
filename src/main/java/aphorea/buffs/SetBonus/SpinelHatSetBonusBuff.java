@@ -1,5 +1,8 @@
 package aphorea.buffs.SetBonus;
 
+import aphorea.utils.AphColors;
+import aphorea.utils.area.AphAreaList;
+import aphorea.utils.area.AphFlatArea;
 import aphorea.utils.magichealing.AphMagicHealing;
 import necesse.engine.localization.Localization;
 import necesse.engine.registries.DamageTypeRegistry;
@@ -11,10 +14,10 @@ import necesse.entity.mobs.buffs.staticBuffs.armorBuffs.setBonusBuffs.SetBonusBu
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.gfx.gameTooltips.StringTooltips;
 
-public class SpinelHelmetSetBonusBuff extends SetBonusBuff {
+public class SpinelHatSetBonusBuff extends SetBonusBuff {
     float savedAmount;
 
-    public SpinelHelmetSetBonusBuff() {
+    public SpinelHatSetBonusBuff() {
     }
 
     public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {
@@ -22,21 +25,29 @@ public class SpinelHelmetSetBonusBuff extends SetBonusBuff {
 
     public ListGameTooltips getTooltip(ActiveBuff ab, GameBlackboard blackboard) {
         ListGameTooltips tooltips = super.getTooltip(ab, blackboard);
-        tooltips.add(new StringTooltips(Localization.translate("itemtooltip", "spinelhelmetsetbonus", "healing", AphMagicHealing.getMagicHealingToolTipPercent(ab.owner, ab.owner, 0.01F))));
+        tooltips.add(new StringTooltips(Localization.translate("itemtooltip", "spinelhatsetbonus", "healing", AphMagicHealing.getMagicHealingToolTipPercent(ab.owner, ab.owner, 0.01F))));
         return tooltips;
+    }
+
+    public AphAreaList getAreaList(int healing) {
+        return new AphAreaList(
+                new AphFlatArea(100, 0.3F, AphColors.green)
+                        .setHealingArea(healing)
+                        .setDirectExecuteHealing(true)
+        );
     }
 
     @Override
     public void onBeforeAttacked(ActiveBuff buff, MobBeforeHitEvent event) {
         super.onBeforeAttacked(buff, event);
-        if (buff.owner.isServer() && !event.isPrevented() && event.damage.type == DamageTypeRegistry.MELEE && event.damage.damage > 0 && event.target != null && event.target.isHostile) {
+        if (!event.isPrevented() && event.damage.type == DamageTypeRegistry.MAGIC && event.damage.damage > 0 && event.target != null && event.target.isHostile) {
             float healing = event.damage.damage * 0.01F * AphMagicHealing.getMagicHealingMod(buff.owner, buff.owner, null, null) + savedAmount;
             if (healing < 1) {
                 savedAmount = healing;
             } else {
                 int realHealing = (int) healing;
                 savedAmount = healing - realHealing;
-                AphMagicHealing.healMobExecute(buff.owner, buff.owner, realHealing);
+                getAreaList(realHealing).execute(buff.owner);
             }
         }
     }

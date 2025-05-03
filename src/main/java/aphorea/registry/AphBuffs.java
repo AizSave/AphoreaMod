@@ -8,6 +8,7 @@ import aphorea.buffs.Banners.AphMightyBasicBannerBuff;
 import aphorea.buffs.Runes.AphBaseRuneActiveBuff;
 import aphorea.buffs.Runes.AphBaseRuneTrinketBuff;
 import aphorea.buffs.Runes.AphModifierRuneTrinketBuff;
+import aphorea.buffs.Runes.RuneOfPestWardenBuff;
 import aphorea.buffs.SetBonus.*;
 import aphorea.buffs.Trinkets.Charm.AdrenalineCharmBuff;
 import aphorea.buffs.Trinkets.Charm.BloomrushCharmBuff;
@@ -37,6 +38,8 @@ import necesse.engine.GlobalData;
 import necesse.engine.modifiers.ModifierValue;
 import necesse.engine.network.client.Client;
 import necesse.engine.network.packet.PacketForceOfWind;
+import necesse.engine.network.packet.PacketMobMovement;
+import necesse.engine.network.packet.PacketPlayerMovement;
 import necesse.engine.network.server.Server;
 import necesse.engine.network.server.ServerClient;
 import necesse.engine.registries.BuffRegistry;
@@ -63,6 +66,7 @@ import necesse.entity.mobs.buffs.staticBuffs.armorBuffs.trinketBuffs.SimpleTrink
 import necesse.entity.mobs.itemAttacker.FollowPosition;
 import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
 import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
+import necesse.entity.mobs.mobMovement.MobMovementConstant;
 import necesse.entity.particle.Particle;
 import necesse.entity.particle.SmokePuffParticle;
 import necesse.gfx.GameResources;
@@ -112,6 +116,7 @@ public class AphBuffs {
         public static SetBonusBuff SWAMP_HOOP;
         public static SetBonusBuff INFECTED;
         public static SetBonusBuff SPINEL_HELMET;
+        public static SetBonusBuff SPINEL_HAT;
     }
 
     public static class BANNER {
@@ -190,6 +195,7 @@ public class AphBuffs {
         BuffRegistry.registerBuff("swamphoodsetbonus", SET_BONUS.SWAMP_HOOP = new SwampHoodSetBonusBuff());
         BuffRegistry.registerBuff("infectedsetbonus", SET_BONUS.INFECTED = new InfectedSetBonusBuff());
         BuffRegistry.registerBuff("spinelhelmetsetbonus", SET_BONUS.SPINEL_HELMET = new SpinelHelmetSetBonusBuff());
+        BuffRegistry.registerBuff("spinelhatsetbonus", SET_BONUS.SPINEL_HAT = new SpinelHatSetBonusBuff());
 
         // Banner Buffs
         BuffRegistry.registerBuff("blankbanner", BANNER.BLANK = AphBasicBannerBuff.floatModifier(BuffModifiers.HEALTH_REGEN, 0.1F));
@@ -755,7 +761,7 @@ public class AphBuffs {
                     if (level.isClient()) {
                         new AphAreaList(new AphArea(range, AphColors.tungsten)).executeClient(level, player.x, player.y, 1F, 1F, 0F);
                     }
-                } else if (level.getObject(targetX / 32, targetY / 32).isSolid || level.isTrialRoom) {
+                } else if (level.getObject(targetX / 32, targetY / 32).isSolid) {
                     preventUsage = true;
                 } else {
                     if (level.isClient()) {
@@ -800,68 +806,7 @@ public class AphBuffs {
 
         });
         // On duration
-        BuffRegistry.registerBuff("runeofpestwardenactive", new AphBaseRuneActiveBuff(baseEffectNumber, 60000, new ModifierValue<>(BuffModifiers.PARALYZED, true), new ModifierValue<>(BuffModifiers.INCOMING_DAMAGE_MOD, -1000F), new ModifierValue<>(BuffModifiers.SPEED, 4F)) {
-
-            float angle;
-            boolean initAngle = true;
-
-            final float maxDeltaAngle = (float) Math.toRadians(10);
-            final float speed = 20;
-
-            @Override
-            public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {
-                super.init(buff, eventSubscriber);
-                buff.owner.setDir(2);
-                initAngle = true;
-            }
-
-            @Override
-            public void clientTick(ActiveBuff buff) {
-                super.clientTick(buff);
-                PlayerMob player = (PlayerMob) buff.owner;
-
-                MainGame mainGame = (MainGame) GlobalData.getCurrentState();
-                MainGameCamera camera = mainGame.getCamera();
-
-                float mouseLevelX = camera.getMouseLevelPosX();
-                float mouseLevelY = camera.getMouseLevelPosY();
-
-                float newAngle = (float) Math.atan2(mouseLevelY - player.y, mouseLevelX - player.x);
-
-                if (initAngle) {
-                    initAngle = false;
-                    angle = newAngle;
-                } else {
-                    float deltaAngle = normalizeAngle(newAngle - angle);
-
-                    if (Math.abs(deltaAngle) > maxDeltaAngle) {
-                        angle += Math.signum(deltaAngle) * maxDeltaAngle;
-                    } else {
-                        angle = newAngle;
-                    }
-
-                    angle = normalizeAngle(angle);
-                }
-
-                float speedX = speed * (float) Math.cos(angle);
-                float speedY = speed * (float) Math.sin(angle);
-
-                player.setPos(player.x + speedX, player.y + speedY, true);
-
-                player.getLevel().entityManager.addParticle(player.x + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), player.y + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(player.dx / 2, player.dy / 2).color(AphColors.green).height(16.0F);
-            }
-
-            @Override
-            public void onRemoved(ActiveBuff buff) {
-                super.onRemoved(buff);
-            }
-
-            private float normalizeAngle(float angle) {
-                while (angle <= -Math.PI) angle += (float) (2 * Math.PI);
-                while (angle > Math.PI) angle -= (float) (2 * Math.PI);
-                return angle;
-            }
-        });
+        BuffRegistry.registerBuff("runeofpestwardenactive", new RuneOfPestWardenBuff(baseEffectNumber));
 
         // RUNE OF SAGE & GRIT
         baseEffectNumber = 20;
@@ -946,7 +891,7 @@ public class AphBuffs {
                     if (level.isClient()) {
                         new AphAreaList(new AphArea(range, AphColors.paletteMotherSlime)).executeClient(level, player.x, player.y, 1F, 1F, 0F);
                     }
-                } else if (level.getObject(targetX / 32, targetY / 32).isSolid || level.isTrialRoom) {
+                } else if (level.getObject(targetX / 32, targetY / 32).isSolid) {
                     preventUsage = true;
                 } else {
                     player.dismount();

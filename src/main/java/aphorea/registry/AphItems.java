@@ -13,6 +13,7 @@ import aphorea.items.armor.Rocky.RockyChestplate;
 import aphorea.items.armor.Rocky.RockyHelmet;
 import aphorea.items.armor.Spinel.SpinelBoots;
 import aphorea.items.armor.Spinel.SpinelChestplate;
+import aphorea.items.armor.Spinel.SpinelHat;
 import aphorea.items.armor.Spinel.SpinelHelmet;
 import aphorea.items.armor.Swamp.SwampBoots;
 import aphorea.items.armor.Swamp.SwampChestplate;
@@ -46,6 +47,7 @@ import aphorea.items.tools.weapons.melee.battleaxe.UnstableGelBattleaxe;
 import aphorea.items.tools.weapons.melee.dagger.*;
 import aphorea.items.tools.weapons.melee.glaive.WoodenRod;
 import aphorea.items.tools.weapons.melee.greatsword.UnstableGelGreatsword;
+import aphorea.items.tools.weapons.melee.rapier.LightRapier;
 import aphorea.items.tools.weapons.melee.saber.*;
 import aphorea.items.tools.weapons.melee.sword.*;
 import aphorea.items.tools.weapons.range.bow.SpinelCrossbow;
@@ -144,10 +146,11 @@ public class AphItems {
         replaceItem("cutlass", new AphCutlassSaber(), 500F); // REWORKED
         registerItem("honeysaber", new HoneySaber());
         registerItem("thenarcissist", new TheNarcissist());
-        registerItem("glacialsaber", new GlacialSaber());
-        registerItem("cryokatana", new CryoKatana());
-        registerItem("lostumbrella", new LostUmbrellaDagger());
         registerItem("brokenkora", new BrokenKora(), 200F);
+        registerItem("lightrapier", new LightRapier());
+        registerItem("glacialsaber", new GlacialSaber());
+        registerItem("lostumbrella", new LostUmbrellaDagger());
+        registerItem("cryokatana", new CryoKatana());
         registerItem("crimsonkora", new CrimsonKora());
 
         // Range Weapons
@@ -227,6 +230,7 @@ public class AphItems {
 
         // Spinel
         registerItem("spinelhelmet", new SpinelHelmet());
+        registerItem("spinelhat", new SpinelHat());
         registerItem("spinelchestplate", new SpinelChestplate());
         registerItem("spinelboots", new SpinelBoots());
     }

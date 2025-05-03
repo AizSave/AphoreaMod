@@ -109,7 +109,6 @@ abstract public class AphSaberToolItem extends AphSwordToolItem implements ItemI
         }
     }
 
-
     public int getChargeAnimTime(InventoryItem item, ItemAttackerMob attackerMob) {
         GNDItemMap gndData = item.getGndData();
         return gndData.hasKey("chargeAnimTime") ? gndData.getInt("chargeAnimTime") : this.chargeAnimTime.getValue(this.getUpgradeTier(item));
