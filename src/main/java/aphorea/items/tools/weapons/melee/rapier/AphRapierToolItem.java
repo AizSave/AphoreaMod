@@ -57,9 +57,9 @@ public class AphRapierToolItem extends SpearToolItem {
     @Override
     public ArrayList<Shape> getHitboxes(InventoryItem item, AttackAnimMob mob, int aimX, int aimY, ToolItemMobAbilityEvent event, boolean forDebug) {
         ArrayList<Shape> out = new ArrayList<>();
-        float attackRange = (float)this.getAttackRange(item);
-        Point2D.Float dir = GameMath.normalize((float)aimX, (float)aimY);
-        float yOffset = (float)Math.min(mob.getCurrentAttackDrawYOffset() + mob.getStartAttackHeight(), 0);
+        float attackRange = (float) this.getAttackRange(item);
+        Point2D.Float dir = GameMath.normalize((float) aimX, (float) aimY);
+        float yOffset = (float) Math.min(mob.getCurrentAttackDrawYOffset() + mob.getStartAttackHeight(), 0);
         Line2D.Float attackLine = new Line2D.Float(mob.x, mob.y, mob.x + dir.x * attackRange, mob.y + dir.y * attackRange + yOffset);
         if (this.width > 0.0F) {
             out.add(new LineHitbox(attackLine, this.width));

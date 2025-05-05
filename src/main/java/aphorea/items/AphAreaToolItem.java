@@ -26,19 +26,17 @@ import java.util.Set;
 
 abstract public class AphAreaToolItem extends AphMagicHealingToolItem {
 
-    AphAreaList areaList;
     public boolean isMagicWeapon;
     public boolean isHealingTool;
 
     float rotationOffset;
 
-    public AphAreaToolItem(int enchantCost, boolean isMagicWeapon, boolean isHealingTool, AphAreaList areaList) {
+    public AphAreaToolItem(int enchantCost, boolean isMagicWeapon, boolean isHealingTool) {
         super(enchantCost);
 
         this.isMagicWeapon = isMagicWeapon;
         this.isHealingTool = isHealingTool;
 
-        this.areaList = areaList;
         damageType = DamageTypeRegistry.MAGIC;
 
         if (isMagicWeapon) {
@@ -50,6 +48,7 @@ abstract public class AphAreaToolItem extends AphMagicHealingToolItem {
 
     @Override
     public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
+        AphAreaList areaList = getAreaList(item);
         if (areaList.someType(AphAreaType.HEALING)) {
             onHealingToolItemUsed(attackerMob, item);
         }
@@ -60,7 +59,7 @@ abstract public class AphAreaToolItem extends AphMagicHealingToolItem {
 
         float rangeModifier = 1 + this.getEnchantment(item).getModifier(AphModifiers.TOOL_AREA_RANGE);
 
-        areaList.executeServer(attackerMob, attackerMob.x, attackerMob.y, rangeModifier, item, this);
+        areaList.execute(attackerMob, attackerMob.x, attackerMob.y, rangeModifier, item, this, true);
 
         return item;
     }
@@ -72,6 +71,7 @@ abstract public class AphAreaToolItem extends AphMagicHealingToolItem {
 
     @Override
     public GameMessage getItemAttackerCanUseError(ItemAttackerMob mob, InventoryItem item) {
+        AphAreaList areaList = getAreaList(item);
         if (areaList.someType(AphAreaType.DAMAGE) || areaList.someType(AphAreaType.DEBUFF)) {
             return null;
         } else {
@@ -85,20 +85,15 @@ abstract public class AphAreaToolItem extends AphMagicHealingToolItem {
     }
 
     @Override
-    public void showAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, int animAttack, int seed, GNDItemMap mapContent) {
-        float rangeModifier = 1 + this.getEnchantment(item).getModifier(AphModifiers.TOOL_AREA_RANGE);
-
-        areaList.executeClient(level, attackerMob.x, attackerMob.y, rangeModifier);
-    }
-
-    @Override
     public void addStatTooltips(ItemStatTipList list, InventoryItem currentItem, InventoryItem lastItem, ItemAttackerMob perspective, boolean forceAdd) {
-        areaList.addAreasStatTip(list, this, currentItem, lastItem, perspective, forceAdd);
+        AphAreaList.addAreasStatTip(list, getAreaList(currentItem), lastItem == null ? null : getAreaList(lastItem), perspective, forceAdd, currentItem, lastItem, this, 100);
         this.addAttackSpeedTip(list, currentItem, lastItem, perspective);
         this.addResilienceGainTip(list, currentItem, lastItem, perspective, forceAdd);
         this.addCritChanceTip(list, currentItem, lastItem, perspective, forceAdd);
         this.addManaCostTip(list, currentItem, lastItem, perspective);
     }
+
+    abstract public AphAreaList getAreaList(InventoryItem item);
 
     @Override
     public Set<Integer> getValidEnchantmentIDs(InventoryItem item) {
@@ -135,16 +130,20 @@ abstract public class AphAreaToolItem extends AphMagicHealingToolItem {
 
     @Override
     public int getItemAttackerAttackRange(ItemAttackerMob mob, InventoryItem item) {
-        AphArea firstArea = null;
-        for (AphArea area : areaList.areas) {
+        AphArea lastArea = null;
+        for (int i = getAreaList(item).areas.size() - 1; i >= 0; i--) {
+            AphArea area = getAreaList(item).areas.get(i);
             if (area.areaTypes.contains(AphAreaType.DAMAGE) || area.areaTypes.contains(AphAreaType.DEBUFF)) {
-                firstArea = area;
+                lastArea = area;
                 break;
             }
+
         }
-        if (firstArea == null) {
-            firstArea = areaList.areas[0];
+
+        if (lastArea == null) {
+            lastArea = getAreaList(item).areas.get(getAreaList(item).areas.size() - 1);
         }
-        return (int) (firstArea.range * 0.9F);
+
+        return (int) (lastArea.range * 0.9F);
     }
 }

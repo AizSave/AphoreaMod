@@ -2,23 +2,19 @@ package aphorea.utils.area;
 
 import aphorea.utils.magichealing.AphMagicHealing;
 import necesse.engine.registries.BuffRegistry;
-import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.util.GameRandom;
+import necesse.engine.util.GameUtils;
 import necesse.entity.ParticleTypeSwitcher;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
-import necesse.entity.mobs.gameDamageType.DamageType;
 import necesse.entity.particle.Particle;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.toolItem.ToolItem;
-import necesse.inventory.item.upgradeUtils.FloatUpgradeValue;
-import necesse.inventory.item.upgradeUtils.IntUpgradeValue;
 import necesse.level.maps.CollisionFilter;
 import necesse.level.maps.Level;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.awt.*;
 import java.awt.geom.Line2D;
@@ -33,15 +29,12 @@ public class AphArea {
     public Color[] colors;
     public int position;
     public Set<AphAreaType> areaTypes = new HashSet<>();
-    public DamageType damageType;
-    public float baseCritChance = 0;
-    public int armorPen = 0;
 
     public int buffDuration = 1000;
     public int debuffDuration = 1000;
 
-    public FloatUpgradeValue areaDamage = new FloatUpgradeValue(0, 0.2F);
-    public IntUpgradeValue areaHealing = new IntUpgradeValue(0, 0.2F);
+    public GameDamage areaDamage;
+    public int areaHealing;
     public String[] buffs;
     public String[] debuffs;
 
@@ -50,7 +43,6 @@ public class AphArea {
     public AphArea(float range, Color... colors) {
         this.range = range;
         this.colors = colors;
-        this.damageType = DamageTypeRegistry.NORMAL;
     }
 
     public AphArea(float range, float alpha, Color... colors) {
@@ -67,31 +59,18 @@ public class AphArea {
         return adjustedColors;
     }
 
-    public AphArea setDamageArea(FloatUpgradeValue damage) {
+    public AphArea setDamageArea(GameDamage damage) {
         this.areaTypes.add(AphAreaType.DAMAGE);
         this.areaDamage = damage;
 
         return this;
     }
 
-    public AphArea setDamageArea(float damage, float tier1Damage) {
-        return setDamageArea(areaDamage.setBaseValue(damage).setUpgradedValue(1, tier1Damage));
-    }
-
-    public AphArea setArmorPen(int armorPen) {
-        this.armorPen = armorPen;
-        return this;
-    }
-
-    public AphArea setHealingArea(IntUpgradeValue healing) {
+    public AphArea setHealingArea(int healing) {
         this.areaTypes.add(AphAreaType.HEALING);
         this.areaHealing = healing;
 
         return this;
-    }
-
-    public AphArea setHealingArea(int healing, int tier1Healing) {
-        return setHealingArea(areaHealing.setBaseValue(healing).setUpgradedValue(1, tier1Healing));
     }
 
     public AphArea setBuffArea(int duration, String... buffs) {
@@ -115,85 +94,36 @@ public class AphArea {
         return this;
     }
 
-    public void showParticles(Level level, float x, float y, AphAreaList areaList, Color[] forcedColors, float rangeModifier, float borderParticleModifier, float innerParticleModifier, int particleTime) {
-        int range = Math.round(this.range * rangeModifier);
-        int antRange = Math.round(this.antRange * rangeModifier);
-        if (colors != null || forcedColors != null) {
-            float initialParticleCount = (float) (360 * range) / 400;
-            float initialAnteriorParticleCount = antRange == 0 ? 0 : (float) (360 * antRange) / 400;
-
-            int particles = Math.round(initialParticleCount * borderParticleModifier);
-            int innerParticles = Math.round((initialParticleCount - initialAnteriorParticleCount) * innerParticleModifier);
-
-            for (int i = 0; i < particles; i++) {
-                float angle = (float) i / particles * 360;
-                float dx = (float) Math.sin(Math.toRadians(angle)) * (float) range;
-                float dy = (float) Math.cos(Math.toRadians(angle)) * (float) range;
-                level.entityManager.addParticle(x + dx, y + dy, new ParticleTypeSwitcher(Particle.GType.CRITICAL).next()).movesFriction(GameRandom.globalRandom.getIntBetween(-5, 5), GameRandom.globalRandom.getIntBetween(-5, 5), GameRandom.globalRandom.getFloatBetween(0.05F, 0.1F)).color(getColor(forcedColors)).heightMoves(GameRandom.globalRandom.getFloatBetween(0F, 3F), GameRandom.globalRandom.getFloatBetween(5F, 10F)).lifeTime(particleTime);
-            }
-
-            if (borderParticleModifier <= 0 || 0.1F * range + antRange < range * 0.9F) {
-                for (int i = 0; i < innerParticles; i++) {
-                    float angle = GameRandom.globalRandom.getIntBetween(0, 359);
-                    float d = GameRandom.globalRandom.getFloatBetween(borderParticleModifier <= 0 ? antRange : 0.1F * range + antRange, borderParticleModifier <= 0 ? range : 0.9F * range);
-                    float dx = (float) Math.sin(Math.toRadians(angle)) * d;
-                    float dy = (float) Math.cos(Math.toRadians(angle)) * d;
-
-                    level.entityManager.addParticle(x + dx, y + dy, new ParticleTypeSwitcher(Particle.GType.CRITICAL).next()).movesFriction(GameRandom.globalRandom.getIntBetween(-5, 5), GameRandom.globalRandom.getIntBetween(-5, 5), GameRandom.globalRandom.getFloatBetween(0.05F, 0.1F)).color(getColor(forcedColors)).heightMoves(GameRandom.globalRandom.getFloatBetween(0F, 3F), GameRandom.globalRandom.getFloatBetween(5F, 10F)).lifeTime(particleTime);
-                }
-            }
-
-            if (position > 0) {
-                AphArea antArea = areaList.areas[position - 1];
-
-                antArea.showParticles(level, x, y, areaList, forcedColors, rangeModifier, borderParticleModifier, innerParticleModifier, particleTime);
-            }
-
-        }
+    public GameDamage getDamage() {
+        return areaDamage;
     }
 
-    public Color getColor(Color[] forcedColors) {
-        return GameRandom.globalRandom.getOneOf(forcedColors != null ? forcedColors : colors);
-    }
-
-    public float getBaseDamage() {
-        return areaDamage.getValue(0);
-    }
-
-    public GameDamage getDamage(@Nullable InventoryItem item) {
-        return new GameDamage(damageType, (item == null || !(item.item instanceof ToolItem)) ? getBaseDamage() : areaDamage.getValue(item.item.getUpgradeTier(item)), armorPen, baseCritChance);
-    }
-
-    public int getHealing(@Nullable InventoryItem item) {
-        return (item == null || !(item.item instanceof ToolItem)) ? areaHealing.getValue(0) : areaHealing.getValue(item.item.getUpgradeTier(item));
+    public int getHealing() {
+        return areaHealing;
     }
 
     public void executeServer(Mob attacker, @NotNull Mob target, float x, float y, float modRange, InventoryItem item, ToolItem toolItem) {
         float distance = target.getDistance(x, y);
         if ((position == 0 == isCenter(attacker, target, distance)) || (inRange(distance, modRange) && inVision(target, x, y))) {
             if (this.areaTypes.contains(AphAreaType.DAMAGE) && target != attacker && canAreaAttack(attacker, target)) {
-                target.isServerHit(getDamage(item), target.x - attacker.x, target.y - attacker.y, 0, attacker);
+                target.isServerHit(areaDamage, target.x - attacker.x, target.y - attacker.y, 0, attacker);
             }
             if (this.areaTypes.contains(AphAreaType.HEALING) && (target == attacker || AphMagicHealing.canHealMob(attacker, target))) {
-                if(directExecuteHealing) {
-                    AphMagicHealing.healMobExecute(attacker, target, this.getHealing(item), item, toolItem);
+                if (directExecuteHealing) {
+                    AphMagicHealing.healMobExecute(attacker, target, areaHealing, item, toolItem);
                 } else {
-                    AphMagicHealing.healMob(attacker, target, this.getHealing(item), item, toolItem);
+                    AphMagicHealing.healMob(attacker, target, areaHealing, item, toolItem);
                 }
             }
             if (attacker.isServer()) {
                 if (this.areaTypes.contains(AphAreaType.BUFF) && (target == attacker || target.isSameTeam(attacker))) {
                     Arrays.stream(buffs).forEach(
-                            buffID -> {
-                                target.buffManager.addBuff(new ActiveBuff(BuffRegistry.getBuff(buffID), target, buffDuration, attacker), true);
-                            }
+                            buffID -> target.buffManager.addBuff(new ActiveBuff(BuffRegistry.getBuff(buffID), target, buffDuration, attacker), true)
                     );
                 }
                 if (this.areaTypes.contains(AphAreaType.DEBUFF) && target != attacker && canAreaAttack(attacker, target)) {
                     Arrays.stream(debuffs).forEach(
-                            debuffID -> {
-                                target.buffManager.addBuff(new ActiveBuff(BuffRegistry.getBuff(debuffID), target, debuffDuration, attacker), true);
-                            }
+                            debuffID -> target.buffManager.addBuff(new ActiveBuff(BuffRegistry.getBuff(debuffID), target, debuffDuration, attacker), true)
                     );
                 }
             }
@@ -214,5 +144,77 @@ public class AphArea {
 
     public static boolean canAreaAttack(Mob attacker, @NotNull Mob target) {
         return target.canBeTargeted(attacker, attacker.isPlayer ? ((PlayerMob) attacker).getNetworkClient() : null);
+    }
+
+    public static int lateralBorderReduction = 4;
+
+    public void showParticles(Level level, float x, float y, Color[] forcedColors, float rangeModifier, float borderParticleModifier, float innerParticleModifier, int particleTime) {
+        int range = Math.round(this.range * rangeModifier);
+        int antRange = Math.round(this.antRange * rangeModifier);
+
+        float[] rays = getRays(level, x, y, range, new CollisionFilter().projectileCollision());
+
+        for (int i = 0; i < rays.length; i++) {
+            float rayDistance = rays[i];
+            if (rayDistance > antRange && (colors != null || forcedColors != null)) {
+
+                float trueRange = Math.min(range, rayDistance);
+                float angle = (float) (2 * Math.PI * i / rays.length);
+
+                if (GameRandom.globalRandom.getChance(innerParticleModifier)) {
+                    float dx = (float) Math.cos(angle) * trueRange;
+                    float dy = (float) Math.sin(angle) * trueRange;
+                    level.entityManager.addParticle(x + dx, y + dy, new ParticleTypeSwitcher(Particle.GType.CRITICAL).next()).movesFriction(GameRandom.globalRandom.getIntBetween(-5, 5), GameRandom.globalRandom.getIntBetween(-5, 5), GameRandom.globalRandom.getFloatBetween(0.05F, 0.1F)).color(getColor(forcedColors)).heightMoves(GameRandom.globalRandom.getFloatBetween(0F, 3F), GameRandom.globalRandom.getFloatBetween(5F, 10F)).lifeTime(particleTime);
+                }
+
+                float innerRange = trueRange;
+
+                float neighbourRay = getNeighbourRay(i, rays);
+                float neighbourRange = Math.max(antRange, Math.min(range, neighbourRay));
+
+                if (neighbourRange < trueRange) {
+                    int borderRange = (int) (trueRange - neighbourRange);
+                    innerRange -= borderRange;
+
+                    for (int j = 0; j < (borderRange / lateralBorderReduction); j++) {
+                        float dx = (float) Math.cos(angle) * (neighbourRange + j * lateralBorderReduction);
+                        float dy = (float) Math.sin(angle) * (neighbourRange + j * lateralBorderReduction);
+                        level.entityManager.addParticle(x + dx, y + dy, new ParticleTypeSwitcher(Particle.GType.CRITICAL).next()).movesFriction(GameRandom.globalRandom.getIntBetween(-5, 5), GameRandom.globalRandom.getIntBetween(-5, 5), GameRandom.globalRandom.getFloatBetween(0.05F, 0.1F)).color(getColor(forcedColors)).heightMoves(GameRandom.globalRandom.getFloatBetween(0F, 3F), GameRandom.globalRandom.getFloatBetween(5F, 10F)).lifeTime(particleTime);
+                    }
+                }
+                if (innerRange > antRange && GameRandom.globalRandom.getChance(borderParticleModifier * ((innerRange - antRange) / 2000)) && 0.1F * innerRange + antRange < innerRange * 0.9F) {
+                    float r = GameRandom.globalRandom.getFloatBetween(0, 1);
+                    float d = (innerRange - antRange) * easeOutQuad(r) * 0.8F + 0.1F + antRange;
+                    float dx = (float) Math.cos(angle) * d;
+                    float dy = (float) Math.sin(angle) * d;
+
+                    level.entityManager.addParticle(x + dx, y + dy, new ParticleTypeSwitcher(Particle.GType.CRITICAL).next()).movesFriction(GameRandom.globalRandom.getIntBetween(-5, 5), GameRandom.globalRandom.getIntBetween(-5, 5), GameRandom.globalRandom.getFloatBetween(0.05F, 0.1F)).color(getColor(forcedColors)).heightMoves(GameRandom.globalRandom.getFloatBetween(0F, 3F), GameRandom.globalRandom.getFloatBetween(5F, 10F)).lifeTime(particleTime);
+                }
+            }
+        }
+    }
+
+    public static float easeOutQuad(float x) {
+        return 1 - (1 - x) * (1 - x);
+    }
+
+    public static float[] getRays(Level level, float x, float y, float range, CollisionFilter filter) {
+        int raysCount = (int) (2 * Math.PI * range);
+        float[] rays = new float[raysCount];
+        for (int i = 0; i < raysCount; i++) {
+            float angle = (float) (2 * Math.PI * i / raysCount);
+            rays[i] = (float) GameUtils.castRay(level, x, y, Math.cos(angle) * range, Math.sin(angle) * range, range, 0, filter).totalDist;
+        }
+        return rays;
+    }
+
+    public static float getNeighbourRay(int ray, float[] rays) {
+        float antRay = rays[ray == 0 ? rays.length - 1 : ray - 1];
+        float nextRay = rays[ray == rays.length - 1 ? 0 : ray + 1];
+        return Math.min(antRay, nextRay);
+    }
+
+    public Color getColor(Color[] forcedColors) {
+        return GameRandom.globalRandom.getOneOf(forcedColors != null ? forcedColors : colors);
     }
 }

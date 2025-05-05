@@ -33,7 +33,7 @@ public class HoneySaber extends AphSaberToolItem {
     static float angleStep = 0.19635F;
 
     @Override
-    public Projectile[] getProjectiles(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent) {
+    public Projectile[] getProjectiles(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent, int seed) {
         float precision = powerPercent / 1.6F + 0.375F;
         int extraProjectiles = Math.round((precision - 0.5F) * 6);
 
@@ -89,7 +89,7 @@ public class HoneySaber extends AphSaberToolItem {
     }
 
     @Override
-    public Projectile getProjectile(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent) {
+    public Projectile getProjectile(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent, int seed) {
         return getProjectile(level, x, y, targetX, targetY, attackerMob, item, powerPercent, true);
     }
 

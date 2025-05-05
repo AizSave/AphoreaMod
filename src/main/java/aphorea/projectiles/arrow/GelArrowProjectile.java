@@ -4,9 +4,7 @@ import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
-import aphorea.utils.area.AphFlatArea;
 import necesse.engine.gameLoop.tickManager.TickManager;
-import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameRandom;
@@ -37,9 +35,7 @@ public class GelArrowProjectile extends Projectile {
 
     Color color = AphColors.gel;
 
-    AphAreaList areaList = new AphAreaList(
-            new AphArea(50, color)
-    ).setDamageType(DamageTypeRegistry.RANGED);
+    GameDamage gameDamage;
 
     public GelArrowProjectile() {
     }
@@ -59,8 +55,12 @@ public class GelArrowProjectile extends Projectile {
         this.speed = speed;
         this.distance = distance;
 
-        this.areaList = new AphAreaList(
-                new AphFlatArea(50, color).setDamageArea(damage.modDamage(0.5F))
+        this.gameDamage = gameDamage.modDamage(0.5F);
+    }
+
+    public AphAreaList getAreaList(GameDamage gameDamage) {
+        return new AphAreaList(
+                new AphArea(50, color).setDamageArea(gameDamage)
         );
     }
 
@@ -121,7 +121,7 @@ public class GelArrowProjectile extends Projectile {
 
     @Override
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
-        areaList.execute(getOwner(), x, y, 1F, item, toolItem);
+        getAreaList(gameDamage).execute(getOwner(), x, y, 1F, item, toolItem, false);
         if (this.isServer()) {
             if (mob != null) {
                 mob.addBuff(new ActiveBuff(AphBuffs.STICKY, mob, 1000, this), true);

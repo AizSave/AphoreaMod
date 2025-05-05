@@ -1,7 +1,6 @@
 package aphorea.mobs.bosses.minions;
 
 import aphorea.mobs.bosses.BabylonTowerMob;
-import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.PacketReader;

@@ -3,13 +3,13 @@ package aphorea.projectiles.toolitem;
 import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
-import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.network.server.ServerClient;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.entity.trails.Trail;
 import necesse.gfx.camera.GameCamera;
@@ -92,26 +92,21 @@ public class UnstableGelProjectile extends Projectile {
     @Override
     public void onHit(Mob mob, LevelObjectHit object, float x, float y, boolean fromPacket, ServerClient packetSubmitter) {
         super.onHit(mob, object, x, y, fromPacket, packetSubmitter);
-        if (this.isServer() && mob == null && object != null && this.bounced < this.getTotalBouncing() && this.canBounce && generation < 2) {
-            newProjectile();
+        if (mob == null && object != null && this.bounced < this.getTotalBouncing() && this.canBounce && generation < 2) {
+            Projectile projectile = getProjectile();
+            Mob owner = getOwner();
+            if (owner instanceof ItemAttackerMob) {
+                ((ItemAttackerMob) owner).addAndSendAttackerProjectile(projectile);
+            }
         }
     }
 
     @Override
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
         super.doHitLogic(mob, object, x, y);
-        if (this.isServer()) {
-            if (mob != null) {
-                mob.addBuff(new ActiveBuff(AphBuffs.STICKY, mob, 2000, this), true);
-            }
+        if (mob != null) {
+            mob.addBuff(new ActiveBuff(AphBuffs.STICKY, mob, 2000, this), true);
         }
-    }
-
-    public void newProjectile() {
-        Projectile projectile = getProjectile();
-
-        this.getLevel().entityManager.projectiles.addHidden(projectile);
-        this.getLevel().getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
     }
 
     private Projectile getProjectile() {
@@ -127,8 +122,7 @@ public class UnstableGelProjectile extends Projectile {
                 this.knockback, generation, seed
         );
 
-        GameRandom random = new GameRandom(seed);
-        projectile.resetUniqueID(random);
+        projectile.resetUniqueID(new GameRandom(seed));
         projectile.moveDist(40);
         return projectile;
     }

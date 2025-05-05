@@ -64,7 +64,7 @@ public class SpinelGolem extends HostileMob {
 
     public static LootTable lootTable = new LootTable(
             new OneOfTicketLootItems(
-                    5, new LootItem("spinel"),
+                    7, new LootItem("spinel"),
                     1, new LootItem("lifespinel")
             )
     );

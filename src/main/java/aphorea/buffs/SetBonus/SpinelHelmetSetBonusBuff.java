@@ -29,7 +29,7 @@ public class SpinelHelmetSetBonusBuff extends SetBonusBuff {
     @Override
     public void onBeforeAttacked(ActiveBuff buff, MobBeforeHitEvent event) {
         super.onBeforeAttacked(buff, event);
-        if (buff.owner.isServer() && !event.isPrevented() && event.damage.type == DamageTypeRegistry.MELEE && event.damage.damage > 0 && event.target != null && event.target.isHostile) {
+        if (!event.isPrevented() && event.damage.type == DamageTypeRegistry.MELEE && event.damage.damage > 0 && event.target != null && event.target.isHostile) {
             float healing = event.damage.damage * 0.01F * AphMagicHealing.getMagicHealingMod(buff.owner, buff.owner, null, null) + savedAmount;
             if (healing < 1) {
                 savedAmount = healing;

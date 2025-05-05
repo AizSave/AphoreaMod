@@ -5,7 +5,6 @@ import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
-import aphorea.utils.area.AphFlatArea;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
 import necesse.engine.registries.BuffRegistry;
@@ -150,6 +149,12 @@ public class SaberJumpLevelEvent extends MobAbilityLevelEvent {
         return true;
     }
 
+    public AphAreaList getAreaList(GameDamage damage) {
+        return new AphAreaList(
+                new AphArea(100, AphColors.black).setDamageArea(damage)
+        );
+    }
+
     @Override
     public void over() {
         super.over();
@@ -160,10 +165,7 @@ public class SaberJumpLevelEvent extends MobAbilityLevelEvent {
 
         if (!alreadyArea) {
             alreadyArea = true;
-            AphArea area = new AphFlatArea(100, AphColors.black).setDamageArea(damage.damage);
-            new AphAreaList(area)
-                    .setDamageType(damage.type)
-                    .execute(this.owner);
+            getAreaList(damage).execute(this.owner, false);
         }
 
         if (!checkNeighborTiles(level, (int) (initialX / 32), (int) (initialY / 32)) && checkNeighborTiles(owner.getLevel(), owner.getX() / 32, owner.getY() / 32)) {

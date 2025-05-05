@@ -20,7 +20,7 @@ public class DemonicSaber extends AphSaberToolItem {
     }
 
     @Override
-    public Projectile getProjectile(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent) {
+    public Projectile getProjectile(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent, int seed) {
         return new AircutProjectile.DemonicAircutProjectile(level, attackerMob, x, y, targetX, targetY,
                 200 * powerPercent,
                 (int) (400 * powerPercent),

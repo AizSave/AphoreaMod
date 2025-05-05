@@ -5,21 +5,13 @@ import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
 import necesse.engine.registries.DamageTypeRegistry;
+import necesse.inventory.InventoryItem;
 import necesse.inventory.item.ItemInteractAction;
-
-import java.awt.*;
 
 public class AdeptsBook extends AphAreaToolItem implements ItemInteractAction {
 
-    static int range = 250;
-    static Color color = AphColors.dark_magic;
-
-    static AphAreaList areaList = new AphAreaList(
-            new AphArea(range, color).setDamageArea(30, 60).setArmorPen(10)
-    ).setDamageType(DamageTypeRegistry.MAGIC);
-
     public AdeptsBook() {
-        super(650, true, false, areaList);
+        super(650, true, false);
         rarity = Rarity.RARE;
         attackAnimTime.setBaseValue(1000);
 
@@ -29,5 +21,13 @@ public class AdeptsBook extends AphAreaToolItem implements ItemInteractAction {
         this.attackYOffset = 10;
 
         attackDamage.setBaseValue(30).setUpgradedValue(1, 60);
+        damageType = DamageTypeRegistry.MAGIC;
+    }
+
+    @Override
+    public AphAreaList getAreaList(InventoryItem item) {
+        return new AphAreaList(
+                new AphArea(250, AphColors.dark_magic).setDamageArea(getAttackDamage(item))
+        );
     }
 }

@@ -18,6 +18,10 @@ import necesse.level.maps.Level;
 abstract public class AphBackpack extends PouchItem {
     public AphBackpack() {
         this.rarity = Rarity.COMMON;
+        canUseHealthPotionsFromPouch = true;
+        canUseManaPotionsFromPouch = true;
+        canEatFoodFromPouch = true;
+        canUseBuffPotionsFromPouch = true;
     }
 
     @Override

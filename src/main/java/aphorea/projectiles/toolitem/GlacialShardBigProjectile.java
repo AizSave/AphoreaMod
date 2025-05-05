@@ -2,13 +2,14 @@ package aphorea.projectiles.toolitem;
 
 import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
-import necesse.engine.network.packet.PacketSpawnProjectile;
+import necesse.engine.network.server.ServerClient;
 import necesse.engine.registries.BuffRegistry;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.entity.trails.Trail;
 import necesse.gfx.camera.GameCamera;
@@ -25,11 +26,12 @@ import java.util.List;
 
 public class GlacialShardBigProjectile extends Projectile {
     public int projectilesAmount;
+    int seed;
 
     public GlacialShardBigProjectile() {
     }
 
-    public GlacialShardBigProjectile(Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, int knockback) {
+    public GlacialShardBigProjectile(Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, int knockback, int seed) {
         this.setLevel(level);
         this.setOwner(owner);
         this.x = x;
@@ -39,6 +41,8 @@ public class GlacialShardBigProjectile extends Projectile {
         this.distance = distance;
         this.setDamage(damage);
         this.knockback = knockback;
+
+        this.seed = seed;
     }
 
     @Override
@@ -85,20 +89,32 @@ public class GlacialShardBigProjectile extends Projectile {
     }
 
     @Override
+    public void onHit(Mob mob, LevelObjectHit object, float x, float y, boolean fromPacket, ServerClient packetSubmitter) {
+        super.onHit(mob, object, x, y, fromPacket, packetSubmitter);
+        if (this.amountHit() >= this.piercing && (this.bounced >= this.getTotalBouncing() || !this.canBounce)) {
+        }
+    }
+
+    @Override
+    public void remove() {
+        GameRandom random = new GameRandom(seed);
+        float randomAngle = GameRandom.globalRandom.getFloatBetween(0F, (float) (Math.PI * 2));
+        for (int i = 0; i < projectilesAmount; i++) {
+            Projectile projectile = getProjectile(randomAngle + ((float) Math.PI * 2 * i) / projectilesAmount);
+            projectile.resetUniqueID(random);
+            Mob owner = getOwner();
+            if (owner instanceof ItemAttackerMob) {
+                ((ItemAttackerMob) owner).addAndSendAttackerProjectile(projectile);
+            }
+        }
+        super.remove();
+    }
+
+    @Override
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
         super.doHitLogic(mob, object, x, y);
-        if (this.isServer()) {
-            if (this.traveledDistance >= (float) this.distance || (this.amountHit() >= this.piercing && (this.bounced >= this.getTotalBouncing() || !this.canBounce))) {
-                float randomAngle = GameRandom.globalRandom.getFloatBetween(0F, (float) (Math.PI * 2));
-                for (int i = 0; i < projectilesAmount; i++) {
-                    Projectile projectile = getProjectile(randomAngle + ((float) Math.PI * 2 * i) / projectilesAmount);
-                    this.getLevel().entityManager.projectiles.addHidden(projectile);
-                    this.getLevel().getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
-                }
-            }
-            if (mob != null) {
-                mob.addBuff(new ActiveBuff(BuffRegistry.Debuffs.FROSTBURN, mob, 5000, this), true);
-            }
+        if (mob != null) {
+            mob.addBuff(new ActiveBuff(BuffRegistry.Debuffs.FROSTBURN, mob, 5000, this), true);
         }
     }
 
@@ -115,7 +131,7 @@ public class GlacialShardBigProjectile extends Projectile {
                 this.knockback
         );
 
-        projectile.resetUniqueID(GameRandom.globalRandom);
+        projectile.resetUniqueID(new GameRandom(seed));
         return projectile;
     }
 

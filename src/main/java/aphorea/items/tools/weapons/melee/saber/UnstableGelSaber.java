@@ -40,7 +40,7 @@ public class UnstableGelSaber extends AphSaberToolItem {
     }
 
     @Override
-    public Projectile getProjectile(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent) {
+    public Projectile getProjectile(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent, int seed) {
         return new AircutProjectile.UnstableGelAircutProjectile(level, attackerMob, x, y, targetX, targetY,
                 300 * powerPercent,
                 (int) (400 * powerPercent),

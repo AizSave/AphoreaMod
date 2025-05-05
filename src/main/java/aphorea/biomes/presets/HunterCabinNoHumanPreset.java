@@ -44,8 +44,7 @@ public class HunterCabinNoHumanPreset extends Preset {
                     throw new NullPointerException("Could not find a sign objectEntity for preset at " + levelX + ", " + levelY);
                 }
             } catch (Exception var8) {
-                Exception e = var8;
-                System.err.println(e.getMessage());
+                System.err.println(var8.getMessage());
             }
 
             return null;

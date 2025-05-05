@@ -24,7 +24,6 @@ import necesse.level.maps.generationModules.GenerationTools;
 import necesse.level.maps.generationModules.IslandGeneration;
 import necesse.level.maps.generationModules.PresetGeneration;
 import necesse.level.maps.presets.BrokenHusbandryFencePreset;
-import necesse.level.maps.presets.ChristmasHousePreset;
 import necesse.level.maps.presets.Preset;
 import necesse.level.maps.presets.RandomRuinsPreset;
 import necesse.level.maps.presets.set.FenceSet;
@@ -93,24 +92,11 @@ public class InfectedFieldsSurfaceLevel extends Level {
 
             TicketSystemList<Runnable> miniBiomesTicketList = new TicketSystemList<>();
 
-            miniBiomesTicketList.addObject(100, () -> {
-                presets.findRandomValidPositionAndApply(ig.random, 200, new BrokenHusbandryFencePreset(ig.random, getRamndomFenceSet(ig)), 10, true, true);
-            });
-            miniBiomesTicketList.addObject(100, () -> {
-                presets.findRandomValidPositionAndApply(ig.random, 200, new HunterCabinNoHumanPreset(ig.random, getRandomFurnitureSet(ig), getRandomWallSet(ig)), 10, true, true);
-            });
-            miniBiomesTicketList.addObject(100, () -> {
-                presets.findRandomValidPositionAndApply(ig.random, 200, new FishingHutNoHumanPreset(ig.random, getRandomWallSet(ig), getRandomTile(ig)), 10, true, true);
-            });
-            miniBiomesTicketList.addObject(100, () -> {
-                presets.findRandomValidPositionAndApply(ig.random, 200, new FarmersRefugeNoHumansNoFloraPreset(ig.random, getRandomFurnitureSet(ig), getRandomWallSet(ig)), 10, true, true);
-            });
-            miniBiomesTicketList.addObject(100, () -> {
-                presets.findRandomValidPositionAndApply(ig.random, 200, new ChristmasHousePreset(ig.random), 10, false, false);
-            });
-            miniBiomesTicketList.addObject(100, () -> {
-                presets.findRandomValidPositionAndApply(ig.random, 200, new WitchCabinMadsNoHumanPreset(ig.random), 10, true, true);
-            });
+            miniBiomesTicketList.addObject(100, () -> presets.findRandomValidPositionAndApply(ig.random, 200, new BrokenHusbandryFencePreset(ig.random, getRamndomFenceSet(ig)), 10, true, true));
+            miniBiomesTicketList.addObject(100, () -> presets.findRandomValidPositionAndApply(ig.random, 200, new HunterCabinNoHumanPreset(ig.random, getRandomFurnitureSet(ig), getRandomWallSet(ig)), 10, true, true));
+            miniBiomesTicketList.addObject(100, () -> presets.findRandomValidPositionAndApply(ig.random, 200, new FishingHutNoHumanPreset(ig.random, getRandomWallSet(ig), getRandomTile(ig)), 10, true, true));
+            miniBiomesTicketList.addObject(100, () -> presets.findRandomValidPositionAndApply(ig.random, 200, new FarmersRefugeNoHumansNoFloraPreset(ig.random, getRandomFurnitureSet(ig), getRandomWallSet(ig)), 10, true, true));
+            miniBiomesTicketList.addObject(100, () -> presets.findRandomValidPositionAndApply(ig.random, 200, new WitchCabinMadsNoHumanPreset(ig.random), 10, true, true));
 
             float chanceToAddMiniBiome = 0.9F;
             while (!miniBiomesTicketList.isEmpty() && ig.random.getChance(chanceToAddMiniBiome)) {

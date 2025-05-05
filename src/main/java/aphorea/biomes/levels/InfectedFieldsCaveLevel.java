@@ -264,15 +264,15 @@ public class InfectedFieldsCaveLevel extends InfectedFieldsSurfaceLevel {
             }
         });
         GameEvents.triggerEvent(new GeneratedCaveMiniBiomesEvent(this, cg));
-        GameEvents.triggerEvent(new GenerateCaveOresEvent(this, cg), (e) -> {
-            cg.generateOreVeins(0.2F, 3, 6, ObjectRegistry.getObjectID("tungstenoregelrock"));
-        });
+        GameEvents.triggerEvent(new GenerateCaveOresEvent(this, cg),
+                (e) -> cg.generateOreVeins(0.2F, 3, 6, ObjectRegistry.getObjectID("tungstenoregelrock"))
+        );
         GameEvents.triggerEvent(new GeneratedCaveOresEvent(this, cg));
 
         PresetGeneration presets = new PresetGeneration(this);
-        GameEvents.triggerEvent(new GenerateCaveStructuresEvent(this, cg, presets), (e) -> {
-            presets.findRandomValidPositionAndApply(cg.random, 200, new InfectedLootLake(cg.random), 40, false, false);
-        });
+        GameEvents.triggerEvent(new GenerateCaveStructuresEvent(this, cg, presets),
+                (e) -> presets.findRandomValidPositionAndApply(cg.random, 200, new InfectedLootLake(cg.random), 40, false, false)
+        );
 
         GameEvents.triggerEvent(new GeneratedCaveStructuresEvent(this, cg, presets));
         GenerationTools.checkValid(this);

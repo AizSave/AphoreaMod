@@ -14,7 +14,7 @@ public class AphObjects {
         ObjectRegistry.registerObject("spinelchest", new StorageBoxInventoryObject("spinelchest", 40, AphColors.spinel), 20.0F, true);
 
         // Trial Rooms
-        ObjectRegistry.registerObject("infectedtrialentrance", new InfectedTrialEntranceObject(), -1F, false);
+        ObjectRegistry.registerObject("infectedtrialentrance", new InfectedTrialEntranceObject(), 0, false);
 
         // Tech
         tech();

@@ -3,7 +3,6 @@ package aphorea.items.tools.weapons.range.sling;
 import aphorea.items.tools.weapons.range.sling.logic.SlingAttackHandler;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
-import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.registries.ItemRegistry;
 import necesse.engine.util.GameBlackboard;
@@ -121,14 +120,9 @@ abstract public class AphSlingToolItem extends ProjectileToolItem {
         if (shouldFire) {
 
             Projectile projectile = this.getProjectile(level, x, y, attackerMob, item);
-            GameRandom random = new GameRandom(seed);
-            projectile.resetUniqueID(random);
+            projectile.resetUniqueID(new GameRandom(seed));
 
-            level.entityManager.projectiles.addHidden(projectile);
-
-            if (level.isServer()) {
-                level.getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
-            }
+            attackerMob.addAndSendAttackerProjectile(projectile, 20);
         }
     }
 

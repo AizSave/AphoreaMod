@@ -5,7 +5,6 @@ import aphorea.utils.AphColors;
 import aphorea.utils.AphDistances;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
-import aphorea.utils.area.AphFlatArea;
 import aphorea.utils.magichealing.AphMagicHealing;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.util.GameUtils;
@@ -73,7 +72,7 @@ public class SpinelWandProjectile extends FollowingProjectile {
         this.setWidth(0, 5);
 
         this.areaList = new AphAreaList(
-                new AphFlatArea(100, color).setHealingArea(healing)
+                new AphArea(100, color).setHealingArea(healing)
         );
     }
 
@@ -124,7 +123,7 @@ public class SpinelWandProjectile extends FollowingProjectile {
 
     public void executeArea() {
         if (this.getOwner() != null) {
-            areaList.execute(this.getOwner(), x, y, 1, item, toolItem);
+            areaList.execute(this.getOwner(), x, y, 1, item, toolItem, false);
         }
     }
 

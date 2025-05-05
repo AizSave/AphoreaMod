@@ -6,7 +6,6 @@ import aphorea.packets.AphCustomPushPacket;
 import aphorea.projectiles.toolitem.UnstableGelvelineProjectile;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
-import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.registries.BuffRegistry;
 import necesse.engine.util.GameBlackboard;
 import necesse.engine.util.GameMath;
@@ -51,10 +50,7 @@ public class UnstableGelveline extends AphThrowToolItem {
         Projectile projectile = new UnstableGelvelineProjectile(getAttackDamage(item), this.getKnockback(item, attackerMob), this, item, level, attackerMob, attackerMob.x, attackerMob.y, x, y, this.getProjectileVelocity(item, attackerMob), this.getAttackRange(item));
         projectile.setModifier(new ResilienceOnHitProjectileModifier(this.getResilienceGain(item)));
         projectile.resetUniqueID(new GameRandom(seed));
-        level.entityManager.projectiles.addHidden(projectile);
-        if (level.isServer()) {
-            level.getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
-        }
+        attackerMob.addAndSendAttackerProjectile(projectile);
         return item;
     }
 

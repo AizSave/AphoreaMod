@@ -7,7 +7,6 @@ import aphorea.ui.AphCustomUIList;
 import aphorea.ui.GlacialSaberAttackUIManger;
 import aphorea.utils.AphColors;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
-import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameRandom;
@@ -40,14 +39,15 @@ public class GlacialSaber extends AphSaberToolItem {
     }
 
     @Override
-    public Projectile getProjectile(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent) {
+    public Projectile getProjectile(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent, int seed) {
         if (powerPercent > 0.75F) {
             powerPercent = (powerPercent - 0.375F) * 1.6F;
             return new GlacialShardBigProjectile(level, attackerMob, x, y, targetX, targetY,
                     200,
                     400,
                     this.getAttackDamage(item),
-                    (int) (getKnockback(item, attackerMob) * powerPercent)
+                    (int) (getKnockback(item, attackerMob) * powerPercent),
+                    seed
             );
         } else {
             powerPercent = Math.max(powerPercent, 0.1F);
@@ -55,7 +55,8 @@ public class GlacialSaber extends AphSaberToolItem {
                     150,
                     300,
                     this.getAttackDamage(item).modDamage(0.5F),
-                    (int) (getKnockback(item, attackerMob) * powerPercent)
+                    (int) (getKnockback(item, attackerMob) * powerPercent),
+                    seed
             );
         }
     }
@@ -66,14 +67,10 @@ public class GlacialSaber extends AphSaberToolItem {
         if (powerPercent >= 0.92F) {
             powerPercent = 1F;
         }
-        Projectile projectile = this.getProjectile(level, attackerMob.getX(), attackerMob.getY(), x, y, attackerMob, item, powerPercent);
-        GameRandom random = new GameRandom(seed);
-        projectile.resetUniqueID(random);
+        Projectile projectile = this.getProjectile(level, attackerMob.getX(), attackerMob.getY(), x, y, attackerMob, item, powerPercent, seed);
+        projectile.resetUniqueID(new GameRandom(seed));
 
-        level.entityManager.projectiles.addHidden(projectile);
-        if (level.isServer()) {
-            level.getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
-        }
+        attackerMob.addAndSendAttackerProjectile(projectile);
     }
 
 

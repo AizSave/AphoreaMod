@@ -81,9 +81,9 @@ public class TheNarcissist extends AphSwordToolItem {
     @Override
     public void showAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, int animAttack, int seed, GNDItemMap mapContent) {
         super.showAttack(level, x, y, attackerMob, attackHeight, item, animAttack, seed, mapContent);
-        if(level.isClient()) {
+        if (level.isClient()) {
             int lastCombo = item.getGndData().getInt("lastCombo");
-            if(0 < lastCombo && lastCombo < 4) {
+            if (0 < lastCombo && lastCombo < 4) {
                 level.getClient().startCameraShake(attackerMob.x, attackerMob.y, 500, 40, (float) lastCombo / 2, (float) lastCombo / 4, true);
             }
         }

@@ -86,6 +86,7 @@ fakespinelchest=Fake Spinel Chest
 babylontower=Babylon Tower
 babylonentrance=Babylon Entrance
 babylonexit=Babylon Exit
+infectedtrialentrance=Infected Trial Entrance
 
 
 
@@ -169,7 +170,7 @@ unstablegelstaff=Unstable Gel Staff
 magicalbroom=Magical Broom
 adeptsbook=Adept's Book
 # NEW
-magicharp=Magic Harp
+harpofharmony=Harp of Harmony
 
 // Bows
 # NEW
@@ -362,7 +363,7 @@ ascendantrune=Ascendant Rune
 
 [itemtooltip]
 // Stat tips
-line=--------------------
+line=----------------------------------------
 magichealingtip=Magic healing: §7<health>
 rangetip=Range: §9<range>
 areatip=§aArea <number>
@@ -444,7 +445,7 @@ honeysaber=Charge to max for full damage and to shot honey and blueberries
 // Single Magic Weapons
 unstablegelstaff=When projectiles bounces off walls, they duplicate
 # NEW
-magicharp=Harp Inspiration: Increased damage, crit chance, speed, resistance, health regen and mana regen
+harpofharmony=Harmony: Increased speed, health regen and mana regen
 
 // Single Summoner Weapons
 # NEW
@@ -470,7 +471,7 @@ spambullet5=§9Explosion:§0 Explodes at the end of its path instead of collidin
 // Tiles
 geltile=Sticky floor that greatly slows down everything on top
 
-//Objects
+// Objects
 witchstatue=Placing this statue on the surface of a swamp will eliminate witch spawn throughout the island
 
 // Generic Trinkets
@@ -591,7 +592,7 @@ runeofshadows=For §7<effectNumber>§0 seconds, you will become invisible but al
 // Base Runes Tier 1
 runeofunstablegelslime=Teleport to a nearby location and summon 2 Runic Unstable Gel Slimes for §7<effectNumber>§0 seconds
 runeofunstablegelslime2=The summons will deal 5% of the mobs' maximum health as damage
-runeofevilsprotector=+§7<effectNumber>§0% attack speed, but -50% movement speed for 10 seconds
+runeofevilsprotector=+§7<effectNumber>§0% attack speed, but -50% movement speed for 10 secondsa
 runeofevilsprotector2=During the night on the surface, the positive effect is doubled
 runeofqueenspider=Leaves a spider web on the ground for §7<effectNumber>§0 seconds
 runeofvoidwizard=All projectiles will bounce infinitely and +§7<effectNumber>§0% projectile speed for 10 seconds
@@ -683,24 +684,29 @@ petphosphorslime=Phosphor Slime
 
 
 [buff]
-stun=Stunned
-sticky=Sticky
-honeyed=Honeyed
-berserkerrush=Berserker Rush
-berserkerrushcooldown=Berserker Rush on Cooldown
-spinattackcooldown=Spin Attack on Cooldown
-periaptcooldown=Periapt Ability on Cooldown
-periaptactive=Periapt Ability Active
-saberdashcooldown=Saber Dash Cooldown
-stop=Stopped
-fallenstun=Fallen Stun
-runesinjectoractive=Runes Injector Active
-runesinjectorcooldown=Runes Injector Cooldown
+// Common Buffs
+stunbuff=Stun
+fallenstunbuff=Fallen Stun
+stickybuff=Sticky
+stopbuff=Stopped
 # NEW
-venomextract=Venom Extract
-cursed=Cursed
-adrenaline=Adrenaline
-harpbuff=Harp Inspiration
+honeyedbuff=Honeyed
+venomextractbuff=Venom Extract
+cursedbuff=Cursed
+adrenalinebuff=Adrenaline
+harmonybuff=Harmony
+
+// Active Buffs
+berserkerrushactive=Berserker Rush
+periaptactive=Periapt Ability Active
+runesinjectoractive=Runes Injector Active
+
+// Cooldown Buffs
+berserkerrushcooldown=Berserker Rush on Cooldown
+periaptcooldown=Periapt Ability on Cooldown
+runesinjectorcooldown=Runes Injector on Cooldown
+spinattackcooldown=Spin Attack on Cooldown
+saberdashcooldown=Saber Dash on Cooldown
 
 
 [message]
@@ -722,6 +728,8 @@ cannottrhowlockeditem=You cannot throw an inventory-locked item
 initialrunetip=Choose your initial rune carefully;\nyou won't obtain the others until later in the game
 alreadyselectedinitialrune=Already selected initial rune
 cannotusetrial=Cannot use in trial rooms
+# NEW
+inmaintenance=In Maintenance
 
 
 [biome]

@@ -17,7 +17,7 @@ public class TungstenDagger extends AphDaggerToolItem {
 
         this.attackDamage.setBaseValue(40.0F).setUpgradedValue(1.0F, 80.0F);
 
-        this.attackRange.setBaseValue(42);
+        this.attackRange.setBaseValue(45);
         this.knockback.setBaseValue(25);
     }
 

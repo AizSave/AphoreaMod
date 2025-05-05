@@ -3,7 +3,6 @@ package aphorea.buffs.Trinkets;
 import aphorea.utils.area.AphAreaList;
 import aphorea.utils.magichealing.AphMagicHealingFunctions;
 import necesse.engine.localization.Localization;
-import necesse.engine.network.Packet;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
@@ -29,8 +28,6 @@ abstract public class AphAreaWhenHealTrinketBuff extends TrinketBuff implements 
         this.areaList = areaList;
     }
 
-    public abstract Packet getPacket(PlayerMob player, float rangeModifier);
-
     @Override
     public void init(ActiveBuff activeBuff, BuffEventSubscriber buffEventSubscriber) {
     }
@@ -44,9 +41,7 @@ abstract public class AphAreaWhenHealTrinketBuff extends TrinketBuff implements 
             if (thisHealingDone >= healingToArea) {
                 thisHealingDone = 0;
 
-                this.areaList.executeServer(healer);
-
-                healer.getServer().network.sendToClientsAtEntireLevel(getPacket((PlayerMob) healer, 1), target.getLevel());
+                this.areaList.execute(healer, true);
             }
 
             healingDone.put(playerName, thisHealingDone);

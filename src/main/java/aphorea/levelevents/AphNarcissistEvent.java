@@ -218,7 +218,7 @@ public class AphNarcissistEvent extends HitboxEffectEvent implements Attacker {
         if (!this.mobHits.containsKey(mob.getHitCooldownUniqueID())) {
             return true;
         } else {
-            return this.mobHits.get(mob.getHitCooldownUniqueID()) + 200 < this.getTime();
+            return this.mobHits.get(mob.getHitCooldownUniqueID()) + (300 - 250 * easeInSine(getLifePercent())) < this.getTime();
         }
     }
 

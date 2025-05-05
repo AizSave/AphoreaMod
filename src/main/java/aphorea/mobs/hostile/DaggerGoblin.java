@@ -51,8 +51,9 @@ public abstract class DaggerGoblin extends GoblinMob {
         super.init();
 
         this.ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<GoblinMob>(
-                () -> !this.getLevel().isCave && !this.getLevel().getServer().world.worldEntity.isNight(),
-                384, gameDamage, 25, 40000) {
+                () -> !this.getLevel().isCave && !this.getServer().world.worldEntity.isNight(),
+                384, gameDamage, 25, 40000
+        ) {
             public boolean attackTarget(GoblinMob mob, Mob target) {
                 if (target != null) {
                     DaggerGoblin.this.attack((int) target.x, (int) target.y, true);

@@ -4,7 +4,6 @@ import aphorea.items.vanillaitemtypes.weapons.AphThrowToolItem;
 import aphorea.projectiles.toolitem.GelProjectile;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
-import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameBlackboard;
@@ -67,14 +66,8 @@ public class GelBall extends AphThrowToolItem {
                 getAttackDamage(item),
                 getKnockback(item, attackerMob)
         );
-        GameRandom random = new GameRandom(seed);
-        projectile.resetUniqueID(random);
-
-        level.entityManager.projectiles.addHidden(projectile);
-
-        if (level.isServer() && attackerMob.isPlayer) {
-            level.getServer().network.sendToClientsWithEntityExcept(new PacketSpawnProjectile(projectile), projectile, ((PlayerMob) attackerMob).getServerClient());
-        }
+        projectile.resetUniqueID(new GameRandom(seed));
+        attackerMob.addAndSendAttackerProjectile(projectile);
 
         if (!infinity) item.setAmount(item.getAmount() - 1);
 

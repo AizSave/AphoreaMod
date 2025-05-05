@@ -4,7 +4,6 @@ import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
-import aphorea.utils.area.AphFlatArea;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.util.GameRandom;
@@ -39,10 +38,12 @@ public class VoidAdept extends HostileMob {
     public final CoordinateMobAbility teleportParticle;
     public static AphAreaList showAttackRange = new AphAreaList(
             new AphArea(250, AphColors.lighter_gray)
-    ).setDamageType(DamageTypeRegistry.MAGIC);
+    );
     public static AphAreaList attackArea = new AphAreaList(
-            new AphFlatArea(250, AphColors.dark_magic).setDamageArea(50).setArmorPen(10)
-    ).setDamageType(DamageTypeRegistry.MAGIC);
+            new AphArea(250, AphColors.dark_magic)
+                    .setDamageArea(new GameDamage(DamageTypeRegistry.MAGIC, 50))
+                    .setDebuffArea(10000, "brokenarmor")
+    );
 
 
     public static LootTable lootTable = new LootTable(
@@ -55,7 +56,7 @@ public class VoidAdept extends HostileMob {
     public int attackCount = 0;
 
     public VoidAdept() {
-        super(80);
+        super(160);
         this.attackCooldown = 2000;
         this.attackAnimTime = 1500;
         this.setSpeed(40.0F);
@@ -142,17 +143,17 @@ public class VoidAdept extends HostileMob {
             if (attackCount == 2) {
                 this.attackCount = 0;
 
-                if (this.isServer()) {
-                    attackArea.executeServer(this);
+                attackArea.execute(this, false);
 
+                if (this.isServer()) {
                     int tileX = this.getX() / 32;
                     int tileY = this.getY() / 32;
                     Point moveOffset = this.getPathMoveOffset();
                     ArrayList<Point> possiblePoints = new ArrayList<>();
 
                     int index;
-                    for (index = tileX - 14; index <= tileX + 14; ++index) {
-                        for (int y = tileY - 14; y <= tileY + 14; ++y) {
+                    for (index = tileX - 7; index <= tileX + 7; ++index) {
+                        for (int y = tileY - 7; y <= tileY + 7; ++y) {
                             int mobX = index * 32 + moveOffset.x;
                             int mobY = y * 32 + moveOffset.y;
                             if (!this.collidesWith(this.getLevel(), mobX, mobY)) {
@@ -167,8 +168,6 @@ public class VoidAdept extends HostileMob {
 
                         this.teleportAbility.runAndSend(point.x, point.y);
                     }
-                } else if (this.isClient()) {
-                    attackArea.executeClient(getLevel(), this.x, this.y);
                 }
             }
         } else if ((progress >= 0.5F) && attackCount == 1) {

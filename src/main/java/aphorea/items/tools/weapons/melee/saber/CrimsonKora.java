@@ -45,7 +45,7 @@ public class CrimsonKora extends AphSaberToolItem {
     }
 
     @Override
-    public Projectile getProjectile(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent) {
+    public Projectile getProjectile(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent, int seed) {
         return new AircutProjectile.CrimsonAircutProjectile(level, attackerMob, x, y, targetX, targetY,
                 300 * powerPercent,
                 (int) (400 * powerPercent),
@@ -161,7 +161,7 @@ public class CrimsonKora extends AphSaberToolItem {
                             .color(AphColors.crimson_kora);
                 }
 
-                attackerMob.getLevel().getClient().startCameraShake(attackerMob.x, attackerMob.y, 50, 40, 0.3F * shownEffect + 0.2F, 0.3F * shownEffect + 0.2F, true);
+                attackerMob.getClient().startCameraShake(attackerMob.x, attackerMob.y, 50, 40, 0.3F * shownEffect + 0.2F, 0.3F * shownEffect + 0.2F, true);
             }
         }
     }

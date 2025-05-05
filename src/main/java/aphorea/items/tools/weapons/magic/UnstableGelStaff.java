@@ -7,8 +7,6 @@ import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
-import necesse.engine.network.packet.PacketSpawnProjectile;
-import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameBlackboard;
@@ -27,19 +25,10 @@ import necesse.inventory.item.ItemInteractAction;
 import necesse.inventory.item.ItemStatTipList;
 import necesse.level.maps.Level;
 
-import java.awt.*;
-
 public class UnstableGelStaff extends AphMagicProjectileSecondaryAreaToolItem implements ItemInteractAction {
 
-    static int range = 200;
-    static Color color = AphColors.unstableGel;
-
-    static AphAreaList areaList = new AphAreaList(
-            new AphArea(range, color).setDamageArea(20, 90).setArmorPen(10)
-    ).setDamageType(DamageTypeRegistry.MAGIC);
-
     public UnstableGelStaff() {
-        super(400, areaList, 800, 6.0F);
+        super(400, 800, 6.0F);
         rarity = Rarity.COMMON;
         attackAnimTime.setBaseValue(800);
         attackDamage.setBaseValue(30).setUpgradedValue(1, 80);
@@ -59,7 +48,6 @@ public class UnstableGelStaff extends AphMagicProjectileSecondaryAreaToolItem im
         tooltips.add(Localization.translate("itemtooltip", "unstablegelstaff"));
         tooltips.add(Localization.translate("itemtooltip", "stikybuff2"));
         tooltips.add(Localization.translate("itemtooltip", "areasecondaryattack", "mana", getSecondaryManaCost(item)));
-        areaList.addAreasToolTip(tooltips, perspective, true, null, null);
         return tooltips;
     }
 
@@ -68,6 +56,7 @@ public class UnstableGelStaff extends AphMagicProjectileSecondaryAreaToolItem im
         this.addAttackSpeedTip(list, currentItem, lastItem, perspective);
         this.addCritChanceTip(list, currentItem, lastItem, perspective, forceAdd);
         this.addManaCostTip(list, currentItem, lastItem, perspective);
+        AphAreaList.addAreasStatTip(list, getAreaList(perspective, currentItem), lastItem == null ? null : getAreaList(perspective, lastItem), perspective, forceAdd, currentItem, lastItem, this);
     }
 
     @Override
@@ -80,27 +69,20 @@ public class UnstableGelStaff extends AphMagicProjectileSecondaryAreaToolItem im
     }
 
     @Override
-    public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob player, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
+    public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
         Projectile projectile = new UnstableGelProjectile(
-                level, player,
-                player.x, player.y,
+                level, attackerMob,
+                attackerMob.x, attackerMob.y,
                 x, y,
-                getProjectileVelocity(item, player),
+                getProjectileVelocity(item, attackerMob),
                 getAttackRange(item),
                 getAttackDamage(item),
-                getKnockback(item, player), 0, seed
+                getKnockback(item, attackerMob), 0, seed
         );
         GameRandom random = new GameRandom(seed);
         projectile.resetUniqueID(random);
-
-        level.entityManager.projectiles.addHidden(projectile);
-
-        if (level.isServer()) {
-            level.getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
-        }
-
-        this.consumeMana(player, item);
-
+        attackerMob.addAndSendAttackerProjectile(projectile, 20);
+        this.consumeMana(attackerMob, item);
         return item;
     }
 
@@ -108,5 +90,12 @@ public class UnstableGelStaff extends AphMagicProjectileSecondaryAreaToolItem im
     public void hitMob(InventoryItem item, ToolItemMobAbilityEvent event, Level level, Mob target, Mob attacker) {
         super.hitMob(item, event, level, target, attacker);
         target.addBuff(new ActiveBuff(AphBuffs.STICKY, target, 2000, null), true);
+    }
+
+    @Override
+    public AphAreaList getAreaList(ItemAttackerMob attackerMob, InventoryItem item) {
+        return new AphAreaList(
+                new AphArea(200, AphColors.unstableGel).setDamageArea(getAttackDamage(item).modDamage(0.7F))
+        );
     }
 }

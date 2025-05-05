@@ -11,8 +11,8 @@ public class GlacialShardMediumProjectile extends GlacialShardBigProjectile {
     public GlacialShardMediumProjectile() {
     }
 
-    public GlacialShardMediumProjectile(Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, int knockback) {
-        super(level, owner, x, y, targetX, targetY, speed, distance, damage, knockback);
+    public GlacialShardMediumProjectile(Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, int knockback, int seed) {
+        super(level, owner, x, y, targetX, targetY, speed, distance, damage, knockback, seed);
     }
 
     @Override

@@ -30,7 +30,7 @@ public class AphCutlassSaber extends AphSaberToolItem {
     }
 
     @Override
-    public Projectile getProjectile(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent) {
+    public Projectile getProjectile(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent, int seed) {
         return new AircutProjectile.GoldAircutProjectile(level, attackerMob, x, y, targetX, targetY,
                 400 * powerPercent,
                 (int) (500 * powerPercent),

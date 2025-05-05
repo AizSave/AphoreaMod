@@ -39,7 +39,7 @@ import aphorea.items.runes.AphModifierRune;
 import aphorea.items.runes.AphRunesInjector;
 import aphorea.items.tools.healing.*;
 import aphorea.items.tools.weapons.magic.AdeptsBook;
-import aphorea.items.tools.weapons.magic.MagicHarp;
+import aphorea.items.tools.weapons.magic.HarpOfArmony;
 import aphorea.items.tools.weapons.magic.MagicalBroom;
 import aphorea.items.tools.weapons.magic.UnstableGelStaff;
 import aphorea.items.tools.weapons.melee.battleaxe.DemonicBattleaxe;
@@ -50,11 +50,11 @@ import aphorea.items.tools.weapons.melee.greatsword.UnstableGelGreatsword;
 import aphorea.items.tools.weapons.melee.rapier.LightRapier;
 import aphorea.items.tools.weapons.melee.saber.*;
 import aphorea.items.tools.weapons.melee.sword.*;
-import aphorea.items.tools.weapons.range.bow.SpinelCrossbow;
-import aphorea.items.tools.weapons.range.gun.TheSpammer;
 import aphorea.items.tools.weapons.range.blowgun.Blowgun;
+import aphorea.items.tools.weapons.range.bow.SpinelCrossbow;
 import aphorea.items.tools.weapons.range.greatbow.GelGreatbow;
 import aphorea.items.tools.weapons.range.greatbow.UnstableGelGreatbow;
+import aphorea.items.tools.weapons.range.gun.TheSpammer;
 import aphorea.items.tools.weapons.range.sabergun.ShotgunSaber;
 import aphorea.items.tools.weapons.range.sling.FireSling;
 import aphorea.items.tools.weapons.range.sling.FrozenSling;
@@ -116,7 +116,7 @@ public class AphItems {
         registerItem("rockygel", (new AphMatItem(500, Item.Rarity.NORMAL)).setItemCategory("materials"), 5F);
         registerItem("stardust", (new AphMatItem(500, Item.Rarity.COMMON)).setItemCategory("materials"), 15F);
         registerItem("infectedlog", (new AphMatItem(500, "anylog")).setItemCategory("materials", "logs"), 2F);
-        registerItem("spinel", (new AphMatItem(500, Item.Rarity.UNCOMMON)).setItemCategory("materials", "minerals"), 15F);
+        registerItem("spinel", (new AphMatItem(500, Item.Rarity.UNCOMMON)).setItemCategory("materials", "minerals"), 10F);
         registerItem("infectedalloy", (new AphMatItem(500, Item.Rarity.RARE)).setItemCategory("materials"), 30F);
     }
 
@@ -146,8 +146,8 @@ public class AphItems {
         replaceItem("cutlass", new AphCutlassSaber(), 500F); // REWORKED
         registerItem("honeysaber", new HoneySaber());
         registerItem("thenarcissist", new TheNarcissist());
-        registerItem("brokenkora", new BrokenKora(), 200F);
-        registerItem("lightrapier", new LightRapier());
+        registerItem("brokenkora", new BrokenKora(), 100F);
+        registerItem("lightrapier", new LightRapier(), 200F);
         registerItem("glacialsaber", new GlacialSaber());
         registerItem("lostumbrella", new LostUmbrellaDagger());
         registerItem("cryokatana", new CryoKatana());
@@ -168,7 +168,7 @@ public class AphItems {
         registerItem("unstablegelstaff", new UnstableGelStaff());
         registerItem("magicalbroom", new MagicalBroom());
         registerItem("adeptsbook", new AdeptsBook(), 200F);
-        registerItem("magicharp", new MagicHarp());
+        registerItem("harpofharmony", new HarpOfArmony());
 
         // Summoner Weapons
         registerItem("volatilegelstaff", new VolatileGelStaff());
@@ -288,7 +288,7 @@ public class AphItems {
         registerItem("venomextract", new VenomExtract());
 
         // Permanent Buffs
-        registerItem("lifespinel", new LifeSpinel(), 50F);
+        registerItem("lifespinel", new LifeSpinel(), 60F);
 
         // Others
         registerItem("initialrune", new InitialRune(), 0F);

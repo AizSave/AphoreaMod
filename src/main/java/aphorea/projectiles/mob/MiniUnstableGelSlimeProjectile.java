@@ -83,16 +83,14 @@ public class MiniUnstableGelSlimeProjectile extends Projectile {
     @Override
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
         super.doHitLogic(mob, object, x, y);
-        if (this.isServer()) {
-            MiniUnstableGelSlime spawnMob = (MiniUnstableGelSlime) MobRegistry.getMob("miniunstablegelslime", this.getLevel());
-            spawnMob.addBuff(new ActiveBuff(AphBuffs.STUN, spawnMob, 500, spawnMob), true);
+        MiniUnstableGelSlime spawnMob = (MiniUnstableGelSlime) MobRegistry.getMob("miniunstablegelslime", this.getLevel());
+        spawnMob.addBuff(new ActiveBuff(AphBuffs.STUN, spawnMob, 500, spawnMob), true);
 
-            this.getLevel().entityManager.addMob(spawnMob, x, y);
-            if (mob != null) {
-                ActiveBuff ab = new ActiveBuff(BuffRegistry.Debuffs.BROKEN_ARMOR, mob, 5.0F, this.getOwner());
-                mob.addBuff(ab, true);
-                spawnMob.addBuff(new ActiveBuff(AphBuffs.STICKY, spawnMob, 2F, spawnMob), true);
-            }
+        this.getLevel().entityManager.addMob(spawnMob, x, y);
+        if (mob != null) {
+            ActiveBuff ab = new ActiveBuff(BuffRegistry.Debuffs.BROKEN_ARMOR, mob, 5000, this.getOwner());
+            mob.addBuff(ab, true);
+            spawnMob.addBuff(new ActiveBuff(AphBuffs.STICKY, spawnMob, 2F, spawnMob), true);
         }
     }
 }

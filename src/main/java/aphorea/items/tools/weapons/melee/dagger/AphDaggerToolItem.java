@@ -6,7 +6,6 @@ import aphorea.registry.AphEnchantments;
 import aphorea.registry.AphModifiers;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
-import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.util.GameBlackboard;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.PlayerMob;
@@ -123,28 +122,23 @@ public abstract class AphDaggerToolItem extends SpearToolItem implements ItemInt
     }
 
     public void doSecondaryAttack(Level level, int x, int y, ItemAttackerMob attackerMob, InventoryItem item, ItemAttackSlot itemAttackSlot, int seed) {
-        if (level.isServer()) {
-            boolean throwItem = !loyal(item);
+        boolean throwItem = !loyal(item);
 
-            if (throwItem && attackerMob.isPlayer) {
-                PlayerMob player = (PlayerMob) attackerMob;
-                if (player.attackSlot.isItemLocked(player.getInv())) {
+        if (throwItem && attackerMob.isPlayer) {
+            PlayerMob player = (PlayerMob) attackerMob;
+            if (player.attackSlot.isItemLocked(player.getInv())) {
+                if(player.isServer()) {
                     player.getServerClient().sendChatMessage(Localization.translate("message", "cannottrhowlockeditem"));
-                    return;
                 }
-
+                return;
             }
+        }
 
-            if (level.isServer()) {
-                Projectile projectile = this.getProjectile(level, x, y, attackerMob, item, attackerMob.buffManager.getModifier(BuffModifiers.THROWING_VELOCITY), throwItem);
-                GameRandom random = new GameRandom(seed);
-                projectile.resetUniqueID(random);
-                level.entityManager.projectiles.addHidden(projectile);
-                level.getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
-                if (throwItem) {
-                    itemAttackSlot.setItem(null);
-                }
-            }
+        Projectile projectile = this.getProjectile(level, x, y, attackerMob, item, attackerMob.buffManager.getModifier(BuffModifiers.THROWING_VELOCITY), throwItem);
+        projectile.resetUniqueID(new GameRandom(seed));
+        attackerMob.addAndSendAttackerProjectile(projectile, 0);
+        if (throwItem) {
+            itemAttackSlot.setItem(null);
         }
     }
 

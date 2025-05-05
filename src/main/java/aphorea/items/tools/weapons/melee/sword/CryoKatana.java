@@ -17,7 +17,6 @@ import necesse.inventory.InventoryItem;
 import necesse.inventory.item.toolItem.swordToolItem.KatanaToolItem;
 import necesse.level.maps.Level;
 
-import java.awt.*;
 import java.awt.geom.Point2D;
 
 public class CryoKatana extends KatanaToolItem {
@@ -45,6 +44,7 @@ public class CryoKatana extends KatanaToolItem {
     public void showKatanaAttack(Level level, final AttackAnimMob mob, final int seed, final InventoryItem item) {
         level.entityManager.addLevelEventHidden(new SwordCleanSliceAttackEvent(mob, seed, 12, this) {
             Trail[] trails = null;
+
             public void tick(float angle, float currentAttackProgress) {
                 int attackRange = CryoKatana.this.getAttackRange(item);
                 Point2D.Float base = new Point2D.Float(mob.x, mob.y);

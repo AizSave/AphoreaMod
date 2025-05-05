@@ -16,14 +16,8 @@ public class StarterItems {
 
     @Advice.OnMethodExit
     static void onExit(@Advice.This PlayerInventoryManager playerInventoryManager) {
-        if (playerInventoryManager.getAmount(ItemRegistry.getItem("copperdagger"), false, false, false, false, "startitem") == 0) {
-            playerInventoryManager.main.addItem(playerInventoryManager.player.getLevel(), playerInventoryManager.player, new InventoryItem("copperdagger"), "startitem", null);
-        }
         if (playerInventoryManager.getAmount(ItemRegistry.getItem("initialrune"), false, false, false, false, "startitem") == 0) {
             playerInventoryManager.main.addItem(playerInventoryManager.player.getLevel(), playerInventoryManager.player, new InventoryItem("initialrune"), "startitem", null);
-        }
-        if (playerInventoryManager.getAmount(ItemRegistry.getItem("rusticrunesinjector"), false, false, false, false, "startitem") == 0) {
-            playerInventoryManager.main.addItem(playerInventoryManager.player.getLevel(), playerInventoryManager.player, new InventoryItem("rusticrunesinjector"), "startitem", null);
         }
     }
 }

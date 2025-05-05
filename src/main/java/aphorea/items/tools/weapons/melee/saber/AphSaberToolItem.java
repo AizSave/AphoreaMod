@@ -9,7 +9,6 @@ import aphorea.ui.SaberAttackUIManger;
 import aphorea.utils.AphColors;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
-import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.util.GameBlackboard;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.GameDamage;
@@ -96,15 +95,10 @@ abstract public class AphSaberToolItem extends AphSwordToolItem implements ItemI
             powerPercent = 1F;
         }
         if (powerPercent >= 0.5F) {
-            Projectile[] projectiles = this.getProjectiles(level, attackerMob.getX(), attackerMob.getY(), x, y, attackerMob, item, (powerPercent - 0.375F) * 1.6F);
-            GameRandom random = new GameRandom(seed);
+            Projectile[] projectiles = this.getProjectiles(level, attackerMob.getX(), attackerMob.getY(), x, y, attackerMob, item, (powerPercent - 0.375F) * 1.6F, seed);
             for (Projectile projectile : projectiles) {
-                projectile.resetUniqueID(random);
-
-                level.entityManager.projectiles.addHidden(projectile);
-                if (level.isServer()) {
-                    level.getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
-                }
+                projectile.resetUniqueID(new GameRandom(seed));
+                attackerMob.addAndSendAttackerProjectile(projectile, 0);
             }
         }
     }
@@ -192,11 +186,11 @@ abstract public class AphSaberToolItem extends AphSwordToolItem implements ItemI
         };
     }
 
-    public Projectile[] getProjectiles(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent) {
-        return new Projectile[]{getProjectile(level, x, y, targetX, targetY, attackerMob, item, powerPercent)};
+    public Projectile[] getProjectiles(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent, int seed) {
+        return new Projectile[]{getProjectile(level, x, y, targetX, targetY, attackerMob, item, powerPercent, seed)};
     }
 
-    abstract public Projectile getProjectile(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent);
+    abstract public Projectile getProjectile(Level level, int x, int y, int targetX, int targetY, ItemAttackerMob attackerMob, InventoryItem item, float powerPercent, int seed);
 
     public float chargePercent(InventoryItem item) {
         return SaberAttackUIManger.barPercent(item.getGndData().getFloat("attackPercent", 0F));

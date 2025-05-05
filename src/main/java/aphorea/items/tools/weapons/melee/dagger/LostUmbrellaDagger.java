@@ -26,7 +26,7 @@ public class LostUmbrellaDagger extends AphDaggerToolItem {
 
         this.attackDamage.setBaseValue(100.0F).setUpgradedValue(1.0F, 100.0F);
 
-        this.attackRange.setBaseValue(54);
+        this.attackRange.setBaseValue(55);
         this.knockback.setBaseValue(25);
     }
 

@@ -7,46 +7,39 @@ import aphorea.registry.AphDamageType;
 import aphorea.registry.AphEnchantments;
 import aphorea.registry.AphModifiers;
 import aphorea.utils.AphColors;
+import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
 import aphorea.utils.area.AphAreaType;
-import aphorea.utils.area.AphFlatArea;
 import aphorea.utils.magichealing.AphMagicHealingFunctions;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
-import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.registries.EnchantmentRegistry;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.engine.sound.gameSound.GameSound;
 import necesse.engine.util.GameBlackboard;
 import necesse.engine.util.GameRandom;
+import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
 import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.projectile.Projectile;
-import necesse.gfx.drawOptions.itemAttack.ItemAttackDrawOptions;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.ItemInteractAction;
+import necesse.inventory.item.ItemStatTipList;
+import necesse.inventory.item.upgradeUtils.FloatUpgradeValue;
 import necesse.level.maps.Level;
 
-import java.awt.*;
 import java.util.HashSet;
 import java.util.Set;
 
-public class MagicHarp extends AphMagicProjectileToolItem implements ItemInteractAction {
-    static int range = 200;
-    static Color color = AphColors.spinel;
+public class HarpOfArmony extends AphMagicProjectileToolItem implements ItemInteractAction {
+    protected FloatUpgradeValue attackDamage2 = new FloatUpgradeValue(0.0F, 0.2F);
+    protected FloatUpgradeValue healing = new FloatUpgradeValue(0, 0.2F);
 
-    static AphAreaList areaList = new AphAreaList(
-            new AphFlatArea(range, 0.3F, color)
-                    .setDamageArea(3)
-                    .setHealingArea(3)
-                    .setBuffArea(5000, "harpbuff")
-    ).setDamageType(AphDamageType.INSPIRATION);
-
-    public MagicHarp() {
+    public HarpOfArmony() {
         super(1000);
         rarity = Rarity.RARE;
         attackAnimTime.setBaseValue(500);
@@ -58,10 +51,14 @@ public class MagicHarp extends AphMagicProjectileToolItem implements ItemInterac
         this.attackYOffset = 22;
 
         attackDamage.setBaseValue(30).setUpgradedValue(1, 60);
+        attackDamage2.setBaseValue(3).setUpgradedValue(1, 6);
+        healing.setBaseValue(3).setUpgradedValue(1, 6);
     }
 
     @Override
     public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
+        AphAreaList areaList = getAreaList(item);
+
         Projectile projectile = new MusicalNoteProjectile(
                 level, attackerMob,
                 attackerMob.x, attackerMob.y,
@@ -71,26 +68,16 @@ public class MagicHarp extends AphMagicProjectileToolItem implements ItemInterac
                 getAttackDamage(item),
                 getKnockback(item, attackerMob)
         );
-        GameRandom random = new GameRandom(seed);
-        projectile.resetUniqueID(random);
-
-        level.entityManager.projectiles.addHidden(projectile);
-
-        if (level.isServer()) {
-            level.getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
-        }
+        projectile.resetUniqueID(new GameRandom(seed));
+        attackerMob.addAndSendAttackerProjectile(projectile, 20);
+        this.consumeMana(attackerMob, item);
 
         if (areaList.someType(AphAreaType.HEALING)) {
             onHealingToolItemUsed(attackerMob, item);
         }
 
-        if (this.getManaCost(item) > 0) {
-            this.consumeMana(attackerMob, item);
-        }
-
         float rangeModifier = 1 + this.getEnchantment(item).getModifier(AphModifiers.TOOL_AREA_RANGE);
-
-        areaList.executeServer(attackerMob, attackerMob.x, attackerMob.y, rangeModifier, item, this);
+        areaList.execute(attackerMob, attackerMob.x, attackerMob.y, rangeModifier, item, this, true);
 
         return item;
     }
@@ -98,9 +85,6 @@ public class MagicHarp extends AphMagicProjectileToolItem implements ItemInterac
     @Override
     public void showAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, int animAttack, int seed, GNDItemMap mapContent) {
         if (level.isClient()) {
-            float rangeModifier = 1 + this.getEnchantment(item).getModifier(AphModifiers.TOOL_AREA_RANGE);
-            areaList.executeClient(level, attackerMob.x, attackerMob.y, rangeModifier);
-
             float distance = attackerMob.getDistance(x, y);
             GameSound[] notes = AphResources.SOUNDS.HARP.All;
             int noteIndex = Math.min(notes.length - 1, (int) (distance / (400F / notes.length)));
@@ -111,10 +95,19 @@ public class MagicHarp extends AphMagicProjectileToolItem implements ItemInterac
     @Override
     public ListGameTooltips getPreEnchantmentTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {
         ListGameTooltips tooltips = super.getPreEnchantmentTooltips(item, perspective, blackboard);
-        areaList.addAreasToolTip(tooltips, perspective, true, null, null);
-        tooltips.add(Localization.translate("itemtooltip", "magicharp"));
+        tooltips.add(Localization.translate("itemtooltip", "harpofharmony"));
         tooltips.add(Localization.translate("itemtooltip", "inspiration"));
         return tooltips;
+    }
+
+    @Override
+    public void addStatTooltips(ItemStatTipList list, InventoryItem currentItem, InventoryItem lastItem, ItemAttackerMob perspective, boolean forceAdd) {
+        this.addAttackDamageTip(list, currentItem, lastItem, perspective, forceAdd);
+        this.addAttackSpeedTip(list, currentItem, lastItem, perspective);
+        this.addResilienceGainTip(list, currentItem, lastItem, perspective, forceAdd);
+        this.addCritChanceTip(list, currentItem, lastItem, perspective, forceAdd);
+        this.addManaCostTip(list, currentItem, lastItem, perspective);
+        AphAreaList.addAreasStatTip(list, getAreaList(currentItem), lastItem == null ? null : getAreaList(lastItem), perspective, forceAdd, currentItem, lastItem, this);
     }
 
     public void onHealingToolItemUsed(Mob mob, InventoryItem item) {
@@ -133,5 +126,14 @@ public class MagicHarp extends AphMagicProjectileToolItem implements ItemInterac
         enchantments.addAll(AphEnchantments.areaItemEnchantments);
 
         return enchantments;
+    }
+
+    public AphAreaList getAreaList(InventoryItem item) {
+        return new AphAreaList(
+                new AphArea(200, 0.3F, AphColors.spinel)
+                        .setDamageArea(new GameDamage(AphDamageType.INSPIRATION, attackDamage2.getValue(item.item.getUpgradeTier(item))))
+                        .setHealingArea((int) (float) healing.getValue(item.item.getUpgradeTier(item)))
+                        .setBuffArea(5000, "harmonybuff")
+        );
     }
 }

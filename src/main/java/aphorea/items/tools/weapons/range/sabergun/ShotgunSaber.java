@@ -2,7 +2,6 @@ package aphorea.items.tools.weapons.range.sabergun;
 
 import aphorea.projectiles.bullet.ShotgunBulletProjectile;
 import necesse.engine.localization.Localization;
-import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.registries.ItemRegistry;
 import necesse.engine.util.GameBlackboard;
 import necesse.engine.util.GameRandom;
@@ -82,19 +81,13 @@ public class ShotgunSaber extends AphSaberGunToolItem {
         if (shouldFire) {
             int projectilesNumber = this.getProjectilesNumber(item);
             float maxSpread = this.getProjectilesMaxSpread(item);
+            GameRandom random = new GameRandom(seed);
+            GameRandom spreadRandom = new GameRandom(seed + 10);
             for (int i = 0; i < projectilesNumber; i++) {
                 Projectile projectile = this.getProjectile(level, x, y, attackerMob, item);
-                projectile.moveDist(GameRandom.globalRandom.getFloatOffset(10, 20));
                 projectile.height -= 2;
-                GameRandom random = new GameRandom(seed);
                 projectile.resetUniqueID(random);
-
-                level.entityManager.projectiles.addHidden(projectile);
-
-                projectile.setAngle((float) (Math.toDegrees(Math.atan2(y - attackerMob.y, x - attackerMob.x)) + 90 + GameRandom.globalRandom.getFloatOffset(0.0F, maxSpread)));
-                if (level.isServer()) {
-                    level.getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
-                }
+                attackerMob.addAndSendAttackerProjectile(projectile, GameRandom.globalRandom.getIntBetween(10, 20), spreadRandom.getFloatOffset(0.0F, maxSpread));
             }
         }
     }

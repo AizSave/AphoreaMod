@@ -8,7 +8,6 @@ import aphorea.buffs.Banners.AphMightyBasicBannerBuff;
 import aphorea.buffs.Runes.AphBaseRuneActiveBuff;
 import aphorea.buffs.Runes.AphBaseRuneTrinketBuff;
 import aphorea.buffs.Runes.AphModifierRuneTrinketBuff;
-import aphorea.buffs.Runes.RuneOfPestWardenBuff;
 import aphorea.buffs.SetBonus.*;
 import aphorea.buffs.Trinkets.Charm.AdrenalineCharmBuff;
 import aphorea.buffs.Trinkets.Charm.BloomrushCharmBuff;
@@ -28,18 +27,14 @@ import aphorea.levelevents.runes.*;
 import aphorea.mobs.runicsummons.RunicAttackingFollowingMob;
 import aphorea.mobs.runicsummons.RunicFlyingAttackingFollowingMob;
 import aphorea.packets.AphRuneOfUnstableGelSlimePacket;
-import aphorea.packets.AphSingleAreaShowPacket;
 import aphorea.projectiles.rune.RuneOfSpiderEmpressProjectile;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
 import aphorea.utils.magichealing.AphMagicHealing;
-import necesse.engine.GlobalData;
 import necesse.engine.modifiers.ModifierValue;
 import necesse.engine.network.client.Client;
 import necesse.engine.network.packet.PacketForceOfWind;
-import necesse.engine.network.packet.PacketMobMovement;
-import necesse.engine.network.packet.PacketPlayerMovement;
 import necesse.engine.network.server.Server;
 import necesse.engine.network.server.ServerClient;
 import necesse.engine.registries.BuffRegistry;
@@ -47,7 +42,6 @@ import necesse.engine.registries.ItemRegistry;
 import necesse.engine.registries.MobRegistry;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
-import necesse.engine.state.MainGame;
 import necesse.engine.util.GameMath;
 import necesse.engine.util.GameRandom;
 import necesse.entity.levelEvent.LevelEvent;
@@ -66,11 +60,9 @@ import necesse.entity.mobs.buffs.staticBuffs.armorBuffs.trinketBuffs.SimpleTrink
 import necesse.entity.mobs.itemAttacker.FollowPosition;
 import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
 import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
-import necesse.entity.mobs.mobMovement.MobMovementConstant;
 import necesse.entity.particle.Particle;
 import necesse.entity.particle.SmokePuffParticle;
 import necesse.gfx.GameResources;
-import necesse.gfx.camera.MainGameCamera;
 import necesse.gfx.gameFont.FontManager;
 import necesse.inventory.InventoryItem;
 import necesse.level.maps.Level;
@@ -93,6 +85,7 @@ public class AphBuffs {
     public static Buff STICKY;
     public static Buff HONEYED;
     public static Buff CURSED;
+    public static Buff HARMONY;
 
     public static Buff DAGGER_ATTACK;
     public static Buff BERSERKER_RUSH;
@@ -132,9 +125,9 @@ public class AphBuffs {
 
     public static void registerCore() {
         // Common Buffs
-        BuffRegistry.registerBuff("stop", STOP = new StopBuff());
-        BuffRegistry.registerBuff("stun", STUN = new StunBuff());
-        BuffRegistry.registerBuff("fallenstun", FALLEN_STUN = new StunBuff() {
+        BuffRegistry.registerBuff("stopbuff", STOP = new StopBuff());
+        BuffRegistry.registerBuff("stunbuff", STUN = new StunBuff());
+        BuffRegistry.registerBuff("fallenstunbuff", FALLEN_STUN = new StunBuff() {
             @Override
             public void clientTick(ActiveBuff buff) {
                 super.clientTick(buff);
@@ -164,18 +157,19 @@ public class AphBuffs {
 
             }
         });
-        BuffRegistry.registerBuff("sticky", STICKY = new StickyBuff());
-        BuffRegistry.registerBuff("honeyed", HONEYED = new HoneyedBuff());
-        BuffRegistry.registerBuff("cursed", CURSED = new CursedBuff());
-        BuffRegistry.registerBuff("daggerattack", DAGGER_ATTACK = new DaggerAttackBuff());
-        BuffRegistry.registerBuff("berserkerrush", BERSERKER_RUSH = new BerserkerRushBuff());
-        BuffRegistry.registerBuff("periaptactive", PERIAPT_ACTIVE = new PeriaptActiveBuff());
-        BuffRegistry.registerBuff("saberdashactive", SABER_DASH_ACTIVE = new HiddenCooldownBuff());
+        BuffRegistry.registerBuff("stickybuff", STICKY = new StickyBuff());
+        BuffRegistry.registerBuff("honeyedbuff", HONEYED = new HoneyedBuff());
+        BuffRegistry.registerBuff("cursedbuff", CURSED = new CursedBuff());
 
-        BuffRegistry.registerBuff("adrenaline", ADRENALINE = new AdrenalineBuff());
+        BuffRegistry.registerBuff("adrenalinebuff", ADRENALINE = new AdrenalineBuff());
+        BuffRegistry.registerBuff("harmonybuff", HARMONY = new HarmonyBuff());
+
+        BuffRegistry.registerBuff("daggerattackbuff", DAGGER_ATTACK = new DaggerAttackBuff());
+        BuffRegistry.registerBuff("berserkerrushactive", BERSERKER_RUSH = new BerserkerRushActiveBuff());
+        BuffRegistry.registerBuff("periaptactivebuff", PERIAPT_ACTIVE = new PeriaptActiveBuff());
+        BuffRegistry.registerBuff("saberdashactivebuff", SABER_DASH_ACTIVE = new HiddenCooldownBuff());
 
         BuffRegistry.registerBuff("narcissistbuff", new NarcissistBuff());
-        BuffRegistry.registerBuff("harpbuff", new HarpBuff());
 
         // Cooldowns
         BuffRegistry.registerBuff("berserkerrushcooldown", BERSERKER_RUSH_COOLDOWN = new AphShownCooldownBuff());
@@ -205,7 +199,7 @@ public class AphBuffs {
         BuffRegistry.registerBuff("aph_bannerofsummonspeed", BANNER.SUMMON_SPEED = AphBasicBannerBuff.floatModifier(BuffModifiers.SUMMONS_SPEED, 0.75F));
 
         // Potion Buffs
-        BuffRegistry.registerBuff("venomextract", POTION.VENOM_EXTRACT = new VenomExtractBuff());
+        BuffRegistry.registerBuff("venomextractbuff", POTION.VENOM_EXTRACT = new VenomExtractBuff());
 
         // Trinket Buffs
         trinketBuffs();
@@ -216,7 +210,7 @@ public class AphBuffs {
         BuffRegistry.registerBuff("demonicperiaptactive", new DemonicPeriaptActiveBuff());
 
         // Mobs
-        BuffRegistry.registerBuff("unstablegelslimerush", new UnstableGelSlimeRushBuff());
+        BuffRegistry.registerBuff("unstablegelslimerushbuff", new UnstableGelSlimeRushBuff());
 
         // Runes Injectors
         BuffRegistry.registerBuff("runesinjectoractive", RUNE_INJECTOR_ACTIVE = new AphShownBuff());
@@ -467,11 +461,7 @@ public class AphBuffs {
                         new AphArea(500, AphColors.ice)
                                 .setDebuffArea((int) (getEffectNumber(player) * 1000), BuffRegistry.Debuffs.FROSTSLOW.getStringID())
                 );
-                if (level.isServer()) {
-                    areaList.executeServer(player);
-                } else if (level.isClient()) {
-                    areaList.executeClient(level, player.x, player.y);
-                }
+                areaList.execute(player, false);
             }
 
             @Override
@@ -784,27 +774,21 @@ public class AphBuffs {
         // RUNE OF PEST WARDEN
         baseEffectNumber = 12;
         // On activation
-        BuffRegistry.registerBuff("runeofpestwarden", new AphBaseRuneTrinketBuff(baseEffectNumber, (int) baseEffectNumber * 1000, "runeofpestwardenactive") {
-
+        BuffRegistry.registerBuff("runeofpestwarden", new AphBaseRuneTrinketBuff(baseEffectNumber, 100) {
             @Override
-            public void run(Level level, PlayerMob player, int targetX, int targetY) {
-                super.run(level, player, targetX, targetY);
-                player.getLevel().entityManager.addLevelEvent(new AphRuneOfPestWardenEvent(player));
+            public String canRun(PlayerMob player) {
+                return "inmaintenance";
             }
-
-            @Override
-            public int getDuration(PlayerMob player) {
-                return (int) getEffectNumber(player) * 1000;
-            }
-
         });
-        // On duration
-        BuffRegistry.registerBuff("runeofpestwardenactive", new RuneOfPestWardenBuff(baseEffectNumber));
 
         // RUNE OF SAGE & GRIT
         baseEffectNumber = 20;
         // On activation
         BuffRegistry.registerBuff("runeofsageandgrit", new AphBaseRuneTrinketBuff(baseEffectNumber, 20000, "runeofsageandgritactive") {
+            public final AphAreaList areaList = new AphAreaList(
+                    new AphArea(500, AphColors.green)
+            );
+
             @Override
             public void run(Level level, PlayerMob player, int targetX, int targetY) {
                 super.run(level, player, targetX, targetY);
@@ -818,8 +802,7 @@ public class AphBuffs {
                         arrayList.forEach(
                                 target -> target.getLevel().entityManager.addLevelEvent(new MobHealthChangeEvent(target, (int) (target.getMaxHealth() * 0.2F)))
                         );
-
-                        level.getServer().network.sendToClientsAtEntireLevel(new AphSingleAreaShowPacket(player.x, player.y, 500, AphColors.green), level);
+                        areaList.sendExecutePacket(level, player.x, player.y);
                     }
                 }
             }

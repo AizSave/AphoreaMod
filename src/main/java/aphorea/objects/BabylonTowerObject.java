@@ -170,9 +170,9 @@ public class BabylonTowerObject extends StaticMultiObject {
         if (!player.isItemOnCooldown(item)) {
             if (player.getInv().removeItems(item, 1, false, false, false, false, "use") > 0) {
                 level.entityManager.objectEntities.add(new BabylonTowerObjectEntity(level, x - multiX, y - multiY));
-                if(player.isServer()) {
+                if (player.isServer()) {
                     JournalChallenge challenge = JournalChallengeRegistry.getChallenge("activatebabylontower");
-                    if(challenge instanceof ActivateBabylonTowerJournalChallenge) {
+                    if (challenge instanceof ActivateBabylonTowerJournalChallenge) {
                         ((ActivateBabylonTowerJournalChallenge) challenge).onBabylonTowerActivated(player.getServerClient());
                         GameUtils.streamServerClients(level).filter(m -> m.playerMob != player && m.playerMob.getDistance(x, y) <= BabylonTowerMob.BOSS_AREA_RADIUS).forEach(
                                 serverClient -> ((ActivateBabylonTowerJournalChallenge) challenge).onBabylonTowerActivated(serverClient)

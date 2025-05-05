@@ -30,7 +30,7 @@ import java.util.List;
 
 public class PinkWitch extends FlyingHostileMob {
 
-    public static GameDamage attack = new GameDamage(DamageTypeRegistry.TRUE, 20);
+    public static GameDamage attack = new GameDamage(DamageTypeRegistry.MAGIC, 30);
     public static int attack_knockback = 50;
 
     public static MaxHealthGetter MAX_HEALTH = new MaxHealthGetter(400, 500, 600, 700, 800);

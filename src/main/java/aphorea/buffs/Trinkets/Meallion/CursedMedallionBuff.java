@@ -1,12 +1,10 @@
 package aphorea.buffs.Trinkets.Meallion;
 
 import aphorea.buffs.Trinkets.AphAreaWhenHealTrinketBuff;
-import aphorea.packets.AphSingleAreaShowPacket;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
 import necesse.engine.localization.Localization;
-import necesse.engine.network.Packet;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
@@ -19,16 +17,11 @@ public class CursedMedallionBuff extends AphAreaWhenHealTrinketBuff {
     static Color color = AphColors.black;
 
     public static AphAreaList areaList = new AphAreaList(
-            new AphArea(range, color).setDebuffArea(5000, "cursed")
+            new AphArea(range, color).setDebuffArea(5000, "cursedbuff")
     );
 
     public CursedMedallionBuff() {
         super(30, areaList);
-    }
-
-    @Override
-    public Packet getPacket(PlayerMob player, float rangeModifier) {
-        return new AphSingleAreaShowPacket(player.x, player.y, range * rangeModifier, color);
     }
 
     @Override

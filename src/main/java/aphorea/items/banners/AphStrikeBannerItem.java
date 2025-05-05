@@ -1,13 +1,13 @@
 package aphorea.items.banners;
 
 import aphorea.items.banners.logic.AphAbilityBanner;
-import aphorea.packets.AphSingleAreaShowPacket;
 import aphorea.registry.AphBuffs;
 import aphorea.registry.AphDamageType;
 import aphorea.utils.AphColors;
+import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
-import aphorea.utils.area.AphFlatArea;
 import necesse.engine.util.GameUtils;
+import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.drawOptions.DrawOptions;
 import necesse.gfx.gameTooltips.ListGameTooltips;
@@ -21,8 +21,8 @@ public class AphStrikeBannerItem extends AphAbilityBanner {
     static int range = 200;
     static Color color = AphColors.blood;
     public static AphAreaList areaList = new AphAreaList(
-            new AphFlatArea(range, 0.5F, color).setDamageArea(30).setArmorPen(5)
-    ).setDamageType(AphDamageType.INSPIRATION);
+            new AphArea(range, 0.5F, color).setDamageArea(new GameDamage(AphDamageType.INSPIRATION, 30, 5))
+    );
 
     public AphStrikeBannerItem() {
         super(Rarity.LEGENDARY, 480, (m) -> AphBuffs.BANNER.STRIKE, 2000 / 50, 10);
@@ -30,8 +30,7 @@ public class AphStrikeBannerItem extends AphAbilityBanner {
 
     @Override
     public void runServerAbility(Level level, InventoryItem item, PlayerMob player) {
-        areaList.executeServer(player);
-        level.getServer().network.sendToClientsAtEntireLevel(new AphSingleAreaShowPacket(player.x, player.y, range, color, 0.5F), level);
+        areaList.execute(player, true);
     }
 
     @Override

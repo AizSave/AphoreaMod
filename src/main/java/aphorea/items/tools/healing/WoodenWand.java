@@ -41,6 +41,8 @@ public class WoodenWand extends AphHealingProjectileToolItem {
 
     @Override
     public void showAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, int animAttack, int seed, GNDItemMap mapContent) {
-        SoundManager.playSound(GameResources.magicbolt2, SoundEffect.effect(attackerMob).volume(1.0F).pitch(1.0F));
+        if (level.isClient()) {
+            SoundManager.playSound(GameResources.magicbolt2, SoundEffect.effect(attackerMob).volume(1.0F).pitch(1.0F));
+        }
     }
 }

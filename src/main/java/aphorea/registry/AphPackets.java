@@ -16,7 +16,7 @@ public class AphPackets {
     }
 
     public static void clientOnly() {
-        PacketRegistry.registerPacket(AphSingleAreaShowPacket.class);
+        PacketRegistry.registerPacket(AphAreaShowPacket.class);
         PacketRegistry.registerPacket(VenomExtractBuff.VenomExtractBuffPacket.class);
         PacketRegistry.registerPacket(WildPhosphorSlime.PhosphorSlimeParticlesPacket.class);
         PacketRegistry.registerPacket(AphRemoveObjectEntity.class);

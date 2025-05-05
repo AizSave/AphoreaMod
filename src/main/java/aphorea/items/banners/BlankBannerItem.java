@@ -1,11 +1,10 @@
 package aphorea.items.banners;
 
 import aphorea.items.banners.logic.AphAbilityBanner;
-import aphorea.packets.AphSingleAreaShowPacket;
 import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
+import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
-import aphorea.utils.area.AphFlatArea;
 import necesse.engine.util.GameUtils;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.drawOptions.DrawOptions;
@@ -20,7 +19,7 @@ public class BlankBannerItem extends AphAbilityBanner {
     static int range = 200;
     static Color color = AphColors.green;
     public static AphAreaList areaList = new AphAreaList(
-            new AphFlatArea(range, 0.5F, color).setHealingArea(4)
+            new AphArea(range, 0.5F, color).setHealingArea(4)
     );
 
     public BlankBannerItem() {
@@ -29,8 +28,7 @@ public class BlankBannerItem extends AphAbilityBanner {
 
     @Override
     public void runServerAbility(Level level, InventoryItem item, PlayerMob player) {
-        areaList.executeServer(player);
-        level.getServer().network.sendToClientsAtEntireLevel(new AphSingleAreaShowPacket(player.x, player.y, range, color, 0.5F), level);
+        areaList.execute(player, true);
     }
 
     @Override

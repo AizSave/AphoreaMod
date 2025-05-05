@@ -21,18 +21,16 @@ import java.util.Set;
 
 abstract public class AphMagicProjectileSecondaryAreaToolItem extends AphMagicProjectileToolItem implements ItemInteractAction {
 
-    AphAreaList areaList;
-
     int secondaryAttackAnimTime;
     float consumeManaSecondary;
 
-    public AphMagicProjectileSecondaryAreaToolItem(int enchantCost, AphAreaList areaList, int secondaryAttackAnimTime, float consumeManaSecondary) {
+    public AphMagicProjectileSecondaryAreaToolItem(int enchantCost, int secondaryAttackAnimTime, float consumeManaSecondary) {
         super(enchantCost);
-        this.areaList = areaList;
         this.secondaryAttackAnimTime = secondaryAttackAnimTime;
         this.consumeManaSecondary = consumeManaSecondary;
     }
 
+    public abstract AphAreaList getAreaList(ItemAttackerMob attackerMob, InventoryItem item);
 
     public float getSecondaryManaCost(InventoryItem item) {
         return (consumeManaSecondary * this.getManaUsageModifier(item));
@@ -53,13 +51,9 @@ abstract public class AphMagicProjectileSecondaryAreaToolItem extends AphMagicPr
     public InventoryItem onLevelInteract(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int seed, GNDItemMap mapContent) {
         this.consumeManaSecondary(attackerMob, item);
 
-        float attackDamage0 = attackDamage.getValue(0);
-        float attackDamage1 = attackDamage.getValue(1);
-
         float rangeModifier = 1 + this.getEnchantment(item).getModifier(AphModifiers.TOOL_AREA_RANGE);
 
-        areaList.execute(attackerMob, x, y, rangeModifier, item, this);
-        attackDamage.setBaseValue(attackDamage0).setUpgradedValue(1, attackDamage1);
+        getAreaList(attackerMob, item).execute(attackerMob, attackerMob.x, attackerMob.y, rangeModifier, item, this, true);
 
         return item;
     }

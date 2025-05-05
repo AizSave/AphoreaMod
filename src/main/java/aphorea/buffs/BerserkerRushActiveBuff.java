@@ -17,8 +17,8 @@ import necesse.entity.mobs.buffs.staticBuffs.Buff;
 import necesse.entity.particle.Particle;
 import necesse.gfx.GameResources;
 
-public class BerserkerRushBuff extends Buff {
-    public BerserkerRushBuff() {
+public class BerserkerRushActiveBuff extends Buff {
+    public BerserkerRushActiveBuff() {
         this.isImportant = true;
         this.canCancel = false;
     }

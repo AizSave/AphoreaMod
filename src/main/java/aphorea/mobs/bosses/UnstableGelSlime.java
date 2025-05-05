@@ -262,7 +262,7 @@ public class UnstableGelSlime extends FlyingBossMob {
     protected void onDeath(Attacker attacker, HashSet<Attacker> attackers) {
         super.onDeath(attacker, attackers);
 
-        attackers.stream().map(Attacker::getAttackOwner).filter((m) -> m != null && m.isPlayer).distinct().forEach((m) -> this.getLevel().getServer().network.sendPacket(new PacketChatMessage(new LocalMessage("misc", "bossdefeat", "name", this.getLocalization())), ((PlayerMob) m).getServerClient()));
+        attackers.stream().map(Attacker::getAttackOwner).filter((m) -> m != null && m.isPlayer).distinct().forEach((m) -> this.getServer().network.sendPacket(new PacketChatMessage(new LocalMessage("misc", "bossdefeat", "name", this.getLocalization())), ((PlayerMob) m).getServerClient()));
 
         for (int i = 0; i < 4; i++) {
             Mob invocar = MobRegistry.getMob("miniunstablegelslime", this.getLevel());
@@ -370,7 +370,7 @@ public class UnstableGelSlime extends FlyingBossMob {
                 public AINodeResult tick(T mob, Blackboard<T> blackboard) {
 
                     if (anger == 10) {
-                        if (!mob.buffManager.hasBuff("unstablegelslimerush")) {
+                        if (!mob.buffManager.hasBuff("unstablegelslimerushbuff")) {
                             int targets = (int) streamPossibleTargets(mob).count();
 
                             SoundManager.playSound(GameResources.roar, SoundEffect.effect(mob)
@@ -383,7 +383,7 @@ public class UnstableGelSlime extends FlyingBossMob {
 
                             blackboard.put("currentTarget", mob);
 
-                            mob.addBuff(new ActiveBuff(BuffRegistry.getBuff("unstablegelslimerush"), mob, 3000, mob), true);
+                            mob.addBuff(new ActiveBuff(BuffRegistry.getBuff("unstablegelslimerushbuff"), mob, 3000, mob), true);
                             mob.addBuff(new ActiveBuff(BuffRegistry.INVULNERABLE_ACTIVE, mob, 500, mob), true);
 
                             Point point = getTeleportPoint(mob);
@@ -423,7 +423,7 @@ public class UnstableGelSlime extends FlyingBossMob {
 
                         blackboard.put("currentTarget", mob);
 
-                        mob.addBuff(new ActiveBuff(BuffRegistry.getBuff("unstablegelslimerush"), mob, 3000, mob), true);
+                        mob.addBuff(new ActiveBuff(BuffRegistry.getBuff("unstablegelslimerushbuff"), mob, 3000, mob), true);
                         mob.addBuff(new ActiveBuff(BuffRegistry.INVULNERABLE_ACTIVE, mob, 500, mob), true);
 
                         Point point = getTeleportPoint(mob);
@@ -452,7 +452,7 @@ public class UnstableGelSlime extends FlyingBossMob {
                     if (anger >= 10) {
                         return AINodeResult.FAILURE;
                     }
-                    if (!mob.buffManager.hasBuff("unstablegelslimerush")) {
+                    if (!mob.buffManager.hasBuff("unstablegelslimerushbuff")) {
                         if (throwSlimesNumber > 0) {
                             processSlimeThrow(mob);
                             return AINodeResult.SUCCESS;

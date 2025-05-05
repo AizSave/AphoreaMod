@@ -438,7 +438,7 @@ public class AphRecipes {
 
         addCraftingList("voidbullet", tech,
                 AphCraftingRecipe.showAfter("spambullet", 50,
-                        new Ingredient("spinel", 1),
+                        new Ingredient("spinel", 2),
                         new Ingredient("rockygel", 5)
                 )
         );
@@ -464,33 +464,46 @@ public class AphRecipes {
                 AphCraftingRecipe.showAfter("thenarcissist", 1,
                         new Ingredient("goldsword", 1),
                         new Ingredient("lifespinel", 1),
-                        new Ingredient("spinel", 6)
+                        new Ingredient("spinel", 10)
+                ),
+                AphCraftingRecipe.showAfter("spinelcrossbow", 1,
+                        new Ingredient("lifespinel", 1),
+                        new Ingredient("spinel", 20)
+                ),
+                AphCraftingRecipe.showAfter("harpofharmony", 1,
+                        new Ingredient("lifespinel", 1),
+                        new Ingredient("spinel", 2),
+                        new Ingredient("goldbar", 10)
                 ),
                 AphCraftingRecipe.showAfter("spinelwand", 1,
                         new Ingredient("goldenwand", 1),
                         new Ingredient("lifespinel", 1),
-                        new Ingredient("spinel", 6)
+                        new Ingredient("spinel", 10)
                 ),
                 AphCraftingRecipe.showAfter("spinelhelmet", 1,
                         new Ingredient("lifespinel", 1),
-                        new Ingredient("spinel", 18)
+                        new Ingredient("spinel", 24)
+                ),
+                AphCraftingRecipe.showAfter("spinelhat", 1,
+                        new Ingredient("lifespinel", 2),
+                        new Ingredient("spinel", 16)
                 ),
                 AphCraftingRecipe.showAfter("spinelchestplate", 1,
                         new Ingredient("lifespinel", 2),
-                        new Ingredient("spinel", 24)
+                        new Ingredient("spinel", 32)
                 ),
                 AphCraftingRecipe.showAfter("spinelboots", 1,
-                        new Ingredient("spinel", 12)
+                        new Ingredient("spinel", 16)
                 )
         );
 
         addCraftingList("essenceofrebirth", tech,
                 AphCraftingRecipe.showAfter("essenceofhealing", 1,
-                        new Ingredient("spinel", 12)
+                        new Ingredient("spinel", 16)
                 ),
                 AphCraftingRecipe.showAfter("spinelshield", 1,
                         new Ingredient("tungstenshield", 1),
-                        new Ingredient("spinel", 12)
+                        new Ingredient("spinel", 24)
                 ),
                 AphCraftingRecipe.showAfter("bloomrushcharm", 1,
                         new Ingredient("zephyrcharm", 1),

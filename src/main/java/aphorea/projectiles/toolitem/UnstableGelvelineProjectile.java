@@ -5,7 +5,6 @@ import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
-import aphorea.utils.area.AphFlatArea;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
@@ -56,9 +55,8 @@ public class UnstableGelvelineProjectile extends Projectile {
         this.speed = speed;
         this.distance = distance;
 
-
         areaList = new AphAreaList(
-                new AphFlatArea(100, color).setDamageArea(attackDamage.modDamage(0.5F))
+                new AphArea(100, color).setDamageArea(attackDamage.modDamage(0.5F))
         );
     }
 
@@ -89,7 +87,7 @@ public class UnstableGelvelineProjectile extends Projectile {
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
         super.doHitLogic(mob, object, x, y);
         if (this.traveledDistance >= (float) this.distance || (this.amountHit() >= this.piercing && (this.bounced >= this.getTotalBouncing() || !this.canBounce))) {
-            areaList.execute(getOwner(), x, y, 1F, item, toolItem);
+            areaList.execute(getOwner(), x, y, 1F, item, toolItem, false);
         }
         if (this.isServer()) {
             if (mob != null) {

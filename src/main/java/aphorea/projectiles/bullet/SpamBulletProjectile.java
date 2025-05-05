@@ -2,8 +2,8 @@ package aphorea.projectiles.bullet;
 
 import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
+import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
-import aphorea.utils.area.AphFlatArea;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
@@ -45,7 +45,7 @@ public class SpamBulletProjectile extends BulletProjectile {
     private boolean clockWise;
 
     public AphAreaList areaList = new AphAreaList(
-            new AphFlatArea(100, 0.5F, AphColors.green)
+            new AphArea(100, 0.5F, AphColors.green)
                     .setHealingArea(2)
     );
 
@@ -123,7 +123,7 @@ public class SpamBulletProjectile extends BulletProjectile {
             LevelEvent event = new FirePoolGroundEffectEvent(this.getOwner(), (int) x, (int) y, new GameRandom(GameRandom.getNewUniqueID()));
             this.getLevel().entityManager.addLevelEvent(event);
         } else if (type == 3) {
-            areaList.execute(getOwner(), x, y, 1, item, toolItem);
+            areaList.execute(getOwner(), x, y, 1, item, toolItem, false);
         } else if (type == 4) {
             ExplosionEvent event = new SpamBulletExplosion(x, y, this.getDamage(), this.getOwner());
             this.getLevel().entityManager.addLevelEvent(event);

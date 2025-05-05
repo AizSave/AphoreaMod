@@ -17,7 +17,7 @@ public class DemonicDagger extends AphDaggerToolItem {
 
         this.attackDamage.setBaseValue(27.0F).setUpgradedValue(1.0F, 86.0F);
 
-        this.attackRange.setBaseValue(40);
+        this.attackRange.setBaseValue(45);
         this.knockback.setBaseValue(25);
     }
 

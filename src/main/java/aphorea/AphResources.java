@@ -22,7 +22,6 @@ import necesse.engine.registries.MobRegistry;
 import necesse.engine.sound.gameSound.GameSound;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.HumanTexture;
-import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.GameResources;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.gameTexture.GameTextureSection;
@@ -183,7 +182,7 @@ public class AphResources {
             HARP.Sol = GameSound.fromFile("sol_harp");
             HARP.La = GameSound.fromFile("la_harp");
             HARP.Si = GameSound.fromFile("si_harp");
-            HARP.All = new GameSound[] {
+            HARP.All = new GameSound[]{
                     HARP.Do, HARP.Re, HARP.Mi, HARP.Fa, HARP.Sol, HARP.La, HARP.Si
             };
         }

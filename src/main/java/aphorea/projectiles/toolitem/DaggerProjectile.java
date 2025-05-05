@@ -3,13 +3,13 @@ package aphorea.projectiles.toolitem;
 import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
-import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.registries.ItemRegistry;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.BuffModifiers;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.pickup.ItemPickupEntity;
 import necesse.entity.projectile.Projectile;
 import necesse.entity.trails.Trail;
@@ -247,8 +247,10 @@ abstract public class DaggerProjectile extends Projectile {
                     float newTargetY = (float) (y + 100 * Math.sin(angle));
                     Projectile projectile = new OpenLostUmbrellaProjectile(level, getOwner(), x, y, newTargetX, newTargetY, speed / 2, distance / 4, getDamage(), knockback);
                     projectile.resetUniqueID(GameRandom.globalRandom);
-                    level.entityManager.projectiles.addHidden(projectile);
-                    level.getServer().network.sendToAllClients(new PacketSpawnProjectile(projectile));
+                    if (mob instanceof ItemAttackerMob) {
+                        ((ItemAttackerMob) mob).addAndSendAttackerProjectile(projectile, 0);
+                    }
+
                     if (shouldDrop && stringItemID != null && gndData != null) {
                         if (this.amountHit() < this.piercing) {
                             return;

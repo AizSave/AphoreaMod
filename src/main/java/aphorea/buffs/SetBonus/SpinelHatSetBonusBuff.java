@@ -1,8 +1,8 @@
 package aphorea.buffs.SetBonus;
 
 import aphorea.utils.AphColors;
+import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
-import aphorea.utils.area.AphFlatArea;
 import aphorea.utils.magichealing.AphMagicHealing;
 import necesse.engine.localization.Localization;
 import necesse.engine.registries.DamageTypeRegistry;
@@ -31,7 +31,7 @@ public class SpinelHatSetBonusBuff extends SetBonusBuff {
 
     public AphAreaList getAreaList(int healing) {
         return new AphAreaList(
-                new AphFlatArea(100, 0.3F, AphColors.green)
+                new AphArea(100, 0.3F, AphColors.green)
                         .setHealingArea(healing)
                         .setDirectExecuteHealing(true)
         );
@@ -47,7 +47,7 @@ public class SpinelHatSetBonusBuff extends SetBonusBuff {
             } else {
                 int realHealing = (int) healing;
                 savedAmount = healing - realHealing;
-                getAreaList(realHealing).execute(buff.owner);
+                getAreaList(realHealing).execute(buff.owner, true);
             }
         }
     }

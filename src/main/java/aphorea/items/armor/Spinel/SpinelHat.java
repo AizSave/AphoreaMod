@@ -7,7 +7,6 @@ import necesse.engine.registries.DamageTypeRegistry;
 import necesse.entity.mobs.MaskShaderOptions;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
-import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.gfx.drawOptions.DrawOptions;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.inventory.InventoryItem;
@@ -15,7 +14,6 @@ import necesse.inventory.item.armorItem.ArmorModifiers;
 import necesse.level.maps.light.GameLight;
 
 import java.awt.*;
-import java.util.logging.Level;
 
 public class SpinelHat extends AphSetHelmetArmorItem {
     public SpinelHat() {

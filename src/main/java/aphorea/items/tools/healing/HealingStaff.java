@@ -11,17 +11,15 @@ import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.gfx.GameResources;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.ItemInteractAction;
+import necesse.inventory.item.upgradeUtils.IntUpgradeValue;
 import necesse.level.maps.Level;
+import org.jetbrains.annotations.Nullable;
 
 public class HealingStaff extends AphAreaToolItem implements ItemInteractAction {
-
-    static AphAreaList areaList = new AphAreaList(
-            new AphArea(120, AphColors.pink_witch_dark).setHealingArea(10, 20),
-            new AphArea(120, AphColors.pink_witch).setHealingArea(6, 12)
-    );
+    protected IntUpgradeValue magicHealing2 = new IntUpgradeValue(0, 0.2F);
 
     public HealingStaff() {
-        super(650, false, true, areaList);
+        super(650, false, true);
         rarity = Rarity.COMMON;
         attackAnimTime.setBaseValue(1000);
 
@@ -30,12 +28,26 @@ public class HealingStaff extends AphAreaToolItem implements ItemInteractAction 
         attackXOffset = 12;
         attackYOffset = 22;
 
-        magicHealing.setBaseValue(10).setUpgradedValue(1, 12);
+        magicHealing.setBaseValue(10).setUpgradedValue(1, 20);
+        magicHealing2.setBaseValue(6).setUpgradedValue(1, 12);
     }
 
     @Override
     public void showAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, int animAttack, int seed, GNDItemMap mapContent) {
-        super.showAttack(level, x, y, attackerMob, attackHeight, item, animAttack, seed, mapContent);
-        SoundManager.playSound(GameResources.magicbolt3, SoundEffect.effect(attackerMob).volume(1.0F).pitch(1.0F));
+        if (level.isClient()) {
+            SoundManager.playSound(GameResources.magicbolt3, SoundEffect.effect(attackerMob).volume(1.0F).pitch(1.0F));
+        }
+    }
+
+    public int getHealing2(@Nullable InventoryItem item) {
+        return item == null ? magicHealing2.getValue(0) : magicHealing2.getValue(item.item.getUpgradeTier(item));
+    }
+
+    @Override
+    public AphAreaList getAreaList(InventoryItem item) {
+        return new AphAreaList(
+                new AphArea(120, AphColors.pink_witch_dark).setHealingArea(getHealing(item)),
+                new AphArea(120, AphColors.pink_witch).setHealingArea(getHealing2(item))
+        );
     }
 }
