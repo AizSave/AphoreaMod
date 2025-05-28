@@ -86,14 +86,15 @@ public class UnstableGelvelineProjectile extends Projectile {
     @Override
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
         super.doHitLogic(mob, object, x, y);
-        if (this.traveledDistance >= (float) this.distance || (this.amountHit() >= this.piercing && (this.bounced >= this.getTotalBouncing() || !this.canBounce))) {
-            areaList.execute(getOwner(), x, y, 1F, item, toolItem, false);
+        if (mob != null) {
+            mob.addBuff(new ActiveBuff(AphBuffs.STICKY, mob, 2000, this), true);
         }
-        if (this.isServer()) {
-            if (mob != null) {
-                mob.addBuff(new ActiveBuff(AphBuffs.STICKY, mob, 2000, this), true);
-            }
-        }
+    }
+
+    @Override
+    public void remove() {
+        areaList.execute(getOwner(), x, y, 1F, item, toolItem, false);
+        super.remove();
     }
 
 

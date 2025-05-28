@@ -70,7 +70,7 @@ abstract public class AphGreatswordSecondarySpinToolItem extends AphGreatswordTo
         if (!attackerMob.isPlayer && this.canDash(attackerMob)) {
             mapContent.setBoolean("chargeUp", true);
             secondaryAttack = true;
-            attackerMob.startAttackHandler((new GreatswordSecondarySpinAttackHandler<>(attackerMob, slot, item, this, 2000, spinAttackColor, seed)));
+            attackerMob.startAttackHandler((new GreatswordSecondarySpinAttackHandler<>(attackerMob, slot, item, this, 1000, spinAttackColor, seed)));
         } else {
             item.getGndData().setBoolean("chargeUp", false);
             secondaryAttack = false;

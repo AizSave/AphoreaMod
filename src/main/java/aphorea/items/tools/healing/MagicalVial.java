@@ -27,10 +27,15 @@ import necesse.inventory.item.LocalMessageDoubleItemStatTip;
 import necesse.level.maps.Level;
 
 public class MagicalVial extends AphMagicHealingToolItem {
+    public ParticleTypeSwitcher particleTypeSwitcher = new ParticleTypeSwitcher(
+            Particle.GType.CRITICAL,
+            Particle.GType.IMPORTANT_COSMETIC,
+            Particle.GType.COSMETIC
+    );
 
     static AphAreaList area = new AphAreaList(
             new AphArea(400, AphColors.blood)
-    );
+    ).setOnlyVision(false);
 
     int particlesAreaCount = 0;
     int particleCount = 0;
@@ -92,7 +97,7 @@ public class MagicalVial extends AphMagicHealingToolItem {
             float angle = (float) i / particles * 240 + 9 * particleCount;
             float dx = (float) Math.sin(Math.toRadians(angle)) * d;
             float dy = (float) Math.cos(Math.toRadians(angle)) * d;
-            perspective.getLevel().entityManager.addParticle(target.x + dx, target.y + dy, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(0, 0, 0).color(AphColors.blood).heightMoves(10, 10).lifeTime(160);
+            perspective.getLevel().entityManager.addParticle(target.x + dx, target.y + dy, particleTypeSwitcher.next()).movesFriction(0, 0, 0).color(AphColors.blood).heightMoves(10, 10).lifeTime(160);
         }
     }
 

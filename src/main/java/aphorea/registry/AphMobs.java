@@ -4,6 +4,8 @@ import aphorea.mobs.bosses.BabylonTowerMob;
 import aphorea.mobs.bosses.UnstableGelSlime;
 import aphorea.mobs.bosses.minions.HearthCrystalMob;
 import aphorea.mobs.bosses.minions.MiniUnstableGelSlime;
+import aphorea.mobs.bosses.minions.babylon.BabylonBody;
+import aphorea.mobs.bosses.minions.babylon.BabylonHead;
 import aphorea.mobs.friendly.WildPhosphorSlime;
 import aphorea.mobs.hostile.*;
 import aphorea.mobs.pet.PetPhosphorSlime;
@@ -12,6 +14,7 @@ import aphorea.mobs.runicsummons.RunicUnstableGelSlime;
 import aphorea.mobs.runicsummons.RunicVultureHatchling;
 import aphorea.mobs.summon.*;
 import necesse.engine.registries.MobRegistry;
+import necesse.entity.mobs.hostile.bosses.CrystalDragonBody;
 
 public class AphMobs {
     public static void registerCore() {
@@ -34,6 +37,9 @@ public class AphMobs {
         MobRegistry.registerMob("miniunstablegelslime", MiniUnstableGelSlime.class, true);
 
         MobRegistry.registerMob("babylontower", BabylonTowerMob.class, true, true);
+        MobRegistry.registerMob("babylon", BabylonHead.class, false);
+        MobRegistry.registerMob("babylonbody", BabylonBody.class, false);
+
         MobRegistry.registerMob("hearthcrystal", HearthCrystalMob.class, true);
 
         // Summons [Mobs]

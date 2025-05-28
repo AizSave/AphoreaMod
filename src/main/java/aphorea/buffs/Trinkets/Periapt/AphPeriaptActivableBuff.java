@@ -21,6 +21,11 @@ import java.awt.*;
 import java.util.LinkedList;
 
 abstract public class AphPeriaptActivableBuff extends TrinketBuff implements ActiveBuffAbility {
+    public ParticleTypeSwitcher particleTypeSwitcher = new ParticleTypeSwitcher(
+            Particle.GType.CRITICAL,
+            Particle.GType.IMPORTANT_COSMETIC,
+            Particle.GType.COSMETIC
+    );
 
     public String activeBuff;
 
@@ -56,7 +61,7 @@ abstract public class AphPeriaptActivableBuff extends TrinketBuff implements Act
                         int angle = (int) (360.0F + GameRandom.globalRandom.nextFloat() * 360.0F);
                         float dx = (float) Math.sin(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
                         float dy = (float) Math.cos(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
-                        player.getLevel().entityManager.addParticle(player.x - dx, player.y - dy, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(dx, dy, 0.8F).color(getColor()).heightMoves(30.0F, 10.0F).lifeTime(800);
+                        player.getLevel().entityManager.addParticle(player.x - dx, player.y - dy, particleTypeSwitcher.next()).movesFriction(dx, dy, 0.8F).color(getColor()).heightMoves(30.0F, 10.0F).lifeTime(800);
                     }
                 },
                 100
@@ -70,7 +75,7 @@ abstract public class AphPeriaptActivableBuff extends TrinketBuff implements Act
         int angle = 180 + (int) (GameRandom.globalRandom.nextFloat() * 30.0F) - 15;
         float dx = (float) Math.sin(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
         float dy = (float) Math.cos(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
-        player.getLevel().entityManager.addParticle(player, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(dx, dy, 0.8F).color(getColor()).heightMoves(10.0F, 30.0F).lifeTime(500);
+        player.getLevel().entityManager.addParticle(player, particleTypeSwitcher.next()).movesFriction(dx, dy, 0.8F).color(getColor()).heightMoves(10.0F, 30.0F).lifeTime(500);
 
         return player.buffManager.hasBuff(activeBuff);
     }
@@ -84,7 +89,7 @@ abstract public class AphPeriaptActivableBuff extends TrinketBuff implements Act
                 int angle = (int) (360.0F + GameRandom.globalRandom.nextFloat() * 360.0F);
                 float dx = (float) Math.sin(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
                 float dy = (float) Math.cos(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50) * 0.8F;
-                player.getLevel().entityManager.addParticle(player, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(dx, dy, 0.8F).color(getColor()).heightMoves(10.0F, 30.0F).lifeTime(1000);
+                player.getLevel().entityManager.addParticle(player, particleTypeSwitcher.next()).movesFriction(dx, dy, 0.8F).color(getColor()).heightMoves(10.0F, 30.0F).lifeTime(1000);
             }
 
             if (player.buffManager.hasBuff(activeBuff)) {

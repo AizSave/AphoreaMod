@@ -42,15 +42,15 @@ public class PinkWitch extends FlyingHostileMob {
     public static LootTable lootTable = new LootTable(
             LootItem.between("stardust", 2, 3),
             RotationLootItem.globalLootRotation(
-                    ChanceLootItem.between("healthpotion", 1, 2, (new GNDItemMap())),
-                    ChanceLootItem.between("manapotion", 1, 2, (new GNDItemMap()))
+                    ChanceLootItem.between("healthpotion", 1, 2),
+                    ChanceLootItem.between("manapotion", 1, 2)
             ),
             RotationLootItem.globalLootRotation(
-                    new LootItem("broom", (new GNDItemMap())), // 20% | 40%
-                    new LootItem("broom", (new GNDItemMap())), // 20% |
-                    new LootItem("witchmedallion", (new GNDItemMap())), // 20%
-                    new LootItem("pinkwitchhat", (new GNDItemMap())), // 20%
-                    new ChanceLootItem(0.25F, "magicalvial", (new GNDItemMap())) // 5%
+                    new LootItem("broom"), // 20% | 40%
+                    new LootItem("broom"), // 20% |
+                    new LootItem("witchmedallion"), // 20%
+                    new LootItem("pinkwitchhat"), // 20%
+                    new ChanceLootItem(0.25F, "magicalvial") // 5%
             )
     );
 

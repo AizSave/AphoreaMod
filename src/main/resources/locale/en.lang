@@ -87,7 +87,13 @@ babylontower=Babylon Tower
 babylonentrance=Babylon Entrance
 babylonexit=Babylon Exit
 infectedtrialentrance=Infected Trial Entrance
-
+infectedchair=Infected Chair
+infecteddinnertable=Infected Dinner Table
+infectedbookshelf=Infected Bookshelf
+infectedcabinet=Infected Cabinet
+infectedbed=Infected Bed
+infecteddoublebed=Infected Double Bed
+infectedcandelabra=Infected Candelabra
 
 
 [itemcategory]
@@ -131,6 +137,8 @@ cryokatana=Cryo Katana
 
 // Greatswords
 unstablegelgreatsword=Unstable Gel Greatsword
+# NEW
+babylongreatsword=Babylon Greatsword
 
 // Glaives
 woodenrod=Wooden Rod
@@ -163,6 +171,8 @@ tungstendagger=Tungsten Dagger
 lostumbrella=Lost Umbrella
 
 // Rapiers
+# NEW
+fossilrapier=Fossil Rapier
 lightrapier=Light Rapier
 
 // Magic weapons
@@ -171,6 +181,7 @@ magicalbroom=Magical Broom
 adeptsbook=Adept's Book
 # NEW
 harpofharmony=Harp of Harmony
+babyloncandle=Babylon Candle
 
 // Bows
 # NEW
@@ -397,8 +408,8 @@ backpackcraft=Must be empty to craft a better backpack
 deleteditem=This item has been removed, use this item to recover the materials before it is permanently removed
 unstablecore=§bReleases an unstable aura...§0 Can only be used during the day
 # NEW
-venomextract=Lowd says drink it, don't do it
-venomextractdesc=You can't have more than 1 HP
+venomextractbuff=Lowd says drink it, don't do it
+venomextractbuffdesc=You can't have more than 1 HP
 lifespinel=Permanently increases max health by 5 up to 320
 
 // General Weapons
@@ -426,7 +437,7 @@ threearrows=Shoots three arrows at once
 blowgun=Shoots seeds
 
 // Single Melee Weapons
-woodenrod="Perform a 3-hit combo to unleash a spinning sword attack on the third strike, magic healing you §7<healing>§0 with each hit
+woodenrod=Magic Heal yourself with §7<healing>§0 every 10 attacks
 voidhammer=When the projectile bounces or hits an enemy, it targets the nearest one, hitting up to 3 times
 # NEW
 crimsonkora=Hold [input=mouse2] to charge a devastating but slow attack
@@ -441,6 +452,8 @@ unstablegelgreatbow=Turns Stone Arrows and Gel Arrows into Unstable Gel Arrows
 thespammer=Can shot Spam Bullets
 shotgunsaber=Aim near center for more powerful, accurate, and piercing shots
 honeysaber=Charge to max for full damage and to shot honey and blueberries
+spinelcrossbow=Shoots arrows that pierce up to 2 enemies, growing deadlier with each pierce
+spinelcrossbow2=Hold [input=mouse2] to shoot 3 arrows at once
 
 // Single Magic Weapons
 unstablegelstaff=When projectiles bounces off walls, they duplicate
@@ -606,11 +619,11 @@ runeofpiratecaptain2=Each time you attack, you will lose 3 coins
 runeofreaper=Teleport to the position of your mouse. Maximum §7<effectNumber>§0 distance
 runeofcryoqueen=Stop for 1 second and launch an ice attack around you with §7<effectNumber>§0 range
 runeofcryoqueen2=The projectiles will deal 200% of the mobs' maximum health as damage
-runeofpestwarden=You move at high speed towards the position of your mouse for §7<effectNumber>§0 seconds. You cannot attack
-runeofpestwarden2=All received attacks deal 1 damage, and colliding with enemies deals 20% of their max health
+runeofpestwarden=For the next §7<effectNumber>§0 seconds, colliding with enemies damages and pushes them
+runeofpestwarden2=The damage is 20% of their max health
 runeofsageandgrit=If there are damaged allies nearby (500 range), heal §7<effectNumber>§0% of their total health
 runeofsageandgrit2=If not, increase your damage, attack speed and movement speed by +§7<effectNumber>§0% for 20 seconds
-runeoffallenwizard=Stun all mobs' except for you for §7<effectNumber>§0 seconds
+runeoffallenwizard=Stun all mobs except you for §7<effectNumber>§0 seconds
 runeoffallenwizard2=Humans will break free faster, and bosses even faster
 
 // Base Runes Tier 3
@@ -669,6 +682,7 @@ tungstencaveling=Tungsten Caveling
 spinelmimic=Spinel Mimic
 babylontower=Babylon Tower
 hearthcrystal=Hearth Crystal
+babylon=Babylon
 
 // Friendly
 wildphosphorslime=Wild Phosphor Slime
@@ -730,7 +744,6 @@ alreadyselectedinitialrune=Already selected initial rune
 cannotusetrial=Cannot use in trial rooms
 # NEW
 inmaintenance=In Maintenance
-
 
 [biome]
 infectedfields=Infected Fields

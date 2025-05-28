@@ -83,10 +83,10 @@ public class UnstableGelSlime extends FlyingBossMob {
 
     public static LootTable privateLootTable = new LootTable(
             RotationLootItem.globalLootRotation(
-                    new LootItem("unstablegelsword", (new GNDItemMap())),
-                    new LootItem("unstablegelgreatbow", (new GNDItemMap())),
-                    new LootItem("unstablegelstaff", (new GNDItemMap())),
-                    new LootItem("volatilegelstaff", (new GNDItemMap()))
+                    new LootItem("unstablegelsword"),
+                    new LootItem("unstablegelgreatbow"),
+                    new LootItem("unstablegelstaff"),
+                    new LootItem("volatilegelstaff")
             ),
             new LootItem("unstableperiapt"),
             new LootItem("runeofunstablegelslime"),
@@ -145,6 +145,7 @@ public class UnstableGelSlime extends FlyingBossMob {
         return lootTable;
     }
 
+    @Override
     public LootTable getPrivateLootTable() {
         return privateLootTable;
     }

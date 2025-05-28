@@ -23,10 +23,12 @@ public class AphAreaShowPacket extends Packet {
         this.x = reader.getNextFloat();
         this.y = reader.getNextFloat();
         this.rangeModifier = reader.getNextFloat();
-
         areaList = new AphAreaList();
         while (reader.hasNext()) {
             float range = reader.getNextFloat();
+            boolean onlyVision = reader.getNextBoolean();
+            boolean ignoreLight = reader.getNextBoolean();
+
             int colorsLength = reader.getNextInt();
             Color[] colors = new Color[colorsLength];
             for (int i = 0; i < colorsLength; i++) {
@@ -36,7 +38,8 @@ public class AphAreaShowPacket extends Packet {
                 int alpha = reader.getNextInt();
                 colors[i] = new Color(red, green, blue, alpha);
             }
-            areaList = areaList.addArea(new AphArea(range, colors));
+
+            areaList = areaList.addArea(new AphArea(range, colors).setOnlyVision(onlyVision).setIgnoreLight(ignoreLight));
         }
     }
 
@@ -51,6 +54,9 @@ public class AphAreaShowPacket extends Packet {
         writer.putNextFloat(rangeModifier);
         for (AphArea area : areaList.areas) {
             writer.putNextFloat(area.range);
+            writer.putNextBoolean(area.onlyVision);
+            writer.putNextBoolean(area.ignoreLight);
+
             writer.putNextInt(area.colors.length);
             for (Color color : area.colors) {
                 writer.putNextInt(color.getRed());

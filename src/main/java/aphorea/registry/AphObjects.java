@@ -5,7 +5,8 @@ import aphorea.utils.AphColors;
 import necesse.engine.registries.ObjectRegistry;
 import necesse.level.gameObject.RockObject;
 import necesse.level.gameObject.SingleRockObject;
-import necesse.level.gameObject.furniture.StorageBoxInventoryObject;
+import necesse.level.gameObject.furniture.*;
+import necesse.level.gameObject.furniture.doubleBed.DoubleBedBaseObject;
 
 public class AphObjects {
     public static void registerCore() {
@@ -28,6 +29,15 @@ public class AphObjects {
 
         // Rocks
         gelRock();
+
+        // Infected Wood Furniture
+        DinnerTableObject.registerDinnerTable("infecteddinnertable", "infecteddinnertable", AphColors.infected_wood, 20.0F);
+        ObjectRegistry.registerObject("infectedchair", new ChairObject("infectedchair", AphColors.infected_wood), 5.0F, true);
+        ObjectRegistry.registerObject("infectedbookshelf", new BookshelfObject("infectedbookshelf", AphColors.infected_wood), 10.0F, true);
+        ObjectRegistry.registerObject("infectedcabinet", new CabinetObject("infectedcabinet", AphColors.infected_wood), 10.0F, true);
+        BedObject.registerBed("infectedbed", "infectedbed", AphColors.infected_wood, 100.0F);
+        DoubleBedBaseObject.registerDoubleBed("infecteddoublebed", "infecteddoublebed", AphColors.infected_wood, 150.0F);
+        ObjectRegistry.registerObject("infectedcandelabra", new CandelabraObject("infectedcandelabra", AphColors.infected_wood, 50.0F, 0.1F), 10.0F, true);
     }
 
     public static void tech() {

@@ -23,6 +23,12 @@ import necesse.entity.particle.Particle;
 import necesse.level.maps.Level;
 
 public class VenomExtractBuff extends Buff {
+    public static ParticleTypeSwitcher particleTypeSwitcher = new ParticleTypeSwitcher(
+            Particle.GType.CRITICAL,
+            Particle.GType.IMPORTANT_COSMETIC,
+            Particle.GType.COSMETIC
+    );
+
     public VenomExtractBuff() {
         this.isImportant = true;
         this.canCancel = false;
@@ -83,7 +89,7 @@ public class VenomExtractBuff extends Buff {
                     int angle = (int) (360.0F + GameRandom.globalRandom.nextFloat() * 360.0F);
                     float dx = (float) Math.sin(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
                     float dy = (float) Math.cos(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
-                    mob.getLevel().entityManager.addParticle(mob, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(dx, dy, 0.8F).color(GameRandom.globalRandom.getOneOf(AphColors.green, AphColors.blood)).heightMoves(20.0F, 0.0F).lifeTime(500);
+                    mob.getLevel().entityManager.addParticle(mob, particleTypeSwitcher.next()).movesFriction(dx, dy, 0.8F).color(GameRandom.globalRandom.getOneOf(AphColors.green, AphColors.blood)).heightMoves(20.0F, 0.0F).lifeTime(500);
                 }
             }
 

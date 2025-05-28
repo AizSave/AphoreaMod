@@ -67,7 +67,10 @@ public class BabylonTowerFallingCrystalParticle extends Particle {
 
             int spriteX = frame % 5;
             int spriteY = frame / 5;
-            final TextureDrawOptions drawOptions = projectileTexture.initDraw().sprite(spriteX, spriteY, 128, 192).mirror(this.mirror, false).light(light).posMiddle(drawX, bombDrawY);
+            final TextureDrawOptions drawOptions = projectileTexture.initDraw()
+                    .sprite(spriteX, spriteY, 128, 192)
+                    .mirror(this.mirror, false)
+                    .posMiddle(drawX, bombDrawY);
             list.add(new EntityDrawable(this) {
                 public void draw(TickManager tickManager) {
                     drawOptions.draw();

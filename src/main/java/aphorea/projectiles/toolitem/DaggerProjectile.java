@@ -96,26 +96,14 @@ abstract public class DaggerProjectile extends Projectile {
     }
 
     @Override
-    public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
-        super.doHitLogic(mob, object, x, y);
-        if (this.isServer() && shouldDrop && stringItemID != null && gndData != null) {
-            if (mob != null && this.amountHit() < this.piercing) {
-                return;
-            } else {
-                int bouncing = this.bouncing;
-                Mob owner = this.getOwner();
-                if (owner != null) {
-                    bouncing += owner.buffManager.getModifier(BuffModifiers.PROJECTILE_BOUNCES);
-                }
-                if (object != null && this.bounced < bouncing && this.canBounce) {
-                    return;
-                }
-            }
+    public void remove() {
+        if (this.isServer() && shouldDrop && stringItemID != null) {
             shouldDrop = false;
             InventoryItem inventoryItem = new InventoryItem(ItemRegistry.getItem(stringItemID));
-            inventoryItem.setGndData(gndData);
+            inventoryItem.setGndData(gndData == null ? new GNDItemMap() : gndData);
             getLevel().entityManager.pickups.add(new ItemPickupEntity(getLevel(), inventoryItem, x, y, 0, 0));
         }
+        super.remove();
     }
 
     public static class CopperDaggerProjectile extends DaggerProjectile {

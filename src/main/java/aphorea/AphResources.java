@@ -4,6 +4,7 @@ import aphorea.items.tools.weapons.magic.MagicalBroom;
 import aphorea.mobs.bosses.BabylonTowerMob;
 import aphorea.mobs.bosses.UnstableGelSlime;
 import aphorea.mobs.bosses.minions.MiniUnstableGelSlime;
+import aphorea.mobs.bosses.minions.babylon.BabylonHead;
 import aphorea.mobs.friendly.WildPhosphorSlime;
 import aphorea.mobs.hostile.*;
 import aphorea.mobs.pet.PetPhosphorSlime;
@@ -32,7 +33,7 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 public class AphResources {
-    public static GameTexture[] saberAttackTexture = new GameTexture[31];
+    public static GameTexture[] saberAttackTexture = new GameTexture[28];
 
     public static GameTexture gunAttackTrackTexture;
     public static GameTexture gunAttackThumbTexture;
@@ -46,8 +47,8 @@ public class AphResources {
     public static void initResources() {
 
         // UI WEAPONS
-        for (int i = 0; i < 31; i++) {
-            saberAttackTexture[i] = new GameTexture(GameTexture.fromFile("ui/saberattack"), 0, 24 * i, 66, 24);
+        for (int i = 0; i < 28; i++) {
+            saberAttackTexture[i] = new GameTexture(GameTexture.fromFile("ui/saberattack"), 0, 22 * i, 66, 22);
         }
 
         gunAttackTrackTexture = GameTexture.fromFile("ui/gunattacktrack");
@@ -111,6 +112,9 @@ public class AphResources {
         MiniUnstableGelSlime.texture = GameTexture.fromFile("mobs/miniunstablegelslime");
 
         BabylonTowerMob.icon = GameTexture.fromFile("mobs/icons/babylontower");
+        BabylonHead.texture =  GameTexture.fromFile("mobs/babylon");
+        BabylonHead.texture_shadow =  GameTexture.fromFile("mobs/babylon_shadow");
+        BabylonHead.icon =  GameTexture.fromFile("mobs/babylon");
 
         // FRIENDLY
         WildPhosphorSlime.texture = GameTexture.fromFile("mobs/phosphorslime");

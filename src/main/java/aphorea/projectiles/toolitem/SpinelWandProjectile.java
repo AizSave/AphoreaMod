@@ -104,29 +104,11 @@ public class SpinelWandProjectile extends FollowingProjectile {
     public void addDrawables(List<LevelSortedDrawable> list, OrderableDrawables tileList, OrderableDrawables topList, OrderableDrawables overlayList, Level level, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
     }
 
-    public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
-        super.doHitLogic(mob, object, x, y);
-        if (mob != null && this.amountHit() < this.piercing) {
-            return;
-        } else {
-            int bouncing = this.bouncing;
-            Mob owner = this.getOwner();
-            if (owner != null) {
-                bouncing += owner.buffManager.getModifier(BuffModifiers.PROJECTILE_BOUNCES);
-            }
-            if (object != null && this.bounced < bouncing && this.canBounce) {
-                return;
-            }
-        }
-        executeArea();
+    @Override
+    public void remove() {
+        areaList.execute(this.getOwner(), x, y, 1, item, toolItem, false);
+        super.remove();
     }
-
-    public void executeArea() {
-        if (this.getOwner() != null) {
-            areaList.execute(this.getOwner(), x, y, 1, item, toolItem, false);
-        }
-    }
-
 
     @Override
     public void checkHitCollision(Line2D hitLine) {

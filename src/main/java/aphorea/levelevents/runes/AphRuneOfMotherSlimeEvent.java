@@ -88,7 +88,7 @@ public class AphRuneOfMotherSlimeEvent extends HitboxEffectEvent implements Atta
                 SoundManager.playSound(GameResources.slimesplash, SoundEffect.effect(targetX, targetY).pitch(1.0F));
                 SoundManager.playSound(GameResources.flick, SoundEffect.effect(targetX, targetY).pitch(0.8F));
 
-                new AphAreaList(new AphArea(200, AphColors.paletteMotherSlime)).executeClient(level, targetX, targetY, 1, 0.8F, 0.5F);
+                new AphAreaList(new AphArea(200, AphColors.paletteMotherSlime)).setOnlyVision(false).executeClient(level, targetX, targetY, 1, 0.8F, 0.5F);
 
                 showedImpact = true;
             }

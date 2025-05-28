@@ -2,18 +2,24 @@ package aphorea.mobs.bosses;
 
 import aphorea.levelevents.babylon.BabylonTowerFallingCrystalAttackEvent;
 import aphorea.mobs.bosses.minions.HearthCrystalMob;
+import aphorea.mobs.bosses.minions.babylon.BabylonHead;
 import aphorea.objects.BabylonEntranceObject;
 import aphorea.objects.BabylonTowerObject;
 import aphorea.packets.AphRemoveObjectEntity;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
+import necesse.engine.achievements.AchievementManager;
 import necesse.engine.eventStatusBars.EventStatusBarManager;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.localization.message.LocalMessage;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
 import necesse.engine.network.client.Client;
+import necesse.engine.network.gameNetworkData.GNDItemMap;
+import necesse.engine.network.packet.PacketChatMessage;
+import necesse.engine.network.server.ServerClient;
+import necesse.engine.registries.ItemRegistry;
 import necesse.engine.registries.MobRegistry;
 import necesse.engine.registries.MusicRegistry;
 import necesse.engine.sound.SoundEffect;
@@ -37,6 +43,12 @@ import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.gameTooltips.GameTooltips;
 import necesse.gfx.gameTooltips.StringTooltips;
+import necesse.inventory.lootTable.LootList;
+import necesse.inventory.lootTable.LootTable;
+import necesse.inventory.lootTable.lootItem.ChanceLootItem;
+import necesse.inventory.lootTable.lootItem.ConditionLootItem;
+import necesse.inventory.lootTable.lootItem.LootItem;
+import necesse.inventory.lootTable.lootItem.RotationLootItem;
 import necesse.level.gameObject.GameObject;
 import necesse.level.maps.IncursionLevel;
 import necesse.level.maps.Level;
@@ -49,13 +61,19 @@ public class BabylonTowerMob extends BossMob {
     public static int BOSS_AREA_RADIUS = 1024;
     private static final AphAreaList searchArea = new AphAreaList(
             new AphArea(BOSS_AREA_RADIUS, AphColors.spinel)
-    );
+    ).setOnlyVision(false);
     public static MaxHealthGetter MAX_HEALTH = new MaxHealthGetter(5000, 6000, 7000, 8500, 10000);
     private int aliveTimer;
     public static GameTexture icon;
 
-    protected MobHealthScaling scaling = new MobHealthScaling(this);
+    public static LootTable privateLootTable = new LootTable(
+            RotationLootItem.globalLootRotation(
+                    new LootItem("babylongreatsword"),
+                    new LootItem("babyloncandle")
+            )
+    );
 
+    protected MobHealthScaling scaling = new MobHealthScaling(this);
 
     public BabylonTowerMob() {
         super(10000);
@@ -73,9 +91,15 @@ public class BabylonTowerMob extends BossMob {
     }
 
     @Override
+    public LootTable getPrivateLootTable() {
+        return privateLootTable;
+    }
+
+
+    @Override
     public void clientTick() {
         super.clientTick();
-        SoundManager.setMusic(MusicRegistry.TheFirstTrial, SoundManager.MusicPriority.EVENT, 1.5F);
+        SoundManager.setMusic(MusicRegistry.WrathOfTheEmpress, SoundManager.MusicPriority.EVENT, 1.5F);
         EventStatusBarManager.registerMobHealthStatusBar(this);
         BossNearbyBuff.applyAround(this);
         searchArea.executeClient(getLevel(), this.x, this.y, 1, 1, 0, 100);
@@ -180,6 +204,14 @@ public class BabylonTowerMob extends BossMob {
     @Override
     protected void onDeath(Attacker attacker, HashSet<Attacker> attackers) {
         super.onDeath(attacker, attackers);
+        attackers.stream().map(Attacker::getFirstPlayerOwner).filter(Objects::nonNull).filter(PlayerMob::isServerClient).map(PlayerMob::getServerClient).distinct().forEach((c) -> {
+            LocalMessage message = new LocalMessage("misc", "bossdefeat", "name", this.getLocalization());
+            c.sendPacket(new PacketChatMessage(message));
+        });
+        if (!this.isDamagedByPlayers) {
+            AchievementManager.checkMeAndThisArmyKill(this.getLevel(), attackers);
+        }
+
         int x = this.getTileX() - 1;
         int y = this.getTileY() - 1;
 
@@ -243,14 +275,14 @@ public class BabylonTowerMob extends BossMob {
     }
 
     public static class BabylonTowerAI<T extends BabylonTowerMob> extends SelectorAINode<T> {
-        static GameDamage projectileDamage = new GameDamage(20F, 60F);
+        static GameDamage projectileDamage = new GameDamage(20F, 40F);
 
         public ArrayList<BabylonTowerActionAiNode> stages = new ArrayList<>();
         public int stagesUntilNow = 0;
         public int currentStage = 0;
         public int currentStageTick = 0;
         public int currentStageTickDuration = 6000 / 50;
-        public boolean dragonSummoned = false;
+        public boolean babylonSummoned = false;
 
         public Map<String, Object> saveData = new HashMap<>();
 
@@ -271,8 +303,9 @@ public class BabylonTowerMob extends BossMob {
                             if (mob.hearthCrystalClose() && mob.isServer() && currentStageTick % 20 == 0) {
                                 mob.setHealth((int) (mob.getHealth() + mob.getMaxHealth() * 0.002F * streamPossibleTargets(mob).count() - 1));
                             }
-                            if (!dragonSummoned && mob.getHealthPercent() <= 0.6F) {
-                                dragonSummoned = true;
+                            if (!babylonSummoned && mob.getHealthPercent() <= 0.6F) {
+                                babylonSummoned = true;
+                                summonBabylon(mob);
                             }
                             return AINodeResult.FAILURE;
                         }
@@ -330,7 +363,7 @@ public class BabylonTowerMob extends BossMob {
                     new BabylonTowerActionAiNode() {
                         @Override
                         public void doTickAction(T mob, int time, int duration, float progress, Blackboard<T> blackboard) {
-                            int health = 50 + (int) (25 * streamPossibleTargets(mob).count());
+                            int health = 100 + (int) (50 * streamPossibleTargets(mob).count());
                             boolean clockWise = GameRandom.globalRandom.getChance(0.5F);
                             switch (GameRandom.globalRandom.getIntBetween(0, 5)) {
                                 case 0: {
@@ -355,7 +388,7 @@ public class BabylonTowerMob extends BossMob {
                                     break;
                                 }
                                 case 3: {
-                                    summonHearthCrystalCenter(mob, health / 2, 0, 0.25F, 0.35F, !clockWise);
+                                    summonHearthCrystalCenter(mob, health / 2, 0, 0.25F, 0.45F, !clockWise);
                                     summonHearthCrystalCenter(mob, health, 0, 0.15F, 0.65F, clockWise);
                                     summonHearthCrystalCenter(mob, health, (float) Math.PI, 0.15F, 0.65F, clockWise);
                                     break;
@@ -498,12 +531,6 @@ public class BabylonTowerMob extends BossMob {
             }
         }
 
-        public Mob getRandomTarget(T mob) {
-            ArrayList<Mob> list = new ArrayList<>();
-            streamPossibleTargets(mob).forEach(list::add);
-            return GameRandom.globalRandom.getOneOf(list);
-        }
-
         public GameAreaStream<Mob> streamPossibleTargets(T mob) {
             return new TargetFinderDistance<>(BOSS_AREA_RADIUS).streamPlayersInRange(new Point((int) mob.x, (int) mob.y), mob).filter((m) -> m != null && !m.removed() && (m.isHuman && m.getTeam() != -1 || m.isPlayer)).map((m) -> m);
         }
@@ -564,6 +591,14 @@ public class BabylonTowerMob extends BossMob {
                 mob.getLevel().entityManager.addMob(hearthCrystalMob, mob.x, mob.y);
             }
         }
+
+        public void summonBabylon(T mob) {
+            if (mob.isServer()) {
+                BabylonHead babylon = (BabylonHead) MobRegistry.getMob("babylon", mob.getLevel());
+                mob.getLevel().entityManager.addMob(babylon, mob.x, mob.y);
+            }
+        }
+
 
     }
 

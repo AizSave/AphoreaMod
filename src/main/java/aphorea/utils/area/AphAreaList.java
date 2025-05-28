@@ -52,6 +52,16 @@ public class AphAreaList {
         return this;
     }
 
+    public AphAreaList setOnlyVision(boolean onlyVision) {
+        areas.forEach(area -> area.setOnlyVision(onlyVision));
+        return this;
+    }
+
+    public AphAreaList setIgnoreLight(boolean ignoreLight) {
+        areas.forEach(area -> area.setIgnoreLight(ignoreLight));
+        return this;
+    }
+
     public void executeClient(Level level, float x, float y, float rangeModifier, float borderParticleModifier, float innerParticleModifier, int particleTime) {
         areas.forEach((AphArea area) -> {
             area.showParticles(level, x, y, null, rangeModifier, borderParticleModifier, innerParticleModifier, particleTime);

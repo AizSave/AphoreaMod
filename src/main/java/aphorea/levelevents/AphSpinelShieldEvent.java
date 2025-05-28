@@ -22,6 +22,12 @@ import java.awt.*;
 import java.util.Set;
 
 public class AphSpinelShieldEvent extends ProjectileShieldLevelEvent implements Attacker {
+    public ParticleTypeSwitcher particleTypeSwitcher = new ParticleTypeSwitcher(
+            Particle.GType.CRITICAL,
+            Particle.GType.IMPORTANT_COSMETIC,
+            Particle.GType.COSMETIC
+    );
+
     static public float maxDelta = (float) Math.toRadians(15);
 
     public AphSpinelShieldEvent() {
@@ -41,7 +47,7 @@ public class AphSpinelShieldEvent extends ProjectileShieldLevelEvent implements 
                 int angle = (int) (360.0F + GameRandom.globalRandom.nextFloat() * 360.0F);
                 float dx = (float) Math.sin(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
                 float dy = (float) Math.cos(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
-                owner.getLevel().entityManager.addParticle(owner, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(dx, dy, 0.8F).color(GameRandom.globalRandom.getOneOf(AphColors.spinel_light, AphColors.spinel)).heightMoves(10.0F, 20.0F, 2F, 0.5F, 0F, 0F).lifeTime(500);
+                owner.getLevel().entityManager.addParticle(owner, particleTypeSwitcher.next()).movesFriction(dx, dy, 0.8F).color(GameRandom.globalRandom.getOneOf(AphColors.spinel_light, AphColors.spinel)).heightMoves(10.0F, 20.0F, 2F, 0.5F, 0F, 0F).lifeTime(500);
             }
         }
     }
@@ -84,7 +90,7 @@ public class AphSpinelShieldEvent extends ProjectileShieldLevelEvent implements 
                 int angle = (int) (360.0F + GameRandom.globalRandom.nextFloat() * 360.0F);
                 float dx = (float) Math.sin(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
                 float dy = (float) Math.cos(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
-                mob.getLevel().entityManager.addParticle(mob.x, mob.y, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(dx, dy, 0.8F).color(GameRandom.globalRandom.getOneOf(AphColors.spinel_light, AphColors.spinel)).heightMoves(10.0F, 20.0F, 2F, 0.5F, 0F, 0F).lifeTime(500);
+                mob.getLevel().entityManager.addParticle(mob.x, mob.y, particleTypeSwitcher.next()).movesFriction(dx, dy, 0.8F).color(GameRandom.globalRandom.getOneOf(AphColors.spinel_light, AphColors.spinel)).heightMoves(10.0F, 20.0F, 2F, 0.5F, 0F, 0F).lifeTime(500);
             }
         }
     }
@@ -111,7 +117,7 @@ public class AphSpinelShieldEvent extends ProjectileShieldLevelEvent implements 
                 int angle = (int) (360.0F + GameRandom.globalRandom.nextFloat() * 360.0F);
                 float dx = (float) Math.sin(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
                 float dy = (float) Math.cos(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
-                projectile.getLevel().entityManager.addParticle(projectile.x, projectile.y, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(dx, dy, 0.8F).color(GameRandom.globalRandom.getOneOf(AphColors.spinel_light, AphColors.spinel)).heightMoves(10.0F, 20.0F, 2F, 0.5F, 0F, 0F).lifeTime(500);
+                projectile.getLevel().entityManager.addParticle(projectile.x, projectile.y, particleTypeSwitcher.next()).movesFriction(dx, dy, 0.8F).color(GameRandom.globalRandom.getOneOf(AphColors.spinel_light, AphColors.spinel)).heightMoves(10.0F, 20.0F, 2F, 0.5F, 0F, 0F).lifeTime(500);
             }
         }
         projectile.remove();

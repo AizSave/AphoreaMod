@@ -40,6 +40,12 @@ public class AphArea {
 
     public boolean directExecuteHealing = false;
 
+    public boolean onlyVision = true;
+
+    public boolean ignoreLight = true;
+
+    ParticleTypeSwitcher particleTypeSwitcher = new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC);
+
     public AphArea(float range, Color... colors) {
         this.range = range;
         this.colors = colors;
@@ -91,6 +97,16 @@ public class AphArea {
 
     public AphArea setDirectExecuteHealing(boolean directExecuteHealing) {
         this.directExecuteHealing = directExecuteHealing;
+        return this;
+    }
+
+    public AphArea setOnlyVision(boolean onlyVision) {
+        this.onlyVision = onlyVision;
+        return this;
+    }
+
+    public AphArea setIgnoreLight(boolean ignoreLight) {
+        this.ignoreLight = ignoreLight;
         return this;
     }
 
@@ -146,13 +162,18 @@ public class AphArea {
         return target.canBeTargeted(attacker, attacker.isPlayer ? ((PlayerMob) attacker).getNetworkClient() : null);
     }
 
-    public static int lateralBorderReduction = 4;
+    public static int lateralBorderReduction = 10;
 
     public void showParticles(Level level, float x, float y, Color[] forcedColors, float rangeModifier, float borderParticleModifier, float innerParticleModifier, int particleTime) {
         int range = Math.round(this.range * rangeModifier);
         int antRange = Math.round(this.antRange * rangeModifier);
 
-        float[] rays = getRays(level, x, y, range, new CollisionFilter().projectileCollision());
+        float[] rays;
+        if (onlyVision) {
+            rays = getRays(level, x, y, range, new CollisionFilter().projectileCollision());
+        } else {
+            rays = getFullyRays(range);
+        }
 
         for (int i = 0; i < rays.length; i++) {
             float rayDistance = rays[i];
@@ -161,10 +182,11 @@ public class AphArea {
                 float trueRange = Math.min(range, rayDistance);
                 float angle = (float) (2 * Math.PI * i / rays.length);
 
-                if (GameRandom.globalRandom.getChance(innerParticleModifier)) {
+                if (GameRandom.globalRandom.getChance(0.25F * borderParticleModifier)) {
                     float dx = (float) Math.cos(angle) * trueRange;
                     float dy = (float) Math.sin(angle) * trueRange;
-                    level.entityManager.addParticle(x + dx, y + dy, new ParticleTypeSwitcher(Particle.GType.CRITICAL).next()).movesFriction(GameRandom.globalRandom.getIntBetween(-5, 5), GameRandom.globalRandom.getIntBetween(-5, 5), GameRandom.globalRandom.getFloatBetween(0.05F, 0.1F)).color(getColor(forcedColors)).heightMoves(GameRandom.globalRandom.getFloatBetween(0F, 3F), GameRandom.globalRandom.getFloatBetween(5F, 10F)).lifeTime(particleTime);
+                    level.entityManager.addParticle(x + dx, y + dy, particleTypeSwitcher.next()).movesFriction(GameRandom.globalRandom.getIntBetween(-5, 5), GameRandom.globalRandom.getIntBetween(-5, 5), GameRandom.globalRandom.getFloatBetween(0.05F, 0.1F)).color(getColor(forcedColors)).heightMoves(GameRandom.globalRandom.getFloatBetween(0F, 3F), GameRandom.globalRandom.getFloatBetween(5F, 10F))
+                            .ignoreLight(ignoreLight).lifeTime(particleTime);
                 }
 
                 float innerRange = trueRange;
@@ -177,18 +199,23 @@ public class AphArea {
                     innerRange -= borderRange;
 
                     for (int j = 0; j < (borderRange / lateralBorderReduction); j++) {
-                        float dx = (float) Math.cos(angle) * (neighbourRange + j * lateralBorderReduction);
-                        float dy = (float) Math.sin(angle) * (neighbourRange + j * lateralBorderReduction);
-                        level.entityManager.addParticle(x + dx, y + dy, new ParticleTypeSwitcher(Particle.GType.CRITICAL).next()).movesFriction(GameRandom.globalRandom.getIntBetween(-5, 5), GameRandom.globalRandom.getIntBetween(-5, 5), GameRandom.globalRandom.getFloatBetween(0.05F, 0.1F)).color(getColor(forcedColors)).heightMoves(GameRandom.globalRandom.getFloatBetween(0F, 3F), GameRandom.globalRandom.getFloatBetween(5F, 10F)).lifeTime(particleTime);
+                        if (GameRandom.globalRandom.getChance(borderParticleModifier)) {
+
+                            float dx = (float) Math.cos(angle) * (neighbourRange + j * lateralBorderReduction);
+                            float dy = (float) Math.sin(angle) * (neighbourRange + j * lateralBorderReduction);
+                            level.entityManager.addParticle(x + dx, y + dy, particleTypeSwitcher.next()).movesFriction(GameRandom.globalRandom.getIntBetween(-5, 5), GameRandom.globalRandom.getIntBetween(-5, 5), GameRandom.globalRandom.getFloatBetween(0.05F, 0.1F)).color(getColor(forcedColors)).heightMoves(GameRandom.globalRandom.getFloatBetween(0F, 3F), GameRandom.globalRandom.getFloatBetween(5F, 10F))
+                                    .ignoreLight(ignoreLight).lifeTime(particleTime);
+                        }
                     }
                 }
-                if (innerRange > antRange && GameRandom.globalRandom.getChance(borderParticleModifier * ((innerRange - antRange) / 2000)) && 0.1F * innerRange + antRange < innerRange * 0.9F) {
+                if (innerRange > antRange && GameRandom.globalRandom.getChance(innerParticleModifier * ((innerRange - antRange) / 2000)) && 0.1F * innerRange + antRange < innerRange * 0.9F) {
                     float r = GameRandom.globalRandom.getFloatBetween(0, 1);
                     float d = (innerRange - antRange) * easeOutQuad(r) * 0.8F + 0.1F + antRange;
                     float dx = (float) Math.cos(angle) * d;
                     float dy = (float) Math.sin(angle) * d;
 
-                    level.entityManager.addParticle(x + dx, y + dy, new ParticleTypeSwitcher(Particle.GType.CRITICAL).next()).movesFriction(GameRandom.globalRandom.getIntBetween(-5, 5), GameRandom.globalRandom.getIntBetween(-5, 5), GameRandom.globalRandom.getFloatBetween(0.05F, 0.1F)).color(getColor(forcedColors)).heightMoves(GameRandom.globalRandom.getFloatBetween(0F, 3F), GameRandom.globalRandom.getFloatBetween(5F, 10F)).lifeTime(particleTime);
+                    level.entityManager.addParticle(x + dx, y + dy, particleTypeSwitcher.next()).movesFriction(GameRandom.globalRandom.getIntBetween(-5, 5), GameRandom.globalRandom.getIntBetween(-5, 5), GameRandom.globalRandom.getFloatBetween(0.05F, 0.1F)).color(getColor(forcedColors)).heightMoves(GameRandom.globalRandom.getFloatBetween(0F, 3F), GameRandom.globalRandom.getFloatBetween(5F, 10F))
+                            .ignoreLight(ignoreLight).lifeTime(particleTime);
                 }
             }
         }
@@ -205,6 +232,13 @@ public class AphArea {
             float angle = (float) (2 * Math.PI * i / raysCount);
             rays[i] = (float) GameUtils.castRay(level, x, y, Math.cos(angle) * range, Math.sin(angle) * range, range, 0, filter).totalDist;
         }
+        return rays;
+    }
+
+    public static float[] getFullyRays(float range) {
+        int raysCount = (int) (2 * Math.PI * range);
+        float[] rays = new float[raysCount];
+        Arrays.fill(rays, range);
         return rays;
     }
 

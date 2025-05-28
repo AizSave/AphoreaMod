@@ -13,13 +13,13 @@ import necesse.inventory.InventoryItem;
 import necesse.inventory.item.ItemInteractAction;
 import necesse.level.maps.Level;
 
-public class UnstableGelGreatsword extends AphGreatswordSecondarySpinToolItem implements ItemInteractAction {
+public class UnstableGelGreatsword extends AphGreatswordSecondarySpinToolItem {
 
     public UnstableGelGreatsword() {
         super(400, 300, getThreeChargeLevels(500, 600, 700, AphColors.unstableGel_very_light, AphColors.unstableGel_light, AphColors.unstableGel), AphColors.unstableGel);
         rarity = Rarity.COMMON;
         attackDamage.setBaseValue(50)
-                .setUpgradedValue(1, 160);
+                .setUpgradedValue(1, 140);
         attackRange.setBaseValue(110);
         knockback.setBaseValue(50);
 

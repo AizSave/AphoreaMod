@@ -61,11 +61,7 @@ public class InfectedFieldsBiome extends Biome {
     }
 
     public AbstractMusicList getLevelMusic(Level level, PlayerMob perspective) {
-        if (level.isCave) {
-            return level.getIslandDimension() == -2 ? new MusicList(MusicRegistry.PastBehindGlass) : new MusicList(MusicRegistry.GatorsLullaby);
-        } else {
-            return new MusicList(MusicRegistry.GrindTheAlarms);
-        }
+        return new MusicList(MusicRegistry.GrindTheAlarms);
     }
 
     static {
@@ -77,7 +73,7 @@ public class InfectedFieldsBiome extends Biome {
 
         surfaceFish = new FishingLootTable()
                 .startCustom(300).onlyTile("infectedwatertile").end("rockfish")
-                .startCustom(100).onlyTile("infectedwatertile").end("goldspear")
+                .startCustom(100).onlyTile("infectedwatertile").end("fossilrapier")
 
                 // Trash
                 .startCustom(400).onlyTile("infectedwatertile").end(

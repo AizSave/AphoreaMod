@@ -44,7 +44,7 @@ public class AphRapierToolItem extends SpearToolItem {
         this.dashRange.setBaseValue(200);
 
         this.dashAnimTime = new IntUpgradeValue(1000, 0.0F);
-        this.dashAnimTime.setBaseValue(1000);
+        this.dashAnimTime.setBaseValue(600);
 
     }
 
@@ -150,7 +150,7 @@ public class AphRapierToolItem extends SpearToolItem {
     }
 
     private static final int MAX_COMBO = 20;
-    private static final long COMBO_TIMEOUT = 3L;
+    private static final long COMBO_TIMEOUT = 4L;
 
     public int getComboAndCalc(InventoryItem item, ItemAttackerMob attackerMob) {
         int combo = item.getGndData().getInt("combo");

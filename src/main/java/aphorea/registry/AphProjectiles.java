@@ -38,6 +38,7 @@ public class AphProjectiles {
         ProjectileRegistry.registerProjectile("blueberry", BlueBerryProjectile.class, "blueberry", "blueberry_shadow");
         ProjectileRegistry.registerProjectile("musicalnote", MusicalNoteProjectile.class, "musicalnote", "musicalnote_shadow");
         ProjectileRegistry.registerProjectile("spinelarrow", SpinelArrowProjectile.class, "spinelarrow", "spinelarrow_shadow");
+        ProjectileRegistry.registerProjectile("babyloncandle", BabylonCandleProjectile.class, null, null);
 
         // Aircuts
         ProjectileRegistry.registerProjectile("copperaircut", AircutProjectile.CopperAircutProjectile.class, null, null);

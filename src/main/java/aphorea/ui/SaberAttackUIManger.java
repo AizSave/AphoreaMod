@@ -13,7 +13,7 @@ public class SaberAttackUIManger extends AphCustomUI {
     public int chargeTime;
 
     public static int baseWidth = 66;
-    public static int baseHeight = 24;
+    public static int baseHeight = 22;
 
     public static int getLoweredY() {
         return (int) (34 * getZoom());
@@ -66,7 +66,7 @@ public class SaberAttackUIManger extends AphCustomUI {
         @Override
         public void draw(TickManager tickManager, PlayerMob perspective, Rectangle renderBox) {
             float progress = barPercent(showProgress(SaberAttackUIManger.this.chargePercent, SaberAttackUIManger.this.chargeTime));
-            int spriteY = (int) (30 - 30 * progress);
+            int spriteY = (int) (17 - 17 * progress);
 
             getResizedTextures("saberattack", AphResources.saberAttackTexture, (int) (baseWidth * getZoom()), (int) (baseHeight * getZoom()), spriteY)
                     .initDraw()

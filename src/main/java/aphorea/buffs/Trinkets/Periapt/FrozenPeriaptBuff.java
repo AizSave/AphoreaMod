@@ -19,6 +19,11 @@ import necesse.inventory.InventoryItem;
 import necesse.inventory.item.trinketItem.TrinketItem;
 
 public class FrozenPeriaptBuff extends TrinketBuff {
+    public ParticleTypeSwitcher particleTypeSwitcher = new ParticleTypeSwitcher(
+            Particle.GType.CRITICAL,
+            Particle.GType.IMPORTANT_COSMETIC,
+            Particle.GType.COSMETIC
+    );
 
     public FrozenPeriaptBuff() {
         super();
@@ -59,7 +64,7 @@ public class FrozenPeriaptBuff extends TrinketBuff {
                     int angle = (int) (360.0F + GameRandom.globalRandom.nextFloat() * 360.0F);
                     float dx = (float) Math.sin(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
                     float dy = (float) Math.cos(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
-                    owner.getLevel().entityManager.addParticle(event.target, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(dx, dy, 0.8F).color(AphColors.ice).heightMoves(10.0F, 30.0F).lifeTime(500);
+                    owner.getLevel().entityManager.addParticle(event.target, particleTypeSwitcher.next()).movesFriction(dx, dy, 0.8F).color(AphColors.ice).heightMoves(10.0F, 30.0F).lifeTime(500);
                 }
             }
 

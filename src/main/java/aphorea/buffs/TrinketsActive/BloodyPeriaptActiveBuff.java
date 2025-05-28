@@ -19,6 +19,11 @@ import necesse.inventory.PlayerInventorySlot;
 import org.jetbrains.annotations.NotNull;
 
 public class BloodyPeriaptActiveBuff extends Buff {
+    public ParticleTypeSwitcher particleTypeSwitcher = new ParticleTypeSwitcher(
+            Particle.GType.CRITICAL,
+            Particle.GType.IMPORTANT_COSMETIC,
+            Particle.GType.COSMETIC
+    );
 
     boolean doLifeSteal;
 
@@ -59,7 +64,7 @@ public class BloodyPeriaptActiveBuff extends Buff {
                         int angle = (int) (360.0F + GameRandom.globalRandom.nextFloat() * 360.0F);
                         float dx = (float) Math.sin(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
                         float dy = (float) Math.cos(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
-                        owner.getLevel().entityManager.addParticle(owner, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(dx, dy, 0.8F).color(AphColors.blood).heightMoves(10.0F, 30.0F).lifeTime(500);
+                        owner.getLevel().entityManager.addParticle(owner, particleTypeSwitcher.next()).movesFriction(dx, dy, 0.8F).color(AphColors.blood).heightMoves(10.0F, 30.0F).lifeTime(500);
                     }
                 }
             }

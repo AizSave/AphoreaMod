@@ -398,7 +398,7 @@ public class AphBuffs {
 
             @Override
             public int getDuration(PlayerMob player) {
-                return (int) getEffectNumber(player) * 1000;
+                return (int) (getEffectNumber(player) * 1000);
             }
 
         });
@@ -440,7 +440,7 @@ public class AphBuffs {
                 if (player.getDistance(targetX, targetY) > range) {
                     preventUsage = true;
                     if (level.isClient()) {
-                        new AphAreaList(new AphArea(range, level.isCave ? AphColors.dark_magic : AphColors.lighting)).executeClient(level, player.x, player.y, 1F, 1F, 0F);
+                        new AphAreaList(new AphArea(range, level.isCave ? AphColors.dark_magic : AphColors.lighting)).setOnlyVision(false).executeClient(level, player.x, player.y, 1F, 1F, 0F);
                     }
                 } else if (level.isServer()) {
                     player.getLevel().entityManager.addLevelEvent(new AphRuneOfThunderEvent(player, targetX, targetY, getEffectNumber(player) / 100));
@@ -466,7 +466,7 @@ public class AphBuffs {
 
             @Override
             public int getDuration(PlayerMob player) {
-                return (int) getEffectNumber(player) * 1000;
+                return (int) (getEffectNumber(player) * 1000);
             }
         });
         BuffRegistry.registerBuff("runeofwinteractive", new AphBaseRuneActiveBuff(baseEffectNumber, 20000));
@@ -478,7 +478,7 @@ public class AphBuffs {
         BuffRegistry.registerBuff("runeofimmortality", new AphBaseRuneTrinketBuff(baseEffectNumber, extraEffectNumberMod, (int) (baseEffectNumber * 1000), "runeofimmortalityactive") {
             @Override
             public int getDuration(PlayerMob player) {
-                return (int) getEffectNumber(player) * 1000;
+                return (int) (getEffectNumber(player) * 1000);
             }
         });
         // On duration
@@ -515,7 +515,7 @@ public class AphBuffs {
 
             @Override
             public int getDuration(PlayerMob player) {
-                return (int) getEffectNumber(player) * 1000;
+                return (int) (getEffectNumber(player) * 1000);
             }
 
         });
@@ -645,7 +645,7 @@ public class AphBuffs {
 
             @Override
             public int getDuration(PlayerMob player) {
-                return (int) getEffectNumber(player) * 1000;
+                return (int) (getEffectNumber(player) * 1000);
             }
 
         });
@@ -742,7 +742,7 @@ public class AphBuffs {
                 if (player.getDistance(targetX, targetY) > range) {
                     preventUsage = true;
                     if (level.isClient()) {
-                        new AphAreaList(new AphArea(range, AphColors.tungsten)).executeClient(level, player.x, player.y, 1F, 1F, 0F);
+                        new AphAreaList(new AphArea(range, AphColors.tungsten)).setOnlyVision(false).executeClient(level, player.x, player.y, 1F, 1F, 0F);
                     }
                 } else if (level.getObject(targetX / 32, targetY / 32).isSolid) {
                     preventUsage = true;
@@ -772,13 +772,20 @@ public class AphBuffs {
         });
 
         // RUNE OF PEST WARDEN
-        baseEffectNumber = 12;
+        baseEffectNumber = 10;
         // On activation
-        BuffRegistry.registerBuff("runeofpestwarden", new AphBaseRuneTrinketBuff(baseEffectNumber, 100) {
+        BuffRegistry.registerBuff("runeofpestwarden", new AphBaseRuneTrinketBuff(baseEffectNumber, (int) (baseEffectNumber * 1000), 100, "runeofpestwardenactive") {
             @Override
-            public String canRun(PlayerMob player) {
-                return "inmaintenance";
+            public int getDuration(PlayerMob player) {
+                return (int) (getEffectNumber(player) * 1000);
             }
+
+            @Override
+            public void runServer(Server server, PlayerMob player, int targetX, int targetY) {
+                super.runServer(server, player, targetX, targetY);
+                player.getLevel().entityManager.addLevelEvent(new AphRuneOfPestWardenEvent(player));
+            }
+
         });
 
         // RUNE OF SAGE & GRIT
@@ -841,7 +848,7 @@ public class AphBuffs {
 
             @Override
             public int getDuration(PlayerMob player) {
-                return (int) getEffectNumber(player) * 1000;
+                return (int) (getEffectNumber(player) * 1000);
             }
 
         });
@@ -865,7 +872,7 @@ public class AphBuffs {
                 if (player.getDistance(targetX, targetY) > range) {
                     preventUsage = true;
                     if (level.isClient()) {
-                        new AphAreaList(new AphArea(range, AphColors.paletteMotherSlime)).executeClient(level, player.x, player.y, 1F, 1F, 0F);
+                        new AphAreaList(new AphArea(range, AphColors.paletteMotherSlime)).setOnlyVision(false).executeClient(level, player.x, player.y, 1F, 1F, 0F);
                     }
                 } else if (level.getObject(targetX / 32, targetY / 32).isSolid) {
                     preventUsage = true;
@@ -899,7 +906,7 @@ public class AphBuffs {
 
             @Override
             public int getDuration(PlayerMob player) {
-                return (int) getEffectNumber(player) * 1000;
+                return (int) (getEffectNumber(player) * 1000);
             }
 
         });

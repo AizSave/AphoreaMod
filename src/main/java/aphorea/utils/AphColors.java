@@ -27,6 +27,7 @@ public class AphColors {
     public static Color wood = new Color(148, 99, 25);
     public static Color honey = new Color(234, 182, 118);
     public static Color blueberry = new Color(16, 93, 162);
+    public static Color infected_wood = new Color(149, 109, 87);
 
     public static Color stone = new Color(139, 140, 122);
     public static Color leather = new Color(116, 78, 59);

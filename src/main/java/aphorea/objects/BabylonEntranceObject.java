@@ -85,7 +85,7 @@ public class BabylonEntranceObject extends StaticMultiObject {
 
     public void interact(Level level, int x, int y, PlayerMob player) {
         if (level.isServer() && player.isServerClient()) {
-            player.getServerClient().sendChatMessage("Coming soon: Stay tuned for the next big AphoreaMod update!");
+            player.getServerClient().sendChatMessage("Maybe these stairs are an idea that will never become reality... Or maybe in the future they'll lead somewhere, but it's uncertain");
         }
 
         super.interact(level, x, y, player);
@@ -99,11 +99,11 @@ public class BabylonEntranceObject extends StaticMultiObject {
         int[] ids = new int[6];
         Rectangle collision = new Rectangle(96, 64);
         ids[0] = ObjectRegistry.registerObject("babylonentrance", new BabylonEntranceObject(0, 0, 3, 2, ids, collision), 0.0F, false);
-        ids[1] = ObjectRegistry.registerObject("babylonntrance2", new BabylonEntranceObject(1, 0, 3, 2, ids, collision), 0.0F, false);
-        ids[2] = ObjectRegistry.registerObject("babylonntrance3", new BabylonEntranceObject(2, 0, 3, 2, ids, collision), 0.0F, false);
-        ids[3] = ObjectRegistry.registerObject("babylonntrance4", new BabylonEntranceObject(0, 1, 3, 2, ids, collision), 0.0F, false);
-        ids[4] = ObjectRegistry.registerObject("babylonntrance5", new BabylonEntranceObject(1, 1, 3, 2, ids, collision), 0.0F, false);
-        ids[5] = ObjectRegistry.registerObject("babylonntrance6", new BabylonEntranceObject(2, 1, 3, 2, ids, collision), 0.0F, false);
+        ids[1] = ObjectRegistry.registerObject("babylonentrance2", new BabylonEntranceObject(1, 0, 3, 2, ids, collision), 0.0F, false);
+        ids[2] = ObjectRegistry.registerObject("babylonentrance3", new BabylonEntranceObject(2, 0, 3, 2, ids, collision), 0.0F, false);
+        ids[3] = ObjectRegistry.registerObject("babylonentrance4", new BabylonEntranceObject(0, 1, 3, 2, ids, collision), 0.0F, false);
+        ids[4] = ObjectRegistry.registerObject("babylonentrance5", new BabylonEntranceObject(1, 1, 3, 2, ids, collision), 0.0F, false);
+        ids[5] = ObjectRegistry.registerObject("babylonentrance6", new BabylonEntranceObject(2, 1, 3, 2, ids, collision), 0.0F, false);
         return ids;
     }
 

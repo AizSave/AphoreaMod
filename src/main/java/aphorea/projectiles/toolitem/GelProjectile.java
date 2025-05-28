@@ -91,20 +91,22 @@ public class GelProjectile extends Projectile {
     @Override
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
         super.doHitLogic(mob, object, x, y);
+        if (mob != null) {
+            ActiveBuff ab = new ActiveBuff(AphBuffs.STICKY, mob, 1.0F, this.getOwner());
+            mob.addBuff(ab, true);
+        }
+    }
+
+    @Override
+    public void remove() {
         if (this.isServer()) {
-            if (this.traveledDistance >= (float) this.distance || (this.amountHit() >= this.piercing && (this.bounced >= this.getTotalBouncing() || !this.canBounce))) {
-                Mob owner = this.getOwner();
-                if (owner != null && !owner.removed()) {
-                    GelProjectileGroundEffectEvent event = new GelProjectileGroundEffectEvent(owner, (int) x, (int) y, GameRandom.globalRandom);
-                    this.getLevel().entityManager.addLevelEvent(event);
-                }
-            }
-            if (mob != null) {
-                ActiveBuff ab = new ActiveBuff(AphBuffs.STICKY, mob, 1.0F, this.getOwner());
-                mob.addBuff(ab, true);
+            Mob owner = this.getOwner();
+            if (owner != null && !owner.removed()) {
+                GelProjectileGroundEffectEvent event = new GelProjectileGroundEffectEvent(owner, (int) x, (int) y, GameRandom.globalRandom);
+                this.getLevel().entityManager.addLevelEvent(event);
             }
         }
-
+        super.remove();
     }
 
     public static class GelProjectileGroundEffectEvent extends GroundEffectEvent {

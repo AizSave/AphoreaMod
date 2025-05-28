@@ -22,11 +22,11 @@ public class AphRecipes {
         TungstenAnvil();
         Alchemy();
         Landscaping();
+        Carpenter();
         FallenAnvil();
 
         // Modded
         Runes();
-
     }
 
     public static void None() {
@@ -599,6 +599,19 @@ public class AphRecipes {
                 )
         );
     }
+
+    public static void Carpenter() {
+        Tech tech = RecipeTechRegistry.CARPENTER;
+
+        Recipes.registerModRecipe(new Recipe("infecteddinnertable", 1, tech, Recipes.ingredientsFromScript("{{infectedlog, 16}}")));
+        Recipes.registerModRecipe(new Recipe("infectedchair", 1, tech, Recipes.ingredientsFromScript("{{infectedlog, 4}}")));
+        Recipes.registerModRecipe(new Recipe("infectedbookshelf", 1, tech, Recipes.ingredientsFromScript("{{infectedlog, 10}}")));
+        Recipes.registerModRecipe(new Recipe("infectedcabinet", 1, tech, Recipes.ingredientsFromScript("{{infectedlog, 10}}")));
+        Recipes.registerModRecipe(new Recipe("infectedbed", 1, tech, Recipes.ingredientsFromScript("{{infectedlog, 10}, {wool, 10}}")));
+        Recipes.registerModRecipe(new Recipe("infecteddoublebed", 1, tech, Recipes.ingredientsFromScript("{{infectedlog, 20}, {wool, 20}}")));
+        Recipes.registerModRecipe(new Recipe("infectedcandelabra", 1, tech, Recipes.ingredientsFromScript("{{infectedlog, 6}, {torch, 3}}")));
+    }
+
 
     public static void Runes() {
         Tech tech = AphTech.RUNES;

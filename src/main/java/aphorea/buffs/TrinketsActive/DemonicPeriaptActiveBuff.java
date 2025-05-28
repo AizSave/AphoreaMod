@@ -15,6 +15,12 @@ import necesse.entity.mobs.buffs.staticBuffs.Buff;
 import necesse.entity.particle.Particle;
 
 public class DemonicPeriaptActiveBuff extends Buff {
+    public ParticleTypeSwitcher particleTypeSwitcher = new ParticleTypeSwitcher(
+            Particle.GType.CRITICAL,
+            Particle.GType.IMPORTANT_COSMETIC,
+            Particle.GType.COSMETIC
+    );
+
     public DemonicPeriaptActiveBuff() {
         this.isVisible = false;
         this.canCancel = false;
@@ -42,7 +48,7 @@ public class DemonicPeriaptActiveBuff extends Buff {
                         int angle = (int) (360.0F + GameRandom.globalRandom.nextFloat() * 360.0F);
                         float dx = (float) Math.sin(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
                         float dy = (float) Math.cos(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
-                        owner.getLevel().entityManager.addParticle(owner, new ParticleTypeSwitcher(Particle.GType.CRITICAL, Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC).next()).movesFriction(dx, dy, 0.8F).color(GameRandom.globalRandom.getOneOf(AphColors.paletteDemonic)).heightMoves(10.0F, 30.0F).lifeTime(500);
+                        owner.getLevel().entityManager.addParticle(owner, particleTypeSwitcher.next()).movesFriction(dx, dy, 0.8F).color(GameRandom.globalRandom.getOneOf(AphColors.paletteDemonic)).heightMoves(10.0F, 30.0F).lifeTime(500);
                     }
                 }
             }

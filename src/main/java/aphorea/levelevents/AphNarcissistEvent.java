@@ -37,6 +37,12 @@ public class AphNarcissistEvent extends HitboxEffectEvent implements Attacker {
 
     public NarcissistParticle particle;
 
+    public ParticleTypeSwitcher particleTypeSwitcher = new ParticleTypeSwitcher(
+            Particle.GType.CRITICAL,
+            Particle.GType.IMPORTANT_COSMETIC,
+            Particle.GType.COSMETIC
+    );
+
     public AphNarcissistEvent() {
     }
 
@@ -117,14 +123,8 @@ public class AphNarcissistEvent extends HitboxEffectEvent implements Attacker {
                 int angle = (int) (360.0F + GameRandom.globalRandom.nextFloat() * 360.0F);
                 float dx = (float) Math.sin(Math.toRadians(angle)) * GameRandom.globalRandom.getIntBetween(40, 80);
                 float dy = (float) Math.cos(Math.toRadians(angle)) * GameRandom.globalRandom.getIntBetween(40, 80);
-                owner.getLevel().entityManager.addParticle(
-                                getX(), getY(),
-                                new ParticleTypeSwitcher(
-                                        Particle.GType.CRITICAL,
-                                        Particle.GType.IMPORTANT_COSMETIC,
-                                        Particle.GType.COSMETIC
-                                ).next()
-                        )
+                owner.getLevel().entityManager.addParticle(getX(), getY(), particleTypeSwitcher.next())
+                        .ignoreLight(true)
                         .movesFriction(dx, dy, 0.8F)
                         .color(GameRandom.globalRandom.getOneOf(AphColors.spinel_light, AphColors.spinel))
                         .heightMoves(10.0F, 20.0F, 2F, 0.5F, 0F, 0F)
@@ -166,14 +166,8 @@ public class AphNarcissistEvent extends HitboxEffectEvent implements Attacker {
                 float dy = dirX * speed;
 
                 // Spawn the particle
-                owner.getLevel().entityManager.addParticle(
-                                x, y,
-                                new ParticleTypeSwitcher(
-                                        Particle.GType.CRITICAL,
-                                        Particle.GType.IMPORTANT_COSMETIC,
-                                        Particle.GType.COSMETIC
-                                ).next()
-                        )
+                owner.getLevel().entityManager.addParticle(x, y, particleTypeSwitcher.next())
+                        .ignoreLight(true)
                         .movesFriction(dx, dy, 0.9F)
                         .color(GameRandom.globalRandom.getOneOf(AphColors.spinel_light, AphColors.spinel))
                         .heightMoves(14F, -4F, 2F, 0.5F, 0F, 0F)
@@ -242,6 +236,7 @@ public class AphNarcissistEvent extends HitboxEffectEvent implements Attacker {
                                     Particle.GType.COSMETIC
                             ).next()
                     )
+                    .ignoreLight(true)
                     .movesFriction(dx, dy, 0.8F)
                     .color(GameRandom.globalRandom.getOneOf(AphColors.spinel_light, AphColors.spinel))
                     .heightMoves(10.0F, 20.0F, 2F, 0.5F, 0F, 0F)

@@ -38,15 +38,14 @@ import aphorea.items.runes.AphBaseRune;
 import aphorea.items.runes.AphModifierRune;
 import aphorea.items.runes.AphRunesInjector;
 import aphorea.items.tools.healing.*;
-import aphorea.items.tools.weapons.magic.AdeptsBook;
-import aphorea.items.tools.weapons.magic.HarpOfArmony;
-import aphorea.items.tools.weapons.magic.MagicalBroom;
-import aphorea.items.tools.weapons.magic.UnstableGelStaff;
+import aphorea.items.tools.weapons.magic.*;
 import aphorea.items.tools.weapons.melee.battleaxe.DemonicBattleaxe;
 import aphorea.items.tools.weapons.melee.battleaxe.UnstableGelBattleaxe;
 import aphorea.items.tools.weapons.melee.dagger.*;
 import aphorea.items.tools.weapons.melee.glaive.WoodenRod;
+import aphorea.items.tools.weapons.melee.greatsword.BabylonGreatsword;
 import aphorea.items.tools.weapons.melee.greatsword.UnstableGelGreatsword;
+import aphorea.items.tools.weapons.melee.rapier.FossilRapier;
 import aphorea.items.tools.weapons.melee.rapier.LightRapier;
 import aphorea.items.tools.weapons.melee.saber.*;
 import aphorea.items.tools.weapons.melee.sword.*;
@@ -145,9 +144,11 @@ public class AphItems {
         registerItem("tungstendagger", new TungstenDagger());
         replaceItem("cutlass", new AphCutlassSaber(), 500F); // REWORKED
         registerItem("honeysaber", new HoneySaber());
+        registerItem("fossilrapier", new FossilRapier(), 100F);
         registerItem("thenarcissist", new TheNarcissist());
         registerItem("brokenkora", new BrokenKora(), 100F);
         registerItem("lightrapier", new LightRapier(), 200F);
+        registerItem("babylongreatsword", new BabylonGreatsword(), 700F);
         registerItem("glacialsaber", new GlacialSaber());
         registerItem("lostumbrella", new LostUmbrellaDagger());
         registerItem("cryokatana", new CryoKatana());
@@ -169,6 +170,7 @@ public class AphItems {
         registerItem("magicalbroom", new MagicalBroom());
         registerItem("adeptsbook", new AdeptsBook(), 200F);
         registerItem("harpofharmony", new HarpOfArmony());
+        registerItem("babyloncandle", new BabylonCandle(), 700F);
 
         // Summoner Weapons
         registerItem("volatilegelstaff", new VolatileGelStaff());
