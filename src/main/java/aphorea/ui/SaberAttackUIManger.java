@@ -66,7 +66,7 @@ public class SaberAttackUIManger extends AphCustomUI {
         @Override
         public void draw(TickManager tickManager, PlayerMob perspective, Rectangle renderBox) {
             float progress = barPercent(showProgress(SaberAttackUIManger.this.chargePercent, SaberAttackUIManger.this.chargeTime));
-            int spriteY = (int) (17 - 17 * progress);
+            int spriteY = (int) (27 - 27 * progress);
 
             getResizedTextures("saberattack", AphResources.saberAttackTexture, (int) (baseWidth * getZoom()), (int) (baseHeight * getZoom()), spriteY)
                     .initDraw()

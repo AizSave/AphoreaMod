@@ -33,9 +33,6 @@ public class AphRapierToolItem extends SpearToolItem {
     public AphRapierToolItem(int enchantCost) {
         super(enchantCost);
         this.keyWords.add("rapier");
-        this.width = 8.0F;
-        this.attackXOffset = 16;
-        this.attackYOffset = 14;
 
         attackAnimTime.setBaseValue(100);
         knockback.setBaseValue(20);

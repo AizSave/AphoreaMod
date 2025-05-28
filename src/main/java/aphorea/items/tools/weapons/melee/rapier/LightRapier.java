@@ -12,6 +12,10 @@ public class LightRapier extends AphRapierToolItem {
         this.dashAnimTime.setBaseValue(400);
 
         this.attackRange.setBaseValue(85);
+
+        this.width = 8.0F;
+        this.attackXOffset = 16;
+        this.attackYOffset = 14;
     }
 
 }

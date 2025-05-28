@@ -11,7 +11,6 @@ import necesse.entity.mobs.*;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.hostile.bosses.BossWormMobBody;
 import necesse.entity.particle.Particle;
-import necesse.gfx.GameResources;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameSprite;
@@ -60,9 +59,6 @@ public class BabylonBody extends BossWormMobBody<BabylonHead, BabylonBody> {
 
             while(this.particleSpawner.shouldTick()) {
                 this.getLevel().entityManager.addParticle(this.x + GameRandom.globalRandom.floatGaussian() * 45.0F, this.y + GameRandom.globalRandom.floatGaussian() * 30.0F + 5.0F, Particle.GType.COSMETIC).movesConstant(GameRandom.globalRandom.floatGaussian() * 6.0F, GameRandom.globalRandom.floatGaussian() * 3.0F).sizeFades(5, 10).givesLight().heightMoves(this.height + 10.0F, this.height + GameRandom.globalRandom.getFloatBetween(30.0F, 40.0F)).lifeTime(1000);
-                if (this.spriteY == 7) {
-                    this.getLevel().entityManager.addParticle(this.x + GameRandom.globalRandom.floatGaussian() * 15.0F, this.y + GameRandom.globalRandom.floatGaussian() * 10.0F + 5.0F, Particle.GType.COSMETIC).sprite(GameResources.pearlescentShardParticles.sprite(GameRandom.globalRandom.nextInt(4), 0, 18, 24)).movesFriction(-this.dx * 20.0F, -this.dy * 20.0F, 0.8F).sizeFades(11, 22).ignoreLight(true).givesLight().heightMoves(this.height + 10.0F, this.height + GameRandom.globalRandom.getFloatBetween(30.0F, 40.0F)).lifeTime(2000);
-                }
             }
         }
 
