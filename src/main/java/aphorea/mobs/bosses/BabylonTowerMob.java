@@ -66,7 +66,12 @@ public class BabylonTowerMob extends BossMob {
     private int aliveTimer;
     public static GameTexture icon;
 
+    public static LootTable lootTable = new LootTable(
+            LootItem.between("spinel", 8, 16)
+    );
+
     public static LootTable privateLootTable = new LootTable(
+            new LootItem("runeofbabylontower"),
             RotationLootItem.globalLootRotation(
                     new LootItem("babylongreatsword"),
                     new LootItem("babyloncandle")
@@ -91,10 +96,14 @@ public class BabylonTowerMob extends BossMob {
     }
 
     @Override
+    public LootTable getLootTable() {
+        return lootTable;
+    }
+
+    @Override
     public LootTable getPrivateLootTable() {
         return privateLootTable;
     }
-
 
     @Override
     public void clientTick() {
@@ -363,7 +372,7 @@ public class BabylonTowerMob extends BossMob {
                     new BabylonTowerActionAiNode() {
                         @Override
                         public void doTickAction(T mob, int time, int duration, float progress, Blackboard<T> blackboard) {
-                            int health = 100 + (int) (50 * streamPossibleTargets(mob).count());
+                            int health = 80 + (int) (40 * streamPossibleTargets(mob).count());
                             boolean clockWise = GameRandom.globalRandom.getChance(0.5F);
                             switch (GameRandom.globalRandom.getIntBetween(0, 5)) {
                                 case 0: {
@@ -434,14 +443,16 @@ public class BabylonTowerMob extends BossMob {
                         @Override
                         public void doTickAction(T mob, int time, int duration, float progress, Blackboard<T> blackboard) {
                             if (time % (100 * mob.projectileRate()) == 0) summonRandomCrystal(mob);
-                            float startAngle = (float) saveData.get("startAngle");
-                            boolean clockWise = (boolean) saveData.get("clockWise");
-                            float angleProgress = startAngle + progress * (float) Math.PI * 4 * (clockWise ? 1 : -1);
-                            float distance = BOSS_AREA_RADIUS * (0.05F + progress * 0.9F);
-                            for (int i = 0; i < 12; i++) {
-                                float targetX = mob.x + distance * (float) Math.cos(angleProgress + (float) Math.PI * i / 6);
-                                float targetY = mob.y + distance * (float) Math.sin(angleProgress + (float) Math.PI * i / 6);
-                                summonFallingCrystal(mob, targetX, targetY, 4);
+                            if (time % 100 == 0) {
+                                float startAngle = (float) saveData.get("startAngle");
+                                boolean clockWise = (boolean) saveData.get("clockWise");
+                                float angleProgress = startAngle + progress * (float) Math.PI * 4 * (clockWise ? 1 : -1);
+                                float distance = BOSS_AREA_RADIUS * (0.05F + progress * 0.9F);
+                                for (int i = 0; i < 12; i++) {
+                                    float targetX = mob.x + distance * (float) Math.cos(angleProgress + (float) Math.PI * i / 6);
+                                    float targetY = mob.y + distance * (float) Math.sin(angleProgress + (float) Math.PI * i / 6);
+                                    summonFallingCrystal(mob, targetX, targetY, 4);
+                                }
                             }
                         }
 

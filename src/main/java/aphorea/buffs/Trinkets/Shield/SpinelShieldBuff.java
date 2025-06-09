@@ -59,64 +59,64 @@ public class SpinelShieldBuff extends TrinketBuff implements ActiveBuffAbility {
 
     public void onActiveAbilityStarted(PlayerMob player, ActiveBuff buff, Packet content) {
         PacketReader reader = new PacketReader(content);
-        if (!player.isServer() || Settings.giveClientsPower) {
-            StaminaBuff.readStaminaData(player, reader);
+        if (!buff.owner.isServer() || Settings.giveClientsPower) {
+            StaminaBuff.readStaminaData(buff.owner, reader);
         }
-        if (player.isServer()) {
+        if (buff.owner.isServer()) {
             serverTicks = 0;
         }
-        if (player.isClient()) {
+        if (buff.owner.isClient()) {
             clientTicks = 0;
         }
     }
 
     public boolean tickActiveAbility(PlayerMob player, ActiveBuff buff, boolean isRunningClient) {
         if (Control.TRINKET_ABILITY.isDown()) {
-            ActiveBuff shieldBuff = player.buffManager.getBuff(BuffRegistry.getBuff("spinelshieldactive"));
+            ActiveBuff shieldBuff = buff.owner.buffManager.getBuff(BuffRegistry.getBuff("spinelshieldactive"));
             if (shieldBuff != null) {
                 if (shieldBuff.getDurationLeft() < 200) {
                     shieldBuff.setDurationLeftSeconds(0.2F);
                 }
             } else {
-                player.buffManager.addBuff(new ActiveBuff(BuffRegistry.getBuff("spinelshieldactive"), player, 1.0F, null), false);
+                buff.owner.buffManager.addBuff(new ActiveBuff(BuffRegistry.getBuff("spinelshieldactive"), buff.owner, 1.0F, null), true);
             }
         }
 
-        if (player.isServer()) {
+        if (buff.owner.isServer()) {
             if (serverTicks < 10) {
                 serverTicks++;
-                if (player.isServer() && serverTicks == 10) {
+                if (buff.owner.isServer() && serverTicks == 10) {
                     buff.owner.getLevel().entityManager.addLevelEvent(new AphSpinelShieldEvent(buff.owner, getInitialAngle(buff.owner)));
                 }
             }
         }
 
-        if (player.isClient()) {
+        if (buff.owner.isClient()) {
             if (clientTicks < 6) {
                 clientTicks++;
                 for (int i = 0; i < 2; i++) {
                     int angle = (int) (360.0F + GameRandom.globalRandom.nextFloat() * 360.0F);
                     float dx = (float) Math.sin(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
                     float dy = (float) Math.cos(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
-                    player.getLevel().entityManager.addParticle(player.moveX * 3 + player.x - dx, player.moveY * 3 + player.y - dy, particleTypeSwitcher.next()).movesFriction(dx, dy, 0.8F).color(GameRandom.globalRandom.getOneOf(AphColors.spinel_light, AphColors.spinel)).heightMoves(10.0F, 20.0F, 5F, 0F, 10F, 0F).lifeTime(250);
+                    buff.owner.getLevel().entityManager.addParticle(buff.owner.moveX * 3 + buff.owner.x - dx, buff.owner.moveY * 3 + buff.owner.y - dy, particleTypeSwitcher.next()).movesFriction(dx, dy, 0.8F).color(GameRandom.globalRandom.getOneOf(AphColors.spinel_light, AphColors.spinel)).heightMoves(10.0F, 20.0F, 5F, 0F, 10F, 0F).lifeTime(250);
                 }
             }
         }
 
 
         float usage = 50.0F / msToDeplete;
-        if (!StaminaBuff.useStaminaAndGetValid(player, usage)) {
+        if (!StaminaBuff.useStaminaAndGetValid(buff.owner, usage)) {
             return false;
         }
 
-        return !isRunningClient || Control.TRINKET_ABILITY.isDown() || player.buffManager.hasBuff("spinelshieldactive");
+        return !isRunningClient || Control.TRINKET_ABILITY.isDown() || buff.owner.buffManager.hasBuff("spinelshieldactive");
     }
 
     public void onActiveAbilityUpdate(PlayerMob player, ActiveBuff buff, Packet content) {
     }
 
     public void onActiveAbilityStopped(PlayerMob player, ActiveBuff buff) {
-        player.buffManager.removeBuff(BuffRegistry.getBuff("spinelshieldactive"), false);
+        buff.owner.buffManager.removeBuff(BuffRegistry.getBuff("spinelshieldactive"), false);
     }
 
     public static float getInitialAngle(Mob mob) {

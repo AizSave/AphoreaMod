@@ -79,7 +79,7 @@ public class AphRuneOfPestWardenEvent extends HitboxEffectEvent implements Attac
                     damagePercent /= 5;
                 }
                 GameDamage damage = new GameDamage(DamageTypeRegistry.TRUE, target.getMaxHealth() * damagePercent);
-                float knockback = 20.0F / modifier;
+                float knockback = 200.0F / modifier;
                 target.isServerHit(damage, target.x - (int) owner.x, target.y - (int) owner.y, knockback, this.owner);
             }
 

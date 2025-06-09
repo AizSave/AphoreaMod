@@ -345,28 +345,31 @@ public class AphItems {
 
         // Base Runes Tier 1
         int value = 40;
-        registerItem("runeofunstablegelslime", new AphBaseRune(Item.Rarity.UNCOMMON, 2, "runedamagereduction"), value += 10);
-        registerItem("runeofevilsprotector", new AphBaseRune(Item.Rarity.UNCOMMON, 2), value += 10);
-        registerItem("runeofqueenspider", new AphBaseRune(Item.Rarity.UNCOMMON, 1), value += 10);
-        registerItem("runeofvoidwizard", new AphBaseRune(Item.Rarity.UNCOMMON, 1), value += 10);
-        registerItem("runeofswampguardian", new AphBaseRune(Item.Rarity.UNCOMMON, 1), value += 10);
-        registerItem("runeofancientvulture", new AphBaseRune(Item.Rarity.UNCOMMON, 2, "runedamagereduction"), value += 10);
-        registerItem("runeofpiratecaptain", new AphBaseRune(Item.Rarity.UNCOMMON, 2), value += 10);
+        int added = 10;
+        registerItem("runeofunstablegelslime", new AphBaseRune(Item.Rarity.UNCOMMON, 2, "runedamagereduction"), value += added);
+        registerItem("runeofevilsprotector", new AphBaseRune(Item.Rarity.UNCOMMON, 2), value += added);
+        registerItem("runeofqueenspider", new AphBaseRune(Item.Rarity.UNCOMMON, 1), value += added);
+        registerItem("runeofvoidwizard", new AphBaseRune(Item.Rarity.UNCOMMON, 1), value += added);
+        registerItem("runeofchieftain", new AphBaseRune(Item.Rarity.UNCOMMON, 1), value += added);
+        registerItem("runeofswampguardian", new AphBaseRune(Item.Rarity.UNCOMMON, 1), value += added);
+        registerItem("runeofancientvulture", new AphBaseRune(Item.Rarity.UNCOMMON, 2, "runedamagereduction"), value += added);
+        registerItem("runeofpiratecaptain", new AphBaseRune(Item.Rarity.UNCOMMON, 2), value += added);
 
         // Base Runes Tier 2
-        registerItem("runeofreaper", new AphBaseRune(Item.Rarity.RARE, 1), value += 10);
-        registerItem("runeofcryoqueen", new AphBaseRune(Item.Rarity.RARE, 2, "runedamagereductionnoboss"), value += 10);
-        registerItem("runeofpestwarden", new AphBaseRune(Item.Rarity.RARE, 2, "runedamagereductionnoboss"), value += 10);
-        registerItem("runeofsageandgrit", new AphBaseRune(Item.Rarity.RARE, 2), value += 10);
-        registerItem("runeoffallenwizard", new AphBaseRune(Item.Rarity.RARE, 2), value += 10);
+        registerItem("runeofreaper", new AphBaseRune(Item.Rarity.RARE, 1), value += added);
+        registerItem("runeofbabylontower", new AphBaseRune(Item.Rarity.RARE, 1), value += added);
+        registerItem("runeofcryoqueen", new AphBaseRune(Item.Rarity.RARE, 2, "runedamagereductionnoboss"), value += added);
+        registerItem("runeofpestwarden", new AphBaseRune(Item.Rarity.RARE, 2, "runedamagereductionnoboss"), value += added);
+        registerItem("runeofsageandgrit", new AphBaseRune(Item.Rarity.RARE, 2), value += added);
+        registerItem("runeoffallenwizard", new AphBaseRune(Item.Rarity.RARE, 2), value += added);
 
         // Base Runes Tier 3
-        registerItem("runeofmotherslime", new AphBaseRune(Item.Rarity.EPIC, 1, "runedamagereductionnoboss"), value += 10);
-        registerItem("runeofnightswarm", new AphBaseRune(Item.Rarity.EPIC, 2), value += 10);
-        registerItem("runeofspiderempress", new AphBaseRune(Item.Rarity.EPIC, 2), value += 10);
-        registerItem("runeofsunlightchampion", new AphBaseRune(Item.Rarity.EPIC, 2, "runedamagereduction"), value += 10);
-        registerItem("runeofmoonlightdancer", new AphBaseRune(Item.Rarity.EPIC, 1), value += 10);
-        registerItem("runeofcrystaldragon", new AphBaseRune(Item.Rarity.EPIC, 2, "runedamagereductionnoboss"), value += 10);
+        registerItem("runeofmotherslime", new AphBaseRune(Item.Rarity.EPIC, 1, "runedamagereductionnoboss"), value += added);
+        registerItem("runeofnightswarm", new AphBaseRune(Item.Rarity.EPIC, 2), value += added);
+        registerItem("runeofspiderempress", new AphBaseRune(Item.Rarity.EPIC, 2), value += added);
+        registerItem("runeofsunlightchampion", new AphBaseRune(Item.Rarity.EPIC, 2, "runedamagereduction"), value += added);
+        registerItem("runeofmoonlightdancer", new AphBaseRune(Item.Rarity.EPIC, 1), value += added);
+        registerItem("runeofcrystaldragon", new AphBaseRune(Item.Rarity.EPIC, 2, "runedamagereductionnoboss"), value += added);
 
         // Modifier Runes Tier 0
         registerItem("empoweringrune", new AphModifierRune(Item.Rarity.COMMON, 0));

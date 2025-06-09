@@ -1,11 +1,15 @@
 package aphorea.biomes.levels;
 
+import necesse.engine.modifiers.ModifierValue;
 import necesse.engine.registries.MobRegistry;
 import necesse.engine.util.GameRandom;
 import necesse.engine.util.LevelIdentifier;
 import necesse.engine.world.WorldEntity;
 import necesse.entity.mobs.Mob;
+import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.level.maps.biomes.trial.TrialRoomLevel;
+
+import java.util.stream.Stream;
 
 public class InfectedTrialRoomLevel extends TrialRoomLevel {
     public InfectedTrialRoomLevel(LevelIdentifier identifier, int width, int height, WorldEntity worldEntity) {
@@ -45,5 +49,13 @@ public class InfectedTrialRoomLevel extends TrialRoomLevel {
             }
             presentPlayersAnt = presentPlayers;
         }
+    }
+
+    @Override
+    public Stream<ModifierValue<?>> getMobModifiers(Mob mob) {
+        return Stream.concat(
+                super.getMobModifiers(mob),
+                Stream.of(new ModifierValue<>(BuffModifiers.BLINDNESS, 0.6F))
+        );
     }
 }

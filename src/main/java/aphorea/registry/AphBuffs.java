@@ -638,6 +638,51 @@ public class AphBuffs {
 
         });
 
+        // RUNE OF CHIEFTAIN
+        baseEffectNumber = 20;
+        // On activation
+        BuffRegistry.registerBuff("runeofchieftain", new AphBaseRuneTrinketBuff(baseEffectNumber, extraEffectNumberMod, 20000, "runeofchieftainactive")
+                .setHealthCost(0.05F)
+        );
+        // On duration
+        BuffRegistry.registerBuff("runeofchieftainactive", new AphBaseRuneActiveBuff(baseEffectNumber, extraEffectNumberMod, 20000) {
+
+            int bound;
+
+            @Override
+            public void initExtraModifiers(ActiveBuff buff, float effectNumber) {
+                super.initExtraModifiers(buff, effectNumber);
+
+                updateBuff(buff);
+            }
+
+            @Override
+            public void clientTick(ActiveBuff buff) {
+                super.clientTick(buff);
+                updateBuff(buff);
+                Mob owner = buff.owner;
+                if (owner.isVisible() && bound == 0 || GameRandom.globalRandom.nextInt(bound) == 0) {
+                    owner.getLevel().entityManager.addParticle(owner.x + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(AphColors.red).height(16.0F);
+                }
+            }
+
+            @Override
+            public void serverTick(ActiveBuff buff) {
+                super.serverTick(buff);
+                updateBuff(buff);
+            }
+
+            public void updateBuff(ActiveBuff buff) {
+                PlayerMob player = (PlayerMob) buff.owner;
+
+                float healthLostPercent = 1 - player.getHealthPercent();
+                bound = (int) Math.max(healthLostPercent * 4, 0);
+                buff.setModifier(BuffModifiers.ALL_DAMAGE, healthLostPercent * getEffectNumber(player) / 100);
+            }
+
+        });
+
+
         // RUNE OF SWAMP GUARDIAN
         baseEffectNumber = 3;
         // On activation
@@ -757,6 +802,31 @@ public class AphBuffs {
             }
         }).setHealthCost(0.05F);
 
+        // RUNE OF BABYLON TOWER
+        baseEffectNumber = 100;
+        // On activation
+        BuffRegistry.registerBuff("runeofbabylontower", new AphBaseRuneTrinketBuff(baseEffectNumber, 10000, "runeofbabylontoweractive"));
+        // On duration
+        BuffRegistry.registerBuff("runeofbabylontoweractive", new AphBaseRuneActiveBuff(baseEffectNumber, 20000, new ModifierValue<>(BuffModifiers.SPEED, -1F).max(-1F)) {
+            @Override
+            public void initExtraModifiers(ActiveBuff buff, float effectNumber) {
+                super.initExtraModifiers(buff, effectNumber);
+                Level level = buff.owner.getLevel();
+                if (level != null) {
+                    buff.addModifier(BuffModifiers.ALL_DAMAGE, effectNumber / 100);
+                }
+            }
+
+            @Override
+            public void clientTick(ActiveBuff buff) {
+                super.clientTick(buff);
+                Mob owner = buff.owner;
+                if (owner.isVisible() && GameRandom.globalRandom.nextInt(2) == 0) {
+                    owner.getLevel().entityManager.addParticle(owner.x + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(GameRandom.globalRandom.getFloatBetween(-2F, 2F), GameRandom.globalRandom.getFloatBetween(-2F, 2F)).color(AphColors.spinel).heightMoves(GameRandom.globalRandom.getFloatBetween(0F, 16F), GameRandom.globalRandom.getFloatBetween(16F, 32F));
+                }
+            }
+        });
+
         // RUNE OF CRYO QUEEN
         baseEffectNumber = 300;
         // On activation
@@ -774,7 +844,7 @@ public class AphBuffs {
         // RUNE OF PEST WARDEN
         baseEffectNumber = 10;
         // On activation
-        BuffRegistry.registerBuff("runeofpestwarden", new AphBaseRuneTrinketBuff(baseEffectNumber, (int) (baseEffectNumber * 1000), 100, "runeofpestwardenactive") {
+        BuffRegistry.registerBuff("runeofpestwarden", new AphBaseRuneTrinketBuff(baseEffectNumber, (int) (baseEffectNumber * 1000), "runeofpestwardenactive") {
             @Override
             public int getDuration(PlayerMob player) {
                 return (int) (getEffectNumber(player) * 1000);
@@ -785,8 +855,20 @@ public class AphBuffs {
                 super.runServer(server, player, targetX, targetY);
                 player.getLevel().entityManager.addLevelEvent(new AphRuneOfPestWardenEvent(player));
             }
-
         });
+        // On duration
+        BuffRegistry.registerBuff("runeofpestwardenactive", new AphBaseRuneActiveBuff(baseEffectNumber, 22000) {
+
+            @Override
+            public void clientTick(ActiveBuff buff) {
+                super.clientTick(buff);
+                Mob owner = buff.owner;
+                if (owner.isVisible() && GameRandom.globalRandom.nextInt(2) == 0) {
+                    owner.getLevel().entityManager.addParticle(owner.x + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + GameRandom.globalRandom.nextInt(5) + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(AphColors.green).height(16.0F);
+                }
+            }
+        });
+
 
         // RUNE OF SAGE & GRIT
         baseEffectNumber = 20;
@@ -985,8 +1067,12 @@ public class AphBuffs {
                 PlayerMob player = (PlayerMob) buff.owner;
 
                 float speedModifier = player.getSpeedModifier() - 1;
-                bound = (int) Math.max(4 - speedModifier / 25, 0);
-                buff.setModifier(BuffModifiers.ALL_DAMAGE, speedModifier * getEffectNumber(player));
+                if(speedModifier <= 0) {
+                    bound = 0;
+                } else {
+                    bound = (int) Math.max(4 - speedModifier / 25, 0);
+                    buff.setModifier(BuffModifiers.ALL_DAMAGE, speedModifier * getEffectNumber(player));
+                }
             }
         });
 

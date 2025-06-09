@@ -1,5 +1,6 @@
 package aphorea.registry;
 
+import necesse.entity.levelEvent.nightSwarmEvent.NightSwarmLevelEvent;
 import necesse.entity.mobs.hostile.*;
 import necesse.entity.mobs.hostile.bosses.*;
 import necesse.entity.mobs.hostile.pirates.PirateCaptainMob;
@@ -226,8 +227,24 @@ public class AphLootTables {
                 new LootItem("runeofmotherslime")
         );
 
+        NightSwarmLevelEvent.privateLootTable.items.add(
+                new LootItem("runeofmotherslime")
+        );
+
         SpiderEmpressMob.privateLootTable.items.add(
                 new LootItem("runeofspiderempress")
+        );
+
+        SunlightChampionMob.privateLootTable.items.add(
+                new LootItem("runeofsunlightchampion")
+        );
+
+        MoonlightDancerMob.privateLootTable.items.add(
+                new LootItem("runeofmoonlightdancer")
+        );
+
+        CrystalDragonHead.lootTable.items.add(
+                new LootItem("runeofcrystaldragon")
         );
     }
 }

@@ -40,6 +40,7 @@ abstract public class AphBattleaxeToolItem extends AphGreatswordToolItem impleme
         tooltips.add(Localization.translate("itemtooltip", "battleaxe"));
         tooltips.add(Localization.translate("itemtooltip", "battleaxe2"));
         tooltips.add(Localization.translate("itemtooltip", "battleaxe3"));
+        tooltips.add(Localization.translate("itemtooltip", "adrenaline"));
         return tooltips;
     }
 

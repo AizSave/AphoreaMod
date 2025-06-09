@@ -200,7 +200,7 @@ public class AphRunesInjector extends TrinketItem implements InternalInventoryIt
             List<AphModifierRuneTrinketBuff> modifierBuffs = getModifierBuffs(inventoryItem);
             TrinketBuff[] buffs = new TrinketBuff[modifierBuffs.size() + 1];
 
-            buffs[0] = getBaseRunes(inventoryItem).get(0).getBuff();
+            buffs[0] = getBaseRunes(inventoryItem).get(0).getTrinketBuff();
 
             Iterator<AphModifierRuneTrinketBuff> iterator = modifierBuffs.iterator();
             for (int i = 1; iterator.hasNext(); i++) {

@@ -336,6 +336,8 @@ runeofvoidwizard=Rune of Void Wizard
 runeofswampguardian=Rune of Swamp Guardian
 runeofancientvulture=Rune of Ancient Vulture
 runeofpiratecaptain=Rune of Pirate Captain
+# NEW
+runeofchieftain=Rune of Chieftain
 
 // Base Runes Tier 2
 runeofreaper=Rune of Reaper
@@ -343,6 +345,8 @@ runeofcryoqueen=Rune of Cryo Queen
 runeofpestwarden=Rune of Pest Warden
 runeofsageandgrit=Rune of Sage & Grit
 runeoffallenwizard=Rune of Fallen Wizard
+# NEW
+runeofbabylontower=Rune of Babylon Tower
 
 // Base Runes Tier 3
 runeofmotherslime=Rune of Mother Slime
@@ -394,7 +398,7 @@ livingsapling=§7Living Sapling:§0 Magic Heal owner with §73§0 every 10 attac
 
 // Misc
 gelslimenullifier=They will stop bothering you with a simple click!
-enchanting  scrollhealingequipmenttip=Used to enchant an healing equipment item with <enchantment>\n§!Aphorea Mod
+enchantingscrollhealingequipmenttip=Used to enchant an healing equipment item with <enchantment>\n§!Aphorea Mod
 enchantingscrollhealingtip=Used to enchant an healing tool with <enchantment>\n§!Aphorea Mod
 enchantingscrollareatip=Used to enchant an area-effect tool with <enchantment>\n§!Aphorea Mod
 enchantingscrolldaggertip=Used to enchant a dagger weapon with <enchantment>\n§!Aphorea Mod
@@ -490,17 +494,15 @@ witchstatue=Placing this statue on the surface of a swamp will eliminate witch s
 // Generic Trinkets
 # NEW
 areawhenheal=Executes this area for every <magichealing> Magic Healing done
+periaptboost=Press [input=trinketability] to gain a boost of Speed and Attack Speed for 10 seconds
 
 // Trinkets
 rockyperiapt=§7+5§0 Armor, but §6-5%§0 Movement Speed
 rockyperiapt2=Press [input=trinketability] to gain 10 Armor for 10 seconds
 unstableperiapt=Summons two Baby Unstable Gel Slimes (6 Summoner Damage)
 unstableperiapt2=Makes you immune to the Sticky debuff
-bloodyperiapt=Press [input=trinketability] to gain a boost of Speed and Attack Speed for 10 seconds
-bloodyperiapt2=Also, the weapons 'Blood Bolt' and 'Blood Volley' will steal §73%§0 of life
-demonicperiapt=Press [input=trinketability] to gain a boost of Speed and Attack Speed for 10 seconds
-demonicperiapt2=Also, all magic weapons will steal §73%§0 of life
-abysmalperiapt=Magic weapons will steal §73%§0 of life
+bloodyperiapt=Also, the weapons 'Blood Bolt' and 'Blood Volley' will steal §73%§0 of life
+demonicperiapt=Also, Magic weapons will steal §73%§0 of life
 necromancyperiapt=Every time you or one of your summons kills a hostile mob you summon a Undead Skeleton
 necromancyperiapt2=20 Summoner Damage. Lasts 10 seconds and there can be a maximum of 3 at a time
 frozenperiapt=Melee and Ranged weapons will Freeze for 3 seconds
@@ -605,7 +607,7 @@ runeofshadows=For §7<effectNumber>§0 seconds, you will become invisible but al
 // Base Runes Tier 1
 runeofunstablegelslime=Teleport to a nearby location and summon 2 Runic Unstable Gel Slimes for §7<effectNumber>§0 seconds
 runeofunstablegelslime2=The summons will deal 5% of the mobs' maximum health as damage
-runeofevilsprotector=+§7<effectNumber>§0% attack speed, but -50% movement speed for 10 secondsa
+runeofevilsprotector=+§7<effectNumber>§0% attack speed, but -50% movement speed for 10 seconds
 runeofevilsprotector2=During the night on the surface, the positive effect is doubled
 runeofqueenspider=Leaves a spider web on the ground for §7<effectNumber>§0 seconds
 runeofvoidwizard=All projectiles will bounce infinitely and +§7<effectNumber>§0% projectile speed for 10 seconds
@@ -614,6 +616,8 @@ runeofancientvulture=Summons a Runic Vulture Hatchling for 10 seconds
 runeofancientvulture2=The summon will deal §7<effectNumber>§0% of the mobs' maximum health as damage
 runeofpiratecaptain=Increase your Damage by §7<effectNumber>§0% for every 200 coins you have, up to a maximum of 20,000 coins
 runeofpiratecaptain2=Each time you attack, you will lose 3 coins
+# NEW
+runeofchieftain=For the next 20 seconds, your Damage increases the lower your health is, up to a maximum of +§7<effectNumber>§0%
 
 // Base Runes Tier 2
 runeofreaper=Teleport to the position of your mouse. Maximum §7<effectNumber>§0 distance
@@ -625,6 +629,8 @@ runeofsageandgrit=If there are damaged allies nearby (500 range), heal §7<effec
 runeofsageandgrit2=If not, increase your damage, attack speed and movement speed by +§7<effectNumber>§0% for 20 seconds
 runeoffallenwizard=Stun all mobs except you for §7<effectNumber>§0 seconds
 runeoffallenwizard2=Humans will break free faster, and bosses even faster
+# NEW
+runeofbabylontower=+§7<effectNumber>§0% all damage, but you can't move. 10 seconds
 
 // Base Runes Tier 3
 runeofmotherslime=Perform a large leap towards your mouse position and deal area damage upon landing
@@ -667,10 +673,7 @@ rockygelslime=Rocky Gel Slime
 unstablegelslime=Unstable Gel Slime
 miniunstablegelslime=Unstable Gel Slime Mini
 pinkwitch=Pink Witch
-babyunstablegelslime=Baby Unstable Gel Slime
-undeadskeleton=Undead Skeleton
 voidadept=Void Adept
-volatilegelslime=Volatile Gel Slime
 copperdaggergoblin=Copper Dagger Goblin
 irondaggergoblin=Iron Dagger Goblin
 golddaggergoblin=Gold Dagger Goblin
@@ -688,10 +691,15 @@ babylon=Babylon
 wildphosphorslime=Wild Phosphor Slime
 
 // Summon
+babyunstablegelslime=Baby Unstable Gel Slime
+undeadskeleton=Undead Skeleton
+volatilegelslime=Volatile Gel Slime
 runicunstablegelslime=Runic Unstable Gel Slime
 runicvulturehatchling=Runic Vulture Hatchling
 runicbat=Runic Bat
 onyx=Onyx
+# NEW
+livingsapling=Living Sabling
 
 // Pet
 petphosphorslime=Phosphor Slime
@@ -736,14 +744,11 @@ cantuseatnight=Cannot be used at night
 healthalreadyfull=Health is already full
 cantheal=Can't heal
 pickupenabledinventoryfull=Pickup cannot be disabled because inventory is full
-itoldyou=I told you
 insuficienthealth=Insufficient health to perform this action!
 cannottrhowlockeditem=You cannot throw an inventory-locked item
 initialrunetip=Choose your initial rune carefully;\nyou won't obtain the others until later in the game
 alreadyselectedinitialrune=Already selected initial rune
 cannotusetrial=Cannot use in trial rooms
-# NEW
-inmaintenance=In Maintenance
 
 [biome]
 infectedfields=Infected Fields

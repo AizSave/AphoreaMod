@@ -194,6 +194,26 @@ public class AphRecipes {
                 )
         );
 
+        addCraftingList("essenceofrebirth", tech,
+                AphCraftingRecipe.showAfter("essenceofhealing", 1,
+                        new Ingredient("spinel", 16)
+                ),
+                AphCraftingRecipe.showAfter("spinelshield", 1,
+                        new Ingredient("tungstenshield", 1),
+                        new Ingredient("spinel", 24)
+                ),
+                AphCraftingRecipe.showAfter("bloomrushcharm", 1,
+                        new Ingredient("zephyrcharm", 1),
+                        new Ingredient("adrenalinecharm", 1),
+                        new Ingredient("infectedalloy", 1)
+                ),
+                AphCraftingRecipe.showAfter("infectedperiapt", 1,
+                        new Ingredient("unstableperiapt", 1),
+                        new Ingredient("infectedalloy", 2)
+                )
+        );
+
+
     }
 
     public static void IronAnvil() {
@@ -494,25 +514,6 @@ public class AphRecipes {
                 ),
                 AphCraftingRecipe.showAfter("spinelboots", 1,
                         new Ingredient("spinel", 16)
-                )
-        );
-
-        addCraftingList("essenceofrebirth", tech,
-                AphCraftingRecipe.showAfter("essenceofhealing", 1,
-                        new Ingredient("spinel", 16)
-                ),
-                AphCraftingRecipe.showAfter("spinelshield", 1,
-                        new Ingredient("tungstenshield", 1),
-                        new Ingredient("spinel", 24)
-                ),
-                AphCraftingRecipe.showAfter("bloomrushcharm", 1,
-                        new Ingredient("zephyrcharm", 1),
-                        new Ingredient("adrenalinecharm", 1),
-                        new Ingredient("infectedalloy", 1)
-                ),
-                AphCraftingRecipe.showAfter("infectedperiapt", 1,
-                        new Ingredient("unstableperiapt", 1),
-                        new Ingredient("infectedalloy", 2)
                 )
         );
 

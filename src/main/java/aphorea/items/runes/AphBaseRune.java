@@ -46,12 +46,12 @@ public class AphBaseRune extends Item {
         return this;
     }
 
-    public AphBaseRuneTrinketBuff getBuff() {
+    public AphBaseRuneTrinketBuff getTrinketBuff() {
         return (AphBaseRuneTrinketBuff) BuffRegistry.getBuff(buffID == null ? getStringID() : buffID);
     }
 
     public AphBaseRuneActiveBuff getActiveBuff() {
-        return (AphBaseRuneActiveBuff) BuffRegistry.getBuff(getBuff().getBuff());
+        return (AphBaseRuneActiveBuff) BuffRegistry.getBuff(getTrinketBuff().getBuff());
     }
 
     @Override
@@ -73,7 +73,7 @@ public class AphBaseRune extends Item {
     }
 
     public void addToolTips(ListGameTooltips tooltips, InventoryItem item, AphRunesInjector runesInjector, PlayerMob perspective, boolean isFinalBuff) {
-        AphBaseRuneTrinketBuff buff = getBuff();
+        AphBaseRuneTrinketBuff buff = getTrinketBuff();
         float effectNumber = buff.getBaseEffectNumber() * (isFinalBuff ? buff.getEffectNumberVariation(item, runesInjector) : 1);
         float healthCost = isFinalBuff ? buff.getFinalHealthCost(item, runesInjector) : buff.getBaseHealthCost();
         int cooldown;
@@ -81,7 +81,7 @@ public class AphBaseRune extends Item {
             AphBaseRuneActiveBuff activeBuff = getActiveBuff();
             cooldown = (int) (activeBuff.getBaseCooldownDuration() * (isFinalBuff ? AphBaseRuneTrinketBuff.getCooldownVariation(item, runesInjector) : 1));
         } else {
-            cooldown = (int) (getBuff().getBaseCooldown() * (isFinalBuff ? AphBaseRuneTrinketBuff.getCooldownVariation(item, runesInjector) : 1));
+            cooldown = (int) (getTrinketBuff().getBaseCooldown() * (isFinalBuff ? AphBaseRuneTrinketBuff.getCooldownVariation(item, runesInjector) : 1));
 
         }
         float cooldownSeconds = (float) cooldown / 1000;

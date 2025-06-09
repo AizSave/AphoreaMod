@@ -40,7 +40,7 @@ public class BabylonTowerFallingCrystalAttackEvent extends MobAbilityLevelEvent 
         this.x = x;
         this.y = y;
         this.damage = damage;
-        this.turnIntoObject = GameRandom.globalRandom.getChance(0.2F);
+        this.turnIntoObject = GameRandom.globalRandom.getChance(0.05F);
     }
 
     public void applySpawnPacket(PacketReader reader) {

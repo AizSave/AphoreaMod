@@ -22,8 +22,8 @@ public class BloodyPeriaptBuff extends AphPeriaptActivableBuff {
 
     public ListGameTooltips getTrinketTooltip(TrinketItem trinketItem, InventoryItem item, PlayerMob perspective) {
         ListGameTooltips tooltips = super.getTrinketTooltip(trinketItem, item, perspective);
+        tooltips.add(Localization.translate("itemtooltip", "periaptboost"));
         tooltips.add(Localization.translate("itemtooltip", "bloodyperiapt"));
-        tooltips.add(Localization.translate("itemtooltip", "bloodyperiapt2"));
         return tooltips;
     }
 
