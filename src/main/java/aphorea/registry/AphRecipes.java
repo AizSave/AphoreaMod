@@ -495,8 +495,8 @@ public class AphRecipes {
                         new Ingredient("spinel", 2),
                         new Ingredient("goldbar", 10)
                 ),
-                AphCraftingRecipe.showAfter("spinelwand", 1,
-                        new Ingredient("goldenwand", 1),
+                AphCraftingRecipe.showAfter("spinelstaff", 1,
+                        new Ingredient("healingstaff", 1),
                         new Ingredient("lifespinel", 1),
                         new Ingredient("spinel", 10)
                 ),

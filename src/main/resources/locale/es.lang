@@ -234,7 +234,7 @@ healingstaff=Bastón Curativo
 woodenwand=Varita de Madera
 goldenwand=Varita Dorada
 # NEW
-spinelwand=Varita de Espinela
+spinelwand=Bastón de Espinela
 
 // Tools
 # NEW
@@ -472,8 +472,6 @@ gelball=Lanza una bola de gel
 // Single Magic Healing Tools
 magicalvial=Apunta a un humano herido para curarlo, no apuntes a nadie para curarte
 magicalvial2=Usos infinitos
-# NEW
-spinelwand=Dispara un proyectil muy guiado que termina en un área de curación mágica
 
 // Ammo
 spambullet=Tiene aleatoriamente uno de estos efectos:

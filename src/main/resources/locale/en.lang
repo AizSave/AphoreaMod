@@ -236,7 +236,7 @@ healingstaff=Healing Staff
 woodenwand=Wooden Wand
 goldenwand=Golden Wand
 # NEW
-spinelwand=Spinel Wand
+spinelstaff=Spinel Staff
 
 // Tools
 # NEW
@@ -474,8 +474,6 @@ gelball=Throws a gel ball
 // Single Magic Healing Tools
 magicalvial=Point at an injured human to heal them, don't point at anyone to heal yourself
 magicalvial2=Infinite uses
-# NEW
-spinelwand=Shoots a very guided projectile ending in a Magic Healing area
 
 // Ammo
 spambullet=Randomly have one of these effects:
