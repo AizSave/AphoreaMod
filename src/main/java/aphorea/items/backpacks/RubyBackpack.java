@@ -6,6 +6,6 @@ public class RubyBackpack extends AphBackpack {
     }
 
     public int getInternalInventorySize() {
-        return 10;
+        return 12;
     }
 }

@@ -6,6 +6,6 @@ public class AmethystBackpack extends AphBackpack {
     }
 
     public int getInternalInventorySize() {
-        return 8;
+        return 10;
     }
 }
