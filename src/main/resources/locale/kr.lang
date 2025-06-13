@@ -1,4 +1,4 @@
-# Translation made by Save (https://steamcommunity.com/id/Aiz_Save/)
+# Translation made by AI
 
 [global]
 aphorea=§!Aphorea Mod
@@ -9,35 +9,35 @@ aphoreasummonerexpansion=§!Aphorea Mod x Summoner Expansion
 
 [buffmodifiers]
 // Magic Healing
-magichealing=<mod>% magic healing
-magichealingflat=<mod> magic healing
-magichealingreceived=<mod>% magic healing received
-magichealingreceivedflat=<mod> magic healing received
-magichealinggrace=<mod>% magic healing grace
+magichealing=<mod>% 마법 치유
+magichealingflat=<mod> 마법 치유
+magichealingreceived=<mod>% 마법 치유 받은
+magichealingreceivedflat=<mod> 마법 치유 받은
+magichealinggrace=<mod>% 마법 치유 은혜
 
 // Area
-arearange=<mod>% area range
+arearange=<mod>% 범위 사거리
 
 // Inspiration Damage
-inspirationdamage=<mod>% inspiration damage
-inspirationcritchance=<mod>% inspiration crit chance
-inspirationcritdamage=<mod>% inspiration crit damage
-inspirationeffect=<mod>% inspiration effect
-inspirationabilityspeed=<mod>% inspiration ability speed
+inspirationdamage=<mod>% inspiration 피해
+inspirationcritchance=<mod>% inspiration crit 확률
+inspirationcritdamage=<mod>% inspiration crit 피해
+inspirationeffect=<mod>% inspiration 효과
+inspirationabilityspeed=<mod>% inspiration 스킬 속도
 
 // Others
-loyal=The dagger is not lost when thrown
+loyal=단검은 던져도 잃어버리지 않습니다
 
 
 [stats]
-inspiration_damage=Inspiration damage
+inspiration_damage=영감 피해
 
 
 [enchantment]
 // Healing Equipment
-godly=Godly
-absent=Absent
-auxiliary=Auxiliary
+godly=신성한
+absent=부재
+auxiliary=보조
 vain=Vain
 gentle=Gentle
 selfish=Selfish
@@ -95,8 +95,8 @@ infectedcandelabra=Infected Candelabra
 
 
 [itemcategory]
-healing=Healing
-healingtools=Healing
+healing=치유
+healingtools=치유
 runes=Runes
 runesinjectors=Runes Injectors
 baserunes=Base Runes
@@ -212,12 +212,12 @@ volatilegelstaff=Volatile Gel Staff
 infectedstaff=Infected Staff
 
 // Banners
-blankbanner=Blank Banner
+blankbanner=Blank 배너
 
 // Healing Tools
-healingtool=Healing Tool
+healingtool=치유 Tool
 magicalvial=Magical Vial
-healingstaff=Healing Staff
+healingstaff=치유 Staff
 woodenwand=Wooden Wand
 goldenwand=Golden Wand
 spinelstaff=Spinel Staff
@@ -243,7 +243,7 @@ iceboots=Ice Boots
 inspirationfoci=Inspiration Foci
 cursedmedallion=Cursed Medallion
 ancientmedallion=Ancient Medallion
-essenceofhealing=Essence of Healing
+essenceofhealing=Essence of 치유
 ninjascarf=Ninja Scarf
 adrenalinecharm=Adrenaline Charm
 spinelshield=Spinel Shield
@@ -297,8 +297,8 @@ ancientrunesinjector=Ancient Runes Injector
 // Base Runes Tier 0
 baserune=Base Rune
 runeoffury=Rune of Fury
-runeofspeed=Rune of Speed
-runeofhealing=Rune of Healing
+runeofspeed=Rune of 속도
+runeofhealing=Rune of 치유
 runeofresistance=Rune of Resistance
 runeofvalor=Rune of Valor
 runeofdetonation=Rune of Detonation
@@ -356,7 +356,7 @@ ascendantrune=Ascendant Rune
 [itemtooltip]
 // Stat tips
 line=----------------------------------------
-magichealingtip=Magic healing: §7<health>
+magichealingtip=마법 healing: §7<health>
 rangetip=Range: §9<range>
 areatip=§aArea <number>
 inspirationdamagetip=Inspiration damage: <value>
@@ -366,18 +366,18 @@ areabuffdisplay=<buff> for <duration> seconds
 attackarmorpentip=Armor pen: <value>%
 
 // Mechanics
-magichealinggrace=§aMagic Healing Grace:§0 Heals yourself with a % of the Magic Healing intended for allies
-cursedbuff=§bCursed:§0 §6+25%§0 Incoming Damage
+magichealinggrace=§aMagic 치유 Grace:§0 Heals yourself with a % of the 마법 치유 intended for allies
+cursedbuff=§bCursed:§0 §6+25%§0 Incoming 피해
 inspiration=§9Inspiration:§0 Improves the effects of banners and music tools
 adrenaline=§6Adrenaline:§0 +5% Damage, -5% Armor. Can stack up to 5 times
-livingsapling=§7Living Sapling:§0 Magic Heal owner with §73§0 every 10 attacks
+livingsapling=§7Living Sapling:§0 마법 Heal owner with §73§0 every 10 attacks
 
 // Misc
 gelslimenullifier=They will stop bothering you with a simple click!
-enchantingscrollhealingequipmenttip=Used to enchant an healing equipment item with <enchantment>\n§!Aphorea Mod
-enchantingscrollhealingtip=Used to enchant an healing tool with <enchantment>\n§!Aphorea Mod
-enchantingscrollareatip=Used to enchant an area-effect tool with <enchantment>\n§!Aphorea Mod
-enchantingscrolldaggertip=Used to enchant a dagger weapon with <enchantment>\n§!Aphorea Mod
+enchantingscrollhealingequipmenttip=Used to enchant an 치유 equipment item with <enchantment>\n§!Aphorea 모드
+enchantingscrollhealingtip=Used to enchant an 치유 tool with <enchantment>\n§!Aphorea 모드
+enchantingscrollareatip=Used to enchant an area-effect tool with <enchantment>\n§!Aphorea 모드
+enchantingscrolldaggertip=Used to enchant a dagger weapon with <enchantment>\n§!Aphorea 모드
 backpack=It is a new inventory that stores all the items you collect
 backpackslots=Capacity of <slots> items
 stored=Stored items: <items>
@@ -391,33 +391,33 @@ venomextractbuffdesc=You can't have more than 1 HP
 lifespinel=Permanently increases max health by 5 up to 320
 
 // General Weapons
-spinsecondaryattack=Press [input=mouse2] to make the next attack an area attack
-areasecondaryattack=Press [input=mouse2] to perform an area attack consuming <mana> Mana
+spinsecondaryattack=Press [input=mouse2] to make the next attack an 범위 attack
+areasecondaryattack=Press [input=mouse2] to perform an 범위 attack consuming <mana> Mana
 stikybuff1=Makes the enemy Sticky for 1 second
 stikybuff2=Makes the enemy Sticky for 2 seconds
 stikybuff3=Makes the enemy Sticky for 3 seconds
-projectilearea=When the projectile ends, it deals area damage
+projectilearea=When the projectile ends, it deals 범위 피해
 
 // Melee Weapons
-saber=Charge to max for full damage and to unleash an aircut
+saber=Charge to max for full 피해 and to unleash an aircut
 saberdash=Hold [input=mouse2] to charge up a dash to slice through enemies
 battleaxe=Takes a long time to charge
 battleaxe2=Press [input=mouse2] to activate the Berserker Rush and gain 3 Adrenaline temporarily
-battleaxe3=Gain Adrenaline temporarily by hitting enemies during Rush, improving movement and attack speed
+battleaxe3=Gain Adrenaline temporarily by hitting enemies during Rush, improving movement and attack 속도
 dagger=Hold [input=mouse2] to throw the dagger
 
 // Range Weapons
 sling=Throws stones with force
-sling2=§7100%§0 chance to stun the enemy for 0.5 seconds
+sling2=§7100%§0 확률 to stun the enemy for 0.5 seconds
 twoarrows=Shoots two arrows at once
 threearrows=Shoots three arrows at once
 blowgun=Shoots seeds
 
 // Single Melee Weapons
-woodenrod=Magic Heal yourself with §7<healing>§0 every 10 attacks
+woodenrod=마법 Heal yourself with §7<healing>§0 every 10 attacks
 voidhammer=When the projectile bounces or hits an enemy, it targets the nearest one, hitting up to 3 times
 crimsonkora=Hold [input=mouse2] to charge a devastating but slow attack
-thenarcissist=Chain 4 attacks to unleash a spinning sword throw on the fifth hit!\n+20% Damage for each chained attack
+thenarcissist=Chain 4 attacks to unleash a spinning sword throw on the fifth hit!\n+20% 피해 for each chained attack
 
 // Single Range Weapons
 firesling=Burns the enemies
@@ -426,7 +426,7 @@ gelgreatbow=Turns Stone Arrows into Gel Arrows
 unstablegelgreatbow=Turns Stone Arrows and Gel Arrows into Unstable Gel Arrows
 thespammer=Can shot Spam Bullets
 shotgunsaber=Aim near center for more powerful, accurate, and piercing shots
-honeysaber=Charge to max for full damage and to shot honey and blueberries
+honeysaber=Charge to max for full 피해 and to shot honey and blueberries
 spinelcrossbow=Shoots arrows that pierce up to 2 enemies, growing deadlier with each pierce
 spinelcrossbow2=Hold [input=mouse2] to shoot 3 arrows at once
 
@@ -449,7 +449,7 @@ spambullet=Randomly have one of these effects:
 spambullet1=§9Sad:§0 Attacked enemy become sticky, slowing it down for 5 seconds
 spambullet2=§9Fire:§0 Instead of colliding, leaves a pool of fire on the ground
 spambullet3=§9Like:§0 Bounces off walls and pierces mobs, up to 10 times each
-spambullet4=§9Check:§0 Magic healing area of 3 health at the end of its path
+spambullet4=§9Check:§0 마법 치유 범위 of 3 health at the end of its path
 spambullet5=§9Explosion:§0 Explodes at the end of its path instead of colliding
 
 // Tiles
@@ -459,53 +459,53 @@ geltile=Sticky floor that greatly slows down everything on top
 witchstatue=Placing this statue on the surface of a swamp will eliminate witch spawn throughout the island
 
 // Generic Trinkets
-areawhenheal=Executes this area for every <magichealing> Magic Healing done
-periaptboost=Press [input=trinketability] to gain a boost of Speed and Attack Speed for 10 seconds
+areawhenheal=Executes this 범위 for every <magichealing> 마법 치유 done
+periaptboost=Press [input=trinketability] to gain a boost of 속도 and Attack 속도 for 10 seconds
 
 // Trinkets
-rockyperiapt=§7+5§0 Armor, but §6-5%§0 Movement Speed
+rockyperiapt=§7+5§0 Armor, but §6-5%§0 Movement 속도
 rockyperiapt2=Press [input=trinketability] to gain 10 Armor for 10 seconds
 unstableperiapt=Summons two Baby Unstable Gel Slimes (6 Summoner Damage)
 unstableperiapt2=Makes you immune to the Sticky debuff
 bloodyperiapt=Also, the weapons 'Blood Bolt' and 'Blood Volley' will steal §73%§0 of life
-demonicperiapt=Also, Magic weapons will steal §73%§0 of life
-necromancyperiapt=Every time you or one of your summons kills a hostile mob you summon a Undead Skeleton
+demonicperiapt=Also, 마법 weapons will steal §73%§0 of life
+necromancyperiapt=Every time you or one of your summons kills a hostile mob you 소환 a Undead Skeleton
 necromancyperiapt2=20 Summoner Damage. Lasts 10 seconds and there can be a maximum of 3 at a time
-frozenperiapt=Melee and Ranged weapons will Freeze for 3 seconds
-frozenperiapt2=Deal more damage to mobs affected by Frezze
+frozenperiapt=근접 and 원거리 weapons will Freeze for 3 seconds
+frozenperiapt2=Deal more 피해 to mobs affected by Frezze
 frozenperiapt3=Makes you immune to the Freeze and Frostslow debuffs
-floralring=Magic Heal yourself with §7<healing>§0 every 5 seconds
-gelring=§7+30%§0 Magic Healing received
+floralring=마법 Heal yourself with §7<healing>§0 every 5 seconds
+gelring=§7+30%§0 마법 치유 받은
 heartring=§7+20§0 max health
-swampshield=Only protects attacks in the direction they are received
-swampshield2=On perfect block: Magic Heal yourself with the §7<healing>§0 of your max health
-iceboots=Makes you slide as if you were on ice, but grants +50% movement speed and +4 armor
-inspirationfoci1=§7+40%§0 inspiration effect and §7+20%§0 inspiration ability speed
-inspirationfoci2=§6-20%§0 all non-inspiration damage and §6-1§0 max summons
-essenceofhealing=§7+<percent>%&§0 Magic Healing per life essence
-essenceofhealing2=§7<flat>§0 Magic Healing per 2 life essences
+swampshield=Only protects attacks in the direction they are 받은
+swampshield2=On perfect block: 마법 Heal yourself with the §7<healing>§0 of your max health
+iceboots=Makes you slide as if you were on ice, but grants +50% movement 속도 and +4 armor
+inspirationfoci1=§7+40%§0 inspiration 효과 and §7+20%§0 inspiration 스킬 속도
+inspirationfoci2=§6-20%§0 all non-inspiration 피해 and §6-1§0 max summons
+essenceofhealing=§7+<percent>%&§0 마법 치유 per life essence
+essenceofhealing2=§7<flat>§0 마법 치유 per 2 life essences
 essenceofhealing3=§6-80%§0 life essence duration, capped to -50%
 ninjascarf=Converts Saber Dashes into Saber Jumps
-adrenalinecharm=Every hit received will give you Adrenaline for 20 seconds
+adrenalinecharm=Every hit 받은 will give you Adrenaline for 20 seconds
 infectedperiapt=Summons two Living Saplings (8 Summoner Damage)
 bloomrushcharm=Decrease stamina usage by 10% for each Adrenaline you have\nSummon a Living Sapling (8 Summoner Damage) for each Adrenaline you have
 
 // Set Bonus
-goldhatsetbonus=If you're still, your ranged attack speed is greatly increased
-pinkwitchsetbonus=Increases Magic Attack Speed, Mana Regeneration, and Armor the lower your health is
-infectedsetbonus=Summon three Living Saplings (8 Summoner Damage)
-spinelhelmetsetbonus=Magic Heal yourself with §7<healing>§0 of melee damage dealt to hostile mobs
-spinelhatsetbonus=Magic Heal yourself and all close allys\nwith §7<healing>§0 of magic damage dealt to hostile mobs
+goldhatsetbonus=If you're still, your 원거리 attack 속도 is greatly increased
+pinkwitchsetbonus=Increases 마법 Attack Speed, Mana Regeneration, and Armor the lower your health is
+infectedsetbonus=소환 three Living Saplings (8 Summoner Damage)
+spinelhelmetsetbonus=마법 Heal yourself with §7<healing>§0 of 근접 피해 dealt to hostile mobs
+spinelhatsetbonus=마법 Heal yourself and all close allys\nwith §7<healing>§0 of 마법 피해 dealt to hostile mobs
 
 // Banners
 strikebannereffect=§7+<effect>%§0 health regen (in and out of combat)
-strikebannerability=§aEvery <time> seconds:§0 Performs an area attack
+strikebannerability=§aEvery <time> seconds:§0 Performs an 범위 attack
 blankbannereffect=§7+<effect>%§0 health regen (out of combat)
-blankbannerability=§aEvery <time> seconds:§0 Performs an area healing
-bannerofdamageeffect=§7+<effect>%§0 damage
-bannerofdefenseeffect=§7-<effect>%§0 incoming damage
-bannerofspeedeffect=§7+<effect>%§0 movement speed
-bannerofsummonspeedeffect=§7+<effect>%§0 summon movement speed
+blankbannerability=§aEvery <time> seconds:§0 Performs an 범위 치유
+bannerofdamageeffect=§7+<effect>%§0 피해
+bannerofdefenseeffect=§7-<effect>%§0 incoming 피해
+bannerofspeedeffect=§7+<effect>%§0 movement 속도
+bannerofsummonspeedeffect=§7+<effect>%§0 소환 movement 속도
 
 // Mighty Banners
 banneroffishingeffect=§7+<effect>§0 fishing power
@@ -513,14 +513,14 @@ bannerofhealthregeneffect=§7+<effectfloat>§0 combat health regen
 bannerofmanaregeneffect=§7+<effect>%§0 combat mana regen
 bannerofresistanceeffect=§7+<effect>§0 armor
 bannerofsummoningeffect=§7+<effect>§0 max summons
-bannerofattackspeedeffect=§7+<effect>%§0 attack speed
+bannerofattackspeedeffect=§7+<effect>%§0 attack 속도
 
 // Summoner Expansion Banners
 bannerofresilienceeffect=§7+<effect>%§0 max resilience\nRegen §7+<effect>§0 resilience per second
 bannerofbouncingeffect=§7+<effect>§0 projectile bounces
 bannerofessenceeffect=§7+<effect>%§0 life essence duration
 bannerofstaminaeffect=§7+<effect>%§0 stamina capacity\n§7+<effect2>%§0 stamina regen\n§7-<effect2>%§0 stamina usage
-bannerofpickingeffect=§7+<effectfloat>§0 pickup range
+bannerofpickingeffect=§7+<effectfloat>§0 pickup 사거리
 bannerofdashingeffect=§7+<effect>§0 dash stacks\n§7-<effect2>%§0 dash cooldown
 bannerofmanaeffect=§7+<effect>%§0 max mana\n§7<effect2>%§0 mana regen
 
@@ -537,78 +537,78 @@ duplicatedmodifierrunes=Cannot insert more than one of the same modifier rune
 runehealthcost=Consumes <health>% of max health upon activation
 runehealthhealing=Restores <health>% of max health when used
 runecooldown=Recharges in <seconds> seconds
-increaseruneeffectnumber=Increases the effect by §7<variation>%§0
-decreaseruneeffectnumber=Decreases the effect by §6<variation>%§0
+increaseruneeffectnumber=Increases the 효과 by §7<variation>%§0
+decreaseruneeffectnumber=Decreases the 효과 by §6<variation>%§0
 increaserunecooldown=Increases the cooldown by §6<variation>%§0
 decreaserunecooldown=Decreases the cooldown by §7<variation>%§0
 increaserunehealthcost=Increases the consumption of max health by §6<health>%§0
 increaserunehealthhealing=Increases the restoration of max health by §7<health>%§0
-runedamagereduction=The damage is drastically reduced against humans and even more against bosses
-runedamagereductionnoboss=The damage is drastically reduced against humans and don't affect bosses
-moreextraeffectmod=Effect modifications are <mod>% more effective
-lessextraeffectmod=Effect modifications are <mod>% less effective
+runedamagereduction=The 피해 is drastically reduced against humans and even more against bosses
+runedamagereductionnoboss=The 피해 is drastically reduced against humans and don't affect bosses
+moreextraeffectmod=효과 modifications are <mod>% more effective
+lessextraeffectmod=효과 modifications are <mod>% less effective
 
 // Runes Injectors
 
 // Base Runes Tier 0
-runeoffury=Increase your damage and attack speed by §7<effectNumber>§0% for 10 seconds
+runeoffury=Increase your 피해 and attack 속도 by §7<effectNumber>§0% for 10 seconds
 runeofspeed=Dash with §7<effectNumber>§0 strength in the direction you are moving and become invincible for 0.5 seconds
 runeofresistance=Increases your armor by §7<effectNumber>§0% for 10 seconds
 runeofresistance2=While on cooldown, your armor is reduced by half
 runeofvalor=+200% inspiration for §7<effectNumber>§0 seconds
-runeofdetonation=Explodes, dealing more damage and knocking back enemies the closer they are
-runeofdetonation2=The maximum damage is §7<effectNumber>§0% of the mobs' max health as damage
+runeofdetonation=Explodes, dealing more 피해 and knocking back enemies the closer they are
+runeofdetonation2=The maximum 피해 is §7<effectNumber>§0% of the mobs' max health as 피해
 runeofthunder=After two seconds, a lightning strikes your cursor's initial position
-runeofthunder2=The lightning deals §7<effectNumber>§0% of the mobs' health as damage and stun for 2 seconds
-runeofwinter=Frost-slows enemies within a 500 range for §7<effectNumber>§0 seconds
+runeofthunder2=The lightning deals §7<effectNumber>§0% of the mobs' health as 피해 and stun for 2 seconds
+runeofwinter=Frost-slows enemies within a 500 사거리 for §7<effectNumber>§0 seconds
 runeofimmortality=If you die within the next §7<effectNumber>§0 seconds, you will survive with max health
 runeofimmortality2=If this happens, you will be invulnerable for 3 seconds, but the cooldown will be 30 seconds
 runeofimmortality3=While on cooldown, your max health is reduced by half
 runeofshadows=For §7<effectNumber>§0 seconds, you will become invisible but also intimidated, preventing you from taking any actions
 
 // Base Runes Tier 1
-runeofunstablegelslime=Teleport to a nearby location and summon 2 Runic Unstable Gel Slimes for §7<effectNumber>§0 seconds
-runeofunstablegelslime2=The summons will deal 5% of the mobs' maximum health as damage
-runeofevilsprotector=+§7<effectNumber>§0% attack speed, but -50% movement speed for 10 seconds
-runeofevilsprotector2=During the night on the surface, the positive effect is doubled
+runeofunstablegelslime=Teleport to a nearby location and 소환 2 Runic Unstable Gel Slimes for §7<effectNumber>§0 seconds
+runeofunstablegelslime2=The summons will deal 5% of the mobs' maximum health as 피해
+runeofevilsprotector=+§7<effectNumber>§0% attack speed, but -50% movement 속도 for 10 seconds
+runeofevilsprotector2=During the night on the surface, the positive 효과 is doubled
 runeofqueenspider=Leaves a spider web on the ground for §7<effectNumber>§0 seconds
-runeofvoidwizard=All projectiles will bounce infinitely and +§7<effectNumber>§0% projectile speed for 10 seconds
-runeofswampguardian=Reduces all damage taken by 80% for §7<effectNumber>§0 seconds
+runeofvoidwizard=All projectiles will bounce infinitely and +§7<effectNumber>§0% projectile 속도 for 10 seconds
+runeofswampguardian=Reduces all 피해 taken by 80% for §7<effectNumber>§0 seconds
 runeofancientvulture=Summons a Runic Vulture Hatchling for 10 seconds
-runeofancientvulture2=The summon will deal §7<effectNumber>§0% of the mobs' maximum health as damage
-runeofpiratecaptain=Increase your Damage by §7<effectNumber>§0% for every 200 coins you have, up to a maximum of 20,000 coins
+runeofancientvulture2=The 소환 will deal §7<effectNumber>§0% of the mobs' maximum health as 피해
+runeofpiratecaptain=Increase your 피해 by §7<effectNumber>§0% for every 200 coins you have, up to a maximum of 20,000 coins
 runeofpiratecaptain2=Each time you attack, you will lose 3 coins
-runeofchieftain=For the next 20 seconds, your Damage increases the lower your health is, up to a maximum of +§7<effectNumber>§0%
+runeofchieftain=For the next 20 seconds, your 피해 increases the lower your health is, up to a maximum of +§7<effectNumber>§0%
 
 // Base Runes Tier 2
 runeofreaper=Teleport to the position of your mouse. Maximum §7<effectNumber>§0 distance
-runeofcryoqueen=Stop for 1 second and launch an ice attack around you with §7<effectNumber>§0 range
-runeofcryoqueen2=The projectiles will deal 200% of the mobs' maximum health as damage
+runeofcryoqueen=Stop for 1 second and launch an ice attack around you with §7<effectNumber>§0 사거리
+runeofcryoqueen2=The projectiles will deal 200% of the mobs' maximum health as 피해
 runeofpestwarden=For the next §7<effectNumber>§0 seconds, colliding with enemies damages and pushes them
-runeofpestwarden2=The damage is 20% of their max health
+runeofpestwarden2=The 피해 is 20% of their max health
 runeofsageandgrit=If there are damaged allies nearby (500 range), heal §7<effectNumber>§0% of their total health
-runeofsageandgrit2=If not, increase your damage, attack speed and movement speed by +§7<effectNumber>§0% for 20 seconds
+runeofsageandgrit2=If not, increase your damage, attack 속도 and movement 속도 by +§7<effectNumber>§0% for 20 seconds
 runeoffallenwizard=Stun all mobs except you for §7<effectNumber>§0 seconds
 runeoffallenwizard2=Humans will break free faster, and bosses even faster
 runeofbabylontower=+§7<effectNumber>§0% all damage, but you can't move. 10 seconds
 
 // Base Runes Tier 3
-runeofmotherslime=Perform a large leap towards your mouse position and deal area damage upon landing
-runeofmotherslime2=The lading will deal §7<effectNumber>§0% of the mobs' maximum health as damage
-runeofnightswarm=Summon 5 bats for §7<effectNumber>§0 seconds that seek out hostile mobs to bite them
+runeofmotherslime=Perform a large leap towards your mouse position and deal 범위 피해 upon landing
+runeofmotherslime2=The lading will deal §7<effectNumber>§0% of the mobs' maximum health as 피해
+runeofnightswarm=소환 5 bats for §7<effectNumber>§0 seconds that seek out hostile mobs to bite them
 runeofnightswarm2=Each bite restores 1% of your total health (at least 1)
 runeofspiderempress=Throws §7<F0effectNumber>§0 web balls in the direction of your mouse
 runeofspiderempress2=The web balls will stun for 3 seconds and slow down for 10 seconds
-runeofsunlightchampion=Get stuned for 3 seconds charging a nova of §7<effectNumber>§0 range
-runeofsunlightchampion2=The nova will deal 200% of the mobs' maximum health as damage
-runeofmoonlightdancer=+§7<effectNumber>§0% damage for every +1% movement speed for 10 seconds
+runeofsunlightchampion=Get stuned for 3 seconds charging a nova of §7<effectNumber>§0 사거리
+runeofsunlightchampion2=The nova will deal 200% of the mobs' maximum health as 피해
+runeofmoonlightdancer=+§7<effectNumber>§0% 피해 for every +1% movement 속도 for 10 seconds
 runeofcrystaldragon=Throw a laser beam in your cursor position for 5 seconds
-runeofcrystaldragon2=The laser will deal §7<effectNumber>§0% of the mobs' maximum health as damage
+runeofcrystaldragon2=The laser will deal §7<effectNumber>§0% of the mobs' maximum health as 피해
 
 // Modifier Runes Tier 0
 
 // Modifier Runes Tier 1
-onyxrune=When activated, summons Onyx for 5 seconds. It will deal damage based on 5% of the mob's health
+onyxrune=When activated, summons Onyx for 5 seconds. It will deal 피해 based on 5% of the mob's health
 onyxrune2=Each bite from Onyx restores 1% of your total health (at least 1)
 onyxrune3=§3Thanks Onyx for the brilliant rune ideas! <3
 pawningrune=When activated, if you don't already have the effect, immediately restores 20% of your maximum health
@@ -616,7 +616,7 @@ pawningrune2=After 10 seconds, you will lose the amount restored plus an additio
 
 // Modifier Runes Tier 2
 abysmalrune=When activated, summons a black hole at your cursor position, pulling enemies in for 2 seconds
-abysmalrune2=The black hole will only summon if 10 seconds have passed since the last activation
+abysmalrune2=The black hole will only 소환 if 10 seconds have passed since the last activation
 tidalrune=When activated, summons a wave of water that pushes enemies away
 
 // Modifier Runes Tier 3
@@ -677,12 +677,12 @@ harmonybuff=Harmony
 
 // Active Buffs
 berserkerrushactive=Berserker Rush
-periaptactive=Periapt Ability Active
+periaptactive=Periapt 스킬 Active
 runesinjectoractive=Runes Injector Active
 
 // Cooldown Buffs
 berserkerrushcooldown=Berserker Rush on Cooldown
-periaptcooldown=Periapt Ability on Cooldown
+periaptcooldown=Periapt 스킬 on Cooldown
 runesinjectorcooldown=Runes Injector on Cooldown
 spinattackcooldown=Spin Attack on Cooldown
 saberdashcooldown=Saber Dash on Cooldown
@@ -734,7 +734,7 @@ findthespammer=[item=thespammer] Find The Spammer
 
 
 [controls]
-runesinjectorability=Runes Injector Ability
+runesinjectorability=Runes Injector 스킬
 
 
 [runestutorialbook]
@@ -746,9 +746,9 @@ equiptext=To activate your runes, the Runes Injector must be equipped in a Trink
 runesheader=What Are Runes?
 runestext=Runes are mystical stones that provide powerful effects when inserted into a Runes Injector. Their strength and behavior depend on how they're combined, mastering their use is key to unlocking your full potential.
 baserunesheader=Base Runes
-baserunestext=Every Runes Injector requires exactly one Base Rune to function. The Base Rune defines the main effect of the injector and acts as the core of your setup. You'll notice a green number next to the effect, this represents its effect value, which can be increased or decreased with modifiers.
+baserunestext=Every Runes Injector requires exactly one Base Rune to function. The Base Rune defines the main 효과 of the injector and acts as the core of your setup. You'll notice a green number next to the effect, this represents its 효과 value, which can be increased or decreased with modifiers.
 modifierrunesheader=Modifier Runes
-modifierrunestext=Modifier Runes are used to customize and enhance the effect of your Base Rune. They can tweak the effect value, change how it behaves, or add special properties. However, Modifier Runes always come with trade-offs: no modifier is purely beneficial, so choose wisely!
+modifierrunestext=Modifier Runes are used to customize and enhance the 효과 of your Base Rune. They can tweak the 효과 value, change how it behaves, or add special properties. However, Modifier Runes always come with trade-offs: no modifier is purely beneficial, so choose wisely!
 
 tableheader=The Runes Table
 tabletext=The Runes Table is your go-to station for crafting a wide variety of runes. Most standard runes can be made here, but remember: some powerful runes can only be found through exploration. Keep your eyes open, adventure rewards the curious!
