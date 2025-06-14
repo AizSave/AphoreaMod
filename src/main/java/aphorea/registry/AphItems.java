@@ -189,7 +189,7 @@ public class AphItems {
         registerItem("magicalvial", new MagicalVial());
         registerItem("woodenwand", new WoodenWand());
         registerItem("goldenwand", new GoldenWand());
-        registerItem("spinelwand", new SpinelStaff());
+        registerItem("spinelstaff", new SpinelStaff());
 
         // Banners
         registerItem("blankbanner", new BlankBannerItem());

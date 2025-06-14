@@ -30,7 +30,6 @@ public class AphProjectiles {
         ProjectileRegistry.registerProjectile("voidstone", VoidStoneProjectile.class, "voidstone", "voidstone_shadow");
         ProjectileRegistry.registerProjectile("woodenwand", WoodenWandProjectile.class, null, null);
         ProjectileRegistry.registerProjectile("goldenwand", GoldenWandProjectile.class, null, null);
-        ProjectileRegistry.registerProjectile("spinelwand", SpinelWandProjectile.class, null, null);
         ProjectileRegistry.registerProjectile("bigglacialshard", GlacialShardBigProjectile.class, "glacialshard_big", "glacialshard_big_shadow");
         ProjectileRegistry.registerProjectile("mediumglacialshard", GlacialShardMediumProjectile.class, "glacialshard_medium", "glacialshard_medium_shadow");
         ProjectileRegistry.registerProjectile("smallglacialshard", GlacialShardSmallProjectile.class, "glacialshard_small", "glacialshard_small_shadow");
