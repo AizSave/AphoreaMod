@@ -94,7 +94,9 @@ public class SaberAttackHandler extends MousePositionAttackHandler {
 
     @Override
     public void onEndAttack(boolean bySelf) {
-        AphCustomUIList.saberAttack.form.setHidden(true);
+        if(AphCustomUIList.saberAttack.form != null) {
+            AphCustomUIList.saberAttack.form.setHidden(true);
+        }
         float chargePercent = this.getChargePercent();
         if (!this.endedByInteract && chargePercent >= 0.1F) {
             if (this.attackerMob.isPlayer) {

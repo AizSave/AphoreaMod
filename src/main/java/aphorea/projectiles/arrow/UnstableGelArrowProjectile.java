@@ -55,7 +55,7 @@ public class UnstableGelArrowProjectile extends Projectile {
         this.speed = speed;
         this.distance = distance;
 
-        this.gameDamage = gameDamage.modDamage(0.5F);
+        this.gameDamage = damage.modDamage(0.5F);
     }
 
     public AphAreaList getAreaList(GameDamage gameDamage) {

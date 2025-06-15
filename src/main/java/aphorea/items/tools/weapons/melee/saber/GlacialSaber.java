@@ -203,7 +203,9 @@ public class GlacialSaber extends AphSaberToolItem {
 
         @Override
         public void onEndAttack(boolean bySelf) {
-            AphCustomUIList.glacialSaberAttack.form.setHidden(true);
+            if(AphCustomUIList.glacialSaberAttack.form != null) {
+                AphCustomUIList.glacialSaberAttack.form.setHidden(true);
+            }
             float chargePercent = this.getChargePercent();
             if (!this.endedByInteract && chargePercent >= 0.25F) {
                 if (this.attackerMob.isPlayer) {
