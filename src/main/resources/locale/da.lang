@@ -1,0 +1,752 @@
+# Translation made by AI
+
+[global]
+aphorea=§!Aphorea Mod
+aphorearework=§!Aphorea Mod Omarbejdning
+aphoreamightybanner=§!Aphorea Mod x Mighty Banner Mod
+aphoreasummonerexpansion=§!Aphorea Mod x Summoner Expansion
+
+
+[buffmodifiers]
+// Magic Healing
+magichealing=<mod>% magisk helbredelse
+magichealingflat=<mod> magisk helbredelse
+magichealingreceived=<mod>% modtaget magisk helbredelse
+magichealingreceivedflat=<mod> modtaget magisk helbredelse
+magichealinggrace=<mod>% magisk helbredelsesnåde
+
+// Area
+arearange=<mod>% område rækkevidde
+
+// Inspiration Damage
+inspirationdamage=<mod>% inspirationsskade
+inspirationcritchance=<mod>% inspirationskritisk chance
+inspirationcritdamage=<mod>% inspirationskritisk skade
+inspirationeffect=<mod>% inspirationseffekt
+inspirationabilityspeed=<mod>% inspirationsevnehastighed
+
+// Others
+loyal=Dolken mistes ikke, når den kastes
+
+
+[stats]
+inspiration_damage=Inspirationsskade
+
+
+[enchantment]
+// Healing Equipment
+godly=Guddommelig
+absent=Fraværende
+auxiliary=Hjælpe-
+vain=Forgæves
+gentle=Blid
+selfish=Egoistisk
+
+// Healing
+friendly=Venlig
+graceful=Yndefuld
+wonderful=Vidunderlig
+ecologic=Økologisk
+exalted=Ophøjet
+cursed=Forbandet
+
+// Area
+booming=Boomende
+dimmed=Dæmpet
+
+// Others
+loyal=Loyal
+
+
+[tile]
+geltile=Gelégulv
+infectedwatertile=Inficeret vand
+infectedgrasstile=Inficeret græs
+spinelgravel=Spinelgrus
+
+
+[tech]
+runes=Runer
+
+
+[object]
+witchstatue=Heksestatue
+runestable=Runebord
+#NEW
+infectedsapling=Inficeret ungtræ
+spinelcluster=Spinelklynge
+spinelcluster_small=Lille spinelklynge
+gelrock=Geléklippe
+infectedtree=Inficeret træ
+infectedgrass=Inficeret græs
+spinelchest=Spinelkiste
+fakespinelchest=Falsk spinelkiste
+babylontower=Babelstårnet
+babylonentrance=Indgang til Babylon
+babylonexit=Udgang fra Babylon
+infectedtrialentrance=Indgang til inficeret prøvelse
+infectedchair=Inficeret stol
+infecteddinnertable=Inficeret spisebord
+infectedbookshelf=Inficeret bogreol
+infectedcabinet=Inficeret skab
+infectedbed=Inficeret seng
+infecteddoublebed=Inficeret dobbeltseng
+infectedcandelabra=Inficeret kandelaber
+
+
+[itemcategory]
+healing=Helbredelse
+healingtools=Helbredelsesværktøjer
+runes=Runer
+runesinjectors=Runeinjektorer
+baserunes=Basisruner
+modifierrunes=Modifikationsruner
+
+
+[item]
+// General Materials
+anybasicfoci=Enhver basis fokus
+
+// Materials
+rockygel=Stenet gelé
+unstablegel=Ustabil gelé
+stardust=Stjernestøv
+infectedlog=Inficeret træstamme
+infectedalloy=Inficeret legering
+spinel=Spinel
+lifespinel=Livsspinel
+
+// Consumables
+unstablecore=Ustabil kerne
+initialrune=Indledende rune
+venomextract=Giftekstrakt
+
+// Swords
+gelsword=Gelésværd
+unstablegelsword=Ustabilt gelésværd
+broom=Kost
+voidhammer=Tomhedshammer
+brokenkora=Brækket kora
+thenarcissist=Narcissisten
+cryokatana=Kryokatana
+
+// Greatswords
+unstablegelgreatsword=Ustabilt geléstorsværd
+babylongreatsword=Babylonstorsværd
+
+// Glaives
+woodenrod=Træstang
+
+// Sabers
+saber=Sabel
+coppersaber=Kobbersabel
+ironsaber=Jernsabel
+goldsaber=Guldsabel
+demonicsaber=Dæmonisk sabel
+unstablegelsaber=Ustabil gelésabel
+honeysaber=Honningsabel
+glaciallsaber=Gletsjersabel
+crimsonkora=Karminrød kora
+
+// Battleaxes
+battleaxe=Stridsøkse
+unstablegelbattleaxe=Ustabil geléstridsøkse
+demonicbattleaxe=Dæmonisk stridsøkse
+
+// Daggers
+dagger=Dolk
+copperdagger=Kobberdolk
+irondagger=Jerndolk
+golddagger=Gulddolk
+demonicdagger=Dæmonisk dolk
+tungstendagger=Wolframdolk
+lostumbrella=Mistet paraply
+
+// Rapiers
+fossilrapier=Fossilrapir
+lightrapier=Lysrapir
+
+// Magic weapons
+unstablegelstaff=Ustabil geléstav
+magicalbroom=Magisk kost
+adeptsbook=Adeptens bog
+harpofharmony=Harmoniharpe
+babyloncandle=Babylonslys
+
+// Bows
+spinelcrossbow=Spinelarmbrøst
+
+// Guns
+thespammer=Spammeren
+
+// Bullets
+spambullet=Spamkugle
+
+// Greatbows
+gelgreatbow=Geléstorbue
+unstablegelgreatbow=Ustabil geléstorbue
+
+// Arrows
+gelarrow=Gelépil
+unstablegelarrow=Ustabil gelépil
+
+// Saber Guns
+sabergun=Sabelpistol
+shotgunsaber=Haglgeværsabel
+
+// Slings
+sling=Slynge
+firesling=Ildslynge
+frozensling=Frossen slynge
+
+// Blowguns
+blowgun=Pusterør
+
+// Throw weapons
+gelball=Gelébold
+gelballgroup=Grupperede gelébolde
+unstablegelveline=Ustabil geléspyd
+
+// Summon weapons
+volatilegelstaff=Flygtig geléstav
+infectedstaff=Inficeret stav
+
+// Banners
+blankbanner=Tomt banner
+
+// Healing Tools
+healingtool=Helbredelsesværktøj
+magicalvial=Magisk hætteglas
+healingstaff=Helbredelsesstav
+woodenwand=Træstav
+goldenwand=Guldstav
+spinelstaff=Spinelstav
+
+// Tools
+superiorpickaxe=Overlegen hakke
+
+// Trinkets
+rockyperiapt=Stenet periapt
+unstableperiapt=Ustabil periapt
+bloodyperiapt=Blodig periapt
+demonicperiapt=Dæmonisk periapt
+abysmalperiapt=Afgrundsdyb periapt
+frozenperiapt=Frossen periapt
+necromancyperiapt=Nekromantiperiapt
+floralring=Blomsterring
+gelring=Geléring
+heartring=Hjertering
+ringofhealth=Sundhedsring
+swampshield=Sumpskjold
+witchmedallion=Heksemedaljon
+iceboots=Isstøvler
+inspirationfoci=Inspirationsfokus
+cursedmedallion=Forbandet medaljon
+ancientmedallion=Gammel medaljon
+essenceofhealing=Helbredelsens essens
+ninjascarf=Ninjatørklæde
+adrenalinecharm=Adrenalinamulet
+spinelshield=Spinelskjold
+bloomrushcharm=Blomsterstormsamulet
+infectedperiapt=Inficeret periapt
+
+// Armor
+rockyboots=Stenestøvler
+rockychestplate=Stenet brystplade
+rockyhelmet=Stenethjelm
+goldhat=Guldhat
+pinkwitchhat=Lyserød heksehat
+magicalsuit=Magisk dragt
+magicalboots=Magiske støvler
+swampboots=Sumpstøvler
+swampchestplate=Sumpbrystplade
+swampmask=Sumpmaske
+swamphood=Sumphætte
+infectedhat=Inficeret hat
+infectedchestplate=Inficeret brystplade
+infectedboots=Inficerede støvler
+spinelhelmet=Spinelhjelm
+spinelhat=Spinelhat
+spinelchestplate=Spinelbrystplade
+spinelboots=Spinelstøvler
+
+// Misc
+gelslimenullifier=De vil stoppe med at genere dig med et enkelt klik!
+cuberry=Kubeær
+infectedgrassseed=Inficeret græsfrø
+
+// Backpacks
+basicbackpack=Basisrygsæk
+sapphirebackpack=Safirrygsæk
+amethystbackpack=Ametystrygsæk
+rubybackpack=Rubinrygsæk
+emeraldbackpack=Smaragdrygsæk
+diamondbackpack=Diamantrygsæk
+
+// Books
+runestutorialbook=Runevejledningsbog
+
+// Runes Injectors
+runesinjector=Runeinjektor
+rusticrunesinjector=Rustik rune injektor
+unstablerunesinjector=Ustabil rune injektor
+demonicrunesinjector=Dæmonisk rune injektor
+tungstenrunesinjector=Wolfram rune injektor
+ancientrunesinjector=Gammel rune injektor
+
+// Base Runes Tier 0
+baserune=Basisrune
+runeoffury=Raseriets rune
+runeofspeed=Hastighedens rune
+runeofhealing=Helbredelsens rune
+runeofresistance=Modstandens rune
+runeofvalor=Tapperhedens rune
+runeofdetonation=Detonationens rune
+runeofthunder=Tordenens rune
+runeofwinter=Vinterens rune
+runeofshadows=Skyggernes rune
+runeofimmortality=Udødelighedens rune
+
+// Base Runes Tier 1
+runeofunstablegelslime=Ustabil geléslims rune
+runeofevilsprotector=Ondskabens beskytters rune
+runeofqueenspider=Edderkoppekongindens rune
+runeofvoidwizard=Tomhedstroldmandens rune
+runeofswampguardian=Sumpvogterens rune
+runeofancientvulture=Gammel gribs rune
+runeofpiratecaptain=Piratkaptajnens rune
+runeofchieftain=Høvdingens rune
+
+// Base Runes Tier 2
+runeofreaper=Dødens høsters rune
+runeofcryoqueen=Kryodronningens rune
+runeofpestwarden=Pestvogterens rune
+runeofsageandgrit=Salvie & grus' rune
+runeoffallenwizard=Faldne troldmands rune
+runeofbabylontower=Babelstårnets rune
+
+// Base Runes Tier 3
+runeofmotherslime=Moderslims rune
+runeofnightswarm=Nattesværmens rune
+runeofspiderempress=Edderkoppekejserindens rune
+runeofsunlightchampion=Sollysets mesters rune
+runeofmoonlightdancer=Månelysets dansers rune
+runeofcrystaldragon=Krystaldragens rune
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+frenzyrune=Vanvidsrune
+vitalrune=Vitalrune
+devastatingrune=Ødelæggende rune
+onyxrune=Onyxrune
+pawningrune=Bonderune
+
+// Modifier Runes Tier 2
+abysmalrune=Afgrundsrune
+tidalrune=Tidevandsrune
+
+// Modifier Runes Tier 3
+ascendantrune=Opstigende rune
+
+
+[itemtooltip]
+// Stat tips
+line=----------------------------------------
+magichealingtip=Magisk helbredelse: §7<health>
+rangetip=Rækkevidde: §9<range>
+areatip=§aOmråde <number>
+inspirationdamagetip=Inspirationsskade: <value>
+areabuff=Anvend <buff> på allierede
+areadebuff=Anvend <buff> på fjender
+areabuffdisplay=<buff> i <duration> sekunder
+attackarmorpentip=Pansergennemtrængning: <value>%
+
+// Mechanics
+magichealinggrace=§aMagisk helbredelsesnåde:§0 Helbreder dig selv med en % af den magiske helbredelse, der er beregnet til allierede
+cursedbuff=§bForbandet:§0 §6+25%§0 indkommende skade
+inspiration=§9Inspiration:§0 Forbedrer effekten af bannere og musikinstrumenter
+adrenaline=§6Adrenalin:§0 +5% skade, -5% panser. Kan stables op til 5 gange
+livingsapling=§7Levende ungtræ:§0 Helbreder ejeren magisk med §73§0 for hver 10. angreb
+
+// Misc
+gelslimenullifier=De vil stoppe med at genere dig med et enkelt klik!
+enchantingscrollhealingequipmenttip=Bruges til at fortrylle et helbredelsesudstyr med <enchantment>\n§!Aphorea Mod
+enchantingscrollhealingtip=Bruges til at fortrylle et helbredelsesværktøj med <enchantment>\n§!Aphorea Mod
+enchantingscrollareatip=Bruges til at fortrylle et områdeeffektværktøj med <enchantment>\n§!Aphorea Mod
+enchantingscrolldaggertip=Bruges til at fortrylle et dolkvåben med <enchantment>\n§!Aphorea Mod
+backpack=Det er et nyt lager, der opbevarer alle de genstande, du samler
+backpackslots=Kapacitet på <slots> genstande
+stored=Opbevarede genstande: <items>
+backpackcraft=Skal være tom for at lave en bedre rygsæk
+
+// Consumables
+deleteditem=Denne genstand er blevet fjernet, brug denne genstand til at gendanne materialerne, før den fjernes permanent
+unstablecore=§bFrigiver en ustabil aura...§0 Kan kun bruges om dagen
+venomextractbuff=Lowd siger, drik det, lad være
+venomextractbuffdesc=Du kan ikke have mere end 1 HP
+lifespinel=Øger permanent maks. helbred med 5 op til 320
+
+// General Weapons
+spinsecondaryattack=Tryk på [input=mouse2] for at gøre det næste angreb til et områdeangreb
+areasecondaryattack=Tryk på [input=mouse2] for at udføre et områdeangreb, der bruger <mana> mana
+stikybuff1=Gør fjenden klæbrig i 1 sekund
+stikybuff2=Gør fjenden klæbrig i 2 sekunder
+stikybuff3=Gør fjenden klæbrig i 3 sekunder
+projectilearea=Når projektilet slutter, giver det områdeskade
+
+// Melee Weapons
+saber=Oplad til maks. for fuld skade og for at udløse et luftsnit
+saberdash=Hold [input=mouse2] nede for at oplade et spring for at skære gennem fjender
+battleaxe=Tager lang tid at oplade
+battleaxe2=Tryk på [input=mouse2] for at aktivere Bersærker-rushet og få 3 adrenalin midlertidigt
+battleaxe3=Få adrenalin midlertidigt ved at ramme fjender under rushet, hvilket forbedrer bevægelse og angrebshastighed
+dagger=Hold [input=mouse2] nede for at kaste dolken
+
+// Range Weapons
+sling=Kaster sten med kraft
+sling2=§7100%§0 chance for at lamme fjenden i 0.5 sekunder
+twoarrows=Skyder to pile på én gang
+threearrows=Skyder tre pile på én gang
+blowgun=Skyder frø
+
+// Single Melee Weapons
+woodenrod=Helbreder dig selv magisk med §7<healing>§0 for hver 10. angreb
+voidhammer=Når projektilet hopper eller rammer en fjende, sigter det mod den nærmeste og rammer op til 3 gange
+crimsonkora=Hold [input=mouse2] nede for at oplade et ødelæggende, men langsomt angreb
+thenarcissist=Kæd 4 angreb sammen for at udløse et snurrende sværdkast på det femte hit!\n+20% skade for hvert kædet angreb
+
+// Single Range Weapons
+firesling=Brænder fjenderne
+frozensling=Fryser fjenderne
+gelgreatbow=Forvandler stenpile til gelépile
+unstablegelgreatbow=Forvandler stenpile og gelépile til ustabile gelépile
+thespammer=Kan skyde spamkugler
+shotgunsaber=Sigt nær midten for mere kraftfulde, præcise og gennemtrængende skud
+honeysaber=Oplad til maks. for fuld skade og for at skyde honning og blåbær
+spinelcrossbow=Skyder pile, der trænger igennem op til 2 fjender og bliver mere dødbringende for hver gennemtrængning
+spinelcrossbow2=Hold [input=mouse2] nede for at skyde 3 pile på én gang
+
+// Single Magic Weapons
+unstablegelstaff=Når projektiler hopper af vægge, duplikerer de sig
+harpofharmony=Harmoni: Øget hastighed, helbreds- og manaregeneration
+
+// Single Summoner Weapons
+infectedstaff=Tilkalder to levende ungtræer pr. påkaldelse
+
+// Single Throwable Weapons
+gelball=Kaster en gelébold
+
+// Single Magic Healing Tools
+magicalvial=Peg på et såret menneske for at helbrede dem, peg ikke på nogen for at helbrede dig selv
+magicalvial2=Uendelig brug
+
+// Ammo
+spambullet=Har tilfældigt en af disse effekter:
+spambullet1=§9Trist:§0 Angrebet fjende bliver klæbrig og bremser den i 5 sekunder
+spambullet2=§9Ild:§0 I stedet for at kollidere efterlader den en pøl af ild på jorden
+spambullet3=§9Synes godt om:§0 Hopper af vægge og trænger igennem mobs, op til 10 gange hver
+spambullet4=§9Tjek:§0 Magisk helbredelsesområde på 3 helbred ved slutningen af sin vej
+spambullet5=§9Eksplosion:§0 Eksploderer ved slutningen af sin vej i stedet for at kollidere
+
+// Tiles
+geltile=Klæbrigt gulv, der bremser alt ovenpå kraftigt
+
+// Objects
+witchstatue=Placering af denne statue på overfladen af en sump vil eliminere hekseopdræt på hele øen
+
+// Generic Trinkets
+areawhenheal=Udfører dette område for hver <magichealing> magisk helbredelse, der udføres
+periaptboost=Tryk på [input=trinketability] for at få et boost af hastighed og angrebshastighed i 10 sekunder
+
+// Trinkets
+rockyperiapt=§7+5§0 panser, men §6-5%§0 bevægelseshastighed
+rockyperiapt2=Tryk på [input=trinketability] for at få 10 panser i 10 sekunder
+unstableperiapt=Tilkalder to ustabile geléslimbabyer (6 tilkalderskade)
+unstableperiapt2=Gør dig immun over for den klæbrige debuff
+bloodyperiapt=Også våbnene 'Blodbolt' og 'Blodsalve' vil stjæle §73%§0 af livet
+demonicperiapt=Også magiske våben vil stjæle §73%§0 af livet
+necromancyperiapt=Hver gang du eller en af dine tilkaldte dræber en fjendtlig mob, tilkalder du et udødt skelet
+necromancyperiapt2=20 tilkalderskade. Varer 10 sekunder, og der kan højst være 3 ad gangen
+frozenperiapt=Nærkamps- og afstandsvåben vil fryse i 3 sekunder
+frozenperiapt2=Giver mere skade på mobs, der er påvirket af frysning
+frozenperiapt3=Gør dig immun over for frys- og frostslow-debuffs
+floralring=Helbreder dig selv magisk med §7<healing>§0 hvert 5. sekund
+gelring=§7+30%§0 modtaget magisk helbredelse
+heartring=§7+20§0 maks. helbred
+swampshield=Beskytter kun angreb i den retning, de modtages
+swampshield2=Ved perfekt blokering: Helbreder dig selv magisk med §7<healing>§0 af dit maks. helbred
+iceboots=Får dig til at glide, som om du var på is, men giver +50% bevægelseshastighed og +4 panser
+inspirationfoci1=§7+40%§0 inspirationseffekt og §7+20%§0 inspirationsevnehastighed
+inspirationfoci2=§6-20%§0 al ikke-inspirationsskade og §6-1§0 maks. tilkaldte
+essenceofhealing=§7+<percent>%§0 magisk helbredelse pr. livsessens
+essenceofhealing2=§7<flat>§0 magisk helbredelse pr. 2 livsessenser
+essenceofhealing3=§6-80%§0 livsessensvarighed, begrænset til -50%
+ninjascarf=Konverterer sabelspring til sabelhop
+adrenalinecharm=Hvert modtaget hit vil give dig adrenalin i 20 sekunder
+infectedperiapt=Tilkalder to levende ungtræer (8 tilkalderskade)
+bloomrushcharm=Reducer udholdenhedsbrug med 10% for hver adrenalin, du har\nTilkalder et levende ungtræ (8 tilkalderskade) for hver adrenalin, du har
+
+// Set Bonus
+goldhatsetbonus=Hvis du står stille, øges din afstandsangrebshastighed kraftigt
+pinkwitchsetbonus=Øger magisk angrebshastighed, manaregeneration og panser, jo lavere dit helbred er
+infectedsetbonus=Tilkalder tre levende ungtræer (8 tilkalderskade)
+spinelhelmetsetbonus=Helbreder dig selv magisk med §7<healing>§0 af nærkampsskade, der er påført fjendtlige mobs
+spinelhatsetbonus=Helbreder dig selv og alle nære allierede magisk\nmed §7<healing>§0 af magisk skade, der er påført fjendtlige mobs
+
+// Banners
+strikebannereffect=§7+<effect>%§0 helbredsgeneration (i og uden for kamp)
+strikebannerability=§aHver <time> sekunder:§0 Udfører et områdeangreb
+blankbannereffect=§7+<effect>%§0 helbredsgeneration (uden for kamp)
+blankbannerability=§aHver <time> sekunder:§0 Udfører en områdehelbredelse
+bannerofdamageeffect=§7+<effect>%§0 skade
+bannerofdefenseeffect=§7-<effect>%§0 indkommende skade
+bannerofspeedeffect=§7+<effect>%§0 bevægelseshastighed
+bannerofsummonspeedeffect=§7+<effect>%§0 tilkaldtes bevægelseshastighed
+
+// Mighty Banners
+banneroffishingeffect=§7+<effect>§0 fiskekraft
+bannerofhealthregeneffect=§7+<effectfloat>§0 kamphelbredsgeneration
+bannerofmanaregeneffect=§7+<effect>%§0 kampmanaregeneration
+bannerofresistanceeffect=§7+<effect>§0 panser
+bannerofsummoningeffect=§7+<effect>§0 maks. tilkaldte
+bannerofattackspeedeffect=§7+<effect>%§0 angrebshastighed
+
+// Summoner Expansion Banners
+bannerofresilienceeffect=§7+<effect>%§0 maks. modstandsdygtighed\nRegenererer §7+<effect>§0 modstandsdygtighed pr. sekund
+bannerofbouncingeffect=§7+<effect>§0 projektilhop
+bannerofessenceeffect=§7+<effect>%§0 livsessensvarighed
+bannerofstaminaeffect=§7+<effect>%§0 udholdenhedskapacitet\n§7+<effect2>%§0 udholdenhedsgeneration\n§7-<effect2>%§0 udholdenhedsbrug
+bannerofpickingeffect=§7+<effectfloat>§0 opsamlingsrækkevidde
+bannerofdashingeffect=§7+<effect>§0 springstakke\n§7-<effect2>%§0 springnedkøling
+bannerofmanaeffect=§7+<effect>%§0 maks. mana\n§7<effect2>%§0 manaregeneration
+
+// Runes (General)
+baserune=§iBasisrune
+modifierrune=§aModifikationsrune
+linkedrune=§bRune knyttet til [<player>]
+notruneowner=Du er ikke ejeren af basisrunen
+runesslots=Kan indsætte op til 1 basisrune + <modifierslots> modifikationsruner
+useruneinfusor=[input=runesinjectorability] for at aktivere
+requiresbaserune=Kræver en indsat basisrune
+onlyonebaserune=Kun én basisrune kan indsættes ad gangen
+duplicatedmodifierrunes=Kan ikke indsætte mere end én af den samme modifikationsrune
+runehealthcost=Bruger <health>% af maks. helbred ved aktivering
+runehealthhealing=Gendanner <health>% af maks. helbred ved brug
+runecooldown=Genoplader på <seconds> sekunder
+increaseruneeffectnumber=Øger effekten med §7<variation>%§0
+decreaseruneeffectnumber=Sænker effekten med §6<variation>%§0
+increaserunecooldown=Øger nedkølingen med §6<variation>%§0
+decreaserunecooldown=Sænker nedkølingen med §7<variation>%§0
+increaserunehealthcost=Øger forbruget af maks. helbred med §6<health>%§0
+increaserunehealthhealing=Øger gendannelsen af maks. helbred med §7<health>%§0
+runedamagereduction=Skaden reduceres drastisk mod mennesker og endnu mere mod bosser
+runedamagereductionnoboss=Skaden reduceres drastisk mod mennesker og påvirker ikke bosser
+moreextraeffectmod=Effektmodifikationer er <mod>% mere effektive
+lessextraeffectmod=Effektmodifikationer er <mod>% mindre effektive
+
+// Runes Injectors
+
+// Base Runes Tier 0
+runeoffury=Øger din skade og angrebshastighed med §7<effectNumber>§0% i 10 sekunder
+runeofspeed=Spring med §7<effectNumber>§0 styrke i den retning, du bevæger dig, og bliv usårlig i 0.5 sekunder
+runeofresistance=Øger dit panser med §7<effectNumber>§0% i 10 sekunder
+runeofresistance2=Mens den er på nedkøling, er dit panser halveret
+runeofvalor=+200% inspiration i §7<effectNumber>§0 sekunder
+runeofdetonation=Eksploderer, giver mere skade og slår fjender tilbage, jo tættere de er
+runeofdetonation2=Maksimal skade er §7<effectNumber>§0% af mobs' maks. helbred som skade
+runeofthunder=Efter to sekunder slår et lyn ned på din markørs oprindelige position
+runeofthunder2=Lynet giver §7<effectNumber>§0% af mobs' helbred som skade og lammer i 2 sekunder
+runeofwinter=Frostbremser fjender inden for en rækkevidde på 500 i §7<effectNumber>§0 sekunder
+runeofimmortality=Hvis du dør inden for de næste §7<effectNumber>§0 sekunder, vil du overleve med maks. helbred
+runeofimmortality2=Hvis dette sker, vil du være usårlig i 3 sekunder, men nedkølingen vil være 30 sekunder
+runeofimmortality3=Mens den er på nedkøling, er dit maks. helbred halveret
+runeofshadows=I §7<effectNumber>§0 sekunder vil du blive usynlig, men også skræmt, hvilket forhindrer dig i at foretage dig noget
+
+// Base Runes Tier 1
+runeofunstablegelslime=Teleporter til et nærliggende sted og tilkald 2 runiske ustabile geléslim i §7<effectNumber>§0 sekunder
+runeofunstablegelslime2=Tilkaldte vil give 5% af mobs' maksimale helbred som skade
+runeofevilsprotector=+§7<effectNumber>§0% angrebshastighed, men -50% bevægelseshastighed i 10 sekunder
+runeofevilsprotector2=Om natten på overfladen fordobles den positive effekt
+runeofqueenspider=Efterlader et edderkoppespind på jorden i §7<effectNumber>§0 sekunder
+runeofvoidwizard=Alle projektiler vil hoppe uendeligt og +§7<effectNumber>§0% projektilhastighed i 10 sekunder
+runeofswampguardian=Reducerer al modtaget skade med 80% i §7<effectNumber>§0 sekunder
+runeofancientvulture=Tilkalder en runisk gribunge i 10 sekunder
+runeofancientvulture2=Tilkaldte vil give §7<effectNumber>§0% af mobs' maksimale helbred som skade
+runeofpiratecaptain=Øger din skade med §7<effectNumber>§0% for hver 200 mønter, du har, op til et maksimum på 20.000 mønter
+runeofpiratecaptain2=Hver gang du angriber, mister du 3 mønter
+runeofchieftain=I de næste 20 sekunder øges din skade, jo lavere dit helbred er, op til et maksimum på +§7<effectNumber>§0%
+
+// Base Runes Tier 2
+runeofreaper=Teleporter til din mus' position. Maksimal afstand §7<effectNumber>§0
+runeofcryoqueen=Stop i 1 sekund og start et isangreb omkring dig med §7<effectNumber>§0 rækkevidde
+runeofcryoqueen2=Projektilerne vil give 200% af mobs' maksimale helbred som skade
+runeofpestwarden=I de næste §7<effectNumber>§0 sekunder beskadiger og skubber kollision med fjender dem
+runeofpestwarden2=Skaden er 20% af deres maks. helbred
+runeofsageandgrit=Hvis der er sårede allierede i nærheden (500 rækkevidde), helbred §7<effectNumber>§0% af deres samlede helbred
+runeofsageandgrit2=Hvis ikke, øg din skade, angrebshastighed og bevægelseshastighed med +§7<effectNumber>§0% i 20 sekunder
+runeoffallenwizard=Lam alle mobs undtagen dig i §7<effectNumber>§0 sekunder
+runeoffallenwizard2=Mennesker vil bryde fri hurtigere, og bosser endnu hurtigere
+runeofbabylontower=+§7<effectNumber>§0% al skade, men du kan ikke bevæge dig. 10 sekunder
+
+// Base Runes Tier 3
+runeofmotherslime=Udfør et stort spring mod din mus' position og giv områdeskade ved landing
+runeofmotherslime2=Landingen vil give §7<effectNumber>§0% af mobs' maksimale helbred som skade
+runeofnightswarm=Tilkald 5 flagermus i §7<effectNumber>§0 sekunder, der opsøger fjendtlige mobs for at bide dem
+runeofnightswarm2=Hvert bid gendanner 1% af dit samlede helbred (mindst 1)
+runeofspiderempress=Kaster §7<F0effectNumber>§0 spindelvævsbolde i retning af din mus
+runeofspiderempress2=Spindelvævsboldene vil lamme i 3 sekunder og bremse i 10 sekunder
+runeofsunlightchampion=Bliv lammet i 3 sekunder, mens du oplader en nova med §7<effectNumber>§0 rækkevidde
+runeofsunlightchampion2=Novaen vil give 200% af mobs' maksimale helbred som skade
+runeofmoonlightdancer=+§7<effectNumber>§0% skade for hver +1% bevægelseshastighed i 10 sekunder
+runeofcrystaldragon=Kast en laserstråle i din markørs position i 5 sekunder
+runeofcrystaldragon2=Laseren vil give §7<effectNumber>§0% af mobs' maksimale helbred som skade
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+onyxrune=Når den aktiveres, tilkalder den Onyx i 5 sekunder. Den vil give skade baseret på 5% af mob'ens helbred
+onyxrune2=Hvert bid fra Onyx gendanner 1% af dit samlede helbred (mindst 1)
+onyxrune3=§3Tak Onyx for de geniale runeideer! <3
+pawningrune=Når den aktiveres, hvis du ikke allerede har effekten, gendanner den øjeblikkeligt 20% af dit maksimale helbred
+pawningrune2=Efter 10 sekunder mister du den gendannede mængde plus yderligere 40%
+
+// Modifier Runes Tier 2
+abysmalrune=Når den aktiveres, tilkalder den et sort hul på din markørs position, der trækker fjender ind i 2 sekunder
+abysmalrune2=Det sorte hul vil kun blive tilkaldt, hvis der er gået 10 sekunder siden sidste aktivering
+tidalrune=Når den aktiveres, tilkalder den en bølge af vand, der skubber fjender væk
+
+// Modifier Runes Tier 3
+
+
+[mobtooltip]
+usenet=Brug et net! [item=net]
+
+
+[mob]
+// Hostile
+gelslime=Geléslim
+rockygelslime=Stenet geléslim
+unstablegelslime=Ustabil geléslim
+miniunstablegelslime=Mini ustabil geléslim
+pinkwitch=Lyserød heks
+voidadept=Tomhedsadapt
+copperdaggergoblin=Kobberdolksgoblin
+irondaggergoblin=Jerndolksgoblin
+golddaggergoblin=Gulddolksgoblin
+infectedtreant=Inficeret treant
+spinelgolem=Spinelgolem
+spinelcaveling=Spinelhuleboer
+tungstencaveling=Wolframhuleboer
+spinelmimic=Spinelmimic
+babylontower=Babelstårnet
+hearthcrystal=Hjertekrystal
+babylon=Babylon
+
+// Friendly
+wildphosphorslime=Vild fosforslim
+
+// Summon
+babyunstablegelslime=Ustabil geléslimbaby
+undeadskeleton=Udødt skelet
+volatilegelslime=Flygtig geléslim
+runicunstablegelslime=Runisk ustabil geléslim
+runicvulturehatchling=Runisk gribunge
+runicbat=Runisk flagermus
+onyx=Onyx
+livingsapling=Levende ungtræ
+
+// Pet
+petphosphorslime=Fosforslim
+
+
+[buff]
+// Common Buffs
+stunbuff=Lammelse
+fallenstunbuff=Faldet lammelse
+stickybuff=Klæbrig
+stopbuff=Stoppet
+honeyedbuff=Honningdækket
+venomextractbuff=Giftekstrakt
+cursedbuff=Forbandet
+adrenalinebuff=Adrenalin
+harmonybuff=Harmoni
+
+// Active Buffs
+berserkerrushactive=Bersærker-rush aktiv
+periaptactive=Periapt-evne aktiv
+runesinjectoractive=Runeinjektor aktiv
+
+// Cooldown Buffs
+berserkerrushcooldown=Bersærker-rush på nedkøling
+periaptcooldown=Periapt-evne på nedkøling
+runesinjectorcooldown=Runeinjektor på nedkøling
+spinattackcooldown=Snurreangreb på nedkøling
+saberdashcooldown=Sabelspring på nedkøling
+
+
+[message]
+unstablegelslime_anger=§6Ustabil geléslim bliver vred... <anger>/10
+unstablegelslime_fullanger=§6Ustabil geléslim blev vred! <anger>/10
+unstablegelslime_night=§6Ustabil geléslim§0 forsvandt, da natten faldt på!
+gelslimesnulled=Geléslim er blevet nulstillet i denne verden. De vil ikke længere dukke op
+gelslimesunnulled=Geléslim er blevet tilladt i denne verden. De vil nu dukke op
+pinkwitchesnulled=Lyserøde hekse er blevet nulstillet i (<x>, <y>)
+pinkwitchesunnulled=Lyserøde hekse er blevet tilladt i (<x>, <y>)
+needfreeslots=Du skal bruge <slots> ledige pladser i lageret for at bruge dette
+cantuseatnight=Kan ikke bruges om natten
+healthalreadyfull=Helbredet er allerede fuldt
+cantheal=Kan ikke helbrede
+insuficienthealth=Utilstrækkeligt helbred til at udføre denne handling!
+cannottrhowlockeditem=Du kan ikke kaste en lagerlåst genstand
+initialrunetip=Vælg din indledende rune omhyggeligt;\ndu vil ikke få de andre før senere i spillet
+alreadyselectedinitialrune=Indledende rune er allerede valgt
+cannotusetrial=Kan ikke bruges i prøvelsesrum
+
+[biome]
+infectedfields=Inficerede marker
+
+
+[journal]
+
+//Levels
+infectedfieldssurface=Overflade af inficerede marker
+infectedfieldscave=Hule i inficerede marker
+
+// Forest Surface Challenges
+killgelslimesforest=[mob=gelslime] Dræb 25 geléslim i skoven
+pickupfloralring=[item=floralring] Klip en masse græs i skoven for at få blomsterringen
+killunstablegelslime=[mob=unstablegelslime] Dræb 1 ustabil geléslim
+
+// Swamp Surface Challenges
+killpinkwitchesswamp=[mob=pinkwitch] Om natten, dræb 5 lyserøde hekse på overfladen af sumpen
+
+// Infected Fields Surface Challenges
+pickupinfectedlogs=[item=infectedlog] Fæld for at samle 100 inficerede træstammer
+
+// Infected Fields Cave Challenges
+pickupspinel=[item=spinel] Saml 40 spinel
+activatebabylontower=[item=lifespinel] Placer en livsspinel på Babelstårnet
+findthespammer=[item=thespammer] Find spammeren
+
+
+[controls]
+runesinjectorability=Runeinjektorevne
+
+
+[runestutorialbook]
+openheader=Åbning af rune injektoren
+opentext=For at bruge runer skal du bruge en rune injektor. Disse specielle enheder kan åbnes for at indsætte runer. Hver injektor har en plads til en basisrune og flere pladser til modifikationsruner, afhængigt af dens kapacitet. Du kan frit tilføje så mange modifikationsruner, som injektoren tillader, eksperimenter for at finde de bedste kombinationer!
+equipheader=Udstyr injektoren
+equiptext=For at aktivere dine runer skal rune injektoren være udstyret i en nips-plads. Når den er udstyret, skal du blot trykke på G (eller den tast, der er tildelt i indstillingerne) for at udløse dens effekter. Sørg for, at injektoren er korrekt konfigureret og klar, før du går i aktion!
+
+runesheader=Hvad er runer?
+runestext=Runer er mystiske sten, der giver kraftfulde effekter, når de indsættes i en rune injektor. Deres styrke og adfærd afhænger af, hvordan de kombineres, at mestre deres brug er nøglen til at frigøre dit fulde potentiale.
+baserunesheader=Basisruner
+baserunestext=Hver rune injektor kræver præcis én basisrune for at fungere. Basisrunen definerer injektorens hovedeffekt og fungerer som kernen i din opsætning. Du vil bemærke et grønt tal ved siden af effekten, dette repræsenterer dens effektværdi, som kan øges eller mindskes med modifikatorer.
+modifierrunesheader=Modifikationsruner
+modifierrunestext=Modifikationsruner bruges til at tilpasse og forbedre effekten af din basisrune. De kan justere effektværdien, ændre dens adfærd eller tilføje specielle egenskaber. Modifikationsruner kommer dog altid med kompromiser: ingen modifikator er rent gavnlig, så vælg med omhu!
+
+tableheader=Runebordet
+tabletext=Runebordet er din go-to station til at lave en bred vifte af runer. De fleste standardruner kan laves her, men husk: nogle kraftfulde runer kan kun findes gennem udforskning. Hold øjnene åbne, eventyr belønner de nysgerrige!
+crafttext=I runeworkshoppen finder du alt, hvad du behøver for at komme i gang. Kombiner indholdet med din indledende rune og en basisrune, som du kan lave ved runebordet, og du vil have en fuldt funktionel rune injektor klar til at udstyre!

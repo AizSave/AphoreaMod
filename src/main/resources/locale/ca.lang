@@ -1,0 +1,755 @@
+# Translation made by AI
+
+[global]
+aphorea=§!Aphorea Mod
+aphorearework=§!Aphorea Mod Reelaboració
+aphoreamightybanner=§!Aphorea Mod x Mighty Banner Mod
+aphoreasummonerexpansion=§!Aphorea Mod x Expansió d'Invocador
+
+
+[buffmodifiers]
+// Magic Healing
+magichealing=<mod>% de curació màgica
+magichealingflat=<mod> de curació màgica
+magichealingreceived=<mod>% de curació màgica rebuda
+magichealingreceivedflat=<mod> de curació màgica rebuda
+magichealinggrace=<mod>% de gràcia de curació màgica
+
+// Area
+arearange=<mod>% de rang d'àrea
+
+// Inspiration Damage
+inspirationdamage=<mod>% de dany d'inspiració
+inspirationcritchance=<mod>% de probabilitat de crític d'inspiració
+inspirationcritdamage=<mod>% de dany crític d'inspiració
+inspirationeffect=<mod>% d'efecte d'inspiració
+inspirationabilityspeed=<mod>% de velocitat d'habilitat d'inspiració
+
+// Others
+loyal=La daga no es perd en llançar-la
+
+
+[stats]
+inspiration_damage=Dany d'inspiració
+
+
+[enchantment]
+// Healing Equipment
+godly=Diví
+absent=Absent
+auxiliary=Auxiliar
+vain=Va
+gentle=Gentil
+selfish=Egoista
+
+// Healing
+friendly=Amistós
+graceful=Gràcil
+wonderful=Meravellós
+ecologic=Ecològic
+exalted=Exaltat
+cursed=Maleït
+
+// Area
+booming=En auge
+dimmed=Atenuat
+
+// Others
+loyal=Lleial
+
+
+[tile]
+geltile=Sòl de Gel
+infectedwatertile=Aigua Infectada
+infectedgrasstile=Herba Infectada
+spinelgravel=Grava d'Espinela
+
+
+[tech]
+runes=Runes
+
+
+[object]
+witchstatue=Estàtua de Bruixa
+runestable=Taula de Runes
+#NEW
+infectedsapling=Planter Infectat
+spinelcluster=Cúmul d'Espinela
+spinelcluster_small=Cúmul d'Espinela Petit
+gelrock=Roca de Gel
+infectedtree=Arbre Infectat
+infectedgrass=Herba Infectada
+spinelchest=Cofre d'Espinela
+fakespinelchest=Cofre d'Espinela Fals
+babylontower=Torre de Babel
+babylonentrance=Entrada de Babilònia
+babylonexit=Sortida de Babilònia
+infectedtrialentrance=Entrada de la Prova Infectada
+infectedchair=Cadira Infectada
+infecteddinnertable=Taula de Menjar Infectada
+infectedbookshelf=Prestatgeria Infectada
+infectedcabinet=Armari Infectat
+infectedbed=Llit Infectat
+infecteddoublebed=Llit Doble Infectat
+infectedcandelabra=Canelobre Infectat
+
+
+[itemcategory]
+healing=Curació
+healingtools=Eines de Curació
+runes=Runes
+runesinjectors=Injectors de Runes
+baserunes=Runes Base
+modifierrunes=Runes Modificadores
+
+
+[item]
+// General Materials
+anybasicfoci=Qualsevol Focus Bàsic
+
+// Materials
+rockygel=Gel Rocós
+unstablegel=Gel Inestable
+stardust=Pols d'Estrelles
+infectedlog=Tronc Infectat
+infectedalloy=Aliatge Infectat
+spinel=Espinela
+lifespinel=Espinela de Vida
+
+// Consumables
+unstablecore=Nucli Inestable
+runeinitial=Runa Inicial
+venomextract=Extracte de Verí
+
+// Swords
+gelsword=Espasa de Gel
+unstablegelsword=Espasa de Gel Inestable
+broom=Escombra
+voidhammer=Martell del Buit
+brokenkora=Kora Trencada
+thenarcissist=El Narcisista
+cryokatana=Criokatana
+
+// Greatswords
+unstablegelgreatsword=Gran Espasa de Gel Inestable
+babylongreatsword=Gran Espasa de Babilònia
+
+// Glaives
+woodenrod=Vara de Fusta
+
+// Sabers
+saber=Sabre
+coppersaber=Sabre de Coure
+ironsaber=Sabre de Ferro
+goldsaber=Sabre d'Or
+demonicsaber=Sabre Demoníac
+unstablegelsaber=Sabre de Gel Inestable
+honeysaber=Sabre de Mel
+glacialsaber=Sabre Glacial
+crimsonkora=Kora Carmesí
+
+// Battleaxes
+battleaxe=Destral de Batalla
+unstablegelbattleaxe=Destral de Batalla de Gel Inestable
+demonicbattleaxe=Destral de Batalla Demoníaca
+
+// Daggers
+dagger=Daga
+copperdagger=Daga de Coure
+irondagger=Daga de Ferro
+golddagger=Daga d'Or
+demonicdagger=Daga Demoníaca
+tungstendagger=Daga de Tungstè
+lostumbrella=Paraigua Perdut
+
+// Rapiers
+fossilrapier=Estoc Fòssil
+lightrapier=Estoc Lleuger
+
+// Magic weapons
+unstablegelstaff=Bastó de Gel Inestable
+magicalbroom=Escombra Màgica
+adeptsbook=Llibre de l'Adepte
+harpofharmony=Arpa de l'Harmonia
+babyloncandle=Espelma de Babilònia
+
+// Bows
+spinelcrossbow=Ballesta d'Espinela
+
+// Guns
+thespammer=L'Spammer
+
+// Bullets
+spambullet=Bala de Spam
+
+// Greatbows
+gelgreatbow=Gran Arc de Gel
+unstablegelgreatsword=Gran Arc de Gel Inestable
+
+// Arrows
+gelarrow=Fletxa de Gel
+unstablegelarrow=Fletxa de Gel Inestable
+
+// Saber Guns
+sabergun=Pistola Sabre
+shotgunsaber=Escopeta Sabre
+
+// Slings
+sling=Fona
+firesling=Fona de Foc
+frozensling=Fona Gelada
+
+// Blowguns
+blowgun=Sarbatana
+
+// Throw weapons
+gelball=Bola de Gel
+gelballgroup=Boles de Gel Agrupades
+unstablegelveline=Javelina de Gel Inestable
+
+// Summon weapons
+volatilegelstaff=Bastó de Gel Volàtil
+infectedstaff=Bastó Infectat
+
+// Banners
+blankbanner=Estendard en Blanc
+
+// Healing Tools
+healingtool=Eina de Curació
+magicalvial=Flascó Màgic
+healingstaff=Bastó de Curació
+woodenwand=Vareta de Fusta
+goldenwand=Vareta d'Or
+spinelstaff=Bastó d'Espinela
+
+// Tools
+superiorpickaxe=Pic Superior
+
+// Trinkets
+rockyperiapt=Amulet Rocós
+unstableperiapt=Amulet Inestable
+bloodyperiapt=Amulet Sagnant
+demonicperiapt=Amulet Demoníac
+abysmalperiapt=Amulet Abismal
+frozenperiapt=Amulet Gelat
+necromancyperiapt=Amulet de Nigromància
+floralring=Anell Floral
+gelring=Anell de Gel
+heartring=Anell de Cor
+ringofhealth=Anell de Salut
+swampshield=Escut de Pantà
+witchmedallion=Medalló de Bruixa
+iceboots=Botes de Gel
+inspirationfoci=Focus d'Inspiració
+cursedmedallion=Medalló Maleït
+ancientmedallion=Medalló Antic
+essenceofhealing=Essència de Curació
+ninjascarf=Bufanda de Ninja
+adrenalinecharm=Amulet d'Adrenalina
+spinelshield=Escut d'Espinela
+bloomrushcharm=Amulet de florida
+infectedperiapt=Amulet Infectat
+
+// Armor
+rockyboots=Botes Rocoses
+rockychestplate=Peto Rocós
+rockyhelmet=Elm Rocós
+goldhat=Barret d'Or
+pinkwitchhat=Barret de Bruixa Rosa
+magicalsuit=Vestit Màgic
+magicalboots=Botes Màgiques
+swampboots=Botes de Pantà
+swampchestplate=Peto de Pantà
+swampmask=Màscara de Pantà
+swamphood=Caputxa de Pantà
+infectedhat=Barret Infectat
+infectedchestplate=Peto Infectat
+infectedboots=Botes Infectades
+spinelhelmet=Elm d'Espinela
+spinelhat=Barret d'Espinela
+spinelchestplate=Peto d'Espinela
+spinelboots=Botes d'Espinela
+
+// Misc
+gelslimenullifier=Deixaran de molestar-te amb un simple clic!
+cuberry=Baia Cúbica
+infectedgrassseed=Llavor d'Herba Infectada
+
+// Backpacks
+basicbackpack=Motxilla Bàsica
+sapphirebackpack=Motxilla de Safir
+amethystbackpack=Motxilla d'Ametista
+rubybackpack=Motxilla de Rubí
+emeraldbackpack=Motxilla de Maragda
+diamondbackpack=Motxilla de Diamant
+
+// Books
+runestutorialbook=Llibre Tutorial de Runes
+
+// Runes Injectors
+runesinjector=Injector de Runes
+rusticrunesinjector=Injector de Runes Rústic
+unstablerunesinjector=Injector de Runes Inestable
+demonicrunesinjector=Injector de Runes Demoníac
+tungstenrunesinjector=Injector de Runes de Tungstè
+ancientrunesinjector=Injector de Runes Antic
+
+// Base Runes Tier 0
+baserune=Runa Base
+runeoffury=Runa de la Fúria
+runeofspeed=Runa de la Velocitat
+runeofhealing=Runa de la Curació
+runeofresistance=Runa de la Resistència
+runeofvalor=Runa del Valor
+runeofdetonation=Runa de la Detonació
+runeofthunder=Runa del Tro
+runeofwinter=Runa de l'Hivern
+runeofshadows=Runa de les Ombres
+runeofimmortality=Runa de la Immortalitat
+
+// Base Runes Tier 1
+runeofunstablegelslime=Runa del Llim de Gel Inestable
+runeofevilsprotector=Runa del Protector del Mal
+runeofqueenspider=Runa de la Reina Aranya
+runeofvoidwizard=Runa del Bruixot del Buit
+runeofswampguardian=Runa del Guardià del Pantà
+runeofancientvulture=Runa del Voltor Antic
+runeofpiratecaptain=Runa del Capità Pirata
+runeofchieftain=Runa del Cabdill
+
+// Base Runes Tier 2
+runeofreaper=Runa del Segador
+runeofcryoqueen=Runa de la Reina de Gel
+runeofpestwarden=Runa del Guardià de la Pesta
+runeofsageandgrit=Runa de la Sàlvia i el Coratge
+runeoffallenwizard=Runa del Bruixot Caigut
+runeofbabylontower=Runa de la Torre de Babel
+
+// Base Runes Tier 3
+runeofmotherslime=Runa de la Mare Llim
+runeofnightswarm=Runa de l'Eixam Nocturn
+runeofspiderempress=Runa de l'Emperadriu Aranya
+runeofsunlightchampion=Runa del Campió de la Llum Solar
+runeofmoonlightdancer=Runa de la Ballarina de la Llum de la Lluna
+runeofcrystaldragon=Runa del Drac de Cristall
+
+// Modifier Runes Tier 0
+modifierrune=Runa Modificadora
+empoweringrune=Runa Potenciadora
+recurrentrune=Runa Recurrent
+
+// Modifier Runes Tier 1
+frenzyrune=Runa del Frenesí
+vitalrune=Runa Vital
+devastatingrune=Runa Devastadora
+onyxrune=Runa d'Ònix
+pawningrune=Runa de Peó
+
+// Modifier Runes Tier 2
+abysmalrune=Runa Abismal
+tidalrune=Runa de la Marea
+
+// Modifier Runes Tier 3
+ascendantrune=Runa Ascendent
+
+
+[itemtooltip]
+// Stat tips
+line=----------------------------------------
+magichealingtip=Curació màgica: §7<health>
+rangetip=Rang: §9<range>
+areatip=§aÀrea <number>
+inspirationdamagetip=Dany d'inspiració: <value>
+areabuff=Aplica <buff> als aliats
+areadebuff=Aplica <buff> als enemics
+areabuffdisplay=<buff> durant <duration> segons
+attackarmorpentip=Penetració d'armadura: <value>%
+
+// Mechanics
+magichealinggrace=§aGràcia de Curació Màgica:§0 Es cura a si mateix amb un % de la Curació Màgica destinada als aliats
+cursedbuff=§bMaleït:§0 §6+25%§0 de Dany Rebut
+inspiration=§9Inspiració:§0 Millora els efectes dels estendards i els instruments musicals
+adrenaline=§6Adrenalina:§0 +5% de Dany, -5% d'Armadura. Es pot acumular fins a 5 vegades
+livingsapling=§7Planter Vivent:§0 Cura màgicament el propietari amb §73§0 cada 10 atacs
+
+// Misc
+gelslimenullifier=Deixaran de molestar-te amb un simple clic!
+enchantingscrollhealingequipmenttip=S'utilitza per encantar un objecte d'equipament de curació amb <enchantment>\n§!Aphorea Mod
+enchantingscrollhealingtip=S'utilitza per encantar una eina de curació amb <enchantment>\n§!Aphorea Mod
+enchantingscrollareatip=S'utilitza per encantar una eina d'efecte d'àrea amb <enchantment>\n§!Aphorea Mod
+enchantingscrolldaggertip=S'utilitza per encantar una arma de daga amb <enchantment>\n§!Aphorea Mod
+backpack=És un nou inventari que emmagatzema tots els objectes que reculls
+backpackslots=Capacitat de <slots> objectes
+stored=Objectes emmagatzemats: <items>
+backpackcraft=Ha d'estar buit per crear una motxilla millor
+
+// Consumables
+deleteditem=Aquest objecte ha estat eliminat, utilitza aquest objecte per recuperar els materials abans que s'elimini permanentment
+unstablecore=§bAllibera una aura inestable...§0 Només es pot utilitzar de dia
+venomextractbuff=Lowd diu que te'l beguis, no ho facis
+venomextractbuffdesc=No pots tenir més d'1 HP
+lifespinel=Augmenta permanentment la salut màxima en 5 fins a 320
+
+// General Weapons
+spinsecondaryattack=Prem [input=mouse2] per fer que el següent atac sigui un atac d'àrea
+areasecondaryattack=Prem [input=mouse2] per realitzar un atac d'àrea que consumeix <mana> de Mana
+stikybuff1=Fa que l'enemic sigui Enganxós durant 1 segon
+stikybuff2=Fa que l'enemic sigui Enganxós durant 2 segons
+stikybuff3=Fa que l'enemic sigui Enganxós durant 3 segons
+projectilearea=Quan el projectil acaba, fa mal d'àrea
+
+// Melee Weapons
+saber=Carrega al màxim per a un dany complet i per alliberar un tall d'aire
+saberdash=Mantingues premut [input=mouse2] per carregar un esprint per tallar els enemics
+battleaxe=Triga molt a carregar-se
+battleaxe2=Prem [input=mouse2] per activar la Fúria del Berserker i guanyar 3 d'Adrenalina temporalment
+battleaxe3=Guanya Adrenalina temporalment colpejant enemics durant la Fúria, millorant la velocitat de moviment i d'atac
+dagger=Mantingues premut [input=mouse2] per llançar la daga
+
+// Range Weapons
+sling=Llança pedres amb força
+sling2=§7100%§0 de probabilitat d'atordir l'enemic durant 0.5 segons
+twoarrows=Dispara dues fletxes alhora
+threearrows=Dispara tres fletxes alhora
+blowgun=Dispara llavors
+
+// Single Melee Weapons
+woodenrod=Es cura màgicament a si mateix amb §7<healing>§0 cada 10 atacs
+voidhammer=Quan el projectil rebota o colpeja un enemic, apunta al més proper, colpejant fins a 3 vegades
+crimsonkora=Mantingues premut [input=mouse2] per carregar un atac devastador però lent
+thenarcissist=Encadena 4 atacs per alliberar un llançament d'espasa giratòria al cinquè cop!\n+20% de Dany per cada atac encadenat
+
+// Single Range Weapons
+firesling=Crema els enemics
+frozensling=Congela els enemics
+gelgreatbow=Converteix les Fletxes de Pedra en Fletxes de Gel
+unstablegelgreatbow=Converteix les Fletxes de Pedra i les Fletxes de Gel en Fletxes de Gel Inestables
+thespammer=Pot disparar Bales de Spam
+shotgunsaber=Apunta a prop del centre per a trets més potents, precisos i penetrants
+honeysaber=Carrega al màxim per a un dany complet i per disparar mel i nabius
+spinelcrossbow=Dispara fletxes que travessen fins a 2 enemics, tornant-se més mortals amb cada travessia
+spinelcrossbow2=Mantingues premut [input=mouse2] per disparar 3 fletxes alhora
+
+// Single Magic Weapons
+unstablegelstaff=Quan els projectils reboten a les parets, es dupliquen
+harpofharmony=Harmonia: Augment de la velocitat, regeneració de salut i de mana
+
+// Single Summoner Weapons
+infectedstaff=Invoca dos Planters Vivents per invocació
+
+// Single Throwable Weapons
+gelball=Llança una bola de gel
+
+// Single Magic Healing Tools
+magicalvial=Apunta a un humà ferit per curar-lo, no apuntis a ningú per curar-te a tu mateix
+magicalvial2=Usos infinits
+
+// Ammo
+spambullet=Té aleatòriament un d'aquests efectes:
+spambullet1=§9Trist:§0 L'enemic atacat es torna enganxós, alentint-lo durant 5 segons
+spambullet2=§9Foc:§0 En lloc de col·lidir, deixa un bassal de foc a terra
+spambullet3=§9M'agrada:§0 Rebota a les parets i travessa els monstres, fins a 10 vegades cadascun
+spambullet4=§9Comprova:§0 Àrea de curació màgica de 3 de salut al final del seu camí
+spambullet5=§9Explosió:§0 Explota al final del seu camí en lloc de col·lidir
+
+// Tiles
+geltile=Sòl enganxós que alenteix molt tot el que hi ha a sobre
+
+// Objects
+witchstatue=Col·locar aquesta estàtua a la superfície d'un pantà eliminarà l'aparició de bruixes a tota l'illa
+
+// Generic Trinkets
+areawhenheal=Executa aquesta àrea per cada <magichealing> de Curació Màgica realitzada
+periaptboost=Prem [input=trinketability] per guanyar un impuls de Velocitat i Velocitat d'Atac durant 10 segons
+
+// Trinkets
+rockyperiapt=§7+5§0 d'Armadura, però §6-5%§0 de Velocitat de Moviment
+rockyperiapt2=Prem [input=trinketability] per guanyar 10 d'Armadura durant 10 segons
+unstableperiapt=Invoca dos Bebès de Llim de Gel Inestable (6 de Dany d'Invocador)
+unstableperiapt2=Et fa immune al desavantatge Enganxós
+bloodyperiapt=A més, les armes 'Fletxa de Sang' i 'Volea de Sang' robaran un §73%§0 de vida
+demonicperiapt=A més, les armes màgiques robaran un §73%§0 de vida
+necromancyperiapt=Cada vegada que tu o un dels teus invocats mata un monstre hostil, invoques un Esquelet No-mort
+necromancyperiapt2=20 de Dany d'Invocador. Dura 10 segons i hi pot haver un màxim de 3 alhora
+frozenperiapt=Les armes de cos a cos i a distància Congelaran durant 3 segons
+frozenperiapt2=Fa més mal als monstres afectats per Congelació
+frozenperiapt3=Et fa immune als desavantatges Congelació i Lentitud per Gel
+floralring=Es cura màgicament a si mateix amb §7<healing>§0 cada 5 segons
+gelring=§7+30%§0 de Curació Màgica rebuda
+heartring=§7+20§0 de salut màxima
+swampshield=Només protegeix els atacs en la direcció en què es reben
+swampshield2=En un bloqueig perfecte: Es cura màgicament a si mateix amb el §7<healing>§0 de la seva salut màxima
+iceboots=Et fa lliscar com si estiguessis sobre gel, però atorga un +50% de velocitat de moviment i +4 d'armadura
+inspirationfoci1=§7+40%§0 d'efecte d'inspiració i §7+20%§0 de velocitat d'habilitat d'inspiració
+inspirationfoci2=§6-20%§0 de tot el dany no inspirat i §6-1§0 d'invocats màxims
+essenceofhealing=§7+<percent>%§0 de Curació Màgica per essència de vida
+essenceofhealing2=§7<flat>§0 de Curació Màgica per 2 essències de vida
+essenceofhealing3=§6-80%§0 de durada de l'essència de vida, limitat a -50%
+ninjascarf=Converteix els Esprints de Sabre en Salts de Sabre
+adrenalinecharm=Cada cop rebut et donarà Adrenalina durant 20 segons
+infectedperiapt=Invoca dos Planters Vivents (8 de Dany d'Invocador)
+bloomrushcharm=Disminueix l'ús de resistència en un 10% per cada Adrenalina que tinguis\nInvoca un Planter Vivent (8 de Dany d'Invocador) per cada Adrenalina que tinguis
+
+// Set Bonus
+goldhatsetbonus=Si estàs quiet, la teva velocitat d'atac a distància augmenta considerablement
+pinkwitchsetbonus=Augmenta la Velocitat d'Atac Màgic, la Regeneració de Mana i l'Armadura com més baixa sigui la teva salut
+infectedsetbonus=Invoca tres Planters Vivents (8 de Dany d'Invocador)
+spinelhelmetsetbonus=Es cura màgicament a si mateix amb el §7<healing>§0 del dany de cos a cos infligit als monstres hostils
+spinelhatsetbonus=Es cura màgicament a si mateix i a tots els aliats propers\namb el §7<healing>§0 del dany màgic infligit als monstres hostils
+
+// Banners
+strikebannereffect=§7+<effect>%§0 de regeneració de salut (dins i fora del combat)
+strikebannerability=§aCada <time> segons:§0 Realitza un atac d'àrea
+blankbannereffect=§7+<effect>%§0 de regeneració de salut (fora del combat)
+blankbannerability=§aCada <time> segons:§0 Realitza una curació d'àrea
+bannerofdamageeffect=§7+<effect>%§0 de dany
+bannerofdefenseeffect=§7-<effect>%§0 de dany rebut
+bannerofspeedeffect=§7+<effect>%§0 de velocitat de moviment
+bannerofsummonspeedeffect=§7+<effect>%§0 de velocitat de moviment dels invocats
+
+// Mighty Banners
+banneroffishingeffect=§7+<effect>§0 de poder de pesca
+bannerofhealthregeneffect=§7+<effectfloat>§0 de regeneració de salut en combat
+bannerofmanaregeneffect=§7+<effect>%§0 de regeneració de mana en combat
+bannerofresistanceeffect=§7+<effect>§0 d'armadura
+bannerofsummoningeffect=§7+<effect>§0 d'invocats màxims
+bannerofattackspeedeffect=§7+<effect>%§0 de velocitat d'atac
+
+// Summoner Expansion Banners
+bannerofresilienceeffect=§7+<effect>%§0 de resistència màxima\nRegenera §7+<effect>§0 de resistència per segon
+bannerofbouncingeffect=§7+<effect>§0 de rebots de projectil
+bannerofessenceeffect=§7+<effect>%§0 de durada de l'essència de vida
+bannerofstaminaeffect=§7+<effect>%§0 de capacitat de resistència\n§7+<effect2>%§0 de regeneració de resistència\n§7-<effect2>%§0 d'ús de resistència
+bannerofpickingeffect=§7+<effectfloat>§0 de rang de recollida
+bannerofdashingeffect=§7+<effect>§0 d'acumulacions d'esprint\n§7-<effect2>%§0 de temps de recàrrega d'esprint
+bannerofmanaeffect=§7+<effect>%§0 de mana màxim\n§7<effect2>%§0 de regeneració de mana
+
+// Runes (General)
+baserune=§iRuna Base
+modifierrune=§aRuna Modificadora
+linkedrune=§bRuna enllaçada a [<player>]
+notruneowner=No ets el propietari de la Runa Base
+runesslots=Es pot inserir fins a 1 Runa Base + <modifierslots> Runes Modificadores
+useruneinfusor=[input=runesinjectorability] per activar
+requiresbaserune=Requereix una runa base inserida
+onlyonebaserune=Només es pot inserir una runa base alhora
+duplicatedmodifierrunes=No es pot inserir més d'una de la mateixa runa modificadora
+runehealthcost=Consumeix un <health>% de la salut màxima en activar-se
+runehealthhealing=Restaura un <health>% de la salut màxima en utilitzar-se
+runecooldown=Es recarrega en <seconds> segons
+increaseruneeffectnumber=Augmenta l'efecte en un §7<variation>%§0
+decreaseruneeffectnumber=Disminueix l'efecte en un §6<variation>%§0
+increaserunecooldown=Augmenta el temps de recàrrega en un §6<variation>%§0
+decreaserunecooldown=Disminueix el temps de recàrrega en un §7<variation>%§0
+increaserunehealthcost=Augmenta el consum de salut màxima en un §6<health>%§0
+increaserunehealthhealing=Augmenta la restauració de salut màxima en un §7<health>%§0
+runedamagereduction=El dany es redueix dràsticament contra els humans i encara més contra els caps
+runedamagereductionnoboss=El dany es redueix dràsticament contra els humans i no afecta els caps
+moreextraeffectmod=Les modificacions d'efecte són un <mod>% més efectives
+lessextraeffectmod=Les modificacions d'efecte són un <mod>% menys efectives
+
+// Runes Injectors
+
+// Base Runes Tier 0
+runeoffury=Augmenta el teu dany i la teva velocitat d'atac en un §7<effectNumber>§0% durant 10 segons
+runeofspeed=Esprinta amb una força de §7<effectNumber>§0 en la direcció en què et mous i torna't invencible durant 0.5 segons
+runeofresistance=Augmenta la teva armadura en un §7<effectNumber>§0% durant 10 segons
+runeofresistance2=Mentre està en temps de recàrrega, la teva armadura es redueix a la meitat
+runeofvalor=+200% d'inspiració durant §7<effectNumber>§0 segons
+runeofdetonation=Explota, fent més mal i fent retrocedir els enemics com més a prop estiguin
+runeofdetonation2=El dany màxim és un §7<effectNumber>§0% de la salut màxima dels monstres com a dany
+runeofthunder=Després de dos segons, un llamp cau a la posició inicial del teu cursor
+runeofthunder2=El llamp fa un §7<effectNumber>§0% de la salut dels monstres com a dany i atordeix durant 2 segons
+runeofwinter=Alenteix amb gel els enemics en un radi de 500 durant §7<effectNumber>§0 segons
+runeofimmortality=Si mors en els propers §7<effectNumber>§0 segons, sobreviuràs amb la salut màxima
+runeofimmortality2=Si això passa, seràs invulnerable durant 3 segons, però el temps de recàrrega serà de 30 segons
+runeofimmortality3=Mentre està en temps de recàrrega, la teva salut màxima es redueix a la meitat
+runeofshadows=Durant §7<effectNumber>§0 segons, et tornaràs invisible però també intimidat, impedint-te realitzar qualsevol acció
+
+// Base Runes Tier 1
+runeofunstablegelslime=Teletransporta't a una ubicació propera i invoca 2 Llims de Gel Inestable rúnics durant §7<effectNumber>§0 segons
+runeofunstablegelslime2=Els invocats faran un 5% de la salut màxima dels monstres com a dany
+runeofevilsprotector=+§7<effectNumber>§0% de velocitat d'atac, però -50% de velocitat de moviment durant 10 segons
+runeofevilsprotector2=Durant la nit a la superfície, l'efecte positiu es duplica
+runeofqueenspider=Deixa una teranyina a terra durant §7<effectNumber>§0 segons
+runeofvoidwizard=Tots els projectils rebotaran infinitament i +§7<effectNumber>§0% de velocitat de projectil durant 10 segons
+runeofswampguardian=Redueix tot el dany rebut en un 80% durant §7<effectNumber>§0 segons
+runeofancientvulture=Invoca una Cria de Voltor rúnica durant 10 segons
+runeofancientvulture2=L'invocat farà un §7<effectNumber>§0% de la salut màxima dels monstres com a dany
+runeofpiratecaptain=Augmenta el teu Dany en un §7<effectNumber>§0% per cada 200 monedes que tinguis, fins a un màxim de 20.000 monedes
+runeofpiratecaptain2=Cada vegada que ataquis, perdràs 3 monedes
+runeofchieftain=Durant els propers 20 segons, el teu Dany augmenta com més baixa sigui la teva salut, fins a un màxim de +§7<effectNumber>§0%
+
+// Base Runes Tier 2
+runeofreaper=Teletransporta't a la posició del teu ratolí. Distància màxima §7<effectNumber>§0
+runeofcryoqueen=Atura't durant 1 segon i llança un atac de gel al teu voltant amb un rang de §7<effectNumber>§0
+runeofcryoqueen2=Els projectils faran un 200% de la salut màxima dels monstres com a dany
+runeofpestwarden=Durant els propers §7<effectNumber>§0 segons, xocar amb els enemics els fa mal i els empeny
+runeofpestwarden2=El dany és un 20% de la seva salut màxima
+runeofsageandgrit=Si hi ha aliats ferits a prop (rang 500), cura un §7<effectNumber>§0% de la seva salut total
+runeofsageandgrit2=Si no, augmenta el teu dany, la teva velocitat d'atac i la teva velocitat de moviment en un +§7<effectNumber>§0% durant 20 segons
+runeoffallenwizard=Atordeix tots els monstres excepte tu durant §7<effectNumber>§0 segons
+runeoffallenwizard2=Els humans s'alliberaran més ràpid, i els caps encara més ràpid
+runeofbabylontower=+§7<effectNumber>§0% de tot el dany, però no et pots moure. 10 segons
+
+// Base Runes Tier 3
+runeofmotherslime=Fes un gran salt cap a la posició del teu ratolí i fes mal d'àrea en aterrar
+runeofmotherslime2=L'aterratge farà un §7<effectNumber>§0% de la salut màxima dels monstres com a dany
+runeofnightswarm=Invoca 5 ratpenats durant §7<effectNumber>§0 segons que busquen monstres hostils per mossegar-los
+runeofnightswarm2=Cada mossegada restaura un 1% de la teva salut total (almenys 1)
+runeofspiderempress=Llança §7<F0effectNumber>§0 boles de teranyina en direcció al teu ratolí
+runeofspiderempress2=Les boles de teranyina atordiran durant 3 segons i alentiran durant 10 segons
+runeofsunlightchampion=Queda't atordit durant 3 segons carregant una nova de rang §7<effectNumber>§0
+runeofsunlightchampion2=La nova farà un 200% de la salut màxima dels monstres com a dany
+runeofmoonlightdancer=+§7<effectNumber>§0% de dany per cada +1% de velocitat de moviment durant 10 segons
+runeofcrystaldragon=Llança un raig làser a la posició del teu cursor durant 5 segons
+runeofcrystaldragon2=El làser farà un §7<effectNumber>§0% de la salut màxima dels monstres com a dany
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+onyxrune=Quan s'activa, invoca Ònix durant 5 segons. Farà mal basat en un 5% de la salut del monstre
+onyxrune2=Cada mossegada d'Ònix restaura un 1% de la teva salut total (almenys 1)
+onyxrune3=§3Gràcies Ònix per les brillants idees de runes! <3
+pawningrune=Quan s'activa, si encara no tens l'efecte, restaura immediatament un 20% de la teva salut màxima
+pawningrune2=Després de 10 segons, perdràs la quantitat restaurada més un 40% addicional
+
+// Modifier Runes Tier 2
+abysmalrune=Quan s'activa, invoca un forat negre a la posició del teu cursor, atraient els enemics durant 2 segons
+abysmalrune2=El forat negre només s'invocarà si han passat 10 segons des de l'última activació
+tidalrune=Quan s'activa, invoca una onada d'aigua que empeny els enemics
+
+// Modifier Runes Tier 3
+
+
+[mobtooltip]
+usenet=Utilitza una xarxa! [item=net]
+
+
+[mob]
+// Hostile
+gelslime=Llim de Gel
+rockygelslime=Llim de Gel Rocós
+unstablegelslime=Llim de Gel Inestable
+miniunstablegelslime=Mini Llim de Gel Inestable
+pinkwitch=Bruixa Rosa
+voidadept=Adepte del Buit
+copperdaggergoblin=Goblin amb Daga de Coure
+irondaggergoblin=Goblin amb Daga de Ferro
+golddaggergoblin=Goblin amb Daga d'Or
+infectedtreant=Treant Infectat
+spinelgolem=Gòlem d'Espinela
+spinelcaveling=Habitant de les Coves d'Espinela
+tungstencaveling=Habitant de les Coves de Tungstè
+spinelmimic=Mímic d'Espinela
+babylontower=Torre de Babel
+hearthcrystal=Cristall de la Llar
+babylon=Babilònia
+
+// Friendly
+wildphosphorslime=Llim de Fòsfor Salvatge
+
+// Summon
+babyunstablegelslime=Bebè de Llim de Gel Inestable
+undeadskeleton=Esquelet No-mort
+volatilegelslime=Llim de Gel Volàtil
+runicunstablegelslime=Llim de Gel Inestable Rúnic
+runicvulturehatchling=Cria de Voltor Rúnica
+runicbat=Ratpenat Rúnic
+onyx=Ònix
+livingsapling=Planter Vivent
+
+// Pet
+petphosphorslime=Llim de Fòsfor
+
+
+[buff]
+// Common Buffs
+stunbuff=Atordiment
+fallenstunbuff=Atordiment Caigut
+stickybuff=Enganxós
+stopbuff=Aturat
+honeyedbuff=Enmelat
+venomextractbuff=Extracte de Verí
+cursedbuff=Maleït
+adrenalinebuff=Adrenalina
+harmonybuff=Harmonia
+
+// Active Buffs
+berserkerrushactive=Fúria del Berserker Activa
+periaptactive=Habilitat de l'Amulet Activa
+runesinjectoractive=Injector de Runes Actiu
+
+// Cooldown Buffs
+berserkerrushcooldown=Fúria del Berserker en Temps de Recàrrega
+periaptcooldown=Habilitat de l'Amulet en Temps de Recàrrega
+runesinjectorcooldown=Injector de Runes en Temps de Recàrrega
+spinattackcooldown=Atac Giratori en Temps de Recàrrega
+saberdashcooldown=Esprint de Sabre en Temps de Recàrrega
+
+
+[message]
+unstablegelslime_anger=§6El Llim de Gel Inestable s'està enfadant... <anger>/10
+unstablegelslime_fullanger=§6El Llim de Gel Inestable s'ha enfadat! <anger>/10
+unstablegelslime_night=§6El Llim de Gel Inestable§0 ha desaparegut en caure la nit!
+gelslimesnulled=Els Llims de Gel en aquest món han estat anul·lats. Ja no apareixeran
+gelslimesunnulled=Els Llims de Gel en aquest món han estat admesos. Ara apareixeran
+pinkwitchesnulled=Les Bruixes Roses a (<x>, <y>) han estat anul·lades
+pinkwitchesunnulled=Les Bruixes Roses a (<x>, <y>) han estat admeses
+needfreeslots=Necessites <slots> espais lliures a l'inventari per utilitzar això
+cantuseatnight=No es pot utilitzar de nit
+healthalreadyfull=La salut ja està al màxim
+cantheal=No es pot curar
+insuficienthealth=Salut insuficient per realitzar aquesta acció!
+cannottrhowlockeditem=No pots llançar un objecte bloquejat a l'inventari
+initialrunetip=Tria la teva runa inicial amb cura;\nno n'obtindràs les altres fins més endavant en el joc
+alreadyselectedinitialrune=Ja s'ha seleccionat la runa inicial
+cannotusetrial=No es pot utilitzar a les sales de proves
+
+[biome]
+infectedfields=Camps Infectats
+
+
+[journal]
+
+//Levels
+infectedfieldssurface=Superfície dels Camps Infectats
+infectedfieldscave=Cova dels Camps Infectats
+
+// Forest Surface Challenges
+killgelslimesforest=[mob=gelslime] Mata 25 Llims de Gel al bosc
+pickupfloralring=[item=floralring] Talla molta herba al bosc per obtenir l'Anell Floral
+killunstablegelslime=[mob=unstablegelslime] Mata 1 Llim de Gel Inestable
+
+// Swamp Surface Challenges
+killpinkwitchesswamp=[mob=pinkwitch] A la nit, mata 5 Bruixes Roses a la superfície del pantà
+
+// Infected Fields Surface Challenges
+pickupinfectedlogs=[item=infectedlog] Talla per recollir 100 Troncs Infectats
+
+// Infected Fields Cave Challenges
+pickupspinel=[item=spinel] Recull 40 Espineles
+activatebabylontower=[item=lifespinel] Col·loca una Espinela de Vida a la Torre de Babel
+findthespammer=[item=thespammer] Troba l'Spammer
+
+
+[controls]
+runesinjectorability=Habilitat de l'Injector de Runes
+
+
+[runestutorialbook]
+openheader=Obrint l'Injector de Runes
+opentext=Per utilitzar les runes, necessitaràs un Injector de Runes. Aquests dispositius especials es poden obrir per inserir runes. Cada injector té una ranura per a una Runa Base i diverses ranures per a Runes Modificadores, depenent de la seva capacitat. Ets lliure d'afegir tantes Runes Modificadores com l'injector permeti, experimenta per trobar les millors combinacions!
+equipheader=Equipant l'Injector
+equiptext=Per activar les teves runes, l'Injector de Runes ha d'estar equipat en una ranura de quincalla. Un cop equipat, només has de prémer G (o la tecla assignada a la configuració) per activar els seus efectes. Assegura't que l'injector estigui correctament configurat i a punt abans d'entrar en acció!
+
+runesheader=Què són les Runes?
+runestext=Les runes són pedres místiques que proporcionen efectes potents quan s'insereixen en un Injector de Runes. La seva força i comportament depenen de com es combinen, dominar el seu ús és la clau per alliberar tot el teu potencial.
+baserunesheader=Runes Base
+baserunestext=Cada Injector de Runes requereix exactament una Runa Base per funcionar. La Runa Base defineix l'efecte principal de l'injector i actua com a nucli de la teva configuració. Veuràs un número verd al costat de l'efecte, això representa el seu valor d'efecte, que es pot augmentar o disminuir amb modificadors.
+modifierrunesheader=Runes Modificadores
+modifierrunestext=Les Runes Modificadores s'utilitzen per personalitzar i millorar l'efecte de la teva Runa Base. Poden ajustar el valor de l'efecte, canviar el seu comportament o afegir propietats especials. No obstant això, les Runes Modificadores sempre vénen amb compensacions: cap modificador és purament beneficiós, així que tria amb prudència!
+
+tableheader=La Taula de Runes
+tabletext=La Taula de Runes és la teva estació de referència per crear una àmplia varietat de runes. La majoria de les runes estàndard es poden fer aquí, però recorda: algunes runes potents només es poden trobar mitjançant l'exploració. Mantingues els ulls oberts, l'aventura recompensa els curiosos!
+crafttext=Al Taller de Runes, trobaràs tot el que necessites per començar. Combina el contingut amb la teva Runa Inicial i una Runa Base que pots crear a la Taula de Runes, i tindràs un Injector de Runes totalment funcional a punt per equipar!

@@ -1,0 +1,755 @@
+# Translation made by AI
+
+[global]
+aphorea=§!Aphorea Mod
+aphorearework=§!Aphorea Mod Rework
+aphoreamightybanner=§!Aphorea Mod x Mighty Banner Mod
+aphoreasummonerexpansion=§!Aphorea Mod x Summoner Expansion
+
+
+[buffmodifiers]
+// Magic Healing
+magichealing=<mod>% магического исцеления
+magichealingflat=<mod> магического исцеления
+magichealingreceived=<mod>% получено магического исцеления
+magichealingreceivedflat=<mod> получено магического исцеления
+magichealinggrace=<mod>% благодати магического исцеления
+
+// Area
+arearange=<mod>% радиус области
+
+// Inspiration Damage
+inspirationdamage=<mod>% урона от вдохновения
+inspirationcritchance=<mod>% шанса критического удара от вдохновения
+inspirationcritdamage=<mod>% критического урона от вдохновения
+inspirationeffect=<mod>% эффекта вдохновения
+inspirationabilityspeed=<mod>% скорости способности вдохновения
+
+// Others
+loyal=Кинжал не теряется при броске
+
+
+[stats]
+inspiration_damage=Урон от вдохновения
+
+
+[enchantment]
+// Healing Equipment
+godly=Божественный
+absent=Отсутствующий
+auxiliary=Вспомогательный
+vain=Напрасный
+gentle=Нежный
+selfish=Эгоистичный
+
+// Healing
+friendly=Дружелюбный
+graceful=Изящный
+wonderful=Замечательный
+ecologic=Экологичный
+exalted=Возвышенный
+cursed=Проклятый
+
+// Area
+booming=Грохочущий
+dimmed=Тусклый
+
+// Others
+loyal=Верный
+
+
+[tile]
+geltile=Гелевый пол
+infectedwatertile=Зараженная вода
+infectedgrasstile=Зараженная трава
+spinelgravel=Шпинелевый гравий
+
+
+[tech]
+runes=Руны
+
+
+[object]
+witchstatue=Статуя ведьмы
+runestable=Стол для рун
+#NEW
+infectedsapling=Зараженный саженец
+spinelcluster=Скопление шпинеля
+spinelcluster_small=Малое скопление шпинеля
+gelrock=Гелевая скала
+infectedtree=Зараженное дерево
+infectedgrass=Зараженная трава
+spinelchest=Шпинелевый сундук
+fakespinelchest=Поддельный шпинелевый сундук
+babylontower=Вавилонская башня
+babylonentrance=Вход в Вавилон
+babylonexit=Выход из Вавилона
+infectedtrialentrance=Вход в зараженное испытание
+infectedchair=Зараженный стул
+infecteddinnertable=Зараженный обеденный стол
+infectedbookshelf=Зараженная книжная полка
+infectedcabinet=Зараженный шкаф
+infectedbed=Зараженная кровать
+infecteddoublebed=Зараженная двуспальная кровать
+infectedcandelabra=Зараженный канделябр
+
+
+[itemcategory]
+healing=Исцеление
+healingtools=Инструменты для исцеления
+runes=Руны
+runesinjectors=Инжекторы рун
+baserunes=Базовые руны
+modifierrunes=Руны-модификаторы
+
+
+[item]
+// General Materials
+anybasicfoci=Любой базовый фокус
+
+// Materials
+rockygel=Каменистый гель
+unstablegel=Нестабильный гель
+stardust=Звездная пыль
+infectedlog=Зараженное бревно
+infectedalloy=Зараженный сплав
+spinel=Шпинель
+lifespinel=Жизненная шпинель
+
+// Consumables
+unstablecore=Нестабильное ядро
+initialrune=Начальная руна
+venomextract=Экстракт яда
+
+// Swords
+gelsword=Гелевый меч
+unstablegelsword=Нестабильный гелевый меч
+broom=Метла
+voidhammer=Молот пустоты
+brokenkora=Сломанная кора
+thenarcissist=Нарцисс
+cryokatana=Криокатана
+
+// Greatswords
+unstablegelgreatsword=Нестабильный гелевый большой меч
+babylongreatsword=Вавилонский большой меч
+
+// Glaives
+woodenrod=Деревянный жезл
+
+// Sabers
+saber=Сабля
+coppersaber=Медная сабля
+ironsaber=Железная сабля
+goldsaber=Золотая сабля
+demonicsaber=Демоническая сабля
+unstablegelsaber=Нестабильная гелевая сабля
+honeysaber=Медовая сабля
+glacialsaber=Ледяная сабля
+crimsonkora=Багровая кора
+
+// Battleaxes
+battleaxe=Боевой топор
+unstablegelbattleaxe=Нестабильный гелевый боевой топор
+demonicbattleaxe=Демонический боевой топор
+
+// Daggers
+dagger=Кинжал
+copperdagger=Медный кинжал
+irondagger=Железный кинжал
+golddagger=Золотой кинжал
+demonicdagger=Демонический кинжал
+tungstendagger=Вольфрамовый кинжал
+lostumbrella=Потерянный зонт
+
+// Rapiers
+fossilrapier=Ископаемая рапира
+lightrapier=Светлая рапира
+
+// Magic weapons
+unstablegelstaff=Нестабильный гелевый посох
+magicalbroom=Волшебная метла
+adeptsbook=Книга адепта
+harpofharmony=Арфа гармонии
+babyloncandle=Вавилонская свеча
+
+// Bows
+spinelcrossbow=Шпинелевый арбалет
+
+// Guns
+thespammer=Спамер
+
+// Bullets
+spambullet=Спам-пуля
+
+// Greatbows
+gelgreatbow=Гелевый большой лук
+unstablegelgreatbow=Нестабильный гелевый большой лук
+
+// Arrows
+gelarrow=Гелевая стрела
+unstablegelarrow=Нестабильная гелевая стрела
+
+// Saber Guns
+sabergun=Сабля-пистолет
+shotgunsaber=Дробовик-сабля
+
+// Slings
+sling=Праща
+firesling=Огненная праща
+frozensling=Ледяная праща
+
+// Blowguns
+blowgun=Духовая трубка
+
+// Throw weapons
+gelball=Гелевый шар
+gelballgroup=Сгруппированные гелевые шары
+unstablegelveline=Нестабильный гельвелин
+
+// Summon weapons
+volatilegelstaff=Летучий гелевый посох
+infectedstaff=Зараженный посох
+
+// Banners
+blankbanner=Пустое знамя
+
+// Healing Tools
+healingtool=Инструмент для исцеления
+magicalvial=Волшебный флакон
+healingstaff=Посох исцеления
+woodenwand=Деревянная палочка
+goldenwand=Золотая палочка
+spinelstaff=Шпинелевый посох
+
+// Tools
+superiorpickaxe=Превосходная кирка
+
+// Trinkets
+rockyperiapt=Каменистый амулет
+unstableperiapt=Нестабильный амулет
+bloodyperiapt=Кровавый амулет
+demonicperiapt=Демонический амулет
+abysmalperiapt=Бездонный амулет
+frozenperiapt=Ледяной амулет
+necromancyperiapt=Амулет некромантии
+floralring=Цветочное кольцо
+gelring=Гелевое кольцо
+heartring=Кольцо сердца
+ringofhealth=Кольцо здоровья
+swampshield=Болотный щит
+witchmedallion=Медальон ведьмы
+iceboots=Ледяные сапоги
+inspirationfoci=Фокус вдохновения
+cursedmedallion=Проклятый медальон
+ancientmedallion=Древний медальон
+essenceofhealing=Эссенция исцеления
+ninjascarf=Шарф ниндзя
+adrenalinecharm=Амулет адреналина
+spinelshield=Шпинелевый щит
+bloomrushcharm=Амулет цветущей спешки
+infectedperiapt=Зараженный амулет
+
+// Armor
+rockyboots=Каменистые сапоги
+rockychestplate=Каменистый нагрудник
+rockyhelmet=Каменистый шлем
+goldhat=Золотая шляпа
+pinkwitchhat=Розовая шляпа ведьмы
+magicalsuit=Волшебный костюм
+magicalboots=Волшебные сапоги
+swampboots=Болотные сапоги
+swampchestplate=Болотный нагрудник
+swampmask=Болотная маска
+swamphood=Болотный капюшон
+infectedhat=Зараженная шляпа
+infectedchestplate=Зараженный нагрудник
+infectedboots=Зараженные сапоги
+spinelhelmet=Шпинелевый шлем
+spinelhat=Шпинелевая шляпа
+spinelchestplate=Шпинелевый нагрудник
+spinelboots=Шпинелевые сапоги
+
+// Misc
+gelslimenullifier=Нейтрализатор гелевых слизней
+cuberry=Куберри
+infectedgrassseed=Семена зараженной травы
+
+// Backpacks
+basicbackpack=Базовый рюкзак
+sapphirebackpack=Сапфировый рюкзак
+amethystbackpack=Аметистовый рюкзак
+rubybackpack=Рубиновый рюкзак
+emeraldbackpack=Изумрудный рюкзак
+diamondbackpack=Бриллиантовый рюкзак
+
+// Books
+runestutorialbook=Учебник по рунам
+
+// Runes Injectors
+runesinjector=Инжектор рун
+rusticrunesinjector=Деревенский инжектор рун
+unstablerunesinjector=Нестабильный инжектор рун
+demonicrunesinjector=Демонический инжектор рун
+tungstenrunesinjector=Вольфрамовый инжектор рун
+ancientrunesinjector=Древний инжектор рун
+
+// Base Runes Tier 0
+baserune=Базовая руна
+runeoffury=Руна ярости
+runeofspeed=Руна скорости
+runeofhealing=Руна исцеления
+runeofresistance=Руна сопротивления
+runeofvalor=Руна доблести
+runeofdetonation=Руна детонации
+runeofthunder=Руна грома
+runeofwinter=Руна зимы
+runeofshadows=Руна теней
+runeofimmortality=Руна бессмертия
+
+// Base Runes Tier 1
+runeofunstablegelslime=Руна нестабильного гелевого слизня
+runeofevilsprotector=Руна защитника зла
+runeofqueenspider=Руна королевы пауков
+runeofvoidwizard=Руна мага пустоты
+runeofswampguardian=Руна болотного стража
+runeofancientvulture=Руна древнего стервятника
+runeofpiratecaptain=Руна капитана пиратов
+runeofchieftain=Руна вождя
+
+// Base Runes Tier 2
+runeofreaper=Руна жнеца
+runeofcryoqueen=Руна криокоролевы
+runeofpestwarden=Руна чумного стража
+runeofsageandgrit=Руна мудреца и выдержки
+runeoffallenwizard=Руна падшего мага
+runeofbabylontower=Руна Вавилонской башни
+
+// Base Runes Tier 3
+runeofmotherslime=Руна матери слизней
+runeofnightswarm=Руна ночного роя
+runeofspiderempress=Руна императрицы пауков
+runeofsunlightchampion=Руна чемпиона солнечного света
+runeofmoonlightdancer=Руна танцора лунного света
+runeofcrystaldragon=Руна хрустального дракона
+
+// Modifier Runes Tier 0
+modifierrune=Руна-модификатор
+empoweringrune=Усиливающая руна
+recurrentrune=Повторяющаяся руна
+
+// Modifier Runes Tier 1
+frenzyrune=Руна безумия
+vitalrune=Жизненная руна
+devastatingrune=Разрушительная руна
+onyxrune=Ониксовая руна
+pawningrune=Пешечная руна
+
+// Modifier Runes Tier 2
+abysmalrune=Бездонная руна
+tidalrune=Приливная руна
+
+// Modifier Runes Tier 3
+ascendantrune=Восходящая руна
+
+
+[itemtooltip]
+// Stat tips
+line=----------------------------------------
+magichealingtip=Магическое исцеление: §7<health>
+rangetip=Дальность: §9<range>
+areatip=§aОбласть <number>
+inspirationdamagetip=Урон от вдохновения: <value>
+areabuff=Накладывает <buff> на союзников
+areadebuff=Накладывает <buff> на врагов
+areabuffdisplay=<buff> на <duration> секунд
+attackarmorpentip=Пробивание брони: <value>%
+
+// Mechanics
+magichealinggrace=§aБлагодать магического исцеления:§0 Исцеляет вас на % от магического исцеления, предназначенного для союзников
+cursedbuff=§bПроклятие:§0 §6+25%§0 входящего урона
+inspiration=§9Вдохновение:§0 Улучшает эффекты знамен и музыкальных инструментов
+adrenaline=§6Адреналин:§0 +5% урона, -5% брони. Может складываться до 5 раз
+livingsapling=§7Живой саженец:§0 Магически исцеляет владельца на §73§0 каждые 10 атак
+
+// Misc
+gelslimenullifier=Они перестанут вас беспокоить одним простым щелчком!
+enchantingscrollhealingequipmenttip=Используется для зачарования предмета лечебного снаряжения на <enchantment>\n§!Aphorea Mod
+enchantingscrollhealingtip=Используется для зачарования лечебного инструмента на <enchantment>\n§!Aphorea Mod
+enchantingscrollareatip=Используется для зачарования инструмента с эффектом по области на <enchantment>\n§!Aphorea Mod
+enchantingscrolldaggertip=Используется для зачарования кинжала на <enchantment>\n§!Aphorea Mod
+backpack=Это новый инвентарь, в котором хранятся все собранные вами предметы
+backpackslots=Вместимость <slots> предметов
+stored=Хранимые предметы: <items>
+backpackcraft=Должен быть пустым, чтобы создать лучший рюкзак
+
+// Consumables
+deleteditem=Этот предмет был удален, используйте его, чтобы восстановить материалы, прежде чем он будет окончательно удален
+unstablecore=§bВысвобождает нестабильную ауру...§0 Можно использовать только днем
+venomextractbuff=Лоуд говорит выпить, не делайте этого
+venomextractbuffdesc=У вас не может быть больше 1 ОЗ
+lifespinel=Навсегда увеличивает максимальное здоровье на 5, вплоть до 320
+
+// General Weapons
+spinsecondaryattack=Нажмите [input=mouse2], чтобы следующая атака стала атакой по области
+areasecondaryattack=Нажмите [input=mouse2], чтобы выполнить атаку по области, потребляя <mana> маны
+stikybuff1=Делает врага липким на 1 секунду
+stikybuff2=Делает врага липким на 2 секунды
+stikybuff3=Делает врага липким на 3 секунды
+projectilearea=Когда снаряд заканчивает свой путь, он наносит урон по области
+
+// Melee Weapons
+saber=Зарядите до максимума для полного урона и чтобы выпустить воздушный разрез
+saberdash=Удерживайте [input=mouse2], чтобы зарядить рывок и пронзить врагов
+battleaxe=Требуется много времени для зарядки
+battleaxe2=Нажмите [input=mouse2], чтобы активировать "Ярость берсерка" и временно получить 3 адреналина
+battleaxe3=Временно получайте адреналин, ударяя врагов во время "Ярости", улучшая скорость передвижения и атаки
+dagger=Удерживайте [input=mouse2], чтобы бросить кинжал
+
+// Range Weapons
+sling=Бросает камни с силой
+sling2=§7100%§0 шанс оглушить врага на 0.5 секунды
+twoarrows=Выпускает две стрелы одновременно
+threearrows=Выпускает три стрелы одновременно
+blowgun=Стреляет семенами
+
+// Single Melee Weapons
+woodenrod=Магически исцеляет вас на §7<healing>§0 каждые 10 атак
+voidhammer=Когда снаряд отскакивает или попадает во врага, он нацеливается на ближайшего, поражая до 3 раз
+crimsonkora=Удерживайте [input=mouse2], чтобы зарядить разрушительную, но медленную атаку
+thenarcissist=Совершите серию из 4 атак, чтобы на пятом ударе выпустить вращающийся бросок меча!\n+20% урона за каждую атаку в серии
+
+// Single Range Weapons
+firesling=Сжигает врагов
+frozensling=Замораживает врагов
+gelgreatbow=Превращает каменные стрелы в гелевые
+unstablegelgreatbow=Превращает каменные и гелевые стрелы в нестабильные гелевые стрелы
+thespammer=Может стрелять спам-пулями
+shotgunsaber=Цельтесь ближе к центру для более мощных, точных и пробивающих выстрелов
+honeysaber=Зарядите до максимума для полного урона и чтобы выстрелить медом и черникой
+spinelcrossbow=Выпускает стрелы, которые пронзают до 2 врагов, growing deadlier with each pierce
+spinelcrossbow2=Удерживайте [input=mouse2], чтобы выстрелить 3 стрелами одновременно
+
+// Single Magic Weapons
+unstablegelstaff=Когда снаряды отскакивают от стен, они дублируются
+harpofharmony=Гармония: увеличенная скорость, регенерация здоровья и маны
+
+// Single Summoner Weapons
+infectedstaff=Призывает два живых саженца за одно применение
+
+// Single Throwable Weapons
+gelball=Бросает гелевый шар
+
+// Single Magic Healing Tools
+magicalvial=Наведите на раненого человека, чтобы исцелить его, не наводите ни на кого, чтобы исцелить себя
+magicalvial2=Бесконечное использование
+
+// Ammo
+spambullet=Случайно имеет один из этих эффектов:
+spambullet1=§9Грусть:§0 Атакованный враг становится липким, замедляя его на 5 секунд
+spambullet2=§9Огонь:§0 Вместо столкновения оставляет на земле лужу огня
+spambullet3=§9Лайк:§0 Отскакивает от стен и пронзает мобов, до 10 раз каждый
+spambullet4=§9Проверка:§0 Область магического исцеления на 3 здоровья в конце своего пути
+spambullet5=§9Взрыв:§0 Взрывается в конце своего пути вместо столкновения
+
+// Tiles
+geltile=Липкий пол, который сильно замедляет все, что на нем находится
+
+// Objects
+witchstatue=Размещение этой статуи на поверхности болота устранит появление ведьм по всему острову
+
+// Generic Trinkets
+areawhenheal=Выполняет эту область за каждые <magichealing> единиц магического исцеления
+periaptboost=Нажмите [input=trinketability], чтобы получить прирост скорости и скорости атаки на 10 секунд
+
+// Trinkets
+rockyperiapt=§7+5§0 брони, но §6-5%§0 скорости передвижения
+rockyperiapt2=Нажмите [input=trinketability], чтобы получить 10 брони на 10 секунд
+unstableperiapt=Призывает двух детенышей нестабильных гелевых слизней (6 урона призывателя)
+unstableperiapt2=Дает вам иммунитет к дебаффу "Липкий"
+bloodyperiapt=Кроме того, оружие "Кровавый болт" и "Кровавый залп" будут красть §73%§0 жизни
+demonicperiapt=Кроме того, магическое оружие будет красть §73%§0 жизни
+necromancyperiapt=Каждый раз, когда вы или один из ваших прислужников убивает враждебного моба, вы призываете нежить-скелета
+necromancyperiapt2=20 урона призывателя. Длится 10 секунд и может быть не более 3 одновременно
+frozenperiapt=Оружие ближнего и дальнего боя будет замораживать на 3 секунды
+frozenperiapt2=Наносит больше урона мобам, подверженным заморозке
+frozenperiapt3=Дает вам иммунитет к дебаффам "Заморозка" и "Замедление от мороза"
+floralring=Магически исцеляет вас на §7<healing>§0 каждые 5 секунд
+gelring=§7+30%§0 получаемого магического исцеления
+heartring=§7+20§0 максимального здоровья
+swampshield=Защищает только от атак в направлении их получения
+swampshield2=При идеальном блоке: магически исцеляет вас на §7<healing>§0 от вашего максимального здоровья
+iceboots=Заставляет вас скользить, как по льду, но дает +50% скорости передвижения и +4 брони
+inspirationfoci1=§7+40%§0 эффекта вдохновения и §7+20%§0 скорости способности вдохновения
+inspirationfoci2=§6-20%§0 всего урона, не связанного с вдохновением, и §6-1§0 максимального количества прислужников
+essenceofhealing=§7+<percent>%§0 магического исцеления за эссенцию жизни
+essenceofhealing2=§7<flat>§0 магического исцеления за 2 эссенции жизни
+essenceofhealing3=§6-80%§0 длительности эссенции жизни, ограничено до -50%
+ninjascarf=Превращает рывки саблей в прыжки саблей
+adrenalinecharm=Каждый полученный удар будет давать вам адреналин на 20 секунд
+infectedperiapt=Призывает два живых саженца (8 урона призывателя)
+bloomrushcharm=Уменьшает расход выносливости на 10% за каждый имеющийся у вас адреналин\nПризывает живого саженца (8 урона призывателя) за каждый имеющийся у вас адреналин
+
+// Set Bonus
+goldhatsetbonus=Если вы стоите на месте, ваша скорость атаки дальнего боя значительно увеличивается
+pinkwitchsetbonus=Увеличивает скорость магической атаки, регенерацию маны и броню, чем ниже ваше здоровье
+infectedsetbonus=Призывает три живых саженца (8 урона призывателя)
+spinelhelmetsetbonus=Магически исцеляет вас на §7<healing>§0 от урона в ближнем бою, нанесенного враждебным мобам
+spinelhatsetbonus=Магически исцеляет вас и всех ближайших союзников\nна §7<healing>§0 от магического урона, нанесенного враждебным мобам
+
+// Banners
+strikebannereffect=§7+<effect>%§0 регенерации здоровья (в бою и вне боя)
+strikebannerability=§aКаждые <time> секунд:§0 Выполняет атаку по области
+blankbannereffect=§7+<effect>%§0 регенерации здоровья (вне боя)
+blankbannerability=§aКаждые <time> секунд:§0 Выполняет исцеление по области
+bannerofdamageeffect=§7+<effect>%§0 урона
+bannerofdefenseeffect=§7-<effect>%§0 входящего урона
+bannerofspeedeffect=§7+<effect>%§0 скорости передвижения
+bannerofsummonspeedeffect=§7+<effect>%§0 скорости передвижения прислужников
+
+// Mighty Banners
+banneroffishingeffect=§7+<effect>§0 силы рыбалки
+bannerofhealthregeneffect=§7+<effectfloat>§0 регенерации здоровья в бою
+bannerofmanaregeneffect=§7+<effect>%§0 регенерации маны в бою
+bannerofresistanceeffect=§7+<effect>§0 брони
+bannerofsummoningeffect=§7+<effect>§0 максимального количества прислужников
+bannerofattackspeedeffect=§7+<effect>%§0 скорости атаки
+
+// Summoner Expansion Banners
+bannerofresilienceeffect=§7+<effect>%§0 максимальной устойчивости\nРегенерация §7+<effect>§0 устойчивости в секунду
+bannerofbouncingeffect=§7+<effect>§0 отскоков снарядов
+bannerofessenceeffect=§7+<effect>%§0 длительности эссенции жизни
+bannerofstaminaeffect=§7+<effect>%§0 вместимости выносливости\n§7+<effect2>%§0 регенерации выносливости\n§7-<effect2>%§0 расхода выносливости
+bannerofpickingeffect=§7+<effectfloat>§0 дальности подбора
+bannerofdashingeffect=§7+<effect>§0 зарядов рывка\n§7-<effect2>%§0 перезарядки рывка
+bannerofmanaeffect=§7+<effect>%§0 максимальной маны\n§7<effect2>%§0 регенерации маны
+
+// Runes (General)
+baserune=§iБазовая руна
+modifierrune=§aРуна-модификатор
+linkedrune=§bРуна связана с [<player>]
+notruneowner=Вы не являетесь владельцем базовой руны
+runesslots=Можно вставить до 1 базовой руны + <modifierslots> рун-модификаторов
+useruneinfusor=[input=runesinjectorability] для активации
+requiresbaserune=Требуется вставленная базовая руна
+onlyonebaserune=Одновременно можно вставить только одну базовую руну
+duplicatedmodifierrunes=Нельзя вставить более одной одинаковой руны-модификатора
+runehealthcost=Потребляет <health>% от максимального здоровья при активации
+runehealthhealing=Восстанавливает <health>% от максимального здоровья при использовании
+runecooldown=Перезаряжается через <seconds> секунд
+increaseruneeffectnumber=Увеличивает эффект на §7<variation>%§0
+decreaseruneeffectnumber=Уменьшает эффект на §6<variation>%§0
+increaserunecooldown=Увеличивает перезарядку на §6<variation>%§0
+decreaserunecooldown=Уменьшает перезарядку на §7<variation>%§0
+increaserunehealthcost=Увеличивает потребление максимального здоровья на §6<health>%§0
+increaserunehealthhealing=Увеличивает восстановление максимального здоровья на §7<health>%§0
+runedamagereduction=Урон значительно снижен против людей и еще больше против боссов
+runedamagereductionnoboss=Урон значительно снижен против людей и не действует на боссов
+moreextraeffectmod=Модификации эффекта на <mod>% более эффективны
+lessextraeffectmod=Модификации эффекта на <mod>% менее эффективны
+
+// Runes Injectors
+
+// Base Runes Tier 0
+runeoffury=Увеличивает ваш урон и скорость атаки на §7<effectNumber>§0% на 10 секунд
+runeofspeed=Рывок с силой §7<effectNumber>§0 в направлении вашего движения и неуязвимость на 0.5 секунды
+runeofresistance=Увеличивает вашу броню на §7<effectNumber>§0% на 10 секунд
+runeofresistance2=Во время перезарядки ваша броня уменьшена вдвое
+runeofvalor=+200% вдохновения на §7<effectNumber>§0 секунд
+runeofdetonation=Взрывается, нанося больше урона и отбрасывая врагов тем сильнее, чем они ближе
+runeofdetonation2=Максимальный урон составляет §7<effectNumber>§0% от максимального здоровья мобов
+runeofthunder=Через две секунды в начальное положение вашего курсора ударяет молния
+runeofthunder2=Молния наносит §7<effectNumber>§0% от здоровья мобов в виде урона и оглушает на 2 секунды
+runeofwinter=Замедляет врагов в радиусе 500 на §7<effectNumber>§0 секунд
+runeofimmortality=Если вы умрете в течение следующих §7<effectNumber>§0 секунд, вы выживете с полным здоровьем
+runeofimmortality2=Если это произойдет, вы будете неуязвимы в течение 3 секунд, но перезарядка составит 30 секунд
+runeofimmortality3=Во время перезарядки ваше максимальное здоровье уменьшено вдвое
+runeofshadows=На §7<effectNumber>§0 секунд вы станете невидимым, но также запуганным, что не позволит вам предпринимать какие-либо действия
+
+// Base Runes Tier 1
+runeofunstablegelslime=Телепортироваться в ближайшее место и призвать 2 рунических нестабильных гелевых слизня на §7<effectNumber>§0 секунд
+runeofunstablegelslime2=Прислужники будут наносить 5% от максимального здоровья мобов в виде урона
+runeofevilsprotector=+§7<effectNumber>§0% скорости атаки, но -50% скорости передвижения на 10 секунд
+runeofevilsprotector2=Ночью на поверхности положительный эффект удваивается
+runeofqueenspider=Оставляет на земле паутину на §7<effectNumber>§0 секунд
+runeofvoidwizard=Все снаряды будут отскакивать бесконечно и +§7<effectNumber>§0% скорости снарядов на 10 секунд
+runeofswampguardian=Уменьшает весь получаемый урон на 80% на §7<effectNumber>§0 секунд
+runeofancientvulture=Призывает рунического птенца стервятника на 10 секунд
+runeofancientvulture2=Прислужник будет наносить §7<effectNumber>§0% от максимального здоровья мобов в виде урона
+runeofpiratecaptain=Увеличивает ваш урон на §7<effectNumber>§0% за каждые 200 монет, которые у вас есть, до максимума в 20 000 монет
+runeofpiratecaptain2=Каждый раз, когда вы атакуете, вы будете терять 3 монеты
+runeofchieftain=В течение следующих 20 секунд ваш урон увеличивается, чем ниже ваше здоровье, до максимума +§7<effectNumber>§0%
+
+// Base Runes Tier 2
+runeofreaper=Телепортироваться в положение вашей мыши. Максимальное расстояние §7<effectNumber>§0
+runeofcryoqueen=Остановиться на 1 секунду и запустить ледяную атаку вокруг вас с дальностью §7<effectNumber>§0
+runeofcryoqueen2=Снаряды будут наносить 200% от максимального здоровья мобов в виде урона
+runeofpestwarden=В течение следующих §7<effectNumber>§0 секунд столкновение с врагами наносит им урон и отталкивает их
+runeofpestwarden2=Урон составляет 20% от их максимального здоровья
+runeofsageandgrit=Если поблизости есть раненые союзники (радиус 500), исцелить §7<effectNumber>§0% от их общего здоровья
+runeofsageandgrit2=Если нет, увеличьте свой урон, скорость атаки и скорость передвижения на +§7<effectNumber>§0% на 20 секунд
+runeoffallenwizard=Оглушить всех мобов, кроме вас, на §7<effectNumber>§0 секунд
+runeoffallenwizard2=Люди освободятся быстрее, а боссы еще быстрее
+runeofbabylontower=+§7<effectNumber>§0% всего урона, но вы не можете двигаться. 10 секунд
+
+// Base Runes Tier 3
+runeofmotherslime=Совершить большой прыжок к положению вашей мыши и нанести урон по области при приземлении
+runeofmotherslime2=Приземление нанесет §7<effectNumber>§0% от максимального здоровья мобов в виде урона
+runeofnightswarm=Призвать 5 летучих мышей на §7<effectNumber>§0 секунд, которые ищут враждебных мобов, чтобы укусить их
+runeofnightswarm2=Каждый укус восстанавливает 1% от вашего общего здоровья (минимум 1)
+runeofspiderempress=Бросает §7<F0effectNumber>§0 шаров паутины в направлении вашей мыши
+runeofspiderempress2=Шары паутины будут оглушать на 3 секунды и замедлять на 10 секунд
+runeofsunlightchampion=Получить оглушение на 3 секунды, заряжая нову с дальностью §7<effectNumber>§0
+runeofsunlightchampion2=Нова нанесет 200% от максимального здоровья мобов в виде урона
+runeofmoonlightdancer=+§7<effectNumber>§0% урона за каждый +1% скорости передвижения на 10 секунд
+runeofcrystaldragon=Бросить лазерный луч в положение вашего курсора на 5 секунд
+runeofcrystaldragon2=Лазер нанесет §7<effectNumber>§0% от максимального здоровья мобов в виде урона
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+onyxrune=При активации призывает Оникса на 5 секунд. Он будет наносить урон, равный 5% от здоровья моба
+onyxrune2=Каждый укус Оникса восстанавливает 1% от вашего общего здоровья (минимум 1)
+onyxrune3=§3Спасибо Ониксу за блестящие идеи для рун! <3
+pawningrune=При активации, если у вас еще нет эффекта, немедленно восстанавливает 20% от вашего максимального здоровья
+pawningrune2=Через 10 секунд вы потеряете восстановленное количество плюс еще 40%
+
+// Modifier Runes Tier 2
+abysmalrune=При активации призывает черную дыру в положение вашего курсора, затягивая врагов на 2 секунды
+abysmalrune2=Черная дыра будет призвана только в том случае, если с момента последней активации прошло 10 секунд
+tidalrune=При активации призывает волну воды, которая отталкивает врагов
+
+// Modifier Runes Tier 3
+
+
+[mobtooltip]
+usenet=Используйте сеть! [item=net]
+
+
+[mob]
+// Hostile
+gelslime=Гелевый слизень
+rockygelslime=Каменистый гелевый слизень
+unstablegelslime=Нестабильный гелевый слизень
+miniunstablegelslime=Мини-нестабильный гелевый слизень
+pinkwitch=Розовая ведьма
+voidadept=Адепт пустоты
+copperdaggergoblin=Гоблин с медным кинжалом
+irondaggergoblin=Гоблин с железным кинжалом
+golddaggergoblin=Гоблин с золотым кинжалом
+infectedtreant=Зараженный энт
+spinelgolem=Шпинелевый голем
+spinelcaveling=Шпинелевый пещерник
+tungstencaveling=Вольфрамовый пещерник
+spinelmimic=Шпинелевый мимик
+babylontower=Вавилонская башня
+hearthcrystal=Кристалл очага
+babylon=Вавилон
+
+// Friendly
+wildphosphorslime=Дикий фосфорный слизень
+
+// Summon
+babyunstablegelslime=Детеныш нестабильного гелевого слизня
+undeadskeleton=Нежить-скелет
+volatilegelslime=Летучий гелевый слизень
+runicunstablegelslime=Рунический нестабильный гелевый слизень
+runicvulturehatchling=Рунический птенец стервятника
+runicbat=Руническая летучая мышь
+onyx=Оникс
+livingsapling=Живой саженец
+
+// Pet
+petphosphorslime=Фосфорный слизень
+
+
+[buff]
+// Common Buffs
+stunbuff=Оглушение
+fallenstunbuff=Падшее оглушение
+stickybuff=Липкий
+stopbuff=Остановлен
+honeyedbuff=Медовый
+venomextractbuff=Экстракт яда
+cursedbuff=Проклятый
+adrenalinebuff=Адреналин
+harmonybuff=Гармония
+
+// Active Buffs
+berserkerrushactive=Ярость берсерка активна
+periaptactive=Способность амулета активна
+runesinjectoractive=Инжектор рун активен
+
+// Cooldown Buffs
+berserkerrushcooldown=Ярость берсерка на перезарядке
+periaptcooldown=Способность амулета на перезарядке
+runesinjectorcooldown=Инжектор рун на перезарядке
+spinattackcooldown=Вращающаяся атака на перезарядке
+saberdashcooldown=Рывок саблей на перезарядке
+
+
+[message]
+unstablegelslime_anger=§6Нестабильный гелевый слизень злится... <anger>/10
+unstablegelslime_fullanger=§6Нестабильный гелевый слизень разозлился! <anger>/10
+unstablegelslime_night=§6Нестабильный гелевый слизень§0 исчез с наступлением ночи!
+gelslimesnulled=Гелевые слизни в этом мире нейтрализованы. Они больше не появятся
+gelslimesunnulled=Гелевые слизни допущены в этот мир. Теперь они будут появляться
+pinkwitchesnulled=Розовые ведьмы нейтрализованы в (<x>, <y>)
+pinkwitchesunnulled=Розовые ведьмы допущены в (<x>, <y>)
+needfreeslots=Вам нужно <slots> свободных слотов в инвентаре, чтобы использовать это
+cantuseatnight=Нельзя использовать ночью
+healthalreadyfull=Здоровье уже полное
+cantheal=Невозможно исцелить
+insuficienthealth=Недостаточно здоровья для выполнения этого действия!
+cannottrhowlockeditem=Вы не можете выбросить предмет, заблокированный в инвентаре
+initialrunetip=Тщательно выбирайте свою начальную руну;\nвы не получите другие до более поздних этапов игры
+alreadyselectedinitialrune=Начальная руна уже выбрана
+cannotusetrial=Нельзя использовать в комнатах испытаний
+
+[biome]
+infectedfields=Зараженные поля
+
+
+[journal]
+
+//Levels
+infectedfieldssurface=Поверхность зараженных полей
+infectedfieldscave=Пещера зараженных полей
+
+// Forest Surface Challenges
+killgelslimesforest=[mob=gelslime] Убейте 25 гелевых слизней в лесу
+pickupfloralring=[item=floralring] Срежьте много травы в лесу, чтобы получить цветочное кольцо
+killunstablegelslime=[mob=unstablegelslime] Убейте 1 нестабильного гелевого слизня
+
+// Swamp Surface Challenges
+killpinkwitchesswamp=[mob=pinkwitch] Ночью убейте 5 розовых ведьм на поверхности болота
+
+// Infected Fields Surface Challenges
+pickupinfectedlogs=[item=infectedlog] Срубите, чтобы подобрать 100 зараженных бревен
+
+// Infected Fields Cave Challenges
+pickupspinel=[item=spinel] Подберите 40 шпинеля
+activatebabylontower=[item=lifespinel] Поместите жизненную шпинель на Вавилонскую башню
+findthespammer=[item=thespammer] Найдите спамер
+
+
+[controls]
+runesinjectorability=Способность инжектора рун
+
+
+[runestutorialbook]
+openheader=Открытие инжектора рун
+opentext=Чтобы использовать руны, вам понадобится инжектор рун. Эти специальные устройства можно открывать для вставки рун. В каждом инжекторе есть один слот для базовой руны и несколько слотов для рун-модификаторов, в зависимости от его вместимости. Вы можете добавлять столько рун-модификаторов, сколько позволяет инжектор, экспериментируйте, чтобы найти лучшие комбинации!
+equipheader=Экипировка инжектора
+equiptext=Чтобы активировать ваши руны, инжектор рун должен быть экипирован в слот для аксессуаров. После экипировки просто нажмите G (или клавишу, назначенную в настройках), чтобы вызвать его эффекты. Убедитесь, что инжектор правильно настроен и готов, прежде чем приступать к действию!
+
+runesheader=Что такое руны?
+runestext=Руны — это мистические камни, которые дают мощные эффекты при вставке в инжектор рун. Их сила и поведение зависят от того, как они скомбинированы, овладение их использованием — ключ к раскрытию вашего полного потенциала.
+baserunesheader=Базовые руны
+baserunestext=Каждому инжектору рун требуется ровно одна базовая руна для функционирования. Базовая руна определяет основной эффект инжектора и действует как ядро вашей установки. Вы заметите зеленое число рядом с эффектом, оно представляет его значение эффекта, которое можно увеличить или уменьшить с помощью модификаторов.
+modifierrunesheader=Руны-модификаторы
+modifierrunestext=Руны-модификаторы используются для настройки и усиления эффекта вашей базовой руны. Они могут изменять значение эффекта, изменять его поведение или добавлять особые свойства. Однако руны-модификаторы всегда сопряжены с компромиссами: ни один модификатор не является чисто полезным, поэтому выбирайте с умом!
+
+tableheader=Стол для рун
+tabletext=Стол для рун — это ваша основная станция для создания самых разнообразных рун. Большинство стандартных рун можно изготовить здесь, но помните: некоторые мощные руны можно найти только в ходе исследования. Держите ухо востро, приключения вознаграждают любопытных!
+crafttext=В мастерской рун вы найдете все необходимое для начала работы. Скомбинируйте содержимое с вашей начальной руной и базовой руной, которую вы можете изготовить на столе для рун, и у вас будет полностью функциональный инжектор рун, готовый к экипировке!

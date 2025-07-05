@@ -1,0 +1,751 @@
+# Translation made by AI
+
+[global]
+aphorea=§!Aphorea Mod
+aphorearework=§!Aphorea Mod Rework
+aphoreamightybanner=§!Aphorea Mod x Mighty Banner Mod
+aphoreasummonerexpansion=§!Aphorea Mod x Summoner Expansion
+
+
+[buffmodifiers]
+// Magic Healing
+magichealing=<mod>% شفاء سحري
+magichealingflat=<mod> شفاء سحري
+magichealingreceived=<mod>% شفاء سحري مستلم
+magichealingreceivedflat=<mod> شفاء سحري مستلم
+magichealinggrace=<mod>% نعمة الشفاء السحري
+
+// Area
+arearange=<mod>% نطاق المنطقة
+
+// Inspiration Damage
+inspirationdamage=<mod>% ضرر الإلهام
+inspirationcritchance=<mod>% فرصة حرجة للإلهام
+inspirationcritdamage=<mod>% ضرر حرج للإلهام
+inspirationeffect=<mod>% تأثير الإلهام
+inspirationabilityspeed=<mod>% سرعة قدرة الإلهام
+
+// Others
+loyal=الخنجر لا يضيع عند رميها
+
+
+[stats]
+inspiration_damage=ضرر الإلهام
+
+
+[enchantment]
+// Healing Equipment
+godly=إلهي
+absent=غائب
+auxiliary=مساعد
+vain=عبثي
+gentle=لطيف
+selfish=أناني
+
+// Healing
+friendly=ودود
+graceful=رشيق
+wonderful=رائع
+ecologic=بيئي
+exalted=سامي
+cursed=ملعون
+
+// Area
+booming=مزدهر
+dimmed=خافت
+
+// Others
+loyal=مخلص
+
+
+[tile]
+geltile=أرضية هلامية
+infectedwatertile=ماء ملوث
+infectedgrasstile=عشب ملوث
+spinelgravel=حصى الإسبنيل
+
+
+[tech]
+runes=الرونية
+
+
+[object]
+witchstatue=تمثال الساحرة
+runestable=طاولة الرونية
+infectedsapling=شتلة ملوثة
+spinelcluster=مجموعة الإسبنيل
+spinelcluster_small=مجموعة الإسبنيل الصغيرة
+gelrock=صخرة هلامية
+infectedtree=شجرة ملوثة
+infectedgrass=عشب ملوث
+spinelchest=صندوق الإسبنيل
+fakespinelchest=صندوق الإسبنيل المزيف
+babylontower=برج بابل
+babylonentrance=مدخل بابل
+babylonexit=مخرج بابل
+infectedtrialentrance=مدخل المحاكمة الملوثة
+infectedchair=كرسي ملوث
+infecteddinnertable=طاولة طعام ملوثة
+infectedbookshelf=رف كتب ملوث
+infectedcabinet=خزانة ملوثة
+infectedbed=سرير ملوث
+infecteddoublebed=سرير مزدوج ملوث
+infectedcandelabra=شمعدان ملوث
+
+
+[itemcategory]
+healing=شفاء
+healingtools=أدوات الشفاء
+runes=الرونية
+runesinjectors=حاقنات الرونية
+baserunes=الرونية الأساسية
+modifierrunes=الرونية المعدلة
+
+
+[item]
+// General Materials
+anybasicfoci=أي تركيز أساسي
+
+// Materials
+rockygel=هلام صخري
+unstablegel=هلام غير مستقر
+stardust=غبار النجوم
+infectedlog=جذع ملوث
+infectedalloy=سبيكة ملوثة
+spinel=الإسبنيل
+lifespinel=إسبنيل الحياة
+
+// Consumables
+unstablecore=نواة غير مستقرة
+initialrune=رون أولي
+venomextract=مستخلص السم
+
+// Swords
+gelsword=سيف هلامي
+unstablegelsword=سيف هلامي غير مستقر
+broom=مكنسة
+voidhammer=مطرقة الفراغ
+brokenkora=كورا مكسورة
+thenarcissist=النرجسي
+cryokatana=كاتانا جليدية
+
+// Greatswords
+unstablegelgreatsword=سيف هلامي كبير غير مستقر
+babylongreatsword=سيف بابل الكبير
+
+// Glaives
+woodenrod=قضيب خشبي
+
+// Sabers
+saber=سيف
+coppersaber=سيف نحاسي
+ironsaber=سيف حديدي
+goldsaber=سيف ذهبي
+demonicsaber=سيف شيطاني
+unstablegelsaber=سيف هلامي غير مستقر
+honeysaber=سيف العسل
+glacialsaber=سيف جليدي
+crimsonkora=كورا قرمزية
+
+// Battleaxes
+battleaxe=فأس معركة
+unstablegelbattleaxe=فأس معركة هلامي غير مستقر
+demonicbattleaxe=فأس معركة شيطاني
+
+// Daggers
+dagger=خنجر
+copperdagger=خنجر نحاسي
+irondagger=خنجر حديدي
+golddagger=خنجر ذهبي
+demonicdagger=خنجر شيطاني
+tungstendagger=خنجر تنجستن
+lostumbrella=مظلة مفقودة
+
+// Rapiers
+fossilrapier=سيف حفري
+lightrapier=سيف خفيف
+
+// Magic weapons
+unstablegelstaff=عصا هلامية غير مستقرة
+magicalbroom=مكنسة سحرية
+adeptsbook=كتاب الخبير
+harpofharmony=قيثارة الانسجام
+babyloncandle=شمعة بابل
+
+// Bows
+spinelcrossbow=قوس الإسبنيل
+
+// Guns
+thespammer=المرسل المزعج
+
+// Bullets
+spambullet=رصاصة مزعجة
+
+// Greatbows
+gelgreatbow=قوس هلامي كبير
+unstablegelgreatsword=قوس هلامي كبير غير مستقر
+
+// Arrows
+gelarrow=سهم هلامي
+unstablegelarrow=سهم هلامي غير مستقر
+
+// Saber Guns
+sabergun=مسدس سيف
+shotgunsaber=بندقية سيف
+
+// Slings
+sling=مقلاع
+firesling=مقلاع ناري
+frozensling=مقلاع متجمد
+
+// Blowguns
+blowgun=أنبوب نفخ
+
+// Throw weapons
+gelball=كرة هلامية
+gelballgroup=كرات هلامية مجمعة
+unstablegelveline=رمح هلامي غير مستقر
+
+// Summon weapons
+volatilegelstaff=عصا هلامية متطايرة
+infectedstaff=عصا ملوثة
+
+// Banners
+blankbanner=راية فارغة
+
+// Healing Tools
+healingtool=أداة شفاء
+magicalvial=قنينة سحرية
+healingstaff=عصا شفاء
+woodenwand=عصا خشبية
+goldenwand=عصا ذهبية
+spinelstaff=عصا الإسبنيل
+
+// Tools
+superiorpickaxe=فأس متفوق
+
+// Trinkets
+rockyperiapt=تميمة صخرية
+unstableperiapt=تميمة غير مستقرة
+bloodyperiapt=تميمة دموية
+demonicperiapt=تميمة شيطانية
+abysmalperiapt=تميمة سحيقة
+frozenperiapt=تميمة متجمدة
+necromancyperiapt=تميمة استحضار الأرواح
+floralring=خاتم زهري
+gelring=خاتم هلامي
+heartring=خاتم القلب
+ringofhealth=خاتم الصحة
+swampshield=درع المستنقع
+witchmedallion=ميدالية الساحرة
+iceboots=أحذية جليدية
+inspirationfoci=تركيز الإلهام
+cursedmedallion=ميدالية ملعونة
+ancientmedallion=ميدالية قديمة
+essenceofhealing=جوهر الشفاء
+ninjascarf=وشاح النينجا
+adrenalinecharm=تميمة الأدرينالين
+spinelshield=درع الإسبنيل
+bloomrushcharm=تميمة الاندفاع المزهر
+infectedperiapt=تميمة ملوثة
+
+// Armor
+rockyboots=أحذية صخرية
+rockychestplate=درع صدري صخري
+rockyhelmet=خوذة صخرية
+goldhat=قبعة ذهبية
+pinkwitchhat=قبعة الساحرة الوردية
+magicalsuit=بدلة سحرية
+magicalboots=أحذية سحرية
+swampboots=أحذية المستنقع
+swampchestplate=درع صدري للمستنقع
+swampmask=قناع المستنقع
+swamphood=غطاء رأس المستنقع
+infectedhat=قبعة ملوثة
+infectedchestplate=درع صدري ملوث
+infectedboots=أحذية ملوثة
+spinelhelmet=خوذة الإسبنيل
+spinelhat=قبعة الإسبنيل
+spinelchestplate=درع صدري من الإسبنيل
+spinelboots=أحذية الإسبنيل
+
+// Misc
+gelslimenullifier=مبطل الهلام اللزج
+cuberry=توت مكعب
+infectedgrassseed=بذور العشب الملوث
+
+// Backpacks
+basicbackpack=حقيبة ظهر أساسية
+sapphirebackpack=حقيبة ظهر ياقوتية
+amethystbackpack=حقيبة ظهر جمشتية
+rubybackpack=حقيبة ظهر ياقوتية
+emeraldbackpack=حقيبة ظهر زمردية
+diamondbackpack=حقيبة ظهر ماسية
+
+// Books
+runestutorialbook=كتاب تعليم الرونية
+
+// Runes Injectors
+runesinjector=حاقن الرونية
+rusticrunesinjector=حاقن الرونية الريفي
+unstablerunesinjector=حاقن الرونية غير المستقر
+demonicrunesinjector=حاقن الرونية الشيطاني
+tungstenrunesinjector=حاقن الرونية التنجستن
+ancientrunesinjector=حاقن الرونية القديم
+
+// Base Runes Tier 0
+baserune=رون أساسي
+runeoffury=رون الغضب
+runeofspeed=رون السرعة
+runeofhealing=رون الشفاء
+runeofresistance=رون المقاومة
+runeofvalor=رون الشجاعة
+runeofdetonation=رون التفجير
+runeofthunder=رون الرعد
+runeofwinter=رون الشتاء
+runeofshadows=رون الظلال
+runeofimmortality=رون الخلود
+
+// Base Runes Tier 1
+runeofunstablegelslime=رون الهلام اللزج غير المستقر
+runeofevilsprotector=رون حامي الشر
+runeofqueenspider=رون ملكة العناكب
+runeofvoidwizard=رون ساحر الفراغ
+runeofswampguardian=رون حارس المستنقع
+runeofancientvulture=رون النسر القديم
+runeofpiratecaptain=رون قبطان القراصنة
+runeofchieftain=رون الزعيم
+
+// Base Runes Tier 2
+runeofreaper=رون الحاصد
+runeofcryoqueen=رون ملكة الجليد
+runeofpestwarden=رون حارس الطاعون
+runeofsageandgrit=رون الحكيم والشجاعة
+runeoffallenwizard=رون الساحر الساقط
+runeofbabylontower=رون برج بابل
+
+// Base Runes Tier 3
+runeofmotherslime=رون أم الهلام
+runeofnightswarm=رون سرب الليل
+runeofspiderempress=رون إمبراطورة العناكب
+runeofsunlightchampion=رون بطل ضوء الشمس
+runeofmoonlightdancer=رون راقصة ضوء القمر
+runeofcrystaldragon=رون التنين الكريستالي
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+frenzyrune=رون الهيجان
+vitalrune=رون حيوي
+devastatingrune=رون مدمر
+onyxrune=رون الأونيكس
+pawningrune=رون الرهن
+
+// Modifier Runes Tier 2
+abysmalrune=رون سحيق
+tidalrune=رون المد والجزر
+
+// Modifier Runes Tier 3
+ascendantrune=رون صاعد
+
+
+[itemtooltip]
+// Stat tips
+line=----------------------------------------
+magichealingtip=شفاء سحري: §7<health>
+rangetip=المدى: §9<range>
+areatip=§aمنطقة <number>
+inspirationdamagetip=ضرر الإلهام: <value>
+areabuff=تطبيق <buff> على الحلفاء
+areadebuff=تطبيق <buff> على الأعداء
+areabuffdisplay=<buff> لمدة <duration> ثانية
+attackarmorpentip=اختراق الدروع: <value>%
+
+// Mechanics
+magichealinggrace=§aنعمة الشفاء السحري:§0 يشفي نفسه بنسبة مئوية من الشفاء السحري المخصص للحلفاء
+cursedbuff=§bملعون:§0 §6+25%§0 ضرر وارد
+inspiration=§9الإلهام:§0 يحسن تأثيرات الرايات والآلات الموسيقية
+adrenaline=§6الأدرينالين:§0 +5% ضرر، -5% درع. يمكن تكديسه حتى 5 مرات
+livingsapling=§7شتلة حية:§0 يشفي المالك سحريًا بمقدار §73§0 كل 10 هجمات
+
+// Misc
+gelslimenullifier=سيتوقفون عن إزعاجك بنقرة بسيطة!
+enchantingscrollhealingequipmenttip=يستخدم لسحر عنصر من معدات الشفاء بـ <enchantment>\n§!Aphorea Mod
+enchantingscrollhealingtip=يستخدم لسحر أداة شفاء بـ <enchantment>\n§!Aphorea Mod
+enchantingscrollareatip=يستخدم لسحر أداة ذات تأثير منطقة بـ <enchantment>\n§!Aphorea Mod
+enchantingscrolldaggertip=يستخدم لسحر سلاح خنجر بـ <enchantment>\n§!Aphorea Mod
+backpack=إنها مخزون جديد يخزن جميع العناصر التي تجمعها
+backpackslots=سعة <slots> عنصر
+stored=العناصر المخزنة: <items>
+backpackcraft=يجب أن تكون فارغة لصنع حقيبة ظهر أفضل
+
+// Consumables
+deleteditem=تمت إزالة هذا العنصر، استخدم هذا العنصر لاستعادة المواد قبل إزالته نهائيًا
+unstablecore=§bيطلق هالة غير مستقرة...§0 لا يمكن استخدامه إلا أثناء النهار
+venomextractbuff=يقول لود اشربه، لا تفعل
+venomextractbuffdesc=لا يمكن أن يكون لديك أكثر من 1 HP
+lifespinel=يزيد الصحة القصوى بشكل دائم بمقدار 5 حتى 320
+
+// General Weapons
+spinsecondaryattack=اضغط على [input=mouse2] لجعل الهجوم التالي هجومًا على المنطقة
+areasecondaryattack=اضغط على [input=mouse2] لتنفيذ هجوم على المنطقة يستهلك <mana> مانا
+stikybuff1=يجعل العدو لزجًا لمدة ثانية واحدة
+stikybuff2=يجعل العدو لزجًا لمدة ثانيتين
+stikybuff3=يجعل العدو لزجًا لمدة 3 ثوانٍ
+projectilearea=عندما ينتهي المقذوف، فإنه يسبب ضررًا في المنطقة
+
+// Melee Weapons
+saber=اشحن إلى أقصى حد للحصول على ضرر كامل وإطلاق قطع هوائي
+saberdash=اضغط باستمرار على [input=mouse2] لشحن اندفاعة لتقطيع الأعداء
+battleaxe=يستغرق وقتًا طويلاً للشحن
+battleaxe2=اضغط على [input=mouse2] لتنشيط اندفاع المحارب واكتساب 3 أدرينالين مؤقتًا
+battleaxe3=اكتسب الأدرينالين مؤقتًا عن طريق ضرب الأعداء أثناء الاندفاع، مما يحسن سرعة الحركة والهجوم
+dagger=اضغط باستمرار على [input=mouse2] لرمي الخنجر
+
+// Range Weapons
+sling=يرمي الحجارة بقوة
+sling2=§7100%§0 فرصة لصعق العدو لمدة 0.5 ثانية
+twoarrows=يطلق سهمين في وقت واحد
+threearrows=يطلق ثلاثة سهام في وقت واحد
+blowgun=يطلق البذور
+
+// Single Melee Weapons
+woodenrod=يشفي نفسه سحريًا بمقدار §7<healing>§0 كل 10 هجمات
+voidhammer=عندما يرتد المقذوف أو يصيب عدوًا، فإنه يستهدف الأقرب، ويصيب ما يصل إلى 3 مرات
+crimsonkora=اضغط باستمرار على [input=mouse2] لشحن هجوم مدمر ولكنه بطيء
+thenarcissist=سلسل 4 هجمات لإطلاق رمي سيف دوار في الضربة الخامسة!\n+20% ضرر لكل هجوم متسلسل
+
+// Single Range Weapons
+firesling=يحرق الأعداء
+frozensling=يجمد الأعداء
+gelgreatbow=يحول السهام الحجرية إلى سهام هلامية
+unstablegelgreatbow=يحول السهام الحجرية والسهام الهلامية إلى سهام هلامية غير مستقرة
+thespammer=يمكنه إطلاق رصاصات مزعجة
+shotgunsaber=صوب بالقرب من المركز للحصول على طلقات أقوى وأكثر دقة واختراقًا
+honeysaber=اشحن إلى أقصى حد للحصول على ضرر كامل وإطلاق العسل والتوت
+spinelcrossbow=يطلق سهامًا تخترق ما يصل إلى 2 من الأعداء، وتصبح أكثر فتكًا مع كل اختراق
+spinelcrossbow2=اضغط باستمرار على [input=mouse2] لإطلاق 3 سهام في وقت واحد
+
+// Single Magic Weapons
+unstablegelstaff=عندما ترتد المقذوفات عن الجدران، فإنها تتكاثر
+harpofharmony=الانسجام: زيادة السرعة وتجديد الصحة والمانا
+
+// Single Summoner Weapons
+infectedstaff=يستدعي شتلتين حيتين لكل استدعاء
+
+// Single Throwable Weapons
+gelball=يرمي كرة هلامية
+
+// Single Magic Healing Tools
+magicalvial=وجه إلى إنسان مصاب لشفائه، لا توجه إلى أي شخص لشفاء نفسك
+magicalvial2=استخدامات لا حصر لها
+
+// Ammo
+spambullet=لديه بشكل عشوائي أحد هذه التأثيرات:
+spambullet1=§9حزين:§0 يصبح العدو المهاجم لزجًا، مما يبطئه لمدة 5 ثوانٍ
+spambullet2=§9نار:§0 بدلاً من الاصطدام، يترك بركة من النار على الأرض
+spambullet3=§9إعجاب:§0 يرتد عن الجدران ويخترق الوحوش، حتى 10 مرات لكل منهما
+spambullet4=§9تحقق:§0 منطقة شفاء سحرية بقوة 3 صحة في نهاية مسارها
+spambullet5=§9انفجار:§0 ينفجر في نهاية مساره بدلاً من الاصطدام
+
+// Tiles
+geltile=أرضية لزجة تبطئ كل شيء عليها بشكل كبير
+
+// Objects
+witchstatue=سيؤدي وضع هذا التمثال على سطح مستنقع إلى القضاء على ظهور السحرة في جميع أنحاء الجزيرة
+
+// Generic Trinkets
+areawhenheal=ينفذ هذه المنطقة لكل <magichealing> شفاء سحري يتم إجراؤه
+periaptboost=اضغط على [input=trinketability] للحصول على زيادة في السرعة وسرعة الهجوم لمدة 10 ثوانٍ
+
+// Trinkets
+rockyperiapt=§7+5§0 درع، لكن §6-5%§0 سرعة حركة
+rockyperiapt2=اضغط على [input=trinketability] للحصول على 10 دروع لمدة 10 ثوانٍ
+unstableperiapt=يستدعي اثنين من صغار الهلام اللزج غير المستقر (6 ضرر استدعاء)
+unstableperiapt2=يجعلك محصنًا ضد تأثير اللزوجة السلبي
+bloodyperiapt=أيضًا، ستسرق أسلحة 'صاعقة الدم' و 'وابل الدم' §73%§0 من الحياة
+demonicperiapt=أيضًا، ستسرق الأسلحة السحرية §73%§0 من الحياة
+necromancyperiapt=في كل مرة تقتل فيها أنت أو أحد مستدعيك وحشًا معاديًا، فإنك تستدعي هيكلًا عظميًا غير ميت
+necromancyperiapt2=20 ضرر استدعاء. يستمر لمدة 10 ثوانٍ ويمكن أن يكون هناك 3 كحد أقصى في المرة الواحدة
+frozenperiapt=ستتجمد أسلحة المشاجرة والأسلحة بعيدة المدى لمدة 3 ثوانٍ
+frozenperiapt2=يسبب المزيد من الضرر للوحوش المتأثرة بالتجميد
+frozenperiapt3=يجعلك محصنًا ضد تأثيرات التجميد والبطء الجليدي السلبية
+floralring=يشفي نفسه سحريًا بمقدار §7<healing>§0 كل 5 ثوانٍ
+gelring=§7+30%§0 شفاء سحري مستلم
+heartring=§7+20§0 صحة قصوى
+swampshield=يحمي فقط الهجمات في الاتجاه الذي يتم تلقيها فيه
+swampshield2=عند الحجب المثالي: يشفي نفسه سحريًا بمقدار §7<healing>§0 من صحته القصوى
+iceboots=يجعلك تنزلق كما لو كنت على الجليد، لكنه يمنح +50% سرعة حركة و +4 درع
+inspirationfoci1=§7+40%§0 تأثير الإلهام و §7+20%§0 سرعة قدرة الإلهام
+inspirationfoci2=§6-20%§0 كل الضرر غير الملهم و §6-1§0 أقصى عدد من المستدعين
+essenceofhealing=§7+<percent>%§0 شفاء سحري لكل جوهر حياة
+essenceofhealing2=§7<flat>§0 شفاء سحري لكل 2 جوهر حياة
+essenceofhealing3=§6-80%§0 مدة جوهر الحياة، بحد أقصى -50%
+ninjascarf=يحول اندفاعات السيف إلى قفزات سيف
+adrenalinecharm=كل ضربة تتلقاها ستمنحك الأدرينالين لمدة 20 ثانية
+infectedperiapt=يستدعي شتلتين حيتين (8 ضرر استدعاء)
+bloomrushcharm=يقلل من استهلاك القدرة على التحمل بنسبة 10% لكل أدرينالين لديك\nيستدعي شتلة حية (8 ضرر استدعاء) لكل أدرينالين لديك
+
+// Set Bonus
+goldhatsetbonus=إذا كنت ثابتًا، تزداد سرعة هجومك بعيد المدى بشكل كبير
+pinkwitchsetbonus=يزيد من سرعة الهجوم السحري وتجديد المانا والدروع كلما انخفضت صحتك
+infectedsetbonus=يستدعي ثلاث شتلات حية (8 ضرر استدعاء)
+spinelhelmetsetbonus=يشفي نفسه سحريًا بمقدار §7<healing>§0 من ضرر المشاجرة الذي يلحق بالوحوش المعادية
+spinelhatsetbonus=يشفي نفسه وجميع الحلفاء القريبين سحريًا\nبمقدار §7<healing>§0 من الضرر السحري الذي يلحق بالوحوش المعادية
+
+// Banners
+strikebannereffect=§7+<effect>%§0 تجديد الصحة (في القتال وخارجه)
+strikebannerability=§aكل <time> ثانية:§0 ينفذ هجومًا على المنطقة
+blankbannereffect=§7+<effect>%§0 تجديد الصحة (خارج القتال)
+blankbannerability=§aكل <time> ثانية:§0 ينفذ شفاءً للمنطقة
+bannerofdamageeffect=§7+<effect>%§0 ضرر
+bannerofdefenseeffect=§7-<effect>%§0 ضرر وارد
+bannerofspeedeffect=§7+<effect>%§0 سرعة حركة
+bannerofsummonspeedeffect=§7+<effect>%§0 سرعة حركة المستدعين
+
+// Mighty Banners
+banneroffishingeffect=§7+<effect>§0 قوة صيد
+bannerofhealthregeneffect=§7+<effectfloat>§0 تجديد الصحة في القتال
+bannerofmanaregeneffect=§7+<effect>%§0 تجديد المانا في القتال
+bannerofresistanceeffect=§7+<effect>§0 درع
+bannerofsummoningeffect=§7+<effect>§0 أقصى عدد من المستدعين
+bannerofattackspeedeffect=§7+<effect>%§0 سرعة هجوم
+
+// Summoner Expansion Banners
+bannerofresilienceeffect=§7+<effect>%§0 أقصى قدر من المرونة\nيجدد §7+<effect>§0 من المرونة في الثانية
+bannerofbouncingeffect=§7+<effect>§0 ارتداد المقذوفات
+bannerofessenceeffect=§7+<effect>%§0 مدة جوهر الحياة
+bannerofstaminaeffect=§7+<effect>%§0 سعة القدرة على التحمل\n§7+<effect2>%§0 تجديد القدرة على التحمل\n§7-<effect2>%§0 استهلاك القدرة على التحمل
+bannerofpickingeffect=§7+<effectfloat>§0 نطاق الالتقاط
+bannerofdashingeffect=§7+<effect>§0 تكديس الاندفاع\n§7-<effect2>%§0 فترة تهدئة الاندفاع
+bannerofmanaeffect=§7+<effect>%§0 أقصى مانا\n§7<effect2>%§0 تجديد المانا
+
+// Runes (General)
+baserune=§iرون أساسي
+modifierrune=§aرون معدل
+linkedrune=§bرون مرتبط بـ [<player>]
+notruneowner=أنت لست مالك الرون الأساسي
+runesslots=يمكن إدخال ما يصل إلى 1 رون أساسي + <modifierslots> رون معدل
+useruneinfusor=[input=runesinjectorability] للتنشيط
+requiresbaserune=يتطلب إدخال رون أساسي
+onlyonebaserune=يمكن إدخال رون أساسي واحد فقط في كل مرة
+duplicatedmodifierrunes=لا يمكن إدخال أكثر من رون معدل واحد من نفس النوع
+runehealthcost=يستهلك <health>% من الصحة القصوى عند التنشيط
+runehealthhealing=يستعيد <health>% من الصحة القصوى عند الاستخدام
+runecooldown=يعاد شحنه في <seconds> ثانية
+increaseruneeffectnumber=يزيد التأثير بنسبة §7<variation>%§0
+decreaseruneeffectnumber=يقلل التأثير بنسبة §6<variation>%§0
+increaserunecooldown=يزيد فترة التهدئة بنسبة §6<variation>%§0
+decreaserunecooldown=يقلل فترة التهدئة بنسبة §7<variation>%§0
+increaserunehealthcost=يزيد استهلاك الصحة القصوى بنسبة §6<health>%§0
+increaserunehealthhealing=يزيد استعادة الصحة القصوى بنسبة §7<health>%§0
+runedamagereduction=يتم تقليل الضرر بشكل كبير ضد البشر وأكثر من ذلك ضد الزعماء
+runedamagereductionnoboss=يتم تقليل الضرر بشكل كبير ضد البشر ولا يؤثر على الزعماء
+moreextraeffectmod=تعديلات التأثير أكثر فعالية بنسبة <mod>%
+lessextraeffectmod=تعديلات التأثير أقل فعالية بنسبة <mod>%
+
+// Runes Injectors
+
+// Base Runes Tier 0
+runeoffury=يزيد من ضررك وسرعة هجومك بنسبة §7<effectNumber>§0% لمدة 10 ثوانٍ
+runeofspeed=اندفع بقوة §7<effectNumber>§0 في الاتجاه الذي تتحرك فيه وتصبح منيعًا لمدة 0.5 ثانية
+runeofresistance=يزيد من درعك بنسبة §7<effectNumber>§0% لمدة 10 ثوانٍ
+runeofresistance2=أثناء فترة التهدئة، يتم تقليل درعك إلى النصف
+runeofvalor=+200% إلهام لمدة §7<effectNumber>§0 ثانية
+runeofdetonation=ينفجر، مسببًا المزيد من الضرر ويدفع الأعداء إلى الخلف كلما اقتربوا
+runeofdetonation2=الضرر الأقصى هو §7<effectNumber>§0% من الصحة القصوى للوحوش كضرر
+runeofthunder=بعد ثانيتين، يضرب البرق موضع المؤشر الأولي
+runeofthunder2=يسبب البرق §7<effectNumber>§0% من صحة الوحوش كضرر ويصعق لمدة ثانيتين
+runeofwinter=يبطئ الأعداء بالجليد في نطاق 500 لمدة §7<effectNumber>§0 ثانية
+runeofimmortality=إذا مت في غضون §7<effectNumber>§0 ثانية القادمة، فستبقى على قيد الحياة بصحة قصوى
+runeofimmortality2=إذا حدث هذا، فستكون منيعًا لمدة 3 ثوانٍ، لكن فترة التهدئة ستكون 30 ثانية
+runeofimmortality3=أثناء فترة التهدئة، يتم تقليل صحتك القصوى إلى النصف
+runeofshadows=لمدة §7<effectNumber>§0 ثانية، ستصبح غير مرئي ولكنك ستكون أيضًا خائفًا، مما يمنعك من اتخاذ أي إجراءات
+
+// Base Runes Tier 1
+runeofunstablegelslime=انتقل فوريًا إلى موقع قريب واستدعِ 2 من الهلام اللزج غير المستقر الروني لمدة §7<effectNumber>§0 ثانية
+runeofunstablegelslime2=سيتسبب المستدعون في 5% من الصحة القصوى للوحوش كضرر
+runeofevilsprotector=+§7<effectNumber>§0% سرعة هجوم، لكن -50% سرعة حركة لمدة 10 ثوانٍ
+runeofevilsprotector2=أثناء الليل على السطح، يتضاعف التأثير الإيجابي
+runeofqueenspider=يترك شبكة عنكبوت على الأرض لمدة §7<effectNumber>§0 ثانية
+runeofvoidwizard=سترتد جميع المقذوفات إلى ما لا نهاية و +§7<effectNumber>§0% سرعة المقذوفات لمدة 10 ثوانٍ
+runeofswampguardian=يقلل كل الضرر المتلقى بنسبة 80% لمدة §7<effectNumber>§0 ثانية
+runeofancientvulture=يستدعي فرخ نسر روني لمدة 10 ثوانٍ
+runeofancientvulture2=سيتسبب المستدعى في §7<effectNumber>§0% من الصحة القصوى للوحوش كضرر
+runeofpiratecaptain=يزيد من ضررك بنسبة §7<effectNumber>§0% لكل 200 قطعة نقدية لديك، بحد أقصى 20000 قطعة نقدية
+runeofpiratecaptain2=في كل مرة تهاجم فيها، ستفقد 3 قطع نقدية
+runeofchieftain=خلال الـ 20 ثانية القادمة، يزداد ضررك كلما انخفضت صحتك، بحد أقصى +§7<effectNumber>§0%
+
+// Base Runes Tier 2
+runeofreaper=انتقل فوريًا إلى موضع الماوس. المسافة القصوى §7<effectNumber>§0
+runeofcryoqueen=توقف لمدة ثانية واحدة وأطلق هجومًا جليديًا من حولك بنطاق §7<effectNumber>§0
+runeofcryoqueen2=ستتسبب المقذوفات في 200% من الصحة القصوى للوحوش كضرر
+runeofpestwarden=خلال الـ §7<effectNumber>§0 ثانية القادمة، يؤدي الاصطدام بالأعداء إلى إلحاق الضرر بهم ودفعهم
+runeofpestwarden2=الضرر هو 20% من صحتهم القصوى
+runeofsageandgrit=إذا كان هناك حلفاء مصابون في مكان قريب (نطاق 500)، فقم بشفاء §7<effectNumber>§0% من صحتهم الإجمالية
+runeofsageandgrit2=إذا لم يكن الأمر كذلك، فقم بزيادة ضررك وسرعة هجومك وسرعة حركتك بنسبة +§7<effectNumber>§0% لمدة 20 ثانية
+runeoffallenwizard=اصعق جميع الوحوش ما عداك لمدة §7<effectNumber>§0 ثانية
+runeoffallenwizard2=سيتحرر البشر بشكل أسرع، والزعماء بشكل أسرع
+runeofbabylontower=+§7<effectNumber>§0% كل الضرر، لكن لا يمكنك التحرك. 10 ثوانٍ
+
+// Base Runes Tier 3
+runeofmotherslime=قم بقفزة كبيرة نحو موضع الماوس وتسبب في ضرر منطقة عند الهبوط
+runeofmotherslime2=سيتسبب الهبوط في §7<effectNumber>§0% من الصحة القصوى للوحوش كضرر
+runeofnightswarm=استدعِ 5 خفافيش لمدة §7<effectNumber>§0 ثانية تبحث عن الوحوش المعادية لعضها
+runeofnightswarm2=كل عضة تستعيد 1% من صحتك الإجمالية (على الأقل 1)
+runeofspiderempress=يرمي §7<F0effectNumber>§0 كرة شبكية في اتجاه الماوس
+runeofspiderempress2=ستصعق الكرات الشبكية لمدة 3 ثوانٍ وتبطئ لمدة 10 ثوانٍ
+runeofsunlightchampion=تصاب بالصعق لمدة 3 ثوانٍ أثناء شحن نوفا بنطاق §7<effectNumber>§0
+runeofsunlightchampion2=ستتسبب النوفا في 200% من الصحة القصوى للوحوش كضرر
+runeofmoonlightdancer=+§7<effectNumber>§0% ضرر لكل +1% سرعة حركة لمدة 10 ثوانٍ
+runeofcrystaldragon=أطلق شعاع ليزر في موضع المؤشر لمدة 5 ثوانٍ
+runeofcrystaldragon2=سيتسبب الليزر في §7<effectNumber>§0% من الصحة القصوى للوحوش كضرر
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+onyxrune=عند التنشيط، يستدعي أونيكس لمدة 5 ثوانٍ. سيتسبب في ضرر يعتمد على 5% من صحة الوحش
+onyxrune2=كل عضة من أونيكس تستعيد 1% من صحتك الإجمالية (على الأقل 1)
+onyxrune3=§3شكرًا لأونيكس على أفكار الرونية الرائعة! <3
+pawningrune=عند التنشيط، إذا لم يكن لديك التأثير بالفعل، فإنه يستعيد على الفور 20% من صحتك القصوى
+pawningrune2=بعد 10 ثوانٍ، ستفقد المبلغ المستعاد بالإضافة إلى 40% إضافية
+
+// Modifier Runes Tier 2
+abysmalrune=عند التنشيط، يستدعي ثقبًا أسود في موضع المؤشر، ويسحب الأعداء لمدة ثانيتين
+abysmalrune2=سيتم استدعاء الثقب الأسود فقط إذا مرت 10 ثوانٍ منذ آخر تنشيط
+tidalrune=عند التنشيط، يستدعي موجة من الماء تدفع الأعداء بعيدًا
+
+// Modifier Runes Tier 3
+
+
+[mobtooltip]
+usenet=استخدم شبكة! [item=net]
+
+
+[mob]
+// Hostile
+gelslime=هلام لزج
+rockygelslime=هلام لزج صخري
+unstablegelslime=هلام لزج غير مستقر
+miniunstablegelslime=هلام لزج صغير غير مستقر
+pinkwitch=ساحرة وردية
+voidadept=خبير الفراغ
+copperdaggergoblin=عفريت بخنجر نحاسي
+irondaggergoblin=عفريت بخنجر حديدي
+golddaggergoblin=عفريت بخنجر ذهبي
+infectedtreant=ترينت ملوث
+spinelgolem=جولم الإسبنيل
+spinelcaveling=ساكن كهف الإسبنيل
+tungstencaveling=ساكن كهف التنجستن
+spinelmimic=مقلد الإسبنيل
+babylontower=برج بابل
+hearthcrystal=كريستال الموقد
+babylon=بابل
+
+// Friendly
+wildphosphorslime=هلام فسفوري بري
+
+// Summon
+babyunstablegelslime=صغير الهلام اللزج غير المستقر
+undeadskeleton=هيكل عظمي غير ميت
+volatilegelslime=هلام لزج متطاير
+runicunstablegelslime=هلام لزج غير مستقر روني
+runicvulturehatchling=فرخ نسر روني
+runicbat=خفاش روني
+onyx=أونيكس
+livingsapling=شتلة حية
+
+// Pet
+petphosphorslime=هلام فسفوري
+
+
+[buff]
+// Common Buffs
+stunbuff=صعق
+fallenstunbuff=صعق ساقط
+stickybuff=لزج
+stopbuff=متوقف
+honeyedbuff=معسل
+venomextractbuff=مستخلص السم
+cursedbuff=ملعون
+adrenalinebuff=الأدرينالين
+harmonybuff=الانسجام
+
+// Active Buffs
+berserkerrushactive=اندفاع المحارب نشط
+periaptactive=قدرة التميمة نشطة
+runesinjectoractive=حاقن الرونية نشط
+
+// Cooldown Buffs
+berserkerrushcooldown=اندفاع المحارب في فترة تهدئة
+periaptcooldown=قدرة التميمة في فترة تهدئة
+runesinjectorcooldown=حاقن الرونية في فترة تهدئة
+spinattackcooldown=هجوم دوار في فترة تهدئة
+saberdashcooldown=اندفاع السيف في فترة تهدئة
+
+
+[message]
+unstablegelslime_anger=§6الهلام اللزج غير المستقر يغضب... <anger>/10
+unstablegelslime_fullanger=§6الهلام اللزج غير المستقر غضب! <anger>/10
+unstablegelslime_night=§6الهلام اللزج غير المستقر§0 اختفى مع حلول الليل!
+gelslimesnulled=تم إبطال الهلام اللزج في هذا العالم. لن يظهروا بعد الآن
+gelslimesunnulled=تم قبول الهلام اللزج في هذا العالم. سيظهرون الآن
+pinkwitchesnulled=تم إبطال السحرة الورديات في (<x>, <y>)
+pinkwitchesunnulled=تم قبول السحرة الورديات في (<x>, <y>)
+needfreeslots=تحتاج إلى <slots> مساحة فارغة في المخزون لاستخدام هذا
+cantuseatnight=لا يمكن استخدامه في الليل
+healthalreadyfull=الصحة ممتلئة بالفعل
+cantheal=لا يمكن الشفاء
+insuficienthealth=صحة غير كافية لتنفيذ هذا الإجراء!
+cannottrhowlockeditem=لا يمكنك رمي عنصر مقفل في المخزون
+initialrunetip=اختر رونك الأولي بعناية؛\nلن تحصل على الآخرين حتى وقت لاحق في اللعبة
+alreadyselectedinitialrune=تم تحديد الرون الأولي بالفعل
+cannotusetrial=لا يمكن استخدامه في غرف المحاكمة
+
+[biome]
+infectedfields=الحقول الملوثة
+
+
+[journal]
+
+//Levels
+infectedfieldssurface=سطح الحقول الملوثة
+infectedfieldscave=كهف الحقول الملوثة
+
+// Forest Surface Challenges
+killgelslimesforest=[mob=gelslime] اقتل 25 هلامًا لزجًا في الغابة
+pickupfloralring=[item=floralring] اقطع الكثير من العشب في الغابة للحصول على الخاتم الزهري
+killunstablegelslime=[mob=unstablegelslime] اقتل 1 هلام لزج غير مستقر
+
+// Swamp Surface Challenges
+killpinkwitchesswamp=[mob=pinkwitch] في الليل، اقتل 5 ساحرات ورديات على سطح المستنقع
+
+// Infected Fields Surface Challenges
+pickupinfectedlogs=[item=infectedlog] اقطع لجمع 100 جذع ملوث
+
+// Infected Fields Cave Challenges
+pickupspinel=[item=spinel] اجمع 40 إسبنيل
+activatebabylontower=[item=lifespinel] ضع إسبنيل الحياة على برج بابل
+findthespammer=[item=thespammer] ابحث عن المرسل المزعج
+
+
+[controls]
+runesinjectorability=قدرة حاقن الرونية
+
+
+[runestutorialbook]
+openheader=فتح حاقن الرونية
+opentext=لاستخدام الرونية، ستحتاج إلى حاقن الرونية. يمكن فتح هذه الأجهزة الخاصة لإدخال الرونية. يحتوي كل حاقن على فتحة واحدة لرون أساسي وفتحات متعددة للرونية المعدلة، اعتمادًا على سعته. أنت حر في إضافة أكبر عدد ممكن من الرونية المعدلة التي يسمح بها الحاقن، جرب للعثور على أفضل المجموعات!
+equipheader=تجهيز الحاقن
+equiptext=لتنشيط الرونية الخاصة بك، يجب تجهيز حاقن الرونية في فتحة الحلي. بمجرد تجهيزه، ما عليك سوى الضغط على G (أو المفتاح المخصص في الإعدادات) لتشغيل تأثيراته. تأكد من تكوين الحاقن بشكل صحيح وجاهز قبل الدخول في العمل!
+
+runesheader=ما هي الرونية؟
+runestext=الرونية هي أحجار غامضة توفر تأثيرات قوية عند إدخالها في حاقن الرونية. تعتمد قوتها وسلوكها على كيفية دمجها، وإتقان استخدامها هو مفتاح إطلاق العنان لإمكانياتك الكاملة.
+baserunesheader=الرونية الأساسية
+baserunestext=يتطلب كل حاقن رونية رونًا أساسيًا واحدًا بالضبط ليعمل. يحدد الرون الأساسي التأثير الرئيسي للحاقن ويعمل كنواة لإعدادك. ستلاحظ رقمًا أخضر بجوار التأثير، وهذا يمثل قيمة تأثيره، والتي يمكن زيادتها أو تقليلها باستخدام المعدلات.
+modifierrunesheader=الرونية المعدلة
+modifierrunestext=تستخدم الرونية المعدلة لتخصيص وتعزيز تأثير الرون الأساسي الخاص بك. يمكنهم تعديل قيمة التأثير أو تغيير سلوكه أو إضافة خصائص خاصة. ومع ذلك، تأتي الرونية المعدلة دائمًا مع مقايضات: لا يوجد معدل مفيد تمامًا، لذا اختر بحكمة!
+
+tableheader=طاولة الرونية
+tabletext=طاولة الرونية هي محطتك المفضلة لصنع مجموعة واسعة من الرونية. يمكن صنع معظم الرونية القياسية هنا، لكن تذكر: لا يمكن العثور على بعض الرونية القوية إلا من خلال الاستكشاف. ابق عينيك مفتوحتين، فالمغامرة تكافئ الفضوليين!
+crafttext=في ورشة الرونية، ستجد كل ما تحتاجه للبدء. ادمج المحتويات مع رونك الأولي ورون أساسي يمكنك صنعه على طاولة الرونية، وسيكون لديك حاقن رونية يعمل بكامل طاقته جاهزًا للتجهيز!

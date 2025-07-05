@@ -1,0 +1,751 @@
+# Translation made by AI
+
+[global]
+aphorea=§!Aphorea Mod
+aphorearework=§!Aphorea Mod Uudelleentyöstö
+aphoreamightybanner=§!Aphorea Mod x Mighty Banner Mod
+aphoreasummonerexpansion=§!Aphorea Mod x Summoner Laajennus
+
+
+[buffmodifiers]
+// Magic Healing
+magichealing=<mod>% maagista parannusta
+magichealingflat=<mod> maagista parannusta
+magichealingreceived=<mod>% vastaanotettua maagista parannusta
+magichealingreceivedflat=<mod> vastaanotettua maagista parannusta
+magichealinggrace=<mod>% maagisen parannuksen armoa
+
+// Area
+arearange=<mod>% alueen kantama
+
+// Inspiration Damage
+inspirationdamage=<mod>% inspiraatiovahinkoa
+inspirationcritchance=<mod>% inspiraation kriittinen mahdollisuus
+inspirationcritdamage=<mod>% inspiraation kriittinen vahinko
+inspirationeffect=<mod>% inspiraatiovaikutus
+inspirationabilityspeed=<mod>% inspiraatiokyvyn nopeus
+
+// Others
+loyal=Tikari ei katoa heitettäessä
+
+
+[stats]
+inspiration_damage=Inspiraatiovahinko
+
+
+[enchantment]
+// Healing Equipment
+godly=Jumalallinen
+absent=Poissa
+auxiliary=Apu-
+vain=Turha
+gentle=Hellä
+selfish=Itsekäs
+
+// Healing
+friendly=Ystävällinen
+graceful=Siro
+wonderful=Ihmeellinen
+ecologic=Ekologinen
+exalted=Ylevä
+cursed=Kirottu
+
+// Area
+booming=Kukoistava
+dimmed=Hämärä
+
+// Others
+loyal=Uskollinen
+
+
+[tile]
+geltile=Geelilattia
+infectedwatertile=Saastunut vesi
+infectedgrasstile=Saastunut ruoho
+spinelgravel=Spinellisora
+
+
+[tech]
+runes=Riimut
+
+
+[object]
+witchstatue=Noidan patsas
+runestable=Riimupöytä
+#NEW
+infectedsapling=Saastunut taimi
+spinelcluster=Spinellirykelmä
+spinelcluster_small=Pieni spinellirykelmä
+gelrock=Geelikivi
+infectedtree=Saastunut puu
+infectedgrass=Saastunut ruoho
+spinelchest=Spinelliarkku
+fakespinelchest=Väärennetty spinelliarkku
+babylontower=Baabelin torni
+babylonentrance=Baabelin sisäänkäynti
+babylonexit=Baabelin uloskäynti
+infectedtrialentrance=Saastuneen kokeen sisäänkäynti
+infectedchair=Saastunut tuoli
+infecteddinnertable=Saastunut ruokapöytä
+infectedbookshelf=Saastunut kirjahylly
+infectedcabinet=Saastunut kaappi
+infectedbed=Saastunut sänky
+infecteddoublebed=Saastunut parivuode
+infectedcandelabra=Saastunut kynttelikkö
+
+
+[itemcategory]
+healing=Parannus
+healingtools=Parannustyökalut
+runes=Riimut
+runesinjectors=Riimuinjektorit
+baserunes=Perusriimut
+modifierrunes=Muokkausriimut
+
+
+[item]
+// General Materials
+anybasicfoci=Mikä tahansa perusfokus
+
+// Materials
+rockygel=Kivinen geeli
+unstablegel=Epävakaa geeli
+stardust=Tähtipöly
+infectedlog=Saastunut tukki
+infectedalloy=Saastunut seos
+spinel=Spinelli
+lifespinel=Elämän spinelli
+
+// Consumables
+unstablecore=Epävakaa ydin
+initialrune=Alkurriimu
+venomextract=Myrkkyuute
+
+// Swords
+gelsword=Geelimiekka
+unstablegelsword=Epävakaa geelimiekka
+broom=Luuta
+voidhammer=Tyhjyysvasara
+brokenkora=Rikkoutunut kora
+thenarcissist=Narsisti
+cryokatana=Kryokatana
+
+// Greatswords
+unstablegelgreatsword=Epävakaa geelisuurmiekka
+babylongreatsword=Baabelin suurmiekka
+
+// Glaives
+woodenrod=Puinen sauva
+
+// Sabers
+saber=Sapeli
+coppersaber=Kuparisapeli
+ironsaber=Rautasapeli
+goldsaber=Kultasapeli
+demonicsaber=Demoninen sapeli
+unstablegelsaber=Epävakaa geelisapeli
+honeysaber=Hunajasapeli
+glacialsaber=Jäätikkösapeli
+crimsonkora=Karmiininpunainen kora
+
+// Battleaxes
+battleaxe=Sotakirves
+unstablegelbattleaxe=Epävakaa geelisotakirves
+demonicbattleaxe=Demoninen sotakirves
+
+// Daggers
+dagger=Tikari
+copperdagger=Kuparitikari
+irondagger=Rautatikari
+golddagger=Kultatikari
+demonicdagger=Demoninen tikari
+tungstendagger=Volframitikari
+lostumbrella=Kadonnut sateenvarjo
+
+// Rapiers
+fossilrapier=Fossiilirapier
+lightrapier=Valorapier
+
+// Magic weapons
+unstablegelstaff=Epävakaa geelisauva
+magicalbroom=Taikaluuta
+adeptsbook=Adeptin kirja
+harpofharmony=Harmonian harppu
+babyloncandle=Baabelin kynttilä
+
+// Bows
+spinelcrossbow=Spinellijalkajousi
+
+// Guns
+thespammer=Spammaaja
+
+// Bullets
+spambullet=Spammiluoti
+
+// Greatbows
+gelgreatbow=Geelipitkäjousi
+unstablegelgreatbow=Epävakaa geelipitkäjousi
+
+// Arrows
+gelarrow=Geelinuoli
+unstablegelarrow=Epävakaa geelinuoli
+
+// Saber Guns
+sabergun=Sapeliase
+shotgunsaber=Haulikkosapeli
+
+// Slings
+sling=Ritsa
+firesling=Tuliritsa
+frozensling=Jäätynyt ritsa
+
+// Blowguns
+blowgun=Puhallusputki
+
+// Throw weapons
+gelball=Geelipallo
+gelballgroup=Ryhmitetyt geelipallot
+unstablegelveline=Epävakaa geelikeihäs
+
+// Summon weapons
+volatilegelstaff=Haihtuva geelisauva
+infectedstaff=Saastunut sauva
+
+// Banners
+blankbanner=Tyhjä lippu
+
+// Healing Tools
+healingtool=Parannustyökalu
+magicalvial=Taikapullo
+healingstaff=Parannussauva
+woodenwand=Puinen taikasauva
+goldenwand=Kultainen taikasauva
+spinelstaff=Spinellisauva
+
+// Tools
+superiorpickaxe=Ylivoimainen hakku
+
+// Trinkets
+rockyperiapt=Kivinen periapti
+unstableperiapt=Epävakaa periapti
+bloodyperiapt=Verinen periapti
+demonicperiapt=Demoninen periapti
+abysmalperiapt=Syvyyden periapti
+frozenperiapt=Jäätynyt periapti
+necromancyperiapt=Nekromantian periapti
+floralring=Kukkasormus
+gelring=Geelisormus
+heartring=Sydänsormus
+ringofhealth=Terveyssormus
+swampshield=Suokilpi
+witchmedallion=Noidan medaljonki
+iceboots=Jääsaappaat
+inspirationfoci=Inspiraatiofokus
+cursedmedallion=Kirottu medaljonki
+ancientmedallion=Muinainen medaljonki
+essenceofhealing=Parannuksen olemus
+ninjascarf=Ninjan huivi
+adrenalinecharm=Adrenaliiniamuletti
+spinelshield=Spinellikilpi
+bloomrushcharm=Kukkarusketusamuletti
+infectedperiapt=Saastunut periapti
+
+// Armor
+rockyboots=Kiviset saappaat
+rockychestplate=Kivinen rintapanssari
+rockyhelmet=Kivinen kypärä
+goldhat=Kultahattu
+pinkwitchhat=Vaaleanpunainen noidanhattu
+magicalsuit=Taikapuku
+magicalboots=Taikasaappaat
+swampboots=Suosaappaat
+swampchestplate=Suorintapanssari
+swampmask=Suomaski
+swamphood=Suohuppu
+infectedhat=Saastunut hattu
+infectedchestplate=Saastunut rintapanssari
+infectedboots=Saastuneet saappaat
+spinelhelmet=Spinellikypärä
+spinelhat=Spinellihattu
+spinelchestplate=Spinellirintapanssari
+spinelboots=Spinellisaappaat
+
+// Misc
+gelslimenullifier=Geeliliman mitätöijä
+cuberry=Kuutiomarja
+infectedgrassseed=Saastuneen ruohon siemen
+
+// Backpacks
+basicbackpack=Perusreppu
+sapphirebackpack=Safiirireppu
+amethystbackpack=Ametistireppu
+rubybackpack=Rubiinireppu
+emeraldbackpack=Smaragdireppu
+diamondbackpack=Timanttireppu
+
+// Books
+runestutorialbook=Riimujen opaskirja
+
+// Runes Injectors
+runesinjector=Riimuinjektori
+rusticrunesinjector=Maalaismainen riimuinjektori
+unstablerunesinjector=Epävakaa riimuinjektori
+demonicrunesinjector=Demoninen riimuinjektori
+tungstenrunesinjector=Volframiriimuinjektori
+ancientrunesinjector=Muinainen riimuinjektori
+
+// Base Runes Tier 0
+baserune=Perusriimu
+runeoffury=Raivon riimu
+runeofspeed=Nopeuden riimu
+runeofhealing=Parannuksen riimu
+runeofresistance=Vastuksen riimu
+runeofvalor=Urheuden riimu
+runeofdetonation=Räjähdyksen riimu
+runeofthunder=Ukkosen riimu
+runeofwinter=Talven riimu
+runeofshadows=Varjojen riimu
+runeofimmortality=Kuolemattomuuden riimu
+
+// Base Runes Tier 1
+runeofunstablegelslime=Epävakaan geeliliman riimu
+runeofevilsprotector=Pahan suojelijan riimu
+runeofqueenspider=Hämähäkkikuningattaren riimu
+runeofvoidwizard=Tyhjyysvelhon riimu
+runeofswampguardian=Suon vartijan riimu
+runeofancientvulture=Muinainen korppikotkan riimu
+runeofpiratecaptain=Merirosvokapteenin riimu
+runeofchieftain=Päällikön riimu
+
+// Base Runes Tier 2
+runeofreaper=Viikatemiehen riimu
+runeofcryoqueen=Kryokuningattaren riimu
+runeofpestwarden=Ruttovartijan riimu
+runeofsageandgrit=Salvian ja sisun riimu
+runeoffallenwizard=Langenneen velhon riimu
+runeofbabylontower=Baabelin tornin riimu
+
+// Base Runes Tier 3
+runeofmotherslime=Äitiliman riimu
+runeofnightswarm=Yöparven riimu
+runeofspiderempress=Hämähäkkikeisarinnan riimu
+runeofsunlightchampion=Auringonvalon mestarin riimu
+runeofmoonlightdancer=Kuunvalon tanssijan riimu
+runeofcrystaldragon=Kristallilohikäärmeen riimu
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+frenzyrune=Raivoriimu
+vitalrune=Elintärkeä riimu
+devastatingrune=Tuhoisa riimu
+onyxrune=Onyx-riimu
+pawningrune=Panttiriimu
+
+// Modifier Runes Tier 2
+abysmalrune=Syvyyden riimu
+tidalrune=Vuorovesiriimu
+
+// Modifier Runes Tier 3
+
+
+[itemtooltip]
+// Stat tips
+line=----------------------------------------
+magichealingtip=Maaginen parannus: §7<health>
+rangetip=Kantama: §9<range>
+areatip=§aAlue <number>
+inspirationdamagetip=Inspiraatiovahinko: <value>
+areabuff=Käytä <buff> liittolaisiin
+areadebuff=Käytä <buff> vihollisiin
+areabuffdisplay=<buff> <duration> sekunnin ajan
+attackarmorpentip=Panssarin läpäisy: <value>%
+
+// Mechanics
+magichealinggrace=§aMaagisen parannuksen armo:§0 Parantaa itseään prosenttiosuudella liittolaisille tarkoitetusta maagisesta parannuksesta
+cursedbuff=§bKirottu:§0 §6+25%§0 saapuvaa vahinkoa
+inspiration=§9Inspiraatio:§0 Parantaa lippujen ja soittimien vaikutuksia
+adrenaline=§6Adrenaliini:§0 +5% vahinkoa, -5% panssaria. Voi pinota jopa 5 kertaa
+livingsapling=§7Elävä taimi:§0 Parantaa omistajaa maagisesti §73§0 joka 10. hyökkäyksellä
+
+// Misc
+gelslimenullifier=He lakkaavat häiritsemästä sinua yhdellä napsautuksella!
+enchantingscrollhealingequipmenttip=Käytetään parannusvarusteen lumoamiseen <enchantment>\n§!Aphorea Mod
+enchantingscrollhealingtip=Käytetään parannustyökalun lumoamiseen <enchantment>\n§!Aphorea Mod
+enchantingscrollareatip=Käytetään alueellisen vaikutuksen työkalun lumoamiseen <enchantment>\n§!Aphorea Mod
+enchantingscrolldaggertip=Käytetään tikariaseen lumoamiseen <enchantment>\n§!Aphorea Mod
+backpack=Se on uusi inventaario, joka tallentaa kaikki keräämäsi esineet
+backpackslots=Kapasiteetti <slots> esinettä
+stored=Tallennetut esineet: <items>
+backpackcraft=On oltava tyhjä paremman repun valmistamiseksi
+
+// Consumables
+deleteditem=Tämä esine on poistettu, käytä tätä esinettä materiaalien palauttamiseen ennen kuin se poistetaan pysyvästi
+unstablecore=§bVapauttaa epävakaan auran...§0 Voidaan käyttää vain päivällä
+venomextractbuff=Lowd sanoo juo se, älä tee sitä
+venomextractbuffdesc=Sinulla ei voi olla enempää kuin 1 HP
+lifespinel=Lisää pysyvästi maksimiterveyttä 5:llä, enintään 320:een
+
+// General Weapons
+spinsecondaryattack=Paina [input=mouse2] tehdäksesi seuraavasta hyökkäyksestä aluehyökkäyksen
+areasecondaryattack=Paina [input=mouse2] suorittaaksesi aluehyökkäyksen, joka kuluttaa <mana> manaa
+stikybuff1=Tekee vihollisesta tahmean 1 sekunniksi
+stikybuff2=Tekee vihollisesta tahmean 2 sekunniksi
+stikybuff3=Tekee vihollisesta tahmean 3 sekunniksi
+projectilearea=Kun ammus päättyy, se aiheuttaa aluevahinkoa
+
+// Melee Weapons
+saber=Lataa maksimiin täyden vahingon saamiseksi ja ilmaleikkauksen vapauttamiseksi
+saberdash=Pidä [input=mouse2] painettuna ladataksesi syöksyn vihollisten läpi leikkaamiseksi
+battleaxe=Lataaminen kestää kauan
+battleaxe2=Paina [input=mouse2] aktivoidaksesi Berserker-ryntäyksen ja saadaksesi väliaikaisesti 3 adrenaliinia
+battleaxe3=Saa väliaikaisesti adrenaliinia lyömällä vihollisia ryntäyksen aikana, mikä parantaa liikkumis- ja hyökkäysnopeutta
+dagger=Pidä [input=mouse2] painettuna heittääksesi tikarin
+
+// Range Weapons
+sling=Heittää kiviä voimalla
+sling2=§7100%§0 mahdollisuus tainnuttaa vihollinen 0.5 sekunniksi
+twoarrows=Ampuu kaksi nuolta kerralla
+threearrows=Ampuu kolme nuolta kerralla
+blowgun=Ampuu siemeniä
+
+// Single Melee Weapons
+woodenrod=Parantaa itseään maagisesti §7<healing>§0 joka 10. hyökkäyksellä
+voidhammer=Kun ammus kimpoaa tai osuu viholliseen, se kohdistuu lähimpään ja osuu jopa 3 kertaa
+crimsonkora=Pidä [input=mouse2] painettuna ladataksesi tuhoisan mutta hitaan hyökkäyksen
+thenarcissist=Ketjuta 4 hyökkäystä vapauttaaksesi pyörivän miekanheiton viidennellä osumalla!\n+20% vahinkoa jokaisesta ketjutetusta hyökkäyksestä
+
+// Single Range Weapons
+firesling=Polttaa vihollisia
+frozensling=Jäädyttää vihollisia
+gelgreatbow=Muuttaa kivinuolet geelinuoliksi
+unstablegelgreatbow=Muuttaa kivinuolet ja geelinuolet epävakaiksi geelinuoliksi
+thespammer=Voi ampua spammiluoteja
+shotgunsaber=Tähtää lähelle keskustaa saadaksesi voimakkaampia, tarkempia ja läpäisevämpiä laukauksia
+honeysaber=Lataa maksimiin täyden vahingon saamiseksi ja hunajan ja mustikoiden ampumiseksi
+spinelcrossbow=Ampuu nuolia, jotka läpäisevät jopa 2 vihollista ja muuttuvat tappavammiksi jokaisen läpäisyn myötä
+spinelcrossbow2=Pidä [input=mouse2] painettuna ampuaksesi 3 nuolta kerralla
+
+// Single Magic Weapons
+unstablegelstaff=Kun ammukset kimpoavat seinistä, ne monistuvat
+harpofharmony=Harmonia: Lisääntynyt nopeus, terveyden ja manan regeneraatio
+
+// Single Summoner Weapons
+infectedstaff=Kutsuu kaksi elävää tainta per kutsu
+
+// Single Throwable Weapons
+gelball=Heittää geelipallon
+
+// Single Magic Healing Tools
+magicalvial=Osoita haavoittunutta ihmistä parantaaksesi hänet, älä osoita ketään parantaaksesi itsesi
+magicalvial2=Loputon käyttö
+
+// Ammo
+spambullet=Sattumanvaraisesti on yksi näistä vaikutuksista:
+spambullet1=§9Surullinen:§0 Hyökätty vihollinen muuttuu tahmeaksi, hidastaen sitä 5 sekunniksi
+spambullet2=§9Tuli:§0 Törmäyksen sijaan jättää maahan tulilammikon
+spambullet3=§9Tykkää:§0 Kimpoaa seinistä ja läpäisee mobeja, jopa 10 kertaa kumpikin
+spambullet4=§9Tarkista:§0 3 terveyden maaginen parannusalue sen polun päässä
+spambullet5=§9Räjähdys:§0 Räjähtää sen polun päässä törmäyksen sijaan
+
+// Tiles
+geltile=Tahmea lattia, joka hidastaa kaikkea sen päällä olevaa huomattavasti
+
+// Objects
+witchstatue=Tämän patsaan sijoittaminen suon pinnalle poistaa noitien syntymisen koko saarelta
+
+// Generic Trinkets
+areawhenheal=Suorittaa tämän alueen jokaisesta <magichealing> maagisesta parannuksesta
+periaptboost=Paina [input=trinketability] saadaksesi nopeuden ja hyökkäysnopeuden lisäyksen 10 sekunniksi
+
+// Trinkets
+rockyperiapt=§7+5§0 panssaria, mutta §6-5%§0 liikkumisnopeutta
+rockyperiapt2=Paina [input=trinketability] saadaksesi 10 panssaria 10 sekunniksi
+unstableperiapt=Kutsuu kaksi epävakaa geeliliman vauvaa (6 kutsujan vahinkoa)
+unstableperiapt2=Tekee sinut immuuniksi tahmealle debuffille
+bloodyperiapt=Myös aseet 'Veripultti' ja 'Verisalva' varastavat §73%§0 elämää
+demonicperiapt=Myös maagiset aseet varastavat §73%§0 elämää
+necromancyperiapt=Joka kerta kun sinä tai joku kutsuistasi tappaa vihamielisen mobin, kutsut epäkuolleen luurangon
+necromancyperiapt2=20 kutsujan vahinkoa. Kestää 10 sekuntia ja niitä voi olla enintään 3 kerrallaan
+frozenperiapt=Lähitaistelu- ja etäisyysaseet jäätyvät 3 sekunniksi
+frozenperiapt2=Tekee enemmän vahinkoa jäädytyksen kohteena oleville mobeille
+frozenperiapt3=Tekee sinut immuuniksi jäädytys- ja pakkashidastus-debuffeille
+floralring=Parantaa itseään maagisesti §7<healing>§0 joka 5. sekunti
+gelring=§7+30%§0 vastaanotettua maagista parannusta
+heartring=§7+20§0 maksimiterveyttä
+swampshield=Suojaa vain hyökkäyksiä niiden vastaanottosuunnassa
+swampshield2=Täydellisellä torjunnalla: Parantaa itseään maagisesti §7<healing>§0 maksimiterveydestään
+iceboots=Saa sinut liukumaan kuin olisit jäällä, mutta antaa +50% liikkumisnopeutta ja +4 panssaria
+inspirationfoci1=§7+40%§0 inspiraatiovaikutusta ja §7+20%§0 inspiraatiokyvyn nopeutta
+inspirationfoci2=§6-20%§0 kaikkea ei-inspiraatiovahinkoa ja §6-1§0 maksimikutsuja
+essenceofhealing=§7+<percent>%§0 maagista parannusta per elämän olemus
+essenceofhealing2=§7<flat>§0 maagista parannusta per 2 elämän olemusta
+essenceofhealing3=§6-80%§0 elämän olemuksen kestoa, rajoitettu -50%:iin
+ninjascarf=Muuntaa sapelisyöksyt sapelihypyiksi
+adrenalinecharm=Jokainen saatu osuma antaa sinulle adrenaliinia 20 sekunniksi
+infectedperiapt=Kutsuu kaksi elävää tainta (8 kutsujan vahinkoa)
+bloomrushcharm=Vähennä kestävyyden käyttöä 10% jokaisesta adrenaliinistasi\nKutsuu elävän taimen (8 kutsujan vahinkoa) jokaisesta adrenaliinistasi
+
+// Set Bonus
+goldhatsetbonus=Jos seisot paikallasi, etäisyyshyökkäysnopeutesi kasvaa huomattavasti
+pinkwitchsetbonus=Lisää maagista hyökkäysnopeutta, manan regeneraatiota ja panssaria, mitä alhaisempi terveytesi on
+infectedsetbonus=Kutsuu kolme elävää tainta (8 kutsujan vahinkoa)
+spinelhelmetsetbonus=Parantaa itseään maagisesti §7<healing>§0 vihamielisille mobeille aiheutetusta lähitaisteluvahingosta
+spinelhatsetbonus=Parantaa itseään ja kaikkia lähellä olevia liittolaisia maagisesti\n§7<healing>§0 vihamielisille mobeille aiheutetusta maagisesta vahingosta
+
+// Banners
+strikebannereffect=§7+<effect>%§0 terveyden regeneraatiota (taistelussa ja sen ulkopuolella)
+strikebannerability=§aJoka <time> sekunti:§0 Suorittaa aluehyökkäyksen
+blankbannereffect=§7+<effect>%§0 terveyden regeneraatiota (taistelun ulkopuolella)
+blankbannerability=§aJoka <time> sekunti:§0 Suorittaa alueparannuksen
+bannerofdamageeffect=§7+<effect>%§0 vahinkoa
+bannerofdefenseeffect=§7-<effect>%§0 saapuvaa vahinkoa
+bannerofspeedeffect=§7+<effect>%§0 liikkumisnopeutta
+bannerofsummonspeedeffect=§7+<effect>%§0 kutsujen liikkumisnopeutta
+
+// Mighty Banners
+banneroffishingeffect=§7+<effect>§0 kalastusvoimaa
+bannerofhealthregeneffect=§7+<effectfloat>§0 taisteluterveyden regeneraatiota
+bannerofmanaregeneffect=§7+<effect>%§0 taistelumanan regeneraatiota
+bannerofresistanceeffect=§7+<effect>§0 panssaria
+bannerofsummoningeffect=§7+<effect>§0 maksimikutsuja
+bannerofattackspeedeffect=§7+<effect>%§0 hyökkäysnopeutta
+
+// Summoner Expansion Banners
+bannerofresilienceeffect=§7+<effect>%§0 maksimikestävyyttä\nRegeneroi §7+<effect>§0 kestävyyttä sekunnissa
+bannerofbouncingeffect=§7+<effect>§0 ammuksen kimpoamista
+bannerofessenceeffect=§7+<effect>%§0 elämän olemuksen kestoa
+bannerofstaminaeffect=§7+<effect>%§0 kestävyyskapasiteettia\n§7+<effect2>%§0 kestävyyden regeneraatiota\n§7-<effect2>%§0 kestävyyden käyttöä
+bannerofpickingeffect=§7+<effectfloat>§0 keräilykantamaa
+bannerofdashingeffect=§7+<effect>§0 syöksypinoja\n§7-<effect2>%§0 syöksyn jäähtymistä
+bannerofmanaeffect=§7+<effect>%§0 maksimimanaa\n§7<effect2>%§0 manan regeneraatiota
+
+// Runes (General)
+baserune=§iPerusriimu
+modifierrune=§aMuokkausriimu
+linkedrune=§bRiimu linkitetty [<player>]
+notruneowner=Et ole perusriimun omistaja
+runesslots=Voi asettaa enintään 1 perusriimun + <modifierslots> muokkausriimua
+useruneinfusor=[input=runesinjectorability] aktivoidaksesi
+requiresbaserune=Vaatii asetetun perusriimun
+onlyonebaserune=Vain yksi perusriimu voidaan asettaa kerrallaan
+duplicatedmodifierrunes=Samaa muokkausriimua ei voi asettaa useampaa kuin yhden
+runehealthcost=Kuluttaa <health>% maksimiterveydestä aktivoinnin yhteydessä
+runehealthhealing=Palauttaa <health>% maksimiterveydestä käytettäessä
+runecooldown=Latautuu uudelleen <seconds> sekunnissa
+increaseruneeffectnumber=Lisää vaikutusta §7<variation>%§0
+decreaseruneeffectnumber=Vähentää vaikutusta §6<variation>%§0
+increaserunecooldown=Lisää jäähtymistä §6<variation>%§0
+decreaserunecooldown=Vähentää jäähtymistä §7<variation>%§0
+increaserunehealthcost=Lisää maksimiterveyden kulutusta §6<health>%§0
+increaserunehealthhealing=Lisää maksimiterveyden palautumista §7<health>%§0
+runedamagereduction=Vahinko vähenee dramaattisesti ihmisiä vastaan ja vielä enemmän pomoja vastaan
+runedamagereductionnoboss=Vahinko vähenee dramaattisesti ihmisiä vastaan eikä vaikuta pomoihin
+moreextraeffectmod=Vaikutuksen muokkaukset ovat <mod>% tehokkaampia
+lessextraeffectmod=Vaikutuksen muokkaukset ovat <mod>% vähemmän tehokkaita
+
+// Runes Injectors
+
+// Base Runes Tier 0
+runeoffury=Lisää vahinkoasi ja hyökkäysnopeutta §7<effectNumber>§0% 10 sekunniksi
+runeofspeed=Syöksy §7<effectNumber>§0 voimalla liikkumissuuntaasi ja tule haavoittumattomaksi 0.5 sekunniksi
+runeofresistance=Lisää panssariasi §7<effectNumber>§0% 10 sekunniksi
+runeofresistance2=Jäähtymisen aikana panssarisi on puolitettu
+runeofvalor=+200% inspiraatiota §7<effectNumber>§0 sekunniksi
+runeofdetonation=Räjähtää, aiheuttaen enemmän vahinkoa ja työntäen vihollisia taaksepäin, mitä lähempänä he ovat
+runeofdetonation2=Maksimivahinko on §7<effectNumber>§0% mobien maksimiterveydestä vahinkona
+runeofthunder=Kahden sekunnin kuluttua salama iskee kohdistimesi alkuperäiseen sijaintiin
+runeofthunder2=Salama aiheuttaa §7<effectNumber>§0% mobien terveydestä vahinkona ja tainnuttaa 2 sekunniksi
+runeofwinter=Pakkashidastaa vihollisia 500 kantaman sisällä §7<effectNumber>§0 sekunniksi
+runeofimmortality=Jos kuolet seuraavien §7<effectNumber>§0 sekunnin aikana, selviydyt maksimiterveydellä
+runeofimmortality2=Jos näin tapahtuu, olet haavoittumaton 3 sekunnin ajan, mutta jäähtyminen on 30 sekuntia
+runeofimmortality3=Jäähtymisen aikana maksimiterveytesi on puolitettu
+runeofshadows=§7<effectNumber>§0 sekunniksi muutut näkymättömäksi, mutta myös pelotetuksi, mikä estää sinua tekemästä mitään toimia
+
+// Base Runes Tier 1
+runeofunstablegelslime=Teleporttaa lähellä olevaan paikkaan ja kutsu 2 riimullista epävakaa geelilimaa §7<effectNumber>§0 sekunniksi
+runeofunstablegelslime2=Kutsutut aiheuttavat 5% mobien maksimiterveydestä vahinkona
+runeofevilsprotector=+§7<effectNumber>§0% hyökkäysnopeutta, mutta -50% liikkumisnopeutta 10 sekunniksi
+runeofevilsprotector2=Yöllä pinnalla positiivinen vaikutus kaksinkertaistuu
+runeofqueenspider=Jättää hämähäkinverkon maahan §7<effectNumber>§0 sekunniksi
+runeofvoidwizard=Kaikki ammukset kimpoavat loputtomasti ja +§7<effectNumber>§0% ammuksen nopeutta 10 sekunniksi
+runeofswampguardian=Vähentää kaikkea saapuvaa vahinkoa 80% §7<effectNumber>§0 sekunniksi
+runeofancientvulture=Kutsuu riimullisen korppikotkan poikasen 10 sekunniksi
+runeofancientvulture2=Kutsuttu aiheuttaa §7<effectNumber>§0% mobien maksimiterveydestä vahinkona
+runeofpiratecaptain=Lisää vahinkoasi §7<effectNumber>§0% jokaista 200 kolikkoa kohden, enintään 20 000 kolikkoa
+runeofpiratecaptain2=Joka kerta kun hyökkäät, menetät 3 kolikkoa
+runeofchieftain=Seuraavien 20 sekunnin ajan vahinkosi kasvaa, mitä alhaisempi terveytesi on, enintään +§7<effectNumber>§0%
+
+// Base Runes Tier 2
+runeofreaper=Teleporttaa hiiren sijaintiin. Maksimietäisyys §7<effectNumber>§0
+runeofcryoqueen=Pysähdy 1 sekunniksi ja laukaise jäähyökkäys ympärillesi §7<effectNumber>§0 kantamalla
+runeofcryoqueen2=Ammukset aiheuttavat 200% mobien maksimiterveydestä vahinkona
+runeofpestwarden=Seuraavien §7<effectNumber>§0 sekunnin ajan törmääminen vihollisiin vahingoittaa ja työntää heitä
+runeofpestwarden2=Vahinko on 20% heidän maksimiterveydestään
+runeofsageandgrit=Jos lähellä on haavoittuneita liittolaisia (500 kantama), paranna §7<effectNumber>§0% heidän kokonaisterveydestään
+runeofsageandgrit2=Jos ei, lisää vahinkoasi, hyökkäysnopeutta ja liikkumisnopeutta +§7<effectNumber>§0% 20 sekunniksi
+runeoffallenwizard=Tainnuta kaikki mobit paitsi sinut §7<effectNumber>§0 sekunniksi
+runeoffallenwizard2=Ihmiset vapautuvat nopeammin ja pomot vielä nopeammin
+runeofbabylontower=+§7<effectNumber>§0% kaikkea vahinkoa, mutta et voi liikkua. 10 sekuntia
+
+// Base Runes Tier 3
+runeofmotherslime=Suorita suuri hyppy hiiren sijaintia kohti ja aiheuta aluevahinkoa laskeutuessasi
+runeofmotherslime2=Laskeutuminen aiheuttaa §7<effectNumber>§0% mobien maksimiterveydestä vahinkona
+runeofnightswarm=Kutsu 5 lepakkoa §7<effectNumber>§0 sekunniksi, jotka etsivät vihamielisiä mobeja purrakseen niitä
+runeofnightswarm2=Jokainen purema palauttaa 1% kokonaisterveydestäsi (vähintään 1)
+runeofspiderempress=Heittää §7<F0effectNumber>§0 hämähäkinverkkopalloa hiiren suuntaan
+runeofspiderempress2=Hämähäkinverkkopallot tainnuttavat 3 sekunniksi ja hidastavat 10 sekunniksi
+runeofsunlightchampion=Tainnutetaan 3 sekunniksi ladatessasi novaa, jonka kantama on §7<effectNumber>§0
+runeofsunlightchampion2=Nova aiheuttaa 200% mobien maksimiterveydestä vahinkona
+runeofmoonlightdancer=+§7<effectNumber>§0% vahinkoa jokaista +1% liikkumisnopeutta kohden 10 sekunnin ajan
+runeofcrystaldragon=Heitä lasersäde kohdistimesi sijaintiin 5 sekunniksi
+runeofcrystaldragon2=Laser aiheuttaa §7<effectNumber>§0% mobien maksimiterveydestä vahinkona
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+onyxrune=Aktivoituna kutsuu Onyxin 5 sekunniksi. Se aiheuttaa vahinkoa, joka perustuu 5% mobin terveydestä
+onyxrune2=Jokainen Onyxin purema palauttaa 1% kokonaisterveydestäsi (vähintään 1)
+onyxrune3=§3Kiitos Onyxille loistavista riimuideoista! <3
+pawningrune=Aktivoituna, jos sinulla ei vielä ole vaikutusta, palauttaa välittömästi 20% maksimiterveydestäsi
+pawningrune2=10 sekunnin kuluttua menetät palautetun määrän plus ylimääräiset 40%
+
+// Modifier Runes Tier 2
+abysmalrune=Aktivoituna kutsuu mustan aukon kohdistimesi sijaintiin, vetäen vihollisia sisään 2 sekunniksi
+abysmalrune2=Musta aukko kutsutaan vain, jos viimeisestä aktivoinnista on kulunut 10 sekuntia
+tidalrune=Aktivoituna kutsuu vesiaallon, joka työntää vihollisia pois
+
+// Modifier Runes Tier 3
+
+
+[mobtooltip]
+usenet=Käytä verkkoa! [item=net]
+
+
+[mob]
+// Hostile
+gelslime=Geelilima
+rockygelslime=Kivinen geelilima
+unstablegelslime=Epävakaa geelilima
+miniunstablegelslime=Mini epävakaa geelilima
+pinkwitch=Vaaleanpunainen noita
+voidadept=Tyhjyysadepti
+copperdaggergoblin=Kuparitikarigoblini
+irondaggergoblin=Rautatikarigoblini
+golddaggergoblin=Kultatikarigoblini
+infectedtreant=Saastunut treantti
+spinelgolem=Spinelligolemi
+spinelcaveling=Spinelliluola-asukas
+tungstencaveling=Volframiluola-asukas
+spinelmimic=Spinellimimic
+babylontower=Baabelin torni
+hearthcrystal=Takkakristalli
+babylon=Babylon
+
+// Friendly
+wildphosphorslime=Villi fosforilima
+
+// Summon
+babyunstablegelslime=Epävakaa geeliliman vauva
+undeadskeleton=Epäkuollut luuranko
+volatilegelslime=Haihtuva geelilima
+runicunstablegelslime=Riimullinen epävakaa geelilima
+runicvulturehatchling=Riimullinen korppikotkan poikanen
+runicbat=Riimullinen lepakko
+onyx=Onyx
+livingsapling=Elävä taimi
+
+// Pet
+petphosphorslime=Fosforilima
+
+
+[buff]
+// Common Buffs
+stunbuff=Tainnutus
+fallenstunbuff=Langennut tainnutus
+stickybuff=Tahmea
+stopbuff=Pysäytetty
+honeyedbuff=Hunajoitu
+venomextractbuff=Myrkkyuute
+cursedbuff=Kirottu
+adrenalinebuff=Adrenaliini
+harmonybuff=Harmonia
+
+// Active Buffs
+berserkerrushactive=Berserker-ryntäys aktiivinen
+periaptactive=Periaptin kyky aktiivinen
+runesinjectoractive=Riimuinjektori aktiivinen
+
+// Cooldown Buffs
+berserkerrushcooldown=Berserker-ryntäys jäähtymässä
+periaptcooldown=Periaptin kyky jäähtymässä
+runesinjectorcooldown=Riimuinjektori jäähtymässä
+spinattackcooldown=Pyörivä hyökkäys jäähtymässä
+saberdashcooldown=Sapelisyöksy jäähtymässä
+
+
+[message]
+unstablegelslime_anger=§6Epävakaa geelilima suuttuu... <anger>/10
+unstablegelslime_fullanger=§6Epävakaa geelilima suuttui! <anger>/10
+unstablegelslime_night=§6Epävakaa geelilima§0 katosi yön tullen!
+gelslimesnulled=Geelilimat on mitätöity tässä maailmassa. Ne eivät enää ilmesty
+gelslimesunnulled=Geelilimat on hyväksytty tässä maailmassa. Ne ilmestyvät nyt
+pinkwitchesnulled=Vaaleanpunaiset noidat on mitätöity (<x>, <y>)
+pinkwitchesunnulled=Vaaleanpunaiset noidat on hyväksytty (<x>, <y>)
+needfreeslots=Tarvitset <slots> vapaata paikkaa inventaariossa käyttääksesi tätä
+cantuseatnight=Ei voi käyttää yöllä
+healthalreadyfull=Terveys on jo täynnä
+cantheal=Ei voi parantaa
+insuficienthealth=Riittämätön terveys tämän toiminnon suorittamiseen!
+cannottrhowlockeditem=Et voi heittää inventaariossa lukittua esinettä
+initialrunetip=Valitse alkuriimusi huolellisesti;\net saa muita ennen kuin myöhemmin pelissä
+alreadyselectedinitialrune=Alkurriimu on jo valittu
+cannotusetrial=Ei voi käyttää koekammioissa
+
+[biome]
+infectedfields=Saastuneet pellot
+
+
+[journal]
+
+//Levels
+infectedfieldssurface=Saastuneiden peltojen pinta
+infectedfieldscave=Saastuneiden peltojen luola
+
+// Forest Surface Challenges
+killgelslimesforest=[mob=gelslime] Tapa 25 geelilimaa metsässä
+pickupfloralring=[item=floralring] Leikkaa paljon ruohoa metsässä saadaksesi kukkasormuksen
+killunstablegelslime=[mob=unstablegelslime] Tapa 1 epävakaa geelilima
+
+// Swamp Surface Challenges
+killpinkwitchesswamp=[mob=pinkwitch] Yöllä, tapa 5 vaaleanpunaista noitaa suon pinnalla
+
+// Infected Fields Surface Challenges
+pickupinfectedlogs=[item=infectedlog] Hakkaa kerätäksesi 100 saastunutta tukkia
+
+// Infected Fields Cave Challenges
+pickupspinel=[item=spinel] Kerää 40 spinelliä
+activatebabylontower=[item=lifespinel] Aseta elämän spinelli Baabelin torniin
+findthespammer=[item=thespammer] Löydä spammaaja
+
+
+[controls]
+runesinjectorability=Riimuinjektorin kyky
+
+
+[runestutorialbook]
+openheader=Riimuinjektorin avaaminen
+opentext=Riimujen käyttämiseen tarvitset riimuinjektorin. Nämä erikoislaitteet voidaan avata riimujen asettamista varten. Jokaisessa injektorissa on yksi paikka perusriimulle ja useita paikkoja muokkausriimuille sen kapasiteetista riippuen. Voit vapaasti lisätä niin monta muokkausriimua kuin injektori sallii, kokeile löytääksesi parhaat yhdistelmät!
+equipheader=Injektorin varustaminen
+equiptext=Riimujesi aktivoimiseksi riimuinjektori on varustettava hely-paikkaan. Kun se on varustettu, paina vain G (tai asetuksissa määritettyä näppäintä) sen vaikutusten laukaisemiseksi. Varmista, että injektori on oikein määritetty ja valmis ennen toimintaan ryhtymistä!
+
+runesheader=Mitä riimut ovat?
+runestext=Riimut ovat mystisiä kiviä, jotka antavat voimakkaita vaikutuksia, kun ne asetetaan riimuinjektoriin. Niiden voima ja käyttäytyminen riippuvat siitä, miten ne yhdistetään, niiden käytön hallitseminen on avain täyden potentiaalisi vapauttamiseen.
+baserunesheader=Perusriimut
+baserunestext=Jokainen riimuinjektori vaatii täsmälleen yhden perusriimun toimiakseen. Perusriimu määrittelee injektorin päävaikutuksen ja toimii asetuksesi ytimenä. Huomaat vihreän numeron vaikutuksen vieressä, tämä edustaa sen vaikutusarvoa, jota voidaan lisätä tai vähentää muokkaimilla.
+modifierrunesheader=Muokkausriimut
+modifierrunestext=Muokkausriimuja käytetään perusriimusi vaikutuksen mukauttamiseen ja parantamiseen. Ne voivat säätää vaikutusarvoa, muuttaa sen käyttäytymistä tai lisätä erityisominaisuuksia. Muokkausriimuihin liittyy kuitenkin aina kompromisseja: mikään muokkain ei ole puhtaasti hyödyllinen, joten valitse viisaasti!
+
+tableheader=Riimupöytä
+tabletext=Riimupöytä on sinun go-to-asemasi monenlaisten riimujen valmistamiseen. Useimmat standardiriimut voidaan valmistaa täällä, mutta muista: joitakin voimakkaita riimuja voi löytää vain tutkimalla. Pidä silmäsi auki, seikkailu palkitsee uteliaat!
+crafttext=Riimutyöpajasta löydät kaiken, mitä tarvitset aloittaaksesi. Yhdistä sisältö alkuriimuusi ja perusriimuun, jonka voit valmistaa riimupöydällä, ja sinulla on täysin toimiva riimuinjektori valmiina varustettavaksi!

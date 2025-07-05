@@ -1,0 +1,653 @@
+# Translation made by AI
+
+[global]
+aphorea=§!Aphorea Mod
+aphorearework=§!Aphorea Mod Átdolgozás
+aphoreamightybanner=§!Aphorea Mod x Mighty Banner Mod
+aphoreasummonerexpansion=§!Aphorea Mod x Summoner Expansion
+
+
+[buffmodifiers]
+// Magic Healing
+magichealing=<mod>% mágikus gyógyítás
+magichealingflat=<mod> mágikus gyógyítás
+magichealingreceived=<mod>% kapott mágikus gyógyítás
+magichealingreceivedflat=<mod> kapott mágikus gyógyítás
+magichealinggrace=<mod>% mágikus gyógyítás kegyelme
+
+// Area
+arearange=<mod>% területi hatótáv
+
+// Inspiration Damage
+inspirationdamage=<mod>% inspirációs sebzés
+inspirationcritchance=<mod>% inspirációs kritikus esély
+inspirationcritdamage=<mod>% inspirációs kritikus sebzés
+inspirationeffect=<mod>% inspirációs hatás
+inspirationabilityspeed=<mod>% inspirációs képesség sebesség
+
+// Others
+loyal=A tőrt nem veszíti el dobáskor
+
+
+[stats]
+inspiration_damage=Inspirációs sebzés
+
+
+[enchantment]
+// Healing Equipment
+godly=Isteni
+absent=Hiányzó
+auxiliary=Segéd-
+vain=Hiábavaló
+gentle=Gyengéd
+selfish=Önző
+
+// Healing
+friendly=Barátságos
+graceful=Kecses
+wonderful=Csodálatos
+ecologic=Ökológiai
+exalted=Magasztos
+cursed=Elátkozott
+
+// Area
+booming=Virágzó
+dimmed=Halvány
+
+// Others
+loyal=Hűséges
+
+
+[tile]
+geltile=Gél padló
+infectedwatertile=Fertőzött víz
+infectedgrasstile=Fertőzött fű
+spinelgravel=Spinell kavics
+
+
+[tech]
+runes=Rúnák
+
+
+[object]
+witchstatue=Boszorkány szobor
+runestable=Rúnaasztal
+#NEW
+infectedsapling=Fertőzött csemete
+spinelcluster=Spinell fürt
+spinelcluster_small=Kis spinell fürt
+gelrock=Gél szikla
+infectedtree=Fertőzött fa
+infectedgrass=Fertőzött fű
+spinelchest=Spinell láda
+fakespinelchest=Hamis spinell láda
+babylontower=Bábel tornya
+babylonentrance=Bábel bejárata
+babylonexit=Bábel kijárata
+infectedtrialentrance=Fertőzött próba bejárata
+infectedchair=Fertőzött szék
+infecteddinnertable=Fertőzött ebédlőasztal
+infectedbookshelf=Fertőzött könyvespolc
+infectedcabinet=Fertőzött szekrény
+infectedbed=Fertőzött ágy
+infecteddoublebed=Fertőzött franciaágy
+infectedcandelabra=Fertőzött gyertyatartó
+
+
+[itemcategory]
+healing=Gyógyítás
+healingtools=Gyógyító eszközök
+runes=Rúnák
+runesinjectors=Rúna injektorok
+baserunes=Alap rúnák
+modifierrunes=Módosító rúnák
+
+
+[item]
+// General Materials
+anybasicfoci=Bármilyen alap fókusz
+
+// Materials
+rockygel=Sziklás gél
+unstablegel=Instabil gél
+stardust=Csillagpor
+infectedlog=Fertőzött rönk
+infectedalloy=Fertőzött ötvözet
+spinel=Spinell
+lifespinel=Élet spinell
+
+// Consumables
+unstablecore=Instabil mag
+initialrune=Kezdeti rúna
+venomextract=Méreg kivonat
+
+// Swords
+gelsword=Gél kard
+unstablegelsword=Instabil gél kard
+broom=Seprű
+voidhammer=Üresség pöröly
+brokenkora=Törött kora
+thenarcissist=A nárcisz
+cryokatana=Krio katana
+
+// Greatswords
+unstablegelgreatsword=Instabil gél nagy kard
+babylongreatsword=Bábel nagy kardja
+
+// Glaives
+woodenrod=Fa rúd
+
+// Sabers
+saber=Szablya
+coppersaber=Réz szablya
+ironsaber=Vas szablya
+goldsaber=Arany szablya
+demonicsaber=Démoni szablya
+unstablegelsaber=Instabil gél szablya
+honeysaber=Méz szablya
+glacialsaber=Jég szablya
+crimsonkora=Bíbor kora
+
+// Battleaxes
+battleaxe=Csatabárd
+unstablegelbattleaxe=Instabil gél csatabárd
+demonicbattleaxe=Démoni csatabárd
+
+// Daggers
+dagger=Tőr
+copperdagger=Réz tőr
+irondagger=Vas tőr
+golddagger=Arany tőr
+demonicdagger=Démoni tőr
+tungstendagger=Volfrám tőr
+lostumbrella=Elveszett esernyő
+
+// Rapiers
+fossilrapier=Fosszilis rapír
+lightrapier=Fény rapír
+
+// Magic weapons
+unstablegelstaff=Instabil gél bot
+magicalbroom=Varázsseprű
+adeptsbook=Adept könyve
+harpofharmony=Harmónia hárfája
+babyloncandle=Bábel gyertyája
+
+// Bows
+spinelcrossbow=Spinell számszeríj
+
+// Guns
+thespammer=A spammer
+
+// Bullets
+spambullet=Spam golyó
+
+// Greatbows
+gelgreatbow=Gél nagy íj
+unstablegelgreatbow=Instabil gél nagy íj
+
+// Arrows
+gelarrow=Gél nyíl
+unstablegelarrow=Instabil gél nyíl
+
+// Saber Guns
+sabergun=Szablya pisztoly
+shotgunsaber=Sörétes szablya
+
+// Slings
+sling=Parittya
+firesling=Tűz parittya
+frozensling=Fagyott parittya
+
+// Blowguns
+blowgun=Fúvócső
+
+// Throw weapons
+gelball=Gél labda
+gelballgroup=Csoportosított gél labdák
+unstablegelveline=Instabil gél gerely
+
+// Summon weapons
+volatilegelstaff=Illékony gél bot
+infectedstaff=Fertőzött bot
+
+// Banners
+blankbanner=Üres zászló
+
+// Healing Tools
+healingtool=Gyógyító eszköz
+magicalvial=Varázsfiola
+healingstaff=Gyógyító bot
+woodenwand=Fa pálca
+goldenwand=Arany pálca
+spinelstaff=Spinell bot
+
+// Tools
+superiorpickaxe=Kiváló csákány
+
+// Trinkets
+rockyperiapt=Sziklás amulett
+unstableperiapt=Instabil amulett
+bloodyperiapt=Véres amulett
+demonicperiapt=Démoni amulett
+abysmalperiapt=Mélytengeri amulett
+frozenperiapt=Fagyott amulett
+necromancyperiapt=Nekromancia amulett
+floralring=Virágos gyűrű
+gelring=Gél gyűrű
+heartring=Szív gyűrű
+ringofhealth=Egészség gyűrűje
+swampshield=Mocsári pajzs
+witchmedallion=Boszorkány medál
+iceboots=Jégcsizma
+inspirationfoci=Inspirációs fókusz
+cursedmedallion=Elátkozott medál
+ancientmedallion=Ősi medál
+essenceofhealing=Gyógyítás esszenciája
+ninjascarf=Nindzsa sál
+adrenalinecharm=Adrenalin talizmán
+spinelshield=Spinell pajzs
+bloomrushcharm=Virágzás roham talizmán
+infectedperiapt=Fertőzött amulett
+
+// Armor
+rockyboots=Sziklás csizma
+rockychestplate=Sziklás mellvért
+rockyhelmet=Sziklás sisak
+goldhat=Arany kalap
+pinkwitchhat=Rózsaszín boszorkánykalap
+magicalsuit=Varázsruha
+magicalboots=Varázscsizma
+swampboots=Mocsári csizma
+swampchestplate=Mocsári mellvért
+swampmask=Mocsári maszk
+swamphood=Mocsári csuklya
+infectedhat=Fertőzött kalap
+infectedchestplate=Fertőzött mellvért
+infectedboots=Fertőzött csizma
+spinelhelmet=Spinell sisak
+spinelhat=Spinell kalap
+spinelchestplate=Spinell mellvért
+spinelboots=Spinell csizma
+
+// Misc
+gelslimenullifier=Egy egyszerű kattintással abbahagyják a zaklatást!
+enchantingscrollhealingequipmenttip=Gyógyító felszerelés tárgyának megbűvölésére szolgál <enchantment>\n§!Aphorea Mod
+enchantingscrollhealingtip=Gyógyító eszköz megbűvölésére szolgál <enchantment>\n§!Aphorea Mod
+enchantingscrollareatip=Területi hatású eszköz megbűvölésére szolgál <enchantment>\n§!Aphorea Mod
+enchantingscrolldaggertip=Tőr fegyver megbűvölésére szolgál <enchantment>\n§!Aphorea Mod
+backpack=Ez egy új leltár, amely tárolja az összes összegyűjtött tárgyat
+backpackslots=<slots> tárgy kapacitása
+stored=Tárolt tárgyak: <items>
+backpackcraft=Üresnek kell lennie egy jobb hátizsák készítéséhez
+
+// Consumables
+deleteditem=Ezt az elemet eltávolították, használd ezt az elemet az anyagok visszaszerzéséhez, mielőtt véglegesen eltávolítanák
+unstablecore=§bInstabil aurát bocsát ki...§0 Csak nappal használható
+venomextractbuff=Lowd azt mondja, idd meg, ne tedd
+venomextractbuffdesc=Nem lehet több, mint 1 életerőd
+lifespinel=Tartósan 5-tel növeli a maximális életerőt, legfeljebb 320-ig
+
+// General Weapons
+spinsecondaryattack=Nyomd meg a [input=mouse2] gombot, hogy a következő támadás területi támadás legyen
+areasecondaryattack=Nyomd meg a [input=mouse2] gombot egy területi támadás végrehajtásához, amely <mana> manát fogyaszt
+stikybuff1=1 másodpercre ragadóssá teszi az ellenséget
+stikybuff2=2 másodpercre ragadóssá teszi az ellenséget
+stikybuff3=3 másodpercre ragadóssá teszi az ellenséget
+projectilearea=Amikor a lövedék véget ér, területi sebzést okoz
+
+// Melee Weapons
+saber=Töltsd fel maximumra a teljes sebzésért és egy légvágás elindításáért
+saberdash=Tartsd lenyomva a [input=mouse2] gombot egy roham feltöltéséhez, hogy átvágj az ellenségeken
+battleaxe=Hosszú ideig tart a feltöltése
+battleaxe2=Nyomd meg a [input=mouse2] gombot a Berserker roham aktiválásához és ideiglenesen 3 adrenalin szerzéséhez
+battleaxe3=Szerezz ideiglenesen adrenalint az ellenségek megütésével a roham alatt, javítva a mozgást és a támadási sebességet
+dagger=Tartsd lenyomva a [input=mouse2] gombot a tőr eldobásához
+
+// Range Weapons
+sling=Erővel dobja a köveket
+sling2=§7100%§0 esély az ellenség elkábítására 0.5 másodpercre
+twoarrows=Egyszerre két nyilat lő ki
+threearrows=Egyszerre három nyilat lő ki
+blowgun=Magokat lő ki
+
+// Single Melee Weapons
+woodenrod=10 támadásonként §7<healing>§0-mal gyógyítja magát
+voidhammer=Amikor a lövedék pattan vagy eltalál egy ellenséget, a legközelebbit célozza meg, legfeljebb 3-szor
+crimsonkora=Tartsd lenyomva a [input=mouse2] gombot egy pusztító, de lassú támadás feltöltéséhez
+thenarcissist=Láncolj össze 4 támadást, hogy az ötödik ütésnél egy pörgő karddobást indíts!\n+20% sebzés minden láncolt támadásért
+
+// Single Range Weapons
+firesling=Megégeti az ellenségeket
+frozensling=Megfagyasztja az ellenségeket
+gelgreatbow=A kőnyilakat gélnyilakká változtatja
+unstablegelgreatbow=A kőnyilakat és a gélnyilakat instabil gélnyilakká változtatja
+thespammer=Spam golyókat lőhet
+shotgunsaber=Célozz a központhoz közelebb az erősebb, pontosabb és áthatolóbb lövésekért
+honeysaber=Töltsd fel maximumra a teljes sebzésért és méz és áfonya lövéséért
+spinelcrossbow=Legfeljebb 2 ellenséget áthatoló nyilakat lő ki, minden áthatolással halálosabbá válva
+spinelcrossbow2=Tartsd lenyomva a [input=mouse2] gombot 3 nyíl egyszerre történő kilövéséhez
+
+// Single Magic Weapons
+unstablegelstaff=Amikor a lövedékek lepattannak a falakról, megduplázódnak
+harpofharmony=Harmónia: Megnövelt sebesség, életerő- és manaregeneráció
+
+// Single Summoner Weapons
+infectedstaff=Két élő csemetét idéz meg invokációnként
+
+// Single Throwable Weapons
+gelball=Gél labdát dob
+
+// Single Magic Healing Tools
+magicalvial=Mutass egy sérült emberre, hogy meggyógyítsd, ne mutass senkire, hogy magadat gyógyítsd
+magicalvial2=Végtelen használat
+
+// Ammo
+spambullet=Véletlenszerűen rendelkezik az alábbi hatások egyikével:
+spambullet1=§9Szomorú:§0 A megtámadott ellenség ragadóssá válik, 5 másodpercre lelassítva
+spambullet2=§9Tűz:§0 Ütközés helyett tűztócsát hagy a földön
+spambullet3=§9Tetszik:§0 Lepattan a falakról és áthatol a mobokon, mindegyik legfeljebb 10-szer
+spambullet4=§9Ellenőrzés:§0 3 életerős mágikus gyógyító terület az útja végén
+spambullet5=§9Robbanás:§0 Ütközés helyett az útja végén felrobban
+
+// Tiles
+geltile=Ragadós padló, amely nagymértékben lelassít mindent a tetején
+
+// Objects
+witchstatue=Ennek a szobornak a mocsár felszínére helyezése megszünteti a boszorkányok megjelenését az egész szigeten
+
+// Generic Trinkets
+areawhenheal=Minden <magichealing> mágikus gyógyítás után végrehajtja ezt a területet
+periaptboost=Nyomd meg a [input=trinketability] gombot, hogy 10 másodpercre sebesség- és támadási sebesség-löketet kapj
+
+// Trinkets
+rockyperiapt=§7+5§0 páncél, de §6-5%§0 mozgási sebesség
+rockyperiapt2=Nyomd meg a [input=trinketability] gombot, hogy 10 másodpercre 10 páncélt kapj
+unstableperiapt=Két instabil gél nyálka bébit idéz meg (6 idéző sebzés)
+unstableperiapt2=Immunissá tesz a ragadós debuffal szemben
+bloodyperiapt=Továbbá a 'Vérnyíl' és a 'Vérröppentyű' fegyverek §73%§0 életet lopnak
+demonicperiapt=Továbbá a mágikus fegyverek §73%§0 életet lopnak
+necromancyperiapt=Minden alkalommal, amikor te vagy az egyik idézésed megöl egy ellenséges mobot, megidézel egy élőhalott csontvázat
+necromancyperiapt2=20 idéző sebzés. 10 másodpercig tart, és egyszerre legfeljebb 3 lehet
+frozenperiapt=A közelharci és a távolsági fegyverek 3 másodpercre megfagynak
+frozenperiapt2=Több sebzést okoz a fagy által érintett moboknak
+frozenperiapt3=Immunissá tesz a fagyás és a fagy lassítás debuffokkal szemben
+floralring=5 másodpercenként §7<healing>§0-mal gyógyítja magát
+gelring=§7+30%§0 kapott mágikus gyógyítás
+heartring=§7+20§0 maximális életerő
+swampshield=Csak azokat a támadásokat védi, amelyek abban az irányban érkeznek
+swampshield2=Tökéletes blokkoláskor: a maximális életerőd §7<healing>§0-ával gyógyítja magát
+iceboots=Úgy csúszol, mintha jégen lennél, de +50% mozgási sebességet és +4 páncélt ad
+inspirationfoci1=§7+40%§0 inspirációs hatás és §7+20%§0 inspirációs képesség sebesség
+inspirationfoci2=§6-20%§0 minden nem inspirációs sebzés és §6-1§0 maximális idézés
+essenceofhealing=§7+<percent>%§0 mágikus gyógyítás életesszenciánként
+essenceofhealing2=§7<flat>§0 mágikus gyógyítás 2 életesszenciánként
+essenceofhealing3=§6-80%§0 életesszencia időtartam, -50%-ra korlátozva
+ninjascarf=A szablya rohamokat szablya ugrásokká alakítja
+adrenalinecharm=Minden kapott ütés 20 másodpercre adrenalint ad
+infectedperiapt=Két élő csemetét idéz meg (8 idéző sebzés)
+bloomrushcharm=10%-kal csökkenti az állóképesség használatát minden adrenalinért\nIdéz egy élő csemetét (8 idéző sebzés) minden adrenalinért
+
+// Set Bonus
+goldhatsetbonus=Ha mozdulatlan vagy, a távolsági támadási sebességed jelentősen megnő
+pinkwitchsetbonus=Növeli a mágikus támadási sebességet, a manaregenerációt és a páncélt, minél alacsonyabb az életerőd
+infectedsetbonus=Három élő csemetét idéz meg (8 idéző sebzés)
+spinelhelmetsetbonus=Az ellenséges moboknak okozott közelharci sebzés §7<healing>§0-ával gyógyítja magát
+spinelhatsetbonus=Az ellenséges moboknak okozott mágikus sebzés §7<healing>§0-ával gyógyítja magát és az összes közeli szövetségest
+
+// Banners
+strikebannereffect=§7+<effect>%§0 életerő-regeneráció (harcban és harcon kívül)
+strikebannerability=§aMinden <time> másodpercben:§0 Területi támadást hajt végre
+blankbannereffect=§7+<effect>%§0 életerő-regeneráció (harcon kívül)
+blankbannerability=§aMinden <time> másodpercben:§0 Területi gyógyítást hajt végre
+bannerofdamageeffect=§7+<effect>%§0 sebzés
+bannerofdefenseeffect=§7-<effect>%§0 bejövő sebzés
+bannerofspeedeffect=§7+<effect>%§0 mozgási sebesség
+bannerofsummonspeedeffect=§7+<effect>%§0 idézések mozgási sebessége
+
+// Mighty Banners
+banneroffishingeffect=§7+<effect>§0 horgászerő
+bannerofhealthregeneffect=§7+<effectfloat>§0 harci életerő-regeneráció
+bannerofmanaregeneffect=§7+<effect>%§0 harci manaregeneráció
+bannerofresistanceeffect=§7+<effect>§0 páncél
+bannerofsummoningeffect=§7+<effect>§0 maximális idézés
+bannerofattackspeedeffect=§7+<effect>%§0 támadási sebesség
+
+// Summoner Expansion Banners
+bannerofresilienceeffect=§7+<effect>%§0 maximális ellenálló képesség\nMásodpercenként §7+<effect>§0 ellenálló képességet regenerál
+bannerofbouncingeffect=§7+<effect>§0 lövedék pattanás
+bannerofessenceeffect=§7+<effect>%§0 életesszencia időtartam
+bannerofstaminaeffect=§7+<effect>%§0 állóképesség kapacitás\n§7+<effect2>%§0 állóképesség regeneráció\n§7-<effect2>%§0 állóképesség használat
+bannerofpickingeffect=§7+<effectfloat>§0 felszedési hatótáv
+bannerofdashingeffect=§7+<effect>§0 roham töltet\n§7-<effect2>%§0 roham újratöltési idő
+bannerofmanaeffect=§7+<effect>%§0 maximális mana\n§7<effect2>%§0 manaregeneráció
+
+// Runes (General)
+baserune=§iAlap rúna
+modifierrune=§aMódosító rúna
+linkedrune=§b[<player>] játékoshoz kötött rúna
+notruneowner=Nem te vagy az alap rúna tulajdonosa
+runesslots=Legfeljebb 1 alap rúna + <modifierslots> módosító rúna helyezhető be
+useruneinfusor=[input=runesinjectorability] az aktiváláshoz
+requiresbaserune=Behelyezett alap rúna szükséges
+onlyonebaserune=Egyszerre csak egy alap rúna helyezhető be
+duplicatedmodifierrunes=Nem helyezhető be több azonos módosító rúnából
+runehealthcost=Aktiváláskor a maximális életerő <health>%-át fogyasztja
+runehealthhealing=Használatkor a maximális életerő <health>%-át állítja vissza
+runecooldown=<seconds> másodperc alatt töltődik újra
+increaseruneeffectnumber=§7<variation>%§0-kal növeli a hatást
+decreaseruneeffectnumber=§6<variation>%§0-kal csökkenti a hatást
+increaserunecooldown=§6<variation>%§0-kal növeli az újratöltési időt
+decreaserunecooldown=§7<variation>%§0-kal csökkenti az újratöltési időt
+increaserunehealthcost=§6<health>%§0-kal növeli a maximális életerő fogyasztását
+increaserunehealthhealing=§7<health>%§0-kal növeli a maximális életerő visszaállítását
+runedamagereduction=A sebzés drasztikusan csökken az emberek ellen, és még inkább a főnökök ellen
+runedamagereductionnoboss=A sebzés drasztikusan csökken az emberek ellen, és nem hat a főnökökre
+moreextraeffectmod=A hatásmódosítások <mod>%-kal hatékonyabbak
+lessextraeffectmod=A hatásmódosítások <mod>%-kal kevésbé hatékonyak
+
+// Runes Injectors
+
+// Base Runes Tier 0
+runeoffury=10 másodpercre §7<effectNumber>§0%-kal növeli a sebzésedet és a támadási sebességedet
+runeofspeed=Rohanj §7<effectNumber>§0 erővel a mozgásod irányába, és válj sebezhetetlenné 0.5 másodpercre
+runeofresistance=10 másodpercre §7<effectNumber>§0%-kal növeli a páncélodat
+runeofresistance2=Amíg újratöltődik, a páncélod a felére csökken
+runeofvalor=+200% inspiráció §7<effectNumber>§0 másodpercre
+runeofdetonation=Felrobban, több sebzést okozva és hátralökve az ellenségeket, minél közelebb vannak
+runeofdetonation2=A maximális sebzés a mobok maximális életerejének §7<effectNumber>§0%-a
+runeofthunder=Két másodperc múlva villám csap a kurzorod kezdeti pozíciójába
+runeofthunder2=A villám a mobok életerejének §7<effectNumber>§0%-át sebzi, és 2 másodpercre elkábítja őket
+runeofwinter=500-as hatótávolságon belül §7<effectNumber>§0 másodpercre fagyosan lelassítja az ellenségeket
+runeofimmortality=Ha a következő §7<effectNumber>§0 másodpercben meghalsz, maximális életerővel éled túl
+runeofimmortality2=Ha ez megtörténik, 3 másodpercre sebezhetetlen leszel, de az újratöltési idő 30 másodperc lesz
+runeofimmortality3=Amíg újratöltődik, a maximális életerőd a felére csökken
+runeofshadows=§7<effectNumber>§0 másodpercre láthatatlanná válsz, de megfélemlítve is, ami megakadályoz abban, hogy bármilyen műveletet végrehajts
+
+// Base Runes Tier 1
+runeofunstablegelslime=Teleportálj egy közeli helyre, és idézz meg 2 rúnás instabil gél nyálkát §7<effectNumber>§0 másodpercre
+runeofunstablegelslime2=Az idézések a mobok maximális életerejének 5%-át sebzik
+runeofevilsprotector=+§7<effectNumber>§0% támadási sebesség, de -50% mozgási sebesség 10 másodpercre
+runeofevilsprotector2=Éjjel a felszínen a pozitív hatás megduplázódik
+runeofqueenspider=Pókhálót hagy a földön §7<effectNumber>§0 másodpercre
+runeofvoidwizard=Minden lövedék végtelenül pattan, és +§7<effectNumber>§0% lövedéksebesség 10 másodpercre
+runeofswampguardian=80%-kal csökkenti az összes bejövő sebzést §7<effectNumber>§0 másodpercre
+runeofancientvulture=Megidéz egy rúnás keselyűfiókát 10 másodpercre
+runeofancientvulture2=Az idézés a mobok maximális életerejének §7<effectNumber>§0%-át sebzi
+runeofpiratecaptain=Növeli a sebzésedet §7<effectNumber>§0%-kal minden 200 érméd után, legfeljebb 20 000 érméig
+runeofpiratecaptain2=Minden támadáskor 3 érmét veszítesz
+runeofchieftain=A következő 20 másodpercben a sebzésed növekszik, minél alacsonyabb az életerőd, legfeljebb +§7<effectNumber>§0%-ig
+
+// Base Runes Tier 2
+runeofreaper=Teleportálj az egered pozíciójába. Maximális távolság §7<effectNumber>§0
+runeofcryoqueen=Állj meg 1 másodpercre, és indíts egy jégtámadást magad körül §7<effectNumber>§0 hatótávolsággal
+runeofcryoqueen2=A lövedékek a mobok maximális életerejének 200%-át sebzik
+runeofpestwarden=A következő §7<effectNumber>§0 másodpercben az ellenségekkel való ütközés sebzi és taszítja őket
+runeofpestwarden2=A sebzés a maximális életerejük 20%-a
+runeofsageandgrit=Ha a közelben sérült szövetségesek vannak (500 hatótávolság), gyógyítsd meg a teljes életerejük §7<effectNumber>§0%-át
+runeofsageandgrit2=Ha nem, növeld a sebzésedet, a támadási sebességedet és a mozgási sebességedet +§7<effectNumber>§0%-kal 20 másodpercre
+runeoffallenwizard=Kábítsd el az összes mobot, kivéve téged, §7<effectNumber>§0 másodpercre
+runeoffallenwizard2=Az emberek gyorsabban, a főnökök pedig még gyorsabban szabadulnak ki
+runeofbabylontower=+§7<effectNumber>§0% minden sebzés, de nem tudsz mozogni. 10 másodperc
+
+// Base Runes Tier 3
+runeofmotherslime=Hajts végre egy nagy ugrást az egered pozíciója felé, és okozz területi sebzést landoláskor
+runeofmotherslime2=A landolás a mobok maximális életerejének §7<effectNumber>§0%-át sebzi
+runeofnightswarm=Idézz meg 5 denevért §7<effectNumber>§0 másodpercre, amelyek ellenséges mobokat keresnek, hogy megharapják őket
+runeofnightswarm2=Minden harapás a teljes életerőd 1%-át állítja vissza (legalább 1)
+runeofspiderempress=§7<F0effectNumber>§0 pókháló labdát dob az egered irányába
+runeofspiderempress2=A pókháló labdák 3 másodpercre elkábítanak és 10 másodpercre lelassítanak
+runeofsunlightchampion=3 másodpercre elkábulsz, miközben egy §7<effectNumber>§0 hatótávolságú novát töltesz fel
+runeofsunlightchampion2=A nova a mobok maximális életerejének 200%-át sebzi
+runeofmoonlightdancer=+§7<effectNumber>§0% sebzés minden +1% mozgási sebességért 10 másodpercig
+runeofcrystaldragon=Dobj egy lézersugarat a kurzorod pozíciójába 5 másodpercre
+runeofcrystaldragon2=A lézer a mobok maximális életerejének §7<effectNumber>§0%-át sebzi
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+onyxrune=Aktiváláskor megidézi Ónixot 5 másodpercre. A mob életerejének 5%-a alapján sebez
+onyxrune2=Ónix minden harapása a teljes életerőd 1%-át állítja vissza (legalább 1)
+onyxrune3=§3Köszönöm Ónixnak a briliáns rúnaötleteket! <3
+pawningrune=Aktiváláskor, ha még nincs meg a hatás, azonnal visszaállítja a maximális életerőd 20%-át
+pawningrune2=10 másodperc múlva elveszíted a visszaállított mennyiséget plusz további 40%-ot
+
+// Modifier Runes Tier 2
+abysmalrune=Aktiváláskor fekete lyukat idéz a kurzorod pozíciójába, 2 másodpercre behúzva az ellenségeket
+abysmalrune2=A fekete lyuk csak akkor idéződik meg, ha az utolsó aktiválás óta 10 másodperc telt el
+tidalrune=Aktiváláskor vízhullámot idéz, amely eltaszítja az ellenségeket
+
+// Modifier Runes Tier 3
+
+
+[mobtooltip]
+usenet=Használj hálót! [item=net]
+
+
+[mob]
+// Hostile
+gelslime=Gél nyálka
+rockygelslime=Sziklás gél nyálka
+unstablegelslime=Instabil gél nyálka
+miniunstablegelslime=Mini instabil gél nyálka
+pinkwitch=Rózsaszín boszorkány
+voidadept=Üresség adeptus
+copperdaggergoblin=Réz tőrös goblin
+irondaggergoblin=Vas tőrös goblin
+golddaggergoblin=Arany tőrös goblin
+infectedtreant=Fertőzött ent
+spinelgolem=Spinell gólem
+spinelcaveling=Spinell barlanglakó
+tungstencaveling=Volfrám barlanglakó
+spinelmimic=Spinell mimik
+babylontower=Bábel tornya
+hearthcrystal=Tűzhely kristály
+babylon=Bábel
+
+// Friendly
+wildphosphorslime=Vad foszfor nyálka
+
+// Summon
+babyunstablegelslime=Bébi instabil gél nyálka
+undeadskeleton=Élőhalott csontváz
+volatilegelslime=Illékony gél nyálka
+runicunstablegelslime=Rúnás instabil gél nyálka
+runicvulturehatchling=Rúnás keselyűfióka
+runicbat=Rúnás denevér
+onyx=Ónix
+livingsapling=Élő csemete
+
+// Pet
+petphosphorslime=Foszfor nyálka
+
+
+[buff]
+// Common Buffs
+stunbuff=Kábítás
+fallenstunbuff=Bukott kábítás
+stickybuff=Ragadós
+stopbuff=Megállítva
+honeyedbuff=Mézes
+venomextractbuff=Méreg kivonat
+cursedbuff=Elátkozott
+adrenalinebuff=Adrenalin
+harmonybuff=Harmónia
+
+// Active Buffs
+berserkerrushactive=Berserker roham aktív
+periaptactive=Amulett képesség aktív
+runesinjectoractive=Rúna injektor aktív
+
+// Cooldown Buffs
+berserkerrushcooldown=Berserker roham újratöltődik
+periaptcooldown=Amulett képesség újratöltődik
+runesinjectorcooldown=Rúna injektor újratöltődik
+spinattackcooldown=Pörgő támadás újratöltődik
+saberdashcooldown=Szablya roham újratöltődik
+
+
+[message]
+unstablegelslime_anger=§6Az instabil gél nyálka dühös lesz... <anger>/10
+unstablegelslime_fullanger=§6Az instabil gél nyálka dühös lett! <anger>/10
+unstablegelslime_night=§6Az instabil gél nyálka§0 eltűnt az éj leszálltával!
+gelslimesnulled=A gél nyálkák semlegesítve lettek ebben a világban. Többé nem fognak megjelenni
+gelslimesunnulled=A gél nyálkák engedélyezve lettek ebben a világban. Mostantól meg fognak jelenni
+pinkwitchesnulled=A rózsaszín boszorkányok semlegesítve lettek (<x>, <y>) helyen
+pinkwitchesunnulled=A rózsaszín boszorkányok engedélyezve lettek (<x>, <y>) helyen
+needfreeslots=Szükséged van <slots> szabad helyre a leltárban a használatához
+cantuseatnight=Éjjel nem használható
+healthalreadyfull=Az életerő már tele van
+cantheal=Nem lehet gyógyítani
+insuficienthealth=Nincs elég életerő a művelet végrehajtásához!
+cannottrhowlockeditem=Nem dobhatsz el egy leltárban zárolt tárgyat
+initialrunetip=Válaszd ki gondosan a kezdeti rúnádat;\na többit csak később a játékban szerezheted meg
+alreadyselectedinitialrune=A kezdeti rúna már ki van választva
+cannotusetrial=Nem használható próbaszobákban
+
+[biome]
+infectedfields=Fertőzött mezők
+
+
+[journal]
+
+//Levels
+infectedfieldssurface=Fertőzött mezők felszíne
+infectedfieldscave=Fertőzött mezők barlangja
+
+// Forest Surface Challenges
+killgelslimesforest=[mob=gelslime] Ölj meg 25 gél nyálkát az erdőben
+pickupfloralring=[item=floralring] Vágj le sok füvet az erdőben a virágos gyűrű megszerzéséhez
+killunstablegelslime=[mob=unstablegelslime] Ölj meg 1 instabil gél nyálkát
+
+// Swamp Surface Challenges
+killpinkwitchesswamp=[mob=pinkwitch] Éjjel ölj meg 5 rózsaszín boszorkányt a mocsár felszínén
+
+// Infected Fields Surface Challenges
+pickupinfectedlogs=[item=infectedlog] Vágj ki 100 fertőzött rönköt
+
+// Infected Fields Cave Challenges
+pickupspinel=[item=spinel] Szedj fel 40 spinellt
+activatebabylontower=[item=lifespinel] Helyezz egy élet spinellt a Bábel tornyára
+findthespammer=[item=thespammer] Találd meg a spammert
+
+
+[controls]
+runesinjectorability=Rúna injektor képesség
+
+
+[runestutorialbook]
+openheader=A rúna injektor megnyitása
+opentext=A rúnák használatához szükséged lesz egy rúna injektorra. Ezeket a különleges eszközöket ki lehet nyitni a rúnák behelyezéséhez. Minden injektornak van egy helye egy alap rúnának és több helye a módosító rúnáknak, a kapacitásától függően. Szabadon hozzáadhatsz annyi módosító rúnát, amennyit az injektor enged, kísérletezz a legjobb kombinációk megtalálásához!
+equipheader=Az injektor felszerelése
+equiptext=A rúnáid aktiválásához a rúna injektort egy csecsebecse-helyre kell felszerelni. Felszerelés után egyszerűen nyomd meg a G-t (vagy a beállításokban hozzárendelt gombot) a hatásainak kiváltásához. Győződj meg róla, hogy az injektor megfelelően van konfigurálva és készen áll, mielőtt akcióba lépnél!
+
+runesheader=Mik azok a rúnák?
+runestext=A rúnák misztikus kövek, amelyek erőteljes hatásokat biztosítanak, ha egy rúna injektorba helyezik őket. Erősségük és viselkedésük attól függ, hogyan kombinálják őket, használatuk elsajátítása a kulcs a teljes potenciálod kiaknázásához.
+baserunesheader=Alap rúnák
+baserunestext=Minden rúna injektornak pontosan egy alap rúnára van szüksége a működéshez. Az alap rúna határozza meg az injektor fő hatását, és a beállításod magjaként működik. A hatás mellett egy zöld számot fogsz észrevenni, ez az effektus értékét jelöli, amelyet módosítókkal lehet növelni vagy csökkenteni.
+modifierrunesheader=Módosító rúnák
+modifierrunestext=A módosító rúnákat az alap rúnád hatásának testreszabására és fokozására használják. Módosíthatják az effektus értékét, megváltoztathatják a viselkedését, vagy különleges tulajdonságokat adhatnak hozzá. A módosító rúnáknak azonban mindig vannak kompromisszumai: egyetlen módosító sem tisztán előnyös, ezért válassz bölcsen!
+
+tableheader=A rúnaasztal
+tabletext=A rúnaasztal a legmegfelelőbb állomás a legkülönfélébb rúnák készítéséhez. A legtöbb szabványos rúna itt elkészíthető, de ne feledd: néhány erőteljes rúna csak felfedezéssel található meg. Tartsd nyitva a szemed, a kaland jutalmazza a kíváncsiakat!
+crafttext=A rúnaműhelyben mindent megtalálsz, amire a kezdéshez szükséged van. Kombináld a tartalmat a kezdeti rúnáddal és egy alap rúnával, amelyet a rúnaasztalon készíthetsz, és máris lesz egy teljesen működőképes rúna injektorod, amely készen áll a felszerelésre!

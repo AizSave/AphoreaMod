@@ -1,0 +1,752 @@
+# Translation made by AI
+
+[global]
+aphorea=§!Aphorea Mod
+aphorearework=§!Aphorea Mod Herwerking
+aphoreamightybanner=§!Aphorea Mod x Mighty Banner Mod
+aphoreasummonerexpansion=§!Aphorea Mod x Summoner Uitbreiding
+
+
+[buffmodifiers]
+// Magic Healing
+magichealing=<mod>% magische genezing
+magichealingflat=<mod> magische genezing
+magichealingreceived=<mod>% ontvangen magische genezing
+magichealingreceivedflat=<mod> ontvangen magische genezing
+magichealinggrace=<mod>% magische genezingsgenade
+
+// Area
+arearange=<mod>% gebiedsbereik
+
+// Inspiration Damage
+inspirationdamage=<mod>% inspiratieschade
+inspirationcritchance=<mod>% inspiratie kritieke kans
+inspirationcritdamage=<mod>% inspiratie kritieke schade
+inspirationeffect=<mod>% inspiratie-effect
+inspirationabilityspeed=<mod>% inspiratie vaardigheidssnelheid
+
+// Others
+loyal=De dolk gaat niet verloren bij het gooien
+
+
+[stats]
+inspiration_damage=Inspiratieschade
+
+
+[enchantment]
+// Healing Equipment
+godly=Goddelijk
+absent=Afwezig
+auxiliary=Hulp-
+vain=Vergeefs
+gentle=Zacht
+selfish=Egoïstisch
+
+// Healing
+friendly=Vriendelijk
+graceful=Sierlijk
+wonderful=Prachtig
+ecologic=Ecologisch
+exalted=Verheven
+cursed=Vervloekt
+
+// Area
+booming=Bloeiend
+dimmed=Gedimd
+
+// Others
+loyal=Loyaal
+
+
+[tile]
+geltile=Gelvloer
+infectedwatertile=Geïnfecteerd water
+infectedgrasstile=Geïnfecteerd gras
+spinelgravel=Spinelgrind
+
+
+[tech]
+runes=Runen
+
+
+[object]
+witchstatue=Heksenbeeld
+runestable=Runentafel
+#NEW
+infectedsapling=Geïnfecteerde zaailing
+spinelcluster=Spinelcluster
+spinelcluster_small=Kleine spinelcluster
+gelrock=Gelsteen
+infectedtree=Geïnfecteerde boom
+infectedgrass=Geïnfecteerd gras
+spinelchest=Spinelkist
+fakespinelchest=Valse spinelkist
+babylontower=Toren van Babel
+babylonentrance=Ingang van Babylon
+babylonexit=Uitgang van Babylon
+infectedtrialentrance=Ingang van geïnfecteerde proef
+infectedchair=Geïnfecteerde stoel
+infecteddinnertable=Geïnfecteerde eettafel
+infectedbookshelf=Geïnfecteerde boekenkast
+infectedcabinet=Geïnfecteerde kast
+infectedbed=Geïnfecteerd bed
+infecteddoublebed=Geïnfecteerd tweepersoonsbed
+infectedcandelabra=Geïnfecteerde kandelaar
+
+
+[itemcategory]
+healing=Genezing
+healingtools=Genezingsgereedschap
+runes=Runen
+runesinjectors=Runeninjectoren
+baserunes=Basisrunen
+modifierrunes=Modificatierunen
+
+
+[item]
+// General Materials
+anybasicfoci=Elke basisfocus
+
+// Materials
+rockygel=Rotsachtige gel
+unstablegel=Onstabiele gel
+stardust=Sterrenstof
+infectedlog=Geïnfecteerd houtblok
+infectedalloy=Geïnfecteerde legering
+spinel=Spinel
+lifespinel=Levensspinel
+
+// Consumables
+unstablecore=Onstabiele kern
+initialrune=Initiële rune
+venomextract=Gifextract
+
+// Swords
+gelsword=Gelzwaard
+unstablegelsword=Onstabiel gelzwaard
+broom=Bezem
+voidhammer=Leegtehamer
+brokenkora=Gebroken kora
+thenarcissist=De narcist
+cryokatana=Cryokatana
+
+// Greatswords
+unstablegelgreatsword=Onstabiel gelgrootzwaard
+babylongreatsword=Babylon grootzwaard
+
+// Glaives
+woodenrod=Houten staf
+
+// Sabers
+saber=Sabel
+coppersaber=Koperen sabel
+ironsaber=IJzeren sabel
+goldsaber=Gouden sabel
+demonicsaber=Demonische sabel
+unstablegelsaber=Onstabiele gelsabel
+honeysaber=Honingsabel
+glacialsaber=Gletsjersabel
+crimsonkora=Karmozijnrode kora
+
+// Battleaxes
+battleaxe=Strijdbijl
+unstablegelbattleaxe=Onstabiele gelstrijdbijl
+demonicbattleaxe=Demonische strijdbijl
+
+// Daggers
+dagger=Dolk
+copperdagger=Koperen dolk
+irondagger=IJzeren dolk
+golddagger=Gouden dolk
+demonicdagger=Demonische dolk
+tungstendagger=Wolfraamdolk
+lostumbrella=Verloren paraplu
+
+// Rapiers
+fossilrapier=Fossielenrapier
+lightrapier=Lichtrapier
+
+// Magic weapons
+unstablegelstaff=Onstabiele gelstaf
+magicalbroom=Magische bezem
+adeptsbook=Boek van de adept
+harpofharmony=Harp van harmonie
+babyloncandle=Babylonkaars
+
+// Bows
+spinelcrossbow=Spinelkruisboog
+
+// Guns
+thespammer=De spammer
+
+// Bullets
+spambullet=Spamkogel
+
+// Greatbows
+gelgreatbow=Gelgrootboog
+unstablegelgreatbow=Onstabiele gelgrootboog
+
+// Arrows
+gelarrow=Gelpijl
+unstablegelarrow=Onstabiele gelpijl
+
+// Saber Guns
+sabergun=Sabelpistool
+shotgunsaber=Jachtgeweersabel
+
+// Slings
+sling=Katapult
+firesling=Vuurkatapult
+frozensling=Bevroren katapult
+
+// Blowguns
+blowgun=Blaaspijp
+
+// Throw weapons
+gelball=Gelbal
+gelballgroup=Gegroepeerde gelballen
+unstablegelveline=Onstabiele gelwerpspies
+
+// Summon weapons
+volatilegelstaff=Vluchtige gelstaf
+infectedstaff=Geïnfecteerde staf
+
+// Banners
+blankbanner=Lege banier
+
+// Healing Tools
+healingtool=Genezingsgereedschap
+magicalvial=Magische flacon
+healingstaff=Genezingsstaf
+woodenwand=Houten toverstaf
+goldenwand=Gouden toverstaf
+spinelstaff=Spinelstaf
+
+// Tools
+superiorpickaxe=Superieure pikhouweel
+
+// Trinkets
+rockyperiapt=Rotsachtige periapt
+unstableperiapt=Onstabiele periapt
+bloodyperiapt=Bloederige periapt
+demonicperiapt=Demonische periapt
+abysmalperiapt=Afgrondelijke periapt
+frozenperiapt=Bevroren periapt
+necromancyperiapt=Necromantieperiapt
+floralring=Bloemenring
+gelring=Gelring
+heartring=Hartring
+ringofhealth=Gezondheidsring
+swampshield=Moerasschild
+witchmedallion=Heksenmedaillon
+iceboots=IJslaarzen
+inspirationfoci=Inspiratiefocus
+cursedmedallion=Vervloekt medaillon
+ancientmedallion=Oud medaillon
+essenceofhealing=Essentie van genezing
+ninjascarf=Ninjasjaal
+adrenalinecharm=Adrenalineamulet
+spinelshield=Spinelschild
+bloomrushcharm=Bloeistootamulet
+infectedperiapt=Geïnfecteerde periapt
+
+// Armor
+rockyboots=Rotsachtige laarzen
+rockychestplate=Rotsachtige borstplaat
+rockyhelmet=Rotsachtige helm
+goldhat=Gouden hoed
+pinkwitchhat=Roze heksenhoed
+magicalsuit=Magisch pak
+magicalboots=Magische laarzen
+swampboots=Moeraslaarzen
+swampchestplate=Moerasborstplaat
+swampmask=Moerasmasker
+swamphood=Moeraskap
+infectedhat=Geïnfecteerde hoed
+infectedchestplate=Geïnfecteerde borstplaat
+infectedboots=Geïnfecteerde laarzen
+spinelhelmet=Spinelhelm
+spinelhat=Spinelhoed
+spinelchestplate=Spinelborstplaat
+spinelboots=Spinellaarzen
+
+// Misc
+gelslimenullifier=Ze zullen je met een simpele klik met rust laten!
+cuberry=Kubusbes
+infectedgrassseed=Geïnfecteerd graszaad
+
+// Backpacks
+basicbackpack=Basisrugzak
+sapphirebackpack=Saffierrugzak
+amethystbackpack=Amethistrugzak
+rubybackpack=Robijnrugzak
+emeraldbackpack=Smaragdrugzak
+diamondbackpack=Diamantrugzak
+
+// Books
+runestutorialbook=Runenhandleidingboek
+
+// Runes Injectors
+runesinjector=Runeninjector
+rusticrunesinjector=Rustieke runeninjector
+unstablerunesinjector=Onstabiele runeninjector
+demonicrunesinjector=Demonische runeninjector
+tungstenrunesinjector=Wolfraamruneninjector
+ancientrunesinjector=Oude runeninjector
+
+// Base Runes Tier 0
+baserune=Basisrune
+runeoffury=Rune van woede
+runeofspeed=Rune van snelheid
+runeofhealing=Rune van genezing
+runeofresistance=Rune van weerstand
+runeofvalor=Rune van moed
+runeofdetonation=Rune van detonatie
+runeofthunder=Rune van donder
+runeofwinter=Rune van de winter
+runeofshadows=Rune van schaduwen
+runeofimmortality=Rune van onsterfelijkheid
+
+// Base Runes Tier 1
+runeofunstablegelslime=Rune van onstabiele gelslijm
+runeofevilsprotector=Rune van de beschermer van het kwaad
+runeofqueenspider=Rune van de spinnenkoningin
+runeofvoidwizard=Rune van de leegtetovenaar
+runeofswampguardian=Rune van de moeraswachter
+runeofancientvulture=Rune van de oude gier
+runeofpiratecaptain=Rune van de piratenkapitein
+runeofchieftain=Rune van de hoofdman
+
+// Base Runes Tier 2
+runeofreaper=Rune van de maaier
+runeofcryoqueen=Rune van de cryokoningin
+runeofpestwarden=Rune van de pestwachter
+runeofsageandgrit=Rune van salie en moed
+runeoffallenwizard=Rune van de gevallen tovenaar
+runeofbabylontower=Rune van de toren van Babel
+
+// Base Runes Tier 3
+runeofmotherslime=Rune van de moederslijm
+runeofnightswarm=Rune van de nachtzwerm
+runeofspiderempress=Rune van de spinnenkeizerin
+runeofsunlightchampion=Rune van de zonlichtkampioen
+runeofmoonlightdancer=Rune van de maanlichtdanser
+runeofcrystaldragon=Rune van de kristaldraak
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+frenzyrune=Waanzinrune
+vitalrune=Vitale rune
+devastatingrune=Verwoestende rune
+onyxrune=Onyxrune
+pawningrune=Pionrune
+
+// Modifier Runes Tier 2
+abysmalrune=Afgrondrune
+tidalrune=Getijdenrune
+
+// Modifier Runes Tier 3
+ascendantrune=Opstijgende rune
+
+
+[itemtooltip]
+// Stat tips
+line=----------------------------------------
+magichealingtip=Magische genezing: §7<health>
+rangetip=Bereik: §9<range>
+areatip=§aGebied <number>
+inspirationdamagetip=Inspiratieschade: <value>
+areabuff=Pas <buff> toe op bondgenoten
+areadebuff=Pas <buff> toe op vijanden
+areabuffdisplay=<buff> gedurende <duration> seconden
+attackarmorpentip=Pantserpenetratie: <value>%
+
+// Mechanics
+magichealinggrace=§aMagische genezingsgenade:§0 Geneest jezelf met een percentage van de magische genezing bedoeld voor bondgenoten
+cursedbuff=§bVervloekt:§0 §6+25%§0 inkomende schade
+inspiration=§9Inspiratie:§0 Verbetert de effecten van banieren en muziekinstrumenten
+adrenaline=§6Adrenaline:§0 +5% schade, -5% pantser. Kan tot 5 keer stapelen
+livingsapling=§7Levende zaailing:§0 Geneest de eigenaar magisch met §73§0 elke 10 aanvallen
+
+// Misc
+gelslimenullifier=Ze zullen je met een simpele klik met rust laten!
+enchantingscrollhealingequipmenttip=Wordt gebruikt om een genezingsuitrusting te betoveren met <enchantment>\n§!Aphorea Mod
+enchantingscrollhealingtip=Wordt gebruikt om een genezingsgereedschap te betoveren met <enchantment>\n§!Aphorea Mod
+enchantingscrollareatip=Wordt gebruikt om een gebiedseffectgereedschap te betoveren met <enchantment>\n§!Aphorea Mod
+enchantingscrolldaggertip=Wordt gebruikt om een dolkwapen te betoveren met <enchantment>\n§!Aphorea Mod
+backpack=Het is een nieuwe inventaris die alle items opslaat die je verzamelt
+backpackslots=Capaciteit van <slots> items
+stored=Opgeslagen items: <items>
+backpackcraft=Moet leeg zijn om een betere rugzak te maken
+
+// Consumables
+deleteditem=Dit item is verwijderd, gebruik dit item om de materialen te herstellen voordat het permanent wordt verwijderd
+unstablecore=§bLaat een onstabiele aura los...§0 Kan alleen overdag worden gebruikt
+venomextractbuff=Lowd zegt drink het, doe het niet
+venomextractbuffdesc=Je kunt niet meer dan 1 HP hebben
+lifespinel=Verhoogt permanent de maximale gezondheid met 5 tot 320
+
+// General Weapons
+spinsecondaryattack=Druk op [input=mouse2] om de volgende aanval een gebiedsaanval te maken
+areasecondaryattack=Druk op [input=mouse2] om een gebiedsaanval uit te voeren die <mana> mana verbruikt
+stikybuff1=Maakt de vijand 1 seconde plakkerig
+stikybuff2=Maakt de vijand 2 seconden plakkerig
+stikybuff3=Maakt de vijand 3 seconden plakkerig
+projectilearea=Wanneer het projectiel eindigt, veroorzaakt het gebiedsschade
+
+// Melee Weapons
+saber=Laad maximaal op voor volledige schade en om een luchtsnede los te laten
+saberdash=Houd [input=mouse2] ingedrukt om een sprint op te laden om door vijanden te snijden
+battleaxe=Het duurt lang om op te laden
+battleaxe2=Druk op [input=mouse2] om de Berserker Rush te activeren en tijdelijk 3 adrenaline te krijgen
+battleaxe3=Krijg tijdelijk adrenaline door vijanden te raken tijdens de Rush, waardoor de bewegings- en aanvalssnelheid verbetert
+dagger=Houd [input=mouse2] ingedrukt om de dolk te gooien
+
+// Range Weapons
+sling=Gooit stenen met kracht
+sling2=§7100%§0 kans om de vijand 0.5 seconde te verdoven
+twoarrows=Schiet twee pijlen tegelijk
+threearrows=Schiet drie pijlen tegelijk
+blowgun=Schiet zaden
+
+// Single Melee Weapons
+woodenrod=Geneest jezelf magisch met §7<healing>§0 elke 10 aanvallen
+voidhammer=Wanneer het projectiel stuitert of een vijand raakt, richt het zich op de dichtstbijzijnde en raakt het tot 3 keer
+crimsonkora=Houd [input=mouse2] ingedrukt om een verwoestende maar langzame aanval op te laden
+thenarcissist=Keten 4 aanvallen aan elkaar om op de vijfde slag een draaiende zwaardworp los te laten!\n+20% schade voor elke geketende aanval
+
+// Single Range Weapons
+firesling=Verbrandt de vijanden
+frozensling=Bevriest de vijanden
+gelgreatbow=Verandert stenen pijlen in gelpijlen
+unstablegelgreatbow=Verandert stenen pijlen en gelpijlen in onstabiele gelpijlen
+thespammer=Kan spamkogels schieten
+shotgunsaber=Richt dicht bij het midden voor krachtigere, nauwkeurigere en doordringende schoten
+honeysaber=Laad maximaal op voor volledige schade en om honing en bosbessen te schieten
+spinelcrossbow=Schiet pijlen die tot 2 vijanden doorboren en dodelijker worden bij elke doorboring
+spinelcrossbow2=Houd [input=mouse2] ingedrukt om 3 pijlen tegelijk te schieten
+
+// Single Magic Weapons
+unstablegelstaff=Wanneer projectielen van muren stuiteren, dupliceren ze
+harpofharmony=Harmonie: Verhoogde snelheid, gezondheids- en manaregeneratie
+
+// Single Summoner Weapons
+infectedstaff=Roept twee levende zaailingen op per oproep
+
+// Single Throwable Weapons
+gelball=Gooit een gelbal
+
+// Single Magic Healing Tools
+magicalvial=Wijs naar een gewonde mens om hem te genezen, wijs naar niemand om jezelf te genezen
+magicalvial2=Oneindig gebruik
+
+// Ammo
+spambullet=Heeft willekeurig een van deze effecten:
+spambullet1=§9Verdrietig:§0 Aangevallen vijand wordt plakkerig, waardoor hij 5 seconden vertraagt
+spambullet2=§9Vuur:§0 In plaats van te botsen, laat het een plas vuur op de grond achter
+spambullet3=§9Leuk:§0 Stuitert van muren en doorboort mobs, tot 10 keer per stuk
+spambullet4=§9Controleer:§0 Magisch genezingsgebied van 3 gezondheid aan het einde van zijn pad
+spambullet5=§9Explosie:§0 Explodeert aan het einde van zijn pad in plaats van te botsen
+
+// Tiles
+geltile=Plakkerige vloer die alles erop aanzienlijk vertraagt
+
+// Objects
+witchstatue=Het plaatsen van dit beeld op het oppervlak van een moeras zal het spawnen van heksen op het hele eiland elimineren
+
+// Generic Trinkets
+areawhenheal=Voert dit gebied uit voor elke <magichealing> magische genezing die wordt uitgevoerd
+periaptboost=Druk op [input=trinketability] om een boost van snelheid en aanvalssnelheid te krijgen gedurende 10 seconden
+
+// Trinkets
+rockyperiapt=§7+5§0 pantser, maar §6-5%§0 bewegingssnelheid
+rockyperiapt2=Druk op [input=trinketability] om 10 pantser te krijgen gedurende 10 seconden
+unstableperiapt=Roept twee onstabiele gelslijmbaby's op (6 oproeperschade)
+unstableperiapt2=Maakt je immuun voor de plakkerige debuff
+bloodyperiapt=Ook zullen de wapens 'Bloedbout' en 'Bloedsalvo' §73%§0 van het leven stelen
+demonicperiapt=Ook zullen magische wapens §73%§0 van het leven stelen
+necromancyperiapt=Elke keer dat jij of een van je oproepen een vijandige mob doodt, roep je een ondood skelet op
+necromancyperiapt2=20 oproeperschade. Duurt 10 seconden en er kunnen er maximaal 3 tegelijk zijn
+frozenperiapt=Contact- en afstandswapens zullen 3 seconden bevriezen
+frozenperiapt2=Veroorzaakt meer schade aan mobs die door bevriezing zijn getroffen
+frozenperiapt3=Maakt je immuun voor de debuffs bevriezing en vorstvertraging
+floralring=Geneest jezelf magisch met §7<healing>§0 elke 5 seconden
+gelring=§7+30%§0 ontvangen magische genezing
+heartring=§7+20§0 maximale gezondheid
+swampshield=Beschermt alleen aanvallen in de richting waarin ze worden ontvangen
+swampshield2=Bij perfect blokkeren: Geneest jezelf magisch met §7<healing>§0 van je maximale gezondheid
+iceboots=Laat je glijden alsof je op ijs bent, but grants +50% movement speed and +4 armor
+inspirationfoci1=§7+40%§0 inspiratie-effect en §7+20%§0 inspiratie vaardigheidssnelheid
+inspirationfoci2=§6-20%§0 alle niet-inspiratieschade en §6-1§0 maximale oproepen
+essenceofhealing=§7+<percent>%§0 magische genezing per levensessentie
+essenceofhealing2=§7<flat>§0 magische genezing per 2 levensessenties
+essenceofhealing3=§6-80%§0 levensessentieduur, beperkt tot -50%
+ninjascarf=Zet sabelsprints om in sabelsprongen
+adrenalinecharm=Elke ontvangen treffer geeft je 20 seconden adrenaline
+infectedperiapt=Roept twee levende zaailingen op (8 oproeperschade)
+bloomrushcharm=Verminder het uithoudingsvermogen met 10% voor elke adrenaline die je hebt\nRoept een levende zaailing op (8 oproeperschade) voor elke adrenaline die je hebt
+
+// Set Bonus
+goldhatsetbonus=Als je stilstaat, wordt je aanvalssnelheid op afstand aanzienlijk verhoogd
+pinkwitchsetbonus=Verhoogt de magische aanvalssnelheid, manaregeneratie en pantser naarmate je gezondheid lager is
+infectedsetbonus=Roept drie levende zaailingen op (8 oproeperschade)
+spinelhelmetsetbonus=Geneest jezelf magisch met §7<healing>§0 van de contactschade toegebracht aan vijandige mobs
+spinelhatsetbonus=Geneest jezelf en alle nabije bondgenoten magisch\nmet §7<healing>§0 van de magische schade toegebracht aan vijandige mobs
+
+// Banners
+strikebannereffect=§7+<effect>%§0 gezondheidsregeneratie (in en uit gevecht)
+strikebannerability=§aElke <time> seconden:§0 Voert een gebiedsaanval uit
+blankbannereffect=§7+<effect>%§0 gezondheidsregeneratie (buiten gevecht)
+blankbannerability=§aElke <time> seconden:§0 Voert een gebiedsgenezing uit
+bannerofdamageeffect=§7+<effect>%§0 schade
+bannerofdefenseeffect=§7-<effect>%§0 inkomende schade
+bannerofspeedeffect=§7+<effect>%§0 bewegingssnelheid
+bannerofsummonspeedeffect=§7+<effect>%§0 bewegingssnelheid van oproepen
+
+// Mighty Banners
+banneroffishingeffect=§7+<effect>§0 viskracht
+bannerofhealthregeneffect=§7+<effectfloat>§0 gevechtsgezondheidsregeneratie
+bannerofmanaregeneffect=§7+<effect>%§0 gevechtsmanaregeneratie
+bannerofresistanceeffect=§7+<effect>§0 pantser
+bannerofsummoningeffect=§7+<effect>§0 maximale oproepen
+bannerofattackspeedeffect=§7+<effect>%§0 aanvalssnelheid
+
+// Summoner Expansion Banners
+bannerofresilienceeffect=§7+<effect>%§0 maximale veerkracht\nRegenereert §7+<effect>§0 veerkracht per seconde
+bannerofbouncingeffect=§7+<effect>§0 projectielstuiteringen
+bannerofessenceeffect=§7+<effect>%§0 levensessentieduur
+bannerofstaminaeffect=§7+<effect>%§0 uithoudingsvermogen capaciteit\n§7+<effect2>%§0 uithoudingsvermogen regeneratie\n§7-<effect2>%§0 uithoudingsvermogen gebruik
+bannerofpickingeffect=§7+<effectfloat>§0 opraapbereik
+bannerofdashingeffect=§7+<effect>§0 sprintstapels\n§7-<effect2>%§0 sprintafkoeling
+bannerofmanaeffect=§7+<effect>%§0 maximale mana\n§7<effect2>%§0 manaregeneratie
+
+// Runes (General)
+baserune=§iBasisrune
+modifierrune=§aModificatierune
+linkedrune=§bRune gekoppeld aan [<player>]
+notruneowner=Je bent niet de eigenaar van de basisrune
+runesslots=Kan maximaal 1 basisrune + <modifierslots> modificatierunen invoegen
+useruneinfusor=[input=runesinjectorability] om te activeren
+requiresbaserune=Vereist een ingevoegde basisrune
+onlyonebaserune=Er kan slechts één basisrune tegelijk worden ingevoegd
+duplicatedmodifierrunes=Kan niet meer dan één van dezelfde modificatierune invoegen
+runehealthcost=Verbruikt <health>% van de maximale gezondheid bij activering
+runehealthhealing=Herstelt <health>% van de maximale gezondheid bij gebruik
+runecooldown=Laadt op in <seconds> seconden
+increaseruneeffectnumber=Verhoogt het effect met §7<variation>%§0
+decreaseruneeffectnumber=Verlaagt het effect met §6<variation>%§0
+increaserunecooldown=Verhoogt de afkoeling met §6<variation>%§0
+decreaserunecooldown=Verlaagt de afkoeling met §7<variation>%§0
+increaserunehealthcost=Verhoogt het verbruik van maximale gezondheid met §6<health>%§0
+increaserunehealthhealing=Verhoogt het herstel van maximale gezondheid met §7<health>%§0
+runedamagereduction=De schade wordt drastisch verminderd tegen mensen en nog meer tegen bazen
+runedamagereductionnoboss=De schade wordt drastisch verminderd tegen mensen en heeft geen invloed op bazen
+moreextraeffectmod=Effectmodificaties zijn <mod>% effectiever
+lessextraeffectmod=Effectmodificaties zijn <mod>% minder effectief
+
+// Runes Injectors
+
+// Base Runes Tier 0
+runeoffury=Verhoogt je schade en aanvalssnelheid met §7<effectNumber>§0% gedurende 10 seconden
+runeofspeed=Sprint met §7<effectNumber>§0 kracht in de richting waarin je beweegt en word 0.5 seconde onkwetsbaar
+runeofresistance=Verhoogt je pantser met §7<effectNumber>§0% gedurende 10 seconden
+runeofresistance2=Tijdens de afkoeling wordt je pantser gehalveerd
+runeofvalor=+200% inspiratie gedurende §7<effectNumber>§0 seconden
+runeofdetonation=Explodeert, veroorzaakt meer schade en duwt vijanden terug naarmate ze dichterbij zijn
+runeofdetonation2=De maximale schade is §7<effectNumber>§0% van de maximale gezondheid van de mobs als schade
+runeofthunder=Na twee seconden slaat een bliksem in op de oorspronkelijke positie van je cursor
+runeofthunder2=De bliksem veroorzaakt §7<effectNumber>§0% van de gezondheid van de mobs als schade en verdooft gedurende 2 seconden
+runeofwinter=Vorstvertraging van vijanden binnen een bereik van 500 gedurende §7<effectNumber>§0 seconden
+runeofimmortality=Als je binnen de volgende §7<effectNumber>§0 seconden sterft, overleef je met maximale gezondheid
+runeofimmortality2=Als dit gebeurt, ben je 3 seconden onkwetsbaar, maar de afkoeling is 30 seconden
+runeofimmortality3=Tijdens de afkoeling wordt je maximale gezondheid gehalveerd
+runeofshadows=Gedurende §7<effectNumber>§0 seconden word je onzichtbaar maar ook geïntimideerd, waardoor je geen acties kunt ondernemen
+
+// Base Runes Tier 1
+runeofunstablegelslime=Teleporteer naar een nabijgelegen locatie en roep 2 runische onstabiele gelslijmen op gedurende §7<effectNumber>§0 seconden
+runeofunstablegelslime2=De oproepen zullen 5% van de maximale gezondheid van de mobs als schade toebrengen
+runeofevilsprotector=+§7<effectNumber>§0% aanvalssnelheid, maar -50% bewegingssnelheid gedurende 10 seconden
+runeofevilsprotector2='s Nachts aan de oppervlakte wordt het positieve effect verdubbeld
+runeofqueenspider=Laat een spinnenweb op de grond achter gedurende §7<effectNumber>§0 seconden
+runeofvoidwizard=Alle projectielen zullen oneindig stuiteren en +§7<effectNumber>§0% projectielsnelheid gedurende 10 seconden
+runeofswampguardian=Vermindert alle opgelopen schade met 80% gedurende §7<effectNumber>§0 seconden
+runeofancientvulture=Roept een runische gierkuiken op gedurende 10 seconden
+runeofancientvulture2=De oproep zal §7<effectNumber>§0% van de maximale gezondheid van de mobs als schade toebrengen
+runeofpiratecaptain=Verhoogt je schade met §7<effectNumber>§0% voor elke 200 munten die je hebt, tot een maximum van 20.000 munten
+runeofpiratecaptain2=Elke keer dat je aanvalt, verlies je 3 munten
+runeofchieftain=Gedurende de volgende 20 seconden neemt je schade toe naarmate je gezondheid lager is, tot een maximum van +§7<effectNumber>§0%
+
+// Base Runes Tier 2
+runeofreaper=Teleporteer naar de positie van je muis. Maximale afstand §7<effectNumber>§0
+runeofcryoqueen=Stop 1 seconde en lanceer een ijsaanval om je heen met een bereik van §7<effectNumber>§0
+runeofcryoqueen2=De projectielen zullen 200% van de maximale gezondheid van de mobs als schade toebrengen
+runeofpestwarden=Gedurende de volgende §7<effectNumber>§0 seconden beschadigt en duwt een botsing met vijanden hen
+runeofpestwarden2=De schade is 20% van hun maximale gezondheid
+runeofsageandgrit=Als er gewonde bondgenoten in de buurt zijn (bereik 500), genees dan §7<effectNumber>§0% van hun totale gezondheid
+runeofsageandgrit2=Zo niet, verhoog dan je schade, aanvalssnelheid en bewegingssnelheid met +§7<effectNumber>§0% gedurende 20 seconden
+runeoffallenwizard=Verdoof alle mobs behalve jij gedurende §7<effectNumber>§0 seconden
+runeoffallenwizard2=Mensen zullen sneller vrijkomen, en bazen nog sneller
+runeofbabylontower=+§7<effectNumber>§0% alle schade, maar je kunt niet bewegen. 10 seconden
+
+// Base Runes Tier 3
+runeofmotherslime=Voer een grote sprong uit naar de positie van je muis en veroorzaak gebiedsschade bij de landing
+runeofmotherslime2=De landing zal §7<effectNumber>§0% van de maximale gezondheid van de mobs als schade toebrengen
+runeofnightswarm=Roep 5 vleermuizen op gedurende §7<effectNumber>§0 seconden die vijandige mobs opzoeken om ze te bijten
+runeofnightswarm2=Elke beet herstelt 1% van je totale gezondheid (minimaal 1)
+runeofspiderempress=Gooit §7<F0effectNumber>§0 spinnenwebballen in de richting van je muis
+runeofspiderempress2=De spinnenwebballen zullen 3 seconden verdoven en 10 seconden vertragen
+runeofsunlightchampion=Word 3 seconden verdoofd terwijl je een nova oplaadt met een bereik van §7<effectNumber>§0
+runeofsunlightchampion2=De nova zal 200% van de maximale gezondheid van de mobs als schade toebrengen
+runeofmoonlightdancer=+§7<effectNumber>§0% schade voor elke +1% bewegingssnelheid gedurende 10 seconden
+runeofcrystaldragon=Gooi een laserstraal op de positie van je cursor gedurende 5 seconden
+runeofcrystaldragon2=De laser zal §7<effectNumber>§0% van de maximale gezondheid van de mobs als schade toebrengen
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+onyxrune=Wanneer geactiveerd, roept het Onyx op gedurende 5 seconden. Het zal schade toebrengen op basis van 5% van de gezondheid van de mob
+onyxrune2=Elke beet van Onyx herstelt 1% van je totale gezondheid (minimaal 1)
+onyxrune3=§3Bedankt Onyx voor de briljante runenideeën! <3
+pawningrune=Wanneer geactiveerd, als je het effect nog niet hebt, herstelt het onmiddellijk 20% van je maximale gezondheid
+pawningrune2=Na 10 seconden verlies je de herstelde hoeveelheid plus een extra 40%
+
+// Modifier Runes Tier 2
+abysmalrune=Wanneer geactiveerd, roept het een zwart gat op op de positie van je cursor, dat vijanden 2 seconden naar binnen trekt
+abysmalrune2=Het zwarte gat wordt alleen opgeroepen als er 10 seconden zijn verstreken sinds de laatste activering
+tidalrune=Wanneer geactiveerd, roept het een golf water op die vijanden wegduwt
+
+// Modifier Runes Tier 3
+
+
+[mobtooltip]
+usenet=Gebruik een net! [item=net]
+
+
+[mob]
+// Hostile
+gelslime=Gelslijm
+rockygelslime=Rotsachtige gelslijm
+unstablegelslime=Onstabiele gelslijm
+miniunstablegelslime=Mini onstabiele gelslijm
+pinkwitch=Roze heks
+voidadept=Leegteadept
+copperdaggergoblin=Koperen dolkgoblin
+irondaggergoblin=IJzeren dolkgoblin
+golddaggergoblin=Gouden dolkgoblin
+infectedtreant=Geïnfecteerde treant
+spinelgolem=Spinelgolem
+spinelcaveling=Spinelgrotbewoner
+tungstencaveling=Wolfraamgrotbewoner
+spinelmimic=Spinelmimic
+babylontower=Toren van Babel
+hearthcrystal=Haardkristal
+babylon=Babylon
+
+// Friendly
+wildphosphorslime=Wilde fosforslijm
+
+// Summon
+babyunstablegelslime=Onstabiele gelslijmbaby
+undeadskeleton=Ondood skelet
+volatilegelslime=Vluchtige gelslijm
+runicunstablegelslime=Runische onstabiele gelslijm
+runicvulturehatchling=Runische gierkuiken
+runicbat=Runische vleermuis
+onyx=Onyx
+livingsapling=Levende zaailing
+
+// Pet
+petphosphorslime=Fosforslijm
+
+
+[buff]
+// Common Buffs
+stunbuff=Verdoving
+fallenstunbuff=Gevallen verdoving
+stickybuff=Plakkerig
+stopbuff=Gestopt
+honeyedbuff=Honingzoet
+venomextractbuff=Gifextract
+cursedbuff=Vervloekt
+adrenalinebuff=Adrenaline
+harmonybuff=Harmonie
+
+// Active Buffs
+berserkerrushactive=Berserker Rush actief
+periaptactive=Periapt-vaardigheid actief
+runesinjectoractive=Runeninjector actief
+
+// Cooldown Buffs
+berserkerrushcooldown=Berserker Rush op afkoeling
+periaptcooldown=Periapt-vaardigheid op afkoeling
+runesinjectorcooldown=Runeninjector op afkoeling
+spinattackcooldown=Draai-aanval op afkoeling
+saberdashcooldown=Sabelsprint op afkoeling
+
+
+[message]
+unstablegelslime_anger=§6Onstabiele gelslijm wordt boos... <anger>/10
+unstablegelslime_fullanger=§6Onstabiele gelslijm werd boos! <anger>/10
+unstablegelslime_night=§6Onstabiele gelslijm§0 verdween toen de nacht viel!
+gelslimesnulled=Gelslijmen in deze wereld zijn tenietgedaan. Ze zullen niet meer verschijnen
+gelslimesunnulled=Gelslijmen in deze wereld zijn toegelaten. Ze zullen nu verschijnen
+pinkwitchesnulled=Roze heksen in (<x>, <y>) zijn tenietgedaan
+pinkwitchesunnulled=Roze heksen in (<x>, <y>) zijn toegelaten
+needfreeslots=Je hebt <slots> vrije plaatsen in de inventaris nodig om dit te gebruiken
+cantuseatnight=Kan 's nachts niet worden gebruikt
+healthalreadyfull=Gezondheid is al vol
+cantheal=Kan niet genezen
+insuficienthealth=Onvoldoende gezondheid om deze actie uit te voeren!
+cannottrhowlockeditem=Je kunt geen item gooien dat in de inventaris is vergrendeld
+initialrunetip=Kies je initiële rune zorgvuldig;\nje zult de anderen pas later in het spel krijgen
+alreadyselectedinitialrune=Initiële rune is al geselecteerd
+cannotusetrial=Kan niet worden gebruikt in proefkamers
+
+[biome]
+infectedfields=Geïnfecteerde velden
+
+
+[journal]
+
+//Levels
+infectedfieldssurface=Oppervlak van geïnfecteerde velden
+infectedfieldscave=Grot van geïnfecteerde velden
+
+// Forest Surface Challenges
+killgelslimesforest=[mob=gelslime] Dood 25 gelslijmen in het bos
+pickupfloralring=[item=floralring] Snijd veel gras in het bos om de bloemenring te krijgen
+killunstablegelslime=[mob=unstablegelslime] Dood 1 onstabiele gelslijm
+
+// Swamp Surface Challenges
+killpinkwitchesswamp=[mob=pinkwitch] Dood 's nachts 5 roze heksen op het oppervlak van het moeras
+
+// Infected Fields Surface Challenges
+pickupinfectedlogs=[item=infectedlog] Hak om 100 geïnfecteerde houtblokken op te rapen
+
+// Infected Fields Cave Challenges
+pickupspinel=[item=spinel] Raap 40 spinel op
+activatebabylontower=[item=lifespinel] Plaats een levensspinel op de toren van Babel
+findthespammer=[item=thespammer] Vind de spammer
+
+
+[controls]
+runesinjectorability=Runeninjectorvaardigheid
+
+
+[runestutorialbook]
+openheader=De runeninjector openen
+opentext=Om runen te gebruiken, heb je een runeninjector nodig. Deze speciale apparaten kunnen worden geopend om runen in te voegen. Elke injector heeft één sleuf voor een basisrune en meerdere sleuven voor modificatierunen, afhankelijk van de capaciteit. Je bent vrij om zoveel modificatierunen toe te voegen als de injector toelaat, experimenteer om de beste combinaties te vinden!
+equipheader=De injector uitrusten
+equiptext=Om je runen te activeren, moet de runeninjector zijn uitgerust in een snuisterijensleuf. Eenmaal uitgerust, druk je gewoon op G (of de toets die in de instellingen is toegewezen) om de effecten te activeren. Zorg ervoor dat de injector correct is geconfigureerd en klaar is voordat je in actie komt!
+
+runesheader=Wat zijn runen?
+runestext=Runen zijn mystieke stenen die krachtige effecten geven wanneer ze in een runeninjector worden gestoken. Hun kracht en gedrag hangen af van hoe ze worden gecombineerd, het beheersen van hun gebruik is de sleutel tot het ontsluiten van je volledige potentieel.
+baserunesheader=Basisrunen
+baserunestext=Elke runeninjector heeft precies één basisrune nodig om te functioneren. De basisrune definieert het hoofdeffect van de injector en fungeert als de kern van je opstelling. Je zult een groen getal naast het effect opmerken, dit representeert de effectwaarde, die kan worden verhoogd of verlaagd met modificatoren.
+modifierrunesheader=Modificatierunen
+modifierrunestext=Modificatierunen worden gebruikt om het effect van je basisrune aan te passen en te verbeteren. Ze kunnen de effectwaarde aanpassen, het gedrag ervan veranderen of speciale eigenschappen toevoegen. Modificatierunen komen echter altijd met compromissen: geen enkele modificator is puur voordelig, dus kies verstandig!
+
+tableheader=De runentafel
+tabletext=De runentafel is je go-to-station voor het maken van een breed scala aan runen. De meeste standaardrunen kunnen hier worden gemaakt, maar onthoud: sommige krachtige runen kunnen alleen worden gevonden door verkenning. Houd je ogen open, avontuur beloont de nieuwsgierigen!
+crafttext=In de runenwerkplaats vind je alles wat je nodig hebt om te beginnen. Combineer de inhoud met je initiële rune en een basisrune die je aan de runentafel kunt maken, en je hebt een volledig functionele runeninjector klaar om uit te rusten!

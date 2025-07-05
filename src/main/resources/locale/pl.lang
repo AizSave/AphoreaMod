@@ -1,0 +1,755 @@
+# Translation made by AI
+
+[global]
+aphorea=§!Aphorea Mod
+aphorearework=§!Aphorea Mod Przeróbka
+aphoreamightybanner=§!Aphorea Mod x Mighty Banner Mod
+aphoreasummonerexpansion=§!Aphorea Mod x Summoner Expansion
+
+
+[buffmodifiers]
+// Magic Healing
+magichealing=<mod>% magicznego leczenia
+magichealingflat=<mod> magicznego leczenia
+magichealingreceived=<mod>% otrzymanego magicznego leczenia
+magichealingreceivedflat=<mod> otrzymanego magicznego leczenia
+magichealinggrace=<mod>% łaski magicznego leczenia
+
+// Area
+arearange=<mod>% zasięgu obszaru
+
+// Inspiration Damage
+inspirationdamage=<mod>% obrażeń od inspiracji
+inspirationcritchance=<mod>% szansy na trafienie krytyczne od inspiracji
+inspirationcritdamage=<mod>% obrażeń krytycznych od inspiracji
+inspirationeffect=<mod>% efektu inspiracji
+inspirationabilityspeed=<mod>% prędkości umiejętności inspiracji
+
+// Others
+loyal=Sztylet nie gubi się po rzuceniu
+
+
+[stats]
+inspiration_damage=Obrażenia od inspiracji
+
+
+[enchantment]
+// Healing Equipment
+godly=Boski
+absent=Nieobecny
+auxiliary=Pomocniczy
+vain=Próżny
+gentle=Delikatny
+selfish=Samolubny
+
+// Healing
+friendly=Przyjazny
+graceful=Wdzięczny
+wonderful=Cudowny
+ecologic=Ekologiczny
+exalted=Wywyższony
+cursed=Przeklęty
+
+// Area
+booming=Huczący
+dimmed=Przyciemniony
+
+// Others
+loyal=Lojalny
+
+
+[tile]
+geltile=Żelowa Podłoga
+infectedwatertile=Zainfekowana Woda
+infectedgrasstile=Zainfekowana Trawa
+spinelgravel=Żwir Spinelowy
+
+
+[tech]
+runes=Runy
+
+
+[object]
+witchstatue=Posąg Wiedźmy
+runestable=Stół Runiczny
+#NEW
+infectedsapling=Zainfekowana Sadzonka
+spinelcluster=Skupisko Spinelu
+spinelcluster_small=Małe Skupisko Spinelu
+gelrock=Skała Żelowa
+infectedtree=Zainfekowane Drzewo
+infectedgrass=Zainfekowana Trawa
+spinelchest=Skrzynia Spinelowa
+fakespinelchest=Fałszywa Skrzynia Spinelowa
+babylontower=Wieża Babel
+babylonentrance=Wejście do Babilonu
+babylonexit=Wyjście z Babilonu
+infectedtrialentrance=Wejście do Zainfekowanej Próby
+infectedchair=Zainfekowane Krzesło
+infecteddinnertable=Zainfekowany Stół Jadalny
+infectedbookshelf=Zainfekowana Półka na Książki
+infectedcabinet=Zainfekowana Szafka
+infectedbed=Zainfekowane Łóżko
+infecteddoublebed=Zainfekowane Podwójne Łóżko
+infectedcandelabra=Zainfekowany Kandelabr
+
+
+[itemcategory]
+healing=Leczenie
+healingtools=Narzędzia Lecznicze
+runes=Runy
+injectors=Wstrzykiwacze Run
+baserunes=Runy Podstawowe
+modifierrunes=Runy Modyfikujące
+
+
+[item]
+// General Materials
+anybasicfoci=Dowolny Podstawowy Fokus
+
+// Materials
+rockygel=Skalisty Żel
+unstablegel=Niestabilny Żel
+stardust=Gwiezdny Pył
+infectedlog=Zainfekowany Kloc
+infectedalloy=Zainfekowany Stop
+spinel=Spinel
+lifespinel=Spinel Życia
+
+// Consumables
+unstablecore=Niestabilny Rdzeń
+initialrune=Początkowa Runa
+venomextract=Ekstrakt Jadu
+
+// Swords
+gelsword=Miecz Żelowy
+unstablegelsword=Niestabilny Miecz Żelowy
+broom=Miotła
+voidhammer=Młot Pustki
+brokenkora=Złamana Kora
+thenarcissist=Narcyz
+cryokatana=Kriokatana
+
+// Greatswords
+unstablegelgreatsword=Niestabilny Wielki Miecz Żelowy
+babylongreatsword=Wielki Miecz Babilonu
+
+// Glaives
+woodenrod=Drewniany Kij
+
+// Sabers
+saber=Szabla
+coppersaber=Miedziana Szabla
+ironsaber=Żelazna Szabla
+goldsaber=Złota Szabla
+demonicsaber=Demoniczna Szabla
+unstablegelsaber=Niestabilna Szabla Żelowa
+honeysaber=Miodowa Szabla
+glacialsaber=Lodowcowa Szabla
+crimsonkora=Karmazynowa Kora
+
+// Battleaxes
+battleaxe=Topór Bojowy
+unstablegelbattleaxe=Niestabilny Topór Bojowy Żelowy
+demonicbattleaxe=Demoniczny Topór Bojowy
+
+// Daggers
+dagger=Sztylet
+copperdagger=Miedziany Sztylet
+irondagger=Żelazny Sztylet
+golddagger=Złoty Sztylet
+demonicdagger=Demoniczny Sztylet
+tungstendagger=Sztylet z Wolframu
+lostumbrella=Zgubiony Parasol
+
+// Rapiers
+fossilrapier=Rapier Skamieniały
+lightrapier=Lekki Rapier
+
+// Magic weapons
+unstablegelstaff=Niestabilna Laska Żelowa
+magicalbroom=Magiczna Miotła
+adeptsbook=Księga Adepta
+harpofharmony=Harfa Harmonii
+babyloncandle=Świeca Babilonu
+
+// Bows
+spinelcrossbow=Kusza Spinelowa
+
+// Guns
+thespammer=Spamer
+
+// Bullets
+spambullet=Pocisk Spamowy
+
+// Greatbows
+gelgreatbow=Wielki Łuk Żelowy
+unstablegelgreatbow=Niestabilny Wielki Łuk Żelowy
+
+// Arrows
+gelarrow=Strzała Żelowa
+unstablegelarrow=Niestabilna Strzała Żelowa
+
+// Saber Guns
+sabergun=Pistolet Szablowy
+shotgunsaber=Strzelba Szablowa
+
+// Slings
+sling=Proca
+firesling=Proca Ognista
+frozensling=Proca Mrożona
+
+// Blowguns
+blowgun=Dmuchawka
+
+// Throw weapons
+gelball=Kula Żelowa
+gelballgroup=Zgrupowane Kule Żelowe
+unstablegelveline=Niestabilny Oszczep Żelowy
+
+// Summon weapons
+volatilegelstaff=Lotna Laska Żelowa
+infectedstaff=Zainfekowana Laska
+
+// Banners
+blankbanner=Pusty Sztandar
+
+// Healing Tools
+healingtool=Narzędzie Lecznicze
+magicalvial=Magiczna Fiolka
+healingstaff=Laska Lecznicza
+woodenwand=Drewniana Różdżka
+goldenwand=Złota Różdżka
+spinelstaff=Laska Spinelowa
+
+// Tools
+superiorpickaxe=Doskonały Kilof
+
+// Trinkets
+rockyperiapt=Skalisty Amulet
+unstableperiapt=Niestabilny Amulet
+bloodyperiapt=Krwawy Amulet
+demonicperiapt=Demoniczny Amulet
+abysmalperiapt=Otchłanny Amulet
+frozenperiapt=Mrożony Amulet
+necromancyperiapt=Amulet Nekromancji
+floralring=Kwiatowy Pierścień
+gelring=Pierścień Żelowy
+heartring=Pierścień Serca
+ringofhealth=Pierścień Zdrowia
+swampshield=Tarcza Bagienna
+witchmedallion=Medalion Wiedźmy
+iceboots=Buty Lodowe
+inspirationfoci=Fokus Inspiracji
+cursedmedallion=Przeklęty Medalion
+ancientmedallion=Starożytny Medalion
+essenceofhealing=Esencja Leczenia
+ninjascarf=Szalik Ninja
+adrenalinecharm=Amulet Adrenaliny
+spinelshield=Tarcza Spinelowa
+bloomrushcharm=Amulet Rozkwitu
+infectedperiapt=Zainfekowany Amulet
+
+// Armor
+rockyboots=Skaliste Buty
+rockychestplate=Skalista Napierśnica
+rockyhelmet=Skalisty Hełm
+goldhat=Złoty Kapelusz
+pinkwitchhat=Różowy Kapelusz Wiedźmy
+magicalsuit=Magiczny Strój
+magicalboots=Magiczne Buty
+swampboots=Buty Bagienne
+swampchestplate=Napierśnica Bagienna
+swampmask=Maska Bagienna
+swamphood=Kaptur Bagienny
+infectedhat=Zainfekowany Kapelusz
+infectedchestplate=Zainfekowana Napierśnica
+infectedboots=Zainfekowane Buty
+spinelhelmet=Hełm Spinelowy
+spinelhat=Kapelusz Spinelowy
+spinelchestplate=Napierśnica Spinelowa
+spinelboots=Buty Spinelowe
+
+// Misc
+gelslimenullifier=Niwelator Szlamu Żelowego
+cuberry=Sześcianoowoc
+infectedgrassseed=Nasiono Zainfekowanej Trawy
+
+// Backpacks
+basicbackpack=Podstawowy Plecak
+sapphirebackpack=Szafirowy Plecak
+amethystbackpack=Ametystowy Plecak
+rubybackpack=Rubinowy Plecak
+emeraldbackpack=Szmaragdowy Plecak
+diamondbackpack=Diamentowy Plecak
+
+// Books
+runestutorialbook=Księga Poradników Runicznych
+
+// Runes Injectors
+runesinjector=Wstrzykiwacz Run
+rusticrunesinjector=Rustykalny Wstrzykiwacz Run
+unstablerunesinjector=Niestabilny Wstrzykiwacz Run
+demonicrunesinjector=Demoniczny Wstrzykiwacz Run
+tungstenrunesinjector=Wolframowy Wstrzykiwacz Run
+ancientrunesinjector=Starożytny Wstrzykiwacz Run
+
+// Base Runes Tier 0
+baserune=Runa Podstawowa
+runeoffury=Runa Furii
+runeofspeed=Runa Prędkości
+runeofhealing=Runa Leczenia
+runeofresistance=Runa Odporności
+runeofvalor=Runa Męstwa
+runeofdetonation=Runa Detonacji
+runeofthunder=Runa Gromu
+runeofwinter=Runa Zimy
+runeofshadows=Runa Cieni
+runeofimmortality=Runa Nieśmiertelności
+
+// Base Runes Tier 1
+runeofunstablegelslime=Runa Niestabilnego Szlamu Żelowego
+runeofevilsprotector=Runa Obrońcy Zła
+runeofqueenspider=Runa Królowej Pająków
+runeofvoidwizard=Runa Czarodzieja Pustki
+runeofswampguardian=Runa Strażnika Bagien
+runeofancientvulture=Runa Starożytnego Sępa
+runeofpiratecaptain=Runa Kapitana Piratów
+runeofchieftain=Runa Wodza
+
+// Base Runes Tier 2
+runeofreaper=Runa Żniwiarza
+runeofcryoqueen=Runa Królowej Mrozu
+runeofpestwarden=Runa Strażnika Plagi
+runeofsageandgrit=Runa Mędrca i Odwagi
+runeoffallenwizard=Runa Upadłego Czarodzieja
+runeofbabylontower=Runa Wieży Babel
+
+// Base Runes Tier 3
+runeofmotherslime=Runa Matki Szlamów
+runeofnightswarm=Runa Nocnego Roju
+runeofspiderempress=Runa Cesarzowej Pająków
+runeofsunlightchampion=Runa Mistrza Słońca
+runeofmoonlightdancer=Runa Tancerki Księżyca
+runeofcrystaldragon=Runa Kryształowego Smoka
+
+// Modifier Runes Tier 0
+modifierrune=Runa Modyfikująca
+empoweringrune=Runa Wzmacniająca
+recurrentrune=Runa Powtarzalna
+
+// Modifier Runes Tier 1
+frenzyrune=Runa Szału
+vitalrune=Runa Witalności
+devastatingrune=Runa Niszczycielska
+onyxrune=Runa Onysku
+pawningrune=Runa Pionka
+
+// Modifier Runes Tier 2
+abysmalrune=Runa Otchłani
+tidalrune=Runa Pływów
+
+// Modifier Runes Tier 3
+ascendantrune=Runa Wstępująca
+
+
+[itemtooltip]
+// Stat tips
+line=----------------------------------------
+magichealingtip=Magiczne leczenie: §7<health>
+rangetip=Zasięg: §9<range>
+areatip=§aObszar <number>
+inspirationdamagetip=Obrażenia od inspiracji: <value>
+areabuff=Nakłada <buff> na sojuszników
+areadebuff=Nakłada <buff> na wrogów
+areabuffdisplay=<buff> na <duration> sekund
+attackarmorpentip=Przebicie pancerza: <value>%
+
+// Mechanics
+magichealinggrace=§aŁaska Magicznego Leczenia:§0 Leczy siebie o % magicznego leczenia przeznaczonego для sojuszników
+cursedbuff=§bPrzeklęty:§0 §6+25%§0 otrzymywanych obrażeń
+inspiration=§9Inspiracja:§0 Poprawia efekty sztandarów i instrumentów muzycznych
+adrenaline=§6Adrenalina:§0 +5% obrażeń, -5% pancerza. Może się kumulować do 5 razy
+livingsapling=§7Żywa Sadzonka:§0 Magicznie leczy właściciela o §73§0 co 10 ataków
+
+// Misc
+gelslimenullifier=Przestaną cię dręczyć jednym kliknięciem!
+enchantingscrollhealingequipmenttip=Używane do zaklinania przedmiotu ekwipunku leczniczego na <enchantment>\n§!Aphorea Mod
+enchantingscrollhealingtip=Używane do zaklinania narzędzia leczniczego na <enchantment>\n§!Aphorea Mod
+enchantingscrollareatip=Używane do zaklinania narzędzia o działaniu obszarowym na <enchantment>\n§!Aphorea Mod
+enchantingscrolldaggertip=Używane do zaklinania sztyletu na <enchantment>\n§!Aphorea Mod
+backpack=To nowy ekwipunek, który przechowuje wszystkie zebrane przedmioty
+backpackslots=Pojemność <slots> przedmiotów
+stored=Przechowywane przedmioty: <items>
+backpackcraft=Musi być pusty, aby stworzyć lepszy plecak
+
+// Consumables
+deleteditem=Ten przedmiot został usunięty, użyj go, aby odzyskać materiały, zanim zostanie trwale usunięty
+unstablecore=§bUwalnia niestabilną aurę...§0 Może być używany tylko w dzień
+venomextractbuff=Lowd mówi, żeby to wypić, nie rób tego
+venomextractbuffdesc=Nie możesz mieć więcej niż 1 PZ
+lifespinel=Trwale zwiększa maksymalne zdrowie o 5, do 320
+
+// General Weapons
+spinsecondaryattack=Naciśnij [input=mouse2], aby następny atak był atakiem obszarowym
+areasecondaryattack=Naciśnij [input=mouse2], aby wykonać atak obszarowy zużywający <mana> many
+stikybuff1=Sprawia, że wróg staje się lepki na 1 sekundę
+stikybuff2=Sprawia, że wróg staje się lepki na 2 sekundy
+stikybuff3=Sprawia, że wróg staje się lepki na 3 sekundy
+projectilearea=Gdy pocisk się kończy, zadaje obrażenia obszarowe
+
+// Melee Weapons
+saber=Naładuj do maksimum, aby zadać pełne obrażenia i uwolnić cięcie powietrzne
+saberdash=Przytrzymaj [input=mouse2], aby naładować doskok i przeciąć wrogów
+battleaxe=Ładowanie zajmuje dużo czasu
+battleaxe2=Naciśnij [input=mouse2], aby aktywować Szał Berserkera i tymczasowo zyskać 3 punkty adrenaliny
+battleaxe3=Zyskuj tymczasowo adrenalinę, uderzając wrogów podczas Szału, poprawiając szybkość ruchu i ataku
+dagger=Przytrzymaj [input=mouse2], aby rzucić sztyletem
+
+// Range Weapons
+sling=Rzuca kamieniami z siłą
+sling2=§7100%§0 szansy na ogłuszenie wroga na 0.5 sekundy
+twoarrows=Wystrzeliwuje dwie strzały naraz
+threearrows=Wystrzeliwuje trzy strzały naraz
+blowgun=Wystrzeliwuje nasiona
+
+// Single Melee Weapons
+woodenrod=Magicznie leczy siebie o §7<healing>§0 co 10 ataków
+voidhammer=Gdy pocisk odbija się lub trafia wroga, celuje w najbliższego, trafiając do 3 razy
+crimsonkora=Przytrzymaj [input=mouse2], aby naładować niszczycielski, ale powolny atak
+thenarcissist=Połącz 4 ataki, aby na piątym uderzeniu uwolnić obrotowy rzut mieczem!\n+20% obrażeń za każdy połączony atak
+
+// Single Range Weapons
+firesling=Pali wrogów
+frozensling=Zamraża wrogów
+gelgreatbow=Zmienia kamienne strzały w żelowe strzały
+unstablegelgreatbow=Zmienia kamienne i żelowe strzały w niestabilne żelowe strzały
+thespammer=Może strzelać pociskami spamowymi
+shotgunsaber=Celuj blisko środka, aby uzyskać potężniejsze, celniejsze i przebijające strzały
+honeysaber=Naładuj do maksimum, aby zadać pełne obrażenia i wystrzelić miód i jagody
+spinelcrossbow=Wystrzeliwuje strzały, które przebijają do 2 wrogów, stając się bardziej zabójcze z każdym przebiciem
+spinelcrossbow2=Przytrzymaj [input=mouse2], aby wystrzelić 3 strzały naraz
+
+// Single Magic Weapons
+unstablegelstaff=Gdy pociski odbijają się od ścian, duplikują się
+harpofharmony=Harmonia: Zwiększona prędkość, regeneracja zdrowia i many
+
+// Single Summoner Weapons
+infectedstaff=Przywołuje dwie żywe sadzonki na jedno przywołanie
+
+// Single Throwable Weapons
+gelball=Rzuca kulą żelową
+
+// Single Magic Healing Tools
+magicalvial=Wskaż rannego człowieka, aby go uleczyć, nie wskazuj nikogo, aby uleczyć siebie
+magicalvial2=Nieskończone użycia
+
+// Ammo
+spambullet=Losowo ma jeden z tych efektów:
+spambullet1=§9Smutny:§0 Zaatakowany wróg staje się lepki, spowalniając go na 5 sekund
+spambullet2=§9Ogień:§0 Zamiast kolizji, pozostawia na ziemi kałużę ognia
+spambullet3=§9Lubię to:§0 Odbija się od ścian i przebija moby, do 10 razy każdy
+spambullet4=§9Sprawdź:§0 Obszar magicznego leczenia o wartości 3 zdrowia na końcu swojej ścieżki
+spambullet5=§9Eksplozja:§0 Eksploduje na końcu swojej ścieżki zamiast kolizji
+
+// Tiles
+geltile=Lepka podłoga, która znacznie spowalnia wszystko na niej
+
+// Objects
+witchstatue=Umieszczenie tego posągu na powierzchni bagna wyeliminuje pojawianie się wiedźm na całej wyspie
+
+// Generic Trinkets
+areawhenheal=Wykonuje ten obszar za każde <magichealing> wykonane magiczne leczenie
+periaptboost=Naciśnij [input=trinketability], aby zyskać premię do prędkości i prędkości ataku na 10 sekund
+
+// Trinkets
+rockyperiapt=§7+5§0 pancerza, ale §6-5%§0 prędkości ruchu
+rockyperiapt2=Naciśnij [input=trinketability], aby zyskać 10 pancerza na 10 sekund
+unstableperiapt=Przywołuje dwa małe niestabilne szlamy żelowe (6 obrażeń przywoływacza)
+unstableperiapt2=Czyni cię odpornym na debuff lepkości
+bloodyperiapt=Ponadto, broń 'Krwawy Pocisk' i 'Krwawa Salwa' kradną §73%§0 życia
+demonicperiapt=Ponadto, broń magiczna kradnie §73%§0 życia
+necromancyperiapt=Za każdym razem, gdy ty lub jeden z twoich przywołańców zabije wrogiego moba, przywołujesz nieumarłego szkieleta
+necromancyperiapt2=20 obrażeń przywoływacza. Trwa 10 sekund i może być maksymalnie 3 naraz
+frozenperiapt=Broń biała i dystansowa zamraża na 3 sekundy
+frozenperiapt2=Zadaje więcej obrażeń mobom dotkniętym zamrożeniem
+frozenperiapt3=Czyni cię odpornym na debuffy zamrożenia i spowolnienia od mrozu
+floralring=Magicznie leczy siebie o §7<healing>§0 co 5 sekund
+gelring=§7+30%§0 otrzymanego magicznego leczenia
+heartring=§7+20§0 maksymalnego zdrowia
+swampshield=Chroni tylko ataki w kierunku, w którym są otrzymywane
+swampshield2=Przy idealnym bloku: magicznie leczy siebie o §7<healing>§0 swojego maksymalnego zdrowia
+iceboots=Sprawia, że ślizgasz się jak na lodzie, ale daje +50% prędkości ruchu i +4 pancerza
+inspirationfoci1=§7+40%§0 efektu inspiracji i §7+20%§0 prędkości umiejętności inspiracji
+inspirationfoci2=§6-20%§0 wszystkich obrażeń nieinspirowanych i §6-1§0 maksymalnych przywołańców
+essenceofhealing=§7+<percent>%§0 magicznego leczenia na esencję życia
+essenceofhealing2=§7<flat>§0 magicznego leczenia na 2 esencje życia
+essenceofhealing3=§6-80%§0 czasu trwania esencji życia, ograniczone do -50%
+ninjascarf=Zamienia doskoki szabli w skoki szabli
+adrenalinecharm=Każde otrzymane uderzenie da ci adrenalinę na 20 sekund
+infectedperiapt=Przywołuje dwie żywe sadzonki (8 obrażeń przywoływacza)
+bloomrushcharm=Zmniejsza zużycie wytrzymałości o 10% za każdą posiadaną adrenalinę\nPrzywołuje żywą sadzonkę (8 obrażeń przywoływacza) za każdą posiadaną adrenalinę
+
+// Set Bonus
+goldhatsetbonus=Jeśli stoisz w miejscu, twoja prędkość ataku dystansowego jest znacznie zwiększona
+pinkwitchsetbonus=Zwiększa prędkość ataku magicznego, regenerację many i pancerz, im niższe jest twoje zdrowie
+infectedsetbonus=Przywołuje trzy żywe sadzonki (8 obrażeń przywoływacza)
+spinelhelmetsetbonus=Magicznie leczy siebie o §7<healing>§0 obrażeń białych zadanych wrogim mobom
+spinelhatsetbonus=Magicznie leczy siebie i wszystkich pobliskich sojuszników\no §7<healing>§0 obrażeń magicznych zadanych wrogim mobom
+
+// Banners
+strikebannereffect=§7+<effect>%§0 regeneracji zdrowia (w walce i poza nią)
+strikebannerability=§aCo <time> sekund:§0 Wykonuje atak obszarowy
+blankbannereffect=§7+<effect>%§0 regeneracji zdrowia (poza walką)
+blankbannerability=§aCo <time> sekund:§0 Wykonuje leczenie obszarowe
+bannerofdamageeffect=§7+<effect>%§0 obrażeń
+bannerofdefenseeffect=§7-<effect>%§0 otrzymywanych obrażeń
+bannerofspeedeffect=§7+<effect>%§0 prędkości ruchu
+bannerofsummonspeedeffect=§7+<effect>%§0 prędkości ruchu przywołańców
+
+// Mighty Banners
+banneroffishingeffect=§7+<effect>§0 mocy wędkarskiej
+bannerofhealthregeneffect=§7+<effectfloat>§0 regeneracji zdrowia w walce
+bannerofmanaregeneffect=§7+<effect>%§0 regeneracji many w walce
+bannerofresistanceeffect=§7+<effect>§0 pancerza
+bannerofsummoningeffect=§7+<effect>§0 maksymalnych przywołańców
+bannerofattackspeedeffect=§7+<effect>%§0 prędkości ataku
+
+// Summoner Expansion Banners
+bannerofresilienceeffect=§7+<effect>%§0 maksymalnej odporności\nRegeneruje §7+<effect>§0 odporności na sekundę
+bannerofbouncingeffect=§7+<effect>§0 odbić pocisków
+bannerofessenceeffect=§7+<effect>%§0 czasu trwania esencji życia
+bannerofstaminaeffect=§7+<effect>%§0 pojemności wytrzymałości\n§7+<effect2>%§0 regeneracji wytrzymałości\n§7-<effect2>%§0 zużycia wytrzymałości
+bannerofpickingeffect=§7+<effectfloat>§0 zasięgu podnoszenia
+bannerofdashingeffect=§7+<effect>§0 ładunków doskoku\n§7-<effect2>%§0 czasu odnowienia doskoku
+bannerofmanaeffect=§7+<effect>%§0 maksymalnej many\n§7<effect2>%§0 regeneracji many
+
+// Runes (General)
+baserune=§iRuna Podstawowa
+modifierrune=§aRuna Modyfikująca
+linkedrune=§bRuna połączona z [<player>]
+notruneowner=Nie jesteś właścicielem runy podstawowej
+runesslots=Można włożyć do 1 runy podstawowej + <modifierslots> run modyfikujących
+useruneinfusor=[input=runesinjectorability] aby aktywować
+requiresbaserune=Wymagana jest włożona runa podstawowa
+onlyonebaserune=Można włożyć tylko jedną runę podstawową naraz
+duplicatedmodifierrunes=Nie można włożyć więcej niż jednej takiej samej runy modyfikującej
+runehealthcost=Zużywa <health>% maksymalnego zdrowia po aktywacji
+runehealthhealing=Przywraca <health>% maksymalnego zdrowia po użyciu
+runecooldown=Ładuje się ponownie w <seconds> sekund
+increaseruneeffectnumber=Zwiększa efekt o §7<variation>%§0
+decreaseruneeffectnumber=Zmniejsza efekt o §6<variation>%§0
+increaserunecooldown=Zwiększa czas odnowienia o §6<variation>%§0
+decreaserunecooldown=Zmniejsza czas odnowienia o §7<variation>%§0
+increaserunehealthcost=Zwiększa zużycie maksymalnego zdrowia o §6<health>%§0
+increaserunehealthhealing=Zwiększa przywracanie maksymalnego zdrowia o §7<health>%§0
+runedamagereduction=Obrażenia są drastycznie zmniejszone przeciwko ludziom, a jeszcze bardziej przeciwko bossom
+runedamagereductionnoboss=Obrażenia są drastycznie zmniejszone przeciwko ludziom i nie wpływają na bossów
+moreextraeffectmod=Modyfikacje efektu są o <mod>% bardziej skuteczne
+lessextraeffectmod=Modyfikacje efektu są o <mod>% mniej skuteczne
+
+// Runes Injectors
+
+// Base Runes Tier 0
+runeoffury=Zwiększa twoje obrażenia i prędkość ataku o §7<effectNumber>§0% na 10 sekund
+runeofspeed=Doskocz z siłą §7<effectNumber>§0 w kierunku, w którym się poruszasz i stań się nietykalny na 0.5 sekundy
+runeofresistance=Zwiększa twój pancerz o §7<effectNumber>§0% na 10 sekund
+runeofresistance2=Podczas odnawiania, twój pancerz jest zmniejszony o połowę
+runeofvalor=+200% inspiracji na §7<effectNumber>§0 sekund
+runeofdetonation=Wybucha, zadając więcej obrażeń i odpychając wrogów, im są bliżej
+runeofdetonation2=Maksymalne obrażenia to §7<effectNumber>§0% maksymalnego zdrowia mobów
+runeofthunder=Po dwóch sekundach, piorun uderza w początkową pozycję twojego kursora
+runeofthunder2=Piorun zadaje §7<effectNumber>§0% zdrowia mobów jako obrażenia i ogłusza na 2 sekundy
+runeofwinter=Spowalnia mrozem wrogów w promieniu 500 na §7<effectNumber>§0 sekund
+runeofimmortality=Jeśli umrzesz w ciągu następnych §7<effectNumber>§0 sekund, przeżyjesz z maksymalnym zdrowiem
+runeofimmortality2=Jeśli tak się stanie, będziesz nietykalny przez 3 sekundy, ale czas odnowienia wyniesie 30 sekund
+runeofimmortality3=Podczas odnawiania, twoje maksymalne zdrowie jest zmniejszone o połowę
+runeofshadows=Na §7<effectNumber>§0 sekund staniesz się niewidzialny, ale także zastraszony, co uniemożliwi ci podejmowanie jakichkolwiek działań
+
+// Base Runes Tier 1
+runeofunstablegelslime=Teleportuj się do pobliskiej lokalizacji i przywołaj 2 runiczne niestabilne szlamy żelowe na §7<effectNumber>§0 sekund
+runeofunstablegelslime2=Przywołańcy zadadzą 5% maksymalnego zdrowia mobów jako obrażenia
+runeofevilsprotector=+§7<effectNumber>§0% prędkości ataku, ale -50% prędkości ruchu na 10 sekund
+runeofevilsprotector2=W nocy na powierzchni, pozytywny efekt jest podwojony
+runeofqueenspider=Pozostawia na ziemi pajęczynę na §7<effectNumber>§0 sekund
+runeofvoidwizard=Wszystkie pociski będą odbijać się w nieskończoność i +§7<effectNumber>§0% prędkości pocisków na 10 sekund
+runeofswampguardian=Zmniejsza wszystkie otrzymywane obrażenia o 80% na §7<effectNumber>§0 sekund
+runeofancientvulture=Przywołuje runicznego pisklaka sępa na 10 sekund
+runeofancientvulture2=Przywołaniec zada §7<effectNumber>§0% maksymalnego zdrowia mobów jako obrażenia
+runeofpiratecaptain=Zwiększa twoje obrażenia o §7<effectNumber>§0% za każde 200 posiadanych monet, do maksymalnie 20 000 monet
+runeofpiratecaptain2=Za każdym razem, gdy atakujesz, stracisz 3 monety
+runeofchieftain=Przez następne 20 sekund, twoje obrażenia rosną, im niższe jest twoje zdrowie, do maksymalnie +§7<effectNumber>§0%
+
+// Base Runes Tier 2
+runeofreaper=Teleportuj się do pozycji myszy. Maksymalna odległość §7<effectNumber>§0
+runeofcryoqueen=Zatrzymaj się na 1 sekundę i wystrzel atak lodowy wokół siebie o zasięgu §7<effectNumber>§0
+runeofcryoqueen2=Pociski zadadzą 200% maksymalnego zdrowia mobów jako obrażenia
+runeofpestwarden=Przez następne §7<effectNumber>§0 sekund, zderzenie z wrogami zadaje im obrażenia i odpycha ich
+runeofpestwarden2=Obrażenia wynoszą 20% ich maksymalnego zdrowia
+runeofsageandgrit=Jeśli w pobliżu są ranni sojusznicy (zasięg 500), ulecz §7<effectNumber>§0% ich całkowitego zdrowia
+runeofsageandgrit2=Jeśli nie, zwiększ swoje obrażenia, prędkość ataku i prędkość ruchu o +§7<effectNumber>§0% na 20 sekund
+runeoffallenwizard=Ogłusz wszystkie moby oprócz ciebie na §7<effectNumber>§0 sekund
+runeoffallenwizard2=Ludzie uwolnią się szybciej, a bossowie jeszcze szybciej
+runeofbabylontower=+§7<effectNumber>§0% wszystkich obrażeń, ale nie możesz się ruszać. 10 sekund
+
+// Base Runes Tier 3
+runeofmotherslime=Wykonaj duży skok w kierunku pozycji myszy i zadaj obrażenia obszarowe po wylądowaniu
+runeofmotherslime2=Lądowanie zada §7<effectNumber>§0% maksymalnego zdrowia mobów jako obrażenia
+runeofnightswarm=Przywołaj 5 nietoperzy na §7<effectNumber>§0 sekund, które szukają wrogich mobów, aby je ugryźć
+runeofnightswarm2=Każde ugryzienie przywraca 1% twojego całkowitego zdrowia (co najmniej 1)
+runeofspiderempress=Rzuca §7<F0effectNumber>§0 kulami pajęczyny w kierunku myszy
+runeofspiderempress2=Kule pajęczyny ogłuszą na 3 sekundy i spowolnią na 10 sekund
+runeofsunlightchampion=Zostajesz ogłuszony na 3 sekundy, ładując nową o zasięgu §7<effectNumber>§0
+runeofsunlightchampion2=Nowa zada 200% maksymalnego zdrowia mobów jako obrażenia
+runeofmoonlightdancer=+§7<effectNumber>§0% obrażeń za każdy +1% prędkości ruchu na 10 sekund
+runeofcrystaldragon=Rzuć promień lasera w pozycję kursora na 5 sekund
+runeofcrystaldragon2=Laser zada §7<effectNumber>§0% maksymalnego zdrowia mobów jako obrażenia
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+onyxrune=Po aktywacji, przywołuje Oniksa na 5 sekund. Zada obrażenia oparte na 5% zdrowia moba
+onyxrune2=Każde ugryzienie Oniksa przywraca 1% twojego całkowitego zdrowia (co najmniej 1)
+onyxrune3=§3Dzięki Oniksowi za genialne pomysły na runy! <3
+pawningrune=Po aktywacji, jeśli jeszcze nie masz efektu, natychmiast przywraca 20% twojego maksymalnego zdrowia
+pawningrune2=Po 10 sekundach stracisz przywróconą ilość plus dodatkowe 40%
+
+// Modifier Runes Tier 2
+abysmalrune=Po aktywacji, przywołuje czarną dziurę w pozycji kursora, wciągając wrogów na 2 sekundy
+abysmalrune2=Czarna dziura zostanie przywołana tylko wtedy, gdy od ostatniej aktywacji minęło 10 sekund
+tidalrune=Po aktywacji, przywołuje falę wody, która odpycha wrogów
+
+// Modifier Runes Tier 3
+
+
+[mobtooltip]
+usenet=Użyj siatki! [item=net]
+
+
+[mob]
+// Hostile
+gelslime=Szlam Żelowy
+rockygelslime=Skalisty Szlam Żelowy
+unstablegelslime=Niestabilny Szlam Żelowy
+miniunstablegelslime=Mini Niestabilny Szlam Żelowy
+pinkwitch=Różowa Wiedźma
+voidadept=Adept Pustki
+copperdaggergoblin=Goblin z Miedzianym Sztyletem
+irondaggergoblin=Goblin z Żelaznym Sztyletem
+golddaggergoblin=Goblin ze Złotym Sztyletem
+infectedtreant=Zainfekowany Ent
+spinelgolem=Golem Spinelowy
+spinelcaveling=Jaskiniowiec Spinelowy
+tungstencaveling=Jaskiniowiec Wolframowy
+spinelmimic=Mimik Spinelowy
+babylontower=Wieża Babel
+hearthcrystal=Kryształ Ogniska
+babylon=Babilon
+
+// Friendly
+wildphosphorslime=Dziki Szlam Fosforowy
+
+// Summon
+babyunstablegelslime=Mały Niestabilny Szlam Żelowy
+undeadskeleton=Nieumarły Szkielet
+volatilegelslime=Lotny Szlam Żelowy
+runicunstablegelslime=Runiczny Niestabilny Szlam Żelowy
+runicvulturehatchling=Runiczny Pisklak Sępa
+runicbat=Runiczny Nietoperz
+onyx=Oniks
+livingsapling=Żywa Sadzonka
+
+// Pet
+petphosphorslime=Szlam Fosforowy
+
+
+[buff]
+// Common Buffs
+stunbuff=Ogłuszenie
+fallenstunbuff=Upadłe Ogłuszenie
+stickybuff=Lepki
+stopbuff=Zatrzymany
+honeyedbuff=Miodowy
+venomextractbuff=Ekstrakt Jadu
+cursedbuff=Przeklęty
+adrenalinebuff=Adrenalina
+harmonybuff=Harmonia
+
+// Active Buffs
+berserkerrushactive=Szał Berserkera Aktywny
+periaptactive=Umiejętność Amuletu Aktywna
+runesinjectoractive=Wstrzykiwacz Run Aktywny
+
+// Cooldown Buffs
+berserkerrushcooldown=Szał Berserkera w Trakcie Odnawiania
+periaptcooldown=Umiejętność Amuletu w Trakcie Odnawiania
+runesinjectorcooldown=Wstrzykiwacz Run w Trakcie Odnawiania
+spinattackcooldown=Atak Obrotowy w Trakcie Odnawiania
+saberdashcooldown=Doskok Szabli w Trakcie Odnawiania
+
+
+[message]
+unstablegelslime_anger=§6Niestabilny Szlam Żelowy się złości... <anger>/10
+unstablegelslime_fullanger=§6Niestabilny Szlam Żelowy się wściekł! <anger>/10
+unstablegelslime_night=§6Niestabilny Szlam Żelowy§0 zniknął z nadejściem nocy!
+gelslimesnulled=Szlamy Żelowe w tym świecie zostały zneutralizowane. Już się nie pojawią
+gelslimesunnulled=Szlamy Żelowe w tym świecie zostały dopuszczone. Teraz będą się pojawiać
+pinkwitchesnulled=Różowe Wiedźmy zostały zneutralizowane w (<x>, <y>)
+pinkwitchesunnulled=Różowe Wiedźmy zostały dopuszczone w (<x>, <y>)
+needfreeslots=Potrzebujesz <slots> wolnych miejsc w ekwipunku, aby tego użyć
+cantuseatnight=Nie można używać w nocy
+healthalreadyfull=Zdrowie jest już pełne
+cantheal=Nie można leczyć
+insuficienthealth=Niewystarczająca ilość zdrowia, aby wykonać tę akcję!
+cannottrhowlockeditem=Nie możesz wyrzucić przedmiotu zablokowanego w ekwipunku
+initialrunetip=Wybierz ostrożnie swoją początkową runę;\nnie zdobędziesz innych aż do późniejszej fazy gry
+alreadyselectedinitialrune=Początkowa runa została już wybrana
+cannotusetrial=Nie można używać w pokojach prób
+
+[biome]
+infectedfields=Zainfekowane Pola
+
+
+[journal]
+
+//Levels
+infectedfieldssurface=Powierzchnia Zainfekowanych Pól
+infectedfieldscave=Jaskinia Zainfekowanych Pól
+
+// Forest Surface Challenges
+killgelslimesforest=[mob=gelslime] Zabij 25 Szlamów Żelowych w lesie
+pickupfloralring=[item=floralring] Zetnij dużo trawy w lesie, aby zdobyć Kwiatowy Pierścień
+killunstablegelslime=[mob=unstablegelslime] Zabij 1 Niestabilnego Szlamu Żelowego
+
+// Swamp Surface Challenges
+killpinkwitchesswamp=[mob=pinkwitch] W nocy, zabij 5 Różowych Wiedźm na powierzchni bagna
+
+// Infected Fields Surface Challenges
+pickupinfectedlogs=[item=infectedlog] Zetnij, aby zebrać 100 Zainfekowanych Kloców
+
+// Infected Fields Cave Challenges
+pickupspinel=[item=spinel] Zbierz 40 Spineli
+activatebabylontower=[item=lifespinel] Umieść Spinel Życia na Wieży Babel
+findthespammer=[item=thespammer] Znajdź Spamera
+
+
+[controls]
+runesinjectorability=Umiejętność Wstrzykiwacza Run
+
+
+[runestutorialbook]
+openheader=Otwieranie Wstrzykiwacza Run
+opentext=Aby używać run, będziesz potrzebować Wstrzykiwacza Run. Te specjalne urządzenia można otworzyć, aby włożyć runy. Każdy wstrzykiwacz ma jedno gniazdo na Runę Podstawową i wiele gniazd na Runy Modyfikujące, w zależności od jego pojemności. Możesz dodać tyle Run Modyfikujących, ile pozwala wstrzykiwacz, eksperymentuj, aby znaleźć najlepsze kombinacje!
+equipheader=Wyposażanie Wstrzykiwacza
+equiptext=Aby aktywować swoje runy, Wstrzykiwacz Run musi być wyposażony w gnieździe na bibeloty. Po wyposażeniu, po prostu naciśnij G (lub klawisz przypisany w ustawieniach), aby wywołać jego efekty. Upewnij się, że wstrzykiwacz jest prawidłowo skonfigurowany i gotowy, zanim przystąpisz do działania!
+
+runesheader=Czym są Runy?
+runestext=Runy to mistyczne kamienie, które zapewniają potężne efekty po włożeniu do Wstrzykiwacza Run. Ich siła i zachowanie zależą od tego, jak są połączone, opanowanie ich użycia jest kluczem do uwolnienia pełnego potencjału.
+baserunesheader=Runy Podstawowe
+baserunestext=Każdy Wstrzykiwacz Run wymaga dokładnie jednej Runy Podstawowej do działania. Runa Podstawowa definiuje główny efekt wstrzykiwacza i działa jako rdzeń twojej konfiguracji. Zauważysz zieloną liczbę obok efektu, reprezentuje ona jego wartość efektu, którą można zwiększyć lub zmniejszyć za pomocą modyfikatorów.
+modifierrunesheader=Runy Modyfikujące
+modifierrunestext=Runy Modyfikujące służą do dostosowywania i ulepszania efektu twojej Runy Podstawowej. Mogą one modyfikować wartość efektu, zmieniać jego zachowanie lub dodawać specjalne właściwości. Jednak Runy Modyfikujące zawsze wiążą się z kompromisami: żaden modyfikator nie jest czysto korzystny, więc wybieraj mądrze!
+
+tableheader=Stół Runiczny
+tabletext=Stół Runiczny to twoja główna stacja do tworzenia szerokiej gamy run. Większość standardowych run można tu stworzyć, ale pamiętaj: niektóre potężne runy można znaleźć tylko poprzez eksplorację. Miej oczy szeroko otwarte, przygoda nagradza ciekawskich!
+crafttext=W Warsztacie Runicznym znajdziesz wszystko, czego potrzebujesz, aby zacząć. Połącz zawartość ze swoją Początkową Runą i Runą Podstawową, którą możesz stworzyć na Stole Runicznym, a będziesz miał w pełni funkcjonalny Wstrzykiwacz Run gotowy do wyposażenia!

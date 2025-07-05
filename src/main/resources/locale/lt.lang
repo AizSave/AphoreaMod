@@ -1,0 +1,653 @@
+# Translation made by AI
+
+[global]
+aphorea=§!Aphorea Mod
+aphorearework=§!Aphorea Mod Perdarymas
+aphoreamightybanner=§!Aphorea Mod x Mighty Banner Mod
+aphoreasummonerexpansion=§!Aphorea Mod x Summoner Išplėtimas
+
+
+[buffmodifiers]
+// Magic Healing
+magichealing=<mod>% magiško gydymo
+magichealingflat=<mod> magiško gydymo
+magichealingreceived=<mod>% gauto magiško gydymo
+magichealingreceivedflat=<mod> gauto magiško gydymo
+magichealinggrace=<mod>% magiško gydymo malonės
+
+// Area
+arearange=<mod>% ploto diapazono
+
+// Inspiration Damage
+inspirationdamage=<mod>% įkvėpimo žalos
+inspirationcritchance=<mod>% įkvėpimo kritinės tikimybės
+inspirationcritdamage=<mod>% įkvėpimo kritinės žalos
+inspirationeffect=<mod>% įkvėpimo efekto
+inspirationabilityspeed=<mod>% įkvėpimo gebėjimo greičio
+
+// Others
+loyal=Durtuvas neprarandamas jį metant
+
+
+[stats]
+inspiration_damage=Įkvėpimo žala
+
+
+[enchantment]
+// Healing Equipment
+godly=Dieviškas
+absent=Trūkstamas
+auxiliary=Pagalbinis
+vain=Tuščias
+gentle=Švelnus
+selfish=Savanaudis
+
+// Healing
+friendly=Draugiškas
+graceful=Grakštus
+wonderful=Nuostabus
+ecologic=Ekologiškas
+exalted=Išaukštintas
+cursed=Prakeiktas
+
+// Area
+booming=Klestintis
+dimmed=Pritemęs
+
+// Others
+loyal=Ištikimas
+
+
+[tile]
+geltile=Gelinės grindys
+infectedwatertile=Užkrėstas vanduo
+infectedgrasstile=Užkrėsta žolė
+spinelgravel=Spinelio žvyras
+
+
+[tech]
+runes=Runos
+
+
+[object]
+witchstatue=Raganos statula
+runestable=Runų stalas
+#NEW
+infectedsapling=Užkrėstas daigas
+spinelcluster=Spinelio sankaupa
+spinelcluster_small=Maža spinelio sankaupa
+gelrock=Gelinė uola
+infectedtree=Užkrėstas medis
+infectedgrass=Užkrėsta žolė
+spinelchest=Spinelio skrynia
+fakespinelchest=Netikra spinelio skrynia
+babylontower=Babelio bokštas
+babylonentrance=Įėjimas į Babelį
+babylonexit=Išėjimas iš Babelio
+infectedtrialentrance=Įėjimas į užkrėstą išbandymą
+infectedchair=Užkrėsta kėdė
+infecteddinnertable=Užkrėstas pietų stalas
+infectedbookshelf=Užkrėsta knygų lentyna
+infectedcabinet=Užkrėsta spintelė
+infectedbed=Užkrėsta lova
+infecteddoublebed=Užkrėsta dvigulė lova
+infectedcandelabra=Užkrėstas žvakidė
+
+
+[itemcategory]
+healing=Gydymas
+healingtools=Gydymo įrankiai
+runes=Runos
+runesinjectors=Runų injektoriai
+baserunes=Pagrindinės runos
+modifierrunes=Modifikavimo runos
+
+
+[item]
+// General Materials
+anybasicfoci=Bet koks pagrindinis fokusas
+
+// Materials
+rockygel=Akmeninis gelis
+unstablegel=Nestabilus gelis
+stardust=Žvaigždžių dulkės
+infectedlog=Užkrėstas rąstas
+infectedalloy=Užkrėstas lydinys
+spinel=Spinelis
+lifespinel=Gyvybės spinelis
+
+// Consumables
+unstablecore=Nestabilus branduolys
+initialrune=Pradinė runa
+venomextract=Nuodų ekstraktas
+
+// Swords
+gelsword=Gelinis kardas
+unstablegelsword=Nestabilus gelinis kardas
+broom=Šluota
+voidhammer=Tuštumos kūjis
+brokenkora=Sulaužyta kora
+thenarcissist=Narcizas
+cryokatana=Kriokatana
+
+// Greatswords
+unstablegelgreatsword=Nestabilus gelinis didysis kardas
+babylongreatsword=Babelio didysis kardas
+
+// Glaives
+woodenrod=Medinis strypas
+
+// Sabers
+saber=Kardas
+coppersaber=Varinis kardas
+ironsaber=Geležinis kardas
+goldsaber=Auksinis kardas
+demonicsaber=Demoniškas kardas
+unstablegelsaber=Nestabilus gelinis kardas
+honeysaber=Medaus kardas
+glacialsaber=Ledynų kardas
+crimsonkora=Raudonoji kora
+
+// Battleaxes
+battleaxe=Kovos kirvis
+unstablegelbattleaxe=Nestabilus gelinis kovos kirvis
+demonicbattleaxe=Demoniškas kovos kirvis
+
+// Daggers
+dagger=Durtuvas
+copperdagger=Varinis durtuvas
+irondagger=Geležinis durtuvas
+golddagger=Auksinis durtuvas
+demonicdagger=Demoniškas durtuvas
+tungstendagger=Volframo durtuvas
+lostumbrella=Pamestas skėtis
+
+// Rapiers
+fossilrapier=Fosilijų rapierius
+lightrapier=Šviesos rapierius
+
+// Magic weapons
+unstablegelstaff=Nestabilus gelinis lazda
+magicalbroom=Magiška šluota
+adeptsbook=Adeptų knyga
+harpofharmony=Harmonijos arfa
+babyloncandle=Babelio žvakė
+
+// Bows
+spinelcrossbow=Spinelio arbaletas
+
+// Guns
+thespammer=Spameris
+
+// Bullets
+spambullet=Spamo kulka
+
+// Greatbows
+gelgreatbow=Gelinis didysis lankas
+unstablegelgreatbow=Nestabilus gelinis didysis lankas
+
+// Arrows
+gelarrow=Gelinė strėlė
+unstablegelarrow=Nestabilus gelinė strėlė
+
+// Saber Guns
+sabergun=Kardo pistoletas
+shotgunsaber=Šratinis kardas
+
+// Slings
+sling=Svaidyklė
+firesling=Ugnies svaidyklė
+frozensling=Sušalusi svaidyklė
+
+// Blowguns
+blowgun=Pūslė
+
+// Throw weapons
+gelball=Gelinis kamuolys
+gelballgroup=Sugrupuoti geliniai kamuoliai
+unstablegelveline=Nestabilus gelinis ietis
+
+// Summon weapons
+volatilegelstaff=Lakus gelinis lazda
+infectedstaff=Užkrėstas lazda
+
+// Banners
+blankbanner=Tuščia vėliava
+
+// Healing Tools
+healingtool=Gydymo įrankis
+magicalvial=Magiškas buteliukas
+healingstaff=Gydymo lazda
+woodenwand=Medinė lazdelė
+goldenwand=Auksinė lazdelė
+spinelstaff=Spinelio lazda
+
+// Tools
+superiorpickaxe=Puikus kirtiklis
+
+// Trinkets
+rockyperiapt=Akmeninis periaptas
+unstableperiapt=Nestabilus periaptas
+bloodyperiapt=Kruvinas periaptas
+demonicperiapt=Demoniškas periaptas
+abysmalperiapt=Bedugnės periaptas
+frozenperiapt=Sušalęs periaptas
+necromancyperiapt=Nekromantijos periaptas
+floralring=Gėlių žiedas
+gelring=Gelinis žiedas
+heartring=Širdies žiedas
+ringofhealth=Sveikatos žiedas
+swampshield=Pelkių skydas
+witchmedallion=Raganos medalionas
+iceboots=Ledo batai
+inspirationfoci=Įkvėpimo fokusas
+cursedmedallion=Prakeiktas medalionas
+ancientmedallion=Senovinis medalionas
+essenceofhealing=Gydymo esencija
+ninjascarf=Nindzės šalikas
+adrenalinecharm=Adrenalino amuletas
+spinelshield=Spinelio skydas
+bloomrushcharm=Žydėjimo antplūdžio amuletas
+infectedperiapt=Užkrėstas periaptas
+
+// Armor
+rockyboots=Akmeniniai batai
+rockychestplate=Akmeninis antkrūtinis
+rockyhelmet=Akmeninis šalmas
+goldhat=Auksinė kepurė
+pinkwitchhat=Rožinė raganos kepurė
+magicalsuit=Magiškas kostiumas
+magicalboots=Magiški batai
+swampboots=Pelkių batai
+swampchestplate=Pelkių antkrūtinis
+swampmask=Pelkių kaukė
+swamphood=Pelkių gobtuvas
+infectedhat=Užkrėsta kepurė
+infectedchestplate=Užkrėstas antkrūtinis
+infectedboots=Užkrėsti batai
+spinelhelmet=Spinelio šalmas
+spinelhat=Spinelio kepurė
+spinelchestplate=Spinelio antkrūtinis
+spinelboots=Spinelio batai
+
+// Misc
+gelslimenullifier=Jie nustos jus varginti vienu paprastu paspaudimu!
+enchantingscrollhealingequipmenttip=Naudojamas gydymo įrangos daiktui užburti su <enchantment>\n§!Aphorea Mod
+enchantingscrollhealingtip=Naudojamas gydymo įrankiui užburti su <enchantment>\n§!Aphorea Mod
+enchantingscrollareatip=Naudojamas ploto poveikio įrankiui užburti su <enchantment>\n§!Aphorea Mod
+enchantingscrolldaggertip=Naudojamas durtuvo ginklui užburti su <enchantment>\n§!Aphorea Mod
+backpack=Tai naujas inventorius, kuriame saugomi visi surinkti daiktai
+backpackslots=Talpa <slots> daiktų
+stored=Saugojami daiktai: <items>
+backpackcraft=Turi būti tuščias, kad būtų galima pagaminti geresnę kuprinę
+
+// Consumables
+deleteditem=Šis daiktas buvo pašalintas, naudokite šį daiktą, kad atgautumėte medžiagas, kol jis nebus visam laikui pašalintas
+unstablecore=§bIšlaisvina nestabilią aurą...§0 Galima naudoti tik dieną
+venomextractbuff=Lowdas sako išgerti, nedaryk to
+venomextractbuffdesc=Negalite turėti daugiau nei 1 HP
+lifespinel=Visam laikui padidina maksimalią sveikatą 5, iki 320
+
+// General Weapons
+spinsecondaryattack=Paspauskite [input=mouse2], kad kitas puolimas būtų ploto puolimas
+areasecondaryattack=Paspauskite [input=mouse2], kad atliktumėte ploto puolimą, sunaudojantį <mana> manos
+stikybuff1=Padaro priešą lipnų 1 sekundei
+stikybuff2=Padaro priešą lipnų 2 sekundėms
+stikybuff3=Padaro priešą lipnų 3 sekundėms
+projectilearea=Kai sviedinys baigiasi, jis padaro ploto žalą
+
+// Melee Weapons
+saber=Įkraukite iki maksimumo, kad padarytumėte visą žalą ir paleistumėte oro kirtį
+saberdash=Laikykite [input=mouse2], kad įkrautumėte puolimą ir perpjautumėte priešus
+battleaxe=Įkrovimas trunka ilgai
+battleaxe2=Paspauskite [input=mouse2], kad aktyvuotumėte Berserkerio puolimą ir laikinai gautumėte 3 adrenalino
+battleaxe3=Laikinai gaukite adrenalino, mušdami priešus puolimo metu, pagerindami judėjimo ir puolimo greitį
+dagger=Laikykite [input=mouse2], kad mestumėte durtuvą
+
+// Range Weapons
+sling=Mėto akmenis su jėga
+sling2=§7100%§0 tikimybė apsvaiginti priešą 0.5 sekundės
+twoarrows=Šaudo dviem strėlėmis vienu metu
+threearrows=Šaudo trimis strėlėmis vienu metu
+blowgun=Šaudo sėklomis
+
+// Single Melee Weapons
+woodenrod=Kas 10 atakų magiškai gydo save §7<healing>§0
+voidhammer=Kai sviedinys atšoka arba pataiko į priešą, jis nusitaiko į artimiausią, pataikydamas iki 3 kartų
+crimsonkora=Laikykite [input=mouse2], kad įkrautumėte niokojantį, bet lėtą puolimą
+thenarcissist=Sujunkite 4 atakas, kad penktuoju smūgiu paleistumėte besisukantį kardo metimą!\n+20% žalos už kiekvieną sujungtą ataką
+
+// Single Range Weapons
+firesling=Sudegina priešus
+frozensling=Sušaldo priešus
+gelgreatbow=Paverčia akmenines strėles gelinėmis strėlėmis
+unstablegelgreatbow=Paverčia akmenines ir gelines strėles nestabiliomis gelinėmis strėlėmis
+thespammer=Gali šaudyti spamo kulkomis
+shotgunsaber=Nusitaikykite arti centro, kad šūviai būtų galingesni, tikslesni ir skvarbesni
+honeysaber=Įkraukite iki maksimumo, kad padarytumėte visą žalą ir šaudytumėte medumi ir mėlynėmis
+spinelcrossbow=Šaudo strėlėmis, kurios pramuša iki 2 priešų, su kiekvienu pramušimu tampančios vis mirtingesnės
+spinelcrossbow2=Laikykite [input=mouse2], kad šaudytumėte 3 strėlėmis vienu metu
+
+// Single Magic Weapons
+unstablegelstaff=Kai sviediniai atšoka nuo sienų, jie pasidaugina
+harpofharmony=Harmonija: Padidintas greitis, sveikatos ir manos regeneracija
+
+// Single Summoner Weapons
+infectedstaff=Iškviečia du gyvus daigus per vieną iškvietimą
+
+// Single Throwable Weapons
+gelball=Mėto gelinį kamuolį
+
+// Single Magic Healing Tools
+magicalvial=Nukreipkite į sužeistą žmogų, kad jį išgydytumėte, nenukreipkite į nieką, kad išgydytumėte save
+magicalvial2=Begalinis naudojimas
+
+// Ammo
+spambullet=Atsitiktinai turi vieną iš šių efektų:
+spambullet1=§9Liūdnas:§0 Užpultas priešas tampa lipnus, sulėtindamas jį 5 sekundėms
+spambullet2=§9Ugnis:§0 Užuot susidūręs, palieka ugnies balą ant žemės
+spambullet3=§9Patinka:§0 Atšoka nuo sienų ir pramuša mobus, iki 10 kartų kiekvienas
+spambullet4=§9Patikrinti:§0 3 sveikatos magiško gydymo sritis savo kelio pabaigoje
+spambullet5=§9Sprogimas:§0 Sprogsta savo kelio pabaigoje, užuot susidūręs
+
+// Tiles
+geltile=Lipnios grindys, kurios labai sulėtina viską, kas ant jų yra
+
+// Objects
+witchstatue=Pastačius šią statulą pelkės paviršiuje, visoje saloje nebeatsiras raganų
+
+// Generic Trinkets
+areawhenheal=Vykdo šią sritį už kiekvieną <magichealing> atliktą magišką gydymą
+periaptboost=Paspauskite [input=trinketability], kad 10 sekundžių gautumėte greičio ir puolimo greičio padidinimą
+
+// Trinkets
+rockyperiapt=§7+5§0 šarvų, bet §6-5%§0 judėjimo greičio
+rockyperiapt2=Paspauskite [input=trinketability], kad 10 sekundžių gautumėte 10 šarvų
+unstableperiapt=Iškviečia du nestabilius gelinius gleivių kūdikius (6 iškvietimo žalos)
+unstableperiapt2=Padaro jus imunitetą lipniam debuffui
+bloodyperiapt=Taip pat ginklai 'Kraujo strėlė' ir 'Kraujo salvė' pavogs §73%§0 gyvybės
+demonicperiapt=Taip pat magiški ginklai pavogs §73%§0 gyvybės
+necromancyperiapt=Kiekvieną kartą, kai jūs arba vienas iš jūsų iškvietimų nužudo priešišką mobą, jūs iškviečiate negyvą skeletą
+necromancyperiapt2=20 iškvietimo žalos. Trunka 10 sekundžių ir vienu metu gali būti ne daugiau kaip 3
+frozenperiapt=Artimosios ir tolimosios kovos ginklai sušals 3 sekundėms
+frozenperiapt2=Padaro daugiau žalos mobams, paveiktiems sušalimo
+frozenperiapt3=Padaro jus imunitetą sušalimo ir šalčio sulėtėjimo debuffams
+floralring=Kas 5 sekundes magiškai gydo save §7<healing>§0
+gelring=§7+30%§0 gauto magiško gydymo
+heartring=§7+20§0 maksimalios sveikatos
+swampshield=Apsaugo tik atakas ta kryptimi, kuria jos gaunamos
+swampshield2=Puikiai blokuojant: magiškai gydo save §7<healing>§0 savo maksimalios sveikatos
+iceboots=Leidžia slysti lyg ant ledo, bet suteikia +50% judėjimo greičio ir +4 šarvų
+inspirationfoci1=§7+40%§0 įkvėpimo efekto ir §7+20%§0 įkvėpimo gebėjimo greičio
+inspirationfoci2=§6-20%§0 visos ne įkvėpimo žalos ir §6-1§0 maksimalių iškvietimų
+essenceofhealing=§7+<percent>%§0 magiško gydymo už gyvybės esenciją
+essenceofhealing2=§7<flat>§0 magiško gydymo už 2 gyvybės esencijas
+essenceofhealing3=§6-80%§0 gyvybės esencijos trukmės, apribota iki -50%
+ninjascarf=Paverčia kardo puolimus kardo šuoliais
+adrenalinecharm=Kiekvienas gautas smūgis suteiks jums adrenalino 20 sekundžių
+infectedperiapt=Iškviečia du gyvus daigus (8 iškvietimo žalos)
+bloomrushcharm=Sumažina ištvermės naudojimą 10% už kiekvieną turimą adrenaliną\nIškviečia gyvą daigą (8 iškvietimo žalos) už kiekvieną turimą adrenaliną
+
+// Set Bonus
+goldhatsetbonus=Jei stovite vietoje, jūsų tolimojo puolimo greitis labai padidėja
+pinkwitchsetbonus=Padidina magiško puolimo greitį, manos regeneraciją ir šarvus, kuo mažesnė jūsų sveikata
+infectedsetbonus=Iškviečia tris gyvus daigus (8 iškvietimo žalos)
+spinelhelmetsetbonus=Magiškai gydo save §7<healing>§0 artimosios kovos žalos, padarytos priešiškiems mobams
+spinelhatsetbonus=Magiškai gydo save ir visus artimus sąjungininkus\n§7<healing>§0 magiškos žalos, padarytos priešiškiems mobams
+
+// Banners
+strikebannereffect=§7+<effect>%§0 sveikatos regeneracijos (kovoje ir ne kovoje)
+strikebannerability=§aKas <time> sekundes:§0 Atlieka ploto puolimą
+blankbannereffect=§7+<effect>%§0 sveikatos regeneracijos (ne kovoje)
+blankbannerability=§aKas <time> sekundes:§0 Atlieka ploto gydymą
+bannerofdamageeffect=§7+<effect>%§0 žalos
+bannerofdefenseeffect=§7-<effect>%§0 gaunamos žalos
+bannerofspeedeffect=§7+<effect>%§0 judėjimo greičio
+bannerofsummonspeedeffect=§7+<effect>%§0 iškvietimų judėjimo greičio
+
+// Mighty Banners
+banneroffishingeffect=§7+<effect>§0 žvejybos galios
+bannerofhealthregeneffect=§7+<effectfloat>§0 kovos sveikatos regeneracijos
+bannerofmanaregeneffect=§7+<effect>%§0 kovos manos regeneracijos
+bannerofresistanceeffect=§7+<effect>§0 šarvų
+bannerofsummoningeffect=§7+<effect>§0 maksimalių iškvietimų
+bannerofattackspeedeffect=§7+<effect>%§0 puolimo greičio
+
+// Summoner Expansion Banners
+bannerofresilienceeffect=§7+<effect>%§0 maksimalaus atsparumo\nRegeneruoja §7+<effect>§0 atsparumo per sekundę
+bannerofbouncingeffect=§7+<effect>§0 sviedinių atšokimų
+bannerofessenceeffect=§7+<effect>%§0 gyvybės esencijos trukmės
+bannerofstaminaeffect=§7+<effect>%§0 ištvermės talpos\n§7+<effect2>%§0 ištvermės regeneracijos\n§7-<effect2>%§0 ištvermės naudojimo
+bannerofpickingeffect=§7+<effectfloat>§0 paėmimo diapazono
+bannerofdashingeffect=§7+<effect>§0 puolimo kaupimosi\n§7-<effect2>%§0 puolimo atvėsimo
+bannerofmanaeffect=§7+<effect>%§0 maksimalios manos\n§7<effect2>%§0 manos regeneracijos
+
+// Runes (General)
+baserune=§iPagrindinė runa
+modifierrune=§aModifikavimo runa
+linkedrune=§bRuna susieta su [<player>]
+notruneowner=Jūs nesate pagrindinės runos savininkas
+runesslots=Galima įdėti iki 1 pagrindinės runos + <modifierslots> modifikavimo runų
+useruneinfusor=[input=runesinjectorability] aktyvuoti
+requiresbaserune=Reikalinga įdėta pagrindinė runa
+onlyonebaserune=Vienu metu galima įdėti tik vieną pagrindinę runą
+duplicatedmodifierrunes=Negalima įdėti daugiau nei vienos tos pačios modifikavimo runos
+runehealthcost=Aktyvuojant sunaudoja <health>% maksimalios sveikatos
+runehealthhealing=Naudojant atkuria <health>% maksimalios sveikatos
+runecooldown=Įsikrauna per <seconds> sekundes
+increaseruneeffectnumber=Padidina efektą §7<variation>%§0
+decreaseruneeffectnumber=Sumažina efektą §6<variation>%§0
+increaserunecooldown=Padidina atvėsimą §6<variation>%§0
+decreaserunecooldown=Sumažina atvėsimą §7<variation>%§0
+increaserunehealthcost=Padidina maksimalios sveikatos sunaudojimą §6<health>%§0
+increaserunehealthhealing=Padidina maksimalios sveikatos atkūrimą §7<health>%§0
+runedamagereduction=Žala drastiškai sumažinama prieš žmones ir dar labiau prieš bosus
+runedamagereductionnoboss=Žala drastiškai sumažinama prieš žmones ir neveikia bosų
+moreextraeffectmod=Efekto modifikacijos yra <mod>% efektyvesnės
+lessextraeffectmod=Efekto modifikacijos yra <mod>% mažiau efektyvios
+
+// Runes Injectors
+
+// Base Runes Tier 0
+runeoffury=Padidina jūsų žalą ir puolimo greitį §7<effectNumber>§0% 10 sekundžių
+runeofspeed=Puolimas su §7<effectNumber>§0 jėga judėjimo kryptimi ir tampate nepažeidžiami 0.5 sekundės
+runeofresistance=Padidina jūsų šarvus §7<effectNumber>§0% 10 sekundžių
+runeofresistance2=Kol atvėsta, jūsų šarvai sumažinami perpus
+runeofvalor=+200% įkvėpimo §7<effectNumber>§0 sekundėms
+runeofdetonation=Sprogsta, padarydama daugiau žalos ir atstumdama priešus, kuo jie arčiau
+runeofdetonation2=Maksimali žala yra §7<effectNumber>§0% maksimalios mobų sveikatos
+runeofthunder=Po dviejų sekundžių žaibas trenkia į pradinę jūsų žymeklio poziciją
+runeofthunder2=Žaibas padaro §7<effectNumber>§0% mobų sveikatos žalos ir apsvaigina 2 sekundėms
+runeofwinter=Sušaldo-sulėtina priešus 500 diapazone §7<effectNumber>§0 sekundėms
+runeofimmortality=Jei mirsite per kitas §7<effectNumber>§0 sekundes, išgyvensite su maksimalia sveikata
+runeofimmortality2=Jei taip atsitiks, būsite nepažeidžiami 3 sekundes, bet atvėsimas bus 30 sekundžių
+runeofimmortality3=Kol atvėsta, jūsų maksimali sveikata sumažinama perpus
+runeofshadows=§7<effectNumber>§0 sekundėms tapsite nematomi, bet taip pat įbauginti, o tai neleis jums atlikti jokių veiksmų
+
+// Base Runes Tier 1
+runeofunstablegelslime=Teleportuokitės į netoliese esančią vietą ir iškvieskite 2 runinius nestabilius gelinius gleivius §7<effectNumber>§0 sekundėms
+runeofunstablegelslime2=Iškvietimai padarys 5% maksimalios mobų sveikatos žalos
+runeofevilsprotector=+§7<effectNumber>§0% puolimo greičio, bet -50% judėjimo greičio 10 sekundžių
+runeofevilsprotector2=Naktį paviršiuje teigiamas poveikis padvigubėja
+runeofqueenspider=Palieka voratinklį ant žemės §7<effectNumber>§0 sekundėms
+runeofvoidwizard=Visi sviediniai atšoks be galo ir +§7<effectNumber>§0% sviedinių greičio 10 sekundžių
+runeofswampguardian=Sumažina visą gaunamą žalą 80% §7<effectNumber>§0 sekundėms
+runeofancientvulture=Iškviečia runinį grifo jauniklį 10 sekundžių
+runeofancientvulture2=Iškvietimas padarys §7<effectNumber>§0% maksimalios mobų sveikatos žalos
+runeofpiratecaptain=Padidina jūsų žalą §7<effectNumber>§0% už kiekvienas 200 turimų monetų, iki 20 000 monetų maksimumo
+runeofpiratecaptain2=Kiekvieną kartą, kai puolate, prarasite 3 monetas
+runeofchieftain=Per kitas 20 sekundžių jūsų žala didėja, kuo mažesnė jūsų sveikata, iki +§7<effectNumber>§0% maksimumo
+
+// Base Runes Tier 2
+runeofreaper=Teleportuokitės į pelės poziciją. Maksimalus atstumas §7<effectNumber>§0
+runeofcryoqueen=Sustokite 1 sekundei ir paleiskite ledo puolimą aplink save su §7<effectNumber>§0 diapazonu
+runeofcryoqueen2=Sviediniai padarys 200% maksimalios mobų sveikatos žalos
+runeofpestwarden=Per kitas §7<effectNumber>§0 sekundes susidūrimas su priešais juos pažeidžia ir stumia
+runeofpestwarden2=Žala yra 20% jų maksimalios sveikatos
+runeofsageandgrit=Jei netoliese yra sužeistų sąjungininkų (500 diapazonas), išgydykite §7<effectNumber>§0% jų bendros sveikatos
+runeofsageandgrit2=Jei ne, padidinkite savo žalą, puolimo greitį ir judėjimo greitį +§7<effectNumber>§0% 20 sekundžių
+runeoffallenwizard=Apsvaiginkite visus mobus, išskyrus jus, §7<effectNumber>§0 sekundėms
+runeoffallenwizard2=Žmonės išsilaisvins greičiau, o bosai dar greičiau
+runeofbabylontower=+§7<effectNumber>§0% visos žalos, bet negalite judėti. 10 sekundžių
+
+// Base Runes Tier 3
+runeofmotherslime=Atlikite didelį šuolį link pelės pozicijos ir padarykite ploto žalą nusileidžiant
+runeofmotherslime2=Nusileidimas padarys §7<effectNumber>§0% maksimalios mobų sveikatos žalos
+runeofnightswarm=Iškvieskite 5 šikšnosparnius §7<effectNumber>§0 sekundėms, kurie ieško priešiškų mobų, kad juos įkąstų
+runeofnightswarm2=Kiekvienas įkandimas atkuria 1% jūsų bendros sveikatos (mažiausiai 1)
+runeofspiderempress=Mėta §7<F0effectNumber>§0 voratinklio kamuolių pelės kryptimi
+runeofspiderempress2=Voratinklio kamuoliai apsvaigins 3 sekundėms ir sulėtins 10 sekundžių
+runeofsunlightchampion=Būsite apsvaiginti 3 sekundes, įkraunant novą su §7<effectNumber>§0 diapazonu
+runeofsunlightchampion2=Nova padarys 200% maksimalios mobų sveikatos žalos
+runeofmoonlightdancer=+§7<effectNumber>§0% žalos už kiekvieną +1% judėjimo greičio 10 sekundžių
+runeofcrystaldragon=Meskite lazerio spindulį į savo žymeklio poziciją 5 sekundes
+runeofcrystaldragon2=Lazeris padarys §7<effectNumber>§0% maksimalios mobų sveikatos žalos
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+onyxrune=Aktyvuotas iškviečia Oniksą 5 sekundėms. Jis padarys žalą, pagrįstą 5% mobo sveikatos
+onyxrune2=Kiekvienas Onikso įkandimas atkuria 1% jūsų bendros sveikatos (mažiausiai 1)
+onyxrune3=§3Ačiū Oniksui už puikias runų idėjas! <3
+pawningrune=Aktyvuotas, jei dar neturite efekto, nedelsiant atkuria 20% jūsų maksimalios sveikatos
+pawningrune2=Po 10 sekundžių prarasite atkurtą kiekį plius papildomus 40%
+
+// Modifier Runes Tier 2
+abysmalrune=Aktyvuotas iškviečia juodąją skylę jūsų žymeklio pozicijoje, traukiančią priešus 2 sekundes
+abysmalrune2=Juodoji skylė bus iškviesta tik tuo atveju, jei nuo paskutinio aktyvavimo praėjo 10 sekundžių
+tidalrune=Aktyvuotas iškviečia vandens bangą, kuri atstumia priešus
+
+// Modifier Runes Tier 3
+
+
+[mobtooltip]
+usenet=Naudokite tinklą! [item=net]
+
+
+[mob]
+// Hostile
+gelslime=Gelinis gleivė
+rockygelslime=Akmeninis gelinis gleivė
+unstablegelslime=Nestabilus gelinis gleivė
+miniunstablegelslime=Mini nestabilus gelinis gleivė
+pinkwitch=Rožinė ragana
+voidadept=Tuštumos adeptas
+copperdaggergoblin=Goblinas su variniu durtuvu
+irondaggergoblin=Goblinas su geležiniu durtuvu
+golddaggergoblin=Goblinas su auksiniu durtuvu
+infectedtreant=Užkrėstas entas
+spinelgolem=Spinelio golemas
+spinelcaveling=Spinelio urvinis
+tungstencaveling=Volframo urvinis
+spinelmimic=Spinelio mimikas
+babylontower=Babelio bokštas
+hearthcrystal=Židinio kristalas
+babylon=Babelis
+
+// Friendly
+wildphosphorslime=Laukinis fosforo gleivė
+
+// Summon
+babyunstablegelslime=Nestabiliojo gelinio gleivės kūdikis
+undeadskeleton=Negyvas skeletas
+volatilegelslime=Lakus gelinis gleivė
+runicunstablegelslime=Runinis nestabilus gelinis gleivė
+runicvulturehatchling=Runinis grifo jauniklis
+runicbat=Runinis šikšnosparnis
+onyx=Oniksas
+livingsapling=Gyvas daigas
+
+// Pet
+petphosphorslime=Fosforo gleivė
+
+
+[buff]
+// Common Buffs
+stunbuff=Apsvaiginimas
+fallenstunbuff=Puolęs apsvaiginimas
+stickybuff=Lipnus
+stopbuff=Sustabdytas
+honeyedbuff=Medaus
+venomextractbuff=Nuodų ekstraktas
+cursedbuff=Prakeiktas
+adrenalinebuff=Adrenalinas
+harmonybuff=Harmonija
+
+// Active Buffs
+berserkerrushactive=Berserkerio puolimas aktyvus
+periaptactive=Amuletų gebėjimas aktyvus
+runesinjectoractive=Runų injektorius aktyvus
+
+// Cooldown Buffs
+berserkerrushcooldown=Berserkerio puolimas atvėsta
+periaptcooldown=Amuletų gebėjimas atvėsta
+runesinjectorcooldown=Runų injektorius atvėsta
+spinattackcooldown=Besisukantis puolimas atvėsta
+saberdashcooldown=Kardo puolimas atvėsta
+
+
+[message]
+unstablegelslime_anger=§6Nestabilus gelinis gleivė pyksta... <anger>/10
+unstablegelslime_fullanger=§6Nestabilus gelinis gleivė supyko! <anger>/10
+unstablegelslime_night=§6Nestabilus gelinis gleivė§0 dingo atėjus nakčiai!
+gelslimesnulled=Geliniai gleivės šiame pasaulyje buvo neutralizuoti. Jie daugiau nebeatsiras
+gelslimesunnulled=Geliniai gleivės šiame pasaulyje buvo priimti. Dabar jie atsiras
+pinkwitchesnulled=Rožinės raganos buvo neutralizuotos (<x>, <y>)
+pinkwitchesunnulled=Rožinės raganos buvo priimtos (<x>, <y>)
+needfreeslots=Norint tai naudoti, jums reikia <slots> laisvų vietų inventoriuje
+cantuseatnight=Negalima naudoti naktį
+healthalreadyfull=Sveikata jau pilna
+cantheal=Negalima gydyti
+insuficienthealth=Nepakanka sveikatos šiam veiksmui atlikti!
+cannottrhowlockeditem=Negalite išmesti inventoriuje užrakinto daikto
+initialrunetip=Atsargiai pasirinkite savo pradinę runą;\nkitų negausite iki vėlesnio žaidimo etapo
+alreadyselectedinitialrune=Pradinė runa jau pasirinkta
+cannotusetrial=Negalima naudoti išbandymų kambariuose
+
+[biome]
+infectedfields=Užkrėsti laukai
+
+
+[journal]
+
+//Levels
+infectedfieldssurface=Užkrėstų laukų paviršius
+infectedfieldscave=Užkrėstų laukų urvas
+
+// Forest Surface Challenges
+killgelslimesforest=[mob=gelslime] Nužudykite 25 gelinius gleivius miške
+pickupfloralring=[item=floralring] Nupjaukite daug žolės miške, kad gautumėte gėlių žiedą
+killunstablegelslime=[mob=unstablegelslime] Nužudykite 1 nestabilų gelinį gleivę
+
+// Swamp Surface Challenges
+killpinkwitchesswamp=[mob=pinkwitch] Naktį nužudykite 5 rožines raganas pelkės paviršiuje
+
+// Infected Fields Surface Challenges
+pickupinfectedlogs=[item=infectedlog] Nukirskite, kad paimtumėte 100 užkrėstų rąstų
+
+// Infected Fields Cave Challenges
+pickupspinel=[item=spinel] Paimkite 40 spinelių
+activatebabylontower=[item=lifespinel] Uždėkite gyvybės spinelį ant Babelio bokšto
+findthespammer=[item=thespammer] Raskite spamerį
+
+
+[controls]
+runesinjectorability=Runų injektoriaus gebėjimas
+
+
+[runestutorialbook]
+openheader=Runų injektoriaus atidarymas
+opentext=Norėdami naudoti runas, jums reikės runų injektoriaus. Šiuos specialius prietaisus galima atidaryti, kad būtų galima įdėti runas. Kiekvienas injektorius turi vieną lizdą pagrindinei runai ir kelis lizdus modifikavimo runoms, priklausomai nuo jo talpos. Galite laisvai pridėti tiek modifikavimo runų, kiek leidžia injektorius, eksperimentuokite, kad rastumėte geriausias kombinacijas!
+equipheader=Injektoriaus aprūpinimas
+equiptext=Norėdami aktyvuoti savo runas, runų injektorius turi būti aprūpintas niekučių lizde. Aprūpinus, tiesiog paspauskite G (arba nustatymuose priskirtą klavišą), kad suaktyvintumėte jo poveikį. Prieš imdamiesi veiksmų, įsitikinkite, kad injektorius tinkamai sukonfigūruotas ir paruoštas!
+
+runesheader=Kas yra runos?
+runestext=Runos yra mistiniai akmenys, kurie suteikia galingą poveikį, kai įdedami į runų injektorių. Jų stiprumas ir elgesys priklauso nuo to, kaip jie derinami, jų naudojimo įvaldymas yra raktas į jūsų viso potencialo atskleidimą.
+baserunesheader=Pagrindinės runos
+baserunestext=Kiekvienam runų injektoriui reikia tiksliai vienos pagrindinės runos, kad jis veiktų. Pagrindinė runa apibrėžia pagrindinį injektoriaus poveikį ir veikia kaip jūsų sąrankos branduolys. Šalia efekto pastebėsite žalią skaičių, tai reiškia jo efekto vertę, kurią galima padidinti arba sumažinti modifikatoriais.
+modifierrunesheader=Modifikavimo runos
+modifierrunestext=Modifikavimo runos naudojamos jūsų pagrindinės runos poveikiui pritaikyti ir sustiprinti. Jos gali pakoreguoti efekto vertę, pakeisti jo elgesį arba pridėti specialių savybių. Tačiau modifikavimo runos visada turi kompromisų: joks modifikatorius nėra grynai naudingas, todėl rinkitės išmintingai!
+
+tableheader=Runų stalas
+tabletext=Runų stalas yra jūsų pagrindinė stotis, kurioje galite sukurti platų runų asortimentą. Daugumą standartinių runų galima pagaminti čia, bet atminkite: kai kurias galingas runas galima rasti tik tyrinėjant. Laikykite akis atmerktas, nuotykiai apdovanoja smalsius!
+crafttext=Runų dirbtuvėse rasite viską, ko reikia norint pradėti. Sujunkite turinį su savo pradine runa ir pagrindine runa, kurią galite pagaminti prie runų stalo, ir turėsite visiškai veikiantį runų injektorių, paruoštą aprūpinti!

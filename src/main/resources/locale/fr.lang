@@ -1,0 +1,755 @@
+# Traduction réalisée par Save (https://steamcommunity.com/id/Aiz_Save/)
+
+[global]
+aphorea=§!Aphorea Mod
+aphorearework=§!Refonte d'Aphorea Mod
+aphoreamightybanner=§!Aphorea Mod x Mighty Banner Mod
+aphoreasummonerexpansion=§!Aphorea Mod x Extension d'Invocateur
+
+
+[buffmodifiers]
+// Magic Healing
+magichealing=<mod>% de soins magiques
+magichealingflat=<mod> de soins magiques
+magichealingreceived=<mod>% de soins magiques reçus
+magichealingreceivedflat=<mod> de soins magiques reçus
+magichealinggrace=<mod>% de grâce de soins magiques
+
+// Area
+arearange=<mod>% de portée de zone
+
+// Inspiration Damage
+inspirationdamage=<mod>% de dégâts d'inspiration
+inspirationcritchance=<mod>% de chance de critique d'inspiration
+inspirationcritdamage=<mod>% de dégâts critiques d'inspiration
+inspirationeffect=<mod>% d'effet d'inspiration
+inspirationabilityspeed=<mod>% de vitesse de capacité d'inspiration
+
+// Others
+loyal=La dague n'est pas perdue lorsqu'elle est lancée
+
+
+[stats]
+inspiration_damage=Dégâts d'inspiration
+
+
+[enchantment]
+// Healing Equipment
+godly=Divin
+absent=Absent
+auxiliary=Auxiliaire
+vain=Vain
+gentle=Doux
+selfish=Égoïste
+
+// Healing
+friendly=Amical
+graceful=Gracieux
+wonderful=Merveilleux
+ecologic=Écologique
+exalted=Exalté
+cursed=Maudit
+
+// Area
+booming=En plein essor
+dimmed=Atténué
+
+// Others
+loyal=Loyal
+
+
+[tile]
+geltile=Sol en gel
+infectedwatertile=Eau infectée
+infectedgrasstile=Herbe infectée
+spinelgravel=Gravier de spinelle
+
+
+[tech]
+runes=Runes
+
+
+[object]
+witchstatue=Statue de sorcière
+runestable=Table des runes
+#NEW
+infectedsapling=Jeune pousse infectée
+spinelcluster=Amas de spinelle
+spinelcluster_small=Petit amas de spinelle
+gelrock=Roche de gel
+infectedtree=Arbre infecté
+infectedgrass=Herbe infectée
+spinelchest=Coffre en spinelle
+fakespinelchest=Faux coffre en spinelle
+babylontower=Tour de Babel
+babylonentrance=Entrée de Babylone
+babylonexit=Sortie de Babylone
+infectedtrialentrance=Entrée de l'épreuve infectée
+infectedchair=Chaise infectée
+infecteddinnertable=Table à manger infectée
+infectedbookshelf=Bibliothèque infectée
+infectedcabinet=Armoire infectée
+infectedbed=Lit infecté
+infecteddoublebed=Lit double infecté
+infectedcandelabra=Candélabre infecté
+
+
+[itemcategory]
+healing=Guérison
+healingtools=Outils de guérison
+runes=Runes
+runesinjectors=Injecteurs de runes
+baserunes=Runes de base
+modifierrunes=Runes de modification
+
+
+[item]
+// General Materials
+anybasicfoci=N'importe quel foyer de base
+
+// Materials
+rockygel=Gel rocheux
+unstablegel=Gel instable
+stardust=Poussière d'étoiles
+infectedlog=Bûche infectée
+infectedalloy=Alliage infecté
+spinel=Spinelle
+lifespinel=Spinelle de vie
+
+// Consumables
+unstablecore=Noyau instable
+initialrune=Rune initiale
+venomextract=Extrait de venin
+
+// Swords
+gelsword=Épée en gel
+unstablegelsword=Épée en gel instable
+broom=Balai
+voidhammer=Marteau du vide
+brokenkora=Kora brisée
+thenarcissist=Le Narcissique
+cryokatana=Cryokatana
+
+// Greatswords
+unstablegelgreatsword=Grande épée en gel instable
+babylongreatsword=Grande épée de Babylone
+
+// Glaives
+woodenrod=Bâton en bois
+
+// Sabers
+saber=Sabre
+coppersaber=Sabre en cuivre
+ironsaber=Sabre en fer
+goldsaber=Sabre en or
+demonicsaber=Sabre démoniaque
+unstablegelsaber=Sabre en gel instable
+honeysaber=Sabre de miel
+glacialsaber=Sabre de glacier
+crimsonkora=Kora cramoisie
+
+// Battleaxes
+battleaxe=Hache de guerre
+unstablegelbattleaxe=Hache de guerre en gel instable
+demonicbattleaxe=Hache de guerre démoniaque
+
+// Daggers
+dagger=Dague
+copperdagger=Dague en cuivre
+irondagger=Dague en fer
+golddagger=Dague en or
+demonicdagger=Dague démoniaque
+tungstendagger=Dague en tungstène
+lostumbrella=Parapluie perdu
+
+// Rapiers
+fossilrapier=Rapière fossile
+lightrapier=Rapière légère
+
+// Magic weapons
+unstablegelstaff=Bâton en gel instable
+magicalbroom=Balai magique
+adeptsbook=Livre de l'adepte
+harpofharmony=Harpe de l'harmonie
+babyloncandle=Bougie de Babylone
+
+// Bows
+spinelcrossbow=Arbalète en spinelle
+
+// Guns
+thespammer=Le Spammeur
+
+// Bullets
+spambullet=Balle de spam
+
+// Greatbows
+gelgreatbow=Grand arc en gel
+unstablegelgreatsword=Grand arc en gel instable
+
+// Arrows
+gelarrow=Flèche en gel
+unstablegelarrow=Flèche en gel instable
+
+// Saber Guns
+sabergun=Pistolet-sabre
+shotgunsaber=Fusil à pompe-sabre
+
+// Slings
+sling=Fronde
+firesling=Fronde de feu
+frozensling=Fronde gelée
+
+// Blowguns
+blowgun=Sarbacane
+
+// Throw weapons
+gelball=Balle de gel
+gelballgroup=Balles de gel groupées
+unstablegelveline=Javeline de gel instable
+
+// Summon weapons
+volatilegelstaff=Bâton en gel volatil
+infectedstaff=Bâton infecté
+
+// Banners
+blankbanner=Bannière vierge
+
+// Healing Tools
+healingtool=Outil de guérison
+magicalvial=Fiole magique
+healingstaff=Bâton de guérison
+woodenwand=Baguette en bois
+goldenwand=Baguette en or
+spinelstaff=Bâton en spinelle
+
+// Tools
+superiorpickaxe=Pioche supérieure
+
+// Trinkets
+rockyperiapt=Périapte rocheux
+unstableperiapt=Périapte instable
+bloodyperiapt=Périapte sanglant
+demonicperiapt=Périapte démoniaque
+abysmalperiapt=Périapte abyssal
+frozenperiapt=Périapte gelé
+necromancyperiapt=Périapte de nécromancie
+floralring=Anneau floral
+gelring=Anneau de gel
+heartring=Anneau de cœur
+ringofhealth=Anneau de santé
+swampshield=Bouclier des marais
+witchmedallion=Médaillon de sorcière
+iceboots=Bottes de glace
+inspirationfoci=Foyer d'inspiration
+cursedmedallion=Médaillon maudit
+ancientmedallion=Médaillon ancien
+essenceofhealing=Essence de guérison
+ninjascarf=Écharpe de ninja
+adrenalinecharm=Amulette d'adrénaline
+spinelshield=Bouclier en spinelle
+bloomrushcharm=Amulette de floraison
+infectedperiapt=Périapte infecté
+
+// Armor
+rockyboots=Bottes rocheuses
+rockychestplate=Plastron rocheux
+rockyhelmet=Casque rocheux
+goldhat=Chapeau en or
+pinkwitchhat=Chapeau de sorcière rose
+magicalsuit=Costume magique
+magicalboots=Bottes magiques
+swampboots=Bottes des marais
+swampchestplate=Plastron des marais
+swampmask=Masque des marais
+swamphood=Capuche des marais
+infectedhat=Chapeau infecté
+infectedchestplate=Plastron infecté
+infectedboots=Bottes infectées
+spinelhelmet=Casque en spinelle
+spinelhat=Chapeau en spinelle
+spinelchestplate=Plastron en spinelle
+spinelboots=Bottes en spinelle
+
+// Misc
+gelslimenullifier=Ils cesseront de vous déranger d'un simple clic !
+cuberry=Baie cubique
+infectedgrassseed=Graine d'herbe infectée
+
+// Backpacks
+basicbackpack=Sac à dos de base
+sapphirebackpack=Sac à dos en saphir
+amethystbackpack=Sac à dos en améthyste
+rubybackpack=Sac à dos en rubis
+emeraldbackpack=Sac à dos en émeraude
+diamondbackpack=Sac à dos en diamant
+
+// Books
+runestutorialbook=Livre tutoriel sur les runes
+
+// Runes Injectors
+runesinjector=Injecteur de runes
+rusticrunesinjector=Injecteur de runes rustique
+unstablerunesinjector=Injecteur de runes instable
+demonicrunesinjector=Injecteur de runes démoniaque
+tungstenrunesinjector=Injecteur de runes en tungstène
+ancientrunesinjector=Injecteur de runes ancien
+
+// Base Runes Tier 0
+baserune=Rune de base
+runeoffury=Rune de fureur
+runeofspeed=Rune de vitesse
+runeofhealing=Rune de guérison
+runeofresistance=Rune de résistance
+runeofvalor=Rune de vaillance
+runeofdetonation=Rune de détonation
+runeofthunder=Rune de tonnerre
+runeofwinter=Rune d'hiver
+runeofshadows=Rune des ombres
+runeofimmortality=Rune d'immortalité
+
+// Base Runes Tier 1
+runeofunstablegelslime=Rune de gelée de gel instable
+runeofevilsprotector=Rune du protecteur du mal
+runeofqueenspider=Rune de la reine des araignées
+runeofvoidwizard=Rune du sorcier du vide
+runeofswampguardian=Rune du gardien des marais
+runeofancientvulture=Rune du vautour ancien
+runeofpiratecaptain=Rune du capitaine pirate
+runeofchieftain=Rune du chef
+
+// Base Runes Tier 2
+runeofreaper=Rune du faucheur
+runeofcryoqueen=Rune de la cryo-reine
+runeofpestwarden=Rune du gardien de la peste
+runeofsageandgrit=Rune de la sauge et du courage
+runeoffallenwizard=Rune du sorcier déchu
+runeofbabylontower=Rune de la tour de Babel
+
+// Base Runes Tier 3
+runeofmotherslime=Rune de la mère gelée
+runeofnightswarm=Rune de l'essaim nocturne
+runeofspiderempress=Rune de l'impératrice araignée
+runeofsunlightchampion=Rune du champion de la lumière du soleil
+runeofmoonlightdancer=Rune de la danseuse du clair de lune
+runeofcrystaldragon=Rune du dragon de cristal
+
+// Modifier Runes Tier 0
+modifierrune=Rune de modification
+empoweringrune=Rune de renforcement
+recurrentrune=Rune récurrente
+
+// Modifier Runes Tier 1
+frenzyrune=Rune de frénésie
+vitalrune=Rune vitale
+devastatingrune=Rune dévastatrice
+onyxrune=Rune d'onyx
+pawningrune=Rune de pion
+
+// Modifier Runes Tier 2
+abysmalrune=Rune abyssale
+tidalrune=Rune de marée
+
+// Modifier Runes Tier 3
+ascendantrune=Rune ascendante
+
+
+[itemtooltip]
+// Stat tips
+line=----------------------------------------
+magichealingtip=Soins magiques : §7<health>
+rangetip=Portée : §9<range>
+areatip=§aZone <number>
+inspirationdamagetip=Dégâts d'inspiration : <value>
+areabuff=Applique <buff> aux alliés
+areadebuff=Applique <buff> aux ennemis
+areabuffdisplay=<buff> pendant <duration> secondes
+attackarmorpentip=Pénétration d'armure : <value>%
+
+// Mechanics
+magichealinggrace=§aGrâce de soins magiques :§0 Se soigne d'un pourcentage des soins magiques destinés aux alliés
+cursedbuff=§bMaudit :§0 §6+25%§0 de dégâts entrants
+inspiration=§9Inspiration :§0 Améliore les effets des bannières et des instruments de musique
+adrenaline=§6Adrénaline :§0 +5% de dégâts, -5% d'armure. Peut se cumuler jusqu'à 5 fois
+livingsapling=§7Jeune pousse vivante :§0 Soigne magiquement le propriétaire de §73§0 toutes les 10 attaques
+
+// Misc
+gelslimenullifier=Ils cesseront de vous déranger d'un simple clic !
+enchantingscrollhealingequipmenttip=Utilisé pour enchanter un équipement de guérison avec <enchantment>\n§!Aphorea Mod
+enchantingscrollhealingtip=Utilisé pour enchanter un outil de guérison avec <enchantment>\n§!Aphorea Mod
+enchantingscrollareatip=Utilisé pour enchanter un outil à effet de zone avec <enchantment>\n§!Aphorea Mod
+enchantingscrolldaggertip=Utilisé pour enchanter une arme de dague avec <enchantment>\n§!Aphorea Mod
+backpack=C'est un nouvel inventaire qui stocke tous les objets que vous collectez
+backpackslots=Capacité de <slots> objets
+stored=Objets stockés : <items>
+backpackcraft=Doit être vide pour fabriquer un meilleur sac à dos
+
+// Consumables
+deleteditem=Cet objet a été supprimé, utilisez cet objet pour récupérer les matériaux avant qu'il ne soit définitivement supprimé
+unstablecore=§bLibère une aura instable...§0 Ne peut être utilisé que de jour
+venomextractbuff=Lowd dit de le boire, ne le faites pas
+venomextractbuffdesc=Vous ne pouvez pas avoir plus de 1 PV
+lifespinel=Augmente de façon permanente la santé maximale de 5 jusqu'à 320
+
+// General Weapons
+spinsecondaryattack=Appuyez sur [input=mouse2] pour que la prochaine attaque soit une attaque de zone
+areasecondaryattack=Appuyez sur [input=mouse2] pour effectuer une attaque de zone consommant <mana> de mana
+stikybuff1=Rend l'ennemi collant pendant 1 seconde
+stikybuff2=Rend l'ennemi collant pendant 2 secondes
+stikybuff3=Rend l'ennemi collant pendant 3 secondes
+projectilearea=Lorsque le projectile se termine, il inflige des dégâts de zone
+
+// Melee Weapons
+saber=Chargez au maximum pour des dégâts complets et pour libérer une coupe d'air
+saberdash=Maintenez [input=mouse2] pour charger une ruée pour trancher les ennemis
+battleaxe=Prend beaucoup de temps à charger
+battleaxe2=Appuyez sur [input=mouse2] pour activer la Ruée du Berserker et gagner 3 d'adrénaline temporairement
+battleaxe3=Gagnez de l'adrénaline temporairement en frappant des ennemis pendant la Ruée, améliorant la vitesse de mouvement et d'attaque
+dagger=Maintenez [input=mouse2] pour lancer la dague
+
+// Range Weapons
+sling=Lance des pierres avec force
+sling2=§7100%§0 de chance d'étourdir l'ennemi pendant 0.5 seconde
+twoarrows=Tire deux flèches à la fois
+threearrows=Tire trois flèches à la fois
+blowgun=Tire des graines
+
+// Single Melee Weapons
+woodenrod=Se soigne magiquement de §7<healing>§0 toutes les 10 attaques
+voidhammer=Lorsque le projectile rebondit ou touche un ennemi, il cible le plus proche, touchant jusqu'à 3 fois
+crimsonkora=Maintenez [input=mouse2] pour charger une attaque dévastatrice mais lente
+thenarcissist=Enchaînez 4 attaques pour déclencher un lancer d'épée tournoyante au cinquième coup !\n+20% de dégâts pour chaque attaque enchaînée
+
+// Single Range Weapons
+firesling=Brûle les ennemis
+frozensling=Gèle les ennemis
+gelgreatbow=Transforme les flèches de pierre en flèches de gel
+unstablegelgreatbow=Transforme les flèches de pierre et les flèches de gel en flèches de gel instables
+thespammer=Peut tirer des balles de spam
+shotgunsaber=Visez près du centre pour des tirs plus puissants, précis et perçants
+honeysaber=Chargez au maximum pour des dégâts complets et pour tirer du miel et des myrtilles
+spinelcrossbow=Tire des flèches qui transpercent jusqu'à 2 ennemis, devenant plus mortelles à chaque perforation
+spinelcrossbow2=Maintenez [input=mouse2] pour tirer 3 flèches à la fois
+
+// Single Magic Weapons
+unstablegelstaff=Lorsque les projectiles rebondissent sur les murs, ils se dupliquent
+harpofharmony=Harmonie : Vitesse, régénération de santé et de mana accrues
+
+// Single Summoner Weapons
+infectedstaff=Invoque deux jeunes pousses vivantes par invocation
+
+// Single Throwable Weapons
+gelball=Lance une balle de gel
+
+// Single Magic Healing Tools
+magicalvial=Pointez sur un humain blessé pour le soigner, ne pointez sur personne pour vous soigner
+magicalvial2=Utilisations infinies
+
+// Ammo
+spambullet=A aléatoirement l'un de ces effets :
+spambullet1=§9Triste :§0 L'ennemi attaqué devient collant, le ralentissant pendant 5 secondes
+spambullet2=§9Feu :§0 Au lieu de entrer en collision, laisse une flaque de feu sur le sol
+spambullet3=§9J'aime :§0 Rebondit sur les murs et transperce les monstres, jusqu'à 10 fois chacun
+spambullet4=§9Vérifier :§0 Zone de guérison magique de 3 points de vie à la fin de son chemin
+spambullet5=§9Explosion :§0 Explose à la fin de son chemin au lieu d'entrer en collision
+
+// Tiles
+geltile=Sol collant qui ralentit considérablement tout ce qui se trouve dessus
+
+// Objects
+witchstatue=Placer cette statue à la surface d'un marais éliminera l'apparition de sorcières sur toute l'île
+
+// Generic Trinkets
+areawhenheal=Exécute cette zone pour chaque <magichealing> de soins magiques effectués
+periaptboost=Appuyez sur [input=trinketability] pour obtenir un bonus de vitesse et de vitesse d'attaque pendant 10 secondes
+
+// Trinkets
+rockyperiapt=§7+5§0 d'armure, mais §6-5%§0 de vitesse de déplacement
+rockyperiapt2=Appuyez sur [input=trinketability] pour obtenir 10 d'armure pendant 10 secondes
+unstableperiapt=Invoque deux bébés gelées de gel instables (6 de dégâts d'invocateur)
+unstableperiapt2=Vous immunise contre le debuff collant
+bloodyperiapt=De plus, les armes 'Boulon de sang' et 'Volée de sang' voleront §73%§0 de vie
+demonicperiapt=De plus, les armes magiques voleront §73%§0 de vie
+necromancyperiapt=Chaque fois que vous ou l'un de vos invocations tuez un monstre hostile, vous invoquez un squelette mort-vivant
+necromancyperiapt2=20 de dégâts d'invocateur. Dure 10 secondes et il ne peut y en avoir que 3 à la fois au maximum
+frozenperiapt=Les armes de mêlée et à distance gèleront pendant 3 secondes
+frozenperiapt2=Inflige plus de dégâts aux monstres affectés par le gel
+frozenperiapt3=Vous immunise contre les debuffs de gel et de ralentissement par le gel
+floralring=Se soigne magiquement de §7<healing>§0 toutes les 5 secondes
+gelring=§7+30%§0 de soins magiques reçus
+heartring=§7+20§0 de santé maximale
+swampshield=Ne protège que les attaques dans la direction où elles sont reçues
+swampshield2=En cas de blocage parfait : Se soigne magiquement de §7<healing>§0 de sa santé maximale
+iceboots=Vous fait glisser comme si vous étiez sur de la glace, mais accorde +50% de vitesse de déplacement et +4 d'armure
+inspirationfoci1=§7+40%§0 d'effet d'inspiration et §7+20%§0 de vitesse de capacité d'inspiration
+inspirationfoci2=§6-20%§0 de tous les dégâts non inspirés et §6-1§0 d'invocations maximales
+essenceofhealing=§7+<percent>%§0 de soins magiques par essence de vie
+essenceofhealing2=§7<flat>§0 de soins magiques par 2 essences de vie
+essenceofhealing3=§6-80%§0 de durée d'essence de vie, plafonnée à -50%
+ninjascarf=Convertit les ruées de sabre en sauts de sabre
+adrenalinecharm=Chaque coup reçu vous donnera de l'adrénaline pendant 20 secondes
+infectedperiapt=Invoque deux jeunes pousses vivantes (8 de dégâts d'invocateur)
+bloomrushcharm=Diminue l'utilisation de l'endurance de 10% pour chaque adrénaline que vous avez\nInvoque une jeune pousse vivante (8 de dégâts d'invocateur) pour chaque adrénaline que vous avez
+
+// Set Bonus
+goldhatsetbonus=Si vous êtes immobile, votre vitesse d'attaque à distance est considérablement augmentée
+pinkwitchsetbonus=Augmente la vitesse d'attaque magique, la régénération de mana et l'armure plus votre santé est basse
+infectedsetbonus=Invoque trois jeunes pousses vivantes (8 de dégâts d'invocateur)
+spinelhelmetsetbonus=Se soigne magiquement de §7<healing>§0 des dégâts de mêlée infligés aux monstres hostiles
+spinelhatsetbonus=Se soigne magiquement ainsi que tous les alliés proches\navec §7<healing>§0 des dégâts magiques infligés aux monstres hostiles
+
+// Banners
+strikebannereffect=§7+<effect>%§0 de régénération de santé (en combat et hors combat)
+strikebannerability=§aToutes les <time> secondes :§0 Effectue une attaque de zone
+blankbannereffect=§7+<effect>%§0 de régénération de santé (hors combat)
+blankbannerability=§aToutes les <time> secondes :§0 Effectue une guérison de zone
+bannerofdamageeffect=§7+<effect>%§0 de dégâts
+bannerofdefenseeffect=§7-<effect>%§0 de dégâts entrants
+bannerofspeedeffect=§7+<effect>%§0 de vitesse de déplacement
+bannerofsummonspeedeffect=§7+<effect>%§0 de vitesse de déplacement des invocations
+
+// Mighty Banners
+banneroffishingeffect=§7+<effect>§0 de puissance de pêche
+bannerofhealthregeneffect=§7+<effectfloat>§0 de régénération de santé en combat
+bannerofmanaregeneffect=§7+<effect>%§0 de régénération de mana en combat
+bannerofresistanceeffect=§7+<effect>§0 d'armure
+bannerofsummoningeffect=§7+<effect>§0 d'invocations maximales
+bannerofattackspeedeffect=§7+<effect>%§0 de vitesse d'attaque
+
+// Summoner Expansion Banners
+bannerofresilienceeffect=§7+<effect>%§0 de résilience maximale\nRégénère §7+<effect>§0 de résilience par seconde
+bannerofbouncingeffect=§7+<effect>§0 de rebonds de projectile
+bannerofessenceeffect=§7+<effect>%§0 de durée d'essence de vie
+bannerofstaminaeffect=§7+<effect>%§0 de capacité d'endurance\n§7+<effect2>%§0 de régénération d'endurance\n§7-<effect2>%§0 d'utilisation de l'endurance
+bannerofpickingeffect=§7+<effectfloat>§0 de portée de ramassage
+bannerofdashingeffect=§7+<effect>§0 de cumuls de ruée\n§7-<effect2>%§0 de temps de recharge de ruée
+bannerofmanaeffect=§7+<effect>%§0 de mana maximal\n§7<effect2>%§0 de régénération de mana
+
+// Runes (General)
+baserune=§iRune de base
+modifierrune=§aRune de modification
+linkedrune=§bRune liée à [<player>]
+notruneowner=Vous n'êtes pas le propriétaire de la rune de base
+runesslots=Peut insérer jusqu'à 1 rune de base + <modifierslots> runes de modification
+useruneinfusor=[input=runesinjectorability] pour activer
+requiresbaserune=Nécessite une rune de base insérée
+onlyonebaserune=Une seule rune de base peut être insérée à la fois
+duplicatedmodifierrunes=Impossible d'insérer plus d'une rune de modification identique
+runehealthcost=Consomme <health>% de la santé maximale à l'activation
+runehealthhealing=Restaure <health>% de la santé maximale lors de l'utilisation
+runecooldown=Se recharge en <seconds> secondes
+increaseruneeffectnumber=Augmente l'effet de §7<variation>%§0
+decreaseruneeffectnumber=Diminue l'effet de §6<variation>%§0
+increaserunecooldown=Augmente le temps de recharge de §6<variation>%§0
+decreaserunecooldown=Diminue le temps de recharge de §7<variation>%§0
+increaserunehealthcost=Augmente la consommation de santé maximale de §6<health>%§0
+increaserunehealthhealing=Augmente la restauration de santé maximale de §7<health>%§0
+runedamagereduction=Les dégâts sont considérablement réduits contre les humains et encore plus contre les boss
+runedamagereductionnoboss=Les dégâts sont considérablement réduits contre les humains et n'affectent pas les boss
+moreextraeffectmod=Les modifications d'effet sont <mod>% plus efficaces
+lessextraeffectmod=Les modifications d'effet sont <mod>% moins efficaces
+
+// Runes Injectors
+
+// Base Runes Tier 0
+runeoffury=Augmente vos dégâts et votre vitesse d'attaque de §7<effectNumber>§0% pendant 10 secondes
+runeofspeed=Foncez avec une force de §7<effectNumber>§0 dans la direction où vous vous déplacez et devenez invincible pendant 0.5 seconde
+runeofresistance=Augmente votre armure de §7<effectNumber>§0% pendant 10 secondes
+runeofresistance2=Pendant le temps de recharge, votre armure est réduite de moitié
+runeofvalor=+200% d'inspiration pendant §7<effectNumber>§0 secondes
+runeofdetonation=Explose, infligeant plus de dégâts et repoussant les ennemis plus ils sont proches
+runeofdetonation2=Les dégâts maximums sont de §7<effectNumber>§0% de la santé maximale des monstres
+runeofthunder=Après deux secondes, un éclair frappe la position initiale de votre curseur
+runeofthunder2=L'éclair inflige §7<effectNumber>§0% de la santé des monstres en dégâts et étourdit pendant 2 secondes
+runeofwinter=Ralentit par le gel les ennemis dans un rayon de 500 pendant §7<effectNumber>§0 secondes
+runeofimmortality=Si vous mourez dans les §7<effectNumber>§0 prochaines secondes, vous survivrez avec une santé maximale
+runeofimmortality2=Si cela se produit, vous serez invincible pendant 3 secondes, mais le temps de recharge sera de 30 secondes
+runeofimmortality3=Pendant le temps de recharge, votre santé maximale est réduite de moitié
+runeofshadows=Pendant §7<effectNumber>§0 secondes, vous deviendrez invisible mais aussi intimidé, vous empêchant d'effectuer toute action
+
+// Base Runes Tier 1
+runeofunstablegelslime=Téléportez-vous à un emplacement proche et invoquez 2 gelées de gel instables runiques pendant §7<effectNumber>§0 secondes
+runeofunstablegelslime2=Les invocations infligeront 5% de la santé maximale des monstres en dégâts
+runeofevilsprotector=+§7<effectNumber>§0% de vitesse d'attaque, mais -50% de vitesse de déplacement pendant 10 secondes
+runeofevilsprotector2=La nuit à la surface, l'effet positif est doublé
+runeofqueenspider=Laisse une toile d'araignée sur le sol pendant §7<effectNumber>§0 secondes
+runeofvoidwizard=Tous les projectiles rebondiront à l'infini et +§7<effectNumber>§0% de vitesse de projectile pendant 10 secondes
+runeofswampguardian=Réduit tous les dégâts subis de 80% pendant §7<effectNumber>§0 secondes
+runeofancientvulture=Invoque un oisillon de vautour runique pendant 10 secondes
+runeofancientvulture2=L'invocation infligera §7<effectNumber>§0% de la santé maximale des monstres en dégâts
+runeofpiratecaptain=Augmente vos dégâts de §7<effectNumber>§0% pour chaque 200 pièces que vous avez, jusqu'à un maximum de 20 000 pièces
+runeofpiratecaptain2=Chaque fois que vous attaquez, vous perdrez 3 pièces
+runeofchieftain=Pendant les 20 prochaines secondes, vos dégâts augmentent plus votre santé est basse, jusqu'à un maximum de +§7<effectNumber>§0%
+
+// Base Runes Tier 2
+runeofreaper=Téléportez-vous à la position de votre souris. Distance maximale §7<effectNumber>§0
+runeofcryoqueen=Arrêtez-vous pendant 1 seconde et lancez une attaque de glace autour de vous avec une portée de §7<effectNumber>§0
+runeofcryoqueen2=Les projectiles infligeront 200% de la santé maximale des monstres en dégâts
+runeofpestwarden=Pendant les §7<effectNumber>§0 prochaines secondes, entrer en collision avec des ennemis les endommage et les pousse
+runeofpestwarden2=Les dégâts sont de 20% de leur santé maximale
+runeofsageandgrit=S'il y a des alliés blessés à proximité (portée 500), soignez §7<effectNumber>§0% de leur santé totale
+runeofsageandgrit2=Sinon, augmentez vos dégâts, votre vitesse d'attaque et votre vitesse de déplacement de +§7<effectNumber>§0% pendant 20 secondes
+runeoffallenwizard=Étourdissez tous les monstres sauf vous pendant §7<effectNumber>§0 secondes
+runeoffallenwizard2=Les humains se libéreront plus rapidement, et les boss encore plus rapidement
+runeofbabylontower=+§7<effectNumber>§0% de tous les dégâts, mais vous ne pouvez pas bouger. 10 secondes
+
+// Base Runes Tier 3
+runeofmotherslime=Effectuez un grand saut vers la position de votre souris et infligez des dégâts de zone à l'atterrissage
+runeofmotherslime2=L'atterrissage infligera §7<effectNumber>§0% de la santé maximale des monstres en dégâts
+runeofnightswarm=Invoquez 5 chauves-souris pendant §7<effectNumber>§0 secondes qui recherchent des monstres hostiles pour les mordre
+runeofnightswarm2=Chaque morsure restaure 1% de votre santé totale (au moins 1)
+runeofspiderempress=Lance §7<F0effectNumber>§0 boules de toile d'araignée en direction de votre souris
+runeofspiderempress2=Les boules de toile d'araignée étourdiront pendant 3 secondes et ralentiront pendant 10 secondes
+runeofsunlightchampion=Soyez étourdi pendant 3 secondes en chargeant une nova d'une portée de §7<effectNumber>§0
+runeofsunlightchampion2=La nova infligera 200% de la santé maximale des monstres en dégâts
+runeofmoonlightdancer=+§7<effectNumber>§0% de dégâts pour chaque +1% de vitesse de déplacement pendant 10 secondes
+runeofcrystaldragon=Lancez un rayon laser à la position de votre curseur pendant 5 secondes
+runeofcrystaldragon2=Le laser infligera §7<effectNumber>§0% de la santé maximale des monstres en dégâts
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+onyxrune=Lorsqu'il est activé, invoque Onyx pendant 5 secondes. Il infligera des dégâts basés sur 5% de la santé du monstre
+onyxrune2=Chaque morsure d'Onyx restaure 1% de votre santé totale (au moins 1)
+onyxrune3=§3Merci Onyx pour les brillantes idées de runes ! <3
+pawningrune=Lorsqu'il est activé, si vous n'avez pas encore l'effet, restaure immédiatement 20% de votre santé maximale
+pawningrune2=Après 10 secondes, vous perdrez la quantité restaurée plus 40% supplémentaires
+
+// Modifier Runes Tier 2
+abysmalrune=Lorsqu'il est activé, invoque un trou noir à la position de votre curseur, attirant les ennemis pendant 2 secondes
+abysmalrune2=Le trou noir ne sera invoqué que si 10 secondes se sont écoulées depuis la dernière activation
+tidalrune=Lorsqu'il est activé, invoque une vague d'eau qui repousse les ennemis
+
+// Modifier Runes Tier 3
+
+
+[mobtooltip]
+usenet=Utilisez un filet ! [item=net]
+
+
+[mob]
+// Hostile
+gelslime=Gelée de gel
+rockygelslime=Gelée de gel rocheuse
+unstablegelslime=Gelée de gel instable
+miniunstablegelslime=Mini gelée de gel instable
+pinkwitch=Sorcière rose
+voidadept=Adepte du vide
+copperdaggergoblin=Gobelin à la dague en cuivre
+irondaggergoblin=Gobelin à la dague en fer
+golddaggergoblin=Gobelin à la dague en or
+infectedtreant=Treant infecté
+spinelgolem=Golem en spinelle
+spinelcaveling=Habitant des cavernes en spinelle
+tungstencaveling=Habitant des cavernes en tungstène
+spinelmimic=Mimic en spinelle
+babylontower=Tour de Babel
+hearthcrystal=Cristal de foyer
+babylon=Babylone
+
+// Friendly
+wildphosphorslime=Gelée de phosphore sauvage
+
+// Summon
+babyunstablegelslime=Bébé gelée de gel instable
+undeadskeleton=Squelette mort-vivant
+volatilegelslime=Gelée de gel volatile
+runicunstablegelslime=Gelée de gel instable runique
+runicvulturehatchling=Oisillon de vautour runique
+runicbat=Chauve-souris runique
+onyx=Onyx
+livingsapling=Jeune pousse vivante
+
+// Pet
+petphosphorslime=Gelée de phosphore
+
+
+[buff]
+// Common Buffs
+stunbuff=Étourdissement
+fallenstunbuff=Étourdissement déchu
+stickybuff=Collant
+stopbuff=Arrêté
+honeyedbuff=Mielleux
+venomextractbuff=Extrait de venin
+cursedbuff=Maudit
+adrenalinebuff=Adrénaline
+harmonybuff=Harmonie
+
+// Active Buffs
+berserkerrushactive=Ruée du Berserker active
+periaptactive=Capacité du périapte active
+runesinjectoractive=Injecteur de runes actif
+
+// Cooldown Buffs
+berserkerrushcooldown=Ruée du Berserker en cours de rechargement
+periaptcooldown=Capacité du périapte en cours de rechargement
+runesinjectorcooldown=Injecteur de runes en cours de rechargement
+spinattackcooldown=Attaque tournoyante en cours de rechargement
+saberdashcooldown=Ruée de sabre en cours de rechargement
+
+
+[message]
+unstablegelslime_anger=§6La gelée de gel instable s'énerve... <anger>/10
+unstablegelslime_fullanger=§6La gelée de gel instable s'est énervée ! <anger>/10
+unstablegelslime_night=§6La gelée de gel instable§0 a disparu à la tombée de la nuit !
+gelslimesnulled=Les gelées de gel dans ce monde ont été annulées. Elles n'apparaîtront plus
+gelslimesunnulled=Les gelées de gel dans ce monde ont été admises. Elles apparaîtront maintenant
+pinkwitchesnulled=Les sorcières roses à (<x>, <y>) ont été annulées
+pinkwitchesunnulled=Les sorcières roses à (<x>, <y>) ont été admises
+needfreeslots=Vous avez besoin de <slots> emplacements libres dans l'inventaire pour utiliser ceci
+cantuseatnight=Ne peut pas être utilisé la nuit
+healthalreadyfull=La santé est déjà au maximum
+cantheal=Impossible de guérir
+insuficienthealth=Santé insuffisante pour effectuer cette action !
+cannottrhowlockeditem=Vous ne pouvez pas jeter un objet verrouillé dans l'inventaire
+initialrunetip=Choisissez votre rune initiale avec soin ;\nvous n'obtiendrez pas les autres avant plus tard dans le jeu
+alreadyselectedinitialrune=Rune initiale déjà sélectionnée
+cannotusetrial=Ne peut pas être utilisé dans les salles d'épreuve
+
+[biome]
+infectedfields=Champs infectés
+
+
+[journal]
+
+//Levels
+infectedfieldssurface=Surface des champs infectés
+infectedfieldscave=Grotte des champs infectés
+
+// Forest Surface Challenges
+killgelslimesforest=[mob=gelslime] Tuez 25 gelées de gel dans la forêt
+pickupfloralring=[item=floralring] Coupez beaucoup d'herbe dans la forêt pour obtenir l'anneau floral
+killunstablegelslime=[mob=unstablegelslime] Tuez 1 gelée de gel instable
+
+// Swamp Surface Challenges
+killpinkwitchesswamp=[mob=pinkwitch] La nuit, tuez 5 sorcières roses à la surface du marais
+
+// Infected Fields Surface Challenges
+pickupinfectedlogs=[item=infectedlog] Coupez pour ramasser 100 bûches infectées
+
+// Infected Fields Cave Challenges
+pickupspinel=[item=spinel] Ramassez 40 spinelles
+activatebabylontower=[item=lifespinel] Placez un spinelle de vie sur la tour de Babel
+findthespammer=[item=thespammer] Trouvez le spammeur
+
+
+[controls]
+runesinjectorability=Capacité de l'injecteur de runes
+
+
+[runestutorialbook]
+openheader=Ouverture de l'injecteur de runes
+opentext=Pour utiliser les runes, vous aurez besoin d'un injecteur de runes. Ces appareils spéciaux peuvent être ouverts pour insérer des runes. Chaque injecteur a un emplacement pour une rune de base et plusieurs emplacements pour des runes de modification, en fonction de sa capacité. Vous êtes libre d'ajouter autant de runes de modification que l'injecteur le permet, expérimentez pour trouver les meilleures combinaisons !
+equipheader=Équiper l'injecteur
+equiptext=Pour activer vos runes, l'injecteur de runes doit être équipé dans un emplacement de bibelot. Une fois équipé, appuyez simplement sur G (ou la touche assignée dans les paramètres) pour déclencher ses effets. Assurez-vous que l'injecteur est correctement configuré et prêt avant de passer à l'action !
+
+runesheader=Que sont les runes ?
+runestext=Les runes sont des pierres mystiques qui fournissent des effets puissants lorsqu'elles sont insérées dans un injecteur de runes. Leur force et leur comportement dépendent de la façon dont elles sont combinées, maîtriser leur utilisation est la clé pour libérer tout votre potentiel.
+baserunesheader=Runes de base
+baserunestext=Chaque injecteur de runes nécessite exactement une rune de base pour fonctionner. La rune de base définit l'effet principal de l'injecteur et sert de noyau à votre configuration. Vous remarquerez un nombre vert à côté de l'effet, cela représente sa valeur d'effet, qui peut être augmentée ou diminuée avec des modificateurs.
+modifierrunesheader=Runes de modification
+modifierrunestext=Les runes de modification sont utilisées pour personnaliser et améliorer l'effet de votre rune de base. Elles peuvent ajuster la valeur de l'effet, changer son comportement ou ajouter des propriétés spéciales. Cependant, les runes de modification s'accompagnent toujours de compromis : aucun modificateur n'est purement bénéfique, alors choisissez judicieusement !
+
+tableheader=La table des runes
+tabletext=La table des runes est votre station de prédilection pour fabriquer une grande variété de runes. La plupart des runes standard peuvent être fabriquées ici, mais n'oubliez pas : certaines runes puissantes ne peuvent être trouvées que par l'exploration. Gardez les yeux ouverts, l'aventure récompense les curieux !
+crafttext=Dans l'atelier de runes, vous trouverez tout ce dont vous avez besoin pour commencer. Combinez le contenu avec votre rune initiale et une rune de base que vous pouvez fabriquer à la table des runes, et vous aurez un injecteur de runes entièrement fonctionnel prêt à être équipé !

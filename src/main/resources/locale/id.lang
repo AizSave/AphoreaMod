@@ -1,0 +1,755 @@
+# Translation made by AI
+
+[global]
+aphorea=\u00a7!Aphorea Mod
+aphorearework=\u00a7!Aphorea Mod Pengerjaan Ulang
+aphoreamightybanner=\u00a7!Aphorea Mod x Mighty Banner Mod
+aphoreasummonerexpansion=\u00a7!Aphorea Mod x Ekspansi Summoner
+
+
+[buffmodifiers]
+// Magic Healing
+magichealing=<mod>% penyembuhan sihir
+magichealingflat=<mod> penyembuhan sihir
+magichealingreceived=<mod>% penyembuhan sihir yang diterima
+magichealingreceivedflat=<mod> penyembuhan sihir yang diterima
+magichealinggrace=<mod>% anugerah penyembuhan sihir
+
+// Area
+arearange=<mod>% jangkauan area
+
+// Inspiration Damage
+inspirationdamage=<mod>% kerusakan inspirasi
+inspirationcritchance=<mod>% peluang kritis inspirasi
+inspirationcritdamage=<mod>% kerusakan kritis inspirasi
+inspirationeffect=<mod>% efek inspirasi
+inspirationabilityspeed=<mod>% kecepatan kemampuan inspirasi
+
+// Others
+loyal=Belati tidak hilang saat dilempar
+
+
+[stats]
+inspiration_damage=Kerusakan inspirasi
+
+
+[enchantment]
+// Healing Equipment
+godly=Dewa
+absent=Tidak ada
+auxiliary=Bantu
+vain=Sia-sia
+gentle=Lembut
+selfish=Egois
+
+// Healing
+friendly=Ramah
+graceful=Anggun
+wonderful=Luar biasa
+ecologic=Ekologis
+exalted=Mulia
+cursed=Terkutuk
+
+// Area
+booming=Berkembang pesat
+dimmed=Redup
+
+// Others
+loyal=Setia
+
+
+[tile]
+geltile=Lantai Gel
+infectedwatertile=Air Terinfeksi
+infectedgrasstile=Rumput Terinfeksi
+spinelgravel=Kerikil Spinel
+
+
+[tech]
+runes=Rune
+
+
+[object]
+witchstatue=Patung Penyihir
+runestable=Meja Rune
+#NEW
+infectedsapling=Bibit Terinfeksi
+spinelcluster=Gugus Spinel
+spinelcluster_small=Gugus Spinel Kecil
+gelrock=Batu Gel
+infectedtree=Pohon Terinfeksi
+infectedgrass=Rumput Terinfeksi
+spinelchest=Peti Spinel
+fakespinelchest=Peti Spinel Palsu
+babylontower=Menara Babel
+babylonentrance=Pintu Masuk Babel
+babylonexit=Pintu Keluar Babel
+infectedtrialentrance=Pintu Masuk Ujian Terinfeksi
+infectedchair=Kursi Terinfeksi
+infecteddinnertable=Meja Makan Terinfeksi
+infectedbookshelf=Rak Buku Terinfeksi
+infectedcabinet=Lemari Terinfeksi
+infectedbed=Tempat Tidur Terinfeksi
+infecteddoublebed=Tempat Tidur Ganda Terinfeksi
+infectedcandelabra=Kandelabra Terinfeksi
+
+
+[itemcategory]
+healing=Penyembuhan
+healingtools=Alat Penyembuhan
+runes=Rune
+runesinjectors=Injektor Rune
+baserunes=Rune Dasar
+modifierrunes=Rune Pengubah
+
+
+[item]
+// General Materials
+anybasicfoci=Fokus Dasar Apapun
+
+// Materials
+rockygel=Gel Berbatu
+unstablegel=Gel Tidak Stabil
+stardust=Debu Bintang
+infectedlog=Kayu Terinfeksi
+infectedalloy=Paduan Terinfeksi
+spinel=Spinel
+lifespinel=Spinel Kehidupan
+
+// Consumables
+unstablecore=Inti Tidak Stabil
+initialrune=Rune Awal
+venomextract=Ekstrak Racun
+
+// Swords
+gelsword=Pedang Gel
+unstablegelsword=Pedang Gel Tidak Stabil
+broom=Sapu
+voidhammer=Palu Kekosongan
+brokenkora=Kora Patah
+thenarcissist=Sang Narsisis
+cryokatana=Katana Kriogenik
+
+// Greatswords
+unstablegelgreatsword=Pedang Besar Gel Tidak Stabil
+babylongreatsword=Pedang Besar Babel
+
+// Glaives
+woodenrod=Tongkat Kayu
+
+// Sabers
+saber=Sabel
+coppersaber=Sabel Tembaga
+ironsaber=Sabel Besi
+goldsaber=Sabel Emas
+demonicsaber=Sabel Iblis
+unstablegelsaber=Sabel Gel Tidak Stabil
+honeysaber=Sabel Madu
+glacialsaber=Sabel Glasial
+crimsonkora=Kora Merah Tua
+
+// Battleaxes
+battleaxe=Kapak Perang
+unstablegelbattleaxe=Kapak Perang Gel Tidak Stabil
+demonicbattleaxe=Kapak Perang Iblis
+
+// Daggers
+dagger=Belati
+copperdagger=Belati Tembaga
+irondagger=Belati Besi
+golddagger=Belati Emas
+demonicdagger=Belati Iblis
+tungstendagger=Belati Tungsten
+lostumbrella=Payung Hilang
+
+// Rapiers
+fossilrapier=Rapier Fosil
+lightrapier=Rapier Cahaya
+
+// Magic weapons
+unstablegelstaff=Staf Gel Tidak Stabil
+magicalbroom=Sapu Ajaib
+adeptsbook=Buku Ahli
+harpofharmony=Harpa Harmoni
+babyloncandle=Lilin Babel
+
+// Bows
+spinelcrossbow=Panah Otomatis Spinel
+
+// Guns
+thespammer=Sang Spammer
+
+// Bullets
+spambullet=Peluru Spam
+
+// Greatbows
+gelgreatbow=Busur Besar Gel
+unstablegelgreatsword=Busur Besar Gel Tidak Stabil
+
+// Arrows
+gelarrow=Panah Gel
+unstablegelarrow=Panah Gel Tidak Stabil
+
+// Saber Guns
+sabergun=Pistol Sabel
+shotgunsaber=Senapan Sabel
+
+// Slings
+sling=Ketapel
+firesling=Ketapel Api
+frozensling=Ketapel Beku
+
+// Blowguns
+blowgun=Sumpit
+
+// Throw weapons
+gelball=Bola Gel
+gelballgroup=Bola Gel Berkelompok
+unstablegelveline=Lembing Gel Tidak Stabil
+
+// Summon weapons
+volatilegelstaff=Staf Gel Volatil
+infectedstaff=Staf Terinfeksi
+
+// Banners
+blankbanner=Spanduk Kosong
+
+// Healing Tools
+healingtool=Alat Penyembuhan
+magicalvial=Botol Ajaib
+healingstaff=Staf Penyembuhan
+woodenwand=Tongkat Kayu
+goldenwand=Tongkat Emas
+spinelstaff=Staf Spinel
+
+// Tools
+superiorpickaxe=Picksaw Unggul
+
+// Trinkets
+rockyperiapt=Jimat Berbatu
+unstableperiapt=Jimat Tidak Stabil
+bloodyperiapt=Jimat Berdarah
+demonicperiapt=Jimat Iblis
+abysmalperiapt=Jimat Jurang
+frozenperiapt=Jimat Beku
+necromancyperiapt=Jimat Nekromansi
+floralring=Cincin Bunga
+gelring=Cincin Gel
+heartring=Cincin Hati
+ringofhealth=Cincin Kesehatan
+swampshield=Perisai Rawa
+witchmedallion=Medali Penyihir
+iceboots=Sepatu Bot Es
+inspirationfoci=Fokus Inspirasi
+cursedmedallion=Medali Terkutuk
+ancientmedallion=Medali Kuno
+essenceofhealing=Esensi Penyembuhan
+ninjascarf=Syal Ninja
+adrenalinecharm=Jimat Adrenalin
+spinelshield=Perisai Spinel
+bloomrushcharm=Jimat Serbuan Mekar
+infectedperiapt=Jimat Terinfeksi
+
+// Armor
+rockyboots=Sepatu Bot Berbatu
+rockychestplate=Pelindung Dada Berbatu
+rockyhelmet=Helm Berbatu
+goldhat=Topi Emas
+pinkwitchhat=Topi Penyihir Merah Muda
+magicalsuit=Setelan Ajaib
+magicalboots=Sepatu Bot Ajaib
+swampboots=Sepatu Bot Rawa
+swampchestplate=Pelindung Dada Rawa
+swampmask=Masker Rawa
+swamphood=Tudung Rawa
+infectedhat=Topi Terinfeksi
+infectedchestplate=Pelindung Dada Terinfeksi
+infectedboots=Sepatu Bot Terinfeksi
+spinelhelmet=Helm Spinel
+spinelhat=Topi Spinel
+spinelchestplate=Pelindung Dada Spinel
+spinelboots=Sepatu Bot Spinel
+
+// Misc
+gelslimenullifier=Penghilang Lendir Gel
+cuberry=Kuberi
+infectedgrassseed=Benih Rumput Terinfeksi
+
+// Backpacks
+basicbackpack=Ransel Dasar
+sapphirebackpack=Ransel Safir
+amethystbackpack=Ransel Amethyst
+rubybackpack=Ransel Rubi
+emeraldbackpack=Ransel Zamrud
+diamondbackpack=Ransel Berlian
+
+// Books
+runestutorialbook=Buku Tutorial Rune
+
+// Runes Injectors
+runesinjector=Injektor Rune
+rusticrunesinjector=Injektor Rune Pedesaan
+unstablerunesinjector=Injektor Rune Tidak Stabil
+demonicrunesinjector=Injektor Rune Iblis
+tungstenrunesinjector=Injektor Rune Tungsten
+ancientrunesinjector=Injektor Rune Kuno
+
+// Base Runes Tier 0
+baserune=Rune Dasar
+runeoffury=Rune Kemarahan
+runeofspeed=Rune Kecepatan
+runeofhealing=Rune Penyembuhan
+runeofresistance=Rune Perlawanan
+runeofvalor=Rune Keberanian
+runeofdetonation=Rune Peledakan
+runeofthunder=Rune Guntur
+runeofwinter=Rune Musim Dingin
+runeofshadows=Rune Bayangan
+runeofimmortality=Rune Keabadian
+
+// Base Runes Tier 1
+runeofunstablegelslime=Rune Lendir Gel Tidak Stabil
+runeofevilsprotector=Rune Pelindung Kejahatan
+runeofqueenspider=Rune Ratu Laba-laba
+runeofvoidwizard=Rune Penyihir Kekosongan
+runeofswampguardian=Rune Penjaga Rawa
+runeofancientvulture=Rune Burung Nazar Kuno
+runeofpiratecaptain=Rune Kapten Bajak Laut
+runeofchieftain=Rune Kepala Suku
+
+// Base Runes Tier 2
+runeofreaper=Rune Penuai
+runeofcryoqueen=Rune Ratu Kriogenik
+runeofpestwarden=Rune Penjaga Wabah
+runeofsageandgrit=Rune Sage & Grit
+runeoffallenwizard=Rune Penyihir Jatuh
+runeofbabylontower=Rune Menara Babel
+
+// Base Runes Tier 3
+runeofmotherslime=Rune Ibu Lendir
+runeofnightswarm=Rune Gerombolan Malam
+runeofspiderempress=Rune Permaisuri Laba-laba
+runeofsunlightchampion=Rune Juara Sinar Matahari
+runeofmoonlightdancer=Rune Penari Cahaya Bulan
+runeofcrystaldragon=Rune Naga Kristal
+
+// Modifier Runes Tier 0
+modifierrune=Rune Pengubah
+empoweringrune=Rune Pemberdayaan
+recurrentrune=Rune Berulang
+
+// Modifier Runes Tier 1
+frenzyrune=Rune Kegilaan
+vitalrune=Rune Vital
+devastatingrune=Rune Penghancur
+onyxrune=Rune Oniks
+pawningrune=Rune Gadai
+
+// Modifier Runes Tier 2
+abysmalrune=Rune Jurang
+tidalrune=Rune Pasang Surut
+
+// Modifier Runes Tier 3
+ascendantrune=Rune Naik
+
+
+[itemtooltip]
+// Stat tips
+line=----------------------------------------
+magichealingtip=Penyembuhan sihir: \u00a77<health>
+rangetip=Jangkauan: \u00a79<range>
+areatip=\u00a7aArea <number>
+inspirationdamagetip=Kerusakan inspirasi: <value>
+areabuff=Terapkan <buff> ke sekutu
+areadebuff=Terapkan <buff> ke musuh
+areabuffdisplay=<buff> selama <duration> detik
+attackarmorpentip=Penetrasi zirah: <value>%
+
+// Mechanics
+magichealinggrace=\u00a7aAnugerah Penyembuhan Sihir:\u00a70 Menyembuhkan diri sendiri dengan % dari Penyembuhan Sihir yang ditujukan untuk sekutu
+cursedbuff=\u00a7bTerkutuk:\u00a70 \u00a76+25%\u00a70 Kerusakan yang Diterima
+inspiration=\u00a79Inspirasi:\u00a70 Meningkatkan efek spanduk dan alat musik
+adrenaline=\u00a76Adrenalin:\u00a70 +5% Kerusakan, -5% Zirah. Dapat ditumpuk hingga 5 kali
+livingsapling=\u00a77Bibit Hidup:\u00a70 Menyembuhkan pemilik secara sihir sebesar \u00a773\u00a70 setiap 10 serangan
+
+// Misc
+gelslimenullifier=Mereka akan berhenti mengganggumu dengan sekali klik!
+enchantingscrollhealingequipmenttip=Digunakan untuk menyihir item peralatan penyembuhan dengan <enchantment>\n\u00a7!Aphorea Mod
+enchantingscrollhealingtip=Digunakan untuk menyihir alat penyembuhan dengan <enchantment>\n\u00a7!Aphorea Mod
+enchantingscrollareatip=Digunakan untuk menyihir alat berefek area dengan <enchantment>\n\u00a7!Aphorea Mod
+enchantingscrolldaggertip=Digunakan untuk menyihir senjata belati dengan <enchantment>\n\u00a7!Aphorea Mod
+backpack=Ini adalah inventaris baru yang menyimpan semua item yang Anda kumpulkan
+backpackslots=Kapasitas <slots> item
+stored=Item yang disimpan: <items>
+backpackcraft=Harus kosong untuk membuat ransel yang lebih baik
+
+// Consumables
+deleteditem=Item ini telah dihapus, gunakan item ini untuk memulihkan material sebelum dihapus secara permanen
+unstablecore=\u00a7bMelepaskan aura tidak stabil...\u00a70 Hanya dapat digunakan di siang hari
+venomextractbuff=Lowd bilang minum, jangan lakukan
+venomextractbuffdesc=Anda tidak dapat memiliki lebih dari 1 HP
+lifespinel=Meningkatkan kesehatan maksimal secara permanen sebesar 5 hingga 320
+
+// General Weapons
+spinsecondaryattack=Tekan [input=mouse2] untuk membuat serangan berikutnya menjadi serangan area
+areasecondaryattack=Tekan [input=mouse2] untuk melakukan serangan area yang menghabiskan <mana> Mana
+stikybuff1=Membuat musuh Lengket selama 1 detik
+stikybuff2=Membuat musuh Lengket selama 2 detik
+stikybuff3=Membuat musuh Lengket selama 3 detik
+projectilearea=Ketika proyektil berakhir, ia memberikan kerusakan area
+
+// Melee Weapons
+saber=Isi daya hingga maksimal untuk kerusakan penuh dan melepaskan tebasan udara
+saberdash=Tahan [input=mouse2] untuk mengisi daya lari untuk menebas musuh
+battleaxe=Membutuhkan waktu lama untuk mengisi daya
+battleaxe2=Tekan [input=mouse2] untuk mengaktifkan Serbuan Berserker dan mendapatkan 3 Adrenalin untuk sementara
+battleaxe3=Dapatkan Adrenalin untuk sementara dengan memukul musuh selama Serbuan, meningkatkan kecepatan gerakan dan serangan
+dagger=Tahan [input=mouse2] untuk melempar belati
+
+// Range Weapons
+sling=Melempar batu dengan paksa
+sling2=\u00a77100%\u00a70 kesempatan untuk membuat musuh pingsan selama 0.5 detik
+twoarrows=Menembakkan dua panah sekaligus
+threearrows=Menembakkan tiga panah sekaligus
+blowgun=Menembakkan benih
+
+// Single Melee Weapons
+woodenrod=Menyembuhkan diri sendiri secara sihir sebesar \u00a77<healing>\u00a70 setiap 10 serangan
+voidhammer=Ketika proyektil memantul atau mengenai musuh, ia menargetkan yang terdekat, mengenai hingga 3 kali
+crimsonkora=Tahan [input=mouse2] untuk mengisi daya serangan yang menghancurkan tetapi lambat
+thenarcissist=Rangkai 4 serangan untuk melepaskan lemparan pedang berputar pada serangan kelima!\n+20% Kerusakan untuk setiap serangan berantai
+
+// Single Range Weapons
+firesling=Membakar musuh
+frozensling=Membekukan musuh
+gelgreatbow=Mengubah Panah Batu menjadi Panah Gel
+unstablegelgreatbow=Mengubah Panah Batu dan Panah Gel menjadi Panah Gel Tidak Stabil
+thespammer=Dapat menembakkan Peluru Spam
+shotgunsaber=Arahkan ke dekat tengah untuk tembakan yang lebih kuat, akurat, dan menembus
+honeysaber=Isi daya hingga maksimal untuk kerusakan penuh dan menembakkan madu dan blueberry
+spinelcrossbow=Menembakkan panah yang menembus hingga 2 musuh, menjadi lebih mematikan dengan setiap tembusan
+spinelcrossbow2=Tahan [input=mouse2] untuk menembakkan 3 panah sekaligus
+
+// Single Magic Weapons
+unstablegelstaff=Ketika proyektil memantul dari dinding, mereka berlipat ganda
+harpofharmony=Harmoni: Peningkatan kecepatan, regenerasi kesehatan dan mana
+
+// Single Summoner Weapons
+infectedstaff=Memanggil dua Bibit Hidup per pemanggilan
+
+// Single Throwable Weapons
+gelball=Melempar bola gel
+
+// Single Magic Healing Tools
+magicalvial=Arahkan ke manusia yang terluka untuk menyembuhkan mereka, jangan arahkan ke siapa pun untuk menyembuhkan diri sendiri
+magicalvial2=Penggunaan tak terbatas
+
+// Ammo
+spambullet=Secara acak memiliki salah satu efek ini:
+spambullet1=\u00a79Sedih:\u00a70 Musuh yang diserang menjadi lengket, memperlambatnya selama 5 detik
+spambullet2=\u00a79Api:\u00a70 Alih-alih bertabrakan, meninggalkan genangan api di tanah
+spambullet3=\u00a79Suka:\u00a70 Memantul dari dinding dan menembus monster, hingga 10 kali masing-masing
+spambullet4=\u00a79Periksa:\u00a70 Area penyembuhan sihir sebesar 3 kesehatan di akhir jalurnya
+spambullet5=\u00a79Ledakan:\u00a70 Meledak di akhir jalurnya alih-alih bertabrakan
+
+// Tiles
+geltile=Lantai lengket yang sangat memperlambat semua yang ada di atasnya
+
+// Objects
+witchstatue=Menempatkan patung ini di permukaan rawa akan menghilangkan kemunculan penyihir di seluruh pulau
+
+// Generic Trinkets
+areawhenheal=Menjalankan area ini untuk setiap <magichealing> Penyembuhan Sihir yang dilakukan
+periaptboost=Tekan [input=trinketability] untuk mendapatkan peningkatan Kecepatan dan Kecepatan Serangan selama 10 detik
+
+// Trinkets
+rockyperiapt=\u00a77+5\u00a70 Zirah, tetapi \u00a76-5%\u00a70 Kecepatan Gerakan
+rockyperiapt2=Tekan [input=trinketability] untuk mendapatkan 10 Zirah selama 10 detik
+unstableperiapt=Memanggil dua Bayi Lendir Gel Tidak Stabil (6 Kerusakan Pemanggil)
+unstableperiapt2=Membuat Anda kebal terhadap debuff Lengket
+bloodyperiapt=Juga, senjata 'Baut Darah' dan 'Salvo Darah' akan mencuri \u00a773%\u00a70 nyawa
+demonicperiapt=Juga, senjata sihir akan mencuri \u00a773%\u00a70 nyawa
+necromancyperiapt=Setiap kali Anda atau salah satu pemanggil Anda membunuh monster musuh, Anda memanggil Kerangka Mayat Hidup
+necromancyperiapt2=20 Kerusakan Pemanggil. Berlangsung 10 detik dan maksimal ada 3 sekaligus
+frozenperiapt=Senjata jarak dekat dan jarak jauh akan Membeku selama 3 detik
+frozenperiapt2=Memberikan lebih banyak kerusakan pada monster yang terkena Beku
+frozenperiapt3=Membuat Anda kebal terhadap debuff Beku dan Lambat Beku
+floralring=Menyembuhkan diri sendiri secara sihir sebesar \u00a77<healing>\u00a70 setiap 5 detik
+gelring=\u00a77+30%\u00a70 Penyembuhan Sihir yang diterima
+heartring=\u00a77+20\u00a70 kesehatan maksimal
+swampshield=Hanya melindungi serangan ke arah yang diterima
+swampshield2=Pada blok sempurna: Menyembuhkan diri sendiri secara sihir sebesar \u00a77<healing>\u00a70 dari kesehatan maksimal Anda
+iceboots=Membuat Anda meluncur seolah-olah berada di atas es, tetapi memberikan +50% kecepatan gerakan dan +4 zirah
+inspirationfoci1=\u00a77+40%\u00a70 efek inspirasi dan \u00a77+20%\u00a70 kecepatan kemampuan inspirasi
+inspirationfoci2=\u00a76-20%\u00a70 semua kerusakan non-inspirasi dan \u00a76-1\u00a70 pemanggil maksimal
+essenceofhealing=\u00a77+<percent>%\u00a70 Penyembuhan Sihir per esensi kehidupan
+essenceofhealing2=\u00a77<flat>\u00a70 Penyembuhan Sihir per 2 esensi kehidupan
+essenceofhealing3=\u00a76-80%\u00a70 durasi esensi kehidupan, dibatasi hingga -50%
+ninjascarf=Mengubah Lari Sabel menjadi Lompatan Sabel
+adrenalinecharm=Setiap pukulan yang diterima akan memberi Anda Adrenalin selama 20 detik
+infectedperiapt=Memanggil dua Bibit Hidup (8 Kerusakan Pemanggil)
+bloomrushcharm=Kurangi penggunaan stamina sebesar 10% untuk setiap Adrenalin yang Anda miliki\nMemanggil Bibit Hidup (8 Kerusakan Pemanggil) untuk setiap Adrenalin yang Anda miliki
+
+// Set Bonus
+goldhatsetbonus=Jika Anda diam, kecepatan serangan jarak jauh Anda meningkat pesat
+pinkwitchsetbonus=Meningkatkan Kecepatan Serangan Sihir, Regenerasi Mana, dan Zirah semakin rendah kesehatan Anda
+infectedsetbonus=Memanggil tiga Bibit Hidup (8 Kerusakan Pemanggil)
+spinelhelmetsetbonus=Menyembuhkan diri sendiri secara sihir sebesar \u00a77<healing>\u00a70 dari kerusakan jarak dekat yang diberikan kepada monster musuh
+spinelhatsetbonus=Menyembuhkan diri sendiri dan semua sekutu dekat secara sihir\ndengan \u00a77<healing>\u00a70 dari kerusakan sihir yang diberikan kepada monster musuh
+
+// Banners
+strikebannereffect=\u00a77+<effect>%\u00a70 regenerasi kesehatan (di dalam dan di luar pertempuran)
+strikebannerability=\u00a7aSetiap <time> detik:\u00a70 Melakukan serangan area
+blankbannereffect=\u00a77+<effect>%\u00a70 regenerasi kesehatan (di luar pertempuran)
+blankbannerability=\u00a7aSetiap <time> detik:\u00a70 Melakukan penyembuhan area
+bannerofdamageeffect=\u00a77+<effect>%\u00a70 kerusakan
+bannerofdefenseeffect=\u00a77-<effect>%\u00a70 kerusakan yang diterima
+bannerofspeedeffect=\u00a77+<effect>%\u00a70 kecepatan gerakan
+bannerofsummonspeedeffect=\u00a77+<effect>%\u00a70 kecepatan gerakan pemanggil
+
+// Mighty Banners
+banneroffishingeffect=\u00a77+<effect>\u00a70 kekuatan memancing
+bannerofhealthregeneffect=\u00a77+<effectfloat>\u00a70 regenerasi kesehatan pertempuran
+bannerofmanaregeneffect=\u00a77+<effect>%\u00a70 regenerasi mana pertempuran
+bannerofresistanceeffect=\u00a77+<effect>\u00a70 zirah
+bannerofsummoningeffect=\u00a77+<effect>\u00a70 pemanggil maksimal
+bannerofattackspeedeffect=\u00a77+<effect>%\u00a70 kecepatan serangan
+
+// Summoner Expansion Banners
+bannerofresilienceeffect=\u00a77+<effect>%\u00a70 ketahanan maksimal\nRegenerasi \u00a77+<effect>\u00a70 ketahanan per detik
+bannerofbouncingeffect=\u00a77+<effect>\u00a70 pantulan proyektil
+bannerofessenceeffect=\u00a77+<effect>%\u00a70 durasi esensi kehidupan
+bannerofstaminaeffect=\u00a77+<effect>%\u00a70 kapasitas stamina\n\u00a77+<effect2>%\u00a70 regenerasi stamina\n\u00a77-<effect2>%\u00a70 penggunaan stamina
+bannerofpickingeffect=\u00a77+<effectfloat>\u00a70 jangkauan pengambilan
+bannerofdashingeffect=\u00a77+<effect>\u00a70 tumpukan lari\n\u00a77-<effect2>%\u00a70 waktu pendinginan lari
+bannerofmanaeffect=\u00a77+<effect>%\u00a70 mana maksimal\n\u00a77<effect2>%\u00a70 regenerasi mana
+
+// Runes (General)
+baserune=\u00a7iRune Dasar
+modifierrune=\u00a7aRune Pengubah
+linkedrune=\u00a7bRune terhubung ke [<player>]
+notruneowner=Anda bukan pemilik Rune Dasar
+runesslots=Dapat memasukkan hingga 1 Rune Dasar + <modifierslots> Rune Pengubah
+useruneinfusor=[input=runesinjectorability] untuk mengaktifkan
+requiresbaserune=Membutuhkan rune dasar yang dimasukkan
+onlyonebaserune=Hanya satu rune dasar yang dapat dimasukkan sekaligus
+duplicatedmodifierrunes=Tidak dapat memasukkan lebih dari satu rune pengubah yang sama
+runehealthcost=Mengonsumsi <health>% dari kesehatan maksimal saat aktivasi
+runehealthhealing=Memulihkan <health>% dari kesehatan maksimal saat digunakan
+runecooldown=Mengisi ulang dalam <seconds> detik
+increaseruneeffectnumber=Meningkatkan efek sebesar \u00a77<variation>%\u00a70
+decreaseruneeffectnumber=Mengurangi efek sebesar \u00a76<variation>%\u00a70
+increaserunecooldown=Meningkatkan waktu pendinginan sebesar \u00a76<variation>%\u00a70
+decreaserunecooldown=Mengurangi waktu pendinginan sebesar \u00a77<variation>%\u00a70
+increaserunehealthcost=Meningkatkan konsumsi kesehatan maksimal sebesar \u00a76<health>%\u00a70
+increaserunehealthhealing=Meningkatkan pemulihan kesehatan maksimal sebesar \u00a77<health>%\u00a70
+runedamagereduction=Kerusakan berkurang drastis terhadap manusia dan bahkan lebih terhadap bos
+runedamagereductionnoboss=Kerusakan berkurang drastis terhadap manusia dan tidak mempengaruhi bos
+moreextraeffectmod=Modifikasi efek <mod>% lebih efektif
+lessextraeffectmod=Modifikasi efek <mod>% kurang efektif
+
+// Runes Injectors
+
+// Base Runes Tier 0
+runeoffury=Meningkatkan kerusakan dan kecepatan serangan Anda sebesar \u00a77<effectNumber>\u00a70% selama 10 detik
+runeofspeed=Lari dengan kekuatan \u00a77<effectNumber>\u00a70 ke arah yang Anda tuju dan menjadi kebal selama 0.5 detik
+runeofresistance=Meningkatkan zirah Anda sebesar \u00a77<effectNumber>\u00a70% selama 10 detik
+runeofresistance2=Saat dalam masa pendinginan, zirah Anda berkurang setengahnya
+runeofvalor=+200% inspirasi selama \u00a77<effectNumber>\u00a70 detik
+runeofdetonation=Meledak, memberikan lebih banyak kerusakan dan mendorong mundur musuh semakin dekat mereka
+runeofdetonation2=Kerusakan maksimal adalah \u00a77<effectNumber>\u00a70% dari kesehatan maksimal monster sebagai kerusakan
+runeofthunder=Setelah dua detik, petir menyambar posisi awal kursor Anda
+runeofthunder2=Petir memberikan \u00a77<effectNumber>\u00a70% dari kesehatan monster sebagai kerusakan dan membuat pingsan selama 2 detik
+runeofwinter=Memperlambat musuh dengan es dalam jangkauan 500 selama \u00a77<effectNumber>\u00a70 detik
+runeofimmortality=Jika Anda mati dalam \u00a77<effectNumber>\u00a70 detik berikutnya, Anda akan bertahan hidup dengan kesehatan maksimal
+runeofimmortality2=Jika ini terjadi, Anda akan kebal selama 3 detik, tetapi waktu pendinginan akan menjadi 30 detik
+runeofimmortality3=Saat dalam masa pendinginan, kesehatan maksimal Anda berkurang setengahnya
+runeofshadows=Selama \u00a77<effectNumber>\u00a70 detik, Anda akan menjadi tidak terlihat tetapi juga terintimidasi, mencegah Anda melakukan tindakan apa pun
+
+// Base Runes Tier 1
+runeofunstablegelslime=Teleportasi ke lokasi terdekat dan panggil 2 Lendir Gel Tidak Stabil Runik selama \u00a77<effectNumber>\u00a70 detik
+runeofunstablegelslime2=Pemanggil akan memberikan 5% dari kesehatan maksimal monster sebagai kerusakan
+runeofevilsprotector=+\u00a77<effectNumber>\u00a70% kecepatan serangan, tetapi -50% kecepatan gerakan selama 10 detik
+runeofevilsprotector2=Pada malam hari di permukaan, efek positifnya berlipat ganda
+runeofqueenspider=Meninggalkan jaring laba-laba di tanah selama \u00a77<effectNumber>\u00a70 detik
+runeofvoidwizard=Semua proyektil akan memantul tanpa henti dan +\u00a77<effectNumber>\u00a70% kecepatan proyektil selama 10 detik
+runeofswampguardian=Mengurangi semua kerusakan yang diterima sebesar 80% selama \u00a77<effectNumber>\u00a70 detik
+runeofancientvulture=Memanggil Anakan Burung Nazar Runik selama 10 detik
+runeofancientvulture2=Pemanggil akan memberikan \u00a77<effectNumber>\u00a70% dari kesehatan maksimal monster sebagai kerusakan
+runeofpiratecaptain=Meningkatkan Kerusakan Anda sebesar \u00a77<effectNumber>\u00a70% untuk setiap 200 koin yang Anda miliki, hingga maksimal 20.000 koin
+runeofpiratecaptain2=Setiap kali Anda menyerang, Anda akan kehilangan 3 koin
+runeofchieftain=Selama 20 detik berikutnya, Kerusakan Anda meningkat semakin rendah kesehatan Anda, hingga maksimal +\u00a77<effectNumber>\u00a70%
+
+// Base Runes Tier 2
+runeofreaper=Teleportasi ke posisi mouse Anda. Jarak maksimal \u00a77<effectNumber>\u00a70
+runeofcryoqueen=Berhenti selama 1 detik dan luncurkan serangan es di sekitar Anda dengan jangkauan \u00a77<effectNumber>\u00a70
+runeofcryoqueen2=Proyektil akan memberikan 200% dari kesehatan maksimal monster sebagai kerusakan
+runeofpestwarden=Selama \u00a77<effectNumber>\u00a70 detik berikutnya, bertabrakan dengan musuh akan merusak dan mendorong mereka
+runeofpestwarden2=Kerusakannya adalah 20% dari kesehatan maksimal mereka
+runeofsageandgrit=Jika ada sekutu yang terluka di dekatnya (jangkauan 500), sembuhkan \u00a77<effectNumber>\u00a70% dari total kesehatan mereka
+runeofsageandgrit2=Jika tidak, tingkatkan kerusakan, kecepatan serangan, dan kecepatan gerakan Anda sebesar +\u00a77<effectNumber>\u00a70% selama 20 detik
+runeoffallenwizard=Buat semua monster pingsan kecuali Anda selama \u00a77<effectNumber>\u00a70 detik
+runeoffallenwizard2=Manusia akan bebas lebih cepat, dan bos bahkan lebih cepat
+runeofbabylontower=+\u00a77<effectNumber>\u00a70% semua kerusakan, tetapi Anda tidak bisa bergerak. 10 detik
+
+// Base Runes Tier 3
+runeofmotherslime=Lakukan lompatan besar ke arah posisi mouse Anda dan berikan kerusakan area saat mendarat
+runeofmotherslime2=Pendaratan akan memberikan \u00a77<effectNumber>\u00a70% dari kesehatan maksimal monster sebagai kerusakan
+runeofnightswarm=Panggil 5 kelelawar selama \u00a77<effectNumber>\u00a70 detik yang mencari monster musuh untuk menggigitnya
+runeofnightswarm2=Setiap gigitan memulihkan 1% dari total kesehatan Anda (minimal 1)
+runeofspiderempress=Melempar \u00a77<F0effectNumber>\u00a70 bola jaring ke arah mouse Anda
+runeofspiderempress2=Bola jaring akan membuat pingsan selama 3 detik dan memperlambat selama 10 detik
+runeofsunlightchampion=Dibuat pingsan selama 3 detik saat mengisi daya nova dengan jangkauan \u00a77<effectNumber>\u00a70
+runeofsunlightchampion2=Nova akan memberikan 200% dari kesehatan maksimal monster sebagai kerusakan
+runeofmoonlightdancer=+\u00u00a77<effectNumber>\u00a70% kerusakan untuk setiap +1% kecepatan gerakan selama 10 detik
+runeofcrystaldragon=Lemparkan sinar laser ke posisi kursor Anda selama 5 detik
+runeofcrystaldragon2=Laser akan memberikan \u00a77<effectNumber>\u00a70% dari kesehatan maksimal monster sebagai kerusakan
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+onyxrune=Saat diaktifkan, memanggil Oniks selama 5 detik. Ia akan memberikan kerusakan berdasarkan 5% dari kesehatan monster
+onyxrune2=Setiap gigitan Oniks memulihkan 1% dari total kesehatan Anda (minimal 1)
+onyxrune3=\u00a73Terima kasih Oniks atas ide rune yang brilian! <3
+pawningrune=Saat diaktifkan, jika Anda belum memiliki efeknya, segera pulihkan 20% dari kesehatan maksimal Anda
+pawningrune2=Setelah 10 detik, Anda akan kehilangan jumlah yang dipulihkan ditambah 40% tambahan
+
+// Modifier Runes Tier 2
+abysmalrune=Saat diaktifkan, memanggil lubang hitam di posisi kursor Anda, menarik musuh selama 2 detik
+abysmalrune2=Lubang hitam hanya akan dipanggil jika 10 detik telah berlalu sejak aktivasi terakhir
+tidalrune=Saat diaktifkan, memanggil gelombang air yang mendorong musuh menjauh
+
+// Modifier Runes Tier 3
+
+
+[mobtooltip]
+usenet=Gunakan Jaring! [item=net]
+
+
+[mob]
+// Hostile
+gelslime=Lendir Gel
+rockygelslime=Lendir Gel Berbatu
+unstablegelslime=Lendir Gel Tidak Stabil
+miniunstablegelslime=Lendir Gel Tidak Stabil Mini
+pinkwitch=Penyihir Merah Muda
+voidadept=Ahli Kekosongan
+copperdaggergoblin=Goblin Belati Tembaga
+irondaggergoblin=Goblin Belati Besi
+golddaggergoblin=Goblin Belati Emas
+infectedtreant=Treant Terinfeksi
+spinelgolem=Golem Spinel
+spinelcaveling=Penghuni Gua Spinel
+tungstencaveling=Penghuni Gua Tungsten
+spinelmimic=Mimik Spinel
+babylontower=Menara Babel
+hearthcrystal=Kristal Perapian
+babylon=Babel
+
+// Friendly
+wildphosphorslime=Lendir Fosfor Liar
+
+// Summon
+babyunstablegelslime=Bayi Lendir Gel Tidak Stabil
+undeadskeleton=Kerangka Mayat Hidup
+volatilegelslime=Lendir Gel Volatil
+runicunstablegelslime=Lendir Gel Tidak Stabil Runik
+runicvulturehatchling=Anakan Burung Nazar Runik
+runicbat=Kelelawar Runik
+onyx=Oniks
+livingsapling=Bibit Hidup
+
+// Pet
+petphosphorslime=Lendir Fosfor
+
+
+[buff]
+// Common Buffs
+stunbuff=Pingsan
+fallenstunbuff=Pingsan Jatuh
+stickybuff=Lengket
+stopbuff=Berhenti
+honeyedbuff=Bermadu
+venomextractbuff=Ekstrak Racun
+cursedbuff=Terkutuk
+adrenalinebuff=Adrenalin
+harmonybuff=Harmoni
+
+// Active Buffs
+berserkerrushactive=Serbuan Berserker Aktif
+periaptactive=Kemampuan Jimat Aktif
+runesinjectoractive=Injektor Rune Aktif
+
+// Cooldown Buffs
+berserkerrushcooldown=Serbuan Berserker dalam Masa Pendinginan
+periaptcooldown=Kemampuan Jimat dalam Masa Pendinginan
+runesinjectorcooldown=Injektor Rune dalam Masa Pendinginan
+spinattackcooldown=Serangan Berputar dalam Masa Pendinginan
+saberdashcooldown=Lari Sabel dalam Masa Pendinginan
+
+
+[message]
+unstablegelslime_anger=\u00a76Lendir Gel Tidak Stabil menjadi marah... <anger>/10
+unstablegelslime_fullanger=\u00a76Lendir Gel Tidak Stabil menjadi marah! <anger>/10
+unstablegelslime_night=\u00a76Lendir Gel Tidak Stabil\u00a70 menghilang saat malam tiba!
+gelslimesnulled=Lendir Gel di dunia ini telah dinetralkan. Mereka tidak akan muncul lagi
+gelslimesunnulled=Lendir Gel di dunia ini telah diizinkan. Mereka sekarang akan muncul
+pinkwitchesnulled=Penyihir Merah Muda di (<x>, <y>) telah dinetralkan
+pinkwitchesunnulled=Penyihir Merah Muda di (<x>, <y>) telah diizinkan
+needfreeslots=Anda memerlukan <slots> slot kosong di inventaris untuk menggunakan ini
+cantuseatnight=Tidak dapat digunakan di malam hari
+healthalreadyfull=Kesehatan sudah penuh
+cantheal=Tidak bisa menyembuhkan
+insuficienthealth=Kesehatan tidak cukup untuk melakukan tindakan ini!
+cannottrhowlockeditem=Anda tidak dapat melempar item yang terkunci di inventaris
+initialrunetip=Pilih rune awal Anda dengan hati-hati;\nAnda tidak akan mendapatkan yang lain sampai nanti dalam permainan
+alreadyselectedinitialrune=Rune awal sudah dipilih
+cannotusetrial=Tidak dapat digunakan di ruang ujian
+
+[biome]
+infectedfields=Ladang Terinfeksi
+
+
+[journal]
+
+//Levels
+infectedfieldssurface=Permukaan Ladang Terinfeksi
+infectedfieldscave=Gua Ladang Terinfeksi
+
+// Forest Surface Challenges
+killgelslimesforest=[mob=gelslime] Bunuh 25 Lendir Gel di hutan
+pickupfloralring=[item=floralring] Potong banyak rumput di hutan untuk mendapatkan Cincin Bunga
+killunstablegelslime=[mob=unstablegelslime] Bunuh 1 Lendir Gel Tidak Stabil
+
+// Swamp Surface Challenges
+killpinkwitchesswamp=[mob=pinkwitch] Di malam hari, bunuh 5 Penyihir Merah Muda di permukaan rawa
+
+// Infected Fields Surface Challenges
+pickupinfectedlogs=[item=infectedlog] Tebang untuk mengambil 100 Kayu Terinfeksi
+
+// Infected Fields Cave Challenges
+pickupspinel=[item=spinel] Ambil 40 Spinel
+activatebabylontower=[item=lifespinel] Tempatkan Spinel Kehidupan di Menara Babel
+findthespammer=[item=thespammer] Temukan Sang Spammer
+
+
+[controls]
+runesinjectorability=Kemampuan Injektor Rune
+
+
+[runestutorialbook]
+openheader=Membuka Injektor Rune
+opentext=Untuk menggunakan rune, Anda memerlukan Injektor Rune. Perangkat khusus ini dapat dibuka untuk memasukkan rune. Setiap injektor memiliki satu slot untuk Rune Dasar dan beberapa slot untuk Rune Pengubah, tergantung pada kapasitasnya. Anda bebas menambahkan Rune Pengubah sebanyak yang diizinkan injektor, bereksperimenlah untuk menemukan kombinasi terbaik!
+equipheader=Melengkapi Injektor
+equiptext=Untuk mengaktifkan rune Anda, Injektor Rune harus dilengkapi di slot pernak-pernik. Setelah dilengkapi, cukup tekan G (atau tombol yang ditetapkan di pengaturan) untuk memicu efeknya. Pastikan injektor dikonfigurasi dengan benar dan siap sebelum beraksi!
+
+runesheader=Apa itu Rune?
+runestext=Rune adalah batu mistis yang memberikan efek kuat saat dimasukkan ke dalam Injektor Rune. Kekuatan dan perilakunya bergantung pada bagaimana mereka digabungkan, menguasai penggunaannya adalah kunci untuk membuka potensi penuh Anda.
+baserunesheader=Rune Dasar
+baserunestext=Setiap Injektor Rune membutuhkan tepat satu Rune Dasar untuk berfungsi. Rune Dasar mendefinisikan efek utama injektor dan bertindak sebagai inti dari pengaturan Anda. Anda akan melihat angka hijau di sebelah efek, ini mewakili nilai efeknya, yang dapat ditingkatkan atau dikurangi dengan pengubah.
+modifierrunesheader=Rune Pengubah
+modifierrunestext=Rune Pengubah digunakan untuk menyesuaikan dan meningkatkan efek Rune Dasar Anda. Mereka dapat mengubah nilai efek, mengubah perilakunya, atau menambahkan properti khusus. Namun, Rune Pengubah selalu datang dengan trade-off: tidak ada pengubah yang murni bermanfaat, jadi pilihlah dengan bijak!
+
+tableheader=Meja Rune
+tabletext=Meja Rune adalah stasiun andalan Anda untuk membuat berbagai macam rune. Sebagian besar rune standar dapat dibuat di sini, tetapi ingat: beberapa rune kuat hanya dapat ditemukan melalui eksplorasi. Buka mata Anda, petualangan memberi penghargaan kepada yang ingin tahu!
+crafttext=Di Bengkel Rune, Anda akan menemukan semua yang Anda butuhkan untuk memulai. Gabungkan isinya dengan Rune Awal Anda dan Rune Dasar yang dapat Anda buat di Meja Rune, dan Anda akan memiliki Injektor Rune yang berfungsi penuh siap untuk dilengkapi!

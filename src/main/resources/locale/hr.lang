@@ -1,0 +1,752 @@
+# Translation made by AI
+
+[global]
+aphorea=§!Aphorea Mod
+aphorearework=§!Aphorea Mod Prerada
+aphoreamightybanner=§!Aphorea Mod x Mighty Banner Mod
+aphoreasummonerexpansion=§!Aphorea Mod x Summoner Proširenje
+
+
+[buffmodifiers]
+// Magic Healing
+magichealing=<mod>% magičnog iscjeljenja
+magichealingflat=<mod> magičnog iscjeljenja
+magichealingreceived=<mod>% primljenog magičnog iscjeljenja
+magichealingreceivedflat=<mod> primljenog magičnog iscjeljenja
+magichealinggrace=<mod>% milosti magičnog iscjeljenja
+
+// Area
+arearange=<mod>% dometa područja
+
+// Inspiration Damage
+inspirationdamage=<mod>% štete od inspiracije
+inspirationcritchance=<mod>% šanse za kritični udarac od inspiracije
+inspirationcritdamage=<mod>% kritične štete od inspiracije
+inspirationeffect=<mod>% efekta inspiracije
+inspirationabilityspeed=<mod>% brzine sposobnosti inspiracije
+
+// Others
+loyal=Bodež se ne gubi pri bacanju
+
+
+[stats]
+inspiration_damage=Šteta od inspiracije
+
+
+[enchantment]
+// Healing Equipment
+godly=Božanski
+absent=Odsutan
+auxiliary=Pomoćni
+vain=Uzaludan
+gentle=Nježan
+selfish=Sebičan
+
+// Healing
+friendly=Prijateljski
+graceful=Graciozan
+wonderful=Čudesan
+ecologic=Ekološki
+exalted=Uzvišen
+cursed=Proklet
+
+// Area
+booming=Uspješan
+dimmed=Prigušen
+
+// Others
+loyal=Odan
+
+
+[tile]
+geltile=Gel pod
+infectedwatertile=Zaražena voda
+infectedgrasstile=Zaražena trava
+spinelgravel=Šljunak od spinela
+
+
+[tech]
+runes=Rune
+
+
+[object]
+witchstatue=Kip vještice
+runestable=Stol za rune
+#NEW
+infectedsapling=Zaražena sadnica
+spinelcluster=Grozd spinela
+spinelcluster_small=Mali grozd spinela
+gelrock=Gel stijena
+infectedtree=Zaraženo drvo
+infectedgrass=Zaražena trava
+spinelchest=Škrinja od spinela
+fakespinelchest=Lažna škrinja od spinela
+babylontower=Babilonska kula
+babylonentrance=Ulaz u Babilon
+babylonexit=Izlaz iz Babilona
+infectedtrialentrance=Ulaz u zaraženu probu
+infectedchair=Zaražena stolica
+infecteddinnertable=Zaraženi stol za večeru
+infectedbookshelf=Zaražena polica za knjige
+infectedcabinet=Zaraženi ormar
+infectedbed=Zaraženi krevet
+infecteddoublebed=Zaraženi bračni krevet
+infectedcandelabra=Zaraženi svijećnjak
+
+
+[itemcategory]
+healing=Iscjeljivanje
+healingtools=Alati za iscjeljivanje
+runes=Rune
+runesinjectors=Injektori runa
+baserunes=Osnovne rune
+modifierrunes=Rune modifikatori
+
+
+[item]
+// General Materials
+anybasicfoci=Bilo koji osnovni fokus
+
+// Materials
+rockygel=Kameniti gel
+unstablegel=Nestabilan gel
+stardust=Zvjezdana prašina
+infectedlog=Zaraženi trupac
+infectedalloy=Zaražena legura
+spinel=Spinel
+lifespinel=Životni spinel
+
+// Consumables
+unstablecore=Nestabilna jezgra
+initialrune=Početna runa
+venomextract=Ekstrakt otrova
+
+// Swords
+gelsword=Gel mač
+unstablegelsword=Nestabilan gel mač
+broom=Metla
+voidhammer=Čekić praznine
+brokenkora=Slomljena kora
+thenarcissist=Narcis
+cryokatana=Kriokatana
+
+// Greatswords
+unstablegelgreatsword=Nestabilan gel veliki mač
+babylongreatsword=Babilonski veliki mač
+
+// Glaives
+woodenrod=Drveni štap
+
+// Sabers
+saber=Sablja
+coppersaber=Bakrena sablja
+ironsaber=Željezna sablja
+goldsaber=Zlatna sablja
+demonicsaber=Demonska sablja
+unstablegelsaber=Nestabilna gel sablja
+honeysaber=Medena sablja
+glacialsaber=Ledena sablja
+crimsonkora=Grimizna kora
+
+// Battleaxes
+battleaxe=Bojna sjekira
+unstablegelbattleaxe=Nestabilna gel bojna sjekira
+demonicbattleaxe=Demonska bojna sjekira
+
+// Daggers
+dagger=Bodež
+copperdagger=Bakreni bodež
+irondagger=Željezni bodež
+golddagger=Zlatni bodež
+demonicdagger=Demonski bodež
+tungstendagger=Volframov bodež
+lostumbrella=Izgubljeni kišobran
+
+// Rapiers
+fossilrapier=Fosilni rapier
+lightrapier=Lagani rapier
+
+// Magic weapons
+unstablegelstaff=Nestabilan gel štap
+magicalbroom=Čarobna metla
+adeptsbook=Knjiga adepta
+harpofharmony=Harfa harmonije
+babyloncandle=Babilonska svijeća
+
+// Bows
+spinelcrossbow=Spinel samostrel
+
+// Guns
+thespammer=Spamer
+
+// Bullets
+spambullet=Spam metak
+
+// Greatbows
+gelgreatbow=Gel veliki luk
+unstablegelgreatbow=Nestabilan gel veliki luk
+
+// Arrows
+gelarrow=Gel strijela
+unstablegelarrow=Nestabilna gel strijela
+
+// Saber Guns
+sabergun=Sablja pištolj
+shotgunsaber=Sačmarica sablja
+
+// Slings
+sling=Praćka
+firesling=Vatrena praćka
+frozensling=Smrznuta praćka
+
+// Blowguns
+blowgun=Puhaljka
+
+// Throw weapons
+gelball=Gel lopta
+gelballgroup=Grupirane gel lopte
+unstablegelveline=Nestabilan gel koplje
+
+// Summon weapons
+volatilegelstaff=Hlapljivi gel štap
+infectedstaff=Zaraženi štap
+
+// Banners
+blankbanner=Prazan stijeg
+
+// Healing Tools
+healingtool=Alat za iscjeljivanje
+magicalvial=Čarobna bočica
+healingstaff=Štap za iscjeljivanje
+woodenwand=Drveni štapić
+goldenwand=Zlatni štapić
+spinelstaff=Spinel štap
+
+// Tools
+superiorpickaxe=Vrhunski kramp
+
+// Trinkets
+rockyperiapt=Kameniti periapt
+unstableperiapt=Nestabilan periapt
+bloodyperiapt=Krvavi periapt
+demonicperiapt=Demonski periapt
+abysmalperiapt=Bezdan periapt
+frozenperiapt=Smrznuti periapt
+necromancyperiapt=Nekromantski periapt
+floralring=Cvjetni prsten
+gelring=Gel prsten
+heartring=Srčani prsten
+ringofhealth=Prsten zdravlja
+swampshield=Močvarni štit
+witchmedallion=Medaljon vještice
+iceboots=Ledene čizme
+inspirationfoci=Fokus inspiracije
+cursedmedallion=Prokleti medaljon
+ancientmedallion=Drevni medaljon
+essenceofhealing=Esencija iscjeljenja
+ninjascarf=Nindža šal
+adrenalinecharm=Adrenalinski amulet
+spinelshield=Spinel štit
+bloomrushcharm=Amulet cvjetanja
+infectedperiapt=Zaraženi periapt
+
+// Armor
+rockyboots=Kamenite čizme
+rockychestplate=Kameniti oklop
+rockyhelmet=Kamenita kaciga
+goldhat=Zlatni šešir
+pinkwitchhat=Ružičasti vještičji šešir
+magicalsuit=Čarobno odijelo
+magicalboots=Čarobne čizme
+swampboots=Močvarne čizme
+swampchestplate=Močvarni oklop
+swampmask=Močvarna maska
+swamphood=Močvarna kapuljača
+infectedhat=Zaraženi šešir
+infectedchestplate=Zaraženi oklop
+infectedboots=Zaražene čizme
+spinelhelmet=Spinel kaciga
+spinelhat=Spinel šešir
+spinelchestplate=Spinel oklop
+spinelboots=Spinel čizme
+
+// Misc
+gelslimenullifier=Nulifikator gel sluzi
+cuberry=Kockasta bobica
+infectedgrassseed=Sjeme zaražene trave
+
+// Backpacks
+basicbackpack=Osnovni ruksak
+sapphirebackpack=Safirni ruksak
+amethystbackpack=Ametistni ruksak
+rubybackpack=Rubinski ruksak
+emeraldbackpack=Smaragdni ruksak
+diamondbackpack=Dijamantni ruksak
+
+// Books
+runestutorialbook=Knjiga o runama
+
+// Runes Injectors
+runesinjector=Injektor runa
+rusticrunesinjector=Rustikalni injektor runa
+unstablerunesinjector=Nestabilan injektor runa
+demonicrunesinjector=Demonski injektor runa
+tungstenrunesinjector=Volframov injektor runa
+ancientrunesinjector=Drevni injektor runa
+
+// Base Runes Tier 0
+baserune=Osnovna runa
+runeoffury=Runa bijesa
+runeofspeed=Runa brzine
+runeofhealing=Runa iscjeljenja
+runeofresistance=Runa otpora
+runeofvalor=Runa hrabrosti
+runeofdetonation=Runa detonacije
+runeofthunder=Runa groma
+runeofwinter=Runa zime
+runeofshadows=Runa sjena
+runeofimmortality=Runa besmrtnosti
+
+// Base Runes Tier 1
+runeofunstablegelslime=Runa nestabilne gel sluzi
+runeofevilsprotector=Runa zaštitnika zla
+runeofqueenspider=Runa kraljice pauka
+runeofvoidwizard=Runa čarobnjaka praznine
+runeofswampguardian=Runa čuvara močvare
+runeofancientvulture=Runa drevnog lešinara
+runeofpiratecaptain=Runa gusarskog kapetana
+runeofchieftain=Runa poglavice
+
+// Base Runes Tier 2
+runeofreaper=Runa kosca
+runeofcryoqueen=Runa krio-kraljice
+runeofpestwarden=Runa čuvara kuge
+runeofsageandgrit=Runa kadulje i hrabrosti
+runeoffallenwizard=Runa palog čarobnjaka
+runeofbabylontower=Runa babilonske kule
+
+// Base Runes Tier 3
+runeofmotherslime=Runa majke sluzi
+runeofnightswarm=Runa noćnog roja
+runeofspiderempress=Runa carice pauka
+runeofsunlightchampion=Runa prvaka sunčeve svjetlosti
+runeofmoonlightdancer=Runa plesačice mjesečine
+runeofcrystaldragon=Runa kristalnog zmaja
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+frenzyrune=Runa ludila
+vitalrune=Vitalna runa
+devastatingrune=Razorna runa
+onyxrune=Oniks runa
+pawningrune=Založna runa
+
+// Modifier Runes Tier 2
+abysmalrune=Bezdan runa
+tidalrune=Plimna runa
+
+// Modifier Runes Tier 3
+ascendantrune=Uzlazna runa
+
+
+[itemtooltip]
+// Stat tips
+line=----------------------------------------
+magichealingtip=Magično iscjeljenje: §7<health>
+rangetip=Domet: §9<range>
+areatip=§aPodručje <number>
+inspirationdamagetip=Šteta od inspiracije: <value>
+areabuff=Primijeni <buff> na saveznike
+areadebuff=Primijeni <buff> na neprijatelje
+areabuffdisplay=<buff> na <duration> sekundi
+attackarmorpentip=Probijanje oklopa: <value>%
+
+// Mechanics
+magichealinggrace=§aMilost magičnog iscjeljenja:§0 Liječi sebe s % magičnog iscjeljenja namijenjenog saveznicima
+cursedbuff=§bProklet:§0 §6+25%§0 primljenog štete
+inspiration=§9Inspiracija:§0 Poboljšava efekte stijegova i glazbenih instrumenata
+adrenaline=§6Adrenalin:§0 +5% štete, -5% oklopa. Može se slagati do 5 puta
+livingsapling=§7Živa sadnica:§0 Magično liječi vlasnika za §73§0 svakih 10 napada
+
+// Misc
+gelslimenullifier=Prestat će vas gnjaviti jednostavnim klikom!
+enchantingscrollhealingequipmenttip=Koristi se za očaravanje predmeta opreme za iscjeljivanje s <enchantment>\n§!Aphorea Mod
+enchantingscrollhealingtip=Koristi se za očaravanje alata za iscjeljivanje s <enchantment>\n§!Aphorea Mod
+enchantingscrollareatip=Koristi se za očaravanje alata s područnim efektom s <enchantment>\n§!Aphorea Mod
+enchantingscrolldaggertip=Koristi se za očaravanje bodeža s <enchantment>\n§!Aphorea Mod
+backpack=To je novi inventar koji pohranjuje sve predmete koje sakupite
+backpackslots=Kapacitet <slots> predmeta
+stored=Pohranjeni predmeti: <items>
+backpackcraft=Mora biti prazan da bi se napravio bolji ruksak
+
+// Consumables
+deleteditem=Ovaj predmet je uklonjen, upotrijebite ovaj predmet da biste povratili materijale prije nego što se trajno ukloni
+unstablecore=§bOslobađa nestabilnu auru...§0 Može se koristiti samo danju
+venomextractbuff=Lowd kaže popij, nemoj
+venomextractbuffdesc=Ne možete imati više od 1 HP
+lifespinel=Trajno povećava maksimalno zdravlje za 5 do 320
+
+// General Weapons
+spinsecondaryattack=Pritisnite [input=mouse2] da sljedeći napad bude napad na područje
+areasecondaryattack=Pritisnite [input=mouse2] da biste izveli napad na područje koji troši <mana> mane
+stikybuff1=Čini neprijatelja ljepljivim na 1 sekundu
+stikybuff2=Čini neprijatelja ljepljivim na 2 sekunde
+stikybuff3=Čini neprijatelja ljepljivim na 3 sekunde
+projectilearea=Kada projektil završi, nanosi štetu na području
+
+// Melee Weapons
+saber=Napunite do maksimuma za punu štetu i oslobađanje zračnog reza
+saberdash=Držite [input=mouse2] da biste napunili juriš i prorezali neprijatelje
+battleaxe=Dugo se puni
+battleaxe2=Pritisnite [input=mouse2] da biste aktivirali berserkerski juriš i privremeno dobili 3 adrenalina
+battleaxe3=Privremeno dobijte adrenalin udaranjem neprijatelja tijekom juriša, poboljšavajući brzinu kretanja i napada
+dagger=Držite [input=mouse2] da biste bacili bodež
+
+// Range Weapons
+sling=Baca kamenje snagom
+sling2=§7100%§0 šanse da omami neprijatelja na 0.5 sekundi
+twoarrows=Ispaljuje dvije strijele odjednom
+threearrows=Ispaljuje tri strijele odjednom
+blowgun=Ispaljuje sjemenke
+
+// Single Melee Weapons
+woodenrod=Magično liječi sebe za §7<healing>§0 svakih 10 napada
+voidhammer=Kada se projektil odbije ili pogodi neprijatelja, cilja najbližeg, pogađajući do 3 puta
+crimsonkora=Držite [input=mouse2] da biste napunili razoran, ali spor napad
+thenarcissist=Povežite 4 napada da biste na petom udarcu oslobodili rotirajući bacanje mača!\n+20% štete za svaki povezani napad
+
+// Single Range Weapons
+firesling=Pali neprijatelje
+frozensling=Zamrzava neprijatelje
+gelgreatbow=Pretvara kamene strijele u gel strijele
+unstablegelgreatbow=Pretvara kamene i gel strijele u nestabilne gel strijele
+thespammer=Može ispaljivati spam metke
+shotgunsaber=Ciljajte blizu centra za snažnije, preciznije i prodornije hice
+honeysaber=Napunite do maksimuma za punu štetu i ispaljivanje meda i borovnica
+spinelcrossbow=Ispaljuje strijele koje probijaju do 2 neprijatelja, postajući smrtonosnije sa svakim probijanjem
+spinelcrossbow2=Držite [input=mouse2] da biste ispalili 3 strijele odjednom
+
+// Single Magic Weapons
+unstablegelstaff=Kada se projektili odbiju od zidova, dupliciraju se
+harpofharmony=Harmonija: Povećana brzina, regeneracija zdravlja i mane
+
+// Single Summoner Weapons
+infectedstaff=Priziva dvije žive sadnice po prizivanju
+
+// Single Throwable Weapons
+gelball=Baca gel loptu
+
+// Single Magic Healing Tools
+magicalvial=Usmjerite na ozlijeđenog čovjeka da ga izliječite, ne usmjeravajte ni na koga da izliječite sebe
+magicalvial2=Beskonačna upotreba
+
+// Ammo
+spambullet=Nasumično ima jedan od ovih efekata:
+spambullet1=§9Tužno:§0 Napadnuti neprijatelj postaje ljepljiv, usporavajući ga na 5 sekundi
+spambullet2=§9Vatra:§0 Umjesto sudara, ostavlja lokvu vatre na tlu
+spambullet3=§9Sviđa mi se:§0 Odbija se od zidova i probija mobove, do 10 puta svaki
+spambullet4=§9Provjeri:§0 Područje magičnog iscjeljenja od 3 zdravlja na kraju svog puta
+spambullet5=§9Eksplozija:§0 Eksplodira na kraju svog puta umjesto sudara
+
+// Tiles
+geltile=Ljepljivi pod koji uvelike usporava sve na njemu
+
+// Objects
+witchstatue=Postavljanje ovog kipa na površinu močvare eliminirat će pojavu vještica na cijelom otoku
+
+// Generic Trinkets
+areawhenheal=Izvršava ovo područje za svako <magichealing> izvršeno magično iscjeljenje
+periaptboost=Pritisnite [input=trinketability] da biste dobili poticaj brzine i brzine napada na 10 sekundi
+
+// Trinkets
+rockyperiapt=§7+5§0 oklopa, ali §6-5%§0 brzine kretanja
+rockyperiapt2=Pritisnite [input=trinketability] da biste dobili 10 oklopa na 10 sekundi
+unstableperiapt=Priziva dvije bebe nestabilne gel sluzi (6 štete prizivača)
+unstableperiapt2=Čini vas imunim na debuff ljepljivosti
+bloodyperiapt=Također, oružje 'Krvava strijela' i 'Krvava salva' ukrast će §73%§0 života
+demonicperiapt=Također, magično oružje ukrast će §73%§0 života
+necromancyperiapt=Svaki put kad vi ili jedan od vaših prizvanih ubije neprijateljskog moba, prizivate nemrtvog kostura
+necromancyperiapt2=20 štete prizivača. Traje 10 sekundi i može biti najviše 3 odjednom
+frozenperiapt=Oružje za bližu i dalju borbu zamrznut će se na 3 sekunde
+frozenperiapt2=Nanosi više štete mobovima pogođenim smrzavanjem
+frozenperiapt3=Čini vas imunim na debuffe smrzavanja i usporavanja od mraza
+floralring=Magično liječi sebe za §7<healing>§0 svakih 5 sekundi
+gelring=§7+30%§0 primljenog magičnog iscjeljenja
+heartring=§7+20§0 maksimalnog zdravlja
+swampshield=Štiti samo napade u smjeru u kojem se primaju
+swampshield2=Pri savršenom bloku: magično liječi sebe za §7<healing>§0 svog maksimalnog zdravlja
+iceboots=Čini da klizite kao da ste na ledu, ali daje +50% brzine kretanja i +4 oklopa
+inspirationfoci1=§7+40%§0 efekta inspiracije i §7+20%§0 brzine sposobnosti inspiracije
+inspirationfoci2=§6-20%§0 sve štete koja nije inspirirana i §6-1§0 maksimalnih prizvanih
+essenceofhealing=§7+<percent>%§0 magičnog iscjeljenja po esenciji života
+essenceofhealing2=§7<flat>§0 magičnog iscjeljenja po 2 esencije života
+essenceofhealing3=§6-80%§0 trajanja esencije života, ograničeno na -50%
+ninjascarf=Pretvara juriše sablje u skokove sablje
+adrenalinecharm=Svaki primljeni udarac dat će vam adrenalin na 20 sekundi
+infectedperiapt=Priziva dvije žive sadnice (8 štete prizivača)
+bloomrushcharm=Smanjite potrošnju izdržljivosti za 10% za svaki adrenalin koji imate\nPriziva živu sadnicu (8 štete prizivača) za svaki adrenalin koji imate
+
+// Set Bonus
+goldhatsetbonus=Ako stojite mirno, vaša brzina napada na daljinu se znatno povećava
+pinkwitchsetbonus=Povećava brzinu magičnog napada, regeneraciju mane i oklop što je niže vaše zdravlje
+infectedsetbonus=Priziva tri žive sadnice (8 štete prizivača)
+spinelhelmetsetbonus=Magično liječi sebe za §7<healing>§0 štete od bliže borbe nanesene neprijateljskim mobovima
+spinelhatsetbonus=Magično liječi sebe i sve bliske saveznike\nza §7<healing>§0 magične štete nanesene neprijateljskim mobovima
+
+// Banners
+strikebannereffect=§7+<effect>%§0 regeneracije zdravlja (u borbi i izvan nje)
+strikebannerability=§aSvakih <time> sekundi:§0 Izvodi napad na područje
+blankbannereffect=§7+<effect>%§0 regeneracije zdravlja (izvan borbe)
+blankbannerability=§aSvakih <time> sekundi:§0 Izvodi iscjeljivanje na području
+bannerofdamageeffect=§7+<effect>%§0 štete
+bannerofdefenseeffect=§7-<effect>%§0 primljene štete
+bannerofspeedeffect=§7+<effect>%§0 brzine kretanja
+bannerofsummonspeedeffect=§7+<effect>%§0 brzine kretanja prizvanih
+
+// Mighty Banners
+banneroffishingeffect=§7+<effect>§0 snage ribolova
+bannerofhealthregeneffect=§7+<effectfloat>§0 regeneracije zdravlja u borbi
+bannerofmanaregeneffect=§7+<effect>%§0 regeneracije mane u borbi
+bannerofresistanceeffect=§7+<effect>§0 oklopa
+bannerofsummoningeffect=§7+<effect>§0 maksimalnih prizvanih
+bannerofattackspeedeffect=§7+<effect>%§0 brzine napada
+
+// Summoner Expansion Banners
+bannerofresilienceeffect=§7+<effect>%§0 maksimalne otpornosti\nRegenerira §7+<effect>§0 otpornosti u sekundi
+bannerofbouncingeffect=§7+<effect>§0 odbijanja projektila
+bannerofessenceeffect=§7+<effect>%§0 trajanja esencije života
+bannerofstaminaeffect=§7+<effect>%§0 kapaciteta izdržljivosti\n§7+<effect2>%§0 regeneracije izdržljivosti\n§7-<effect2>%§0 potrošnje izdržljivosti
+bannerofpickingeffect=§7+<effectfloat>§0 dometa sakupljanja
+bannerofdashingeffect=§7+<effect>§0 hrpa juriša\n§7-<effect2>%§0 vremena hlađenja juriša
+bannerofmanaeffect=§7+<effect>%§0 maksimalne mane\n§7<effect2>%§0 regeneracije mane
+
+// Runes (General)
+baserune=§iOsnovna runa
+modifierrune=§aRuna modifikator
+linkedrune=§bRuna povezana s [<player>]
+notruneowner=Niste vlasnik osnovne rune
+runesslots=Može se umetnuti do 1 osnovne rune + <modifierslots> runa modifikatora
+useruneinfusor=[input=runesinjectorability] za aktiviranje
+requiresbaserune=Potrebna je umetnuta osnovna runa
+onlyonebaserune=Može se umetnuti samo jedna osnovna runa odjednom
+duplicatedmodifierrunes=Ne može se umetnuti više od jedne iste rune modifikatora
+runehealthcost=Troši <health>% maksimalnog zdravlja pri aktivaciji
+runehealthhealing=Vraća <health>% maksimalnog zdravlja pri korištenju
+runecooldown=Puni se za <seconds> sekundi
+increaseruneeffectnumber=Povećava efekt za §7<variation>%§0
+decreaseruneeffectnumber=Smanjuje efekt za §6<variation>%§0
+increaserunecooldown=Povećava vrijeme hlađenja za §6<variation>%§0
+decreaserunecooldown=Smanjuje vrijeme hlađenja za §7<variation>%§0
+increaserunehealthcost=Povećava potrošnju maksimalnog zdravlja za §6<health>%§0
+increaserunehealthhealing=Povećava vraćanje maksimalnog zdravlja za §7<health>%§0
+runedamagereduction=Šteta je drastično smanjena protiv ljudi, a još više protiv šefova
+runedamagereductionnoboss=Šteta je drastično smanjena protiv ljudi i ne utječe na šefove
+moreextraeffectmod=Modifikacije efekta su <mod>% učinkovitije
+lessextraeffectmod=Modifikacije efekta su <mod>% manje učinkovite
+
+// Runes Injectors
+
+// Base Runes Tier 0
+runeoffury=Povećava vašu štetu i brzinu napada za §7<effectNumber>§0% na 10 sekundi
+runeofspeed=Jurišajte snagom §7<effectNumber>§0 u smjeru u kojem se krećete i postanite neranjivi na 0.5 sekundi
+runeofresistance=Povećava vaš oklop za §7<effectNumber>§0% na 10 sekundi
+runeofresistance2=Dok je na hlađenju, vaš oklop je prepolovljen
+runeofvalor=+200% inspiracije na §7<effectNumber>§0 sekundi
+runeofdetonation=Eksplodira, nanoseći više štete i odbacujući neprijatelje što su bliže
+runeofdetonation2=Maksimalna šteta je §7<effectNumber>§0% maksimalnog zdravlja mobova
+runeofthunder=Nakon dvije sekunde, munja udara u početnu poziciju vašeg kursora
+runeofthunder2=Munja nanosi §7<effectNumber>§0% zdravlja mobova kao štetu i omamljuje na 2 sekunde
+runeofwinter=Usporava mrazom neprijatelje u dometu od 500 na §7<effectNumber>§0 sekundi
+runeofimmortality=Ako umrete u sljedećih §7<effectNumber>§0 sekundi, preživjet ćete s maksimalnim zdravljem
+runeofimmortality2=Ako se to dogodi, bit ćete neranjivi 3 sekunde, ali vrijeme hlađenja bit će 30 sekundi
+runeofimmortality3=Dok je na hlađenju, vaše maksimalno zdravlje je prepolovljeno
+runeofshadows=Na §7<effectNumber>§0 sekundi postat ćete nevidljivi, ali i zastrašeni, što će vas spriječiti u poduzimanju bilo kakvih radnji
+
+// Base Runes Tier 1
+runeofunstablegelslime=Teleportirajte se na obližnju lokaciju i prizovite 2 runske nestabilne gel sluzi na §7<effectNumber>§0 sekundi
+runeofunstablegelslime2=Prizvani će nanijeti 5% maksimalnog zdravlja mobova kao štetu
+runeofevilsprotector=+§7<effectNumber>§0% brzine napada, ali -50% brzine kretanja na 10 sekundi
+runeofevilsprotector2=Noću na površini, pozitivan efekt se udvostručuje
+runeofqueenspider=Ostavlja paukovu mrežu na tlu na §7<effectNumber>§0 sekundi
+runeofvoidwizard=Svi projektili će se beskonačno odbijati i +§7<effectNumber>§0% brzine projektila na 10 sekundi
+runeofswampguardian=Smanjuje svu primljenu štetu za 80% na §7<effectNumber>§0 sekundi
+runeofancientvulture=Priziva runskog lešinara na 10 sekundi
+runeofancientvulture2=Prizvani će nanijeti §7<effectNumber>§0% maksimalnog zdravlja mobova kao štetu
+runeofpiratecaptain=Povećava vašu štetu za §7<effectNumber>§0% za svakih 200 novčića koje imate, do maksimalno 20 000 novčića
+runeofpiratecaptain2=Svaki put kad napadnete, izgubit ćete 3 novčića
+runeofchieftain=Sljedećih 20 sekundi, vaša šteta se povećava što je niže vaše zdravlje, do maksimalno +§7<effectNumber>§0%
+
+// Base Runes Tier 2
+runeofreaper=Teleportirajte se na poziciju miša. Maksimalna udaljenost §7<effectNumber>§0
+runeofcryoqueen=Zaustavite se na 1 sekundu i pokrenite ledeni napad oko sebe s dometom §7<effectNumber>§0
+runeofcryoqueen2=Projektili će nanijeti 200% maksimalnog zdravlja mobova kao štetu
+runeofpestwarden=Sljedećih §7<effectNumber>§0 sekundi, sudar s neprijateljima ih oštećuje i gura
+runeofpestwarden2=Šteta je 20% njihovog maksimalnog zdravlja
+runeofsageandgrit=Ako u blizini ima ozlijeđenih saveznika (domet 500), izliječite §7<effectNumber>§0% njihovog ukupnog zdravlja
+runeofsageandgrit2=Ako ne, povećajte svoju štetu, brzinu napada i brzinu kretanja za +§7<effectNumber>§0% na 20 sekundi
+runeoffallenwizard=Omamite sve mobove osim vas na §7<effectNumber>§0 sekundi
+runeoffallenwizard2=Ljudi će se osloboditi brže, a šefovi još brže
+runeofbabylontower=+§7<effectNumber>§0% sve štete, ali ne možete se kretati. 10 sekundi
+
+// Base Runes Tier 3
+runeofmotherslime=Izvedite veliki skok prema poziciji miša i nanesite štetu na području pri slijetanju
+runeofmotherslime2=Slijetanje će nanijeti §7<effectNumber>§0% maksimalnog zdravlja mobova kao štetu
+runeofnightswarm=Prizovite 5 šišmiša na §7<effectNumber>§0 sekundi koji traže neprijateljske mobove da ih ugrizu
+runeofnightswarm2=Svaki ugriz vraća 1% vašeg ukupnog zdravlja (najmanje 1)
+runeofspiderempress=Baca §7<F0effectNumber>§0 kugli paukove mreže u smjeru miša
+runeofspiderempress2=Kugle paukove mreže omamit će na 3 sekunde i usporiti na 10 sekundi
+runeofsunlightchampion=Budite omamljeni 3 sekunde dok punite novu s dometom §7<effectNumber>§0
+runeofsunlightchampion2=Nova će nanijeti 200% maksimalnog zdravlja mobova kao štetu
+runeofmoonlightdancer=+§7<effectNumber>§0% štete za svaki +1% brzine kretanja na 10 sekundi
+runeofcrystaldragon=Bacite lasersku zraku na poziciju kursora na 5 sekundi
+runeofcrystaldragon2=Laser će nanijeti §7<effectNumber>§0% maksimalnog zdravlja mobova kao štetu
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+onyxrune=Kada se aktivira, priziva Oniksa na 5 sekundi. Nanijet će štetu na temelju 5% zdravlja moba
+onyxrune2=Svaki ugriz Oniksa vraća 1% vašeg ukupnog zdravlja (najmanje 1)
+onyxrune3=§3Hvala Oniksu na briljantnim idejama za rune! <3
+pawningrune=Kada se aktivira, ako još nemate efekt, odmah vraća 20% vašeg maksimalnog zdravlja
+pawningrune2=Nakon 10 sekundi, izgubit ćete vraćenu količinu plus dodatnih 40%
+
+// Modifier Runes Tier 2
+abysmalrune=Kada se aktivira, priziva crnu rupu na poziciji kursora, uvlačeći neprijatelje na 2 sekunde
+abysmalrune2=Crna rupa će se prizvati samo ako je prošlo 10 sekundi od posljednje aktivacije
+tidalrune=Kada se aktivira, priziva val vode koji gura neprijatelje
+
+// Modifier Runes Tier 3
+
+
+[mobtooltip]
+usenet=Koristite mrežu! [item=net]
+
+
+[mob]
+// Hostile
+gelslime=Gel sluz
+rockygelslime=Kamenita gel sluz
+unstablegelslime=Nestabilna gel sluz
+miniunstablegelslime=Mini nestabilna gel sluz
+pinkwitch=Ružičasta vještica
+voidadept=Adept praznine
+copperdaggergoblin=Goblin s bakrenim bodežom
+irondaggergoblin=Goblin sa željeznim bodežom
+golddaggergoblin=Goblin sa zlatnim bodežom
+infectedtreant=Zaraženi ent
+spinelgolem=Spinel golem
+spinelcaveling=Spinel špiljar
+tungstencaveling=Volframov špiljar
+spinelmimic=Spinel mimik
+babylontower=Babilonska kula
+hearthcrystal=Kristal ognjišta
+babylon=Babilon
+
+// Friendly
+wildphosphorslime=Divlja fosforna sluz
+
+// Summon
+babyunstablegelslime=Beba nestabilne gel sluzi
+undeadskeleton=Nemrtvi kostur
+volatilegelslime=Hlapljiva gel sluz
+runicunstablegelslime=Runska nestabilna gel sluz
+runicvulturehatchling=Runski lešinar
+runicbat=Runski šišmiš
+onyx=Oniks
+livingsapling=Živa sadnica
+
+// Pet
+petphosphorslime=Fosforna sluz
+
+
+[buff]
+// Common Buffs
+stunbuff=Omamljenost
+fallenstunbuff=Pala omamljenost
+stickybuff=Ljepljiv
+stopbuff=Zaustavljen
+honeyedbuff=Meden
+venomextractbuff=Ekstrakt otrova
+cursedbuff=Proklet
+adrenalinebuff=Adrenalin
+harmonybuff=Harmonija
+
+// Active Buffs
+berserkerrushactive=Berserkerski juriš aktivan
+periaptactive=Sposobnost periapta aktivna
+runesinjectoractive=Injektor runa aktivan
+
+// Cooldown Buffs
+berserkerrushcooldown=Berserkerski juriš na hlađenju
+periaptcooldown=Sposobnost periapta na hlađenju
+runesinjectorcooldown=Injektor runa na hlađenju
+spinattackcooldown=Rotirajući napad na hlađenju
+saberdashcooldown=Juriš sablje na hlađenju
+
+
+[message]
+unstablegelslime_anger=§6Nestabilna gel sluz se ljuti... <anger>/10
+unstablegelslime_fullanger=§6Nestabilna gel sluz se naljutila! <anger>/10
+unstablegelslime_night=§6Nestabilna gel sluz§0 je nestala s dolaskom noći!
+gelslimesnulled=Gel sluzi u ovom svijetu su poništene. Više se neće pojavljivati
+gelslimesunnulled=Gel sluzi u ovom svijetu su dopuštene. Sada će se pojavljivati
+pinkwitchesnulled=Ružičaste vještice u (<x>, <y>) su poništene
+pinkwitchesunnulled=Ružičaste vještice u (<x>, <y>) su dopuštene
+needfreeslots=Trebate <slots> slobodnih mjesta u inventaru da biste ovo koristili
+cantuseatnight=Ne može se koristiti noću
+healthalreadyfull=Zdravlje je već puno
+cantheal=Ne može se liječiti
+insuficienthealth=Nedovoljno zdravlja za izvođenje ove radnje!
+cannottrhowlockeditem=Ne možete baciti predmet zaključan u inventaru
+initialrunetip=Pažljivo odaberite svoju početnu runu;\nostale nećete dobiti do kasnije u igri
+alreadyselectedinitialrune=Početna runa je već odabrana
+cannotusetrial=Ne može se koristiti u sobama za probe
+
+[biome]
+infectedfields=Zaražena polja
+
+
+[journal]
+
+//Levels
+infectedfieldssurface=Površina zaraženih polja
+infectedfieldscave=Špilja zaraženih polja
+
+// Forest Surface Challenges
+killgelslimesforest=[mob=gelslime] Ubijte 25 gel sluzi u šumi
+pickupfloralring=[item=floralring] Pokosite puno trave u šumi da biste dobili cvjetni prsten
+killunstablegelslime=[mob=unstablegelslime] Ubijte 1 nestabilnu gel sluz
+
+// Swamp Surface Challenges
+killpinkwitchesswamp=[mob=pinkwitch] Noću, ubijte 5 ružičastih vještica na površini močvare
+
+// Infected Fields Surface Challenges
+pickupinfectedlogs=[item=infectedlog] Posijecite da biste sakupili 100 zaraženih trupaca
+
+// Infected Fields Cave Challenges
+pickupspinel=[item=spinel] Sakupite 40 spinela
+activatebabylontower=[item=lifespinel] Postavite životni spinel na babilonsku kulu
+findthespammer=[item=thespammer] Pronađite spamera
+
+
+[controls]
+runesinjectorability=Sposobnost injektora runa
+
+
+[runestutorialbook]
+openheader=Otvaranje injektora runa
+opentext=Da biste koristili rune, trebat će vam injektor runa. Ovi posebni uređaji mogu se otvoriti za umetanje runa. Svaki injektor ima jedan utor za osnovnu runu i više utora za rune modifikatore, ovisno o njegovom kapacitetu. Slobodno možete dodati onoliko runa modifikatora koliko injektor dopušta, eksperimentirajte da biste pronašli najbolje kombinacije!
+equipheader=Opremanje injektora
+equiptext=Da biste aktivirali svoje rune, injektor runa mora biti opremljen u utoru za sitnice. Nakon opremanja, jednostavno pritisnite G (ili tipku dodijeljenu u postavkama) da biste pokrenuli njegove efekte. Provjerite je li injektor ispravno konfiguriran i spreman prije nego što krenete u akciju!
+
+runesheader=Što su rune?
+runestext=Rune su mistični kamenovi koji pružaju snažne efekte kada se umetnu u injektor runa. Njihova snaga i ponašanje ovise o tome kako se kombiniraju, ovladavanje njihovom upotrebom ključ je za otključavanje vašeg punog potencijala.
+baserunesheader=Osnovne rune
+baserunestext=Svaki injektor runa zahtijeva točno jednu osnovnu runu da bi funkcionirao. Osnovna runa definira glavni efekt injektora i djeluje kao jezgra vaše postavke. Primijetit ćete zeleni broj pored efekta, to predstavlja njegovu vrijednost efekta, koja se može povećati ili smanjiti modifikatorima.
+modifierrunesheader=Rune modifikatori
+modifierrunestext=Rune modifikatori koriste se za prilagodbu i poboljšanje efekta vaše osnovne rune. Mogu podesiti vrijednost efekta, promijeniti njegovo ponašanje ili dodati posebna svojstva. Međutim, rune modifikatori uvijek dolaze s kompromisima: nijedan modifikator nije isključivo koristan, stoga birajte mudro!
+
+tableheader=Stol za rune
+tabletext=Stol za rune vaša je glavna stanica za izradu širokog spektra runa. Većina standardnih runa može se izraditi ovdje, ali zapamtite: neke moćne rune mogu se pronaći samo istraživanjem. Držite oči otvorene, avantura nagrađuje znatiželjne!
+crafttext=U radionici runa pronaći ćete sve što vam je potrebno za početak. Kombinirajte sadržaj sa svojom početnom runom i osnovnom runom koju možete izraditi na stolu za rune, i imat ćete potpuno funkcionalan injektor runa spreman za opremanje!

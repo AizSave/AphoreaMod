@@ -1,0 +1,752 @@
+# Translation made by AI
+
+[global]
+aphorea=§!Aphorea Mod
+aphorearework=§!Aphorea Mod Přepracování
+aphoreamightybanner=§!Aphorea Mod x Mighty Banner Mod
+aphoreasummonerexpansion=§!Aphorea Mod x Summoner Expansion
+
+
+[buffmodifiers]
+// Magic Healing
+magichealing=<mod>% magického léčení
+magichealingflat=<mod> magického léčení
+magichealingreceived=<mod>% obdrženého magického léčení
+magichealingreceivedflat=<mod> obdrženého magického léčení
+magichealinggrace=<mod>% milosti magického léčení
+
+// Area
+arearange=<mod>% dosahu oblasti
+
+// Inspiration Damage
+inspirationdamage=<mod>% poškození inspirací
+inspirationcritchance=<mod>% šance na kritický zásah inspirací
+inspirationcritdamage=<mod>% poškození kritickým zásahem inspirací
+inspirationeffect=<mod>% efektu inspirace
+inspirationabilityspeed=<mod>% rychlosti schopnosti inspirace
+
+// Others
+loyal=Dýka se při hodu neztratí
+
+
+[stats]
+inspiration_damage=Poškození inspirací
+
+
+[enchantment]
+// Healing Equipment
+godly=Božský
+absent=Chybějící
+auxiliary=Pomocný
+vain=Marný
+gentle=Jemný
+selfish=Sobecký
+
+// Healing
+friendly=Přátelský
+graceful=Půvabný
+wonderful=Úžasný
+ecologic=Ekologický
+exalted=Vznešený
+cursed=Prokletý
+
+// Area
+booming=Vzkvétající
+dimmed=Ztlumený
+
+// Others
+loyal=Věrný
+
+
+[tile]
+geltile=Gelová podlaha
+infectedwatertile=Infikovaná voda
+infectedgrasstile=Infikovaná tráva
+spinelgravel=Spinelový štěrk
+
+
+[tech]
+runes=Runy
+
+
+[object]
+witchstatue=Socha čarodějnice
+runestable=Runový stůl
+#NEW
+infectedsapling=Infikovaná sazenice
+spinelcluster=Spinelový shluk
+spinelcluster_small=Malý spinelový shluk
+gelrock=Gelová skála
+infectedtree=Infikovaný strom
+infectedgrass=Infikovaná tráva
+spinelchest=Spinelová truhla
+fakespinelchest=Falešná spinelová truhla
+babylontower=Babylonská věž
+babylonentrance=Vstup do Babylonu
+babylonexit=Východ z Babylonu
+infectedtrialentrance=Vstup do infikované zkoušky
+infectedchair=Infikovaná židle
+infecteddinnertable=Infikovaný jídelní stůl
+infectedbookshelf=Infikovaná knihovna
+infectedcabinet=Infikovaná skříň
+infectedbed=Infikovaná postel
+infecteddoublebed=Infikovaná manželská postel
+infectedcandelabra=Infikovaný svícen
+
+
+[itemcategory]
+healing=Léčení
+healingtools=Léčebné nástroje
+runes=Runy
+runesinjectors=Runové injektory
+baserunes=Základní runy
+modifierrunes=Modifikační runy
+
+
+[item]
+// General Materials
+anybasicfoci=Jakýkoli základní fokus
+
+// Materials
+rockygel=Kamenitý gel
+unstablegel=Nestabilní gel
+stardust=Hvězdný prach
+infectedlog=Infikovaný kmen
+infectedalloy=Infikovaná slitina
+spinel=Spinel
+lifespinel=Životní spinel
+
+// Consumables
+unstablecore=Nestabilní jádro
+initialrune=Počáteční runa
+venomextract=Jedový extrakt
+
+// Swords
+gelsword=Gelový meč
+unstablegelsword=Nestabilní gelový meč
+broom=Koště
+voidhammer=Kladivo prázdnoty
+brokenkora=Zlomená kora
+thenarcissist=Narcis
+cryokatana=Kryokatana
+
+// Greatswords
+unstablegelgreatsword=Nestabilní gelový velký meč
+babylongreatsword=Babylonský velký meč
+
+// Glaives
+woodenrod=Dřevěná hůl
+
+// Sabers
+saber=Šavle
+coppersaber=Měděná šavle
+ironsaber=Železná šavle
+goldsaber=Zlatá šavle
+demonicsaber=Démonická šavle
+unstablegelsaber=Nestabilní gelová šavle
+honeysaber=Medová šavle
+glacialsaber=Ledovcová šavle
+crimsonkora=Karmínová kora
+
+// Battleaxes
+battleaxe=Bitevní sekera
+unstablegelbattleaxe=Nestabilní gelová bitevní sekera
+demonicbattleaxe=Démonická bitevní sekera
+
+// Daggers
+dagger=Dýka
+copperdagger=Měděná dýka
+irondagger=Železná dýka
+golddagger=Zlatá dýka
+demonicdagger=Démonická dýka
+tungstendagger=Volframová dýka
+lostumbrella=Ztracený deštník
+
+// Rapiers
+fossilrapier=Fosilní rapír
+lightrapier=Světlý rapír
+
+// Magic weapons
+unstablegelstaff=Nestabilní gelová hůl
+magicalbroom=Kouzelné koště
+adeptsbook=Kniha adepta
+harpofharmony=Harfa harmonie
+babyloncandle=Babylonská svíce
+
+// Bows
+spinelcrossbow=Spinelová kuše
+
+// Guns
+thespammer=Spammer
+
+// Bullets
+spambullet=Spamová kulka
+
+// Greatbows
+gelgreatbow=Gelový velký luk
+unstablegelgreatbow=Nestabilní gelový velký luk
+
+// Arrows
+gelarrow=Gelový šíp
+unstablegelarrow=Nestabilní gelový šíp
+
+// Saber Guns
+sabergun=Šavlová pistole
+shotgunsaber=Brokovnicová šavle
+
+// Slings
+sling=Prak
+firesling=Ohnivý prak
+frozensling=Zmrzlý prak
+
+// Blowguns
+blowgun=Foukačka
+
+// Throw weapons
+gelball=Gelová koule
+gelballgroup=Seskupené gelové koule
+unstablegelveline=Nestabilní gelový oštěp
+
+// Summon weapons
+volatilegelstaff=Těkavá gelová hůl
+infectedstaff=Infikovaná hůl
+
+// Banners
+blankbanner=Prázdný prapor
+
+// Healing Tools
+healingtool=Léčebný nástroj
+magicalvial=Kouzelná lahvička
+healingstaff=Léčebná hůl
+woodenwand=Dřevěná hůlka
+goldenwand=Zlatá hůlka
+spinelstaff=Spinelová hůl
+
+// Tools
+superiorpickaxe=Vynikající krumpáč
+
+// Trinkets
+rockyperiapt=Kamenitý amulet
+unstableperiapt=Nestabilní amulet
+bloodyperiapt=Krvavý amulet
+demonicperiapt=Démonický amulet
+abysmalperiapt=Propastný amulet
+frozenperiapt=Zmrzlý amulet
+necromancyperiapt=Nekromantský amulet
+floralring=Květinový prsten
+gelring=Gelový prsten
+heartring=Srdcový prsten
+ringofhealth=Prsten zdraví
+swampshield=Bažinný štít
+witchmedallion=Medaile čarodějnice
+iceboots=Ledové boty
+inspirationfoci=Fokus inspirace
+cursedmedallion=Prokletá medaile
+ancientmedallion=Starověká medaile
+essenceofhealing=Esence léčení
+ninjascarf=Nindža šátek
+adrenalinecharm=Adrenalinový amulet
+spinelshield=Spinelový štít
+bloomrushcharm=Amulet květu
+infectedperiapt=Infikovaný amulet
+
+// Armor
+rockyboots=Kamenité boty
+rockychestplate=Kamenitý hrudní plát
+rockyhelmet=Kamenitá helma
+goldhat=Zlatý klobouk
+pinkwitchhat=Růžový čarodějnický klobouk
+magicalsuit=Kouzelný oblek
+magicalboots=Kouzelné boty
+swampboots=Bažinné boty
+swampchestplate=Bažinný hrudní plát
+swampmask=Bažinná maska
+swamphood=Bažinná kápě
+infectedhat=Infikovaný klobouk
+infectedchestplate=Infikovaný hrudní plát
+infectedboots=Infikované boty
+spinelhelmet=Spinelová helma
+spinelhat=Spinelový klobouk
+spinelchestplate=Spinelový hrudní plát
+spinelboots=Spinelové boty
+
+// Misc
+gelslimenullifier=Nulifikátor gelového slizu
+cuberry=Kostková bobule
+infectedgrassseed=Semeno infikované trávy
+
+// Backpacks
+basicbackpack=Základní batoh
+sapphirebackpack=Safírový batoh
+amethystbackpack=Ametystový batoh
+rubybackpack=Rubínový batoh
+emeraldbackpack=Smaragdový batoh
+diamondbackpack=Diamantový batoh
+
+// Books
+runestutorialbook=Kniha o runách
+
+// Runes Injectors
+runesinjector=Runový injektor
+rusticrunesinjector=Rustikální runový injektor
+unstablerunesinjector=Nestabilní runový injektor
+demonicrunesinjector=Démonický runový injektor
+tungstenrunesinjector=Volframový runový injektor
+ancientrunesinjector=Starověký runový injektor
+
+// Base Runes Tier 0
+baserune=Základní runa
+runeoffury=Runa zuřivosti
+runeofspeed=Runa rychlosti
+runeofhealing=Runa léčení
+runeofresistance=Runa odporu
+runeofvalor=Runa statečnosti
+runeofdetonation=Runa detonace
+runeofthunder=Runa hromu
+runeofwinter=Runa zimy
+runeofshadows=Runa stínů
+runeofimmortality=Runa nesmrtelnosti
+
+// Base Runes Tier 1
+runeofunstablegelslime=Runa nestabilního gelového slizu
+runeofevilsprotector=Runa ochránce zla
+runeofqueenspider=Runa královny pavouků
+runeofvoidwizard=Runa čaroděje prázdnoty
+runeofswampguardian=Runa strážce bažin
+runeofancientvulture=Runa starověkého supa
+runeofpiratecaptain=Runa pirátského kapitána
+runeofchieftain=Runa náčelníka
+
+// Base Runes Tier 2
+runeofreaper=Runa smrtky
+runeofcryoqueen=Runa kryokrálovny
+runeofpestwarden=Runa strážce moru
+runeofsageandgrit=Runa šalvěje a odvahy
+runeoffallenwizard=Runa padlého čaroděje
+runeofbabylontower=Runa babylonské věže
+
+// Base Runes Tier 3
+runeofmotherslime=Runa matky slizů
+runeofnightswarm=Runa nočního roje
+runeofspiderempress=Runa pavoučí císařovny
+runeofsunlightchampion=Runa šampiona slunečního světla
+runeofmoonlightdancer=Runa tanečnice měsíčního světla
+runeofcrystaldragon=Runa křišťálového draka
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+frenzyrune=Runa šílenství
+vitalrune=Životní runa
+devastatingrune=Ničivá runa
+onyxrune=Onyxová runa
+pawningrune=Pěšcová runa
+
+// Modifier Runes Tier 2
+abysmalrune=Propastná runa
+tidalrune=Přílivová runa
+
+// Modifier Runes Tier 3
+ascendantrune=Vzestupná runa
+
+
+[itemtooltip]
+// Stat tips
+line=----------------------------------------
+magichealingtip=Magické léčení: §7<health>
+rangetip=Dosah: §9<range>
+areatip=§aOblast <number>
+inspirationdamagetip=Poškození inspirací: <value>
+areabuff=Aplikuje <buff> na spojence
+areadebuff=Aplikuje <buff> na nepřátele
+areabuffdisplay=<buff> na <duration> sekund
+attackarmorpentip=Průraz brnění: <value>%
+
+// Mechanics
+magichealinggrace=§aMilost magického léčení:§0 Léčí sebe sama o % magického léčení určeného pro spojence
+cursedbuff=§bProkletý:§0 §6+25%§0 příchozího poškození
+inspiration=§9Inspirace:§0 Zlepšuje účinky praporů a hudebních nástrojů
+adrenaline=§6Adrenalin:§0 +5% poškození, -5% brnění. Může se sčítat až 5krát
+livingsapling=§7Živá sazenice:§0 Magicky léčí majitele o §73§0 každých 10 útoků
+
+// Misc
+gelslimenullifier=Přestanou vás obtěžovat jednoduchým kliknutím!
+enchantingscrollhealingequipmenttip=Používá se k očarování léčebného vybavení o <enchantment>\n§!Aphorea Mod
+enchantingscrollhealingtip=Používá se k očarování léčebného nástroje o <enchantment>\n§!Aphorea Mod
+enchantingscrollareatip=Používá se k očarování nástroje s plošným účinkem o <enchantment>\n§!Aphorea Mod
+enchantingscrolldaggertip=Používá se k očarování dýky o <enchantment>\n§!Aphorea Mod
+backpack=Je to nový inventář, který ukládá všechny sebrané předměty
+backpackslots=Kapacita <slots> předmětů
+stored=Uložené předměty: <items>
+backpackcraft=Musí být prázdný, aby se dal vyrobit lepší batoh
+
+// Consumables
+deleteditem=Tento předmět byl odstraněn, použijte tento předmět k obnovení materiálů, než bude trvale odstraněn
+unstablecore=§bUvolňuje nestabilní auru...§0 Lze použít pouze ve dne
+venomextractbuff=Lowd říká, ať to vypiješ, nedělej to
+venomextractbuffdesc=Nemůžete mít více než 1 HP
+lifespinel=Trvale zvyšuje maximální zdraví o 5 až na 320
+
+// General Weapons
+spinsecondaryattack=Stiskněte [input=mouse2], aby byl další útok plošným útokem
+areasecondaryattack=Stiskněte [input=mouse2] k provedení plošného útoku spotřebovávajícího <mana> many
+stikybuff1=Učiní nepřítele lepkavým na 1 sekundu
+stikybuff2=Učiní nepřítele lepkavým na 2 sekundy
+stikybuff3=Učiní nepřítele lepkavým na 3 sekundy
+projectilearea=Když projektil skončí, způsobí plošné poškození
+
+// Melee Weapons
+saber=Nabijte na maximum pro plné poškození a uvolnění vzdušného seku
+saberdash=Podržte [input=mouse2] pro nabití úprku k prosekání nepřátel
+battleaxe=Nabíjení trvá dlouho
+battleaxe2=Stiskněte [input=mouse2] pro aktivaci berserkerského běhu a dočasné získání 3 adrenalinu
+battleaxe3=Dočasně získejte adrenalin úderem do nepřátel během běhu, čímž se zlepší pohyb a rychlost útoku
+dagger=Podržte [input=mouse2] pro hod dýkou
+
+// Range Weapons
+sling=Hází kameny se silou
+sling2=§7100%§0 šance na omráčení nepřítele na 0.5 sekundy
+twoarrows=Vystřelí dva šípy najednou
+threearrows=Vystřelí tři šípy najednou
+blowgun=Vystřeluje semena
+
+// Single Melee Weapons
+woodenrod=Magicky léčí sebe sama o §7<healing>§0 každých 10 útoků
+voidhammer=Když se projektil odrazí nebo zasáhne nepřítele, zaměří se na nejbližšího a zasáhne až 3krát
+crimsonkora=Podržte [input=mouse2] pro nabití ničivého, ale pomalého útoku
+thenarcissist=Zřetězte 4 útoky, abyste na pátý úder uvolnili rotující hod mečem!\n+20% poškození za každý zřetězený útok
+
+// Single Range Weapons
+firesling=Spaluje nepřátele
+frozensling=Zmrazuje nepřátele
+gelgreatbow=Mění kamenné šípy na gelové šípy
+unstablegelgreatbow=Mění kamenné a gelové šípy na nestabilní gelové šípy
+thespammer=Může střílet spamové kulky
+shotgunsaber=Zaměřte se blízko středu pro silnější, přesnější a pronikavější střely
+honeysaber=Nabijte na maximum pro plné poškození a vystřelení medu a borůvek
+spinelcrossbow=Vystřeluje šípy, které proniknou až 2 nepřáteli a s každým průnikem se stávají smrtelnějšími
+spinelcrossbow2=Podržte [input=mouse2] pro vystřelení 3 šípů najednou
+
+// Single Magic Weapons
+unstablegelstaff=Když se projektily odrazí od stěn, duplikují se
+harpofharmony=Harmonie: Zvýšená rychlost, regenerace zdraví a many
+
+// Single Summoner Weapons
+infectedstaff=Vyvolá dvě živé sazenice na jedno vyvolání
+
+// Single Throwable Weapons
+gelball=Hází gelovou koulí
+
+// Single Magic Healing Tools
+magicalvial=Ukažte na zraněného člověka, abyste ho vyléčili, neukazujte na nikoho, abyste vyléčili sebe
+magicalvial2=Nekonečné použití
+
+// Ammo
+spambullet=Náhodně má jeden z těchto účinků:
+spambullet1=§9Smutný:§0 Napadený nepřítel se stane lepkavým a zpomalí se na 5 sekund
+spambullet2=§9Oheň:§0 Místo kolize zanechá na zemi kaluž ohně
+spambullet3=§9Líbí se mi:§0 Odráží se od stěn a proniká moby, až 10krát každý
+spambullet4=§9Zkontrolovat:§0 Oblast magického léčení o síle 3 zdraví na konci své cesty
+spambullet5=§9Exploze:§0 Exploduje na konci své cesty místo kolize
+
+// Tiles
+geltile=Lepkavá podlaha, která výrazně zpomaluje vše na ní
+
+// Objects
+witchstatue=Umístění této sochy na povrch bažiny odstraní výskyt čarodějnic na celém ostrově
+
+// Generic Trinkets
+areawhenheal=Provede tuto oblast za každé <magichealing> provedené magické léčení
+periaptboost=Stiskněte [input=trinketability] pro získání bonusu k rychlosti a rychlosti útoku na 10 sekund
+
+// Trinkets
+rockyperiapt=§7+5§0 brnění, ale §6-5%§0 rychlosti pohybu
+rockyperiapt2=Stiskněte [input=trinketability] pro získání 10 brnění na 10 sekund
+unstableperiapt=Vyvolá dva malé nestabilní gelové slizy (6 poškození vyvolávače)
+unstableperiapt2=Učiní vás imunním vůči debuffu lepkavosti
+bloodyperiapt=Také zbraně 'Krvavý šíp' a 'Krvavá salva' ukradnou §73%§0 života
+demonicperiapt=Také magické zbraně ukradnou §73%§0 života
+necromancyperiapt=Pokaždé, když vy nebo jeden z vašich vyvolaných zabije nepřátelského moba, vyvoláte nemrtvého kostlivce
+necromancyperiapt2=20 poškození vyvolávače. Trvá 10 sekund a najednou mohou být maximálně 3
+frozenperiapt=Zbraně na blízko a na dálku zmrazí na 3 sekundy
+frozenperiapt2=Způsobuje větší poškození mobům postiženým zmrazením
+frozenperiapt3=Učiní vás imunním vůči debuffům zmrazení a zpomalení mrazem
+floralring=Magicky léčí sebe sama o §7<healing>§0 každých 5 sekund
+gelring=§7+30%§0 obdrženého magického léčení
+heartring=§7+20§0 maximálního zdraví
+swampshield=Chrání pouze útoky ve směru, ve kterém jsou přijímány
+swampshield2=Při dokonalém bloku: magicky léčí sebe sama o §7<healing>§0 svého maximálního zdraví
+iceboots=Umožňuje vám klouzat, jako byste byli na ledě, ale poskytuje +50% rychlosti pohybu a +4 brnění
+inspirationfoci1=§7+40%§0 efektu inspirace a §7+20%§0 rychlosti schopnosti inspirace
+inspirationfoci2=§6-20%§0 veškerého poškození, které není inspirováno, a §6-1§0 maximálního počtu vyvolaných
+essenceofhealing=§7+<percent>%§0 magického léčení za esenci života
+essenceofhealing2=§7<flat>§0 magického léčení za 2 esence života
+essenceofhealing3=§6-80%§0 trvání esence života, omezeno na -50%
+ninjascarf=Přemění úprky šavlí na skoky šavlí
+adrenalinecharm=Každý přijatý úder vám dá adrenalin na 20 sekund
+infectedperiapt=Vyvolá dvě živé sazenice (8 poškození vyvolávače)
+bloomrushcharm=Sníží spotřebu výdrže o 10% za každý adrenalin, který máte\nVyvolá živou sazenici (8 poškození vyvolávače) za každý adrenalin, který máte
+
+// Set Bonus
+goldhatsetbonus=Pokud stojíte na místě, vaše rychlost útoku na dálku se výrazně zvýší
+pinkwitchsetbonus=Zvyšuje rychlost magického útoku, regeneraci many a brnění, čím nižší je vaše zdraví
+infectedsetbonus=Vyvolá tři živé sazenice (8 poškození vyvolávače)
+spinelhelmetsetbonus=Magicky léčí sebe sama o §7<healing>§0 poškození na blízko způsobeného nepřátelským mobům
+spinelhatsetbonus=Magicky léčí sebe sama a všechny blízké spojence\no §7<healing>§0 magického poškození způsobeného nepřátelským mobům
+
+// Banners
+strikebannereffect=§7+<effect>%§0 regenerace zdraví (v boji i mimo něj)
+strikebannerability=§aKaždých <time> sekund:§0 Provede plošný útok
+blankbannereffect=§7+<effect>%§0 regenerace zdraví (mimo boj)
+blankbannerability=§aKaždých <time> sekund:§0 Provede plošné léčení
+bannerofdamageeffect=§7+<effect>%§0 poškození
+bannerofdefenseeffect=§7-<effect>%§0 příchozího poškození
+bannerofspeedeffect=§7+<effect>%§0 rychlosti pohybu
+bannerofsummonspeedeffect=§7+<effect>%§0 rychlosti pohybu vyvolaných
+
+// Mighty Banners
+banneroffishingeffect=§7+<effect>§0 rybářské síly
+bannerofhealthregeneffect=§7+<effectfloat>§0 regenerace zdraví v boji
+bannerofmanaregeneffect=§7+<effect>%§0 regenerace many v boji
+bannerofresistanceeffect=§7+<effect>§0 brnění
+bannerofsummoningeffect=§7+<effect>§0 maximálního počtu vyvolaných
+bannerofattackspeedeffect=§7+<effect>%§0 rychlosti útoku
+
+// Summoner Expansion Banners
+bannerofresilienceeffect=§7+<effect>%§0 maximální odolnosti\nRegeneruje §7+<effect>§0 odolnosti za sekundu
+bannerofbouncingeffect=§7+<effect>§0 odrazů projektilů
+bannerofessenceeffect=§7+<effect>%§0 trvání esence života
+bannerofstaminaeffect=§7+<effect>%§0 kapacity výdrže\n§7+<effect2>%§0 regenerace výdrže\n§7-<effect2>%§0 spotřeby výdrže
+bannerofpickingeffect=§7+<effectfloat>§0 dosahu sběru
+bannerofdashingeffect=§7+<effect>§0 nábojů úprku\n§7-<effect2>%§0 doby obnovy úprku
+bannerofmanaeffect=§7+<effect>%§0 maximální many\n§7<effect2>%§0 regenerace many
+
+// Runes (General)
+baserune=§iZákladní runa
+modifierrune=§aModifikační runa
+linkedrune=§bRuna spojená s [<player>]
+notruneowner=Nejste vlastníkem základní runy
+runesslots=Lze vložit až 1 základní runu + <modifierslots> modifikačních run
+useruneinfusor=[input=runesinjectorability] pro aktivaci
+requiresbaserune=Vyžaduje vloženou základní runu
+onlyonebaserune=Najednou lze vložit pouze jednu základní runu
+duplicatedmodifierrunes=Nelze vložit více než jednu stejnou modifikační runu
+runehealthcost=Spotřebuje <health>% maximálního zdraví při aktivaci
+runehealthhealing=Obnoví <health>% maximálního zdraví při použití
+runecooldown=Nabije se za <seconds> sekund
+increaseruneeffectnumber=Zvyšuje účinek o §7<variation>%§0
+decreaseruneeffectnumber=Snižuje účinek o §6<variation>%§0
+increaserunecooldown=Zvyšuje dobu obnovy o §6<variation>%§0
+decreaserunecooldown=Snižuje dobu obnovy o §7<variation>%§0
+increaserunehealthcost=Zvyšuje spotřebu maximálního zdraví o §6<health>%§0
+increaserunehealthhealing=Zvyšuje obnovu maximálního zdraví o §7<health>%§0
+runedamagereduction=Poškození je drasticky sníženo proti lidem a ještě více proti bossům
+runedamagereductionnoboss=Poškození je drasticky sníženo proti lidem a neovlivňuje bossy
+moreextraeffectmod=Modifikace účinku jsou o <mod>% účinnější
+lessextraeffectmod=Modifikace účinku jsou o <mod>% méně účinné
+
+// Runes Injectors
+
+// Base Runes Tier 0
+runeoffury=Zvyšuje vaše poškození a rychlost útoku o §7<effectNumber>§0% na 10 sekund
+runeofspeed=Uprchněte se silou §7<effectNumber>§0 ve směru, kterým se pohybujete, a staňte se na 0.5 sekundy nezranitelnými
+runeofresistance=Zvyšuje vaše brnění o §7<effectNumber>§0% na 10 sekund
+runeofresistance2=Během doby obnovy je vaše brnění sníženo na polovinu
+runeofvalor=+200% inspirace na §7<effectNumber>§0 sekund
+runeofdetonation=Exploduje, způsobuje větší poškození a odhazuje nepřátele, čím jsou blíže
+runeofdetonation2=Maximální poškození je §7<effectNumber>§0% maximálního zdraví mobů
+runeofthunder=Po dvou sekundách udeří blesk na počáteční pozici vašeho kurzoru
+runeofthunder2=Blesk způsobí §7<effectNumber>§0% zdraví mobů jako poškození a omráčí na 2 sekundy
+runeofwinter=Zpomaluje mrazem nepřátele v dosahu 500 na §7<effectNumber>§0 sekund
+runeofimmortality=Pokud zemřete během následujících §7<effectNumber>§0 sekund, přežijete s maximálním zdravím
+runeofimmortality2=Pokud se tak stane, budete na 3 sekundy nezranitelní, ale doba obnovy bude 30 sekund
+runeofimmortality3=Během doby obnovy je vaše maximální zdraví sníženo na polovinu
+runeofshadows=Na §7<effectNumber>§0 sekund se stanete neviditelnými, ale také zastrašenými, což vám znemožní provádět jakékoli akce
+
+// Base Runes Tier 1
+runeofunstablegelslime=Teleportujte se na blízké místo a vyvolejte 2 runové nestabilní gelové slizy na §7<effectNumber>§0 sekund
+runeofunstablegelslime2=Vyvolaní způsobí 5% maximálního zdraví mobů jako poškození
+runeofevilsprotector=+§7<effectNumber>§0% rychlosti útoku, ale -50% rychlosti pohybu na 10 sekund
+runeofevilsprotector2=V noci na povrchu se pozitivní účinek zdvojnásobí
+runeofqueenspider=Zanechá na zemi pavučinu na §7<effectNumber>§0 sekund
+runeofvoidwizard=Všechny projektily se budou nekonečně odrážet a +§7<effectNumber>§0% rychlosti projektilů na 10 sekund
+runeofswampguardian=Snižuje veškeré přijaté poškození o 80% na §7<effectNumber>§0 sekund
+runeofancientvulture=Vyvolá runového supa na 10 sekund
+runeofancientvulture2=Vyvolaný způsobí §7<effectNumber>§0% maximálního zdraví mobů jako poškození
+runeofpiratecaptain=Zvyšuje vaše poškození o §7<effectNumber>§0% za každých 200 mincí, které máte, až do maxima 20 000 mincí
+runeofpiratecaptain2=Pokaždé, když zaútočíte, ztratíte 3 mince
+runeofchieftain=Během následujících 20 sekund se vaše poškození zvyšuje, čím nižší je vaše zdraví, až do maxima +§7<effectNumber>§0%
+
+// Base Runes Tier 2
+runeofreaper=Teleportujte se na pozici myši. Maximální vzdálenost §7<effectNumber>§0
+runeofcryoqueen=Zastavte se na 1 sekundu a spusťte ledový útok kolem sebe s dosahem §7<effectNumber>§0
+runeofcryoqueen2=Projektily způsobí 200% maximálního zdraví mobů jako poškození
+runeofpestwarden=Během následujících §7<effectNumber>§0 sekund kolize s nepřáteli je poškodí a odhodí
+runeofpestwarden2=Poškození je 20% jejich maximálního zdraví
+runeofsageandgrit=Pokud jsou v blízkosti zranění spojenci (dosah 500), vyléčte §7<effectNumber>§0% jejich celkového zdraví
+runeofsageandgrit2=Pokud ne, zvyšte své poškození, rychlost útoku a rychlost pohybu o +§7<effectNumber>§0% na 20 sekund
+runeoffallenwizard=Omračte všechny moby kromě vás na §7<effectNumber>§0 sekund
+runeoffallenwizard2=Lidé se osvobodí rychleji a bossové ještě rychleji
+runeofbabylontower=+§7<effectNumber>§0% veškerého poškození, ale nemůžete se pohybovat. 10 sekund
+
+// Base Runes Tier 3
+runeofmotherslime=Proveďte velký skok směrem k pozici myši a způsobte plošné poškození při přistání
+runeofmotherslime2=Přistání způsobí §7<effectNumber>§0% maximálního zdraví mobů jako poškození
+runeofnightswarm=Vyvolejte 5 netopýrů na §7<effectNumber>§0 sekund, kteří hledají nepřátelské moby, aby je kousli
+runeofnightswarm2=Každé kousnutí obnoví 1% vašeho celkového zdraví (alespoň 1)
+runeofspiderempress=Hází §7<F0effectNumber>§0 pavučinových koulí ve směru myši
+runeofspiderempress2=Pavučinové koule omráčí na 3 sekundy a zpomalí na 10 sekund
+runeofsunlightchampion=Budete omráčeni na 3 sekundy, zatímco nabíjíte novu s dosahem §7<effectNumber>§0
+runeofsunlightchampion2=Nova způsobí 200% maximálního zdraví mobů jako poškození
+runeofmoonlightdancer=+§7<effectNumber>§0% poškození za každé +1% rychlosti pohybu na 10 sekund
+runeofcrystaldragon=Vystřelte laserový paprsek na pozici kurzoru na 5 sekund
+runeofcrystaldragon2=Laser způsobí §7<effectNumber>§0% maximálního zdraví mobů jako poškození
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+onyxrune=Po aktivaci vyvolá Onyxe na 5 sekund. Způsobí poškození na základě 5% zdraví moba
+onyxrune2=Každé kousnutí Onyxe obnoví 1% vašeho celkového zdraví (alespoň 1)
+onyxrune3=§3Díky Onyxovi za skvělé nápady na runy! <3
+pawningrune=Po aktivaci, pokud ještě nemáte účinek, okamžitě obnoví 20% vašeho maximálního zdraví
+pawningrune2=Po 10 sekundách ztratíte obnovené množství plus dalších 40%
+
+// Modifier Runes Tier 2
+abysmalrune=Po aktivaci vyvolá černou díru na pozici kurzoru, která na 2 sekundy vtahuje nepřátele
+abysmalrune2=Černá díra se vyvolá pouze tehdy, pokud od poslední aktivace uplynulo 10 sekund
+tidalrune=Po aktivaci vyvolá vlnu vody, která odhodí nepřátele
+
+// Modifier Runes Tier 3
+
+
+[mobtooltip]
+usenet=Použijte síť! [item=net]
+
+
+[mob]
+// Hostile
+gelslime=Gelový sliz
+rockygelslime=Kamenitý gelový sliz
+unstablegelslime=Nestabilní gelový sliz
+miniunstablegelslime=Mini nestabilní gelový sliz
+pinkwitch=Růžová čarodějnice
+voidadept=Adept prázdnoty
+copperdaggergoblin=Goblin s měděnou dýkou
+irondaggergoblin=Goblin se železnou dýkou
+golddaggergoblin=Goblin se zlatou dýkou
+infectedtreant=Infikovaný ent
+spinelgolem=Spinelový golem
+spinelcaveling=Spinelový jeskynní tvor
+tungstencaveling=Volframový jeskynní tvor
+spinelmimic=Spinelový mimik
+babylontower=Babylonská věž
+hearthcrystal=Krystal krbu
+babylon=Babylon
+
+// Friendly
+wildphosphorslime=Divoký fosforový sliz
+
+// Summon
+babyunstablegelslime=Malý nestabilní gelový sliz
+undeadskeleton=Nemrtvý kostlivec
+volatilegelslime=Těkavý gelový sliz
+runicunstablegelslime=Runový nestabilní gelový sliz
+runicvulturehatchling=Runový sup
+runicbat=Runový netopýr
+onyx=Onyx
+livingsapling=Živá sazenice
+
+// Pet
+petphosphorslime=Fosforový sliz
+
+
+[buff]
+// Common Buffs
+stunbuff=Omráčení
+fallenstunbuff=Padlé omráčení
+stickybuff=Lepkavý
+stopbuff=Zastavený
+honeyedbuff=Medový
+venomextractbuff=Jedový extrakt
+cursedbuff=Prokletý
+adrenalinebuff=Adrenalin
+harmonybuff=Harmonie
+
+// Active Buffs
+berserkerrushactive=Berserkerský běh aktivní
+periaptactive=Schopnost amuletu aktivní
+runesinjectoractive=Runový injektor aktivní
+
+// Cooldown Buffs
+berserkerrushcooldown=Berserkerský běh se obnovuje
+periaptcooldown=Schopnost amuletu se obnovuje
+runesinjectorcooldown=Runový injektor se obnovuje
+spinattackcooldown=Rotující útok se obnovuje
+saberdashcooldown=Úprk šavlí se obnovuje
+
+
+[message]
+unstablegelslime_anger=§6Nestabilní gelový sliz se zlobí... <anger>/10
+unstablegelslime_fullanger=§6Nestabilní gelový sliz se rozzlobil! <anger>/10
+unstablegelslime_night=§6Nestabilní gelový sliz§0 zmizel s příchodem noci!
+gelslimesnulled=Gelové slizy v tomto světě byly zneškodněny. Už se neobjeví
+gelslimesunnulled=Gelové slizy v tomto světě byly povoleny. Nyní se objeví
+pinkwitchesnulled=Růžové čarodějnice byly zneškodněny v (<x>, <y>)
+pinkwitchesunnulled=Růžové čarodějnice byly povoleny v (<x>, <y>)
+needfreeslots=K použití tohoto potřebujete <slots> volných míst v inventáři
+cantuseatnight=Nelze použít v noci
+healthalreadyfull=Zdraví je již plné
+cantheal=Nelze léčit
+insuficienthealth=Nedostatek zdraví k provedení této akce!
+cannottrhowlockeditem=Nemůžete hodit předmět zamčený v inventáři
+initialrunetip=Pečlivě si vyberte svou počáteční runu;\nostatní nezískáte až později ve hře
+alreadyselectedinitialrune=Počáteční runa již byla vybrána
+cannotusetrial=Nelze použít ve zkušebních místnostech
+
+[biome]
+infectedfields=Infikovaná pole
+
+
+[journal]
+
+//Levels
+infectedfieldssurface=Povrch infikovaných polí
+infectedfieldscave=Jeskyně infikovaných polí
+
+// Forest Surface Challenges
+killgelslimesforest=[mob=gelslime] Zabijte 25 gelových slizů v lese
+pickupfloralring=[item=floralring] Posekejte hodně trávy v lese, abyste získali květinový prsten
+killunstablegelslime=[mob=unstablegelslime] Zabijte 1 nestabilního gelového slizu
+
+// Swamp Surface Challenges
+killpinkwitchesswamp=[mob=pinkwitch] V noci zabijte 5 růžových čarodějnic na povrchu bažiny
+
+// Infected Fields Surface Challenges
+pickupinfectedlogs=[item=infectedlog] Pokácejte, abyste sebrali 100 infikovaných kmenů
+
+// Infected Fields Cave Challenges
+pickupspinel=[item=spinel] Seberte 40 spinelů
+activatebabylontower=[item=lifespinel] Umístěte životní spinel na babylonskou věž
+findthespammer=[item=thespammer] Najděte spammera
+
+
+[controls]
+runesinjectorability=Schopnost runového injektoru
+
+
+[runestutorialbook]
+openheader=Otevření runového injektoru
+opentext=K použití run budete potřebovat runový injektor. Tato speciální zařízení lze otevřít pro vložení run. Každý injektor má jeden slot pro základní runu a několik slotů pro modifikační runy, v závislosti na jeho kapacitě. Můžete přidat tolik modifikačních run, kolik injektor dovolí, experimentujte, abyste našli nejlepší kombinace!
+equipheader=Vybavení injektoru
+equiptext=K aktivaci vašich run musí být runový injektor vybaven ve slotu pro cetky. Po vybavení stačí stisknout G (nebo klávesu přiřazenou v nastavení) k aktivaci jeho účinků. Ujistěte se, že je injektor správně nakonfigurován a připraven, než se pustíte do akce!
+
+runesheader=Co jsou runy?
+runestext=Runy jsou mystické kameny, které poskytují silné účinky po vložení do runového injektoru. Jejich síla a chování závisí na tom, jak jsou kombinovány, zvládnutí jejich použití je klíčem k odemčení vašeho plného potenciálu.
+baserunesheader=Základní runy
+baserunestext=Každý runový injektor vyžaduje k fungování přesně jednu základní runu. Základní runa definuje hlavní účinek injektoru a funguje jako jádro vašeho nastavení. Vedle účinku si všimnete zeleného čísla, které představuje jeho hodnotu účinku, kterou lze zvýšit nebo snížit pomocí modifikátorů.
+modifierrunesheader=Modifikační runy
+modifierrunestext=Modifikační runy se používají k přizpůsobení a vylepšení účinku vaší základní runy. Mohou upravit hodnotu účinku, změnit jeho chování nebo přidat speciální vlastnosti. Modifikační runy však vždy přinášejí kompromisy: žádný modifikátor není čistě prospěšný, takže vybírejte moudře!
+
+tableheader=Runový stůl
+tabletext=Runový stůl je vaše hlavní stanice pro výrobu široké škály run. Většinu standardních run lze vyrobit zde, ale pamatujte: některé silné runy lze nalézt pouze průzkumem. Mějte oči otevřené, dobrodružství odměňuje zvědavé!
+crafttext=V runové dílně najdete vše, co potřebujete k zahájení. Zkombinujte obsah se svou počáteční runou a základní runou, kterou můžete vyrobit na runovém stole, a budete mít plně funkční runový injektor připravený k vybavení!

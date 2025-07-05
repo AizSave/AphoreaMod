@@ -1,0 +1,751 @@
+# Translation made by AI
+
+[global]
+aphorea=§!Aphorea Modu
+aphorearework=§!Aphorea Modu Yeniden Çalışması
+aphoreamightybanner=§!Aphorea Modu x Mighty Banner Modu
+aphoreasummonerexpansion=§!Aphorea Modu x Summoner Genişlemesi
+
+
+[buffmodifiers]
+// Magic Healing
+magichealing=<mod>% sihirli iyileştirme
+magichealingflat=<mod> sihirli iyileştirme
+magichealingreceived=<mod>% alınan sihirli iyileştirme
+magichealingreceivedflat=<mod> alınan sihirli iyileştirme
+magichealinggrace=<mod>% sihirli iyileştirme lütfu
+
+// Area
+arearange=<mod>% alan menzili
+
+// Inspiration Damage
+inspirationdamage=<mod>% ilham hasarı
+inspirationcritchance=<mod>% ilham kritik vuruş şansı
+inspirationcritdamage=<mod>% ilham kritik vuruş hasarı
+inspirationeffect=<mod>% ilham etkisi
+inspirationabilityspeed=<mod>% ilham yetenek hızı
+
+// Others
+loyal=Hançer atıldığında kaybolmaz
+
+
+[stats]
+inspiration_damage=İlham hasarı
+
+
+[enchantment]
+// Healing Equipment
+godly=Tanrısal
+absent=Yok
+auxiliary=Yardımcı
+vain=Boşuna
+gentle=Nazik
+selfish=Bencil
+
+// Healing
+friendly=Dostça
+graceful=Zarif
+wonderful=Harika
+ecologic=Ekolojik
+exalted=Yüce
+cursed=Lanetli
+
+// Area
+booming=Patlayan
+dimmed=Loş
+
+// Others
+loyal=Sadık
+
+
+[tile]
+geltile=Jel Zemin
+infectedwatertile=Enfekte Su
+infectedgrasstile=Enfekte Çim
+spinelgravel=Spinel Çakıl
+
+
+[tech]
+runes=Rünler
+
+
+[object]
+witchstatue=Cadı Heykeli
+runestable=Rün Masası
+#NEW
+infectedsapling=Enfekte Fidan
+spinelcluster=Spinel Kümesi
+spinelcluster_small=Küçük Spinel Kümesi
+gelrock=Jel Kaya
+infectedtree=Enfekte Ağaç
+infectedgrass=Enfekte Çim
+spinelchest=Spinel Sandığı
+fakespinelchest=Sahte Spinel Sandığı
+babylontower=Babil Kulesi
+babylonentrance=Babil Girişi
+babylonexit=Babil Çıkışı
+infectedtrialentrance=Enfekte Deneme Girişi
+infectedchair=Enfekte Sandalye
+infecteddinnertable=Enfekte Yemek Masası
+infectedbookshelf=Enfekte Kitaplık
+infectedcabinet=Enfekte Dolap
+infectedbed=Enfekte Yatak
+infecteddoublebed=Enfekte Çift Kişilik Yatak
+infectedcandelabra=Enfekte Şamdan
+
+
+[itemcategory]
+healing=İyileştirme
+healingtools=İyileştirme Araçları
+runes=Rünler
+runesinjectors=Rün Enjektörleri
+baserunes=Temel Rünler
+modifierrunes=Değiştirici Rünler
+
+
+[item]
+// General Materials
+anybasicfoci=Herhangi Bir Temel Odak
+
+// Materials
+rockygel=Kayalık Jel
+unstablegel=Kararsız Jel
+stardust=Yıldız Tozu
+infectedlog=Enfekte Kütük
+infectedalloy=Enfekte Alaşım
+spinel=Spinel
+lifespinel=Yaşam Spineli
+
+// Consumables
+unstablecore=Kararsız Çekirdek
+initialrune=Başlangıç Rünü
+venomextract=Zehir Özü
+
+// Swords
+gelsword=Jel Kılıç
+unstablegelsword=Kararsız Jel Kılıç
+broom=Süpürge
+voidhammer=Hiçlik Çekici
+brokenkora=Kırık Kora
+thenarcissist=Narsist
+cryokatana=Kriyo Katanası
+
+// Greatswords
+unstablegelgreatsword=Kararsız Jel Büyük Kılıç
+babylongreatsword=Babil Büyük Kılıcı
+
+// Glaives
+woodenrod=Tahta Sopa
+
+// Sabers
+saber=Kılıç
+coppersaber=Bakır Kılıç
+ironsaber=Demir Kılıç
+goldsaber=Altın Kılıç
+demonicsaber=Şeytani Kılıç
+unstablegelsaber=Kararsız Jel Kılıç
+honeysaber=Bal Kılıcı
+glacialsaber=Buzul Kılıcı
+crimsonkora=Kızıl Kora
+
+// Battleaxes
+battleaxe=Savaş Baltası
+unstablegelbattleaxe=Kararsız Jel Savaş Baltası
+demonicbattleaxe=Şeytani Savaş Baltası
+
+// Daggers
+dagger=Hançer
+copperdagger=Bakır Hançer
+irondagger=Demir Hançer
+golddagger=Altın Hançer
+demonicdagger=Şeytani Hançer
+tungstendagger=Tungsten Hançer
+lostumbrella=Kayıp Şemsiye
+
+// Rapiers
+fossilrapier=Fosil Rapier
+lightrapier=Işık Rapieri
+
+// Magic weapons
+unstablegelstaff=Kararsız Jel Asası
+magicalbroom=Sihirli Süpürge
+adeptsbook=Usta Kitabı
+harpofharmony=Uyum Arpı
+babyloncandle=Babil Mumu
+
+// Bows
+spinelcrossbow=Spinel Tatar Yayı
+
+// Guns
+thespammer=Spamcı
+
+// Bullets
+spambullet=Spam Mermisi
+
+// Greatbows
+gelgreatbow=Jel Büyük Yay
+unstablegelgreatbow=Kararsız Jel Büyük Yay
+
+// Arrows
+gelarrow=Jel Ok
+unstablegelarrow=Kararsız Jel Ok
+
+// Saber Guns
+sabergun=Kılıç Tabancası
+shotgunsaber=Pompalı Kılıç
+
+// Slings
+sling=Sapan
+firesling=Ateş Sapanı
+frozensling=Donmuş Sapan
+
+// Blowguns
+blowgun=Üfleme Borusu
+
+// Throw weapons
+gelball=Jel Topu
+gelballgroup=Gruplanmış Jel Topları
+unstablegelveline=Kararsız Jel Cirit
+
+// Summon weapons
+volatilegelstaff=Uçucu Jel Asası
+infectedstaff=Enfekte Asa
+
+// Banners
+blankbanner=Boş Sancak
+
+// Healing Tools
+healingtool=İyileştirme Aracı
+magicalvial=Sihirli Şişe
+healingstaff=İyileştirme Asası
+woodenwand=Tahta Değnek
+goldenwand=Altın Değnek
+spinelstaff=Spinel Asası
+
+// Tools
+superiorpickaxe=Üstün Kazma
+
+// Trinkets
+rockyperiapt=Kayalık Tılsım
+unstableperiapt=Kararsız Tılsım
+bloodyperiapt=Kanlı Tılsım
+demonicperiapt=Şeytani Tılsım
+abysmalperiapt=Uçurum Tılsımı
+frozenperiapt=Donmuş Tılsım
+necromancyperiapt=Nekromansi Tılsımı
+floralring=Çiçek Yüzüğü
+gelring=Jel Yüzük
+heartring=Kalp Yüzüğü
+ringofhealth=Sağlık Yüzüğü
+swampshield=Bataklık Kalkanı
+witchmedallion=Cadı Madalyonu
+iceboots=Buz Çizmeleri
+inspirationfoci=İlham Odağı
+cursedmedallion=Lanetli Madalyon
+ancientmedallion=Antik Madalyon
+essenceofhealing=İyileştirme Özü
+ninjascarf=Ninja Eşarbı
+adrenalinecharm=Adrenalin Tılsımı
+spinelshield=Spinel Kalkanı
+bloomrushcharm=Çiçeklenme Hücumu Tılsımı
+infectedperiapt=Enfekte Tılsım
+
+// Armor
+rockyboots=Kayalık Çizmeler
+rockychestplate=Kayalık Göğüslük
+rockyhelmet=Kayalık Miğfer
+goldhat=Altın Şapka
+pinkwitchhat=Pembe Cadı Şapkası
+magicalsuit=Sihirli Takım
+magicalboots=Sihirli Çizmeler
+swampboots=Bataklık Çizmeleri
+swampchestplate=Bataklık Göğüslüğü
+swampmask=Bataklık Maskesi
+swamphood=Bataklık Başlığı
+infectedhat=Enfekte Şapka
+infectedchestplate=Enfekte Göğüslük
+infectedboots=Enfekte Çizmeler
+spinelhelmet=Spinel Miğferi
+spinelhat=Spinel Şapkası
+spinelchestplate=Spinel Göğüslüğü
+spinelboots=Spinel Çizmeleri
+
+// Misc
+gelslimenullifier=Basit bir tıklamayla sizi rahatsız etmeyi bırakacaklar!
+cuberry=Küpçilek
+infectedgrassseed=Enfekte Çim Tohumu
+
+// Backpacks
+basicbackpack=Temel Sırt Çantası
+sapphirebackpack=Safir Sırt Çantası
+amethystbackpack=Ametist Sırt Çantası
+rubybackpack=Yakut Sırt Çantası
+emeraldbackpack=Zümrüt Sırt Çantası
+diamondbackpack=Elmas Sırt Çantası
+
+// Books
+runestutorialbook=Rünler Eğitim Kitabı
+
+// Runes Injectors
+runesinjector=Rün Enjektörü
+rusticrunesinjector=Rustik Rün Enjektörü
+unstablerunesinjector=Kararsız Rün Enjektörü
+demonicrunesinjector=Şeytani Rün Enjektörü
+tungstenrunesinjector=Tungsten Rün Enjektörü
+ancientrunesinjector=Antik Rün Enjektörü
+
+// Base Runes Tier 0
+baserune=Temel Rün
+runeoffury=Öfke Rünü
+runeofspeed=Hız Rünü
+runeofhealing=İyileştirme Rünü
+runeofresistance=Direnç Rünü
+runeofvalor=Cesaret Rünü
+runeofdetonation=Patlama Rünü
+runeofthunder=Gök Gürültüsü Rünü
+runeofwinter=Kış Rünü
+runeofshadows=Gölgeler Rünü
+runeofimmortality=Ölümsüzlük Rünü
+
+// Base Runes Tier 1
+runeofunstablegelslime=Kararsız Jel Balçık Rünü
+runeofevilsprotector=Kötülüğün Koruyucusu Rünü
+runeofqueenspider=Kraliçe Örümcek Rünü
+runeofvoidwizard=Hiçlik Büyücüsü Rünü
+runeofswampguardian=Bataklık Koruyucusu Rünü
+runeofancientvulture=Antik Akbaba Rünü
+runeofpiratecaptain=Korsan Kaptan Rünü
+runeofchieftain=Şef Rünü
+
+// Base Runes Tier 2
+runeofreaper=Azrail Rünü
+runeofcryoqueen=Kriyo Kraliçesi Rünü
+runeofpestwarden=Veba Bekçisi Rünü
+runeofsageandgrit=Adaçayı ve Cesaret Rünü
+runeoffallenwizard=Düşmüş Büyücü Rünü
+runeofbabylontower=Babil Kulesi Rünü
+
+// Base Runes Tier 3
+runeofmotherslime=Ana Balçık Rünü
+runeofnightswarm=Gece Sürüsü Rünü
+runeofspiderempress=Örümcek İmparatoriçesi Rünü
+runeofsunlightchampion=Güneş Işığı Şampiyonu Rünü
+runeofmoonlightdancer=Ay Işığı Dansçısı Rünü
+runeofcrystaldragon=Kristal Ejderha Rünü
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+frenzyrune=Çılgınlık Rünü
+vitalrune=Hayati Rün
+devastatingrune=Yıkıcı Rün
+onyxrune=Oniks Rünü
+pawningrune=Piyon Rünü
+
+// Modifier Runes Tier 2
+abysmalrune=Uçurum Rünü
+tidalrune=Gelgit Rünü
+
+// Modifier Runes Tier 3
+
+
+[itemtooltip]
+// Stat tips
+line=----------------------------------------
+magichealingtip=Sihirli iyileştirme: §7<health>
+rangetip=Menzil: §9<range>
+areatip=§aAlan <number>
+inspirationdamagetip=İlham hasarı: <value>
+areabuff=Müttefiklere <buff> uygula
+areadebuff=Düşmanlara <buff> uygula
+areabuffdisplay=<duration> saniye boyunca <buff>
+attackarmorpentip=Zırh delme: <value>%
+
+// Mechanics
+magichealinggrace=§aSihirli İyileştirme Lütfu:§0 Müttefiklere yönelik Sihirli İyileştirmenin bir yüzdesiyle kendini iyileştirir
+cursedbuff=§bLanetli:§0 §6+%25§0 Gelen Hasar
+inspiration=§9İlham:§0 Sancakların ve müzik aletlerinin etkilerini artırır
+adrenaline=§6Adrenalin:§0 +%5 Hasar, -%5 Zırh. 5 defaya kadar birikebilir
+livingsapling=§7Yaşayan Fidan:§0 Her 10 saldırıda sahibini §73§0 sihirli iyileştirir
+
+// Misc
+gelslimenullifier=Basit bir tıklamayla sizi rahatsız etmeyi bırakacaklar!
+enchantingscrollhealingequipmenttip=Bir iyileştirme ekipmanını <enchantment> ile büyülemek için kullanılır\n§!Aphorea Modu
+enchantingscrollhealingtip=Bir iyileştirme aracını <enchantment> ile büyülemek için kullanılır\n§!Aphorea Modu
+enchantingscrollareatip=Bir alan etkili aracı <enchantment> ile büyülemek için kullanılır\n§!Aphorea Modu
+enchantingscrolldaggertip=Bir hançer silahını <enchantment> ile büyülemek için kullanılır\n§!Aphorea Modu
+backpack=Topladığınız tüm eşyaları saklayan yeni bir envanterdir
+backpackslots=<slots> eşya kapasitesi
+stored=Saklanan eşyalar: <items>
+backpackcraft=Daha iyi bir sırt çantası yapmak için boş olmalıdır
+
+// Consumables
+deleteditem=Bu öğe kaldırıldı, kalıcı olarak kaldırılmadan önce malzemeleri kurtarmak için bu öğeyi kullanın
+unstablecore=§bKararsız bir aura yayar...§0 Sadece gündüz kullanılabilir
+venomextractbuff=Lowd iç diyor, yapma
+venomextractbuffdesc=1'den fazla canınız olamaz
+lifespinel=Maksimum canı kalıcı olarak 5 artırır, 320'ye kadar
+
+// General Weapons
+spinsecondaryattack=Bir sonraki saldırıyı alan saldırısı yapmak için [input=mouse2] tuşuna basın
+areasecondaryattack=<mana> Mana tüketerek bir alan saldırısı gerçekleştirmek için [input=mouse2] tuşuna basın
+stikybuff1=Düşmanı 1 saniyeliğine Yapışkan yapar
+stikybuff2=Düşmanı 2 saniyeliğine Yapışkan yapar
+stikybuff3=Düşmanı 3 saniyeliğine Yapışkan yapar
+projectilearea=Mermi sona erdiğinde alan hasarı verir
+
+// Melee Weapons
+saber=Tam hasar için maksimuma kadar şarj edin ve bir hava kesiği serbest bırakın
+saberdash=Düşmanları dilimlemek için bir atılma şarj etmek için [input=mouse2] tuşunu basılı tutun
+battleaxe=Şarj olması uzun sürer
+battleaxe2=Vahşi Hücumu etkinleştirmek ve geçici olarak 3 Adrenalin kazanmak için [input=mouse2] tuşuna basın
+battleaxe3=Hücum sırasında düşmanlara vurarak geçici olarak Adrenalin kazanın, hareket ve saldırı hızını artırın
+dagger=Hançeri fırlatmak için [input=mouse2] tuşunu basılı tutun
+
+// Range Weapons
+sling=Taşları kuvvetle fırlatır
+sling2=§7%100§0 şansla düşmanı 0.5 saniyeliğine sersemletir
+twoarrows=Aynı anda iki ok atar
+threearrows=Aynı anda üç ok atar
+blowgun=Tohum atar
+
+// Single Melee Weapons
+woodenrod=Her 10 saldırıda bir kendini §7<healing>§0 sihirli iyileştirir
+voidhammer=Mermi sektiğinde veya bir düşmana çarptığında, en yakındakini hedefler ve 3 defaya kadar vurur
+crimsonkora=Yıkıcı ama yavaş bir saldırı şarj etmek için [input=mouse2] tuşunu basılı tutun
+thenarcissist=Beşinci vuruşta dönen bir kılıç fırlatmak için 4 saldırıyı zincirleyin!\nHer zincirleme saldırı için +%20 Hasar
+
+// Single Range Weapons
+firesling=Düşmanları yakar
+frozensling=Düşmanları dondurur
+gelgreatbow=Taş Okları Jel Oklara dönüştürür
+unstablegelgreatbow=Taş Okları ve Jel Okları Kararsız Jel Oklara dönüştürür
+thespammer=Spam Mermileri atabilir
+shotgunsaber=Daha güçlü, isabetli ve delici atışlar için merkeze yakın nişan alın
+honeysaber=Tam hasar için maksimuma kadar şarj edin ve bal ve yaban mersini atın
+spinelcrossbow=Her delmede daha ölümcül hale gelen, 2 düşmana kadar delen oklar atar
+spinelcrossbow2=Aynı anda 3 ok atmak için [input=mouse2] tuşunu basılı tutun
+
+// Single Magic Weapons
+unstablegelstaff=Mermiler duvarlardan sektiğinde çoğalırlar
+harpofharmony=Uyum: Artan hız, can yenilenmesi ve mana yenilenmesi
+
+// Single Summoner Weapons
+infectedstaff=Çağırma başına iki Yaşayan Fidan çağırır
+
+// Single Throwable Weapons
+gelball=Bir jel topu fırlatır
+
+// Single Magic Healing Tools
+magicalvial=Yaralı bir insanı iyileştirmek için üzerine gelin, kendinizi iyileştirmek için kimseye gelmeyin
+magicalvial2=Sınırsız kullanım
+
+// Ammo
+spambullet=Rastgele şu etkilerden birine sahiptir:
+spambullet1=§9Üzgün:§0 Saldırıya uğrayan düşman yapışkan hale gelir ve 5 saniyeliğine yavaşlar
+spambullet2=§9Ateş:§0 Çarpışmak yerine yerde bir ateş havuzu bırakır
+spambullet3=§9Beğen:§0 Duvarlardan seker ve yaratıkları deler, her biri 10 defaya kadar
+spambullet4=§9Kontrol:§0 Yolunun sonunda 3 canlık sihirli iyileştirme alanı
+spambullet5=§9Patlama:§0 Çarpışmak yerine yolunun sonunda patlar
+
+// Tiles
+geltile=Üzerindeki her şeyi büyük ölçüde yavaşlatan yapışkan zemin
+
+// Objects
+witchstatue=Bu heykeli bir bataklığın yüzeyine yerleştirmek, ada genelinde cadıların ortaya çıkmasını engeller
+
+// Generic Trinkets
+areawhenheal=Yapılan her <magichealing> Sihirli İyileştirme için bu alanı yürütür
+periaptboost=10 saniyeliğine Hız ve Saldırı Hızı artışı kazanmak için [input=trinketability] tuşuna basın
+
+// Trinkets
+rockyperiapt=§7+5§0 Zırh, ancak §6-%5§0 Hareket Hızı
+rockyperiapt2=10 saniyeliğine 10 Zırh kazanmak için [input=trinketability] tuşuna basın
+unstableperiapt=İki Bebek Kararsız Jel Balçık çağırır (6 Çağırıcı Hasarı)
+unstableperiapt2=Sizi Yapışkan zayıflatmasına karşı bağışık yapar
+bloodyperiapt=Ayrıca, 'Kan Cıvatası' ve 'Kan Salvosu' silahları §7%3§0 can çalar
+demonicperiapt=Ayrıca, Sihirli silahlar §7%3§0 can çalar
+necromancyperiapt=Siz veya çağırıcılarınızdan biri düşman bir yaratığı her öldürdüğünde bir Ölümsüz İskelet çağırırsınız
+necromancyperiapt2=20 Çağırıcı Hasarı. 10 saniye sürer ve aynı anda en fazla 3 tane olabilir
+frozenperiapt=Yakın dövüş ve Menzilli silahlar 3 saniyeliğine Dondurur
+frozenperiapt2=Donmadan etkilenen yaratıklara daha fazla hasar verir
+frozenperiapt3=Sizi Donma ve Buz Yavaşlatması zayıflatmalarına karşı bağışık yapar
+floralring=Her 5 saniyede bir kendini §7<healing>§0 sihirli iyileştirir
+gelring=§7+%30§0 alınan Sihirli İyileştirme
+heartring=§7+20§0 maksimum can
+swampshield=Sadece geldikleri yöndeki saldırıları korur
+swampshield2=Mükemmel blokta: Maksimum canınızın §7<healing>§0 kadarıyla kendinizi sihirli iyileştirin
+iceboots=Buz üzerindeymiş gibi kaymanızı sağlar, ancak +%50 hareket hızı ve +4 zırh verir
+inspirationfoci1=§7+%40§0 ilham etkisi ve §7+%20§0 ilham yetenek hızı
+inspirationfoci2=§6-%20§0 tüm ilham dışı hasar ve §6-1§0 maksimum çağırıcı
+essenceofhealing=Yaşam özü başına §7+<percent>%§0 Sihirli İyileştirme
+essenceofhealing2=2 yaşam özü başına §7<flat>§0 Sihirli İyileştirme
+essenceofhealing3=§6-%80§0 yaşam özü süresi, -%50 ile sınırlı
+ninjascarf=Kılıç Atılmalarını Kılıç Zıplamalarına dönüştürür
+adrenalinecharm=Alınan her vuruş size 20 saniyeliğine Adrenalin verir
+infectedperiapt=İki Yaşayan Fidan çağırır (8 Çağırıcı Hasarı)
+bloomrushcharm=Sahip olduğunuz her Adrenalin için dayanıklılık kullanımını %10 azaltır\nSahip olduğunuz her Adrenalin için bir Yaşayan Fidan çağırır (8 Çağırıcı Hasarı)
+
+// Set Bonus
+goldhatsetbonus=Eğer hareketsizseniz, menzilli saldırı hızınız büyük ölçüde artar
+pinkwitchsetbonus=Canınız ne kadar düşükse Sihirli Saldırı Hızı, Mana Yenilenmesi ve Zırh o kadar artar
+infectedsetbonus=Üç Yaşayan Fidan çağırır (8 Çağırıcı Hasarı)
+spinelhelmetsetbonus=Düşman yaratıklara verilen yakın dövüş hasarının §7<healing>§0 kadarıyla kendini sihirli iyileştirir
+spinelhatsetbonus=Düşman yaratıklara verilen sihirli hasarın §7<healing>§0 kadarıyla kendini ve yakındaki tüm müttefikleri sihirli iyileştirir
+
+// Banners
+strikebannereffect=§7+<effect>%§0 can yenilenmesi (savaşta ve savaş dışında)
+strikebannerability=§aHer <time> saniyede bir:§0 Bir alan saldırısı gerçekleştirir
+blankbannereffect=§7+<effect>%§0 can yenilenmesi (savaş dışında)
+blankbannerability=§aHer <time> saniyede bir:§0 Bir alan iyileştirmesi gerçekleştirir
+bannerofdamageeffect=§7+<effect>%§0 hasar
+bannerofdefenseeffect=§7-<effect>%§0 gelen hasar
+bannerofspeedeffect=§7+<effect>%§0 hareket hızı
+bannerofsummonspeedeffect=§7+<effect>%§0 çağırıcı hareket hızı
+
+// Mighty Banners
+banneroffishingeffect=§7+<effect>§0 balık tutma gücü
+bannerofhealthregeneffect=§7+<effectfloat>§0 savaşta can yenilenmesi
+bannerofmanaregeneffect=§7+<effect>%§0 savaşta mana yenilenmesi
+bannerofresistanceeffect=§7+<effect>§0 zırh
+bannerofsummoningeffect=§7+<effect>§0 maksimum çağırıcı
+bannerofattackspeedeffect=§7+<effect>%§0 saldırı hızı
+
+// Summoner Expansion Banners
+bannerofresilienceeffect=§7+<effect>%§0 maksimum dayanıklılık\nSaniyede §7+<effect>§0 dayanıklılık yeniler
+bannerofbouncingeffect=§7+<effect>§0 mermi sekmesi
+bannerofessenceeffect=§7+<effect>%§0 yaşam özü süresi
+bannerofstaminaeffect=§7+<effect>%§0 dayanıklılık kapasitesi\n§7+<effect2>%§0 dayanıklılık yenilenmesi\n§7-<effect2>%§0 dayanıklılık kullanımı
+bannerofpickingeffect=§7+<effectfloat>§0 toplama menzili
+bannerofdashingeffect=§7+<effect>§0 atılma yığını\n§7-<effect2>%§0 atılma bekleme süresi
+bannerofmanaeffect=§7+<effect>%§0 maksimum mana\n§7<effect2>%§0 mana yenilenmesi
+
+// Runes (General)
+baserune=§iTemel Rün
+modifierrune=§aDeğiştirici Rün
+linkedrune=§b[<player>] oyuncusuna bağlı Rün
+notruneowner=Temel Rün'ün sahibi değilsiniz
+runesslots=En fazla 1 Temel Rün + <modifierslots> Değiştirici Rün takılabilir
+useruneinfusor=Etkinleştirmek için [input=runesinjectorability]
+requiresbaserune=Takılı bir temel rün gerektirir
+onlyonebaserune=Aynı anda sadece bir temel rün takılabilir
+duplicatedmodifierrunes=Aynı değiştirici ründen birden fazla takılamaz
+runehealthcost=Etkinleştirildiğinde maksimum canın %<health> kadarını tüketir
+runehealthhealing=Kullanıldığında maksimum canın %<health> kadarını yeniler
+runecooldown=<seconds> saniye içinde yeniden şarj olur
+increaseruneeffectnumber=Etkiyi §7%<variation>§0 artırır
+decreaseruneeffectnumber=Etkiyi §6%<variation>§0 azaltır
+increaserunecooldown=Bekleme süresini §6%<variation>§0 artırır
+decreaserunecooldown=Bekleme süresini §7%<variation>§0 azaltır
+increaserunehealthcost=Maksimum can tüketimini §6%<health>§0 artırır
+increaserunehealthhealing=Maksimum can yenilenmesini §7%<health>§0 artırır
+runedamagereduction=Hasar insanlara karşı büyük ölçüde, patronlara karşı ise daha da fazla azaltılır
+runedamagereductionnoboss=Hasar insanlara karşı büyük ölçüde azaltılır ve patronları etkilemez
+moreextraeffectmod=Etki değişiklikleri %<mod> daha etkilidir
+lessextraeffectmod=Etki değişiklikleri %<mod> daha az etkilidir
+
+// Runes Injectors
+
+// Base Runes Tier 0
+runeoffury=Hasarınızı ve saldırı hızınızı 10 saniyeliğine §7%<effectNumber>§0 artırır
+runeofspeed=Hareket ettiğiniz yönde §7<effectNumber>§0 güçle atılın ve 0.5 saniyeliğine yenilmez olun
+runeofresistance=Zırhınızı 10 saniyeliğine §7%<effectNumber>§0 artırır
+runeofresistance2=Bekleme süresindeyken zırhınız yarıya iner
+runeofvalor=§7<effectNumber>§0 saniyeliğine +%200 ilham
+runeofdetonation=Patlar, ne kadar yakınlarsa o kadar fazla hasar verir ve düşmanları geri savurur
+runeofdetonation2=Maksimum hasar, yaratıkların maksimum canının §7%<effectNumber>§0 kadarıdır
+runeofthunder=İki saniye sonra, imlecinizin başlangıç konumuna bir şimşek çarpar
+runeofthunder2=Şimşek, yaratıkların canının §7%<effectNumber>§0 kadar hasar verir ve 2 saniyeliğine sersemletir
+runeofwinter=500 menzil içindeki düşmanları §7<effectNumber>§0 saniyeliğine buzla yavaşlatır
+runeofimmortality=Önümüzdeki §7<effectNumber>§0 saniye içinde ölürseniz, maksimum canla hayatta kalırsınız
+runeofimmortality2=Bu olursa, 3 saniyeliğine yenilmez olursunuz, ancak bekleme süresi 30 saniye olur
+runeofimmortality3=Bekleme süresindeyken maksimum canınız yarıya iner
+runeofshadows=§7<effectNumber>§0 saniyeliğine görünmez olursunuz ama aynı zamanda korkutulursunuz ve herhangi bir eylemde bulunmanızı engeller
+
+// Base Runes Tier 1
+runeofunstablegelslime=Yakındaki bir konuma ışınlanın ve §7<effectNumber>§0 saniyeliğine 2 Rünik Kararsız Jel Balçık çağırın
+runeofunstablegelslime2=Çağırıcılar, yaratıkların maksimum canının %5'i kadar hasar verir
+runeofevilsprotector=+§7%<effectNumber>§0 saldırı hızı, ancak 10 saniyeliğine -%50 hareket hızı
+runeofevilsprotector2=Gece yüzeyde, pozitif etki ikiye katlanır
+runeofqueenspider=Yere §7<effectNumber>§0 saniyeliğine bir örümcek ağı bırakır
+runeofvoidwizard=Tüm mermiler sonsuza kadar seker ve 10 saniyeliğine +§7%<effectNumber>§0 mermi hızı
+runeofswampguardian=Alınan tüm hasarı §7<effectNumber>§0 saniyeliğine %80 azaltır
+runeofancientvulture=10 saniyeliğine bir Rünik Akbaba Yavrusu çağırır
+runeofancientvulture2=Çağırıcı, yaratıkların maksimum canının §7%<effectNumber>§0 kadar hasar verir
+runeofpiratecaptain=Sahip olduğunuz her 200 jeton için Hasarınızı §7%<effectNumber>§0 artırır, maksimum 20.000 jetona kadar
+runeofpiratecaptain2=Her saldırdığınızda 3 jeton kaybedersiniz
+runeofchieftain=Önümüzdeki 20 saniye boyunca, canınız ne kadar düşükse Hasarınız o kadar artar, maksimum +§7%<effectNumber>§0 kadar
+
+// Base Runes Tier 2
+runeofreaper=Farenizin konumuna ışınlanın. Maksimum §7<effectNumber>§0 mesafe
+runeofcryoqueen=1 saniyeliğine durun ve etrafınıza §7<effectNumber>§0 menzilli bir buz saldırısı başlatın
+runeofcryoqueen2=Mermiler, yaratıkların maksimum canının %200'ü kadar hasar verir
+runeofpestwarden=Önümüzdeki §7<effectNumber>§0 saniye boyunca, düşmanlarla çarpışmak onlara hasar verir ve onları iter
+runeofpestwarden2=Hasar, maksimum canlarının %20'sidir
+runeofsageandgrit=Yakında hasarlı müttefikler varsa (500 menzil), toplam canlarının §7%<effectNumber>§0 kadarını iyileştirin
+runeofsageandgrit2=Değilse, hasarınızı, saldırı hızınızı ve hareket hızınızı 20 saniyeliğine +§7%<effectNumber>§0 artırın
+runeoffallenwizard=Siz hariç tüm yaratıkları §7<effectNumber>§0 saniyeliğine sersemletin
+runeoffallenwizard2=İnsanlar daha hızlı, patronlar ise daha da hızlı kurtulur
+runeofbabylontower=+§7%<effectNumber>§0 tüm hasar, ancak hareket edemezsiniz. 10 saniye
+
+// Base Runes Tier 3
+runeofmotherslime=Farenizin konumuna doğru büyük bir sıçrama yapın ve indiğinizde alan hasarı verin
+runeofmotherslime2=İniş, yaratıkların maksimum canının §7%<effectNumber>§0 kadar hasar verir
+runeofnightswarm=§7<effectNumber>§0 saniyeliğine 5 yarasa çağırın, bu yarasalar düşman yaratıkları ısırır
+runeofnightswarm2=Her ısırık, toplam canınızın %1'ini yeniler (en az 1)
+runeofspiderempress=Farenizin yönünde §7<F0effectNumber>§0 ağ topu fırlatır
+runeofspiderempress2=Ağ topları 3 saniyeliğine sersemletir ve 10 saniyeliğine yavaşlatır
+runeofsunlightchampion=§7<effectNumber>§0 menzilli bir nova şarj ederken 3 saniyeliğine sersemlersiniz
+runeofsunlightchampion2=Nova, yaratıkların maksimum canının %200'ü kadar hasar verir
+runeofmoonlightdancer=10 saniyeliğine her +%1 hareket hızı için +§7%<effectNumber>§0 hasar
+runeofcrystaldragon=İmlecinizin konumuna 5 saniyeliğine bir lazer ışını fırlatın
+runeofcrystaldragon2=Lazer, yaratıkların maksimum canının §7%<effectNumber>§0 kadar hasar verir
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+onyxrune=Etkinleştirildiğinde, 5 saniyeliğine Oniks'i çağırır. Yaratığın canının %5'ine dayalı hasar verir
+onyxrune2=Oniks'in her ısırığı, toplam canınızın %1'ini yeniler (en az 1)
+onyxrune3=§3Harika rün fikirleri için teşekkürler Oniks! <3
+pawningrune=Etkinleştirildiğinde, henüz etkiye sahip değilseniz, maksimum canınızın %20'sini anında yeniler
+pawningrune2=10 saniye sonra, yenilenen miktarı ve ek olarak %40'ını kaybedersiniz
+
+// Modifier Runes Tier 2
+abysmalrune=Etkinleştirildiğinde, imlecinizin konumunda bir kara delik çağırır ve düşmanları 2 saniyeliğine içine çeker
+abysmalrune2=Kara delik, yalnızca son etkinleştirmeden bu yana 10 saniye geçtiyse çağrılır
+tidalrune=Etkinleştirildiğinde, düşmanları uzaklaştıran bir su dalgası çağırır
+
+// Modifier Runes Tier 3
+
+
+[mobtooltip]
+usenet=Bir Ağ kullanın! [item=net]
+
+
+[mob]
+// Hostile
+gelslime=Jel Balçık
+rockygelslime=Kayalık Jel Balçık
+unstablegelslime=Kararsız Jel Balçık
+miniunstablegelslime=Mini Kararsız Jel Balçık
+pinkwitch=Pembe Cadı
+voidadept=Hiçlik Ustası
+copperdaggergoblin=Bakır Hançerli Goblin
+irondaggergoblin=Demir Hançerli Goblin
+golddaggergoblin=Altın Hançerli Goblin
+infectedtreant=Enfekte Treant
+spinelgolem=Spinel Golemi
+spinelcaveling=Spinel Mağara Sakini
+tungstencaveling=Tungsten Mağara Sakini
+spinelmimic=Spinel Taklitçisi
+babylontower=Babil Kulesi
+hearthcrystal=Ocak Kristali
+babylon=Babil
+
+// Friendly
+wildphosphorslime=Vahşi Fosfor Balçığı
+
+// Summon
+babyunstablegelslime=Bebek Kararsız Jel Balçık
+undeadskeleton=Ölümsüz İskelet
+volatilegelslime=Uçucu Jel Balçık
+runicunstablegelslime=Rünik Kararsız Jel Balçık
+runicvulturehatchling=Rünik Akbaba Yavrusu
+runicbat=Rünik Yarasa
+onyx=Oniks
+livingsapling=Yaşayan Fidan
+
+// Pet
+petphosphorslime=Fosfor Balçığı
+
+
+[buff]
+// Common Buffs
+stunbuff=Sersemletme
+fallenstunbuff=Düşmüş Sersemletme
+stickybuff=Yapışkan
+stopbuff=Durduruldu
+honeyedbuff=Ballı
+venomextractbuff=Zehir Özü
+cursedbuff=Lanetli
+adrenalinebuff=Adrenalin
+harmonybuff=Uyum
+
+// Active Buffs
+berserkerrushactive=Vahşi Hücum Aktif
+periaptactive=Tılsım Yeteneği Aktif
+runesinjectoractive=Rün Enjektörü Aktif
+
+// Cooldown Buffs
+berserkerrushcooldown=Vahşi Hücum Bekleme Süresinde
+periaptcooldown=Tılsım Yeteneği Bekleme Süresinde
+runesinjectorcooldown=Rün Enjektörü Bekleme Süresinde
+spinattackcooldown=Dönüş Saldırısı Bekleme Süresinde
+saberdashcooldown=Kılıç Atılması Bekleme Süresinde
+
+
+[message]
+unstablegelslime_anger=§6Kararsız Jel Balçık sinirleniyor... <anger>/10
+unstablegelslime_fullanger=§6Kararsız Jel Balçık sinirlendi! <anger>/10
+unstablegelslime_night=§6Kararsız Jel Balçık§0 gece çökünce kayboldu!
+gelslimesnulled=Bu dünyadaki Jel Balçıklar etkisiz hale getirildi. Artık görünmeyecekler
+gelslimesunnulled=Bu dünyadaki Jel Balçıklar kabul edildi. Artık görünecekler
+pinkwitchesnulled=Pembe Cadılar (<x>, <y>) konumunda etkisiz hale getirildi
+pinkwitchesunnulled=Pembe Cadılar (<x>, <y>) konumunda kabul edildi
+needfreeslots=Bunu kullanmak için envanterde <slots> boş yuvaya ihtiyacınız var
+cantuseatnight=Gece kullanılamaz
+healthalreadyfull=Can zaten dolu
+cantheal=İyileştirilemez
+insuficienthealth=Bu eylemi gerçekleştirmek için yetersiz can!
+cannottrhowlockeditem=Envanterde kilitli bir öğeyi atamazsınız
+initialrunetip=Başlangıç rününüzü dikkatli seçin;\noyunun ilerleyen zamanlarına kadar diğerlerini elde edemezsiniz
+alreadyselectedinitialrune=Başlangıç rünü zaten seçildi
+cannotusetrial=Deneme odalarında kullanılamaz
+
+[biome]
+infectedfields=Enfekte Tarlalar
+
+
+[journal]
+
+//Levels
+infectedfieldssurface=Enfekte Tarlalar Yüzeyi
+infectedfieldscave=Enfekte Tarlalar Mağarası
+
+// Forest Surface Challenges
+killgelslimesforest=[mob=gelslime] Ormanda 25 Jel Balçık öldür
+pickupfloralring=[item=floralring] Çiçek Yüzüğünü elde etmek için ormanda çok sayıda ot kes
+killunstablegelslime=[mob=unstablegelslime] 1 Kararsız Jel Balçık öldür
+
+// Swamp Surface Challenges
+killpinkwitchesswamp=[mob=pinkwitch] Gece, bataklığın yüzeyinde 5 Pembe Cadı öldür
+
+// Infected Fields Surface Challenges
+pickupinfectedlogs=[item=infectedlog] 100 Enfekte Kütük toplamak için kes
+
+// Infected Fields Cave Challenges
+pickupspinel=[item=spinel] 40 Spinel topla
+activatebabylontower=[item=lifespinel] Babil Kulesi'ne bir Yaşam Spineli yerleştir
+findthespammer=[item=thespammer] Spamcı'yı bul
+
+
+[controls]
+runesinjectorability=Rün Enjektörü Yeteneği
+
+
+[runestutorialbook]
+openheader=Rün Enjektörünü Açma
+opentext=Rünleri kullanmak için bir Rün Enjektörüne ihtiyacınız olacak. Bu özel cihazlar rünleri takmak için açılabilir. Her enjektörün bir Temel Rün için bir yuvası ve kapasitesine bağlı olarak birden fazla Değiştirici Rün için yuvası vardır. Enjektörün izin verdiği kadar Değiştirici Rün eklemekte özgürsünüz, en iyi kombinasyonları bulmak için deney yapın!
+equipheader=Enjektörü Kuşanma
+equiptext=Rünlerinizi etkinleştirmek için Rün Enjektörünün bir Tılsım yuvasına takılması gerekir. Takıldıktan sonra, etkilerini tetiklemek için G'ye (veya ayarlarda atanan tuşa) basmanız yeterlidir. Harekete geçmeden önce enjektörün doğru şekilde yapılandırıldığından ve hazır olduğundan emin olun!
+
+runesheader=Rünler Nedir?
+runestext=Rünler, bir Rün Enjektörüne takıldığında güçlü etkiler sağlayan mistik taşlardır. Güçleri ve davranışları nasıl birleştirildiklerine bağlıdır, kullanımlarını ustalaşmak tam potansiyelinizi ortaya çıkarmanın anahtarıdır.
+baserunesheader=Temel Rünler
+baserunestext=Her Rün Enjektörünün çalışması için tam olarak bir Temel Rün gerekir. Temel Rün, enjektörün ana etkisini tanımlar ve kurulumunuzun çekirdeği olarak işlev görür. Etkinin yanında yeşil bir sayı göreceksiniz, bu onun etki değerini temsil eder ve değiştiricilerle artırılabilir veya azaltılabilir.
+modifierrunesheader=Değiştirici Rünler
+modifierrunestext=Değiştirici Rünler, Temel Rününüzün etkisini özelleştirmek ve geliştirmek için kullanılır. Etki değerini değiştirebilir, davranışını değiştirebilir veya özel özellikler ekleyebilirler. Ancak, Değiştirici Rünler her zaman ödünleşimlerle birlikte gelir: hiçbir değiştirici tamamen faydalı değildir, bu yüzden akıllıca seçim yapın!
+
+tableheader=Rün Masası
+tabletext=Rün Masası, çok çeşitli rünler yapmak için başvuracağınız istasyonunuzdur. Çoğu standart rün burada yapılabilir, ancak unutmayın: bazı güçlü rünler yalnızca keşif yoluyla bulunabilir. Gözlerinizi açık tutun, macera meraklıları ödüllendirir!
+crafttext=Rün Atölyesi'nde, başlamak için ihtiyacınız olan her şeyi bulacaksınız. İçeriği Başlangıç Rününüz ve Rün Masası'nda yapabileceğiniz bir Temel Rün ile birleştirin ve kuşanmaya hazır tamamen işlevsel bir Rün Enjektörünüz olacak!

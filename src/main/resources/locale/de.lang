@@ -1,0 +1,484 @@
+# Translation made by AI
+
+[global]
+aphorea=§!Aphorea Mod
+aphorearework=§!Aphorea Mod Rework
+aphoreamightybanner=§!Aphorea Mod x Mighty Banner Mod
+aphoreasummonerexpansion=§!Aphorea Mod x Summoner Expansion
+
+
+[buffmodifiers]
+// Magic Healing
+magichealing=<mod>% magische Heilung
+magichealingflat=<mod> magische Heilung
+magichealingreceived=<mod>% erhaltene magische Heilung
+magichealingreceivedflat=<mod> erhaltene magische Heilung
+magichealinggrace=<mod>% magische Heilungsgunst
+
+// Area
+arearange=<mod>% Flächenreichweite
+
+// Inspiration Damage
+inspirationdamage=<mod>% Inspirationsschaden
+inspirationcritchance=<mod>% Inspirations-kritische Trefferchance
+inspirationcritdamage=<mod>% Inspirations-kritischer Trefferschaden
+inspirationeffect=<mod>% Inspirationseffekt
+inspirationabilityspeed=<mod>% Inspirations-Fähigkeitsgeschwindigkeit
+
+// Others
+loyal=Der Dolch geht beim Werfen nicht verloren
+
+
+[stats]
+inspiration_damage=Inspirationsschaden
+
+
+[enchantment]
+// Healing Equipment
+godly=Göttlich
+absent=Abwesend
+auxiliary=Hilfs-
+vain=Vergeblich
+gentle=Sanft
+selfish=Egoistisch
+
+// Healing
+friendly=Freundlich
+graceful=Anmutig
+wonderful=Wunderbar
+ecologic=Ökologisch
+exalted=Erhaben
+cursed=Verflucht
+
+// Area
+booming=Boomend
+dimmed=Gedimmt
+
+// Others
+loyal=Loyal
+
+
+[tile]
+geltile=Gel-Boden
+infectedwatertile=Infiziertes Wasser
+infectedgrasstile=Infiziertes Gras
+spinelgravel=Spinellkies
+
+
+[tech]
+runes=Runen
+
+
+[object]
+witchstatue=Hexenstatue
+runestable=Runentisch
+#NEW
+infectedsapling=Infizierter Setzling
+spinelcluster=Spinell-Cluster
+spinelcluster_small=Kleiner Spinell-Cluster
+gelrock=Gel-Fels
+infectedtree=Infizierter Baum
+infectedgrass=Infiziertes Gras
+spinelchest=Spinell-Truhe
+fakespinelchest=Gefälschte Spinell-Truhe
+babylontower=Turm zu Babel
+babylonentrance=Eingang zu Babel
+babylonexit=Ausgang von Babel
+infectedtrialentrance=Eingang zur infizierten Prüfung
+infectedchair=Infizierter Stuhl
+infecteddinnertable=Infizierter Esstisch
+infectedbookshelf=Infiziertes Bücherregal
+infectedcabinet=Infizierter Schrank
+infectedbed=Infiziertes Bett
+infecteddoublebed=Infiziertes Doppelbett
+infectedcandelabra=Infizierter Kandelaber
+
+
+[itemcategory]
+healing=Heilung
+healingtools=Heilwerkzeuge
+runes=Runen
+runesinjectors=Runeninjektoren
+baserunes=Basisrunen
+modifierrunes=Modifikatorrunen
+
+
+[item]
+// General Materials
+anybasicfoci=Jeder Basis-Fokus
+
+// Materials
+rockygel=Felsiges Gel
+unstablegel=Instabiles Gel
+stardust=Sternenstaub
+infectedlog=Infiziertes Holz
+infectedalloy=Infizierte Legierung
+spinel=Spinell
+lifespinel=Lebensspinell
+
+// Consumables
+unstablecore=Instabiler Kern
+initialrune=Anfangs-Rune
+venomextract=Giftextrakt
+
+// Swords
+gelsword=Gel-Schwert
+unstablegelsword=Instabiles Gel-Schwert
+broom=Besen
+voidhammer=Leerenhammer
+brokenkora=Zerbrochene Kora
+thenarcissist=Der Narzisst
+cryokatana=Kryo-Katana
+
+// Greatswords
+unstablegelgreatsword=Instabiles Gel-Großschwert
+babylongreatsword=Babylon-Großschwert
+
+// Glaives
+woodenrod=Holzstab
+
+// Sabers
+saber=Säbel
+coppersaber=Kupfersäbel
+ironsaber=Eisensäbel
+goldsaber=Goldsäbel
+demonicsaber=Dämonischer Säbel
+unstablegelsaber=Instabiler Gel-Säbel
+honeysaber=Honigsäbel
+glacialsaber=Gletschersäbel
+crimsonkora=Karmesinrote Kora
+
+// Battleaxes
+battleaxe=Streitaxt
+unstablegelbattleaxe=Instabile Gel-Streitaxt
+demonicbattleaxe=Dämonische Streitaxt
+
+// Daggers
+dagger=Dolch
+copperdagger=Kupferdolch
+irondagger=Eisendolch
+golddagger=Golddolch
+demonicdagger=Dämonischer Dolch
+tungstendagger=Wolframdolch
+lostumbrella=Verlorener Regenschirm
+
+// Rapiers
+fossilrapier=Fossil-Rapier
+lightrapier=Licht-Rapier
+
+// Magic weapons
+unstablegelstaff=Instabiler Gel-Stab
+magicalbroom=Magischer Besen
+adeptsbook=Buch des Adepten
+harpofharmony=Harfe der Harmonie
+babyloncandle=Babylon-Kerze
+
+// Bows
+spinelcrossbow=Spinell-Armbrust
+
+// Guns
+thespammer=Der Spammer
+
+// Bullets
+spambullet=Spam-Kugel
+
+// Greatbows
+gelgreatbow=Gel-Großbogen
+unstablegelgreatbow=Instabiler Gel-Großbogen
+
+// Arrows
+gelarrow=Gel-Pfeil
+unstablegelarrow=Instabiler Gel-Pfeil
+
+// Saber Guns
+sabergun=Säbelpistole
+shotgunsaber=Schrotflinten-Säbel
+
+// Slings
+sling=Schleuder
+firesling=Feuerschleuder
+frozensling=Gefrorene Schleuder
+
+// Blowguns
+blowgun=Blasrohr
+
+// Throw weapons
+gelball=Gel-Ball
+gelballgroup=Gruppierte Gel-Bälle
+unstablegelveline=Instabiler Gel-Wurfspeer
+
+// Summon weapons
+volatilegelstaff=Flüchtiger Gel-Stab
+infectedstaff=Infizierter Stab
+
+// Banners
+blankbanner=Leeres Banner
+
+// Healing Tools
+healingtool=Heilwerkzeug
+magicalvial=Magische Phiole
+healingstaff=Heilstab
+woodenwand=Holzzauberstab
+goldenwand=Goldener Zauberstab
+spinelstaff=Spinell-Stab
+
+// Tools
+superiorpickaxe=Überlegene Spitzhacke
+
+// Trinkets
+rockyperiapt=Felsiges Amulett
+unstableperiapt=Instabiles Amulett
+bloodyperiapt=Blutiges Amulett
+demonicperiapt=Dämonisches Amulett
+abysmalperiapt=Abgründiges Amulett
+frozenperiapt=Gefrorenes Amulett
+necromancyperiapt=Nekromantie-Amulett
+floralring=Blumenring
+gelring=Gel-Ring
+heartring=Herzring
+ringofhealth=Ring der Gesundheit
+swampshield=Sumpfschild
+witchmedallion=Hexenmedaillon
+iceboots=Eisstiefel
+inspirationfoci=Inspirations-Fokus
+cursedmedallion=Verfluchtes Medaillon
+ancientmedallion=Antikes Medaillon
+essenceofhealing=Essenz der Heilung
+ninjascarf=Ninja-Schal
+adrenalinecharm=Adrenalin-Amulett
+spinelshield=Spinell-Schild
+bloomrushcharm=Blütenrausch-Amulett
+infectedperiapt=Infiziertes Amulett
+
+// Armor
+rockyboots=Felsige Stiefel
+rockychestplate=Felsiger Brustpanzer
+rockyhelmet=Felsiger Helm
+goldhat=Goldener Hut
+pinkwitchhat=Rosa Hexenhut
+magicalsuit=Magischer Anzug
+magicalboots=Magische Stiefel
+swampboots=Sumpfstiefel
+swampchestplate=Sumpfbrustpanzer
+swampmask=Sumpfmaske
+swamphood=Sumpfkapuze
+infectedhat=Infizierter Hut
+infectedchestplate=Infizierter Brustpanzer
+infectedboots=Infizierte Stiefel
+spinelhelmet=Spinell-Helm
+spinelhat=Spinell-Hut
+spinelchestplate=Spinell-Brustpanzer
+spinelboots=Spinell-Stiefel
+
+// Misc
+gelslimenullifier=Gel-Schleim-Nichtigmacher
+cuberry=Kubbeere
+infectedgrassseed=Infizierter Grassamen
+
+// Backpacks
+basicbackpack=Basis-Rucksack
+sapphirebackpack=Saphir-Rucksack
+amethystbackpack=Amethyst-Rucksack
+rubybackpack=Rubin-Rucksack
+emeraldbackpack=Smaragd-Rucksack
+diamondbackpack=Diamant-Rucksack
+
+// Books
+runestutorialbook=Runen-Tutorial-Buch
+
+// Runes Injectors
+runesinjector=Runeninjektor
+rusticrunesinjector=Rustikaler Runeninjektor
+unstablerunesinjector=Instabiler Runeninjektor
+demonicrunesinjector=Dämonischer Runeninjektor
+tungstenrunesinjector=Wolfram-Runeninjektor
+ancientrunesinjector=Antiker Runeninjektor
+
+// Base Runes Tier 0
+baserune=Basis-Rune
+runeoffury=Rune der Wut
+runeofspeed=Rune der Geschwindigkeit
+runeofhealing=Rune der Heilung
+runeofresistance=Rune des Widerstands
+runeofvalor=Rune der Tapferkeit
+runeofdetonation=Rune der Detonation
+runeofthunder=Rune des Donners
+runeofwinter=Rune des Winters
+runeofshadows=Rune der Schatten
+runeofimmortality=Rune der Unsterblichkeit
+
+// Base Runes Tier 1
+runeofunstablegelslime=Rune des instabilen Gel-Schleims
+runeofevilsprotector=Rune des Beschützers des Bösen
+runeofqueenspider=Rune der Spinnenkönigin
+runeofvoidwizard=Rune des Leeren-Zauberers
+runeofswampguardian=Rune des Sumpfwächters
+runeofancientvulture=Rune des antiken Geiers
+runeofpiratecaptain=Rune des Piratenkapitäns
+runeofchieftain=Rune des Häuptlings
+
+// Base Runes Tier 2
+runeofreaper=Rune des Sensenmanns
+runeofcryoqueen=Rune der Kryo-Königin
+runeofpestwarden=Rune des Pestwärters
+runeofsageandgrit=Rune von Salbei & Schneid
+runeoffallenwizard=Rune des gefallenen Zauberers
+runeofbabylontower=Rune des Turms zu Babel
+
+// Base Runes Tier 3
+runeofmotherslime=Rune der Schleimmutter
+runeofnightswarm=Rune des Nachtschwarms
+runeofspiderempress=Rune der Spinnenkaiserin
+runeofsunlightchampion=Rune des Sonnenlicht-Champions
+runeofmoonlightdancer=Rune des Mondlichttänzers
+runeofcrystaldragon=Rune des Kristalldrachens
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+onyxrune=Wenn aktiviert, beschwört es Onyx für 5 Sekunden. Es verursacht Schaden basierend auf 5% der Gesundheit des Mobs
+onyxrune2=Jeder Biss von Onyx stellt 1% deiner gesamten Gesundheit wieder her (mindestens 1)
+onyxrune3=§3Danke Onyx für die brillanten Runenideen! <3
+pawningrune=Wenn aktiviert und du den Effekt noch nicht hast, stellt es sofort 20% deiner maximalen Gesundheit wieder her
+pawningrune2=Nach 10 Sekunden verlierst du die wiederhergestellte Menge plus zusätzliche 40%
+
+// Modifier Runes Tier 2
+abysmalrune=Wenn aktiviert, beschwört es ein Schwarzes Loch an der Position deines Cursors, das Feinde für 2 Sekunden anzieht
+abysmalrune2=Das Schwarze Loch wird nur beschworen, wenn seit der letzten Aktivierung 10 Sekunden vergangen sind
+tidalrune=Wenn aktiviert, beschwört es eine Wasserwelle, die Feinde wegstößt
+
+// Modifier Runes Tier 3
+
+
+[mobtooltip]
+usenet=Benutze ein Netz! [item=net]
+
+
+[mob]
+// Hostile
+gelslime=Gel-Schleim
+rockygelslime=Felsiger Gel-Schleim
+unstablegelslime=Instabiler Gel-Schleim
+miniunstablegelslime=Mini instabiler Gel-Schleim
+pinkwitch=Rosa Hexe
+voidadept=Leeren-Adept
+copperdaggergoblin=Kupferdolch-Goblin
+irondaggergoblin=Eisendolch-Goblin
+golddaggergoblin=Golddolch-Goblin
+infectedtreant=Infizierter Ent
+spinelgolem=Spinell-Golem
+spinelcaveling=Spinell-Höhlenbewohner
+tungstencaveling=Wolfram-Höhlenbewohner
+spinelmimic=Spinell-Mimic
+babylontower=Turm zu Babel
+hearthcrystal=Herzkristall
+babylon=Babylon
+
+// Friendly
+wildphosphorslime=Wilder Phosphor-Schleim
+
+// Summon
+babyunstablegelslime=Baby instabiler Gel-Schleim
+undeadskeleton=Untotes Skelett
+volatilegelslime=Flüchtiger Gel-Schleim
+runicunstablegelslime=Runischer instabiler Gel-Schleim
+runicvulturehatchling=Runischer Geierküken
+runicbat=Runische Fledermaus
+onyx=Onyx
+livingsapling=Lebender Setzling
+
+// Pet
+petphosphorslime=Phosphor-Schleim
+
+
+[buff]
+// Common Buffs
+stunbuff=Betäubung
+fallenstunbuff=Gefallene Betäubung
+stickybuff=Klebrig
+stopbuff=Gestoppt
+honeyedbuff=Honigsüß
+venomextractbuff=Giftextrakt
+cursedbuff=Verflucht
+adrenalinebuff=Adrenalin
+harmonybuff=Harmonie
+
+// Active Buffs
+berserkerrushactive=Berserkerrausch aktiv
+periaptactive=Amulettfähigkeit aktiv
+runesinjectoractive=Runeninjektor aktiv
+
+// Cooldown Buffs
+berserkerrushcooldown=Berserkerrausch auf Abklingzeit
+periaptcooldown=Amulettfähigkeit auf Abklingzeit
+runesinjectorcooldown=Runeninjektor auf Abklingzeit
+spinattackcooldown=Wirbelangriff auf Abklingzeit
+saberdashcooldown=Säbelsprint auf Abklingzeit
+
+
+[message]
+unstablegelslime_anger=§6Instabiler Gel-Schleim wird wütend... <anger>/10
+unstablegelslime_fullanger=§6Instabiler Gel-Schleim wurde wütend! <anger>/10
+unstablegelslime_night=§6Instabiler Gel-Schleim§0 verschwand bei Einbruch der Nacht!
+gelslimesnulled=Gel-Schleime in dieser Welt genichtet. Sie werden nicht mehr erscheinen
+gelslimesunnulled=Gel-Schleime in dieser Welt zugelassen. Sie werden jetzt erscheinen
+pinkwitchesnulled=Rosa Hexen in (<x>, <y>) genichtet
+pinkwitchesunnulled=Rosa Hexen in (<x>, <y>) zugelassen
+needfreeslots=Du benötigst <slots> freie Plätze im Inventar, um dies zu verwenden
+cantuseatnight=Kann nachts nicht verwendet werden
+healthalreadyfull=Gesundheit ist bereits voll
+cantheal=Kann nicht heilen
+insuficienthealth=Unzureichende Gesundheit, um diese Aktion auszuführen!
+cannottrhowlockeditem=Du kannst keinen im Inventar gesperrten Gegenstand werfen
+initialrunetip=Wähle deine anfängliche Rune sorgfältig aus;
+du wirst die anderen erst später im Spiel erhalten
+alreadyselectedinitialrune=Anfängliche Rune bereits ausgewählt
+cannotusetrial=Kann nicht in Prüfungsräumen verwendet werden
+
+[biome]
+infectedfields=Infizierte Felder
+
+
+[journal]
+
+//Levels
+infectedfieldssurface=Oberfläche der infizierten Felder
+infectedfieldscave=Höhle der infizierten Felder
+
+// Forest Surface Challenges
+killgelslimesforest=[mob=gelslime] Töte 25 Gel-Schleime im Wald
+pickupfloralring=[item=floralring] Schneide viel Gras im Wald, um den Blumenring zu erhalten
+killunstablegelslime=[mob=unstablegelslime] Töte 1 instabilen Gel-Schleim
+
+// Swamp Surface Challenges
+killpinkwitchesswamp=[mob=pinkwitch] Töte nachts 5 rosa Hexen auf der Oberfläche des Sumpfes
+
+// Infected Fields Surface Challenges
+pickupinfectedlogs=[item=infectedlog] Fälle, um 100 infizierte Stämme aufzuheben
+
+// Infected Fields Cave Challenges
+pickupspinel=[item=spinel] Hebe 40 Spinelle auf
+activatebabylontower=[item=lifespinel] Platziere einen Lebensspinell auf dem Turm zu Babel
+findthespammer=[item=thespammer] Finde den Spammer
+
+
+[controls]
+runesinjectorability=Runeninjektor-Fähigkeit
+
+
+[runestutorialbook]
+openheader=Öffnen des Runeninjektors
+opentext=Um Runen zu verwenden, benötigst du einen Runeninjektor. Diese speziellen Geräte können geöffnet werden, um Runen einzufügen. Jeder Injektor hat einen Steckplatz für eine Basis-Rune und mehrere Steckplätze für Modifikator-Runen, abhängig von seiner Kapazität. Du kannst so viele Modifikator-Runen hinzufügen, wie der Injektor zulässt, experimentiere, um die besten Kombinationen zu finden!
+equipheader=Ausrüsten des Injektors
+equiptext=Um deine Runen zu aktivieren, muss der Runeninjektor in einem Schmuckstück-Steckplatz ausgerüstet sein. Einmal ausgerüstet, drücke einfach G (oder die in den Einstellungen zugewiesene Taste), um seine Effekte auszulösen. Stelle sicher, dass der Injektor richtig konfiguriert und bereit ist, bevor du in Aktion trittst!
+
+runesheader=Was sind Runen?
+runestext=Runen sind mystische Steine, die mächtige Effekte bieten, wenn sie in einen Runeninjektor eingesetzt werden. Ihre Stärke und ihr Verhalten hängen davon ab, wie sie kombiniert werden. Die Beherrschung ihrer Verwendung ist der Schlüssel, um dein volles Potenzial freizusetzen.
+baserunesheader=Basisrunen
+baserunestext=Jeder Runeninjektor benötigt genau eine Basis-Rune, um zu funktionieren. Die Basis-Rune definiert den Haupteffekt des Injektors und fungiert als Kern deines Setups. Du wirst eine grüne Zahl neben dem Effekt bemerken, diese repräsentiert seinen Effektwert, der mit Modifikatoren erhöht oder verringert werden kann.
+modifierrunesheader=Modifikatorrunen
+modifierrunestext=Modifikator-Runen werden verwendet, um den Effekt deiner Basis-Rune anzupassen und zu verbessern. Sie können den Effektwert optimieren, sein Verhalten ändern oder spezielle Eigenschaften hinzufügen. Modifikator-Runen bringen jedoch immer Kompromisse mit sich: Kein Modifikator ist rein vorteilhaft, also wähle mit Bedacht!
+
+tableheader=Der Runentisch
+tabletext=Der Runentisch ist deine Anlaufstelle für die Herstellung einer Vielzahl von Runen. Die meisten Standardrunen können hier hergestellt werden, aber denke daran: Einige mächtige Runen können nur durch Erkundung gefunden werden. Halte die Augen offen, Abenteuer belohnt die Neugierigen!
+crafttext=In der Runenwerkstatt findest du alles, was du für den Anfang brauchst. Kombiniere den Inhalt mit deiner Anfangs-Rune und einer Basis-Rune, die du am Runentisch herstellen kannst, und du hast einen voll funktionsfähigen Runeninjektor, der zum Ausrüsten bereit ist!

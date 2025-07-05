@@ -1,0 +1,755 @@
+# Translation made by AI
+
+[global]
+aphorea=§!Aphorea 模組
+aphorearework=§!Aphorea 模組重製
+aphoreamightybanner=§!Aphorea 模組 x Mighty Banner 模組
+aphoreasummonerexpansion=§!Aphorea 模組 x 召喚師擴充
+
+
+[buffmodifiers]
+// Magic Healing
+magichealing=<mod>% 魔法治療
+magichealingflat=<mod> 魔法治療
+magichealingreceived=<mod>% 魔法治療接收
+magichealingreceivedflat=<mod> 魔法治療接收
+magichealinggrace=<mod>% 魔法治療恩典
+
+// Area
+arearange=<mod>% 範圍
+
+// Inspiration Damage
+inspirationdamage=<mod>% 靈感傷害
+inspirationcritchance=<mod>% 靈感爆擊率
+inspirationcritdamage=<mod>% 靈感爆擊傷害
+inspirationeffect=<mod>% 靈感效果
+inspirationabilityspeed=<mod>% 靈感技能速度
+
+// Others
+loyal=匕首扔出時不會遺失
+
+
+[stats]
+inspiration_damage=靈感傷害
+
+
+[enchantment]
+// Healing Equipment
+godly=神聖的
+absent=缺席的
+auxiliary=輔助的
+vain=徒勞的
+gentle=溫柔的
+selfish=自私的
+
+// Healing
+friendly=友好的
+graceful=優雅的
+wonderful=精彩的
+ecologic=生態的
+exalted=崇高的
+cursed=詛咒的
+
+// Area
+booming=蓬勃發展的
+dimmed=暗淡的
+
+// Others
+loyal=忠誠的
+
+
+[tile]
+geltile=凝膠地板
+infectedwatertile=受感染的水
+infectedgrasstile=受感染的草
+spinelgravel=尖晶石礫石
+
+
+[tech]
+runes=符文
+
+
+[object]
+witchstatue=女巫雕像
+runestable=符文台
+#NEW
+infectedsapling=受感染的樹苗
+spinelcluster=尖晶石簇
+spinelcluster_small=小尖晶石簇
+gelrock=凝膠岩
+infectedtree=受感染的樹
+infectedgrass=受感染的草
+spinelchest=尖晶石箱
+fakespinelchest=假的尖晶石箱
+babylontower=巴比倫塔
+babylonentrance=巴比倫入口
+babylonexit=巴比倫出口
+infectedtrialentrance=受感染的試煉入口
+infectedchair=受感染的椅子
+infecteddinnertable=受感染的餐桌
+infectedbookshelf=受感染的書架
+infectedcabinet=受感染的櫃子
+infectedbed=受感染的床
+infecteddoublebed=受感染的雙人床
+infectedcandelabra=受感染的燭台
+
+
+[itemcategory]
+healing=治療
+healingtools=治療工具
+runes=符文
+runesinjectors=符文注入器
+baserunes=基礎符文
+modifierrunes=修飾符文
+
+
+[item]
+// General Materials
+anybasicfoci=任何基礎焦點
+
+// Materials
+rockygel=岩石凝膠
+unstablegel=不穩定凝膠
+stardust=星塵
+infectedlog=受感染的原木
+infectedalloy=受感染的合金
+spinel=尖晶石
+lifespinel=生命尖晶石
+
+// Consumables
+unstablecore=不穩定核心
+initialrune=初始符文
+venomextract=毒液萃取物
+
+// Swords
+gelsword=凝膠劍
+unstablegelsword=不穩定凝膠劍
+broom=掃帚
+voidhammer=虛空錘
+brokenkora=破碎的科拉
+thenarcissist=自戀者
+cryokatana=冰凍武士刀
+
+// Greatswords
+unstablegelgreatsword=不穩定凝膠巨劍
+babylongreatsword=巴比倫巨劍
+
+// Glaives
+woodenrod=木棍
+
+// Sabers
+saber=馬刀
+coppersaber=銅馬刀
+ironsaber=鐵馬刀
+goldsaber=金馬刀
+demonicsaber=惡魔馬刀
+unstablegelsaber=不穩定凝膠馬刀
+honeysaber=蜂蜜馬刀
+glaciallsaber=冰川馬刀
+crimsonkora=深紅科拉
+
+// Battleaxes
+battleaxe=戰斧
+unstablegelbattleaxe=不穩定凝膠戰斧
+demonicbattleaxe=惡魔戰斧
+
+// Daggers
+dagger=匕首
+copperdagger=銅匕首
+irondagger=鐵匕首
+golddagger=金匕首
+demonicdagger=惡魔匕首
+tungstendagger=鎢金匕首
+lostumbrella=遺失的雨傘
+
+// Rapiers
+fossilrapier=化石刺劍
+lightrapier=輕型刺劍
+
+// Magic weapons
+unstablegelstaff=不穩定凝膠法杖
+magicalbroom=魔法掃帚
+adeptsbook=行家之書
+harpofharmony=和諧豎琴
+babyloncandle=巴比倫蠟燭
+
+// Bows
+spinelcrossbow=尖晶石弩
+
+// Guns
+thespammer=垃圾郵件發送者
+
+// Bullets
+spambullet=垃圾郵件子彈
+
+// Greatbows
+gelgreatbow=凝膠巨弓
+unstablegelgreatbow=不穩定凝膠巨弓
+
+// Arrows
+gelarrow=凝膠箭
+unstablegelarrow=不穩定凝膠箭
+
+// Saber Guns
+sabergun=馬刀槍
+shotgunsaber=霰彈槍馬刀
+
+// Slings
+sling=彈弓
+firesling=火焰彈弓
+frozensling=冰凍彈弓
+
+// Blowguns
+blowgun=吹箭筒
+
+// Throw weapons
+gelball=凝膠球
+gelballgroup=分組凝膠球
+unstablegelveline=不穩定凝膠標槍
+
+// Summon weapons
+volatilegelstaff=揮發性凝膠法杖
+infectedstaff=受感染的法杖
+
+// Banners
+blankbanner=空白旗幟
+
+// Healing Tools
+healingtool=治療工具
+magicalvial=魔法瓶
+healingstaff=治療法杖
+woodenwand=木製魔杖
+goldenwand=金色魔杖
+spinelstaff=尖晶石法杖
+
+// Tools
+superiorpickaxe=高級鎬
+
+// Trinkets
+rockyperiapt=岩石護身符
+unstableperiapt=不穩定護身符
+bloodyperiapt=血腥護身符
+demonicperiapt=惡魔護身符
+abysmalperiapt=深淵護身符
+frozenperiapt=冰凍護身符
+necromancyperiapt=死靈護身符
+floralring=花環
+gelring=凝膠戒指
+heartring=心形戒指
+ringofhealth=健康戒指
+swampshield=沼澤盾
+witchmedallion=女巫獎章
+iceboots=冰靴
+inspirationfoci=靈感焦點
+cursedmedallion=詛咒獎章
+ancientmedallion=古代獎章
+essenceofhealing=治療精華
+ninjascarf=忍者圍巾
+adrenalinecharm=腎上腺素護身符
+spinelshield=尖晶石盾
+bloomrushcharm=綻放衝刺護身符
+infectedperiapt=受感染的護身符
+
+// Armor
+rockyboots=岩石靴
+rockychestplate=岩石胸甲
+rockyhelmet=岩石頭盔
+goldhat=金帽子
+pinkwitchhat=粉色女巫帽
+magicalsuit=魔法套裝
+magicalboots=魔法靴
+swampboots=沼澤靴
+swampchestplate=沼澤胸甲
+swampmask=沼澤面具
+swamphood=沼澤兜帽
+infectedhat=受感染的帽子
+infectedchestplate=受感染的胸甲
+infectedboots=受感染的靴子
+spinelhelmet=尖晶石頭盔
+spinelhat=尖晶石帽子
+spinelchestplate=尖晶石胸甲
+spinelboots=尖晶石靴
+
+// Misc
+gelslimenullifier=凝膠史萊姆無效器
+cuberry=立方漿果
+infectedgrassseed=受感染的草籽
+
+// Backpacks
+basicbackpack=基本背包
+sapphirebackpack=藍寶石背包
+amethystbackpack=紫水晶背包
+rubybackpack=紅寶石背包
+emeraldbackpack=綠寶石背包
+diamondbackpack=鑽石背包
+
+// Books
+runestutorialbook=符文教程書
+
+// Runes Injectors
+runesinjector=符文注入器
+rusticrunesinjector=鄉村符文注入器
+unstablerunesinjector=不穩定符文注入器
+demonicrunesinjector=惡魔符文注入器
+tungstenrunesinjector=鎢金符文注入器
+ancientrunesinjector=古代符文注入器
+
+// Base Runes Tier 0
+baserune=基礎符文
+runeoffury=憤怒符文
+runeofspeed=速度符文
+runeofhealing=治療符文
+runeofresistance=抵抗符文
+runeofvalor=英勇符文
+runeofdetonation=引爆符文
+runeofthunder=雷霆符文
+runeofwinter=寒冬符文
+runeofshadows=暗影符文
+runeofimmortality=不朽符文
+
+// Base Runes Tier 1
+runeofunstablegelslime=不穩定凝膠史萊姆符文
+runeofevilsprotector=邪惡保護者符文
+runeofqueenspider=女王蜘蛛符文
+runeofvoidwizard=虛空巫師符文
+runeofswampguardian=沼澤守護者符文
+runeofancientvulture=古代禿鷲符文
+runeofpiratecaptain=海盜船長符文
+runeofchieftain=酋長符文
+
+// Base Runes Tier 2
+runeofreaper=收割者符文
+runeofcryoqueen=冰凍女王符文
+runeofpestwarden=瘟疫看守者符文
+runeofsageandgrit=聖人與勇氣符文
+runeoffallenwizard=墮落巫師符文
+runeofbabylontower=巴比倫塔符文
+
+// Base Runes Tier 3
+runeofmotherslime=史萊姆之母符文
+runeofnightswarm=夜群符文
+runeofspiderempress=蜘蛛女皇符文
+runeofsunlightchampion=日光冠軍符文
+runeofmoonlightdancer=月光舞者符文
+runeofcrystaldragon=水晶龍符文
+
+// Modifier Runes Tier 0
+modifierrune=修飾符文
+empoweringrune=強化符文
+recurrentrune=復發符文
+
+// Modifier Runes Tier 1
+frenzyrune=狂暴符文
+vitalrune=活力符文
+devastatingrune=毀滅性符文
+onyxrune=縞瑪瑙符文
+pawningrune=典當符文
+
+// Modifier Runes Tier 2
+abysmalrune=深淵符文
+tidalrune=潮汐符文
+
+// Modifier Runes Tier 3
+ascendantrune=提升符文
+
+
+[itemtooltip]
+// Stat tips
+line=----------------------------------------
+magichealingtip=魔法治療：§7<health>
+rangetip=範圍：§9<range>
+areatip=§a區域 <number>
+inspirationdamagetip=靈感傷害：<value>
+areabuff=對盟友施加 <buff>
+areadebuff=對敵人施加 <buff>
+areabuffdisplay=<buff> 持續 <duration> 秒
+attackarmorpentip=護甲穿透：<value>%
+
+// Mechanics
+magichealinggrace=§a魔法治療恩典：§0 以盟友預期魔法治療的百分比治療自己
+cursedbuff=§b詛咒：§0 §6+25%§0 承受傷害
+inspiration=§9靈感：§0 提高旗幟和音樂工具的效果
+adrenaline=§6腎上腺素：§0 +5% 傷害，-5% 護甲。最多可疊加 5 次
+livingsapling=§7活樹苗：§0 每 10 次攻擊魔法治療主人 §73§0
+
+// Misc
+gelslimenullifier=只需輕輕一點，它們就不會再打擾你了！
+enchantingscrollhealingequipmenttip=用於為治療裝備附魔 <enchantment>\n§!Aphorea 模組
+enchantingscrollhealingtip=用於為治療工具附魔 <enchantment>\n§!Aphorea 模組
+enchantingscrollareatip=用於為區域效果工具附魔 <enchantment>\n§!Aphorea 模組
+enchantingscrolldaggertip=用於為匕首武器附魔 <enchantment>\n§!Aphorea 模組
+backpack=這是一個新的庫存，可以存放你收集的所有物品
+backpackslots=容量 <slots> 物品
+stored=已存放物品：<items>
+backpackcraft=必須為空才能製作更好的背包
+
+// Consumables
+deleteditem=此物品已被移除，請在永久移除前使用此物品回收材料
+unstablecore=§b釋放不穩定的光環...§0 只能在白天使用
+venomextractbuff=洛德說喝了它，別喝
+venomextractbuffdesc=你的生命值不能超過 1
+lifespinel=永久增加最大生命值 5 點，最高 320
+
+// General Weapons
+spinsecondaryattack=按 [input=mouse2] 使下一次攻擊成為區域攻擊
+areasecondaryattack=按 [input=mouse2] 執行區域攻擊，消耗 <mana> 法力
+stikybuff1=使敵人粘稠 1 秒
+stikybuff2=使敵人粘稠 2 秒
+stikybuff3=使敵人粘稠 3 秒
+projectilearea=當彈射物結束時，它會造成區域傷害
+
+// Melee Weapons
+saber=充能至最大以獲得全額傷害並釋放空氣斬
+saberdash=按住 [input=mouse2] 充能衝刺以切開敵人
+battleaxe=充能時間長
+battleaxe2=按 [input=mouse2] 啟動狂戰士衝鋒並暫時獲得 3 點腎上腺素
+battleaxe3=在衝鋒期間透過攻擊敵人暫時獲得腎上腺素，提高移動和攻擊速度
+dagger=按住 [input=mouse2] 扔出匕首
+
+// Range Weapons
+sling=用力投擲石塊
+sling2=§7100%§0 機率使敵人眩暈 0.5 秒
+twoarrows=一次射出兩支箭
+threearrows=一次射出三支箭
+blowgun=射出種子
+
+// Single Melee Weapons
+woodenrod=每 10 次攻擊魔法治療自己 §7<healing>§0
+voidhammer=當彈射物反彈或擊中敵人時，它會瞄準最近的一個，最多擊中 3 次
+crimsonkora=按住 [input=mouse2] 充能一次毀滅性但緩慢的攻擊
+thenarcissist=連續 4 次攻擊，在第五次攻擊時釋放旋轉劍投擲！\n每次連續攻擊 +20% 傷害
+
+// Single Range Weapons
+firesling=燃燒敵人
+frozensling=凍結敵人
+gelgreatbow=將石箭變成凝膠箭
+unstablegelgreatbow=將石箭和凝膠箭變成不穩定凝膠箭
+thespammer=可以發射垃圾郵件子彈
+shotgunsaber=瞄準中心附近可獲得更強大、準確和穿透的射擊
+honeysaber=充能至最大以獲得全額傷害並射出蜂蜜和藍莓
+spinelcrossbow=射出最多可穿透 2 個敵人的箭，每次穿透都變得更致命
+spinelcrossbow2=按住 [input=mouse2] 一次射出 3 支箭
+
+// Single Magic Weapons
+unstablegelstaff=當彈射物從牆壁反彈時，它們會複製
+harpofharmony=和諧：提高速度、生命恢復和法力恢復
+
+// Single Summoner Weapons
+infectedstaff=每次調用召喚兩個活樹苗
+
+// Single Throwable Weapons
+gelball=投擲一個凝膠球
+
+// Single Magic Healing Tools
+magicalvial=指向受傷的人類以治療他們，不指向任何人以治療自己
+magicalvial2=無限使用
+
+// Ammo
+spambullet=隨機具有以下效果之一：
+spambullet1=§9悲傷：§0 被攻擊的敵人變得粘稠，減速 5 秒
+spambullet2=§9火焰：§0 不會碰撞，而是在地面上留下一灘火
+spambullet3=§9喜歡：§0 從牆壁反彈並穿透怪物，最多各 10 次
+spambullet4=§9檢查：§0 在其路徑盡頭有 3 點生命值的魔法治療區域
+spambullet5=§9爆炸：§0 在其路徑盡頭爆炸而不是碰撞
+
+// Tiles
+geltile=粘性地板，會極大地減慢上面的一切
+
+// Objects
+witchstatue=將此雕像放置在沼澤表面將消除整個島嶼的女巫生成
+
+// Generic Trinkets
+areawhenheal=每完成 <magichealing> 魔法治療就執行此區域
+periaptboost=按 [input=trinketability] 獲得 10 秒的速度和攻擊速度提升
+
+// Trinkets
+rockyperiapt=§7+5§0 護甲，但 §6-5%§0 移動速度
+rockyperiapt2=按 [input=trinketability] 獲得 10 秒的 10 點護甲
+unstableperiapt=召喚兩個不穩定的凝膠史萊姆寶寶（6 點召喚物傷害）
+unstableperiapt2=使你免疫粘性減益
+bloodyperiapt=此外，武器「血箭」和「血彈」將竊取 §73%§0 的生命
+demonicperiapt=此外，魔法武器將竊取 §73%§0 的生命
+necromancyperiapt=每當你或你的一個召喚物殺死一個敵對怪物時，你就會召喚一個亡靈骷髏
+necromancyperiapt2=20 點召喚物傷害。持續 10 秒，一次最多只能有 3 個
+frozenperiapt=近戰和遠程武器將凍結 3 秒
+frozenperiapt2=對受冰凍影響的怪物造成更多傷害
+frozenperiapt3=使你免疫冰凍和霜凍減速減益
+floralring=每 5 秒魔法治療自己 §7<healing>§0
+gelring=§7+30%§0 魔法治療接收
+heartring=§7+20§0 最大生命值
+swampshield=僅保護所受方向的攻擊
+swampshield2=完美格擋時：以最大生命值的 §7<healing>§0 魔法治療自己
+iceboots=讓你像在冰上一樣滑動，但提供 +50% 的移動速度和 +4 的護甲
+inspirationfoci1=§7+40%§0 靈感效果和 §7+20%§0 靈感技能速度
+inspirationfoci2=§6-20%§0 所有非靈感傷害和 §6-1§0 最大召喚物
+essenceofhealing=§7+<percent>%§0 每次生命精華的魔法治療
+essenceofhealing2=§7<flat>§0 每 2 次生命精華的魔法治療
+essenceofhealing3=§6-80%§0 生命精華持續時間，上限為 -50%
+ninjascarf=將馬刀衝刺轉換為馬刀跳躍
+adrenalinecharm=每次受到的攻擊都會給你 20 秒的腎上腺素
+infectedperiapt=召喚兩個活樹苗（8 點召喚物傷害）
+bloomrushcharm=每擁有一點腎上腺素，耐力消耗降低 10%\n每擁有一點腎上腺素，召喚一個活樹苗（8 點召喚物傷害）
+
+// Set Bonus
+goldhatsetbonus=如果你靜止不動，你的遠程攻擊速度會大大提高
+pinkwitchsetbonus=生命值越低，魔法攻擊速度、法力恢復和護甲就越高
+infectedsetbonus=召喚三個活樹苗（8 點召喚物傷害）
+spinelhelmetsetbonus=以對敵對怪物造成的近戰傷害的 §7<healing>§0 魔法治療自己
+spinelhatsetbonus=以對敵對怪物造成的魔法傷害的 §7<healing>§0 魔法治療自己和所有附近的盟友
+
+// Banners
+strikebannereffect=§7+<effect>%§0 生命恢復（戰鬥中和戰鬥外）
+strikebannerability=§a每 <time> 秒：§0 執行一次區域攻擊
+blankbannereffect=§7+<effect>%§0 生命恢復（戰鬥外）
+blankbannerability=§a每 <time> 秒：§0 執行一次區域治療
+bannerofdamageeffect=§7+<effect>%§0 傷害
+bannerofdefenseeffect=§7-<effect>%§0 承受傷害
+bannerofspeedeffect=§7+<effect>%§0 移動速度
+bannerofsummonspeedeffect=§7+<effect>%§0 召喚物移動速度
+
+// Mighty Banners
+banneroffishingeffect=§7+<effect>§0 釣魚能力
+bannerofhealthregeneffect=§7+<effectfloat>§0 戰鬥生命恢復
+bannerofmanaregeneffect=§7+<effect>%§0 戰鬥法力恢復
+bannerofresistanceeffect=§7+<effect>§0 護甲
+bannerofsummoningeffect=§7+<effect>§0 最大召喚物
+bannerofattackspeedeffect=§7+<effect>%§0 攻擊速度
+
+// Summoner Expansion Banners
+bannerofresilienceeffect=§7+<effect>%§0 最大恢復力\n每秒恢復 §7<effect>§0 恢復力
+bannerofbouncingeffect=§7+<effect>§0 彈射物反彈
+bannerofessenceeffect=§7+<effect>%§0 生命精華持續時間
+bannerofstaminaeffect=§7+<effect>%§0 耐力容量\n§7+<effect2>%§0 耐力恢復\n§7-<effect2>%§0 耐力消耗
+bannerofpickingeffect=§7+<effectfloat>§0 拾取範圍
+bannerofdashingeffect=§7+<effect>§0 衝刺次數\n§7-<effect2>%§0 衝刺冷卻時間
+bannerofmanaeffect=§7+<effect>%§0 最大法力\n§7<effect2>%§0 法力恢復
+
+// Runes (General)
+baserune=§i基礎符文
+modifierrune=§a修飾符文
+linkedrune=§b符文連結到 [<player>]
+notruneowner=你不是基礎符文的所有者
+runesslots=最多可插入 1 個基礎符文 + <modifierslots> 個修飾符文
+useruneinfusor=[input=runesinjectorability] 啟動
+requiresbaserune=需要插入基礎符文
+onlyonebaserune=一次只能插入一個基礎符文
+duplicatedmodifierrunes=不能插入多個相同的修飾符文
+runehealthcost=啟動時消耗最大生命值的 <health>%
+runehealthhealing=使用時恢復最大生命值的 <health>%
+runecooldown=在 <seconds> 秒內充能
+increaseruneeffectnumber=將效果提高 §7<variation>%§0
+decreaseruneeffectnumber=將效果降低 §6<variation>%§0
+increaserunecooldown=將冷卻時間增加 §6<variation>%§0
+decreaserunecooldown=將冷卻時間減少 §7<variation>%§0
+increaserunehealthcost=將最大生命值的消耗增加 §6<health>%§0
+increaserunehealthhealing=將最大生命值的恢復增加 §7<health>%§0
+runedamagereduction=對人類的傷害大幅降低，對首領的傷害甚至更高
+runedamagereductionnoboss=對人類的傷害大幅降低，不影響首領
+moreextraeffectmod=效果修改的效率提高 <mod>%
+lessextraeffectmod=效果修改的效率降低 <mod>%
+
+// Runes Injectors
+
+// Base Runes Tier 0
+runeoffury=在 10 秒內將你的傷害和攻擊速度提高 §7<effectNumber>§0%
+runeofspeed=以 §7<effectNumber>§0 的力量向你移動的方向衝刺，并在 0.5 秒內無敵
+runeofresistance=在 10 秒內將你的護甲提高 §7<effectNumber>§0%
+runeofresistance2=在冷卻期間，你的護甲減半
+runeofvalor=在 §7<effectNumber>§0 秒內 +200% 靈感
+runeofdetonation=爆炸，造成的傷害和擊退敵人的距離越近越大
+runeofdetonation2=最大傷害為怪物最大生命值的 §7<effectNumber>§0%
+runeofthunder=兩秒後，一道閃電擊中你游標的初始位置
+runeofthunder2=閃電造成怪物生命值的 §7<effectNumber>§0% 的傷害，並眩暈 2 秒
+runeofwinter=在 500 範圍內使敵人霜凍減速 §7<effectNumber>§0 秒
+runeofimmortality=如果你在接下來的 §7<effectNumber>§0 秒內死亡，你將以最大生命值存活
+runeofimmortality2=如果發生這種情況，你將在 3 秒內無敵，但冷卻時間為 30 秒
+runeofimmortality3=在冷卻期間，你的最大生命值減半
+runeofshadows=在 §7<effectNumber>§0 秒內，你將變得隱形但也會受到恐嚇，無法採取任何行動
+
+// Base Runes Tier 1
+runeofunstablegelslime=傳送到附近位置並召喚 2 個符文不穩定凝膠史萊姆，持續 §7<effectNumber>§0 秒
+runeofunstablegelslime2=召喚物將造成怪物最大生命值的 5% 的傷害
+runeofevilsprotector=+§7<effectNumber>§0% 攻擊速度，但在 10 秒內 -50% 移動速度
+runeofevilsprotector2=在夜間地表，正面效果加倍
+runeofqueenspider=在地面上留下一個蜘蛛網，持續 §7<effectNumber>§0 秒
+runeofvoidwizard=所有彈射物將無限反彈，並在 10 秒內 +§7<effectNumber>§0% 彈射物速度
+runeofswampguardian=在 §7<effectNumber>§0 秒內將所有受到的傷害降低 80%
+runeofancientvulture=召喚一個符文禿鷲幼雛，持續 10 秒
+runeofancientvulture2=召喚物將造成怪物最大生命值的 §7<effectNumber>§0% 的傷害
+runeofpiratecaptain=每擁有 200 個硬幣，你的傷害就提高 §7<effectNumber>§0%，最高 20,000 個硬幣
+runeofpiratecaptain2=每次攻擊時，你將失去 3 個硬幣
+runeofchieftain=在接下來的 20 秒內，你的傷害隨著生命值的降低而增加，最高 +§7<effectNumber>§0%
+
+// Base Runes Tier 2
+runeofreaper=傳送到你滑鼠的位置。最大距離 §7<effectNumber>§0
+runeofcryoqueen=停止 1 秒，並在你周圍發動一次範圍為 §7<effectNumber>§0 的冰攻擊
+runeofcryoqueen2=彈射物將造成怪物最大生命值的 200% 的傷害
+runeofpestwarden=在接下來的 §7<effectNumber>§0 秒內，與敵人碰撞會對其造成傷害並將其推開
+runeofpestwarden2=傷害為其最大生命值的 20%
+runeofsageandgrit=如果附近有受傷的盟友（500 範圍），則治療其總生命值的 §7<effectNumber>§0%
+runeofsageandgrit2=如果沒有，則在 20 秒內將你的傷害、攻擊速度和移動速度提高 +§7<effectNumber>§0%
+runeoffallenwizard=使除你之外的所有怪物眩暈 §7<effectNumber>§0 秒
+runeoffallenwizard2=人類會更快地掙脫，首領甚至更快
+runeofbabylontower=+§7<effectNumber>§0% 所有傷害，但你不能移動。10 秒
+
+// Base Runes Tier 3
+runeofmotherslime=向你的滑鼠位置進行一次大跳躍，並在著陸時造成區域傷害
+runeofmotherslime2=著陸將造成怪物最大生命值的 §7<effectNumber>§0% 的傷害
+runeofnightswarm=召喚 5 隻蝙蝠，持續 §7<effectNumber>§0 秒，它們會尋找敵對怪物並咬它們
+runeofnightswarm2=每次咬傷恢復你總生命值的 1%（至少 1）
+runeofspiderempress=向你的滑鼠方向投擲 §7<F0effectNumber>§0 個網球
+runeofspiderempress2=網球將眩暈 3 秒並減速 10 秒
+runeofsunlightchampion=被眩暈 3 秒，充能一個範圍為 §7<effectNumber>§0 的新星
+runeofsunlightchampion2=新星將造成怪物最大生命值的 200% 的傷害
+runeofmoonlightdancer=在 10 秒內，每 +1% 移動速度，傷害 +§7<effectNumber>§0%
+runeofcrystaldragon=在你的游標位置投擲一道雷射束，持續 5 秒
+runeofcrystaldragon2=雷射將造成怪物最大生命值的 §7<effectNumber>§0% 的傷害
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+onyxrune=啟動時，召喚縞瑪瑙 5 秒。它將造成基於怪物生命值 5% 的傷害
+onyxrune2=縞瑪瑙的每次咬傷恢復你總生命值的 1%（至少 1）
+onyxrune3=§3感謝縞瑪瑙的精彩符文創意！<3
+pawningrune=啟動時，如果你還沒有效果，立即恢復最大生命值的 20%
+pawningrune2=10 秒後，你將失去恢復的量外加額外的 40%
+
+// Modifier Runes Tier 2
+abysmalrune=啟動時，在你的游標位置召喚一個黑洞，將敵人吸入 2 秒
+abysmalrune2=黑洞只會在上次啟動後 10 秒才會召喚
+tidalrune=啟動時，召喚一道水波，將敵人推開
+
+// Modifier Runes Tier 3
+
+
+[mobtooltip]
+usenet=使用網！[item=net]
+
+
+[mob]
+// Hostile
+gelslime=凝膠史萊姆
+rockygelslime=岩石凝膠史萊姆
+unstablegelslime=不穩定凝膠史萊姆
+miniunstablegelslime=迷你穩定凝膠史萊姆
+pinkwitch=粉色女巫
+voidadept=虛空行家
+copperdaggergoblin=銅匕首哥布林
+irondaggergoblin=鐵匕首哥布林
+golddaggergoblin=金匕首哥布林
+infectedtreant=受感染的樹人
+spinelgolem=尖晶石傀儡
+spinelcaveling=尖晶石洞穴人
+tungstencaveling=鎢金洞穴人
+spinelmimic=尖晶石寶箱怪
+babylontower=巴比倫塔
+hearthcrystal=爐石水晶
+babylon=巴比倫
+
+// Friendly
+wildphosphorslime=野生磷光史萊姆
+
+// Summon
+babyunstablegelslime=不穩定凝膠史萊姆寶寶
+undeadskeleton=亡靈骷髏
+volatilegelslime=揮發性凝膠史萊姆
+runicunstablegelslime=符文不穩定凝膠史萊姆
+runicvulturehatchling=符文禿鷲幼雛
+runicbat=符文蝙蝠
+onyx=縞瑪瑙
+livingsapling=活樹苗
+
+// Pet
+petphosphorslime=磷光史萊姆
+
+
+[buff]
+// Common Buffs
+stunbuff=眩暈
+fallenstunbuff=墮落眩暈
+stickybuff=粘性
+stopbuff=已停止
+honeyedbuff=蜜糖
+venomextractbuff=毒液萃取物
+cursedbuff=詛咒
+adrenalinebuff=腎上腺素
+harmonybuff=和諧
+
+// Active Buffs
+berserkerrushactive=狂戰士衝鋒啟動
+periaptactive=護身符技能啟動
+runesinjectoractive=符文注入器啟動
+
+// Cooldown Buffs
+berserkerrushcooldown=狂戰士衝鋒冷卻中
+periaptcooldown=護身符技能冷卻中
+runesinjectorcooldown=符文注入器冷卻中
+spinattackcooldown=旋轉攻擊冷卻中
+saberdashcooldown=馬刀衝刺冷卻中
+
+
+[message]
+unstablegelslime_anger=§6不穩定凝膠史萊姆正在生氣... <anger>/10
+unstablegelslime_fullanger=§6不穩定凝膠史萊姆生氣了！<anger>/10
+unstablegelslime_night=§6不穩定凝膠史萊姆§0 隨著夜幕降臨而消失了！
+gelslimesnulled=這個世界上的凝膠史萊姆被無效了。它們將不再出現
+gelslimesunnulled=這個世界上的凝膠史萊姆被接納了。它們現在會出現
+pinkwitchesnulled=粉色女巫在 (<x>, <y>) 被無效了
+pinkwitchesunnulled=粉色女巫在 (<x>, <y>) 被接納了
+needfreeslots=你需要 <slots> 個空閒的庫存槽才能使用它
+cantuseatnight=不能在夜間使用
+healthalreadyfull=生命值已滿
+cantheal=無法治療
+insuficienthealth=生命值不足，無法執行此操作！
+cannottrhowlockeditem=你不能扔掉庫存鎖定的物品
+initialrunetip=仔細選擇你的初始符文；\n在遊戲後期之前你不會獲得其他的
+alreadyselectedinitialrune=已選擇初始符文
+cannotusetrial=不能在試煉室使用
+
+[biome]
+infectedfields=受感染的田野
+
+
+[journal]
+
+//Levels
+infectedfieldssurface=受感染的田野地表
+infectedfieldscave=受感染的田野洞穴
+
+// Forest Surface Challenges
+killgelslimesforest=[mob=gelslime] 在森林中殺死 25 隻凝膠史萊姆
+pickupfloralring=[item=floralring] 在森林中割很多草以獲得花環
+killunstablegelslime=[mob=unstablegelslime] 殺死 1 隻不穩定凝膠史萊姆
+
+// Swamp Surface Challenges
+killpinkwitchesswamp=[mob=pinkwitch] 在夜間，在沼澤表面殺死 5 隻粉色女巫
+
+// Infected Fields Surface Challenges
+pickupinfectedlogs=[item=infectedlog] 砍伐以拾取 100 根受感染的原木
+
+// Infected Fields Cave Challenges
+pickupspinel=[item=spinel] 拾取 40 塊尖晶石
+activatebabylontower=[item=lifespinel] 將生命尖晶石放置在巴比倫塔上
+findthespammer=[item=thespammer] 找到垃圾郵件發送者
+
+
+[controls]
+runesinjectorability=符文注入器技能
+
+
+[runestutorialbook]
+openheader=打開符文注入器
+opentext=要使用符文，你需要一個符文注入器。這些特殊設備可以打開以插入符文。每個注入器都有一個基礎符文槽和多個修飾符文槽，具體取決於其容量。你可以隨意添加任意數量的修飾符文，試驗以找到最佳組合！
+equipheader=裝備注入器
+equiptext=要啟動你的符文，符文注入器必須裝備在飾品槽中。裝備後，只需按 G（或在設定中分配的鍵）即可觸發其效果。在投入行動前，請確保注入器已正確配置並準備就緒！
+
+runesheader=什麼是符文？
+runestext=符文是神秘的石頭，插入符文注入器後會產生強大的效果。它們的力量和行為取決於它們的組合方式，掌握它們的使用是釋放你全部潛力的關鍵。
+baserunesheader=基礎符文
+baserunestext=每個符文注入器都需要一個基礎符文才能正常工作。基礎符文定義了注入器的主要效果，並作為你設定的核心。你會注意到效果旁邊有一個綠色的數字，這代表它的效果值，可以用修飾符來增加或減少。
+modifierrunesheader=修飾符文
+modifierrunestext=修飾符文用於自訂和增強基礎符文的效果。它們可以調整效果值，改變其行為方式，或添加特殊屬性。然而，修飾符文總是伴隨著權衡：沒有哪個修飾符是純粹有益的，所以要明智地選擇！
+
+tableheader=符文台
+tabletext=符文台是你製作各種符文的首選工作站。大多數標準符文都可以在這裡製作，但請記住：一些強大的符文只能透過探索找到。睜大眼睛，冒險會獎勵好奇的人！
+crafttext=在符文工坊，你會找到開始所需的一切。將內容與你的初始符文和可以在符文台上製作的基礎符文相結合，你就會擁有一個功能齊全的符文注入器，可以裝備了！

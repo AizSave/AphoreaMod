@@ -1,0 +1,752 @@
+# Translation made by AI
+
+[global]
+aphorea=§!ม็อด Aphorea
+aphorearework=§!ม็อด Aphorea ปรับปรุงใหม่
+aphoreamightybanner=§!ม็อด Aphorea x ม็อด Mighty Banner
+aphoreasummonerexpansion=§!ม็อด Aphorea x ส่วนขยาย Summoner
+
+
+[buffmodifiers]
+// Magic Healing
+magichealing=<mod>% การรักษาด้วยเวทมนตร์
+magichealingflat=<mod> การรักษาด้วยเวทมนตร์
+magichealingreceived=<mod>% การรักษาด้วยเวทมนตร์ที่ได้รับ
+magichealingreceivedflat=<mod> การรักษาด้วยเวทมนตร์ที่ได้รับ
+magichealinggrace=<mod>% พระคุณแห่งการรักษาด้วยเวทมนตร์
+
+// Area
+arearange=<mod>% ระยะของพื้นที่
+
+// Inspiration Damage
+inspirationdamage=<mod>% ความเสียหายจากแรงบันดาลใจ
+inspirationcritchance=<mod>% โอกาสคริติคอลจากแรงบันดาลใจ
+inspirationcritdamage=<mod>% ความเสียหายคริติคอลจากแรงบันดาลใจ
+inspirationeffect=<mod>% ผลของแรงบันดาลใจ
+inspirationabilityspeed=<mod>% ความเร็วของความสามารถจากแรงบันดาลใจ
+
+// Others
+loyal=มีดสั้นจะไม่หายไปเมื่อถูกขว้าง
+
+
+[stats]
+inspiration_damage=ความเสียหายจากแรงบันดาลใจ
+
+
+[enchantment]
+// Healing Equipment
+godly=ศักดิ์สิทธิ์
+absent=ขาด
+auxiliary=เสริม
+vain=ไร้ประโยชน์
+gentle=อ่อนโยน
+selfish=เห็นแก่ตัว
+
+// Healing
+friendly=เป็นมิตร
+graceful=สง่างาม
+wonderful=ยอดเยี่ยม
+ecologic=เชิงนิเวศ
+exalted=สูงส่ง
+cursed=ต้องคำสาป
+
+// Area
+booming=เฟื่องฟู
+dimmed=สลัว
+
+// Others
+loyal=ภักดี
+
+
+[tile]
+geltile=พื้นเจล
+infectedwatertile=น้ำที่ติดเชื้อ
+infectedgrasstile=หญ้าที่ติดเชื้อ
+spinelgravel=กรวดสปิเนล
+
+
+[tech]
+runes=รูน
+
+
+[object]
+witchstatue=รูปปั้นแม่มด
+runestable=โต๊ะรูน
+#NEW
+infectedsapling=ต้นอ่อนที่ติดเชื้อ
+spinelcluster=กลุ่มสปิเนล
+spinelcluster_small=กลุ่มสปิเนลขนาดเล็ก
+gelrock=หินเจล
+infectedtree=ต้นไม้ที่ติดเชื้อ
+infectedgrass=หญ้าที่ติดเชื้อ
+spinelchest=หีบสปิเนล
+fakespinelchest=หีบสปิเนลปลอม
+babylontower=หอคอยบาเบล
+babylonentrance=ทางเข้าบาเบล
+babylonexit=ทางออกบาเบล
+infectedtrialentrance=ทางเข้าการทดลองที่ติดเชื้อ
+infectedchair=เก้าอี้ที่ติดเชื้อ
+infecteddinnertable=โต๊ะอาหารเย็นที่ติดเชื้อ
+infectedbookshelf=ชั้นหนังสือที่ติดเชื้อ
+infectedcabinet=ตู้ที่ติดเชื้อ
+infectedbed=เตียงที่ติดเชื้อ
+infecteddoublebed=เตียงคู่ที่ติดเชื้อ
+infectedcandelabra=เชิงเทียนที่ติดเชื้อ
+
+
+[itemcategory]
+healing=การรักษา
+healingtools=เครื่องมือรักษา
+runes=รูน
+runesinjectors=เครื่องฉีดรูน
+baserunes=รูนพื้นฐาน
+modifierrunes=รูนดัดแปลง
+
+
+[item]
+// General Materials
+anybasicfoci=โฟกัสพื้นฐานใดๆ
+
+// Materials
+rockygel=เจลหิน
+unstablegel=เจลที่ไม่เสถียร
+stardust=ฝุ่นดาว
+infectedlog=ท่อนซุงที่ติดเชื้อ
+infectedalloy=โลหะผสมที่ติดเชื้อ
+spinel=สปิเนล
+lifespinel=สปิเนลแห่งชีวิต
+
+// Consumables
+unstablecore=แกนที่ไม่เสถียร
+initialrune=รูนเริ่มต้น
+venomextract=สารสกัดจากพิษ
+
+// Swords
+gelsword=ดาบเจล
+unstablegelsword=ดาบเจลที่ไม่เสถียร
+broom=ไม้กวาด
+voidhammer=ค้อนแห่งความว่างเปล่า
+brokenkora=โคร่าที่แตกหัก
+thenarcissist=ผู้หลงตัวเอง
+cryokatana=คาตานะน้ำแข็ง
+
+// Greatswords
+unstablegelgreatsword=ดาบใหญ่เจลที่ไม่เสถียร
+babylongreatsword=ดาบใหญ่แห่งบาเบล
+
+// Glaives
+woodenrod=ไม้เท้าไม้
+
+// Sabers
+saber=ดาบโค้ง
+coppersaber=ดาบโค้งทองแดง
+ironsaber=ดาบโค้งเหล็ก
+goldsaber=ดาบโค้งทอง
+demonicsaber=ดาบโค้งปีศาจ
+unstablegelsaber=ดาบโค้งเจลที่ไม่เสถียร
+honeysaber=ดาบโค้งน้ำผึ้ง
+glacialsaber=ดาบโค้งน้ำแข็ง
+crimsonkora=โคร่าสีเลือดหมู
+
+// Battleaxes
+battleaxe=ขวานรบ
+unstablegelbattleaxe=ขวานรบเจลที่ไม่เสถียร
+demonicbattleaxe=ขวานรบปีศาจ
+
+// Daggers
+dagger=มีดสั้น
+copperdagger=มีดสั้นทองแดง
+irondagger=มีดสั้นเหล็ก
+golddagger=มีดสั้นทอง
+demonicdagger=มีดสั้นปีศาจ
+tungstendagger=มีดสั้นทังสเตน
+lostumbrella=ร่มที่หายไป
+
+// Rapiers
+fossilrapier=ดาบปลายแหลมฟอสซิล
+lightrapier=ดาบปลายแหลมแห่งแสง
+
+// Magic weapons
+unstablegelstaff=ไม้เท้าเจลที่ไม่เสถียร
+magicalbroom=ไม้กวาดวิเศษ
+adeptsbook=หนังสือของผู้เชี่ยวชาญ
+harpofharmony=พิณแห่งความสามัคคี
+babyloncandle=เทียนแห่งบาเบล
+
+// Bows
+spinelcrossbow=หน้าไม้สปิเนล
+
+// Guns
+thespammer=สแปมเมอร์
+
+// Bullets
+spambullet=กระสุนสแปม
+
+// Greatbows
+gelgreatbow=ธนูใหญ่เจล
+unstablegelgreatbow=ธนูใหญ่เจลที่ไม่เสถียร
+
+// Arrows
+gelarrow=ลูกศรเจล
+unstablegelarrow=ลูกศรเจลที่ไม่เสถียร
+
+// Saber Guns
+sabergun=ปืนดาบโค้ง
+shotgunsaber=ปืนลูกซองดาบโค้ง
+
+// Slings
+sling=หนังสติ๊ก
+firesling=หนังสติ๊กไฟ
+frozensling=หนังสติ๊กน้ำแข็ง
+
+// Blowguns
+blowgun=ปืนเป่า
+
+// Throw weapons
+gelball=ลูกบอลเจล
+gelballgroup=กลุ่มลูกบอลเจล
+unstablegelveline=หอกเจลที่ไม่เสถียร
+
+// Summon weapons
+volatilegelstaff=ไม้เท้าเจลระเหย
+infectedstaff=ไม้เท้าที่ติดเชื้อ
+
+// Banners
+blankbanner=ธงเปล่า
+
+// Healing Tools
+healingtool=เครื่องมือรักษา
+magicalvial=ขวดวิเศษ
+healingstaff=ไม้เท้ารักษา
+woodenwand=ไม้กายสิทธิ์ไม้
+goldenwand=ไม้กายสิทธิ์ทอง
+spinelstaff=ไม้เท้าสปิเนล
+
+// Tools
+superiorpickaxe=พลั่วชั้นยอด
+
+// Trinkets
+rockyperiapt=เครื่องรางหิน
+unstableperiapt=เครื่องรางที่ไม่เสถียร
+bloodyperiapt=เครื่องรางเลือด
+demonicperiapt=เครื่องรางปีศาจ
+abysmalperiapt=เครื่องรางจากขุมนรก
+frozenperiapt=เครื่องรางน้ำแข็ง
+necromancyperiapt=เครื่องรางเนโครแมนซี
+floralring=แหวนดอกไม้
+gelring=แหวนเจล
+heartring=แหวนหัวใจ
+ringofhealth=แหวนแห่งสุขภาพ
+swampshield=โล่หนองน้ำ
+witchmedallion=เหรียญแม่มด
+iceboots=รองเท้าน้ำแข็ง
+inspirationfoci=โฟกัสแห่งแรงบันดาลใจ
+cursedmedallion=เหรียญต้องคำสาป
+ancientmedallion=เหรียญโบราณ
+essenceofhealing=แก่นแท้แห่งการรักษา
+ninjascarf=ผ้าพันคอของนินจา
+adrenalinecharm=เครื่องรางอะดรีนาลีน
+spinelshield=โล่สปิเนล
+bloomrushcharm=เครื่องรางแห่งการเบ่งบาน
+infectedperiapt=เครื่องรางที่ติดเชื้อ
+
+// Armor
+rockyboots=รองเท้าหิน
+rockychestplate=เกราะอกหิน
+rockyhelmet=หมวกหิน
+goldhat=หมวกทอง
+pinkwitchhat=หมวกแม่มดสีชมพู
+magicalsuit=ชุดวิเศษ
+magicalboots=รองเท้าวิเศษ
+swampboots=รองเท้าหนองน้ำ
+swampchestplate=เกราะอกหนองน้ำ
+swampmask=หน้ากากหนองน้ำ
+swamphood=หมวกหนองน้ำ
+infectedhat=หมวกที่ติดเชื้อ
+infectedchestplate=เกราะอกที่ติดเชื้อ
+infectedboots=รองเท้าที่ติดเชื้อ
+spinelhelmet=หมวกสปิเนล
+spinelhat=หมวกสปิเนล
+spinelchestplate=เกราะอกสปิเนล
+spinelboots=รองเท้าสปิเนล
+
+// Misc
+gelslimenullifier=เครื่องทำลายสไลม์เจล
+cuberry=คิวเบอร์รี่
+infectedgrassseed=เมล็ดหญ้าที่ติดเชื้อ
+
+// Backpacks
+basicbackpack=กระเป๋าเป้พื้นฐาน
+sapphirebackpack=กระเป๋าเป้ไพลิน
+amethystbackpack=กระเป๋าเป้อเมทิสต์
+rubybackpack=กระเป๋าเป้ทับทิม
+emeraldbackpack=กระเป๋าเป้มรกต
+diamondbackpack=กระเป๋าเป้เพชร
+
+// Books
+runestutorialbook=หนังสือสอนรูน
+
+// Runes Injectors
+runesinjector=เครื่องฉีดรูน
+rusticrunesinjector=เครื่องฉีดรูนแบบชนบท
+unstablerunesinjector=เครื่องฉีดรูนที่ไม่เสถียร
+demonicrunesinjector=เครื่องฉีดรูนปีศาจ
+tungstenrunesinjector=เครื่องฉีดรูนทังสเตน
+ancientrunesinjector=เครื่องฉีดรูนโบราณ
+
+// Base Runes Tier 0
+baserune=รูนพื้นฐาน
+runeoffury=รูนแห่งความโกรธ
+runeofspeed=รูนแห่งความเร็ว
+runeofhealing=รูนแห่งการรักษา
+runeofresistance=รูนแห่งการต้านทาน
+runeofvalor=รูนแห่งความกล้าหาญ
+runeofdetonation=รูนแห่งการระเบิด
+runeofthunder=รูนแห่งสายฟ้า
+runeofwinter=รูนแห่งฤดูหนาว
+runeofshadows=รูนแห่งเงา
+runeofimmortality=รูนแห่งความเป็นอมตะ
+
+// Base Runes Tier 1
+runeofunstablegelslime=รูนของสไลม์เจลที่ไม่เสถียร
+runeofevilsprotector=รูนของผู้พิทักษ์แห่งความชั่วร้าย
+runeofqueenspider=รูนของราชินีแมงมุม
+runeofvoidwizard=รูนของพ่อมดแห่งความว่างเปล่า
+runeofswampguardian=รูนของผู้พิทักษ์หนองน้ำ
+runeofancientvulture=รูนของอีแร้งโบราณ
+runeofpiratecaptain=รูนของกัปตันโจรสลัด
+runeofchieftain=รูนของหัวหน้าเผ่า
+
+// Base Runes Tier 2
+runeofreaper=รูนของยมทูต
+runeofcryoqueen=รูนของราชินีน้ำแข็ง
+runeofpestwarden=รูนของผู้พิทักษ์โรคระบาด
+runeofsageandgrit=รูนของปราชญ์และความกล้าหาญ
+runeoffallenwizard=รูนของพ่อมดผู้ล่วงลับ
+runeofbabylontower=รูนของหอคอยบาเบล
+
+// Base Runes Tier 3
+runeofmotherslime=รูนของแม่สไลม์
+runeofnightswarm=รูนของฝูงค้างคาวกลางคืน
+runeofspiderempress=รูนของจักรพรรดินีแมงมุม
+runeofsunlightchampion=รูนของแชมป์เปี้ยนแห่งแสงอาทิตย์
+runeofmoonlightdancer=รูนของนักเต้นแห่งแสงจันทร์
+runeofcrystaldragon=รูนของมังกรคริสตัล
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+frenzyrune=รูนแห่งความบ้าคลั่ง
+vitalrune=รูนแห่งพลังชีวิต
+devastatingrune=รูนแห่งการทำลายล้าง
+onyxrune=รูนโอนิกซ์
+pawningrune=รูนจำนำ
+
+// Modifier Runes Tier 2
+abysmalrune=รูนจากขุมนรก
+tidalrune=รูนแห่งกระแสน้ำ
+
+// Modifier Runes Tier 3
+ascendantrune=รูนแห่งการขึ้นสู่สวรรค์
+
+
+[itemtooltip]
+// Stat tips
+line=----------------------------------------
+magichealingtip=การรักษาด้วยเวทมนตร์: §7<health>
+rangetip=ระยะ: §9<range>
+areatip=§aพื้นที่ <number>
+inspirationdamagetip=ความเสียหายจากแรงบันดาลใจ: <value>
+areabuff=ใช้ <buff> กับพันธมิตร
+areadebuff=ใช้ <buff> กับศัตรู
+areabuffdisplay=<buff> เป็นเวลา <duration> วินาที
+attackarmorpentip=การเจาะเกราะ: <value>%
+
+// Mechanics
+magichealinggrace=§aพระคุณแห่งการรักษาด้วยเวทมนตร์:§0 รักษาตัวเองด้วย % ของการรักษาด้วยเวทมนตร์ที่มุ่งเป้าไปที่พันธมิตร
+cursedbuff=§bต้องคำสาป:§0 §6+25%§0 ความเสียหายที่ได้รับ
+inspiration=§9แรงบันดาลใจ:§0 ปรับปรุงผลของธงและเครื่องดนตรี
+adrenaline=§6อะดรีนาลีน:§0 +5% ความเสียหาย, -5% เกราะ สามารถซ้อนกันได้ถึง 5 ครั้ง
+livingsapling=§7ต้นอ่อนที่มีชีวิต:§0 รักษาเจ้าของด้วยเวทมนตร์ §73§0 ทุกๆ 10 การโจมตี
+
+// Misc
+gelslimenullifier=พวกเขาจะหยุดรบกวนคุณด้วยการคลิกเพียงครั้งเดียว!
+enchantingscrollhealingequipmenttip=ใช้เพื่อร่ายมนตร์อุปกรณ์รักษาด้วย <enchantment>\n§!ม็อด Aphorea
+enchantingscrollhealingtip=ใช้เพื่อร่ายมนตร์เครื่องมือรักษาด้วย <enchantment>\n§!ม็อด Aphorea
+enchantingscrollareatip=ใช้เพื่อร่ายมนตร์เครื่องมือที่มีผลกระทบต่อพื้นที่ด้วย <enchantment>\n§!ม็อด Aphorea
+enchantingscrolldaggertip=ใช้เพื่อร่ายมนตร์อาวุธมีดสั้นด้วย <enchantment>\n§!ม็อด Aphorea
+backpack=เป็นช่องเก็บของใหม่ที่เก็บไอเท็มทั้งหมดที่คุณรวบรวม
+backpackslots=ความจุ <slots> ไอเท็ม
+stored=ไอเท็มที่เก็บไว้: <items>
+backpackcraft=ต้องว่างเปล่าเพื่อสร้างกระเป๋าเป้ที่ดีกว่า
+
+// Consumables
+deleteditem=ไอเท็มนี้ถูกลบแล้ว ใช้ไอเท็มนี้เพื่อกู้คืนวัสดุก่อนที่จะถูกลบอย่างถาวร
+unstablecore=§bปล่อยออร่าที่ไม่เสถียร...§0 สามารถใช้ได้เฉพาะในเวลากลางวันเท่านั้น
+venomextractbuff=โลว์ดบอกให้ดื่ม แต่อย่าทำ
+venomextractbuffdesc=คุณไม่สามารถมี HP มากกว่า 1 ได้
+lifespinel=เพิ่มพลังชีวิตสูงสุดอย่างถาวร 5 หน่วย สูงสุด 320
+
+// General Weapons
+spinsecondaryattack=กด [input=mouse2] เพื่อให้การโจมตีครั้งต่อไปเป็นการโจมตีแบบพื้นที่
+areasecondaryattack=กด [input=mouse2] เพื่อทำการโจมตีแบบพื้นที่โดยใช้มานา <mana>
+stikybuff1=ทำให้ศัตรูเหนียวเป็นเวลา 1 วินาที
+stikybuff2=ทำให้ศัตรูเหนียวเป็นเวลา 2 วินาที
+stikybuff3=ทำให้ศัตรูเหนียวเป็นเวลา 3 วินาที
+projectilearea=เมื่อกระสุนสิ้นสุดลง จะสร้างความเสียหายแบบพื้นที่
+
+// Melee Weapons
+saber=ชาร์จให้เต็มเพื่อสร้างความเสียหายสูงสุดและปล่อยการตัดอากาศ
+saberdash=กด [input=mouse2] ค้างไว้เพื่อชาร์จการพุ่งเพื่อฟันศัตรู
+battleaxe=ใช้เวลาชาร์จนาน
+battleaxe2=กด [input=mouse2] เพื่อเปิดใช้งาน Berserker Rush และรับอะดรีนาลีน 3 ชั่วคราว
+battleaxe3=รับอะดรีนาลีนชั่วคราวโดยการโจมตีศัตรูระหว่าง Rush ซึ่งจะช่วยเพิ่มความเร็วในการเคลื่อนที่และการโจมตี
+dagger=กด [input=mouse2] ค้างไว้เพื่อขว้างมีดสั้น
+
+// Range Weapons
+sling=ขว้างหินด้วยแรง
+sling2=§7100%§0 โอกาสที่จะทำให้ศัตรูมึนงงเป็นเวลา 0.5 วินาที
+twoarrows=ยิงธนูสองดอกพร้อมกัน
+threearrows=ยิงธนูสามดอกพร้อมกัน
+blowgun=ยิงเมล็ด
+
+// Single Melee Weapons
+woodenrod=รักษาตัวเองด้วยเวทมนตร์ §7<healing>§0 ทุกๆ 10 การโจมตี
+voidhammer=เมื่อกระสุนกระดอนหรือโดนศัตรู จะเล็งไปที่ศัตรูที่ใกล้ที่สุด โจมตีได้สูงสุด 3 ครั้ง
+crimsonkora=กด [input=mouse2] ค้างไว้เพื่อชาร์จการโจมตีที่ทำลายล้างแต่ช้า
+thenarcissist=โจมตีต่อเนื่อง 4 ครั้งเพื่อปล่อยการขว้างดาบหมุนในการโจมตีครั้งที่ห้า!\n+20% ความเสียหายสำหรับการโจมตีต่อเนื่องแต่ละครั้ง
+
+// Single Range Weapons
+firesling=เผาศัตรู
+frozensling=แช่แข็งศัตรู
+gelgreatbow=เปลี่ยนลูกศรหินเป็นลูกศรเจล
+unstablegelgreatbow=เปลี่ยนลูกศรหินและลูกศรเจลเป็นลูกศรเจลที่ไม่เสถียร
+thespammer=สามารถยิงกระสุนสแปมได้
+shotgunsaber=เล็งใกล้ศูนย์กลางเพื่อการยิงที่ทรงพลัง แม่นยำ และทะลุทะลวงยิ่งขึ้น
+honeysaber=ชาร์จให้เต็มเพื่อสร้างความเสียหายสูงสุดและยิงน้ำผึ้งและบลูเบอร์รี่
+spinelcrossbow=ยิงลูกศรที่ทะลุทะลวงศัตรูได้ถึง 2 ตัว และจะอันตรายยิ่งขึ้นเมื่อทะลุทะลวงแต่ละครั้ง
+spinelcrossbow2=กด [input=mouse2] ค้างไว้เพื่อยิงธนู 3 ดอกพร้อมกัน
+
+// Single Magic Weapons
+unstablegelstaff=เมื่อกระสุนกระดอนออกจากกำแพง จะเกิดการซ้ำซ้อน
+harpofharmony=ความสามัคคี: เพิ่มความเร็ว การฟื้นฟูพลังชีวิตและมานา
+
+// Single Summoner Weapons
+infectedstaff=เรียกต้นอ่อนที่มีชีวิตสองต้นต่อการเรียกหนึ่งครั้ง
+
+// Single Throwable Weapons
+gelball=ขว้างลูกบอลเจล
+
+// Single Magic Healing Tools
+magicalvial=ชี้ไปที่มนุษย์ที่ได้รับบาดเจ็บเพื่อรักษาพวกเขา อย่าชี้ไปที่ใครเพื่อรักษาตัวเอง
+magicalvial2=ใช้งานได้ไม่จำกัด
+
+// Ammo
+spambullet=มีผลกระทบอย่างใดอย่างหนึ่งแบบสุ่ม:
+spambullet1=§9เศร้า:§0 ศัตรูที่ถูกโจมตีจะเหนียว ทำให้เคลื่อนที่ช้าลงเป็นเวลา 5 วินาที
+spambullet2=§9ไฟ:§0 แทนที่จะชน จะทิ้งแอ่งไฟไว้บนพื้น
+spambullet3=§9ชอบ:§0 กระดอนออกจากกำแพงและทะลุทะลวงม็อบได้สูงสุด 10 ครั้งต่อครั้ง
+spambullet4=§9ตรวจสอบ:§0 พื้นที่รักษาด้วยเวทมนตร์ 3 พลังชีวิตที่ปลายทาง
+spambullet5=§9ระเบิด:§0 ระเบิดที่ปลายทางแทนที่จะชน
+
+// Tiles
+geltile=พื้นที่เหนียวที่ทำให้ทุกอย่างที่อยู่ด้านบนเคลื่อนที่ช้าลงอย่างมาก
+
+// Objects
+witchstatue=การวางรูปปั้นนี้บนพื้นผิวของหนองน้ำจะกำจัดการเกิดของแม่มดทั่วทั้งเกาะ
+
+// Generic Trinkets
+areawhenheal=ดำเนินการในพื้นที่นี้ทุกๆ <magichealing> การรักษาด้วยเวทมนตร์ที่ทำได้
+periaptboost=กด [input=trinketability] เพื่อรับการเพิ่มความเร็วและความเร็วในการโจมตีเป็นเวลา 10 วินาที
+
+// Trinkets
+rockyperiapt=§7+5§0 เกราะ แต่ §6-5%§0 ความเร็วในการเคลื่อนที่
+rockyperiapt2=กด [input=trinketability] เพื่อรับเกราะ 10 เป็นเวลา 10 วินาที
+unstableperiapt=เรียกสไลม์เจลที่ไม่เสถียรสองตัว (ความเสียหายจากผู้เรียก 6)
+unstableperiapt2=ทำให้คุณมีภูมิคุ้มกันต่อดีบัฟเหนียว
+bloodyperiapt=นอกจากนี้ อาวุธ 'สายฟ้าโลหิต' และ 'กระสุนโลหิต' จะขโมยพลังชีวิต §73%§0
+demonicperiapt=นอกจากนี้ อาวุธเวทมนตร์จะขโมยพลังชีวิต §73%§0
+necromancyperiapt=ทุกครั้งที่คุณหรือผู้เรียกของคุณฆ่าม็อบที่เป็นศัตรู คุณจะเรียกโครงกระดูกที่ไม่ตาย
+necromancyperiapt2=ความเสียหายจากผู้เรียก 20 อยู่ได้นาน 10 วินาที และสามารถมีได้สูงสุด 3 ตัวพร้อมกัน
+frozenperiapt=อาวุธระยะประชิดและระยะไกลจะแช่แข็งเป็นเวลา 3 วินาที
+frozenperiapt2=สร้างความเสียหายมากขึ้นให้กับม็อบที่ได้รับผลกระทบจากการแช่แข็ง
+frozenperiapt3=ทำให้คุณมีภูมิคุ้มกันต่อดีบัฟแช่แข็งและทำให้เคลื่อนที่ช้าลงด้วยน้ำแข็ง
+floralring=รักษาตัวเองด้วยเวทมนตร์ §7<healing>§0 ทุกๆ 5 วินาที
+gelring=§7+30%§0 การรักษาด้วยเวทมนตร์ที่ได้รับ
+heartring=§7+20§0 พลังชีวิตสูงสุด
+swampshield=ป้องกันการโจมตีในทิศทางที่ได้รับเท่านั้น
+swampshield2=เมื่อบล็อกได้อย่างสมบูรณ์แบบ: รักษาตัวเองด้วยเวทมนตร์ §7<healing>§0 ของพลังชีวิตสูงสุดของคุณ
+iceboots=ทำให้คุณลื่นไถลราวกับอยู่บนน้ำแข็ง แต่ให้ความเร็วในการเคลื่อนที่ +50% และเกราะ +4
+inspirationfoci1=§7+40%§0 ผลของแรงบันดาลใจ และ §7+20%§0 ความเร็วของความสามารถจากแรงบันดาลใจ
+inspirationfoci2=§6-20%§0 ความเสียหายที่ไม่ใช่แรงบันดาลใจทั้งหมด และ §6-1§0 ผู้เรียกสูงสุด
+essenceofhealing=§7+<percent>%§0 การรักษาด้วยเวทมนตร์ต่อแก่นแท้แห่งชีวิต
+essenceofhealing2=§7<flat>§0 การรักษาด้วยเวทมนตร์ต่อ 2 แก่นแท้แห่งชีวิต
+essenceofhealing3=§6-80%§0 ระยะเวลาของแก่นแท้แห่งชีวิต จำกัดที่ -50%
+ninjascarf=เปลี่ยนการพุ่งของดาบโค้งเป็นการกระโดดของดาบโค้ง
+adrenalinecharm=ทุกครั้งที่ถูกโจมตีจะได้รับอะดรีนาลีนเป็นเวลา 20 วินาที
+infectedperiapt=เรียกต้นอ่อนที่มีชีวิตสองต้น (ความเสียหายจากผู้เรียก 8)
+bloomrushcharm=ลดการใช้ความแข็งแกร่งลง 10% สำหรับอะดรีนาลีนแต่ละอันที่คุณมี\nเรียกต้นอ่อนที่มีชีวิต (ความเสียหายจากผู้เรียก 8) สำหรับอะดรีนาลีนแต่ละอันที่คุณมี
+
+// Set Bonus
+goldhatsetbonus=หากคุณอยู่นิ่ง ความเร็วในการโจมตีระยะไกลของคุณจะเพิ่มขึ้นอย่างมาก
+pinkwitchsetbonus=เพิ่มความเร็วในการโจมตีด้วยเวทมนตร์ การฟื้นฟูมานา และเกราะ ยิ่งพลังชีวิตของคุณต่ำลง
+infectedsetbonus=เรียกต้นอ่อนที่มีชีวิตสามต้น (ความเสียหายจากผู้เรียก 8)
+spinelhelmetsetbonus=รักษาตัวเองด้วยเวทมนตร์ §7<healing>§0 ของความเสียหายระยะประชิดที่สร้างให้กับม็อบที่เป็นศัตรู
+spinelhatsetbonus=รักษาตัวเองและพันธมิตรที่อยู่ใกล้เคียงทั้งหมดด้วยเวทมนตร์\nด้วย §7<healing>§0 ของความเสียหายเวทมนตร์ที่สร้างให้กับม็อบที่เป็นศัตรู
+
+// Banners
+strikebannereffect=§7+<effect>%§0 การฟื้นฟูพลังชีวิต (ในและนอกการต่อสู้)
+strikebannerability=§aทุกๆ <time> วินาที:§0 ทำการโจมตีแบบพื้นที่
+blankbannereffect=§7+<effect>%§0 การฟื้นฟูพลังชีวิต (นอกการต่อสู้)
+blankbannerability=§aทุกๆ <time> วินาที:§0 ทำการรักษาแบบพื้นที่
+bannerofdamageeffect=§7+<effect>%§0 ความเสียหาย
+bannerofdefenseeffect=§7-<effect>%§0 ความเสียหายที่ได้รับ
+bannerofspeedeffect=§7+<effect>%§0 ความเร็วในการเคลื่อนที่
+bannerofsummonspeedeffect=§7+<effect>%§0 ความเร็วในการเคลื่อนที่ของผู้เรียก
+
+// Mighty Banners
+banneroffishingeffect=§7+<effect>§0 พลังในการตกปลา
+bannerofhealthregeneffect=§7+<effectfloat>§0 การฟื้นฟูพลังชีวิตในการต่อสู้
+bannerofmanaregeneffect=§7+<effect>%§0 การฟื้นฟูมานาในการต่อสู้
+bannerofresistanceeffect=§7+<effect>§0 เกราะ
+bannerofsummoningeffect=§7+<effect>§0 ผู้เรียกสูงสุด
+bannerofattackspeedeffect=§7+<effect>%§0 ความเร็วในการโจมตี
+
+// Summoner Expansion Banners
+bannerofresilienceeffect=§7+<effect>%§0 ความยืดหยุ่นสูงสุด\nฟื้นฟูความยืดหยุ่น §7+<effect>§0 ต่อวินาที
+bannerofbouncingeffect=§7+<effect>§0 การกระดอนของกระสุน
+bannerofessenceeffect=§7+<effect>%§0 ระยะเวลาของแก่นแท้แห่งชีวิต
+bannerofstaminaeffect=§7+<effect>%§0 ความจุของความแข็งแกร่ง\n§7+<effect2>%§0 การฟื้นฟูความแข็งแกร่ง\n§7-<effect2>%§0 การใช้ความแข็งแกร่ง
+bannerofpickingeffect=§7+<effectfloat>§0 ระยะการเก็บ
+bannerofdashingeffect=§7+<effect>§0 สแต็คการพุ่ง\n§7-<effect2>%§0 คูลดาวน์การพุ่ง
+bannerofmanaeffect=§7+<effect>%§0 มานาสูงสุด\n§7<effect2>%§0 การฟื้นฟูมานา
+
+// Runes (General)
+baserune=§iรูนพื้นฐาน
+modifierrune=§aรูนดัดแปลง
+linkedrune=§bรูนที่เชื่อมโยงกับ [<player>]
+notruneowner=คุณไม่ใช่เจ้าของรูนพื้นฐาน
+runesslots=สามารถใส่รูนพื้นฐานได้สูงสุด 1 อัน + รูนดัดแปลง <modifierslots> อัน
+useruneinfusor=[input=runesinjectorability] เพื่อเปิดใช้งาน
+requiresbaserune=ต้องใส่รูนพื้นฐาน
+onlyonebaserune=สามารถใส่รูนพื้นฐานได้เพียงอันเดียวในแต่ละครั้ง
+duplicatedmodifierrunes=ไม่สามารถใส่รูนดัดแปลงชนิดเดียวกันได้มากกว่าหนึ่งอัน
+runehealthcost=ใช้พลังชีวิตสูงสุด <health>% เมื่อเปิดใช้งาน
+runehealthhealing=ฟื้นฟูพลังชีวิตสูงสุด <health>% เมื่อใช้งาน
+runecooldown=ชาร์จใหม่ใน <seconds> วินาที
+increaseruneeffectnumber=เพิ่มผลกระทบขึ้น §7<variation>%§0
+decreaseruneeffectnumber=ลดผลกระทบลง §6<variation>%§0
+increaserunecooldown=เพิ่มคูลดาวน์ขึ้น §6<variation>%§0
+decreaserunecooldown=ลดคูลดาวน์ลง §7<variation>%§0
+increaserunehealthcost=เพิ่มการใช้พลังชีวิตสูงสุดขึ้น §6<health>%§0
+increaserunehealthhealing=เพิ่มการฟื้นฟูพลังชีวิตสูงสุดขึ้น §7<health>%§0
+runedamagereduction=ความเสียหายจะลดลงอย่างมากเมื่อเทียบกับมนุษย์และยิ่งกว่านั้นเมื่อเทียบกับบอส
+runedamagereductionnoboss=ความเสียหายจะลดลงอย่างมากเมื่อเทียบกับมนุษย์และไม่มีผลกับบอส
+moreextraeffectmod=การปรับเปลี่ยนผลกระทบมีประสิทธิภาพมากขึ้น <mod>%
+lessextraeffectmod=การปรับเปลี่ยนผลกระทบมีประสิทธิภาพน้อยลง <mod>%
+
+// Runes Injectors
+
+// Base Runes Tier 0
+runeoffury=เพิ่มความเสียหายและความเร็วในการโจมตีของคุณขึ้น §7<effectNumber>§0% เป็นเวลา 10 วินาที
+runeofspeed=พุ่งด้วยความแรง §7<effectNumber>§0 ไปในทิศทางที่คุณกำลังเคลื่อนที่และกลายเป็นอมตะเป็นเวลา 0.5 วินาที
+runeofresistance=เพิ่มเกราะของคุณขึ้น §7<effectNumber>§0% เป็นเวลา 10 วินาที
+runeofresistance2=ในขณะที่คูลดาวน์ เกราะของคุณจะลดลงครึ่งหนึ่ง
+runeofvalor=+200% แรงบันดาลใจเป็นเวลา §7<effectNumber>§0 วินาที
+runeofdetonation=ระเบิด สร้างความเสียหายมากขึ้นและผลักศัตรูให้ถอยหลัง ยิ่งอยู่ใกล้มากเท่าไหร่
+runeofdetonation2=ความเสียหายสูงสุดคือ §7<effectNumber>§0% ของพลังชีวิตสูงสุดของม็อบ
+runeofthunder=หลังจากสองวินาที สายฟ้าจะฟาดลงที่ตำแหน่งเริ่มต้นของเคอร์เซอร์ของคุณ
+runeofthunder2=สายฟ้าจะสร้างความเสียหาย §7<effectNumber>§0% ของพลังชีวิตของม็อบและทำให้มึนงงเป็นเวลา 2 วินาที
+runeofwinter=ทำให้ศัตรูเคลื่อนที่ช้าลงด้วยน้ำแข็งในระยะ 500 เป็นเวลา §7<effectNumber>§0 วินาที
+runeofimmortality=หากคุณตายภายใน §7<effectNumber>§0 วินาทีข้างหน้า คุณจะรอดชีวิตด้วยพลังชีวิตสูงสุด
+runeofimmortality2=หากเกิดเหตุการณ์นี้ขึ้น คุณจะกลายเป็นอมตะเป็นเวลา 3 วินาที แต่คูลดาวน์จะเป็น 30 วินาที
+runeofimmortality3=ในขณะที่คูลดาวน์ พลังชีวิตสูงสุดของคุณจะลดลงครึ่งหนึ่ง
+runeofshadows=เป็นเวลา §7<effectNumber>§0 วินาที คุณจะล่องหนแต่ก็จะถูกข่มขู่ ทำให้ไม่สามารถดำเนินการใดๆ ได้
+
+// Base Runes Tier 1
+runeofunstablegelslime=เทเลพอร์ตไปยังตำแหน่งใกล้เคียงและเรียกสไลม์เจลที่ไม่เสถียร 2 ตัวเป็นเวลา §7<effectNumber>§0 วินาที
+runeofunstablegelslime2=ผู้เรียกจะสร้างความเสียหาย 5% ของพลังชีวิตสูงสุดของม็อบ
+runeofevilsprotector=+§7<effectNumber>§0% ความเร็วในการโจมตี แต่ -50% ความเร็วในการเคลื่อนที่เป็นเวลา 10 วินาที
+runeofevilsprotector2=ในเวลากลางคืนบนพื้นผิว ผลบวกจะเพิ่มเป็นสองเท่า
+runeofqueenspider=ทิ้งใยแมงมุมไว้บนพื้นเป็นเวลา §7<effectNumber>§0 วินาที
+runeofvoidwizard=กระสุนทั้งหมดจะกระดอนอย่างไม่มีที่สิ้นสุดและ +§7<effectNumber>§0% ความเร็วของกระสุนเป็นเวลา 10 วินาที
+runeofswampguardian=ลดความเสียหายที่ได้รับทั้งหมดลง 80% เป็นเวลา §7<effectNumber>§0 วินาที
+runeofancientvulture=เรียกอีแร้งรูนเป็นเวลา 10 วินาที
+runeofancientvulture2=ผู้เรียกจะสร้างความเสียหาย §7<effectNumber>§0% ของพลังชีวิตสูงสุดของม็อบ
+runeofpiratecaptain=เพิ่มความเสียหายของคุณขึ้น §7<effectNumber>§0% สำหรับทุกๆ 200 เหรียญที่คุณมี สูงสุด 20,000 เหรียญ
+runeofpiratecaptain2=ทุกครั้งที่คุณโจมตี คุณจะเสีย 3 เหรียญ
+runeofchieftain=ในอีก 20 วินาทีข้างหน้า ความเสียหายของคุณจะเพิ่มขึ้นเมื่อพลังชีวิตของคุณต่ำลง สูงสุด +§7<effectNumber>§0%
+
+// Base Runes Tier 2
+runeofreaper=เทเลพอร์ตไปยังตำแหน่งของเมาส์ของคุณ ระยะทางสูงสุด §7<effectNumber>§0
+runeofcryoqueen=หยุดเป็นเวลา 1 วินาทีและปล่อยการโจมตีด้วยน้ำแข็งรอบตัวคุณด้วยระยะ §7<effectNumber>§0
+runeofcryoqueen2=กระสุนจะสร้างความเสียหาย 200% ของพลังชีวิตสูงสุดของม็อบ
+runeofpestwarden=ในอีก §7<effectNumber>§0 วินาทีข้างหน้า การชนกับศัตรูจะสร้างความเสียหายและผลักพวกเขา
+runeofpestwarden2=ความเสียหายคือ 20% ของพลังชีวิตสูงสุดของพวกเขา
+runeofsageandgrit=หากมีพันธมิตรที่ได้รับบาดเจ็บอยู่ใกล้ๆ (ระยะ 500) ให้รักษาพลังชีวิตทั้งหมดของพวกเขา §7<effectNumber>§0%
+runeofsageandgrit2=หากไม่เป็นเช่นนั้น ให้เพิ่มความเสียหาย ความเร็วในการโจมตี และความเร็วในการเคลื่อนที่ของคุณขึ้น +§7<effectNumber>§0% เป็นเวลา 20 วินาที
+runeoffallenwizard=ทำให้ม็อบทั้งหมดมึนงงยกเว้นคุณเป็นเวลา §7<effectNumber>§0 วินาที
+runeoffallenwizard2=มนุษย์จะหลุดพ้นได้เร็วกว่า และบอสจะเร็วกว่านั้นอีก
+runeofbabylontower=+§7<effectNumber>§0% ความเสียหายทั้งหมด แต่คุณไม่สามารถเคลื่อนที่ได้ 10 วินาที
+
+// Base Runes Tier 3
+runeofmotherslime=กระโดดครั้งใหญ่ไปยังตำแหน่งของเมาส์ของคุณและสร้างความเสียหายแบบพื้นที่เมื่อลงจอด
+runeofmotherslime2=การลงจอดจะสร้างความเสียหาย §7<effectNumber>§0% ของพลังชีวิตสูงสุดของม็อบ
+runeofnightswarm=เรียกค้างคาว 5 ตัวเป็นเวลา §7<effectNumber>§0 วินาทีซึ่งจะค้นหาและกัดม็อบที่เป็นศัตรู
+runeofnightswarm2=การกัดแต่ละครั้งจะฟื้นฟูพลังชีวิตทั้งหมดของคุณ 1% (อย่างน้อย 1)
+runeofspiderempress=ขว้างลูกบอลใยแมงมุม §7<F0effectNumber>§0 ลูกไปในทิศทางของเมาส์ของคุณ
+runeofspiderempress2=ลูกบอลใยแมงมุมจะทำให้มึนงงเป็นเวลา 3 วินาทีและทำให้เคลื่อนที่ช้าลงเป็นเวลา 10 วินาที
+runeofsunlightchampion=ทำให้มึนงงเป็นเวลา 3 วินาทีเพื่อชาร์จโนวาที่มีระยะ §7<effectNumber>§0
+runeofsunlightchampion2=โนวาจะสร้างความเสียหาย 200% ของพลังชีวิตสูงสุดของม็อบ
+runeofmoonlightdancer=+§7<effectNumber>§0% ความเสียหายสำหรับทุกๆ +1% ความเร็วในการเคลื่อนที่เป็นเวลา 10 วินาที
+runeofcrystaldragon=ยิงลำแสงเลเซอร์ที่ตำแหน่งเคอร์เซอร์ของคุณเป็นเวลา 5 วินาที
+runeofcrystaldragon2=เลเซอร์จะสร้างความเสียหาย §7<effectNumber>§0% ของพลังชีวิตสูงสุดของม็อบ
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+onyxrune=เมื่อเปิดใช้งาน จะเรียกโอนิกซ์เป็นเวลา 5 วินาที มันจะสร้างความเสียหายตาม 5% ของพลังชีวิตของม็อบ
+onyxrune2=การกัดแต่ละครั้งของโอนิกซ์จะฟื้นฟูพลังชีวิตทั้งหมดของคุณ 1% (อย่างน้อย 1)
+onyxrune3=§3ขอบคุณโอนิกซ์สำหรับแนวคิดรูนที่ยอดเยี่ยม! <3
+pawningrune=เมื่อเปิดใช้งาน หากคุณยังไม่มีผลกระทบ จะฟื้นฟูพลังชีวิตสูงสุดของคุณ 20% ทันที
+pawningrune2=หลังจาก 10 วินาที คุณจะสูญเสียจำนวนที่ฟื้นฟูไปบวกกับอีก 40%
+
+// Modifier Runes Tier 2
+abysmalrune=เมื่อเปิดใช้งาน จะเรียกหลุมดำที่ตำแหน่งเคอร์เซอร์ของคุณ ดึงศัตรูเข้ามาเป็นเวลา 2 วินาที
+abysmalrune2=หลุมดำจะถูกเรียกก็ต่อเมื่อผ่านไป 10 วินาทีจากการเปิดใช้งานครั้งล่าสุด
+tidalrune=เมื่อเปิดใช้งาน จะเรียกคลื่นน้ำที่ผลักศัตรูออกไป
+
+// Modifier Runes Tier 3
+
+
+[mobtooltip]
+usenet=ใช้ตาข่าย! [item=net]
+
+
+[mob]
+// Hostile
+gelslime=สไลม์เจล
+rockygelslime=สไลม์เจลหิน
+unstablegelslime=สไลม์เจลที่ไม่เสถียร
+miniunstablegelslime=สไลม์เจลที่ไม่เสถียรขนาดเล็ก
+pinkwitch=แม่มดสีชมพู
+voidadept=ผู้เชี่ยวชาญแห่งความว่างเปล่า
+copperdaggergoblin=ก็อบลินมีดสั้นทองแดง
+irondaggergoblin=ก็อบลินมีดสั้นเหล็ก
+golddaggergoblin=ก็อบลินมีดสั้นทอง
+infectedtreant=เทรนต์ที่ติดเชื้อ
+spinelgolem=โกเลมสปิเนล
+spinelcaveling=ชาวถ้ำสปิเนล
+tungstencaveling=ชาวถ้ำทังสเตน
+spinelmimic=มิมิกสปิเนล
+babylontower=หอคอยบาเบล
+hearthcrystal=คริสตัลเตาผิง
+babylon=บาเบล
+
+// Friendly
+wildphosphorslime=สไลม์ฟอสฟอรัสป่า
+
+// Summon
+babyunstablegelslime=สไลม์เจลที่ไม่เสถียรทารก
+undeadskeleton=โครงกระดูกที่ไม่ตาย
+volatilegelslime=สไลม์เจลระเหย
+runicunstablegelslime=สไลม์เจลที่ไม่เสถียรรูน
+runicvulturehatchling=ลูกอีแร้งรูน
+runicbat=ค้างคาวรูน
+onyx=โอนิกซ์
+livingsapling=ต้นอ่อนที่มีชีวิต
+
+// Pet
+petphosphorslime=สไลม์ฟอสฟอรัส
+
+
+[buff]
+// Common Buffs
+stunbuff=มึนงง
+fallenstunbuff=มึนงงที่ล้มลง
+stickybuff=เหนียว
+stopbuff=หยุด
+honeyedbuff=เคลือบน้ำผึ้ง
+venomextractbuff=สารสกัดจากพิษ
+cursedbuff=ต้องคำสาป
+adrenalinebuff=อะดรีนาลีน
+harmonybuff=ความสามัคคี
+
+// Active Buffs
+berserkerrushactive=Berserker Rush ทำงานอยู่
+periaptactive=ความสามารถของเครื่องรางทำงานอยู่
+runesinjectoractive=เครื่องฉีดรูนทำงานอยู่
+
+// Cooldown Buffs
+berserkerrushcooldown=Berserker Rush อยู่ในคูลดาวน์
+periaptcooldown=ความสามารถของเครื่องรางอยู่ในคูลดาวน์
+runesinjectorcooldown=เครื่องฉีดรูนอยู่ในคูลดาวน์
+spinattackcooldown=การโจมตีแบบหมุนอยู่ในคูลดาวน์
+saberdashcooldown=การพุ่งของดาบโค้งอยู่ในคูลดาวน์
+
+
+[message]
+unstablegelslime_anger=§6สไลม์เจลที่ไม่เสถียรกำลังโกรธ... <anger>/10
+unstablegelslime_fullanger=§6สไลม์เจลที่ไม่เสถียรโกรธแล้ว! <anger>/10
+unstablegelslime_night=§6สไลม์เจลที่ไม่เสถียร§0 หายไปเมื่อค่ำคืนมาถึง!
+gelslimesnulled=สไลม์เจลในโลกนี้ถูกทำให้เป็นกลางแล้ว พวกมันจะไม่ปรากฏอีกต่อไป
+gelslimesunnulled=สไลม์เจลในโลกนี้ได้รับการยอมรับแล้ว พวกมันจะปรากฏตัวแล้ว
+pinkwitchesnulled=แม่มดสีชมพูใน (<x>, <y>) ถูกทำให้เป็นกลางแล้ว
+pinkwitchesunnulled=แม่มดสีชมพูใน (<x>, <y>) ได้รับการยอมรับแล้ว
+needfreeslots=คุณต้องมีช่องว่างในช่องเก็บของ <slots> ช่องเพื่อใช้สิ่งนี้
+cantuseatnight=ไม่สามารถใช้ในเวลากลางคืนได้
+healthalreadyfull=พลังชีวิตเต็มแล้ว
+cantheal=ไม่สามารถรักษาได้
+insuficienthealth=พลังชีวิตไม่เพียงพอที่จะดำเนินการนี้!
+cannottrhowlockeditem=คุณไม่สามารถทิ้งไอเท็มที่ถูกล็อคในช่องเก็บของได้
+initialrunetip=เลือกรูนเริ่มต้นของคุณอย่างระมัดระวัง\nคุณจะไม่ได้รับรูนอื่นจนกว่าจะถึงช่วงท้ายเกม
+alreadyselectedinitialrune=เลือกรูนเริ่มต้นแล้ว
+cannotusetrial=ไม่สามารถใช้ในห้องทดลองได้
+
+[biome]
+infectedfields=ทุ่งที่ติดเชื้อ
+
+
+[journal]
+
+//Levels
+infectedfieldssurface=พื้นผิวของทุ่งที่ติดเชื้อ
+infectedfieldscave=ถ้ำของทุ่งที่ติดเชื้อ
+
+// Forest Surface Challenges
+killgelslimesforest=[mob=gelslime] ฆ่าสไลม์เจล 25 ตัวในป่า
+pickupfloralring=[item=floralring] ตัดหญ้าจำนวนมากในป่าเพื่อรับแหวนดอกไม้
+killunstablegelslime=[mob=unstablegelslime] ฆ่าสไลม์เจลที่ไม่เสถียร 1 ตัว
+
+// Swamp Surface Challenges
+killpinkwitchesswamp=[mob=pinkwitch] ในเวลากลางคืน ฆ่าแม่มดสีชมพู 5 ตัวบนพื้นผิวของหนองน้ำ
+
+// Infected Fields Surface Challenges
+pickupinfectedlogs=[item=infectedlog] ตัดเพื่อเก็บท่อนซุงที่ติดเชื้อ 100 ท่อน
+
+// Infected Fields Cave Challenges
+pickupspinel=[item=spinel] เก็บสปิเนล 40 อัน
+activatebabylontower=[item=lifespinel] วางสปิเนลแห่งชีวิตบนหอคอยบาเบล
+findthespammer=[item=thespammer] ค้นหาสแปมเมอร์
+
+
+[controls]
+runesinjectorability=ความสามารถของเครื่องฉีดรูน
+
+
+[runestutorialbook]
+openheader=การเปิดเครื่องฉีดรูน
+opentext=ในการใช้รูน คุณจะต้องมีเครื่องฉีดรูน อุปกรณ์พิเศษเหล่านี้สามารถเปิดเพื่อใส่รูนได้ เครื่องฉีดแต่ละเครื่องมีช่องสำหรับรูนพื้นฐานหนึ่งช่องและช่องสำหรับรูนดัดแปลงหลายช่อง ขึ้นอยู่กับความจุของมัน คุณสามารถเพิ่มรูนดัดแปลงได้มากเท่าที่เครื่องฉีดอนุญาต ทดลองเพื่อค้นหาส่วนผสมที่ดีที่สุด!
+equipheader=การติดตั้งเครื่องฉีด
+equiptext=ในการเปิดใช้งานรูนของคุณ เครื่องฉีดรูนจะต้องติดตั้งในช่องเครื่องประดับ เมื่อติดตั้งแล้ว เพียงกด G (หรือปุ่มที่กำหนดในการตั้งค่า) เพื่อเรียกใช้เอฟเฟกต์ของมัน ตรวจสอบให้แน่ใจว่าเครื่องฉีดได้รับการกำหนดค่าอย่างถูกต้องและพร้อมก่อนที่จะลงมือ!
+
+runesheader=รูนคืออะไร
+runestext=รูนเป็นหินลึกลับที่ให้ผลกระทบอันทรงพลังเมื่อใส่เข้าไปในเครื่องฉีดรูน ความแข็งแกร่งและพฤติกรรมของพวกมันขึ้นอยู่กับวิธีการรวมกัน การเรียนรู้การใช้งานของพวกมันเป็นกุญแจสำคัญในการปลดปล่อยศักยภาพสูงสุดของคุณ
+baserunesheader=รูนพื้นฐาน
+baserunestext=เครื่องฉีดรูนแต่ละเครื่องต้องการรูนพื้นฐานเพียงอันเดียวในการทำงาน รูนพื้นฐานจะกำหนดเอฟเฟกต์หลักของเครื่องฉีดและทำหน้าที่เป็นแกนหลักของการตั้งค่าของคุณ คุณจะสังเกตเห็นตัวเลขสีเขียวถัดจากเอฟเฟกต์ ซึ่งแสดงถึงค่าเอฟเฟกต์ของมัน ซึ่งสามารถเพิ่มหรือลดได้ด้วยตัวดัดแปลง
+modifierrunesheader=รูนดัดแปลง
+modifierrunestext=รูนดัดแปลงใช้เพื่อปรับแต่งและเพิ่มประสิทธิภาพของรูนพื้นฐานของคุณ พวกมันสามารถปรับเปลี่ยนค่าเอฟเฟกต์ เปลี่ยนพฤติกรรม หรือเพิ่มคุณสมบัติพิเศษได้ อย่างไรก็ตาม รูนดัดแปลงมักมาพร้อมกับการแลกเปลี่ยน: ไม่มีตัวดัดแปลงใดที่เป็นประโยชน์อย่างแท้จริง ดังนั้นควรเลือกอย่างชาญฉลาด!
+
+tableheader=โต๊ะรูน
+tabletext=โต๊ะรูนเป็นสถานีที่คุณสามารถสร้างรูนได้หลากหลายชนิด รูนมาตรฐานส่วนใหญ่สามารถสร้างได้ที่นี่ แต่จำไว้ว่า: รูนที่ทรงพลังบางอันสามารถพบได้จากการสำรวจเท่านั้น จับตาดูให้ดี การผจญภัยให้รางวัลแก่ผู้ที่อยากรู้อยากเห็น!
+crafttext=ในเวิร์กช็อปรูน คุณจะพบทุกสิ่งที่คุณต้องการในการเริ่มต้น รวมเนื้อหากับรูนเริ่มต้นของคุณและรูนพื้นฐานที่คุณสามารถสร้างได้ที่โต๊ะรูน และคุณจะมีเครื่องฉีดรูนที่ใช้งานได้อย่างสมบูรณ์พร้อมที่จะติดตั้ง!

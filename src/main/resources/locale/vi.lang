@@ -1,0 +1,755 @@
+# Translation made by AI
+
+[global]
+aphorea=§!Aphorea Mod
+aphorearework=§!Aphorea Mod Làm lại
+aphoreamightybanner=§!Aphorea Mod x Mighty Banner Mod
+aphoreasummonerexpansion=§!Aphorea Mod x Mở rộng Summoner
+
+
+[buffmodifiers]
+// Magic Healing
+magichealing=<mod>% hồi máu phép
+magichealingflat=<mod> hồi máu phép
+magichealingreceived=<mod>% hồi máu phép nhận được
+magichealingreceivedflat=<mod> hồi máu phép nhận được
+magichealinggrace=<mod>% ân huệ hồi máu phép
+
+// Area
+arearange=<mod>% phạm vi diện tích
+
+// Inspiration Damage
+inspirationdamage=<mod>% sát thương cảm hứng
+inspirationcritchance=<mod>% cơ hội chí mạng cảm hứng
+inspirationcritdamage=<mod>% sát thương chí mạng cảm hứng
+inspirationeffect=<mod>% hiệu ứng cảm hứng
+inspirationabilityspeed=<mod>% tốc độ kỹ năng cảm hứng
+
+// Others
+loyal=Dao găm không bị mất khi ném
+
+
+[stats]
+inspiration_damage=Sát thương cảm hứng
+
+
+[enchantment]
+// Healing Equipment
+godly=Thần thánh
+absent=Vắng mặt
+auxiliary=Phụ trợ
+vain=Vô ích
+gentle=Nhẹ nhàng
+selfish=Ích kỷ
+
+// Healing
+friendly=Thân thiện
+graceful=Duyên dáng
+wonderful=Tuyệt vời
+ecologic=Sinh thái
+exalted=Cao quý
+cursed=Bị nguyền rủa
+
+// Area
+booming=Bùng nổ
+dimmed=Mờ ảo
+
+// Others
+loyal=Trung thành
+
+
+[tile]
+geltile=Sàn Gel
+infectedwatertile=Nước bị nhiễm độc
+infectedgrasstile=Cỏ bị nhiễm độc
+spinelgravel=Sỏi Spinel
+
+
+[tech]
+runes=Runes
+
+
+[object]
+witchstatue=Tượng phù thủy
+runestable=Bàn Rune
+#NEW
+infectedsapling=Cây non bị nhiễm độc
+spinelcluster=Cụm Spinel
+spinelcluster_small=Cụm Spinel nhỏ
+gelrock=Đá Gel
+infectedtree=Cây bị nhiễm độc
+infectedgrass=Cỏ bị nhiễm độc
+spinelchest=Rương Spinel
+fakespinelchest=Rương Spinel giả
+babylontower=Tháp Babylon
+babylonentrance=Lối vào Babylon
+babylonexit=Lối ra Babylon
+infectedtrialentrance=Lối vào thử thách bị nhiễm độc
+infectedchair=Ghế bị nhiễm độc
+infecteddinnertable=Bàn ăn bị nhiễm độc
+infectedbookshelf=Kệ sách bị nhiễm độc
+infectedcabinet=Tủ bị nhiễm độc
+infectedbed=Giường bị nhiễm độc
+infecteddoublebed=Giường đôi bị nhiễm độc
+infectedcandelabra=Chân nến bị nhiễm độc
+
+
+[itemcategory]
+healing=Hồi máu
+healingtools=Dụng cụ hồi máu
+runes=Runes
+runesinjectors=Bộ tiêm Rune
+baserunes=Runes cơ bản
+modifierrunes=Runes bổ trợ
+
+
+[item]
+// General Materials
+anybasicfoci=Bất kỳ tiêu điểm cơ bản nào
+
+// Materials
+rockygel=Gel đá
+unstablegel=Gel không ổn định
+stardust=Bụi sao
+infectedlog=Khúc gỗ bị nhiễm độc
+infectedalloy=Hợp kim bị nhiễm độc
+spinel=Spinel
+lifespinel=Spinel sự sống
+
+// Consumables
+unstablecore=Lõi không ổn định
+initialrune=Rune ban đầu
+venomextract=Chiết xuất nọc độc
+
+// Swords
+gelsword=Kiếm Gel
+unstablegelsword=Kiếm Gel không ổn định
+broom=Chổi
+voidhammer=Búa hư không
+brokenkora=Kora gãy
+thenarcissist=Kẻ tự ái
+cryokatana=Katana băng
+
+// Greatswords
+unstablegelgreatsword=Đại kiếm Gel không ổn định
+babylongreatsword=Đại kiếm Babylon
+
+// Glaives
+woodenrod=Gậy gỗ
+
+// Sabers
+saber=Kiếm cong
+coppersaber=Kiếm cong đồng
+ironsaber=Kiếm cong sắt
+goldsaber=Kiếm cong vàng
+demonicsaber=Kiếm cong quỷ
+unstablegelsaber=Kiếm cong Gel không ổn định
+honeysaber=Kiếm cong mật ong
+glacialsaber=Kiếm cong băng
+crimsonkora=Kora đỏ thẫm
+
+// Battleaxes
+battleaxe=Rìu chiến
+unstablegelbattleaxe=Rìu chiến Gel không ổn định
+demonicbattleaxe=Rìu chiến quỷ
+
+// Daggers
+dagger=Dao găm
+copperdagger=Dao găm đồng
+irondagger=Dao găm sắt
+golddagger=Dao găm vàng
+demonicdagger=Dao găm quỷ
+tungstendagger=Dao găm vonfram
+lostumbrella=Chiếc ô bị mất
+
+// Rapiers
+fossilrapier=Rapier hóa thạch
+lightrapier=Rapier ánh sáng
+
+// Magic weapons
+unstablegelstaff=Gậy Gel không ổn định
+magicalbroom=Chổi ma thuật
+adeptsbook=Sách của người thành thạo
+harpofharmony=Đàn hạc hòa hợp
+babyloncandle=Nến Babylon
+
+// Bows
+spinelcrossbow=Nỏ Spinel
+
+// Guns
+thespammer=Kẻ spam
+
+// Bullets
+spambullet=Đạn spam
+
+// Greatbows
+gelgreatbow=Cung lớn Gel
+unstablegelgreatsword=Cung lớn Gel không ổn định
+
+// Arrows
+gelarrow=Mũi tên Gel
+unstablegelarrow=Mũi tên Gel không ổn định
+
+// Saber Guns
+sabergun=Súng kiếm cong
+shotgunsaber=Súng săn kiếm cong
+
+// Slings
+sling=Ná
+firesling=Ná lửa
+frozensling=Ná băng
+
+// Blowguns
+blowgun=Ống thổi
+
+// Throw weapons
+gelball=Bóng Gel
+gelballgroup=Nhóm bóng Gel
+unstablegelveline=Lao Gel không ổn định
+
+// Summon weapons
+volatilegelstaff=Gậy Gel dễ bay hơi
+infectedstaff=Gậy bị nhiễm độc
+
+// Banners
+blankbanner=Cờ trống
+
+// Healing Tools
+healingtool=Dụng cụ hồi máu
+magicalvial=Lọ ma thuật
+healingstaff=Gậy hồi máu
+woodenwand=Đũa phép gỗ
+goldenwand=Đũa phép vàng
+spinelstaff=Gậy Spinel
+
+// Tools
+superiorpickaxe=Cuốc chim cao cấp
+
+// Trinkets
+rockyperiapt=Bùa hộ mệnh đá
+unstableperiapt=Bùa hộ mệnh không ổn định
+bloodyperiapt=Bùa hộ mệnh đẫm máu
+demonicperiapt=Bùa hộ mệnh quỷ
+abysmalperiapt=Bùa hộ mệnh vực thẳm
+frozenperiapt=Bùa hộ mệnh băng giá
+necromancyperiapt=Bùa hộ mệnh chiêu hồn
+floralring=Nhẫn hoa
+gelring=Nhẫn Gel
+heartring=Nhẫn trái tim
+ringofhealth=Nhẫn sức khỏe
+swampshield=Khiên đầm lầy
+witchmedallion=Huy chương phù thủy
+iceboots=Giày băng
+inspirationfoci=Tiêu điểm cảm hứng
+cursedmedallion=Huy chương bị nguyền rủa
+ancientmedallion=Huy chương cổ đại
+essenceofhealing=Tinh chất hồi máu
+ninjascarf=Khăn quàng ninja
+adrenalinecharm=Bùa hộ mệnh Adrenaline
+spinelshield=Khiên Spinel
+bloomrushcharm=Bùa hộ mệnh bùng nổ
+infectedperiapt=Bùa hộ mệnh bị nhiễm độc
+
+// Armor
+rockyboots=Giày đá
+rockychestplate=Giáp ngực đá
+rockyhelmet=Mũ đá
+goldhat=Mũ vàng
+pinkwitchhat=Mũ phù thủy hồng
+magicalsuit=Bộ đồ ma thuật
+magicalboots=Giày ma thuật
+swampboots=Giày đầm lầy
+swampchestplate=Giáp ngực đầm lầy
+swampmask=Mặt nạ đầm lầy
+swamphood=Mũ trùm đầm lầy
+infectedhat=Mũ bị nhiễm độc
+infectedchestplate=Giáp ngực bị nhiễm độc
+infectedboots=Giày bị nhiễm độc
+spinelhelmet=Mũ Spinel
+spinelhat=Mũ Spinel
+spinelchestplate=Giáp ngực Spinel
+spinelboots=Giày Spinel
+
+// Misc
+gelslimenullifier=Chất vô hiệu hóa Slime Gel
+cuberry=Quả mọng khối
+infectedgrassseed=Hạt cỏ bị nhiễm độc
+
+// Backpacks
+basicbackpack=Ba lô cơ bản
+sapphirebackpack=Ba lô sapphire
+amethystbackpack=Ba lô thạch anh tím
+rubybackpack=Ba lô ruby
+emeraldbackpack=Ba lô ngọc lục bảo
+diamondbackpack=Ba lô kim cương
+
+// Books
+runestutorialbook=Sách hướng dẫn Rune
+
+// Runes Injectors
+runesinjector=Bộ tiêm Rune
+rusticrunesinjector=Bộ tiêm Rune mộc mạc
+unstablerunesinjector=Bộ tiêm Rune không ổn định
+demonicrunesinjector=Bộ tiêm Rune quỷ
+tungstenrunesinjector=Bộ tiêm Rune vonfram
+ancientrunesinjector=Bộ tiêm Rune cổ đại
+
+// Base Runes Tier 0
+baserune=Rune cơ bản
+runeoffury=Rune thịnh nộ
+runeofspeed=Rune tốc độ
+runeofhealing=Rune hồi máu
+runeofresistance=Rune kháng cự
+runeofvalor=Rune dũng cảm
+runeofdetonation=Rune kích nổ
+runeofthunder=Rune sấm sét
+runeofwinter=Rune mùa đông
+runeofshadows=Rune bóng tối
+runeofimmortality=Rune bất tử
+
+// Base Runes Tier 1
+runeofunstablegelslime=Rune của Slime Gel không ổn định
+runeofevilsprotector=Rune của người bảo vệ ác quỷ
+runeofqueenspider=Rune của nữ hoàng nhện
+runeofvoidwizard=Rune của pháp sư hư không
+runeofswampguardian=Rune của người bảo vệ đầm lầy
+runeofancientvulture=Rune của kền kền cổ đại
+runeofpiratecaptain=Rune của thuyền trưởng cướp biển
+runeofchieftain=Rune của tù trưởng
+
+// Base Runes Tier 2
+runeofreaper=Rune của thần chết
+runeofcryoqueen=Rune của nữ hoàng băng giá
+runeofpestwarden=Rune của người canh giữ dịch hạch
+runeofsageandgrit=Rune của nhà hiền triết và lòng dũng cảm
+runeoffallenwizard=Rune của pháp sư sa ngã
+runeofbabylontower=Rune của tháp Babylon
+
+// Base Runes Tier 3
+runeofmotherslime=Rune của mẹ Slime
+runeofnightswarm=Rune của bầy đêm
+runeofspiderempress=Rune của nữ hoàng nhện
+runeofsunlightchampion=Rune của nhà vô địch ánh sáng mặt trời
+runeofmoonlightdancer=Rune của vũ công ánh trăng
+runeofcrystaldragon=Rune của rồng pha lê
+
+// Modifier Runes Tier 0
+modifierrune=Rune bổ trợ
+empoweringrune=Rune tăng cường
+recurrentrune=Rune tái phát
+
+// Modifier Runes Tier 1
+frenzyrune=Rune điên cuồng
+vitalrune=Rune sinh lực
+devastatingrune=Rune tàn phá
+onyxrune=Rune mã não
+pawningrune=Rune cầm đồ
+
+// Modifier Runes Tier 2
+abysmalrune=Rune vực thẳm
+tidalrune=Rune thủy triều
+
+// Modifier Runes Tier 3
+ascendantrune=Rune thăng thiên
+
+
+[itemtooltip]
+// Stat tips
+line=----------------------------------------
+magichealingtip=Hồi máu phép: §7<health>
+rangetip=Phạm vi: §9<range>
+areatip=§aKhu vực <number>
+inspirationdamagetip=Sát thương cảm hứng: <value>
+areabuff=Áp dụng <buff> cho đồng minh
+areadebuff=Áp dụng <buff> cho kẻ thù
+areabuffdisplay=<buff> trong <duration> giây
+attackarmorpentip=Xuyên giáp: <value>%
+
+// Mechanics
+magichealinggrace=§aÂn huệ hồi máu phép:§0 Tự hồi máu bằng một % lượng hồi máu phép dành cho đồng minh
+cursedbuff=§bBị nguyền rủa:§0 §6+25%§0 sát thương nhận vào
+inspiration=§9Cảm hứng:§0 Cải thiện hiệu ứng của cờ và nhạc cụ
+adrenaline=§6Adrenaline:§0 +5% sát thương, -5% giáp. Có thể cộng dồn tối đa 5 lần
+livingsapling=§7Cây non sống:§0 Hồi máu phép cho chủ sở hữu §73§0 mỗi 10 đòn tấn công
+
+// Misc
+gelslimenullifier=Chúng sẽ ngừng làm phiền bạn chỉ bằng một cú nhấp chuột đơn giản!
+enchantingscrollhealingequipmenttip=Dùng để phù phép một trang bị hồi máu với <enchantment>\n§!Aphorea Mod
+enchantingscrollhealingtip=Dùng để phù phép một dụng cụ hồi máu với <enchantment>\n§!Aphorea Mod
+enchantingscrollareatip=Dùng để phù phép một dụng cụ có hiệu ứng diện rộng với <enchantment>\n§!Aphorea Mod
+enchantingscrolldaggertip=Dùng để phù phép một vũ khí dao găm với <enchantment>\n§!Aphorea Mod
+backpack=Đây là một kho đồ mới chứa tất cả các vật phẩm bạn thu thập được
+backpackslots=Sức chứa <slots> vật phẩm
+stored=Vật phẩm được lưu trữ: <items>
+backpackcraft=Phải trống để chế tạo một chiếc ba lô tốt hơn
+
+// Consumables
+deleteditem=Vật phẩm này đã bị xóa, hãy sử dụng vật phẩm này để phục hồi nguyên liệu trước khi nó bị xóa vĩnh viễn
+unstablecore=§bGiải phóng một luồng khí không ổn định...§0 Chỉ có thể sử dụng vào ban ngày
+venomextractbuff=Lowd bảo uống đi, đừng làm vậy
+venomextractbuffdesc=Bạn không thể có nhiều hơn 1 HP
+lifespinel=Tăng vĩnh viễn máu tối đa thêm 5, lên đến 320
+
+// General Weapons
+spinsecondaryattack=Nhấn [input=mouse2] để đòn tấn công tiếp theo là đòn tấn công diện rộng
+areasecondaryattack=Nhấn [input=mouse2] để thực hiện một đòn tấn công diện rộng tiêu tốn <mana> mana
+stikybuff1=Làm cho kẻ thù dính trong 1 giây
+stikybuff2=Làm cho kẻ thù dính trong 2 giây
+stikybuff3=Làm cho kẻ thù dính trong 3 giây
+projectilearea=Khi đạn kết thúc, nó gây sát thương diện rộng
+
+// Melee Weapons
+saber=Sạc đầy để gây sát thương tối đa và tung ra một nhát chém không khí
+saberdash=Giữ [input=mouse2] để sạc một cú lướt để chém xuyên qua kẻ thù
+battleaxe=Mất nhiều thời gian để sạc
+battleaxe2=Nhấn [input=mouse2] để kích hoạt Cơn thịnh nộ của Berserker và nhận tạm thời 3 Adrenaline
+battleaxe3=Nhận Adrenaline tạm thời bằng cách đánh kẻ thù trong Cơn thịnh nộ, cải thiện tốc độ di chuyển và tấn công
+dagger=Giữ [input=mouse2] để ném dao găm
+
+// Range Weapons
+sling=Ném đá bằng lực
+sling2=§7100%§0 cơ hội làm choáng kẻ thù trong 0.5 giây
+twoarrows=Bắn hai mũi tên cùng một lúc
+threearrows=Bắn ba mũi tên cùng một lúc
+blowgun=Bắn hạt
+
+// Single Melee Weapons
+woodenrod=Tự hồi máu phép §7<healing>§0 mỗi 10 đòn tấn công
+voidhammer=Khi đạn nảy hoặc trúng kẻ thù, nó sẽ nhắm vào kẻ thù gần nhất, trúng tối đa 3 lần
+crimsonkora=Giữ [input=mouse2] để sạc một đòn tấn công tàn khốc nhưng chậm
+thenarcissist=Chuỗi 4 đòn tấn công để tung ra một cú ném kiếm xoay tròn ở đòn thứ năm!\n+20% sát thương cho mỗi đòn tấn công trong chuỗi
+
+// Single Range Weapons
+firesling=Đốt cháy kẻ thù
+frozensling=Đóng băng kẻ thù
+gelgreatbow=Biến mũi tên đá thành mũi tên Gel
+unstablegelgreatbow=Biến mũi tên đá và mũi tên Gel thành mũi tên Gel không ổn định
+thespammer=Có thể bắn đạn spam
+shotgunsaber=Nhắm gần trung tâm để có những phát bắn mạnh hơn, chính xác hơn và xuyên thấu hơn
+honeysaber=Sạc đầy để gây sát thương tối đa và bắn mật ong và quả việt quất
+spinelcrossbow=Bắn ra những mũi tên xuyên qua tối đa 2 kẻ thù, trở nên nguy hiểm hơn sau mỗi lần xuyên
+spinelcrossbow2=Giữ [input=mouse2] để bắn 3 mũi tên cùng một lúc
+
+// Single Magic Weapons
+unstablegelstaff=Khi đạn nảy khỏi tường, chúng sẽ nhân đôi
+harpofharmony=Hòa hợp: Tăng tốc độ, hồi máu và hồi mana
+
+// Single Summoner Weapons
+infectedstaff=Triệu hồi hai cây non sống mỗi lần triệu hồi
+
+// Single Throwable Weapons
+gelball=Ném một quả bóng Gel
+
+// Single Magic Healing Tools
+magicalvial=Chỉ vào một người bị thương để chữa lành cho họ, không chỉ vào ai để tự chữa lành
+magicalvial2=Sử dụng vô hạn
+
+// Ammo
+spambullet=Ngẫu nhiên có một trong những hiệu ứng sau:
+spambullet1=§9Buồn:§0 Kẻ thù bị tấn công trở nên dính, làm chậm chúng trong 5 giây
+spambullet2=§9Lửa:§0 Thay vì va chạm, để lại một vũng lửa trên mặt đất
+spambullet3=§9Thích:§0 Nảy khỏi tường và xuyên qua mob, tối đa 10 lần mỗi lần
+spambullet4=§9Kiểm tra:§0 Khu vực hồi máu phép 3 máu ở cuối đường đi của nó
+spambullet5=§9Nổ:§0 Nổ ở cuối đường đi của nó thay vì va chạm
+
+// Tiles
+geltile=Sàn dính làm chậm đáng kể mọi thứ trên đó
+
+// Objects
+witchstatue=Đặt bức tượng này trên bề mặt của một đầm lầy sẽ loại bỏ sự xuất hiện của phù thủy trên khắp hòn đảo
+
+// Generic Trinkets
+areawhenheal=Thực hiện khu vực này cho mỗi <magichealing> hồi máu phép được thực hiện
+periaptboost=Nhấn [input=trinketability] để nhận được sự tăng tốc và tốc độ tấn công trong 10 giây
+
+// Trinkets
+rockyperiapt=§7+5§0 giáp, nhưng §6-5%§0 tốc độ di chuyển
+rockyperiapt2=Nhấn [input=trinketability] để nhận 10 giáp trong 10 giây
+unstableperiapt=Triệu hồi hai Slime Gel không ổn định con (6 sát thương triệu hồi)
+unstableperiapt2=Làm cho bạn miễn nhiễm với hiệu ứng xấu dính
+bloodyperiapt=Ngoài ra, vũ khí 'Mũi tên máu' và 'Loạt đạn máu' sẽ hút §73%§0 máu
+demonicperiapt=Ngoài ra, vũ khí phép thuật sẽ hút §73%§0 máu
+necromancyperiapt=Mỗi khi bạn hoặc một trong những triệu hồi của bạn giết một mob thù địch, bạn sẽ triệu hồi một bộ xương bất tử
+necromancyperiapt2=20 sát thương triệu hồi. Kéo dài 10 giây và có thể có tối đa 3 con cùng một lúc
+frozenperiapt=Vũ khí cận chiến và tầm xa sẽ đóng băng trong 3 giây
+frozenperiapt2=Gây nhiều sát thương hơn cho mob bị ảnh hưởng bởi đóng băng
+frozenperiapt3=Làm cho bạn miễn nhiễm với hiệu ứng xấu đóng băng và làm chậm do băng
+floralring=Tự hồi máu phép §7<healing>§0 mỗi 5 giây
+gelring=§7+30%§0 hồi máu phép nhận được
+heartring=§7+20§0 máu tối đa
+swampshield=Chỉ bảo vệ các đòn tấn công theo hướng chúng được nhận
+swampshield2=Khi chặn hoàn hảo: Tự hồi máu phép bằng §7<healing>§0 máu tối đa của bạn
+iceboots=Làm cho bạn trượt như thể bạn đang ở trên băng, nhưng cấp +50% tốc độ di chuyển và +4 giáp
+inspirationfoci1=§7+40%§0 hiệu ứng cảm hứng và §7+20%§0 tốc độ kỹ năng cảm hứng
+inspirationfoci2=§6-20%§0 tất cả sát thương không phải cảm hứng và §6-1§0 triệu hồi tối đa
+essenceofhealing=§7+<percent>%§0 hồi máu phép mỗi tinh chất sự sống
+essenceofhealing2=§7<flat>§0 hồi máu phép mỗi 2 tinh chất sự sống
+essenceofhealing3=§6-80%§0 thời gian tồn tại của tinh chất sự sống, giới hạn ở -50%
+ninjascarf=Chuyển đổi các cú lướt của kiếm cong thành các cú nhảy của kiếm cong
+adrenalinecharm=Mỗi đòn đánh nhận được sẽ cho bạn Adrenaline trong 20 giây
+infectedperiapt=Triệu hồi hai cây non sống (8 sát thương triệu hồi)
+bloomrushcharm=Giảm 10% mức sử dụng thể lực cho mỗi Adrenaline bạn có\nTriệu hồi một cây non sống (8 sát thương triệu hồi) cho mỗi Adrenaline bạn có
+
+// Set Bonus
+goldhatsetbonus=Nếu bạn đứng yên, tốc độ tấn công tầm xa của bạn sẽ tăng đáng kể
+pinkwitchsetbonus=Tăng tốc độ tấn công phép, hồi mana và giáp khi máu của bạn càng thấp
+infectedsetbonus=Triệu hồi ba cây non sống (8 sát thương triệu hồi)
+spinelhelmetsetbonus=Tự hồi máu phép bằng §7<healing>§0 sát thương cận chiến gây ra cho mob thù địch
+spinelhatsetbonus=Tự hồi máu phép và tất cả các đồng minh ở gần\nbằng §7<healing>§0 sát thương phép gây ra cho mob thù địch
+
+// Banners
+strikebannereffect=§7+<effect>%§0 hồi máu (trong và ngoài trận chiến)
+strikebannerability=§aMỗi <time> giây:§0 Thực hiện một đòn tấn công diện rộng
+blankbannereffect=§7+<effect>%§0 hồi máu (ngoài trận chiến)
+blankbannerability=§aMỗi <time> giây:§0 Thực hiện một lần hồi máu diện rộng
+bannerofdamageeffect=§7+<effect>%§0 sát thương
+bannerofdefenseeffect=§7-<effect>%§0 sát thương nhận vào
+bannerofspeedeffect=§7+<effect>%§0 tốc độ di chuyển
+bannerofsummonspeedeffect=§7+<effect>%§0 tốc độ di chuyển của triệu hồi
+
+// Mighty Banners
+banneroffishingeffect=§7+<effect>§0 sức mạnh câu cá
+bannerofhealthregeneffect=§7+<effectfloat>§0 hồi máu trong trận chiến
+bannerofmanaregeneffect=§7+<effect>%§0 hồi mana trong trận chiến
+bannerofresistanceeffect=§7+<effect>§0 giáp
+bannerofsummoningeffect=§7+<effect>§0 triệu hồi tối đa
+bannerofattackspeedeffect=§7+<effect>%§0 tốc độ tấn công
+
+// Summoner Expansion Banners
+bannerofresilienceeffect=§7+<effect>%§0 khả năng phục hồi tối đa\nHồi §7+<effect>§0 khả năng phục hồi mỗi giây
+bannerofbouncingeffect=§7+<effect>§0 lần nảy của đạn
+bannerofessenceeffect=§7+<effect>%§0 thời gian tồn tại của tinh chất sự sống
+bannerofstaminaeffect=§7+<effect>%§0 dung lượng thể lực\n§7+<effect2>%§0 hồi thể lực\n§7-<effect2>%§0 mức sử dụng thể lực
+bannerofpickingeffect=§7+<effectfloat>§0 phạm vi nhặt
+bannerofdashingeffect=§7+<effect>§0 cộng dồn lướt\n§7-<effect2>%§0 thời gian hồi lướt
+bannerofmanaeffect=§7+<effect>%§0 mana tối đa\n§7<effect2>%§0 hồi mana
+
+// Runes (General)
+baserune=§iRune cơ bản
+modifierrune=§aRune bổ trợ
+linkedrune=§bRune được liên kết với [<player>]
+notruneowner=Bạn không phải là chủ sở hữu của Rune cơ bản
+runesslots=Có thể lắp tối đa 1 Rune cơ bản + <modifierslots> Rune bổ trợ
+useruneinfusor=[input=runesinjectorability] để kích hoạt
+requiresbaserune=Yêu cầu một Rune cơ bản được lắp
+onlyonebaserune=Chỉ có thể lắp một Rune cơ bản tại một thời điểm
+duplicatedmodifierrunes=Không thể lắp nhiều hơn một Rune bổ trợ giống nhau
+runehealthcost=Tiêu tốn <health>% máu tối đa khi kích hoạt
+runehealthhealing=Phục hồi <health>% máu tối đa khi sử dụng
+runecooldown=Sạc lại sau <seconds> giây
+increaseruneeffectnumber=Tăng hiệu ứng lên §7<variation>%§0
+decreaseruneeffectnumber=Giảm hiệu ứng đi §6<variation>%§0
+increaserunecooldown=Tăng thời gian hồi chiêu lên §6<variation>%§0
+decreaserunecooldown=Giảm thời gian hồi chiêu đi §7<variation>%§0
+increaserunehealthcost=Tăng mức tiêu thụ máu tối đa lên §6<health>%§0
+increaserunehealthhealing=Tăng khả năng phục hồi máu tối đa lên §7<health>%§0
+runedamagereduction=Sát thương bị giảm đáng kể đối với con người và thậm chí còn nhiều hơn đối với trùm
+runedamagereductionnoboss=Sát thương bị giảm đáng kể đối với con người và không ảnh hưởng đến trùm
+moreextraeffectmod=Các sửa đổi hiệu ứng hiệu quả hơn <mod>%
+lessextraeffectmod=Các sửa đổi hiệu ứng kém hiệu quả hơn <mod>%
+
+// Runes Injectors
+
+// Base Runes Tier 0
+runeoffury=Tăng sát thương và tốc độ tấn công của bạn lên §7<effectNumber>§0% trong 10 giây
+runeofspeed=Lướt với sức mạnh §7<effectNumber>§0 theo hướng bạn đang di chuyển và trở nên bất khả xâm phạm trong 0.5 giây
+runeofresistance=Tăng giáp của bạn lên §7<effectNumber>§0% trong 10 giây
+runeofresistance2=Trong khi hồi chiêu, giáp của bạn bị giảm đi một nửa
+runeofvalor=+200% cảm hứng trong §7<effectNumber>§0 giây
+runeofdetonation=Nổ, gây nhiều sát thương hơn và đẩy lùi kẻ thù càng gần chúng
+runeofdetonation2=Sát thương tối đa là §7<effectNumber>§0% máu tối đa của mob
+runeofthunder=Sau hai giây, một tia sét đánh vào vị trí ban đầu của con trỏ của bạn
+runeofthunder2=Tia sét gây sát thương §7<effectNumber>§0% máu của mob và làm choáng trong 2 giây
+runeofwinter=Làm chậm kẻ thù bằng băng trong phạm vi 500 trong §7<effectNumber>§0 giây
+runeofimmortality=Nếu bạn chết trong vòng §7<effectNumber>§0 giây tới, bạn sẽ sống sót với máu tối đa
+runeofimmortality2=Nếu điều này xảy ra, bạn sẽ bất khả xâm phạm trong 3 giây, nhưng thời gian hồi chiêu sẽ là 30 giây
+runeofimmortality3=Trong khi hồi chiêu, máu tối đa của bạn bị giảm đi một nửa
+runeofshadows=Trong §7<effectNumber>§0 giây, bạn sẽ trở nên vô hình nhưng cũng bị đe dọa, ngăn cản bạn thực hiện bất kỳ hành động nào
+
+// Base Runes Tier 1
+runeofunstablegelslime=Dịch chuyển đến một vị trí gần đó và triệu hồi 2 Slime Gel không ổn định có rune trong §7<effectNumber>§0 giây
+runeofunstablegelslime2=Các triệu hồi sẽ gây sát thương bằng 5% máu tối đa của mob
+runeofevilsprotector=+§7<effectNumber>§0% tốc độ tấn công, nhưng -50% tốc độ di chuyển trong 10 giây
+runeofevilsprotector2=Vào ban đêm trên bề mặt, hiệu ứng tích cực được nhân đôi
+runeofqueenspider=Để lại một mạng nhện trên mặt đất trong §7<effectNumber>§0 giây
+runeofvoidwizard=Tất cả các đạn sẽ nảy vô hạn và +§7<effectNumber>§0% tốc độ đạn trong 10 giây
+runeofswampguardian=Giảm 80% tất cả sát thương nhận vào trong §7<effectNumber>§0 giây
+runeofancientvulture=Triệu hồi một con kền kền có rune trong 10 giây
+runeofancientvulture2=Triệu hồi sẽ gây sát thương §7<effectNumber>§0% máu tối đa của mob
+runeofpiratecaptain=Tăng sát thương của bạn lên §7<effectNumber>§0% cho mỗi 200 xu bạn có, tối đa 20.000 xu
+runeofpiratecaptain2=Mỗi khi bạn tấn công, bạn sẽ mất 3 xu
+runeofchieftain=Trong 20 giây tới, sát thương của bạn tăng lên khi máu của bạn càng thấp, tối đa +§7<effectNumber>§0%
+
+// Base Runes Tier 2
+runeofreaper=Dịch chuyển đến vị trí của chuột của bạn. Khoảng cách tối đa §7<effectNumber>§0
+runeofcryoqueen=Dừng lại trong 1 giây và tung ra một đòn tấn công băng xung quanh bạn với phạm vi §7<effectNumber>§0
+runeofcryoqueen2=Các đạn sẽ gây sát thương 200% máu tối đa của mob
+runeofpestwarden=Trong §7<effectNumber>§0 giây tới, va chạm với kẻ thù sẽ gây sát thương và đẩy chúng
+runeofpestwarden2=Sát thương là 20% máu tối đa của chúng
+runeofsageandgrit=Nếu có đồng minh bị thương ở gần (phạm vi 500), hãy chữa lành §7<effectNumber>§0% tổng số máu của họ
+runeofsageandgrit2=Nếu không, hãy tăng sát thương, tốc độ tấn công và tốc độ di chuyển của bạn lên +§7<effectNumber>§0% trong 20 giây
+runeoffallenwizard=Làm choáng tất cả các mob ngoại trừ bạn trong §7<effectNumber>§0 giây
+runeoffallenwizard2=Con người sẽ thoát ra nhanh hơn, và trùm thậm chí còn nhanh hơn
+runeofbabylontower=+§7<effectNumber>§0% tất cả sát thương, nhưng bạn không thể di chuyển. 10 giây
+
+// Base Runes Tier 3
+runeofmotherslime=Thực hiện một cú nhảy lớn về phía vị trí chuột của bạn và gây sát thương diện rộng khi hạ cánh
+runeofmotherslime2=Việc hạ cánh sẽ gây sát thương §7<effectNumber>§0% máu tối đa của mob
+runeofnightswarm=Triệu hồi 5 con dơi trong §7<effectNumber>§0 giây để tìm kiếm mob thù địch để cắn chúng
+runeofnightswarm2=Mỗi cú cắn phục hồi 1% tổng số máu của bạn (ít nhất là 1)
+runeofspiderempress=Ném §7<F0effectNumber>§0 quả bóng mạng nhện theo hướng chuột của bạn
+runeofspiderempress2=Các quả bóng mạng nhện sẽ làm choáng trong 3 giây và làm chậm trong 10 giây
+runeofsunlightchampion=Bị choáng trong 3 giây để sạc một nova có phạm vi §7<effectNumber>§0
+runeofsunlightchampion2=Nova sẽ gây sát thương 200% máu tối đa của mob
+runeofmoonlightdancer=+§7<effectNumber>§0% sát thương cho mỗi +1% tốc độ di chuyển trong 10 giây
+runeofcrystaldragon=Ném một tia laze vào vị trí con trỏ của bạn trong 5 giây
+runeofcrystaldragon2=Tia laze sẽ gây sát thương §7<effectNumber>§0% máu tối đa của mob
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+onyxrune=Khi được kích hoạt, triệu hồi Onyx trong 5 giây. Nó sẽ gây sát thương dựa trên 5% máu của mob
+onyxrune2=Mỗi cú cắn của Onyx phục hồi 1% tổng số máu của bạn (ít nhất là 1)
+onyxrune3=§3Cảm ơn Onyx vì những ý tưởng rune tuyệt vời! <3
+pawningrune=Khi được kích hoạt, nếu bạn chưa có hiệu ứng, ngay lập tức phục hồi 20% máu tối đa của bạn
+pawningrune2=Sau 10 giây, bạn sẽ mất số lượng đã phục hồi cộng thêm 40%
+
+// Modifier Runes Tier 2
+abysmalrune=Khi được kích hoạt, triệu hồi một lỗ đen tại vị trí con trỏ của bạn, hút kẻ thù vào trong 2 giây
+abysmalrune2=Lỗ đen sẽ chỉ được triệu hồi nếu đã trôi qua 10 giây kể từ lần kích hoạt cuối cùng
+tidalrune=Khi được kích hoạt, triệu hồi một làn sóng nước đẩy lùi kẻ thù
+
+// Modifier Runes Tier 3
+
+
+[mobtooltip]
+usenet=Sử dụng lưới! [item=net]
+
+
+[mob]
+// Hostile
+gelslime=Slime Gel
+rockygelslime=Slime Gel đá
+unstablegelslime=Slime Gel không ổn định
+miniunstablegelslime=Slime Gel không ổn định mini
+pinkwitch=Phù thủy hồng
+voidadept=Adept hư không
+copperdaggergoblin=Goblin dao găm đồng
+irondaggergoblin=Goblin dao găm sắt
+golddaggergoblin=Goblin dao găm vàng
+infectedtreant=Treant bị nhiễm độc
+spinelgolem=Golem Spinel
+spinelcaveling=Người hang động Spinel
+tungstencaveling=Người hang động vonfram
+spinelmimic=Mimic Spinel
+babylontower=Tháp Babylon
+hearthcrystal=Pha lê lò sưởi
+babylon=Babylon
+
+// Friendly
+wildphosphorslime=Slime phốt pho hoang dã
+
+// Summon
+babyunstablegelslime=Slime Gel không ổn định con
+undeadskeleton=Bộ xương bất tử
+volatilegelslime=Slime Gel dễ bay hơi
+runicunstablegelslime=Slime Gel không ổn định có rune
+runicvulturehatchling=Kền kền con có rune
+runicbat=Dơi có rune
+onyx=Onyx
+livingsapling=Cây non sống
+
+// Pet
+petphosphorslime=Slime phốt pho
+
+
+[buff]
+// Common Buffs
+stunbuff=Choáng
+fallenstunbuff=Choáng ngã
+stickybuff=Dính
+stopbuff=Dừng lại
+honeyedbuff=Ngọt ngào
+venomextractbuff=Chiết xuất nọc độc
+cursedbuff=Bị nguyền rủa
+adrenalinebuff=Adrenaline
+harmonybuff=Hòa hợp
+
+// Active Buffs
+berserkerrushactive=Cơn thịnh nộ của Berserker đang hoạt động
+periaptactive=Kỹ năng bùa hộ mệnh đang hoạt động
+runesinjectoractive=Bộ tiêm Rune đang hoạt động
+
+// Cooldown Buffs
+berserkerrushcooldown=Cơn thịnh nộ của Berserker đang hồi chiêu
+periaptcooldown=Kỹ năng bùa hộ mệnh đang hồi chiêu
+runesinjectorcooldown=Bộ tiêm Rune đang hồi chiêu
+spinattackcooldown=Đòn tấn công xoay tròn đang hồi chiêu
+saberdashcooldown=Cú lướt của kiếm cong đang hồi chiêu
+
+
+[message]
+unstablegelslime_anger=§6Slime Gel không ổn định đang tức giận... <anger>/10
+unstablegelslime_fullanger=§6Slime Gel không ổn định đã tức giận! <anger>/10
+unstablegelslime_night=§6Slime Gel không ổn định§0 đã biến mất khi màn đêm buông xuống!
+gelslimesnulled=Slime Gel trong thế giới này đã bị vô hiệu hóa. Chúng sẽ không xuất hiện nữa
+gelslimesunnulled=Slime Gel trong thế giới này đã được thừa nhận. Bây giờ chúng sẽ xuất hiện
+pinkwitchesnulled=Phù thủy hồng trong (<x>, <y>) đã bị vô hiệu hóa
+pinkwitchesunnulled=Phù thủy hồng trong (<x>, <y>) đã được thừa nhận
+needfreeslots=Bạn cần <slots> ô trống trong kho đồ để sử dụng vật phẩm này
+cantuseatnight=Không thể sử dụng vào ban đêm
+healthalreadyfull=Máu đã đầy
+cantheal=Không thể chữa lành
+insuficienthealth=Không đủ máu để thực hiện hành động này!
+cannottrhowlockeditem=Bạn không thể ném một vật phẩm bị khóa trong kho đồ
+initialrunetip=Chọn Rune ban đầu của bạn một cách cẩn thận;\nbạn sẽ không nhận được những Rune khác cho đến sau này trong trò chơi
+alreadyselectedinitialrune=Đã chọn Rune ban đầu
+cannotusetrial=Không thể sử dụng trong phòng thử thách
+
+[biome]
+infectedfields=Cánh đồng bị nhiễm độc
+
+
+[journal]
+
+//Levels
+infectedfieldssurface=Bề mặt cánh đồng bị nhiễm độc
+infectedfieldscave=Hang động cánh đồng bị nhiễm độc
+
+// Forest Surface Challenges
+killgelslimesforest=[mob=gelslime] Giết 25 Slime Gel trong rừng
+pickupfloralring=[item=floralring] Cắt nhiều cỏ trong rừng để nhận được Nhẫn hoa
+killunstablegelslime=[mob=unstablegelslime] Giết 1 Slime Gel không ổn định
+
+// Swamp Surface Challenges
+killpinkwitchesswamp=[mob=pinkwitch] Vào ban đêm, giết 5 Phù thủy hồng trên bề mặt đầm lầy
+
+// Infected Fields Surface Challenges
+pickupinfectedlogs=[item=infectedlog] Chặt để nhặt 100 Khúc gỗ bị nhiễm độc
+
+// Infected Fields Cave Challenges
+pickupspinel=[item=spinel] Nhặt 40 Spinel
+activatebabylontower=[item=lifespinel] Đặt một Spinel sự sống lên Tháp Babylon
+findthespammer=[item=thespammer] Tìm kẻ spam
+
+
+[controls]
+runesinjectorability=Kỹ năng của Bộ tiêm Rune
+
+
+[runestutorialbook]
+openheader=Mở Bộ tiêm Rune
+opentext=Để sử dụng Rune, bạn sẽ cần một Bộ tiêm Rune. Các thiết bị đặc biệt này có thể được mở để lắp Rune. Mỗi bộ tiêm có một khe cho một Rune cơ bản và nhiều khe cho các Rune bổ trợ, tùy thuộc vào dung lượng của nó. Bạn có thể tự do thêm bao nhiêu Rune bổ trợ mà bộ tiêm cho phép, hãy thử nghiệm để tìm ra sự kết hợp tốt nhất!
+equipheader=Trang bị Bộ tiêm
+equiptext=Để kích hoạt Rune của bạn, Bộ tiêm Rune phải được trang bị trong một khe trang sức. Sau khi trang bị, chỉ cần nhấn G (hoặc phím được gán trong cài đặt) để kích hoạt hiệu ứng của nó. Hãy chắc chắn rằng bộ tiêm được cấu hình đúng cách và sẵn sàng trước khi hành động!
+
+runesheader=Rune là gì?
+runestext=Rune là những viên đá thần bí mang lại hiệu ứng mạnh mẽ khi được lắp vào Bộ tiêm Rune. Sức mạnh và hành vi của chúng phụ thuộc vào cách chúng được kết hợp, việc thành thạo cách sử dụng chúng là chìa khóa để mở khóa toàn bộ tiềm năng của bạn.
+baserunesheader=Runes cơ bản
+baserunestext=Mỗi Bộ tiêm Rune yêu cầu chính xác một Rune cơ bản để hoạt động. Rune cơ bản xác định hiệu ứng chính của bộ tiêm và hoạt động như lõi của thiết lập của bạn. Bạn sẽ nhận thấy một con số màu xanh lá cây bên cạnh hiệu ứng, con số này thể hiện giá trị hiệu ứng của nó, có thể được tăng hoặc giảm bằng các bổ trợ.
+modifierrunesheader=Runes bổ trợ
+modifierrunestext=Runes bổ trợ được sử dụng để tùy chỉnh và tăng cường hiệu ứng của Rune cơ bản của bạn. Chúng có thể điều chỉnh giá trị hiệu ứng, thay đổi hành vi của nó hoặc thêm các thuộc tính đặc biệt. Tuy nhiên, các Rune bổ trợ luôn đi kèm với sự đánh đổi: không có bổ trợ nào hoàn toàn có lợi, vì vậy hãy chọn một cách khôn ngoan!
+
+tableheader=Bàn Rune
+tabletext=Bàn Rune là trạm chính của bạn để chế tạo nhiều loại Rune. Hầu hết các Rune tiêu chuẩn đều có thể được chế tạo ở đây, nhưng hãy nhớ: một số Rune mạnh mẽ chỉ có thể được tìm thấy thông qua việc khám phá. Hãy mở to mắt, cuộc phiêu lưu sẽ thưởng cho những người tò mò!
+crafttext=Trong Xưởng Rune, bạn sẽ tìm thấy mọi thứ bạn cần để bắt đầu. Kết hợp nội dung với Rune ban đầu của bạn và một Rune cơ bản mà bạn có thể chế tạo tại Bàn Rune, và bạn sẽ có một Bộ tiêm Rune hoạt động đầy đủ sẵn sàng để trang bị!

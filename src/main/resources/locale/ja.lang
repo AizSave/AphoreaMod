@@ -1,0 +1,653 @@
+# Translation made by AI
+
+[global]
+aphorea=§!Aphorea Mod
+aphorearework=§!Aphorea Mod Rework
+aphoreamightybanner=§!Aphorea Mod x Mighty Banner Mod
+aphoreasummonerexpansion=§!Aphorea Mod x Summoner Expansion
+
+
+[buffmodifiers]
+// Magic Healing
+magichealing=<mod>% の魔法回復
+magichealingflat=<mod> の魔法回復
+magichealingreceived=<mod>% の魔法回復受け取り
+magichealingreceivedflat=<mod> の魔法回復受け取り
+magichealinggrace=<mod>% の魔法回復の猶予
+
+// Area
+arearange=<mod>% の範囲
+
+// Inspiration Damage
+inspirationdamage=<mod>% のインスピレーションダメージ
+inspirationcritchance=<mod>% のインスピレーションクリティカル率
+inspirationcritdamage=<mod>% のインスピレーションクリティカルダメージ
+inspirationeffect=<mod>% のインスピレーション効果
+inspirationabilityspeed=<mod>% のインスピレーションアビリティ速度
+
+// Others
+loyal=投げてもダガーは失われない
+
+
+[stats]
+inspiration_damage=インスピレーションダメージ
+
+
+[enchantment]
+// Healing Equipment
+godly=神々しい
+absent=欠席
+auxiliary=補助
+vain=無駄な
+gentle=優しい
+selfish=利己的
+
+// Healing
+friendly=フレンドリー
+graceful=優雅な
+wonderful=素晴らしい
+ecologic=生態学的
+exalted=高貴な
+cursed=呪われた
+
+// Area
+booming=活況
+dimmed=薄暗い
+
+// Others
+loyal=忠実な
+
+
+[tile]
+geltile=ゲル床
+infectedwatertile=感染した水
+infectedgrasstile=感染した草
+spinelgravel=スピネル砂利
+
+
+[tech]
+runes=ルーン
+
+
+[object]
+witchstatue=魔女の像
+runestable=ルーンテーブル
+#NEW
+infectedsapling=感染した苗木
+spinelcluster=スピネルクラスター
+spinelcluster_small=小さなスピネルクラスター
+gelrock=ゲルロック
+infectedtree=感染した木
+infectedgrass=感染した草
+spinelchest=スピネルチェスト
+fakespinelchest=偽のスピネルチェスト
+babylontower=バビロンの塔
+babylonentrance=バビロンの入り口
+babylonexit=バビロンの出口
+infectedtrialentrance=感染した試練の入り口
+infectedchair=感染した椅子
+infecteddinnertable=感染した食卓
+infectedbookshelf=感染した本棚
+infectedcabinet=感染したキャビネット
+infectedbed=感染したベッド
+infecteddoublebed=感染したダブルベッド
+infectedcandelabra=感染した燭台
+
+
+[itemcategory]
+healing=回復
+healingtools=回復ツール
+runes=ルーン
+runesinjectors=ルーンインジェクター
+baserunes=ベースルーン
+modifierrunes=修飾ルーン
+
+
+[item]
+// General Materials
+anybasicfoci=任意の基本焦点
+
+// Materials
+rockygel=岩のゲル
+unstablegel=不安定なゲル
+stardust=星屑
+infectedlog=感染した丸太
+infectedalloy=感染した合金
+spinel=スピネル
+lifespinel=ライフスピネル
+
+// Consumables
+unstablecore=不安定なコア
+initialrune=初期ルーン
+venomextract=毒エキス
+
+// Swords
+gelsword=ゲルソード
+unstablegelsword=不安定なゲルソード
+broom=ほうき
+voidhammer=ヴォイドハンマー
+brokenkora=壊れたコラ
+thenarcissist=ナルシスト
+cryokatana=クライオカタナ
+
+// Greatswords
+unstablegelgreatsword=不安定なゲルグレートソード
+babylongreatsword=バビロングレートソード
+
+// Glaives
+woodenrod=木の棒
+
+// Sabers
+saber=サーベル
+coppersaber=銅のサーベル
+ironsaber=鉄のサーベル
+goldsaber=金のサーベル
+demonicsaber=悪魔のサーベル
+unstablegelsaber=不安定なゲルのサーベル
+honeysaber=ハニーサーベル
+glacialsaber=氷河のサーベル
+crimsonkora=クリムゾンコラ
+
+// Battleaxes
+battleaxe=バトルアックス
+unstablegelbattleaxe=不安定なゲルバトルアックス
+demonicbattleaxe=悪魔のバトルアックス
+
+// Daggers
+dagger=ダガー
+copperdagger=銅のダガー
+irondagger=鉄のダガー
+golddagger=金のダガー
+demonicdagger=悪魔のダガー
+tungstendagger=タングステンダガー
+lostumbrella=失われた傘
+
+// Rapiers
+fossilrapier=化石のレイピア
+lightrapier=ライトレイピア
+
+// Magic weapons
+unstablegelstaff=不安定なゲルスタッフ
+magicalbroom=魔法のほうき
+adeptsbook=達人の本
+harpofharmony=調和のハープ
+babyloncandle=バビロンのろうそく
+
+// Bows
+spinelcrossbow=スピネルクロスボウ
+
+// Guns
+thespammer=スパマー
+
+// Bullets
+spambullet=スパム弾
+
+// Greatbows
+gelgreatbow=ゲルグレートボウ
+unstablegelgreatbow=不安定なゲルグレートボウ
+
+// Arrows
+gelarrow=ゲルアロー
+unstablegelarrow=不安定なゲルアロー
+
+// Saber Guns
+sabergun=サーベルガン
+shotgunsaber=ショットガンサーベル
+
+// Slings
+sling=スリング
+firesling=ファイアスリング
+frozensling=フローズンスリング
+
+// Blowguns
+blowgun=吹き矢
+
+// Throw weapons
+gelball=ゲルボール
+gelballgroup=グループ化されたゲルボール
+unstablegelveline=不安定なゲルベリン
+
+// Summon weapons
+volatilegelstaff=揮発性ゲルスタッフ
+infectedstaff=感染したスタッフ
+
+// Banners
+blankbanner=空白のバナー
+
+// Healing Tools
+healingtool=回復ツール
+magicalvial=魔法の小瓶
+healingstaff=回復スタッフ
+woodenwand=木の杖
+goldenwand=金の杖
+spinelstaff=スピネルスタッフ
+
+// Tools
+superiorpickaxe=優れたツルハシ
+
+// Trinkets
+rockyperiapt=岩のお守り
+unstableperiapt=不安定なお守り
+bloodyperiapt=血まみれのお守り
+demonicperiapt=悪魔のお守り
+abysmalperiapt=奈落のお守り
+frozenperiapt=凍ったお守り
+necromancyperiapt=ネクロマンシーのお守り
+floralring=花の指輪
+gelring=ゲルの指輪
+heartring=ハートの指輪
+ringofhealth=健康の指輪
+swampshield=沼の盾
+witchmedallion=魔女のメダリオン
+iceboots=アイスブーツ
+inspirationfoci=インスピレーションの焦点
+cursedmedallion=呪われたメダリオン
+ancientmedallion=古代のメダリオン
+essenceofhealing=回復のエッセンス
+ninjascarf=忍者スカーフ
+adrenalinecharm=アドレナリンチャーム
+spinelshield=スピネルシールド
+bloomrushcharm=ブルームラッシュチャーム
+infectedperiapt=感染したお守り
+
+// Armor
+rockyboots=岩のブーツ
+rockychestplate=岩のチェストプレート
+rockyhelmet=岩のヘルメット
+goldhat=金の帽子
+pinkwitchhat=ピンクの魔女の帽子
+magicalsuit=魔法のスーツ
+magicalboots=魔法のブーツ
+swampboots=沼のブーツ
+swampchestplate=沼のチェストプレート
+swampmask=沼のマスク
+swamphood=沼のフード
+infectedhat=感染した帽子
+infectedchestplate=感染したチェストプレート
+infectedboots=感染したブーツ
+spinelhelmet=スピネルヘルメット
+spinelhat=スピネルハット
+spinelchestplate=スピネルチェストプレート
+spinelboots=スピネルブーツ
+
+// Misc
+gelslimenullifier=クリックするだけで、彼らはあなたを悩ませるのをやめます！
+enchantingscrollhealingequipmenttip=<enchantment> で回復装備をエンチャントするために使用されます\n§!Aphorea Mod
+enchantingscrollhealingtip=<enchantment> で回復ツールをエンチャントするために使用されます\n§!Aphorea Mod
+enchantingscrollareatip=<enchantment> で範囲効果ツールをエンチャントするために使用されます\n§!Aphorea Mod
+enchantingscrolldaggertip=<enchantment> でダガー武器をエンチャントするために使用されます\n§!Aphorea Mod
+backpack=これは、収集したすべてのアイテムを保管する新しいインベントリです
+backpackslots=<slots> アイテムの容量
+stored=保管されているアイテム: <items>
+backpackcraft=より良いバックパックを作成するには空でなければなりません
+
+// Consumables
+deleteditem=このアイテムは削除されました。永久に削除される前に、このアイテムを使用して材料を回収してください
+unstablecore=§b不安定なオーラを放出します...§0 昼間のみ使用できます
+venomextractbuff=ロードはそれを飲めと言いますが、飲まないでください
+venomextractbuffdesc=HP を 1 より多くすることはできません
+lifespinel=最大体力を永続的に 5 増加させ、最大 320 まで
+
+// General Weapons
+spinsecondaryattack=[input=mouse2] を押して、次の攻撃を範囲攻撃にします
+areasecondaryattack=[input=mouse2] を押して、<mana> マナを消費して範囲攻撃を実行します
+stikybuff1=敵を 1 秒間粘着させます
+stikybuff2=敵を 2 秒間粘着させます
+stikybuff3=敵を 3 秒間粘着させます
+projectilearea=発射物が終了すると、範囲ダメージを与えます
+
+// Melee Weapons
+saber=最大までチャージして、完全なダメージを与え、エアカットを放ちます
+saberdash=[input=mouse2] を長押しして、ダッシュをチャージして敵を切り裂きます
+battleaxe=チャージに時間がかかります
+battleaxe2=[input=mouse2] を押してバーサーカーラッシュを有効にし、一時的に 3 アドレナリンを獲得します
+battleaxe3=ラッシュ中に敵を攻撃することで一時的にアドレナリンを獲得し、移動速度と攻撃速度を向上させます
+dagger=[input=mouse2] を長押ししてダガーを投げます
+
+// Range Weapons
+sling=力強く石を投げます
+sling2=§7100%§0 の確率で敵を 0.5 秒間気絶させます
+twoarrows=一度に 2 本の矢を放ちます
+threearrows=一度に 3 本の矢を放ちます
+blowgun=種を撃ちます
+
+// Single Melee Weapons
+woodenrod=10 回の攻撃ごとに自分を §7<healing>§0 魔法回復します
+voidhammer=発射物が跳ね返るか敵に当たると、最も近い敵を標的にし、最大 3 回攻撃します
+crimsonkora=[input=mouse2] を長押しして、壊滅的だが遅い攻撃をチャージします
+thenarcissist=4 回の攻撃を連鎖させて、5 回目の攻撃で回転する剣投げを放ちます！\n連鎖した攻撃ごとに +20% のダメージ
+
+// Single Range Weapons
+firesling=敵を燃やします
+frozensling=敵を凍らせます
+gelgreatbow=石の矢をゲルの矢に変えます
+unstablegelgreatbow=石の矢とゲルの矢を不安定なゲルの矢に変えます
+thespammer=スパム弾を撃つことができます
+shotgunsaber=より強力で、正確で、貫通力のあるショットのために、中央の近くを狙います
+honeysaber=最大までチャージして、完全なダメージを与え、蜂蜜とブルーベリーを撃ちます
+spinelcrossbow=最大 2 体の敵を貫通する矢を放ち、貫通するたびに致命的になります
+spinelcrossbow2=[input=mouse2] を長押しして、一度に 3 本の矢を放ちます
+
+// Single Magic Weapons
+unstablegelstaff=発射物が壁に跳ね返ると、複製されます
+harpofharmony=調和: 速度、体力回復、マナ回復の増加
+
+// Single Summoner Weapons
+infectedstaff=呼び出しごとに 2 つの生きた苗木を召喚します
+
+// Single Throwable Weapons
+gelball=ゲルボールを投げます
+
+// Single Magic Healing Tools
+magicalvial=負傷した人間を指して回復させ、誰も指さずに自分を回復させます
+magicalvial2=無限の使用
+
+// Ammo
+spambullet=これらの効果のいずれかをランダムに持ちます:
+spambullet1=§9悲しい:§0 攻撃された敵は粘着性になり、5 秒間減速します
+spambullet2=§9火:§0 衝突する代わりに、地面に火のプールを残します
+spambullet3=§9いいね:§0 壁に跳ね返り、モブを貫通します。それぞれ最大 10 回
+spambullet4=§9チェック:§0 パスの終わりに 3 体力の魔法回復エリア
+spambullet5=§9爆発:§0 衝突する代わりに、パスの終わりに爆発します
+
+// Tiles
+geltile=粘着性のある床で、その上のすべてを大幅に減速させます
+
+// Objects
+witchstatue=この像を沼の表面に置くと、島全体の魔女の出現がなくなります
+
+// Generic Trinkets
+areawhenheal=実行された <magichealing> 魔法回復ごとにこのエリアを実行します
+periaptboost=[input=trinketability] を押して、10 秒間速度と攻撃速度のブーストを得ます
+
+// Trinkets
+rockyperiapt=§7+5§0 アーマー、しかし §6-5%§0 移動速度
+rockyperiapt2=[input=trinketability] を押して、10 秒間 10 アーマーを獲得します
+unstableperiapt=2 体の赤ちゃんの不安定なゲルスライムを召喚します (6 召喚ダメージ)
+unstableperiapt2=粘着性デバフに対して免疫になります
+bloodyperiapt=また、武器「ブラッドボルト」と「ブラッドボレー」は §73%§0 のライフを盗みます
+demonicperiapt=また、魔法の武器は §73%§0 のライフを盗みます
+necromancyperiapt=あなたまたはあなたの召喚獣の 1 体が敵対的なモブを殺すたびに、アンデッドスケルトンを召喚します
+necromancyperiapt2=20 召喚ダメージ。10 秒間持続し、一度に最大 3 体まで存在できます
+frozenperiapt=近接武器と遠隔武器は 3 秒間凍結します
+frozenperiapt2=凍結の影響を受けたモブに対してより多くのダメージを与えます
+frozenperiapt3=凍結およびフロストスローデバフに対して免疫になります
+floralring=5 秒ごとに自分を §7<healing>§0 魔法回復します
+gelring=§7+30%§0 の魔法回復受け取り
+heartring=§7+20§0 の最大体力
+swampshield=受けた方向の攻撃のみを保護します
+swampshield2=完璧なブロック時: 最大体力の §7<healing>§0 で自分を魔法回復します
+iceboots=氷の上にいるかのように滑りますが、+50% の移動速度と +4 のアーマーを付与します
+inspirationfoci1=§7+40%§0 のインスピレーション効果と §7+20%§0 のインスピレーションアビリティ速度
+inspirationfoci2=§6-20%§0 のすべての非インスピレーションダメージと §6-1§0 の最大召喚数
+essenceofhealing=§7+<percent>%§0 のライフエッセンスごとの魔法回復
+essenceofhealing2=§7<flat>§0 の 2 ライフエッセンスごとの魔法回復
+essenceofhealing3=§6-80%§0 のライフエッセンス持続時間、-50% に上限
+ninjascarf=サーベルダッシュをサーベルジャンプに変換します
+adrenalinecharm=受けたすべてのヒットは 20 秒間アドレナリンを与えます
+infectedperiapt=2 体の生きた苗木を召喚します (8 召喚ダメージ)
+bloomrushcharm=持っているアドレナリンごとにスタミナ使用量を 10% 減少させます\n持っているアドレナリンごとに生きた苗木を召喚します (8 召喚ダメージ)
+
+// Set Bonus
+goldhatsetbonus=静止している場合、遠隔攻撃速度が大幅に増加します
+pinkwitchsetbonus=体力が低いほど、魔法攻撃速度、マナ回復、アーマーが増加します
+infectedsetbonus=3 体の生きた苗木を召喚します (8 召喚ダメージ)
+spinelhelmetsetbonus=敵対的なモブに与えた近接ダメージの §7<healing>§0 で自分を魔法回復します
+spinelhatsetbonus=敵対的なモブに与えた魔法ダメージの §7<healing>§0 で自分と近くのすべての味方を魔法回復します
+
+// Banners
+strikebannereffect=§7+<effect>%§0 の体力回復 (戦闘中および戦闘外)
+strikebannerability=§a<time> 秒ごと:§0 範囲攻撃を実行します
+blankbannereffect=§7+<effect>%§0 の体力回復 (戦闘外)
+blankbannerability=§a<time> 秒ごと:§0 範囲回復を実行します
+bannerofdamageeffect=§7+<effect>%§0 のダメージ
+bannerofdefenseeffect=§7-<effect>%§0 の被ダメージ
+bannerofspeedeffect=§7+<effect>%§0 の移動速度
+bannerofsummonspeedeffect=§7+<effect>%§0 の召喚獣の移動速度
+
+// Mighty Banners
+banneroffishingeffect=§7+<effect>§0 の釣り力
+bannerofhealthregeneffect=§7+<effectfloat>§0 の戦闘中の体力回復
+bannerofmanaregeneffect=§7+<effect>%§0 の戦闘中のマナ回復
+bannerofresistanceeffect=§7+<effect>§0 のアーマー
+bannerofsummoningeffect=§7+<effect>§0 の最大召喚数
+bannerofattackspeedeffect=§7+<effect>%§0 の攻撃速度
+
+// Summoner Expansion Banners
+bannerofresilienceeffect=§7+<effect>%§0 の最大回復力\n毎秒 §7+<effect>§0 の回復力を回復
+bannerofbouncingeffect=§7+<effect>§0 の発射物の跳ね返り
+bannerofessenceeffect=§7+<effect>%§0 のライフエッセンス持続時間
+bannerofstaminaeffect=§7+<effect>%§0 のスタミナ容量\n§7+<effect2>%§0 のスタミナ回復\n§7-<effect2>%§0 のスタミナ使用量
+bannerofpickingeffect=§7+<effectfloat>§0 のピックアップ範囲
+bannerofdashingeffect=§7+<effect>§0 のダッシュスタック\n§7-<effect2>%§0 のダッシュクールダウン
+bannerofmanaeffect=§7+<effect>%§0 の最大マナ\n§7<effect2>%§0 のマナ回復
+
+// Runes (General)
+baserune=§iベースルーン
+modifierrune=§a修飾ルーン
+linkedrune=§b[<player>] にリンクされたルーン
+notruneowner=あなたはベースルーンの所有者ではありません
+runesslots=最大 1 つのベースルーン + <modifierslots> の修飾ルーンを挿入できます
+useruneinfusor=[input=runesinjectorability] で有効化
+requiresbaserune=ベースルーンを挿入する必要があります
+onlyonebaserune=一度に 1 つのベースルーンしか挿入できません
+duplicatedmodifierrunes=同じ修飾ルーンを複数挿入することはできません
+runehealthcost=有効化時に最大体力の <health>% を消費します
+runehealthhealing=使用時に最大体力の <health>% を回復します
+runecooldown=<seconds> 秒で再充電します
+increaseruneeffectnumber=効果を §7<variation>%§0 増加させます
+decreaseruneeffectnumber=効果を §6<variation>%§0 減少させます
+increaserunecooldown=クールダウンを §6<variation>%§0 増加させます
+decreaserunecooldown=クールダウンを §7<variation>%§0 減少させます
+increaserunehealthcost=最大体力の消費を §6<health>%§0 増加させます
+increaserunehealthhealing=最大体力の回復を §7<health>%§0 増加させます
+runedamagereduction=人間に対するダメージは大幅に減少し、ボスに対してはさらに減少します
+runedamagereductionnoboss=人間に対するダメージは大幅に減少し、ボスには影響しません
+moreextraeffectmod=効果の変更は <mod>% 効果的です
+lessextraeffectmod=効果の変更は <mod>% 効果が低いです
+
+// Runes Injectors
+
+// Base Runes Tier 0
+runeoffury=10 秒間、ダメージと攻撃速度を §7<effectNumber>§0% 増加させます
+runeofspeed=移動している方向に §7<effectNumber>§0 の強さでダッシュし、0.5 秒間無敵になります
+runeofresistance=10 秒間、アーマーを §7<effectNumber>§0% 増加させます
+runeofresistance2=クールダウン中、アーマーは半分になります
+runeofvalor=§7<effectNumber>§0 秒間、+200% のインスピレーション
+runeofdetonation=爆発し、敵が近いほどより多くのダメージを与え、ノックバックします
+runeofdetonation2=最大ダメージは、モブの最大体力の §7<effectNumber>§0% です
+runeofthunder=2 秒後、カーソルの初期位置に雷が落ちます
+runeofthunder2=雷は、モブの体力の §7<effectNumber>§0% のダメージを与え、2 秒間気絶させます
+runeofwinter=500 の範囲内の敵を §7<effectNumber>§0 秒間フロストスローします
+runeofimmortality=次の §7<effectNumber>§0 秒以内に死亡した場合、最大体力で生き残ります
+runeofimmortality2=これが発生した場合、3 秒間無敵になりますが、クールダウンは 30 秒になります
+runeofimmortality3=クールダウン中、最大体力は半分になります
+runeofshadows=§7<effectNumber>§0 秒間、あなたは透明になりますが、威嚇され、いかなる行動もとれなくなります
+
+// Base Runes Tier 1
+runeofunstablegelslime=近くの場所にテレポートし、§7<effectNumber>§0 秒間、2 体のルーンの不安定なゲルスライムを召喚します
+runeofunstablegelslime2=召喚獣は、モブの最大体力の 5% のダメージを与えます
+runeofevilsprotector=+§7<effectNumber>§0% の攻撃速度、しかし 10 秒間 -50% の移動速度
+runeofevilsprotector2=夜間の地表では、プラスの効果が 2 倍になります
+runeofqueenspider=§7<effectNumber>§0 秒間、地面に蜘蛛の巣を残します
+runeofvoidwizard=すべての発射物は無限に跳ね返り、10 秒間 +§7<effectNumber>§0% の発射物速度
+runeofswampguardian=§7<effectNumber>§0 秒間、受けるすべてのダメージを 80% 減少させます
+runeofancientvulture=10 秒間、ルーンのハゲワシの雛を召喚します
+runeofancientvulture2=召喚獣は、モブの最大体力の §7<effectNumber>§0% のダメージを与えます
+runeofpiratecaptain=持っている 200 コインごとにダメージを §7<effectNumber>§0% 増加させます。最大 20,000 コインまで
+runeofpiratecaptain2=攻撃するたびに、3 コインを失います
+runeofchieftain=次の 20 秒間、体力が低いほどダメージが増加し、最大 +§7<effectNumber>§0% まで
+
+// Base Runes Tier 2
+runeofreaper=マウスの位置にテレポートします。最大距離 §7<effectNumber>§0
+runeofcryoqueen=1 秒間停止し、§7<effectNumber>§0 の範囲で氷の攻撃を放ちます
+runeofcryoqueen2=発射物は、モブの最大体力の 200% のダメージを与えます
+runeofpestwarden=次の §7<effectNumber>§0 秒間、敵と衝突するとダメージを与え、押しやります
+runeofpestwarden2=ダメージは最大体力の 20% です
+runeofsageandgrit=近くに負傷した味方がいる場合 (範囲 500)、総体力の §7<effectNumber>§0% を回復します
+runeofsageandgrit2=そうでない場合、20 秒間、ダメージ、攻撃速度、移動速度を +§7<effectNumber>§0% 増加させます
+runeoffallenwizard=あなた以外のすべてのモブを §7<effectNumber>§0 秒間気絶させます
+runeoffallenwizard2=人間はより速く解放され、ボスはさらに速く解放されます
+runeofbabylontower=+§7<effectNumber>§0% のすべてのダメージ、しかし移動できません。10 秒
+
+// Base Runes Tier 3
+runeofmotherslime=マウスの位置に向かって大きなジャンプを行い、着地時に範囲ダメージを与えます
+runeofmotherslime2=着地は、モブの最大体力の §7<effectNumber>§0% のダメージを与えます
+runeofnightswarm=§7<effectNumber>§0 秒間、5 匹のコウモリを召喚し、敵対的なモブを探して噛みつきます
+runeofnightswarm2=各噛みつきは、総体力の 1% を回復します (少なくとも 1)
+runeofspiderempress=マウスの方向に §7<F0effectNumber>§0 個のウェブボールを投げます
+runeofspiderempress2=ウェブボールは 3 秒間気絶させ、10 秒間減速させます
+runeofsunlightchampion=3 秒間気絶し、§7<effectNumber>§0 の範囲のノヴァをチャージします
+runeofsunlightchampion2=ノヴァは、モブの最大体力の 200% のダメージを与えます
+runeofmoonlightdancer=10 秒間、移動速度が +1% ごとに +§7<effectNumber>§0% のダメージ
+runeofcrystaldragon=5 秒間、カーソルの位置にレーザービームを投げます
+runeofcrystaldragon2=レーザーは、モブの最大体力の §7<effectNumber>§0% のダメージを与えます
+
+// Modifier Runes Tier 0
+
+// Modifier Runes Tier 1
+onyxrune=有効化すると、5 秒間オニキスを召喚します。モブの体力の 5% に基づいてダメージを与えます
+onyxrune2=オニキスの各噛みつきは、総体力の 1% を回復します (少なくとも 1)
+onyxrune3=§3素晴らしいルーンのアイデアをありがとう、オニキス！<3
+pawningrune=有効化すると、まだ効果がない場合、最大体力の 20% を即座に回復します
+pawningrune2=10 秒後、回復した量に加えてさらに 40% を失います
+
+// Modifier Runes Tier 2
+abysmalrune=有効化すると、カーソルの位置にブラックホールを召喚し、2 秒間敵を引き込みます
+abysmalrune2=ブラックホールは、最後の有効化から 10 秒が経過した場合にのみ召喚されます
+tidalrune=有効化すると、敵を押しやる水の波を召喚します
+
+// Modifier Runes Tier 3
+
+
+[mobtooltip]
+usenet=ネットを使用してください！[item=net]
+
+
+[mob]
+// Hostile
+gelslime=ゲルスライム
+rockygelslime=岩のゲルスライム
+unstablegelslime=不安定なゲルスライム
+miniunstablegelslime=ミニ不安定なゲルスライム
+pinkwitch=ピンクの魔女
+voidadept=ヴォイドの達人
+copperdaggergoblin=銅のダガーゴブリン
+irondaggergoblin=鉄のダガーゴブリン
+golddaggergoblin=金のダガーゴブリン
+infectedtreant=感染したトレント
+spinelgolem=スピネルゴーレム
+spinelcaveling=スピネルの洞窟住人
+tungstencaveling=タングステンの洞窟住人
+spinelmimic=スピネルミミック
+babylontower=バビロンの塔
+hearthcrystal=ハースクリスタル
+babylon=バビロン
+
+// Friendly
+wildphosphorslime=野生のリン光スライム
+
+// Summon
+babyunstablegelslime=赤ちゃんの不安定なゲルスライム
+undeadskeleton=アンデッドスケルトン
+volatilegelslime=揮発性ゲルスライム
+runicunstablegelslime=ルーンの不安定なゲルスライム
+runicvulturehatchling=ルーンのハゲワシの雛
+runicbat=ルーンのコウモリ
+onyx=オニキス
+livingsapling=生きた苗木
+
+// Pet
+petphosphorslime=リン光スライム
+
+
+[buff]
+// Common Buffs
+stunbuff=気絶
+fallenstunbuff=堕落した気絶
+stickybuff=粘着性
+stopbuff=停止
+honeyedbuff=蜂蜜漬け
+venomextractbuff=毒エキス
+cursedbuff=呪われた
+adrenalinebuff=アドレナリン
+harmonybuff=調和
+
+// Active Buffs
+berserkerrushactive=バーサーカーラッシュ有効
+periaptactive=お守りのアビリティ有効
+runesinjectoractive=ルーンインジェクター有効
+
+// Cooldown Buffs
+berserkerrushcooldown=バーサーカーラッシュクールダウン中
+periaptcooldown=お守りのアビリティクールダウン中
+runesinjectorcooldown=ルーンインジェクタークールダウン中
+spinattackcooldown=スピンアタッククールダウン中
+saberdashcooldown=サーベルダッシュクールダウン中
+
+
+[message]
+unstablegelslime_anger=§6不安定なゲルスライムが怒っています... <anger>/10
+unstablegelslime_fullanger=§6不安定なゲルスライムが怒りました！<anger>/10
+unstablegelslime_night=§6不安定なゲルスライム§0 は夜になると消えました！
+gelslimesnulled=この世界のゲルスライムは無効化されました。彼らはもう現れません
+gelslimesunnulled=この世界のゲルスライムは許可されました。彼らは今現れます
+pinkwitchesnulled=(<x>, <y>) のピンクの魔女は無効化されました
+pinkwitchesunnulled=(<x>, <y>) のピンクの魔女は許可されました
+needfreeslots=これを使用するには、インベントリに <slots> の空きスロットが必要です
+cantuseatnight=夜間は使用できません
+healthalreadyfull=体力はすでに満タンです
+cantheal=回復できません
+insuficienthealth=このアクションを実行するには体力が不足しています！
+cannottrhowlockeditem=インベントリでロックされたアイテムを投げることはできません
+initialrunetip=初期ルーンを慎重に選択してください。\nゲームの後半まで他のルーンは入手できません
+alreadyselectedinitialrune=初期ルーンはすでに選択されています
+cannotusetrial=試練の部屋では使用できません
+
+[biome]
+infectedfields=感染した畑
+
+
+[journal]
+
+//Levels
+infectedfieldssurface=感染した畑の表面
+infectedfieldscave=感染した畑の洞窟
+
+// Forest Surface Challenges
+killgelslimesforest=[mob=gelslime] 森で 25 匹のゲルスライムを倒す
+pickupfloralring=[item=floralring] 森でたくさんの草を刈って花の指輪を手に入れる
+killunstablegelslime=[mob=unstablegelslime] 1 匹の不安定なゲルスライムを倒す
+
+// Swamp Surface Challenges
+killpinkwitchesswamp=[mob=pinkwitch] 夜間に沼の表面で 5 匹のピンクの魔女を倒す
+
+// Infected Fields Surface Challenges
+pickupinfectedlogs=[item=infectedlog] 100 本の感染した丸太を拾うために伐採する
+
+// Infected Fields Cave Challenges
+pickupspinel=[item=spinel] 40 個のスピネルを拾う
+activatebabylontower=[item=lifespinel] バビロンの塔にライフスピネルを置く
+findthespammer=[item=thespammer] スパマーを見つける
+
+
+[controls]
+runesinjectorability=ルーンインジェクターアビリティ
+
+
+[runestutorialbook]
+openheader=ルーンインジェクターを開く
+opentext=ルーンを使用するには、ルーンインジェクターが必要です。これらの特別なデバイスは、ルーンを挿入するために開くことができます。各インジェクターには、ベースルーン用のスロットが 1 つと、その容量に応じて複数の修飾ルーン用のスロットがあります。インジェクターが許す限り多くの修飾ルーンを自由に追加して、最適な組み合わせを見つけるために実験してください！
+equipheader=インジェクターを装備する
+equiptext=ルーンを有効にするには、ルーンインジェクターを装身具スロットに装備する必要があります。装備したら、G (または設定で割り当てられたキー) を押すだけでその効果が発動します。アクションを開始する前に、インジェクターが正しく構成され、準備ができていることを確認してください！
+
+runesheader=ルーンとは？
+runestext=ルーンは、ルーンインジェクターに挿入すると強力な効果を発揮する神秘的な石です。その強さと振る舞いは、それらがどのように組み合わされるかによって異なり、その使用をマスターすることが、あなたの完全な可能性を解き放つ鍵となります。
+baserunesheader=ベースルーン
+baserunestext=各ルーンインジェクターは、機能するために正確に 1 つのベースルーンを必要とします。ベースルーンは、インジェクターの主な効果を定義し、セットアップの核として機能します。効果の横に緑色の数字が表示されますが、これはその効果値を表しており、修飾子で増減できます。
+modifierrunesheader=修飾ルーン
+modifierrunestext=修飾ルーンは、ベースルーンの効果をカスタマイズおよび強化するために使用されます。効果値を調整したり、その振る舞いを変更したり、特別なプロパティを追加したりできます。ただし、修飾ルーンには常にトレードオフが伴います。純粋に有益な修飾子はないため、賢く選択してください！
+
+tableheader=ルーンテーブル
+tabletext=ルーンテーブルは、さまざまなルーンを作成するための頼りになるステーションです。ほとんどの標準的なルーンはここで作成できますが、覚えておいてください。一部の強力なルーンは、探索によってのみ見つけることができます。目を開いて、冒険は好奇心旺盛な人を報います！
+crafttext=ルーンワークショップでは、始めるために必要なものがすべて見つかります。内容を初期ルーンとルーンテーブルで作成できるベースルーンと組み合わせると、装備する準備ができた完全に機能するルーンインジェクターが手に入ります！
