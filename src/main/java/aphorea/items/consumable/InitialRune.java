@@ -19,6 +19,8 @@ import necesse.inventory.InventoryItem;
 import necesse.inventory.container.travel.TravelContainer;
 import necesse.level.maps.Level;
 
+import java.awt.geom.Line2D;
+
 public class InitialRune extends AphConsumableItem {
     public InitialRune() {
         super(1, false);
@@ -43,7 +45,7 @@ public class InitialRune extends AphConsumableItem {
     }
 
     @Override
-    public String canPlace(Level level, int x, int y, PlayerMob player, InventoryItem item, GNDItemMap mapContent) {
+    public String canPlace(Level level, int x, int y, PlayerMob player, Line2D playerPositionLine, InventoryItem item, GNDItemMap mapContent) {
         AphPlayerData playerData = AphPlayerDataList.getCurrentPlayer(player);
         return !playerData.runeSelected ? null : Localization.translate("message", "alreadyselectedinitialrune");
     }

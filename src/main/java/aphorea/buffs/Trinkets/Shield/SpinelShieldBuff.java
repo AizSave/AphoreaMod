@@ -50,7 +50,7 @@ public class SpinelShieldBuff extends TrinketBuff implements ActiveBuffAbility {
         if (buff.owner.isRiding() || buff.owner.buffManager.hasBuff("spinelshieldactive")) {
             return false;
         } else {
-            return player.isServer() && Settings.giveClientsPower || StaminaBuff.canStartStaminaUsage(buff.owner);
+            return StaminaBuff.canStartStaminaUsage(buff.owner);
         }
     }
 
@@ -59,7 +59,7 @@ public class SpinelShieldBuff extends TrinketBuff implements ActiveBuffAbility {
 
     public void onActiveAbilityStarted(PlayerMob player, ActiveBuff buff, Packet content) {
         PacketReader reader = new PacketReader(content);
-        if (!buff.owner.isServer() || Settings.giveClientsPower) {
+        if (!buff.owner.isServer()) {
             StaminaBuff.readStaminaData(buff.owner, reader);
         }
         if (buff.owner.isServer()) {

@@ -13,6 +13,8 @@ import necesse.inventory.InventoryItem;
 import necesse.inventory.item.placeableItem.consumableItem.ConsumableItem;
 import necesse.level.maps.Level;
 
+import java.awt.geom.Line2D;
+
 public class LifeSpinel extends ConsumableItem {
     public LifeSpinel() {
         super(50, true);
@@ -40,7 +42,7 @@ public class LifeSpinel extends ConsumableItem {
             SoundManager.playSound(GameResources.crystalHit1, SoundEffect.effect(player));
         }
 
-        if (this.singleUse) {
+        if (this.isSingleUse(player)) {
             item.setAmount(item.getAmount() - 1);
         }
 
@@ -48,7 +50,7 @@ public class LifeSpinel extends ConsumableItem {
     }
 
     @Override
-    public String canPlace(Level level, int x, int y, PlayerMob player, InventoryItem item, GNDItemMap mapContent) {
+    public String canPlace(Level level, int x, int y, PlayerMob player, Line2D playerPositionLine, InventoryItem item, GNDItemMap mapContent) {
         return player.getMaxHealthFlat() >= 320 ? "incorrecthealth" : null;
     }
 

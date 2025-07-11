@@ -18,6 +18,7 @@ import necesse.level.maps.IncursionLevel;
 import necesse.level.maps.Level;
 
 import java.awt.*;
+import java.awt.geom.Line2D;
 import java.util.ArrayList;
 
 public class UnstableCore extends AphConsumableItem {
@@ -33,7 +34,7 @@ public class UnstableCore extends AphConsumableItem {
     }
 
     @Override
-    public String canPlace(Level level, int x, int y, PlayerMob player, InventoryItem item, GNDItemMap mapContent) {
+    public String canPlace(Level level, int x, int y, PlayerMob player, Line2D playerPositionLine, InventoryItem item, GNDItemMap mapContent) {
         if (level.isClient()) {
             return null;
         } else if (level instanceof IncursionLevel) {
@@ -112,7 +113,7 @@ public class UnstableCore extends AphConsumableItem {
             }
         }
 
-        if (this.singleUse) {
+        if (this.isSingleUse(player)) {
             item.setAmount(item.getAmount() - 1);
         }
 
