@@ -169,7 +169,7 @@ public class AphItems {
         registerItem("unstablegelstaff", new UnstableGelStaff());
         registerItem("magicalbroom", new MagicalBroom());
         registerItem("adeptsbook", new AdeptsBook(), 200F);
-        registerItem("harpofharmony", new HarpOfArmony());
+        registerItem("harpofharmony", new HarpOfHarmony());
         registerItem("babyloncandle", new BabylonCandle(), 700F);
 
         // Summoner Weapons

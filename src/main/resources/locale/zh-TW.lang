@@ -391,7 +391,7 @@ venomextractbuffdesc=你的生命值不能超過 1
 lifespinel=永久增加最大生命值 5 點，最高 320
 
 // General Weapons
-spinsecondaryattack=按 [input=mouse2] 使下一次攻擊成為區域攻擊
+spinsecondaryattack=按住 [input=mouse2] 執行旋轉攻擊
 areasecondaryattack=按 [input=mouse2] 執行區域攻擊，消耗 <mana> 法力
 stikybuff1=使敵人粘稠 1 秒
 stikybuff2=使敵人粘稠 2 秒

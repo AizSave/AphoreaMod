@@ -389,7 +389,7 @@ venomextractbuffdesc=Non puoi avere più di 1 HP
 lifespinel=Aumenta permanentemente la salute massima di 5 fino a 320
 
 // General Weapons
-spinsecondaryattack=Premi [input=mouse2] per rendere il prossimo attacco un attacco ad area
+spinsecondaryattack=Tieni premuto [input=mouse2] per eseguire un attacco rotante
 areasecondaryattack=Premi [input=mouse2] per eseguire un attacco ad area consumando <mana> mana
 stikybuff1=Rende il nemico appiccicoso per 1 secondo
 stikybuff2=Rende il nemico appiccicoso per 2 secondi

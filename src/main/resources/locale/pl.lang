@@ -391,7 +391,7 @@ venomextractbuffdesc=Nie możesz mieć więcej niż 1 PZ
 lifespinel=Trwale zwiększa maksymalne zdrowie o 5, do 320
 
 // General Weapons
-spinsecondaryattack=Naciśnij [input=mouse2], aby następny atak był atakiem obszarowym
+spinsecondaryattack=Przytrzymaj [input=mouse2], aby wykonać atak obrotowy
 areasecondaryattack=Naciśnij [input=mouse2], aby wykonać atak obszarowy zużywający <mana> many
 stikybuff1=Sprawia, że wróg staje się lepki na 1 sekundę
 stikybuff2=Sprawia, że wróg staje się lepki na 2 sekundy

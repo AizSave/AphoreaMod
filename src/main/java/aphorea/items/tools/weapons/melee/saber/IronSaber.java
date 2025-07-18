@@ -12,7 +12,7 @@ public class IronSaber extends AphSaberToolItem {
         super(300);
         rarity = Rarity.NORMAL;
         attackDamage.setBaseValue(20)
-                .setUpgradedValue(1, 80);
+                .setUpgradedValue(1, 93);
         knockback.setBaseValue(75);
     }
 

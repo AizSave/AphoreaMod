@@ -387,7 +387,7 @@ venomextractbuffdesc=Sinulla ei voi olla enempää kuin 1 HP
 lifespinel=Lisää pysyvästi maksimiterveyttä 5:llä, enintään 320:een
 
 // General Weapons
-spinsecondaryattack=Paina [input=mouse2] tehdäksesi seuraavasta hyökkäyksestä aluehyökkäyksen
+spinsecondaryattack=Pidä [input=mouse2] painettuna suorittaaksesi pyörähdyshyökkäyksen
 areasecondaryattack=Paina [input=mouse2] suorittaaksesi aluehyökkäyksen, joka kuluttaa <mana> manaa
 stikybuff1=Tekee vihollisesta tahmean 1 sekunniksi
 stikybuff2=Tekee vihollisesta tahmean 2 sekunniksi

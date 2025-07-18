@@ -289,7 +289,7 @@ venomextractbuffdesc=Nem lehet több, mint 1 életerőd
 lifespinel=Tartósan 5-tel növeli a maximális életerőt, legfeljebb 320-ig
 
 // General Weapons
-spinsecondaryattack=Nyomd meg a [input=mouse2] gombot, hogy a következő támadás területi támadás legyen
+spinsecondaryattack=Tartsa lenyomva az [input=mouse2] gombot egy pörgő támadás végrehajtásához
 areasecondaryattack=Nyomd meg a [input=mouse2] gombot egy területi támadás végrehajtásához, amely <mana> manát fogyaszt
 stikybuff1=1 másodpercre ragadóssá teszi az ellenséget
 stikybuff2=2 másodpercre ragadóssá teszi az ellenséget

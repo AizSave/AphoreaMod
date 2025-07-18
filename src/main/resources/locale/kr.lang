@@ -388,7 +388,7 @@ venomextractbuffdesc=HP가 1을 초과할 수 없습니다
 lifespinel=최대 체력을 영구적으로 5 증가시켜 최대 320까지
 
 // General Weapons
-spinsecondaryattack=[input=mouse2]를 눌러 다음 공격을 광역 공격으로 만듭니다
+spinsecondaryattack=[input=mouse2]를 길게 눌러 회전 공격을 수행합니다
 areasecondaryattack=[input=mouse2]를 눌러 <mana> 마나를 소모하여 광역 공격을 수행합니다
 stikybuff1=적을 1초 동안 끈적이게 만듭니다
 stikybuff2=적을 2초 동안 끈적이게 만듭니다

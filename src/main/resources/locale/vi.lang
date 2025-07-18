@@ -391,7 +391,7 @@ venomextractbuffdesc=Bạn không thể có nhiều hơn 1 HP
 lifespinel=Tăng vĩnh viễn máu tối đa thêm 5, lên đến 320
 
 // General Weapons
-spinsecondaryattack=Nhấn [input=mouse2] để đòn tấn công tiếp theo là đòn tấn công diện rộng
+spinsecondaryattack=Giữ [input=mouse2] để thực hiện một đòn tấn công xoay
 areasecondaryattack=Nhấn [input=mouse2] để thực hiện một đòn tấn công diện rộng tiêu tốn <mana> mana
 stikybuff1=Làm cho kẻ thù dính trong 1 giây
 stikybuff2=Làm cho kẻ thù dính trong 2 giây

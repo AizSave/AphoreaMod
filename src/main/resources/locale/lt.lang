@@ -289,7 +289,7 @@ venomextractbuffdesc=Negalite turėti daugiau nei 1 HP
 lifespinel=Visam laikui padidina maksimalią sveikatą 5, iki 320
 
 // General Weapons
-spinsecondaryattack=Paspauskite [input=mouse2], kad kitas puolimas būtų ploto puolimas
+spinsecondaryattack=Laikykite [input=mouse2], kad atliktumėte sukamąjį puolimą
 areasecondaryattack=Paspauskite [input=mouse2], kad atliktumėte ploto puolimą, sunaudojantį <mana> manos
 stikybuff1=Padaro priešą lipnų 1 sekundei
 stikybuff2=Padaro priešą lipnų 2 sekundėms

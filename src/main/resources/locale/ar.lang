@@ -387,7 +387,7 @@ venomextractbuffdesc=لا يمكن أن يكون لديك أكثر من 1 HP
 lifespinel=يزيد الصحة القصوى بشكل دائم بمقدار 5 حتى 320
 
 // General Weapons
-spinsecondaryattack=اضغط على [input=mouse2] لجعل الهجوم التالي هجومًا على المنطقة
+spinsecondaryattack=اضغط باستمرار على [input=mouse2] لتنفيذ هجوم دوراني
 areasecondaryattack=اضغط على [input=mouse2] لتنفيذ هجوم على المنطقة يستهلك <mana> مانا
 stikybuff1=يجعل العدو لزجًا لمدة ثانية واحدة
 stikybuff2=يجعل العدو لزجًا لمدة ثانيتين

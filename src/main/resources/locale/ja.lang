@@ -289,7 +289,7 @@ venomextractbuffdesc=HP を 1 より多くすることはできません
 lifespinel=最大体力を永続的に 5 増加させ、最大 320 まで
 
 // General Weapons
-spinsecondaryattack=[input=mouse2] を押して、次の攻撃を範囲攻撃にします
+spinsecondaryattack=[input=mouse2] を長押ししてスピン攻撃を実行します
 areasecondaryattack=[input=mouse2] を押して、<mana> マナを消費して範囲攻撃を実行します
 stikybuff1=敵を 1 秒間粘着させます
 stikybuff2=敵を 2 秒間粘着させます

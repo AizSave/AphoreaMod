@@ -391,7 +391,7 @@ venomextractbuffdesc=У вас не может быть больше 1 ОЗ
 lifespinel=Навсегда увеличивает максимальное здоровье на 5, вплоть до 320
 
 // General Weapons
-spinsecondaryattack=Нажмите [input=mouse2], чтобы следующая атака стала атакой по области
+spinsecondaryattack=Удерживайте [input=mouse2], чтобы выполнить вращательную атаку
 areasecondaryattack=Нажмите [input=mouse2], чтобы выполнить атаку по области, потребляя <mana> маны
 stikybuff1=Делает врага липким на 1 секунду
 stikybuff2=Делает врага липким на 2 секунды

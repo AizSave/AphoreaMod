@@ -391,7 +391,7 @@ venomextractbuffdesc=Vous ne pouvez pas avoir plus de 1 PV
 lifespinel=Augmente de façon permanente la santé maximale de 5 jusqu'à 320
 
 // General Weapons
-spinsecondaryattack=Appuyez sur [input=mouse2] pour que la prochaine attaque soit une attaque de zone
+spinsecondaryattack=Maintenez [input=mouse2] pour effectuer une attaque tournoyante
 areasecondaryattack=Appuyez sur [input=mouse2] pour effectuer une attaque de zone consommant <mana> de mana
 stikybuff1=Rend l'ennemi collant pendant 1 seconde
 stikybuff2=Rend l'ennemi collant pendant 2 secondes

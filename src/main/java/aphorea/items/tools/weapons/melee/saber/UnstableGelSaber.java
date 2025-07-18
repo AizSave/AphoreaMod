@@ -22,7 +22,6 @@ public class UnstableGelSaber extends AphSaberToolItem {
         attackDamage.setBaseValue(26)
                 .setUpgradedValue(1, 80);
         attackRange.setBaseValue(80);
-        attackRange.setBaseValue(80);
         knockback.setBaseValue(75);
     }
 

@@ -388,7 +388,7 @@ venomextractbuffdesc=Nemůžete mít více než 1 HP
 lifespinel=Trvale zvyšuje maximální zdraví o 5 až na 320
 
 // General Weapons
-spinsecondaryattack=Stiskněte [input=mouse2], aby byl další útok plošným útokem
+spinsecondaryattack=Podržte [input=mouse2] pro provedení rotačního útoku
 areasecondaryattack=Stiskněte [input=mouse2] k provedení plošného útoku spotřebovávajícího <mana> many
 stikybuff1=Učiní nepřítele lepkavým na 1 sekundu
 stikybuff2=Učiní nepřítele lepkavým na 2 sekundy

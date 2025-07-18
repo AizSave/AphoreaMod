@@ -387,7 +387,7 @@ venomextractbuffdesc=1'den fazla canınız olamaz
 lifespinel=Maksimum canı kalıcı olarak 5 artırır, 320'ye kadar
 
 // General Weapons
-spinsecondaryattack=Bir sonraki saldırıyı alan saldırısı yapmak için [input=mouse2] tuşuna basın
+spinsecondaryattack=Dönen bir saldırı gerçekleştirmek için [input=mouse2] tuşunu basılı tutun
 areasecondaryattack=<mana> Mana tüketerek bir alan saldırısı gerçekleştirmek için [input=mouse2] tuşuna basın
 stikybuff1=Düşmanı 1 saniyeliğine Yapışkan yapar
 stikybuff2=Düşmanı 2 saniyeliğine Yapışkan yapar

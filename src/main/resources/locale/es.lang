@@ -415,7 +415,7 @@ venomextractbuffdesc=No puedes tener más de 1 de Vida
 lifespinel=Aumenta 5 puntos de salud máxima de forma permanente\nPueden acumularse hasta 320 puntos
 
 // General Weapons
-spinsecondaryattack=[input=mouse2] para que el próximo ataque sea en área
+spinsecondaryattack=Mantén presionado [input=mouse2] para realizar un ataque giratorio
 areasecondaryattack=[input=mouse2] para realizar un ataque en área gastando <mana> de Maná
 stikybuff1=Vuelve §9Pegajoso§0 al enemigo por 1 segundo
 stikybuff2=Vuelve §9Pegajoso§0 al enemigo por 2 segundos

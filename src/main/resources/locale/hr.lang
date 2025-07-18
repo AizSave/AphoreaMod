@@ -388,7 +388,7 @@ venomextractbuffdesc=Ne možete imati više od 1 HP
 lifespinel=Trajno povećava maksimalno zdravlje za 5 do 320
 
 // General Weapons
-spinsecondaryattack=Pritisnite [input=mouse2] da sljedeći napad bude napad na područje
+spinsecondaryattack=Držite [input=mouse2] za izvođenje vrtložnog napada
 areasecondaryattack=Pritisnite [input=mouse2] da biste izveli napad na područje koji troši <mana> mane
 stikybuff1=Čini neprijatelja ljepljivim na 1 sekundu
 stikybuff2=Čini neprijatelja ljepljivim na 2 sekunde

@@ -388,7 +388,7 @@ venomextractbuffdesc=Je kunt niet meer dan 1 HP hebben
 lifespinel=Verhoogt permanent de maximale gezondheid met 5 tot 320
 
 // General Weapons
-spinsecondaryattack=Druk op [input=mouse2] om de volgende aanval een gebiedsaanval te maken
+spinsecondaryattack=Houd [input=mouse2] ingedrukt om een draaiaanval uit te voeren
 areasecondaryattack=Druk op [input=mouse2] om een gebiedsaanval uit te voeren die <mana> mana verbruikt
 stikybuff1=Maakt de vijand 1 seconde plakkerig
 stikybuff2=Maakt de vijand 2 seconden plakkerig

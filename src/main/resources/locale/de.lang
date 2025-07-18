@@ -482,3 +482,5 @@ modifierrunestext=Modifikator-Runen werden verwendet, um den Effekt deiner Basis
 tableheader=Der Runentisch
 tabletext=Der Runentisch ist deine Anlaufstelle für die Herstellung einer Vielzahl von Runen. Die meisten Standardrunen können hier hergestellt werden, aber denke daran: Einige mächtige Runen können nur durch Erkundung gefunden werden. Halte die Augen offen, Abenteuer belohnt die Neugierigen!
 crafttext=In der Runenwerkstatt findest du alles, was du für den Anfang brauchst. Kombiniere den Inhalt mit deiner Anfangs-Rune und einer Basis-Rune, die du am Runentisch herstellen kannst, und du hast einen voll funktionsfähigen Runeninjektor, der zum Ausrüsten bereit ist!
+
+spinsecondaryattack=Halten Sie [input=mouse2] gedrückt, um einen Drehangriff auszuführen

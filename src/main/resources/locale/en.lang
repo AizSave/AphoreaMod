@@ -391,7 +391,7 @@ venomextractbuffdesc=You can't have more than 1 HP
 lifespinel=Permanently increases max health by 5 up to 320
 
 // General Weapons
-spinsecondaryattack=Press [input=mouse2] to make the next attack an area attack
+spinsecondaryattack=Hold [input=mouse2] to perform an spin attack
 areasecondaryattack=Press [input=mouse2] to perform an area attack consuming <mana> Mana
 stikybuff1=Makes the enemy Sticky for 1 second
 stikybuff2=Makes the enemy Sticky for 2 seconds

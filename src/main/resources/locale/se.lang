@@ -388,7 +388,7 @@ venomextractbuffdesc=Du kan inte ha mer än 1 HP
 lifespinel=Ökar permanent maxhälsa med 5 upp till 320
 
 // General Weapons
-spinsecondaryattack=Tryck på [input=mouse2] för att göra nästa attack till en områdesattack
+spinsecondaryattack=Håll [input=mouse2] för att utföra en snurrattack
 areasecondaryattack=Tryck på [input=mouse2] för att utföra en områdesattack som förbrukar <mana> mana
 stikybuff1=Gör fienden klibbig i 1 sekund
 stikybuff2=Gör fienden klibbig i 2 sekunder

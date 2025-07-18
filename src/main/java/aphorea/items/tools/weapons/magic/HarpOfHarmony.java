@@ -35,11 +35,11 @@ import necesse.level.maps.Level;
 import java.util.HashSet;
 import java.util.Set;
 
-public class HarpOfArmony extends AphMagicProjectileToolItem implements ItemInteractAction {
+public class HarpOfHarmony extends AphMagicProjectileToolItem implements ItemInteractAction {
     protected FloatUpgradeValue attackDamage2 = new FloatUpgradeValue(0.0F, 0.2F);
     protected FloatUpgradeValue healing = new FloatUpgradeValue(0, 0.2F);
 
-    public HarpOfArmony() {
+    public HarpOfHarmony() {
         super(1000);
         rarity = Rarity.RARE;
         attackAnimTime.setBaseValue(500);

@@ -391,7 +391,7 @@ venomextractbuffdesc=No pots tenir més d'1 HP
 lifespinel=Augmenta permanentment la salut màxima en 5 fins a 320
 
 // General Weapons
-spinsecondaryattack=Prem [input=mouse2] per fer que el següent atac sigui un atac d'àrea
+spinsecondaryattack=Mantingues premut [input=mouse2] per fer un atac giratori
 areasecondaryattack=Prem [input=mouse2] per realitzar un atac d'àrea que consumeix <mana> de Mana
 stikybuff1=Fa que l'enemic sigui Enganxós durant 1 segon
 stikybuff2=Fa que l'enemic sigui Enganxós durant 2 segons

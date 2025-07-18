@@ -391,7 +391,7 @@ venomextractbuffdesc=Anda tidak dapat memiliki lebih dari 1 HP
 lifespinel=Meningkatkan kesehatan maksimal secara permanen sebesar 5 hingga 320
 
 // General Weapons
-spinsecondaryattack=Tekan [input=mouse2] untuk membuat serangan berikutnya menjadi serangan area
+spinsecondaryattack=Tahan [input=mouse2] untuk melakukan serangan berputar
 areasecondaryattack=Tekan [input=mouse2] untuk melakukan serangan area yang menghabiskan <mana> Mana
 stikybuff1=Membuat musuh Lengket selama 1 detik
 stikybuff2=Membuat musuh Lengket selama 2 detik
