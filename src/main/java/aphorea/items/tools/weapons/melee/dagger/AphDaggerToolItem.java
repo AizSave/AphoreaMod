@@ -127,7 +127,7 @@ public abstract class AphDaggerToolItem extends SpearToolItem implements ItemInt
         if (throwItem && attackerMob.isPlayer) {
             PlayerMob player = (PlayerMob) attackerMob;
             if (player.attackSlot.isItemLocked(player.getInv())) {
-                if(player.isServer()) {
+                if (player.isServer()) {
                     player.getServerClient().sendChatMessage(Localization.translate("message", "cannottrhowlockeditem"));
                 }
                 return;

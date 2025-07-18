@@ -57,7 +57,7 @@ public class BabylonBody extends BossWormMobBody<BabylonHead, BabylonBody> {
         if (this.isVisible()) {
             this.particleSpawner.gameTick();
 
-            while(this.particleSpawner.shouldTick()) {
+            while (this.particleSpawner.shouldTick()) {
                 this.getLevel().entityManager.addParticle(this.x + GameRandom.globalRandom.floatGaussian() * 45.0F, this.y + GameRandom.globalRandom.floatGaussian() * 30.0F + 5.0F, Particle.GType.COSMETIC).movesConstant(GameRandom.globalRandom.floatGaussian() * 6.0F, GameRandom.globalRandom.floatGaussian() * 3.0F).sizeFades(5, 10).givesLight().heightMoves(this.height + 10.0F, this.height + GameRandom.globalRandom.getFloatBetween(30.0F, 40.0F)).lifeTime(1000);
             }
         }
@@ -80,10 +80,10 @@ public class BabylonBody extends BossWormMobBody<BabylonHead, BabylonBody> {
             int drawX = camera.getDrawX(x) - 112;
             int drawY = camera.getDrawY(y);
             if (this.next != null) {
-                Point2D.Float dir = new Point2D.Float(this.next.x - (float)x, this.next.y - this.next.height - ((float)y - this.height));
+                Point2D.Float dir = new Point2D.Float(this.next.x - (float) x, this.next.y - this.next.height - ((float) y - this.height));
                 float angle = GameMath.fixAngle(GameMath.getAngle(dir));
-                final MobDrawable drawOptions = WormMobHead.getAngledDrawable(new GameSprite(BabylonHead.texture, 0, this.spriteY, 224), null, light.minLevelCopy(100.0F), (int)this.height, angle, drawX, drawY, 130);
-                MobDrawable drawOptionsShadow = WormMobHead.getAngledDrawable(new GameSprite(BabylonHead.texture_shadow, 0, this.spriteY, 224), null, light, (int)this.height, angle, drawX, drawY + 40, 130);
+                final MobDrawable drawOptions = WormMobHead.getAngledDrawable(new GameSprite(BabylonHead.texture, 0, this.spriteY, 224), null, light.minLevelCopy(100.0F), (int) this.height, angle, drawX, drawY, 130);
+                MobDrawable drawOptionsShadow = WormMobHead.getAngledDrawable(new GameSprite(BabylonHead.texture_shadow, 0, this.spriteY, 224), null, light, (int) this.height, angle, drawX, drawY + 40, 130);
                 topList.add(new MobDrawable() {
                     public void draw(TickManager tickManager) {
                         drawOptions.draw(tickManager);

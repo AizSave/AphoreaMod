@@ -10,7 +10,6 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.item.ItemInteractAction;
 import necesse.level.maps.Level;
 
 public class UnstableGelGreatsword extends AphGreatswordSecondarySpinToolItem {

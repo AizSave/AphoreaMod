@@ -2,7 +2,6 @@ package aphorea.buffs.Trinkets.Shield;
 
 import aphorea.levelevents.AphSpinelShieldEvent;
 import aphorea.utils.AphColors;
-import necesse.engine.Settings;
 import necesse.engine.input.Control;
 import necesse.engine.network.Packet;
 import necesse.engine.network.PacketReader;

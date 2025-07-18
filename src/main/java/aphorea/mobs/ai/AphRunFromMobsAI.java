@@ -98,7 +98,7 @@ public class AphRunFromMobsAI<T extends Mob> extends MoveTaskAINode<T> {
 
             }
 
-            return AINodeResult.FAILURE;
+            return alwaysReturnSuccess() ? AINodeResult.SUCCESS : AINodeResult.FAILURE;
         }
     }
 
@@ -120,13 +120,13 @@ public class AphRunFromMobsAI<T extends Mob> extends MoveTaskAINode<T> {
         if (runPoint != null) {
             return this.moveToTileTask(runPoint.x, runPoint.y, null, (path) -> {
                 setRunning(mob, path.moveIfWithin(-1, -1, null));
-                return AINodeResult.FAILURE;
+                return alwaysReturnSuccess() ? AINodeResult.SUCCESS : AINodeResult.FAILURE;
             });
         } else {
             runPoint = WandererAINode.findWanderingPointAround(mob, startTileX, startTileY, radius * 2, zoneTester, 20, 5);
             return runPoint != null ? this.moveToTileTask(runPoint.x, runPoint.y, null, (path) -> {
                 setRunning(mob, path.moveIfWithin(-1, -1, null));
-                return AINodeResult.FAILURE;
+                return alwaysReturnSuccess() ? AINodeResult.SUCCESS : AINodeResult.FAILURE;
             }) : null;
         }
     }
@@ -159,5 +159,9 @@ public class AphRunFromMobsAI<T extends Mob> extends MoveTaskAINode<T> {
             isRunning = running;
             mob.buffManager.updateBuffs();
         }
+    }
+
+    public boolean alwaysReturnSuccess() {
+        return false;
     }
 }

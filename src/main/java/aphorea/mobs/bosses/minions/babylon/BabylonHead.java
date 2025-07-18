@@ -157,7 +157,7 @@ public class BabylonHead extends BossWormMobHead<BabylonBody, BabylonHead> {
                 .min(Comparator.comparingDouble(m -> m.getDistance(this)))
                 .orElse(null);
 
-        if(babylonTowerMob == null) {
+        if (babylonTowerMob == null) {
             return 1;
         }
 
@@ -277,7 +277,7 @@ public class BabylonHead extends BossWormMobHead<BabylonBody, BabylonHead> {
         }
 
         public AINodeResult tick(T mob, Blackboard<T> blackboard) {
-            if(mob.getLevel().entityManager.mobs.stream().noneMatch(m -> Objects.equals(m.getStringID(), "babylontower"))) {
+            if (mob.getLevel().entityManager.mobs.stream().noneMatch(m -> Objects.equals(m.getStringID(), "babylontower"))) {
                 mob.remove();
             }
 

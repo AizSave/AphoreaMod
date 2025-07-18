@@ -68,6 +68,7 @@ public class SpinelCrossbow extends BowProjectileToolItem implements ItemInterac
     public GameSprite getArrowlessAttackSprite(InventoryItem item, PlayerMob player) {
         return this.arrowlessAttackTexture != null ? new GameSprite(this.arrowlessAttackTexture) : new GameSprite(this.getItemSprite(item, player), 24);
     }
+
     @Override
     public GameSprite getAttackSprite(InventoryItem item, PlayerMob player) {
         return item.getGndData().getBoolean("charging") ? super.getAttackSprite(item, player) : this.getArrowlessAttackSprite(item, player);

@@ -10,7 +10,6 @@ import necesse.engine.sound.SoundManager;
 import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.gfx.GameResources;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.item.ItemInteractAction;
 import necesse.inventory.item.upgradeUtils.IntUpgradeValue;
 import necesse.level.maps.Level;
 import org.jetbrains.annotations.Nullable;

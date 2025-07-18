@@ -112,9 +112,9 @@ public class AphResources {
         MiniUnstableGelSlime.texture = GameTexture.fromFile("mobs/miniunstablegelslime");
 
         BabylonTowerMob.icon = GameTexture.fromFile("mobs/icons/babylontower");
-        BabylonHead.texture =  GameTexture.fromFile("mobs/babylon");
-        BabylonHead.texture_shadow =  GameTexture.fromFile("mobs/babylon_shadow");
-        BabylonHead.icon =  GameTexture.fromFile("mobs/babylon");
+        BabylonHead.texture = GameTexture.fromFile("mobs/babylon");
+        BabylonHead.texture_shadow = GameTexture.fromFile("mobs/babylon_shadow");
+        BabylonHead.icon = GameTexture.fromFile("mobs/babylon");
 
         // FRIENDLY
         WildPhosphorSlime.texture = GameTexture.fromFile("mobs/phosphorslime");

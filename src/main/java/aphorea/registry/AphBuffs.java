@@ -1067,7 +1067,7 @@ public class AphBuffs {
                 PlayerMob player = (PlayerMob) buff.owner;
 
                 float speedModifier = player.getSpeedModifier() - 1;
-                if(speedModifier <= 0) {
+                if (speedModifier <= 0) {
                     bound = 0;
                 } else {
                     bound = (int) Math.max(4 - speedModifier / 25, 0);

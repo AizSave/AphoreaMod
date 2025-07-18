@@ -11,7 +11,6 @@ import necesse.engine.localization.message.LocalMessage;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
 import necesse.engine.network.client.Client;
-import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.network.packet.PacketChatMessage;
 import necesse.engine.network.server.ServerClient;
 import necesse.engine.registries.BuffRegistry;

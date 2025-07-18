@@ -40,7 +40,7 @@ public class TheSpammer extends GunProjectileToolItem {
         GameRandom spreadRandom = new GameRandom(seed + 10);
         int range;
         if (this.controlledRange) {
-            Point newTarget = this.controlledRangePosition(new GameRandom((long) (seed + 10)), attackerMob, x, y, item, this.controlledMinRange, this.controlledInaccuracy);
+            Point newTarget = this.controlledRangePosition(new GameRandom(seed + 10), attackerMob, x, y, item, this.controlledMinRange, this.controlledInaccuracy);
             x = newTarget.x;
             y = newTarget.y;
             range = (int) attackerMob.getDistance((float) x, (float) y);
@@ -48,10 +48,12 @@ public class TheSpammer extends GunProjectileToolItem {
             range = this.getAttackRange(item);
         }
 
-        Projectile projectile = this.getProjectile(item, bullet, attackerMob.x, attackerMob.y, (float) x, (float) y, range, attackerMob);
+        Projectile projectile = this.getProjectile(item, bullet, attackerMob.x, attackerMob.y, x, y, range, attackerMob);
         projectile.setModifier(new ResilienceOnHitProjectileModifier(this.getResilienceGain(item)));
         projectile.dropItem = dropItem;
         projectile.getUniqueID(new GameRandom(seed));
-        attackerMob.addAndSendAttackerProjectile(projectile, GameRandom.globalRandom.getIntBetween(10, 20), spreadRandom.getFloatOffset(0, 6));
+        projectile.setAngle((float) Math.toDegrees(Math.atan2(y - attackerMob.y, x - attackerMob.x)) + spreadRandom.getFloatOffset(0, 6) + 90);
+
+        attackerMob.addAndSendAttackerProjectile(projectile, GameRandom.globalRandom.getIntBetween(10, 20));
     }
 }

@@ -14,7 +14,6 @@ import aphorea.mobs.runicsummons.RunicUnstableGelSlime;
 import aphorea.mobs.runicsummons.RunicVultureHatchling;
 import aphorea.mobs.summon.*;
 import necesse.engine.registries.MobRegistry;
-import necesse.entity.mobs.hostile.bosses.CrystalDragonBody;
 
 public class AphMobs {
     public static void registerCore() {

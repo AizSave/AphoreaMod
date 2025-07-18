@@ -3,7 +3,6 @@ package aphorea.mobs.hostile;
 import aphorea.data.AphSwampLevelData;
 import aphorea.projectiles.mob.PinkWitchProjectile;
 import necesse.engine.gameLoop.tickManager.TickManager;
-import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.network.server.Server;
 import necesse.engine.network.server.ServerClient;
 import necesse.engine.registries.DamageTypeRegistry;
