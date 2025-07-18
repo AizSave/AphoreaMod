@@ -79,7 +79,7 @@ public class AphRunFromMobsAI<T extends Mob> extends MoveTaskAINode<T> {
                     result = this.startRun(mob, mob.getTileX(), mob.getTileY(), e.event.knockbackX, e.event.knockbackY, (ZoneTester) null);
                 }
                 if (result != null) {
-                    return result;
+                    return this.alwaysReturnSuccess() ? AINodeResult.SUCCESS : result;
                 }
             }
 
@@ -92,7 +92,7 @@ public class AphRunFromMobsAI<T extends Mob> extends MoveTaskAINode<T> {
                 if (closest != null && closest.distance <= (float) this.runDistance) {
                     AINodeResult result = this.startRun(mob, closest.runningFrom.getTileX(), closest.runningFrom.getTileY(), closest.runningFrom);
                     if (result != null) {
-                        return result;
+                        return this.alwaysReturnSuccess() ? AINodeResult.SUCCESS : result;
                     }
                 }
 
