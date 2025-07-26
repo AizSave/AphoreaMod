@@ -125,4 +125,9 @@ abstract public class AphBackpack extends PouchItem {
             super.useIngredientAmount(level, player, inventory, inventorySlot, item, purpose, handler);
         }
     }
+
+    @Override
+    public int getStackSize() {
+        return 1;
+    }
 }

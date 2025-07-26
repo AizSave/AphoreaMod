@@ -1,7 +1,7 @@
 # Aphorea Mod
 This is the code of AphoreaMod! (https://steamcommunity.com/sharedfiles/filedetails/?id=3268603061)
 
-All code is created by Save, modifying and amplifying the original game files. Of course a large part of the code belongs to the original game. You are free to use this code for learning or Necesse-content purposes
+All code was created by Save by modifying and expanding the original game files. Of course, a large part of the code still belongs to the original game. You are free to use this code for learning purposes or for creating Necesse-related content
 
 Most of the Sprites were created by Pooper
 
@@ -9,7 +9,7 @@ Save Steam profile: https://steamcommunity.com/id/Aiz_Save/
 
 Pooper Steam profile: https://steamcommunity.com/profiles/76561198448686767
 
-All AphoreaMod content is licensed under CC BY-NC-SA 4.0
+All AphoreaMod content is licensed under **CC BY-NC-SA 4.0**
 
 
 
@@ -35,3 +35,5 @@ Since this mod is not publicly available on Maven Central, the best way to use i
     ```
 
 5. Finally, add the `.jar` file to your IDE's libraries so you can easily use it while coding
+6. In your `build.gradle`, make sure to include `"aphoreateam.aphoreamod"` in `project.ext.modDependencies = []`
+7. Once you launch the mod, don’t forget to add the dependency to Steam

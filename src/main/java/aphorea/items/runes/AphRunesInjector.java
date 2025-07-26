@@ -414,4 +414,9 @@ public class AphRunesInjector extends TrinketItem implements InternalInventoryIt
     public int getTooltipsNumber() {
         return tooltipsNumber;
     }
+
+    @Override
+    public int getStackSize() {
+        return 1;
+    }
 }
