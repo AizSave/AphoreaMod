@@ -2,11 +2,16 @@ package aphorea.tiles;
 
 import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
+import necesse.engine.localization.message.GameMessage;
+import necesse.engine.localization.message.LocalMessage;
+import necesse.engine.localization.message.StaticMessage;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.registries.TileRegistry;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameRandom;
+import necesse.entity.mobs.Attacker;
+import necesse.entity.mobs.DeathMessageTable;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.projectile.BombProjectile;
@@ -27,6 +32,20 @@ import java.util.List;
 import java.util.Map;
 
 public class InfectedWaterTile extends LiquidTile {
+    public static Attacker INFECED_WATER_ATTACKER = new Attacker() {
+        public GameMessage getAttackerName() {
+            return new StaticMessage("Infected Water");
+        }
+
+        public DeathMessageTable getDeathMessages() {
+            return new DeathMessageTable().add(new LocalMessage("deaths", "default"));
+        }
+
+        public Mob getFirstAttackOwner() {
+            return null;
+        }
+    };
+
     public GameTextureSection deepTexture;
     public GameTextureSection shallowTexture;
     protected final GameRandom drawRandom = new GameRandom();
@@ -68,7 +87,7 @@ public class InfectedWaterTile extends LiquidTile {
 
                 if (damageMultiplier != 0) {
                     float damage = (level.isCave ? 10F : 5F) * damageMultiplier;
-                    mob.isServerHit(new GameDamage(DamageTypeRegistry.TRUE, damage), 0.0F, 0.0F, 0.0F, null);
+                    mob.isServerHit(new GameDamage(DamageTypeRegistry.TRUE, damage), 0.0F, 0.0F, 0.0F, INFECED_WATER_ATTACKER);
                 }
             }
         }

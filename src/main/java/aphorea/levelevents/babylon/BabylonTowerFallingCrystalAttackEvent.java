@@ -101,7 +101,7 @@ public class BabylonTowerFallingCrystalAttackEvent extends MobAbilityLevelEvent 
     }
 
     public GameMessage getAttackerName() {
-        return this.owner != null ? this.owner.getAttackerName() : new StaticMessage("EP_BOMB_ATTACK");
+        return this.owner != null ? this.owner.getAttackerName() : new StaticMessage("BT_BOMB_ATTACK");
     }
 
     public DeathMessageTable getDeathMessages() {
