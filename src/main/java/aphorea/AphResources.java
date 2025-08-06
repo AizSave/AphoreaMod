@@ -33,6 +33,8 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 public class AphResources {
+    public static GameTexture modLogo;
+
     public static GameTexture[] saberAttackTexture = new GameTexture[28];
 
     public static GameTexture gunAttackTrackTexture;
@@ -45,6 +47,7 @@ public class AphResources {
     public static Map<String, GameTexture> bookTextures = new HashMap<>();
 
     public static void initResources() {
+        modLogo = GameTexture.fromFile("ui/logo");
 
         // UI WEAPONS
         for (int i = 0; i < 28; i++) {
