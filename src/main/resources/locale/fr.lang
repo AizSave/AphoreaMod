@@ -705,6 +705,7 @@ cannottrhowlockeditem=Vous ne pouvez pas jeter un objet verrouillé dans l'inven
 initialrunetip=Choisissez votre rune initiale avec soin ;\nvous n'obtiendrez pas les autres avant plus tard dans le jeu
 alreadyselectedinitialrune=Rune initiale déjà sélectionnée
 cannotusetrial=Ne peut pas être utilisé dans les salles d'épreuve
+treantattackmessage=Les Treants infectés ([mob=infectedtreant]) ne sont vulnérables qu'aux haches ([item=ironaxe])
 
 [biome]
 infectedfields=Champs infectés

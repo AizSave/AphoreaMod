@@ -702,6 +702,7 @@ cannottrhowlockeditem=Du kan inte kasta ett lagerlåst föremål
 initialrunetip=Välj din initialruna noggrant;\ndu kommer inte att få de andra förrän senare i spelet
 alreadyselectedinitialrune=Initialruna har redan valts
 cannotusetrial=Kan inte användas i prövningsrum
+treantattackmessage=Infekterade Treants ([mob=infectedtreant]) är endast sårbara för yxor ([item=ironaxe])
 
 [biome]
 infectedfields=Infekterade fält

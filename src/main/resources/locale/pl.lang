@@ -705,6 +705,7 @@ cannottrhowlockeditem=Nie możesz wyrzucić przedmiotu zablokowanego w ekwipunku
 initialrunetip=Wybierz ostrożnie swoją początkową runę;\nnie zdobędziesz innych aż do późniejszej fazy gry
 alreadyselectedinitialrune=Początkowa runa została już wybrana
 cannotusetrial=Nie można używać w pokojach prób
+treantattackmessage=Zainfekowane treanty ([mob=infectedtreant]) są wrażliwe tylko na topory ([item=ironaxe])
 
 [biome]
 infectedfields=Zainfekowane Pola

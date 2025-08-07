@@ -701,6 +701,7 @@ cannottrhowlockeditem=Envanterde kilitli bir öğeyi atamazsınız
 initialrunetip=Başlangıç rününüzü dikkatli seçin;\noyunun ilerleyen zamanlarına kadar diğerlerini elde edemezsiniz
 alreadyselectedinitialrune=Başlangıç rünü zaten seçildi
 cannotusetrial=Deneme odalarında kullanılamaz
+treantattackmessage=Enfekte Treant'lar ([mob=infectedtreant]) yalnızca baltalara karşı savunmasızdır ([item=ironaxe])
 
 [biome]
 infectedfields=Enfekte Tarlalar

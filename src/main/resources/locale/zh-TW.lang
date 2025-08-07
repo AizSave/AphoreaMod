@@ -705,6 +705,7 @@ cannottrhowlockeditem=你不能扔掉庫存鎖定的物品
 initialrunetip=仔細選擇你的初始符文；\n在遊戲後期之前你不會獲得其他的
 alreadyselectedinitialrune=已選擇初始符文
 cannotusetrial=不能在試煉室使用
+treantattackmessage=被感染的樹人 ([mob=infectedtreant]) 只對斧頭 ([item=ironaxe]) 脆弱
 
 [biome]
 infectedfields=受感染的田野

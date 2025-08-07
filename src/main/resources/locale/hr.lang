@@ -702,6 +702,7 @@ cannottrhowlockeditem=Ne možete baciti predmet zaključan u inventaru
 initialrunetip=Pažljivo odaberite svoju početnu runu;\nostale nećete dobiti do kasnije u igri
 alreadyselectedinitialrune=Početna runa je već odabrana
 cannotusetrial=Ne može se koristiti u sobama za probe
+treantattackmessage=Zaraženi Treanti ([mob=infectedtreant]) su ranjivi samo na sjekire ([item=ironaxe])
 
 [biome]
 infectedfields=Zaražena polja

@@ -701,6 +701,7 @@ cannottrhowlockeditem=Et voi heittää inventaariossa lukittua esinettä
 initialrunetip=Valitse alkuriimusi huolellisesti;\net saa muita ennen kuin myöhemmin pelissä
 alreadyselectedinitialrune=Alkurriimu on jo valittu
 cannotusetrial=Ei voi käyttää koekammioissa
+treantattackmessage=Tartunnan saaneet Treantit ([mob=infectedtreant]) ovat haavoittuvia vain kirveille ([item=ironaxe])
 
 [biome]
 infectedfields=Saastuneet pellot

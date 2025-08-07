@@ -434,6 +434,7 @@ initialrunetip=Wähle deine anfängliche Rune sorgfältig aus;
 du wirst die anderen erst später im Spiel erhalten
 alreadyselectedinitialrune=Anfängliche Rune bereits ausgewählt
 cannotusetrial=Kann nicht in Prüfungsräumen verwendet werden
+treantattackmessage=Infizierte Treants ([mob=infectedtreant]) sind nur mit Äxten verwundbar ([item=ironaxe])
 
 [biome]
 infectedfields=Infizierte Felder

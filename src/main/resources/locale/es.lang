@@ -744,6 +744,7 @@ cannottrhowlockeditem=No puedes lanzar un objeto bloqueado en tu inventario
 initialrunetip=Elige tu runa inicial con cuidado;\nno podrás obtener el resto hasta mucho más tarde
 alreadyselectedinitialrune=Ya has elegido tu runa inicial
 cannotusetrial=No se puede usar en las salas de pruebas
+treantattackmessage=Los Treants Infectados ([mob=infectedtreant]) son vulnerables solo a las hachas ([item=ironaxe])
 
 [biome]
 infectedfields=Campos Infectados

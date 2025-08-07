@@ -603,6 +603,7 @@ cannottrhowlockeditem=Nem dobhatsz el egy leltárban zárolt tárgyat
 initialrunetip=Válaszd ki gondosan a kezdeti rúnádat;\na többit csak később a játékban szerezheted meg
 alreadyselectedinitialrune=A kezdeti rúna már ki van választva
 cannotusetrial=Nem használható próbaszobákban
+treantattackmessage=A fertőzött treantok ([mob=infectedtreant]) csak fejszékkel sebezhetők ([item=ironaxe])
 
 [biome]
 infectedfields=Fertőzött mezők

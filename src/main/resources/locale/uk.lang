@@ -705,6 +705,7 @@ cannottrhowlockeditem=Ви не можете викинути предмет, з
 initialrunetip=Ретельно вибирайте свою початкову руну;\nви не отримаєте інші до пізніших етапів гри
 alreadyselectedinitialrune=Початкова руна вже вибрана
 cannotusetrial=Неможливо використовувати в кімнатах випробувань
+treantattackmessage=Заражені треанти ([mob=infectedtreant]) вразливі лише до сокир ([item=ironaxe])
 
 [biome]
 infectedfields=Заражені поля

@@ -603,6 +603,7 @@ cannottrhowlockeditem=Negalite išmesti inventoriuje užrakinto daikto
 initialrunetip=Atsargiai pasirinkite savo pradinę runą;\nkitų negausite iki vėlesnio žaidimo etapo
 alreadyselectedinitialrune=Pradinė runa jau pasirinkta
 cannotusetrial=Negalima naudoti išbandymų kambariuose
+treantattackmessage=Užkrėsti treantai ([mob=infectedtreant]) yra pažeidžiami tik kirviais ([item=ironaxe])
 
 [biome]
 infectedfields=Užkrėsti laukai

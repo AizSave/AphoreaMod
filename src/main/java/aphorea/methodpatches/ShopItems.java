@@ -14,11 +14,6 @@ import java.util.Objects;
 @ModMethodPatch(target = HumanShop.class, name = "getShopItems", arguments = {VillageShopsData.class, ServerClient.class})
 public class ShopItems {
 
-    @Advice.OnMethodEnter
-    static boolean onEnter(@Advice.This HumanShop humanShop, @Advice.Argument(0) VillageShopsData data, @Advice.Argument(1) ServerClient client) {
-        return false;
-    }
-
     @Advice.OnMethodExit
     static void onExit(@Advice.This HumanShop humanShop, @Advice.Argument(0) VillageShopsData data, @Advice.Argument(1) ServerClient client, @Advice.Return(readOnly = false) ArrayList<ShopItem> shopItems) {
         if (Objects.equals(humanShop.getStringID(), "pawnbrokerhuman")) {

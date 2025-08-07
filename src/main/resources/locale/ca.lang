@@ -705,6 +705,7 @@ cannottrhowlockeditem=No pots llançar un objecte bloquejat a l'inventari
 initialrunetip=Tria la teva runa inicial amb cura;\nno n'obtindràs les altres fins més endavant en el joc
 alreadyselectedinitialrune=Ja s'ha seleccionat la runa inicial
 cannotusetrial=No es pot utilitzar a les sales de proves
+treantattackmessage=Els Treants Infectats ([mob=infectedtreant]) només són vulnerables a les destrals ([item=ironaxe])
 
 [biome]
 infectedfields=Camps Infectats

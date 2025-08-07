@@ -702,6 +702,7 @@ cannottrhowlockeditem=인벤토리에서 잠긴 아이템을 버릴 수 없습�
 initialrunetip=초기 룬을 신중하게 선택하십시오.\n게임 후반까지 다른 룬을 얻을 수 없습니다
 alreadyselectedinitialrune=초기 룬이 이미 선택되었습니다
 cannotusetrial=시험 방에서는 사용할 수 없습니다
+treantattackmessage=감염된 트렌트 ([mob=infectedtreant])는 도끼 ([item=ironaxe])에만 취약합니다
 
 [biome]
 infectedfields=감염된 들판

@@ -702,6 +702,7 @@ cannottrhowlockeditem=Du kan ikke kaste en lagerlåst gjenstand
 initialrunetip=Velg din innledende rune nøye;\ndu vil ikke få de andre før senere i spillet
 alreadyselectedinitialrune=Innledende rune er allerede valgt
 cannotusetrial=Kan ikke brukes i prøvelsesrom
+treantattackmessage=Infiserte Treants ([mob=infectedtreant]) er bare sårbare for økser ([item=ironaxe])
 
 [biome]
 infectedfields=Infiserte marker

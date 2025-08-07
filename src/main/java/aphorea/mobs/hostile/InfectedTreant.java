@@ -3,6 +3,8 @@ package aphorea.mobs.hostile;
 import aphorea.utils.AphColors;
 import necesse.engine.Settings;
 import necesse.engine.gameLoop.tickManager.TickManager;
+import necesse.engine.localization.message.LocalMessage;
+import necesse.engine.network.NetworkClient;
 import necesse.engine.network.client.Client;
 import necesse.engine.registries.BuffRegistry;
 import necesse.engine.util.GameRandom;
@@ -23,6 +25,7 @@ import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.gameTexture.GameTextureSection;
 import necesse.gfx.gameTooltips.ListGameTooltips;
+import necesse.inventory.InventoryItem;
 import necesse.inventory.item.toolItem.axeToolItem.AxeToolItem;
 import necesse.inventory.lootTable.LootTable;
 import necesse.inventory.lootTable.lootItem.LootItem;
@@ -33,6 +36,7 @@ import necesse.level.maps.light.GameLight;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
+import java.util.*;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -227,17 +231,28 @@ public class InfectedTreant extends HostileMob {
         return super.isHit(event, attacker);
     }
 
+    Map<Integer, Long> playersMessageTime = new HashMap<>();
+
     @Override
     protected void doBeforeHitLogic(MobBeforeHitEvent event) {
         boolean prevent = true;
         if (event.attacker.getAttackOwner().isPlayer) {
             PlayerMob player = (PlayerMob) event.attacker.getAttackOwner();
-            if (player.isAttacking && player.attackSlot.getItem(player.getInv()).item instanceof AxeToolItem) {
-                prevent = false;
+            if(player.isAttacking) {
+                InventoryItem item = player.attackSlot.getItem(player.getInv());
+                prevent = item == null || !(item.item instanceof AxeToolItem);
+            }
+            if(prevent && player.isServer()) {
+                long messageTime = playersMessageTime.getOrDefault(player.getUniqueID(), 0L);
+                long now = player.getTime();
+                if(messageTime + 5000 < now) {
+                    playersMessageTime.put(player.getUniqueID(), now);
+                    player.getServerClient().sendChatMessage(new LocalMessage("message", "treantattackmessage"));
+                }
             }
         }
 
-        if (prevent) {
+        if(prevent) {
             event.damage = event.damage.modDamage(0);
             event.prevent();
             event.playHitSound = false;
@@ -245,6 +260,11 @@ public class InfectedTreant extends HostileMob {
         }
 
         super.doBeforeHitLogic(event);
+    }
+
+    @Override
+    public boolean canBeTargeted(Mob attacker, NetworkClient attackerClient) {
+        return attacker.isPlayer && super.canBeTargeted(attacker, attackerClient);
     }
 
     @Override

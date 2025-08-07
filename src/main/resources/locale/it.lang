@@ -703,6 +703,7 @@ cannottrhowlockeditem=Non puoi lanciare un oggetto bloccato nell'inventario
 initialrunetip=Scegli attentamente la tua runa iniziale;\nnon otterrai le altre fino a più avanti nel gioco
 alreadyselectedinitialrune=Runa iniziale già selezionata
 cannotusetrial=Non può essere usato nelle stanze di prova
+treantattackmessage=I Treant infetti ([mob=infectedtreant]) sono vulnerabili solo alle asce ([item=ironaxe])
 
 [biome]
 infectedfields=Campi infetti

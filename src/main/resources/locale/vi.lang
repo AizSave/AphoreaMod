@@ -705,6 +705,7 @@ cannottrhowlockeditem=Bạn không thể ném một vật phẩm bị khóa tron
 initialrunetip=Chọn Rune ban đầu của bạn một cách cẩn thận;\nbạn sẽ không nhận được những Rune khác cho đến sau này trong trò chơi
 alreadyselectedinitialrune=Đã chọn Rune ban đầu
 cannotusetrial=Không thể sử dụng trong phòng thử thách
+treantattackmessage=Treant bị nhiễm bệnh ([mob=infectedtreant]) chỉ dễ bị tổn thương bởi rìu ([item=ironaxe])
 
 [biome]
 infectedfields=Cánh đồng bị nhiễm độc

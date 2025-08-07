@@ -603,6 +603,7 @@ cannottrhowlockeditem=インベントリでロックされたアイテムを投�
 initialrunetip=初期ルーンを慎重に選択してください。\nゲームの後半まで他のルーンは入手できません
 alreadyselectedinitialrune=初期ルーンはすでに選択されています
 cannotusetrial=試練の部屋では使用できません
+treantattackmessage=感染したトレント ([mob=infectedtreant]) は斧 ([item=ironaxe]) にしか弱点を持ちません
 
 [biome]
 infectedfields=感染した畑

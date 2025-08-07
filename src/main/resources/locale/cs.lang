@@ -702,6 +702,7 @@ cannottrhowlockeditem=Nemůžete hodit předmět zamčený v inventáři
 initialrunetip=Pečlivě si vyberte svou počáteční runu;\nostatní nezískáte až později ve hře
 alreadyselectedinitialrune=Počáteční runa již byla vybrána
 cannotusetrial=Nelze použít ve zkušebních místnostech
+treantattackmessage=Infikovaní treanti ([mob=infectedtreant]) jsou zranitelní pouze sekerami ([item=ironaxe])
 
 [biome]
 infectedfields=Infikovaná pole

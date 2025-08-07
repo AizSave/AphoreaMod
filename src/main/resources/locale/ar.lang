@@ -701,6 +701,7 @@ cannottrhowlockeditem=لا يمكنك رمي عنصر مقفل في المخزو
 initialrunetip=اختر رونك الأولي بعناية؛\nلن تحصل على الآخرين حتى وقت لاحق في اللعبة
 alreadyselectedinitialrune=تم تحديد الرون الأولي بالفعل
 cannotusetrial=لا يمكن استخدامه في غرف المحاكمة
+treantattackmessage=المصابة ([mob=infectedtreant]) لا تتأثر إلا بالفؤوس ([item=ironaxe])
 
 [biome]
 infectedfields=الحقول الملوثة

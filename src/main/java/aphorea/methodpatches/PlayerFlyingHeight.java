@@ -11,11 +11,6 @@ import java.util.Map;
 public class PlayerFlyingHeight {
     public static Map<Integer, Integer> playersFlyingHeight = new HashMap<>();
 
-    @Advice.OnMethodEnter
-    static boolean onEnter(@Advice.This Mob mob) {
-        return false;
-    }
-
     @Advice.OnMethodExit
     static void onExit(@Advice.This Mob mob, @Advice.Return(readOnly = false) int flyingHeight) {
         if (flyingHeight == 0 && mob.isPlayer) {

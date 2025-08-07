@@ -705,6 +705,7 @@ cannottrhowlockeditem=Você não pode jogar um item bloqueado no inventário
 initialrunetip=Escolha sua runa inicial com cuidado;\nvocê não obterá as outras até mais tarde no jogo
 alreadyselectedinitialrune=Runa inicial já selecionada
 cannotusetrial=Não pode ser usado em salas de desafio
+treantattackmessage=Treants Infectados ([mob=infectedtreant]) são vulneráveis apenas a machados ([item=ironaxe])
 
 [biome]
 infectedfields=Campos Infectados

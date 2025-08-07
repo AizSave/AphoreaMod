@@ -705,6 +705,7 @@ cannottrhowlockeditem=You cannot throw an inventory-locked item
 initialrunetip=Choose your initial rune carefully;\nyou won't obtain the others until later in the game
 alreadyselectedinitialrune=Already selected initial rune
 cannotusetrial=Cannot use in trial rooms
+treantattackmessage=Infected Treants ([mob=infectedtreant]) are vulnerable only to axes ([item=ironaxe])
 
 [biome]
 infectedfields=Infected Fields

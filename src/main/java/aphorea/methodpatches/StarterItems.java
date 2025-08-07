@@ -9,11 +9,6 @@ import net.bytebuddy.asm.Advice;
 @ModMethodPatch(target = PlayerInventoryManager.class, name = "giveStarterItems", arguments = {})
 public class StarterItems {
 
-    @Advice.OnMethodEnter
-    static boolean onEnter(@Advice.This PlayerInventoryManager playerInventoryManager) {
-        return false;
-    }
-
     @Advice.OnMethodExit
     static void onExit(@Advice.This PlayerInventoryManager playerInventoryManager) {
         if (playerInventoryManager.getAmount(ItemRegistry.getItem("initialrune"), false, false, false, false, "startitem") == 0) {

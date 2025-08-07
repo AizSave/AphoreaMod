@@ -702,6 +702,7 @@ cannottrhowlockeditem=Je kunt geen item gooien dat in de inventaris is vergrende
 initialrunetip=Kies je initiële rune zorgvuldig;\nje zult de anderen pas later in het spel krijgen
 alreadyselectedinitialrune=Initiële rune is al geselecteerd
 cannotusetrial=Kan niet worden gebruikt in proefkamers
+treantattackmessage=Geïnfecteerde Treants ([mob=infectedtreant]) zijn alleen kwetsbaar voor bijlen ([item=ironaxe])
 
 [biome]
 infectedfields=Geïnfecteerde velden

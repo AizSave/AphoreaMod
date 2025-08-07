@@ -705,6 +705,7 @@ cannottrhowlockeditem=Anda tidak dapat melempar item yang terkunci di inventaris
 initialrunetip=Pilih rune awal Anda dengan hati-hati;\nAnda tidak akan mendapatkan yang lain sampai nanti dalam permainan
 alreadyselectedinitialrune=Rune awal sudah dipilih
 cannotusetrial=Tidak dapat digunakan di ruang ujian
+treantattackmessage=Treant yang terinfeksi ([mob=infectedtreant]) hanya rentan terhadap kapak ([item=ironaxe])
 
 [biome]
 infectedfields=Ladang Terinfeksi
