@@ -93,9 +93,9 @@ public class UnstableGelProjectile extends Projectile {
     public void onHit(Mob mob, LevelObjectHit object, float x, float y, boolean fromPacket, ServerClient packetSubmitter) {
         super.onHit(mob, object, x, y, fromPacket, packetSubmitter);
         if (mob == null && object != null && this.bounced < this.getTotalBouncing() && this.canBounce && generation < 2) {
-            Projectile projectile = getProjectile();
             Mob owner = getOwner();
             if (owner instanceof ItemAttackerMob) {
+                Projectile projectile = getProjectile(owner);
                 ((ItemAttackerMob) owner).addAndSendAttackerProjectile(projectile);
             }
         }
@@ -109,13 +109,13 @@ public class UnstableGelProjectile extends Projectile {
         }
     }
 
-    private Projectile getProjectile() {
+    private Projectile getProjectile(Mob owner) {
         generation++;
 
         Projectile projectile = new UnstableGelProjectile(
-                this.getLevel(), this.getOwner(),
+                this.getLevel(), owner,
                 this.x, this.y,
-                this.getOwner().x, this.getOwner().y,
+                owner.x, owner.y,
                 this.speed,
                 this.distance - (int) this.traveledDistance,
                 this.getDamage(),
