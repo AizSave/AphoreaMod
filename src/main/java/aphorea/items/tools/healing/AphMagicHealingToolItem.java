@@ -3,7 +3,7 @@ package aphorea.items.tools.healing;
 import aphorea.items.vanillaitemtypes.AphToolItem;
 import aphorea.registry.AphEnchantments;
 import aphorea.utils.magichealing.AphMagicHealing;
-import aphorea.utils.magichealing.AphMagicHealingFunctions;
+import aphorea.utils.magichealing.AphMagicHealingBuff;
 import necesse.engine.localization.Localization;
 import necesse.engine.localization.message.GameMessage;
 import necesse.engine.localization.message.LocalMessage;
@@ -80,12 +80,7 @@ abstract public class AphMagicHealingToolItem extends AphToolItem {
     }
 
     public void onHealingToolItemUsed(Mob mob, InventoryItem item) {
-        mob.buffManager.getArrayBuffs().stream().filter(buff -> buff.buff instanceof AphMagicHealingFunctions).forEach(buff -> ((AphMagicHealingFunctions) buff.buff).onMagicalHealingItemUsed(mob, this, item));
-
-        if (this instanceof AphMagicHealingFunctions) {
-            ((AphMagicHealingFunctions) this).onMagicalHealingItemUsed(mob, this, item);
-        }
-
+        mob.buffManager.getArrayBuffs().stream().filter(buff -> buff.buff instanceof AphMagicHealingBuff).forEach(buff -> ((AphMagicHealingBuff) buff.buff).onMagicalHealingItemUsed(buff, mob, this, item));
     }
 
     @Override

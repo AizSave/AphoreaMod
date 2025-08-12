@@ -1,7 +1,7 @@
 package aphorea.buffs.Trinkets;
 
 import aphorea.utils.area.AphAreaList;
-import aphorea.utils.magichealing.AphMagicHealingFunctions;
+import aphorea.utils.magichealing.AphMagicHealingBuff;
 import necesse.engine.localization.Localization;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
@@ -17,7 +17,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.HashMap;
 import java.util.Map;
 
-abstract public class AphAreaWhenHealTrinketBuff extends TrinketBuff implements AphMagicHealingFunctions {
+abstract public class AphAreaWhenHealTrinketBuff extends TrinketBuff implements AphMagicHealingBuff {
     public int healingToArea;
     public Map<String, Integer> healingDone = new HashMap<>();
 

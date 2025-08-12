@@ -5,6 +5,7 @@ import aphorea.registry.AphModifiers;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.MobHealthChangeEvent;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
+import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.DoubleItemStatTip;
 import necesse.inventory.item.ItemStatTipList;
@@ -37,15 +38,20 @@ public class AphMagicHealing {
     }
 
     public static void healMobExecute(Mob healer, Mob target, int healing, @Nullable InventoryItem item, @Nullable ToolItem toolItem) {
+        for (ActiveBuff buff : healer.buffManager.getArrayBuffs()) {
+            if (buff.buff instanceof AphMagicHealingBuff) {
+                healing = ((AphMagicHealingBuff) buff.buff).onBeforeMagicalHealing(buff, healer, target, healing, toolItem, item);
+            }
+        }
+
         int realHealing = Math.min(healing, target.getMaxHealth() - target.getHealth());
         if (realHealing > 0) {
             target.getLevel().entityManager.addLevelEvent(new MobHealthChangeEvent(target, realHealing));
 
-            healer.buffManager.getArrayBuffs().stream().filter(buff -> buff.buff instanceof AphMagicHealingFunctions)
-                    .forEach(buff -> ((AphMagicHealingFunctions) buff.buff).onMagicalHealing(healer, target, healing, realHealing, toolItem, item));
-
-            if (toolItem instanceof AphMagicHealingFunctions) {
-                ((AphMagicHealingFunctions) toolItem).onMagicalHealing(healer, target, healing, realHealing, toolItem, item);
+            for (ActiveBuff buff : healer.buffManager.getArrayBuffs()) {
+                if (buff.buff instanceof AphMagicHealingBuff) {
+                    ((AphMagicHealingBuff) buff.buff).onMagicalHealing(buff, healer, target, healing, realHealing, toolItem, item);
+                }
             }
 
             cooldowns.put(target, target.getWorldTime() + 50);

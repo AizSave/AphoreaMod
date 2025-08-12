@@ -10,7 +10,7 @@ import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
 import aphorea.utils.area.AphAreaType;
-import aphorea.utils.magichealing.AphMagicHealingFunctions;
+import aphorea.utils.magichealing.AphMagicHealingBuff;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.registries.EnchantmentRegistry;
@@ -111,11 +111,7 @@ public class HarpOfHarmony extends AphMagicProjectileToolItem implements ItemInt
     }
 
     public void onHealingToolItemUsed(Mob mob, InventoryItem item) {
-        mob.buffManager.getArrayBuffs().stream().filter(buff -> buff.buff instanceof AphMagicHealingFunctions).forEach(buff -> ((AphMagicHealingFunctions) buff.buff).onMagicalHealingItemUsed(mob, this, item));
-
-        if (this instanceof AphMagicHealingFunctions) {
-            ((AphMagicHealingFunctions) this).onMagicalHealingItemUsed(mob, this, item);
-        }
+        mob.buffManager.getArrayBuffs().stream().filter(buff -> buff.buff instanceof AphMagicHealingBuff).forEach(buff -> ((AphMagicHealingBuff) buff.buff).onMagicalHealingItemUsed(buff, mob, this, item));
     }
 
     @Override

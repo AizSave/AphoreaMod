@@ -42,9 +42,9 @@ public class AphModifiers {
 
         LOYAL = new Modifier<>(ToolItemModifiers.LIST, "loyal", false, false, Modifier.OR_APPEND, Modifier.BOOL_PARSER("loyal"), null);
 
-        INSPIRATION_DAMAGE = new Modifier<>(BuffModifiers.LIST, "bannerdamage", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> v, Modifier.NORMAL_PERC_PARSER("bannerdamage"), ModifierLimiter.NORMAL_PERC_LIMITER("bannerdamage"));
-        INSPIRATION_CRIT_CHANCE = new Modifier<>(BuffModifiers.LIST, "bannercritchance", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> v, Modifier.NORMAL_PERC_PARSER("bannercritchance"), ModifierLimiter.NORMAL_PERC_LIMITER("bannercritchance"));
-        INSPIRATION_CRIT_DAMAGE = new Modifier<>(BuffModifiers.LIST, "bannercritdamage", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> v, Modifier.NORMAL_PERC_PARSER("bannercritdamage"), ModifierLimiter.NORMAL_PERC_LIMITER("bannercritdamage"));
+        INSPIRATION_DAMAGE = new Modifier<>(BuffModifiers.LIST, "inspirationdamage", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> v, Modifier.NORMAL_PERC_PARSER("inspirationdamage"), ModifierLimiter.NORMAL_PERC_LIMITER("inspirationdamage"));
+        INSPIRATION_CRIT_CHANCE = new Modifier<>(BuffModifiers.LIST, "inspirationcritchance", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> v, Modifier.NORMAL_PERC_PARSER("inspirationcritchance"), ModifierLimiter.NORMAL_PERC_LIMITER("inspirationcritchance"));
+        INSPIRATION_CRIT_DAMAGE = new Modifier<>(BuffModifiers.LIST, "inspirationcritdamage", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> v, Modifier.NORMAL_PERC_PARSER("inspirationcritdamage"), ModifierLimiter.NORMAL_PERC_LIMITER("inspirationcritdamage"));
 
         INSPIRATION_EFFECT = new Modifier<>(BuffModifiers.LIST, "inspirationeffect", 1.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> Math.max(0.0F, v), Modifier.NORMAL_PERC_PARSER("inspirationeffect"), ModifierLimiter.NORMAL_PERC_LIMITER("inspirationeffect"));
         INSPIRATION_ABILITY_SPEED = new Modifier<>(BuffModifiers.LIST, "inspirationabilityspeed", 1.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> Math.max(0.0F, v), Modifier.NORMAL_PERC_PARSER("inspirationabilityspeed"), ModifierLimiter.NORMAL_PERC_LIMITER("inspirationabilityspeed"));
