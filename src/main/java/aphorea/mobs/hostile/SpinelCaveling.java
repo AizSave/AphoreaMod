@@ -42,7 +42,7 @@ public class SpinelCaveling extends HostileMob {
     public InventoryItem item;
 
     public SpinelCaveling() {
-        super(120);
+        super(160);
         this.setArmor(10);
         this.setSpeed(60);
         this.setFriction(3.0F);

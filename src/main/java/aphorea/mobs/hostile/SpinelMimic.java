@@ -48,7 +48,7 @@ public class SpinelMimic extends HostileMob {
     int adjustY = 22;
 
     public SpinelMimic() {
-        super(300);
+        super(400);
         this.setArmor(20);
         this.setSpeed(60.0F);
         this.setFriction(5.0F);

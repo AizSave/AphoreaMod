@@ -70,15 +70,13 @@ public class SpinelShieldBuff extends TrinketBuff implements ActiveBuffAbility {
     }
 
     public boolean tickActiveAbility(PlayerMob player, ActiveBuff buff, boolean isRunningClient) {
-        if (Control.TRINKET_ABILITY.isDown()) {
-            ActiveBuff shieldBuff = buff.owner.buffManager.getBuff(BuffRegistry.getBuff("spinelshieldactive"));
-            if (shieldBuff != null) {
-                if (shieldBuff.getDurationLeft() < 200) {
-                    shieldBuff.setDurationLeftSeconds(0.2F);
-                }
-            } else {
-                buff.owner.buffManager.addBuff(new ActiveBuff(BuffRegistry.getBuff("spinelshieldactive"), buff.owner, 1.0F, null), true);
+        ActiveBuff shieldBuff = buff.owner.buffManager.getBuff(BuffRegistry.getBuff("spinelshieldactive"));
+        if (shieldBuff != null) {
+            if (shieldBuff.getDurationLeft() < 200) {
+                shieldBuff.setDurationLeftSeconds(0.2F);
             }
+        } else {
+            buff.owner.buffManager.addBuff(new ActiveBuff(BuffRegistry.getBuff("spinelshieldactive"), buff.owner, 1.0F, null), true);
         }
 
         if (buff.owner.isServer()) {

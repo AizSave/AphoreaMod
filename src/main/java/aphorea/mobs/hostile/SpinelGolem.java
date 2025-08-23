@@ -70,7 +70,7 @@ public class SpinelGolem extends HostileMob {
     );
 
     public SpinelGolem() {
-        super(100);
+        super(200);
         this.setArmor(20);
         this.setSpeed(20.0F);
         this.setFriction(3.0F);

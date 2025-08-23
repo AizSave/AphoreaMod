@@ -36,8 +36,9 @@ import necesse.level.maps.light.GameLight;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
-import java.util.*;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
@@ -238,21 +239,21 @@ public class InfectedTreant extends HostileMob {
         boolean prevent = true;
         if (event.attacker.getAttackOwner().isPlayer) {
             PlayerMob player = (PlayerMob) event.attacker.getAttackOwner();
-            if(player.isAttacking) {
+            if (player.isAttacking) {
                 InventoryItem item = player.attackSlot.getItem(player.getInv());
                 prevent = item == null || !(item.item instanceof AxeToolItem);
             }
-            if(prevent && player.isServer()) {
+            if (prevent && player.isServer()) {
                 long messageTime = playersMessageTime.getOrDefault(player.getUniqueID(), 0L);
                 long now = player.getTime();
-                if(messageTime + 5000 < now) {
+                if (messageTime + 5000 < now) {
                     playersMessageTime.put(player.getUniqueID(), now);
                     player.getServerClient().sendChatMessage(new LocalMessage("message", "treantattackmessage"));
                 }
             }
         }
 
-        if(prevent) {
+        if (prevent) {
             event.damage = event.damage.modDamage(0);
             event.prevent();
             event.playHitSound = false;

@@ -261,7 +261,9 @@ public class BabylonTowerMob extends BossMob {
     @Override
     protected void doBeforeHitLogic(MobBeforeHitEvent event) {
         if (hearthCrystalClose()) {
-            event.damage = event.damage.setDamage(event.damage.damage * 0.8F);
+            event.prevent();
+            event.showDamageTip = false;
+            event.playHitSound = false;
         }
         super.doBeforeHitLogic(event);
     }
@@ -286,6 +288,7 @@ public class BabylonTowerMob extends BossMob {
         public int currentStageTick = 0;
         public int currentStageTickDuration = 6000 / 50;
         public boolean babylonSummoned = false;
+        public boolean alreadyBulkStage = false;
 
         public Map<String, Object> saveData = new HashMap<>();
 
@@ -303,12 +306,17 @@ public class BabylonTowerMob extends BossMob {
 
                         @Override
                         public AINodeResult tick(T mob, Blackboard<T> blackboard) {
-                            if (mob.hearthCrystalClose() && mob.isServer() && currentStageTick % 20 == 0) {
-                                mob.setHealth((int) (mob.getHealth() + mob.getMaxHealth() * 0.002F * streamPossibleTargets(mob).count() - 1));
-                            }
                             if (!babylonSummoned && mob.getHealthPercent() <= 0.6F) {
                                 babylonSummoned = true;
                                 summonBabylon(mob);
+                                float angle = GameRandom.globalRandom.getFloatBetween(0, (float) (Math.PI * 2));
+                                float distanceFromCenter = GameRandom.globalRandom.getFloatBetween(0.4F, 0.6F);
+                                int health = 80 + (int) (40 * streamPossibleTargets(mob).count());
+                                boolean clockWise = GameRandom.globalRandom.getChance(0.5F);
+
+                                summonHearthCrystalMoved(mob, distanceFromCenter, angle, health, 0, 0.15F, 0.5F, clockWise);
+                                summonHearthCrystalMoved(mob, distanceFromCenter, angle + (float) Math.PI * 2 / 3, health, 0, 0.15F, 0.5F, clockWise);
+                                summonHearthCrystalMoved(mob, distanceFromCenter, angle + (float) Math.PI * 4 / 3, health, 0, 0.15F, 0.5F, clockWise);
                             }
                             return AINodeResult.FAILURE;
                         }
@@ -471,10 +479,16 @@ public class BabylonTowerMob extends BossMob {
             stagesUntilNow++;
 
             int selected;
-            if (stagesUntilNow == 5 || stagesUntilNow % 10 == 0) {
+
+            if (!alreadyBulkStage && mob.getHealthPercent() < 0.4F) {
+                stages.get(hearthPilarStage).startStage(mob);
+                selected = selectStage(projectileBulkStages);
+                alreadyBulkStage = true;
+            } else if (stagesUntilNow == 5 || stagesUntilNow % 10 == 0) {
                 selected = hearthPilarStage;
             } else if (stagesUntilNow % 5 == 0) {
                 selected = selectStage(projectileBulkStages);
+                alreadyBulkStage = true;
             } else {
                 selected = selectStage(projectileStages);
             }
