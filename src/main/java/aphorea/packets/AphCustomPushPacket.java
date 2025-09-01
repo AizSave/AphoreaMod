@@ -19,11 +19,7 @@ public class AphCustomPushPacket extends Packet {
     public final float dirX;
     public final float dirY;
     public final float strength;
-
-    public final int r;
-    public final int g;
-    public final int b;
-    public final int a;
+    public final Color color;
 
     public AphCustomPushPacket(byte[] data) {
         super(data);
@@ -32,10 +28,8 @@ public class AphCustomPushPacket extends Packet {
         this.dirX = reader.getNextFloat();
         this.dirY = reader.getNextFloat();
         this.strength = reader.getNextFloat();
-        this.r = reader.getNextInt();
-        this.g = reader.getNextInt();
-        this.b = reader.getNextInt();
-        this.a = reader.getNextInt();
+        int colorRGB = reader.getNextInt();
+        this.color = colorRGB == 0 ? null : new Color(colorRGB, true);
     }
 
     public AphCustomPushPacket(Mob mob, float dirX, float dirY, float strength, Color color) {
@@ -43,26 +37,13 @@ public class AphCustomPushPacket extends Packet {
         this.dirX = dirX;
         this.dirY = dirY;
         this.strength = strength;
-        if (color == null) {
-            this.r = -1;
-            this.g = -1;
-            this.b = -1;
-            this.a = -1;
-        } else {
-            this.r = color.getRed();
-            this.g = color.getGreen();
-            this.b = color.getBlue();
-            this.a = color.getAlpha();
-        }
+        this.color = color;
         PacketWriter writer = new PacketWriter(this);
         writer.putNextInt(this.mobUniqueID);
         writer.putNextFloat(dirX);
         writer.putNextFloat(dirY);
         writer.putNextFloat(strength);
-        writer.putNextInt(r);
-        writer.putNextInt(g);
-        writer.putNextInt(b);
-        writer.putNextInt(a);
+        writer.putNextInt(color == null ? 0 : color.getRGB());
     }
 
     public AphCustomPushPacket(Mob mob, float dirX, float dirY, float strength) {
@@ -74,10 +55,6 @@ public class AphCustomPushPacket extends Packet {
         if (client.getLevel() != null) {
             Mob target = GameUtils.getLevelMob(this.mobUniqueID, client.getLevel());
             if (target != null) {
-                Color color = null;
-                if (r != -1) {
-                    color = new Color(r, g, b, a);
-                }
                 applyToMob(target.getLevel(), target, this.dirX, this.dirY, this.strength, color);
             } else {
                 client.network.sendPacket(new PacketRequestMobData(this.mobUniqueID));

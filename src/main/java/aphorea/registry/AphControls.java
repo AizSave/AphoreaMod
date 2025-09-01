@@ -26,7 +26,7 @@ public class AphControls {
             @Override
             public void activate(InputEvent event) {
                 super.activate(event);
-                if (isPressed()) {
+                if (isPressed() && GlobalData.getCurrentState() instanceof MainGame) {
                     MainGame mainGame = (MainGame) GlobalData.getCurrentState();
                     Client client = mainGame.getClient();
                     if (client != null) {

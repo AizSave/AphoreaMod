@@ -69,7 +69,7 @@ public class SpamBulletProjectile extends BulletProjectile {
         this.spawnTime = this.getWorldEntity().getTime();
 
         GameRandom gameRandom = new GameRandom(this.getUniqueID());
-        this.type = gameRandom.nextInt(texture.getWidth() / 32);
+        this.type = gameRandom.getIntBetween(0, 4);
 
         this.clockWise = gameRandom.nextBoolean();
 

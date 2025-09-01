@@ -5,6 +5,7 @@ import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
+import necesse.engine.network.client.Client;
 import necesse.engine.registries.ItemRegistry;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
@@ -136,6 +137,18 @@ public class HearthCrystalMob extends HostileMob {
         return true;
     }
 
+    @Override
+    public boolean shouldDrawOnMap() {
+        return true;
+    }
+
+    @Override
+    public void drawOnMap(TickManager tickManager, Client client, int x, int y, double tileScale, Rectangle drawBounds, boolean isMinimap) {
+        super.drawOnMap(tickManager, client, x, y, tileScale, drawBounds, isMinimap);
+        int drawX = x - 8;
+        int drawY = y - 8;
+        BabylonTowerMob.icon.initDraw().sprite(0, 0, 32).size(16, 16).draw(drawX, drawY);
+    }
 
     public boolean canPushMob(Mob other) {
         return false;

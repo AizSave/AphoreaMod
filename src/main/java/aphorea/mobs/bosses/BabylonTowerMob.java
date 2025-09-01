@@ -10,6 +10,7 @@ import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
 import necesse.engine.achievements.AchievementManager;
+import necesse.engine.eventStatusBars.EventStatusBarData;
 import necesse.engine.eventStatusBars.EventStatusBarManager;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.localization.message.LocalMessage;
@@ -56,7 +57,7 @@ public class BabylonTowerMob extends BossMob {
     private static final AphAreaList searchArea = new AphAreaList(
             new AphArea(BOSS_AREA_RADIUS, AphColors.spinel)
     ).setOnlyVision(false);
-    public static MaxHealthGetter MAX_HEALTH = new MaxHealthGetter(5000, 6000, 7000, 8500, 10000);
+    public static MaxHealthGetter MAX_HEALTH = new MaxHealthGetter(5000, 5500, 6000, 7000, 8000);
     private int aliveTimer;
     public static GameTexture icon;
 
@@ -103,7 +104,13 @@ public class BabylonTowerMob extends BossMob {
     public void clientTick() {
         super.clientTick();
         SoundManager.setMusic(MusicRegistry.WrathOfTheEmpress, SoundManager.MusicPriority.EVENT, 1.5F);
-        EventStatusBarManager.registerMobHealthStatusBar(this);
+        EventStatusBarManager.registerEventStatusBar(this.getUniqueID(), this.getHealthUnlimited(), this.getMaxHealth(),
+                () -> new EventStatusBarData(EventStatusBarData.BarCategory.boss, this.getLocalization()) {
+                    @Override
+                    public Color getFillColor() {
+                        return canTakeDamage() ? super.getFillColor() : new Color(102, 102, 102);
+                    }
+                });
         BossNearbyBuff.applyAround(this);
         searchArea.executeClient(getLevel(), this.x, this.y, 1, 1, 0, 100);
         this.tickAlive();
@@ -144,7 +151,7 @@ public class BabylonTowerMob extends BossMob {
     }
 
     public boolean canTakeDamage() {
-        return true;
+        return !hearthCrystalClose();
     }
 
     public boolean countDamageDealt() {
@@ -178,7 +185,6 @@ public class BabylonTowerMob extends BossMob {
         if (this.scaling != null) {
             this.scaling.updatedMaxHealth();
         }
-
     }
 
     @Override
@@ -255,17 +261,7 @@ public class BabylonTowerMob extends BossMob {
     }
 
     public boolean hearthCrystalClose() {
-        return getLevel().entityManager.mobs.stream().anyMatch(m -> Objects.equals(m.getStringID(), "hearthcrystal") && m.getDistance(this) < BOSS_AREA_RADIUS);
-    }
-
-    @Override
-    protected void doBeforeHitLogic(MobBeforeHitEvent event) {
-        if (hearthCrystalClose()) {
-            event.prevent();
-            event.showDamageTip = false;
-            event.playHitSound = false;
-        }
-        super.doBeforeHitLogic(event);
+        return getLevel() != null && getLevel().entityManager.mobs.stream().anyMatch(m -> Objects.equals(m.getStringID(), "hearthcrystal") && m.getDistance(this) < BOSS_AREA_RADIUS);
     }
 
     @Override
@@ -274,13 +270,13 @@ public class BabylonTowerMob extends BossMob {
 
         SoundManager.playSound(GameResources.roar, SoundEffect.effect(this)
                 .volume(0.7f)
-                .pitch(GameRandom.globalRandom.getFloatBetween(1.0f, 1.1f)));
+                .pitch(GameRandom.globalRandom.getFloatBetween(1, 1.1F)));
 
         ai = new BehaviourTreeAI<>(this, new BabylonTowerAI<>(), new FlyingAIMover());
     }
 
     public static class BabylonTowerAI<T extends BabylonTowerMob> extends SelectorAINode<T> {
-        static GameDamage projectileDamage = new GameDamage(20F, 40F);
+        static GameDamage projectileDamage = new GameDamage(20, 40);
 
         public ArrayList<BabylonTowerActionAiNode> stages = new ArrayList<>();
         public int stagesUntilNow = 0;
@@ -310,7 +306,7 @@ public class BabylonTowerMob extends BossMob {
                                 babylonSummoned = true;
                                 summonBabylon(mob);
                                 float angle = GameRandom.globalRandom.getFloatBetween(0, (float) (Math.PI * 2));
-                                float distanceFromCenter = GameRandom.globalRandom.getFloatBetween(0.4F, 0.6F);
+                                float distanceFromCenter = 0.25F;
                                 int health = 80 + (int) (40 * streamPossibleTargets(mob).count());
                                 boolean clockWise = GameRandom.globalRandom.getChance(0.5F);
 

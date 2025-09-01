@@ -121,30 +121,77 @@ public class AphArea {
     public void executeServer(Mob attacker, @NotNull Mob target, float x, float y, float modRange, InventoryItem item, ToolItem toolItem) {
         float distance = target.getDistance(x, y);
         if ((position == 0 == isCenter(attacker, target, distance)) || (inRange(distance, modRange) && inVision(target, x, y))) {
-            if (this.areaTypes.contains(AphAreaType.DAMAGE) && target != attacker && canAreaAttack(attacker, target)) {
-                target.isServerHit(areaDamage, target.x - attacker.x, target.y - attacker.y, 0, attacker);
+            if (isDamageArea() && canDamageTarget(attacker, target)) {
+                applyDamage(attacker, target);
             }
-            if (this.areaTypes.contains(AphAreaType.HEALING) && (target == attacker || AphMagicHealing.canHealMob(attacker, target))) {
-                if (directExecuteHealing) {
-                    AphMagicHealing.healMobExecute(attacker, target, areaHealing, item, toolItem);
-                } else {
-                    AphMagicHealing.healMob(attacker, target, areaHealing, item, toolItem);
-                }
+            if (isHealingArea() && canHealTarget(attacker, target)) {
+                applyHealth(attacker, target, item, toolItem);
             }
-            if (attacker.isServer()) {
-                if (this.areaTypes.contains(AphAreaType.BUFF) && (target == attacker || target.isSameTeam(attacker))) {
-                    Arrays.stream(buffs).forEach(
-                            buffID -> target.buffManager.addBuff(new ActiveBuff(BuffRegistry.getBuff(buffID), target, buffDuration, attacker), true)
-                    );
-                }
-                if (this.areaTypes.contains(AphAreaType.DEBUFF) && target != attacker && canAreaAttack(attacker, target)) {
-                    Arrays.stream(debuffs).forEach(
-                            debuffID -> target.buffManager.addBuff(new ActiveBuff(BuffRegistry.getBuff(debuffID), target, debuffDuration, attacker), true)
-                    );
-                }
+            if (isBuffArea() && canBuffTarget(attacker, target)) {
+                applyBuffs(attacker, target);
+            }
+            if (isDebuffArea() && canDebuffTarget(attacker, target)) {
+                applyDebuffs(attacker, target);
             }
         }
     }
+
+    public boolean isDamageArea() {
+        return this.areaTypes.contains(AphAreaType.DAMAGE);
+    }
+
+    public boolean canDamageTarget(Mob attacker, @NotNull Mob target) {
+        return target != attacker && canAreaAttack(attacker, target);
+    }
+
+    public void applyDamage(Mob attacker, @NotNull Mob target) {
+        target.isServerHit(areaDamage, target.x - attacker.x, target.y - attacker.y, 0, attacker);
+    }
+
+    public boolean isHealingArea() {
+        return this.areaTypes.contains(AphAreaType.HEALING);
+    }
+
+    public boolean canHealTarget(Mob attacker, @NotNull Mob target) {
+        return target == attacker || AphMagicHealing.canHealMob(attacker, target);
+    }
+
+    public void applyHealth(Mob attacker, @NotNull Mob target, InventoryItem item, ToolItem toolItem) {
+        if (directExecuteHealing) {
+            AphMagicHealing.healMobExecute(attacker, target, areaHealing, item, toolItem);
+        } else {
+            AphMagicHealing.healMob(attacker, target, areaHealing, item, toolItem);
+        }
+    }
+
+    public boolean isBuffArea() {
+        return this.areaTypes.contains(AphAreaType.BUFF);
+    }
+
+    public boolean canBuffTarget(Mob attacker, @NotNull Mob target) {
+        return target == attacker || target.isSameTeam(attacker);
+    }
+
+    public void applyBuffs(Mob attacker, @NotNull Mob target) {
+        Arrays.stream(buffs).forEach(
+                buffID -> target.buffManager.addBuff(new ActiveBuff(BuffRegistry.getBuff(buffID), target, buffDuration, attacker), true)
+        );
+    }
+
+    public boolean isDebuffArea() {
+        return this.areaTypes.contains(AphAreaType.DEBUFF);
+    }
+
+    public boolean canDebuffTarget(Mob attacker, @NotNull Mob target) {
+        return target != attacker && canAreaAttack(attacker, target);
+    }
+
+    public void applyDebuffs(Mob attacker, @NotNull Mob target) {
+        Arrays.stream(debuffs).forEach(
+                debuffID -> target.buffManager.addBuff(new ActiveBuff(BuffRegistry.getBuff(debuffID), target, debuffDuration, attacker), true)
+        );
+    }
+
 
     public static boolean isCenter(Mob attacker, Mob target, float distance) {
         return attacker == target && distance == 0;

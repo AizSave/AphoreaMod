@@ -65,7 +65,7 @@ public class BabylonHead extends BossWormMobHead<BabylonBody, BabylonHead> {
         this.moveAccuracy = 100;
         this.movementUpdateCooldown = 2000;
         this.movePosTolerance = 100.0F;
-        this.setSpeed(250.0F);
+        this.setSpeed(100);
         this.accelerationMod = 1.0F;
         this.decelerationMod = 1.0F;
         this.collision = new Rectangle(-30, -25, 60, 50);
@@ -109,7 +109,7 @@ public class BabylonHead extends BossWormMobHead<BabylonBody, BabylonHead> {
     }
 
     public boolean canCollisionHit(Mob target) {
-        return this.height < 45.0F && super.canCollisionHit(target);
+        return Math.abs(this.height - target.getFlyingHeight()) < 45.0F && super.canCollisionHit(target);
     }
 
     @Override
@@ -142,13 +142,13 @@ public class BabylonHead extends BossWormMobHead<BabylonBody, BabylonHead> {
 
         SoundManager.setMusic(MusicRegistry.DragonsHoard, SoundManager.MusicPriority.EVENT, 1.5F);
         float mod = Math.abs((float) Math.pow(getBabylonTowerHealthPerc(), 0.5) - 1.0F);
-        this.setSpeed(120.0F + mod * 90.0F);
+        this.setSpeed(100 + mod * 60);
     }
 
     public void serverTick() {
         super.serverTick();
         float mod = Math.abs((float) Math.pow(getBabylonTowerHealthPerc(), 0.5) - 1.0F);
-        this.setSpeed(120.0F + mod * 90.0F);
+        this.setSpeed(100 + mod * 60);
     }
 
     public float getBabylonTowerHealthPerc() {
