@@ -72,7 +72,6 @@ runes=Runes
 [object]
 witchstatue=Witch Statue
 runestable=Runes Table
-#NEW
 infectedsapling=Infected Sapling
 spinelcluster=Spinel Cluster
 spinelcluster_small=Small Spinel Cluster
@@ -92,6 +91,9 @@ infectedcabinet=Infected Cabinet
 infectedbed=Infected Bed
 infecteddoublebed=Infected Double Bed
 infectedcandelabra=Infected Candelabra
+# NEW
+infectedwoodwall=Infected Wood Wall
+infectedwooddoor=Infected Wood Door
 
 
 [itemcategory]

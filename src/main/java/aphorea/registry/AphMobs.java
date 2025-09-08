@@ -33,13 +33,12 @@ public class AphMobs {
 
         // Bosses [Mobs]
         MobRegistry.registerMob("unstablegelslime", UnstableGelSlime.class, true, true);
-        MobRegistry.registerMob("miniunstablegelslime", MiniUnstableGelSlime.class, true);
+        MobRegistry.registerMob("miniunstablegelslime", MiniUnstableGelSlime.class, true, false, false);
 
         MobRegistry.registerMob("babylontower", BabylonTowerMob.class, true, true);
         MobRegistry.registerMob("babylon", BabylonHead.class, false);
-        MobRegistry.registerMob("babylonbody", BabylonBody.class, false);
-
-        MobRegistry.registerMob("hearthcrystal", HearthCrystalMob.class, true);
+        MobRegistry.registerMob("babylonbody", BabylonBody.class, false, false, false);
+        MobRegistry.registerMob("hearthcrystal", HearthCrystalMob.class, true, false, false);
 
         // Summons [Mobs]
         MobRegistry.registerMob("babyunstablegelslime", BabyUnstableGelSlime.class, false);

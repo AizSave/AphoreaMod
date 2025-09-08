@@ -32,7 +32,8 @@ abstract public class AphAreaWhenHealTrinketBuff extends TrinketBuff implements 
     public void init(ActiveBuff activeBuff, BuffEventSubscriber buffEventSubscriber) {
     }
 
-    public void onMagicalHealing(Mob healer, Mob target, int healing, int realHealing, @Nullable ToolItem toolItem, @Nullable InventoryItem item) {
+    @Override
+    public void onMagicalHealing(ActiveBuff activeBuff, Mob healer, Mob target, int healing, int realHealing, @Nullable ToolItem toolItem, @Nullable InventoryItem item) {
         if (healer.isServer()) {
             String playerName = ((PlayerMob) healer).playerName;
 

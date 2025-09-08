@@ -101,8 +101,9 @@ public class AphBanner extends BannerItem {
     }
 
     public void applyBuffs(Mob mob, PlayerMob player) {
-        ActiveBuff newBuff = new ActiveBuff(this.buff.apply(mob), mob, 100, player);
+        Buff buff = this.buff.apply(mob);
         if (buff != null) {
+            ActiveBuff newBuff = new ActiveBuff(buff, mob, 100, player);
             if (mob.buffManager.hasBuff(newBuff.buff.getID())) {
                 ActiveBuff antBuff = mob.buffManager.getBuff(newBuff.buff.getID());
                 if (antBuff != null && antBuff.buff instanceof AphBannerBuff) {

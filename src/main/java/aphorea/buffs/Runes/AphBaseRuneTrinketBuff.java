@@ -153,14 +153,16 @@ public class AphBaseRuneTrinketBuff extends TrinketBuff {
         if (!preventUsage) {
             float healthCost = getHealthCost(player);
             if (healthCost != 0) {
-                if (level.isServer()) {
-                    LevelEvent changeHeal = new MobHealthChangeEvent(player, (int) (-healthCost * player.getMaxHealth()));
-                    player.getLevel().entityManager.addLevelEvent(changeHeal);
-                } else if (level.isClient()) {
-                    if (healthCost > 0) {
-                        SoundManager.playSound(GameResources.npchurt, SoundEffect.effect(player).pitch(GameRandom.globalRandom.getOneOf(0.95F, 1.0F, 1.05F)));
-                    } else {
-                        SoundManager.playSound(GameResources.magicbolt1, SoundEffect.effect(player).volume(1.0F).pitch(1.0F));
+                int healthMod = (int) (-healthCost * player.getMaxHealth());
+                if(healthMod != 0) {
+                    if (level.isServer()) {
+                        player.getLevel().entityManager.addLevelEvent(new MobHealthChangeEvent(player, healthMod));
+                    } else if (level.isClient()) {
+                        if (healthCost > 0) {
+                            SoundManager.playSound(GameResources.npchurt, SoundEffect.effect(player).pitch(GameRandom.globalRandom.getOneOf(0.95F, 1.0F, 1.05F)));
+                        } else {
+                            SoundManager.playSound(GameResources.magicbolt1, SoundEffect.effect(player).volume(1.0F).pitch(1.0F));
+                        }
                     }
                 }
             }

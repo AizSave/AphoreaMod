@@ -228,7 +228,7 @@ public class AphLootTables {
         );
 
         NightSwarmLevelEvent.privateLootTable.items.add(
-                new LootItem("runeofmotherslime")
+                new LootItem("runeofnightswarm")
         );
 
         SpiderEmpressMob.privateLootTable.items.add(

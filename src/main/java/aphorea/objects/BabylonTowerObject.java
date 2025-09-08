@@ -138,18 +138,6 @@ public class BabylonTowerObject extends StaticMultiObject {
         return 4;
     }
 
-
-    @Override
-    public void drawPreview(Level level, int tileX, int tileY, int rotation, float alpha, PlayerMob player, GameCamera camera) {
-        GameTexture texture = this.texture.getDamagedTexture(0.0F);
-        int drawX = camera.getTileDrawX(tileX);
-        int drawY = camera.getTileDrawY(tileY) - texture.getHeight() + 32;
-        int spriteWidth;
-        spriteWidth = (texture.getWidth() - 32) / 2;
-        texture.initDraw().alpha(alpha).draw(drawX - spriteWidth, drawY + this.yOffset);
-
-    }
-
     @Override
     public boolean canInteract(Level level, int x, int y, PlayerMob player) {
         return !isActive(level, x, y);
@@ -253,7 +241,7 @@ public class BabylonTowerObject extends StaticMultiObject {
                     getMob().remove();
                     remove();
                 } else if (heal) {
-                    getMob().setHealth((int) (getMob().getHealth() + getMob().getMaxHealth() * 0.004F));
+                    getMob().setHealth((int) (getMob().getHealth() + getMob().getMaxHealth() * 0.01F));
                 }
             }
         }

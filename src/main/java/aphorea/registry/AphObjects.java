@@ -3,10 +3,14 @@ package aphorea.registry;
 import aphorea.objects.*;
 import aphorea.utils.AphColors;
 import necesse.engine.registries.ObjectRegistry;
+import necesse.inventory.item.toolItem.ToolType;
 import necesse.level.gameObject.RockObject;
 import necesse.level.gameObject.SingleRockObject;
+import necesse.level.gameObject.WallObject;
 import necesse.level.gameObject.furniture.*;
 import necesse.level.gameObject.furniture.doubleBed.DoubleBedBaseObject;
+
+import java.awt.*;
 
 public class AphObjects {
     public static void registerCore() {
@@ -26,6 +30,9 @@ public class AphObjects {
         // Biome Objects
         surfaceObjects();
         caveObjects();
+
+        // Walls
+        WallObject.registerWallObjects("infectedwood", "infectedwoodwall", 0.0F, AphColors.infected_wood, ToolType.ALL, 2.0F, 6.0F);
 
         // Rocks
         gelRock();

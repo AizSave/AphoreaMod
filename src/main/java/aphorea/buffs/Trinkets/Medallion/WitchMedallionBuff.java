@@ -1,4 +1,4 @@
-package aphorea.buffs.Trinkets.Meallion;
+package aphorea.buffs.Trinkets.Medallion;
 
 import aphorea.buffs.Trinkets.AphAreaWhenHealTrinketBuff;
 import aphorea.utils.AphColors;
