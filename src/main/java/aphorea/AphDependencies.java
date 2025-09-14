@@ -3,10 +3,17 @@ package aphorea;
 import necesse.engine.modLoader.ModLoader;
 import necesse.engine.modLoader.ModNextListData;
 
+import java.util.Objects;
+
 public class AphDependencies {
     public static String APHOREA_MOD_ID = "aphoreateam.aphoreamod";
+    public static String RPG_MOD_ID = "aizsave.rpgmod";
     public static String MIGHTY_BANNER_MOD_ID = "daria40k.mightybannermod";
     public static String SUMMONER_EXPANSION_MOD_ID = "gagadoliano.summonerexpansion";
+
+    public static boolean checkHasMod(String modId) {
+        return ModLoader.getEnabledMods().stream().anyMatch(mod -> Objects.equals(mod.id, modId));
+    }
 
     public static boolean checkOptionalDependency(String modId) {
         for (ModNextListData mod : ModLoader.getAllModsSortedByCurrentList()) {
@@ -20,11 +27,15 @@ public class AphDependencies {
         return false;
     }
 
-    public static boolean checkMightyBanner() {
+    public static boolean checkRPGMod() {
+        return checkHasMod(RPG_MOD_ID);
+    }
+
+    public static boolean checkDependencyMightyBanner() {
         return checkOptionalDependency(MIGHTY_BANNER_MOD_ID);
     }
 
-    public static boolean checkSummonerExpansion() {
+    public static boolean checkDependencySummonerExpansion() {
         return checkOptionalDependency(SUMMONER_EXPANSION_MOD_ID);
     }
 }

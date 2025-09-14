@@ -384,6 +384,7 @@ backpack=It is a new inventory that stores all the items you collect
 backpackslots=Capacity of <slots> items
 stored=Stored items: <items>
 backpackcraft=Must be empty to craft a better backpack
+rpgmodnerf=Item nerfed by RPG Mod
 
 // Consumables
 deleteditem=This item has been removed, use this item to recover the materials before it is permanently removed
@@ -469,8 +470,8 @@ rockyperiapt=§7+5§0 Armor, but §6-5%§0 Movement Speed
 rockyperiapt2=Press [input=trinketability] to gain 10 Armor for 10 seconds
 unstableperiapt=Summons two Baby Unstable Gel Slimes (6 Summoner Damage)
 unstableperiapt2=Makes you immune to the Sticky debuff
-bloodyperiapt=Also, the weapons 'Blood Bolt' and 'Blood Volley' will steal §73%§0 of life
-demonicperiapt=Also, Magic weapons will steal §73%§0 of life
+bloodyperiapt=The weapons 'Blood Bolt' and 'Blood Volley' will steal §7<amount>%§0 of life
+demonicperiapt=Magic weapons will steal §7<amount>%§0 of life
 necromancyperiapt=Every time you or one of your summons kills a hostile mob you summon a Undead Skeleton
 necromancyperiapt2=20 Summoner Damage. Lasts 10 seconds and there can be a maximum of 3 at a time
 frozenperiapt=Melee and Ranged weapons will Freeze for 3 seconds

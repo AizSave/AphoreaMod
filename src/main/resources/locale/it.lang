@@ -73,7 +73,6 @@ runes=Rune
 [object]
 witchstatue=Statua della strega
 runestable=Tavolo delle rune
-#NEW
 infectedsapling=Piantina infetta
 spinelcluster=Grappolo di spinello
 spinelcluster_small=Piccolo grappolo di spinello
@@ -93,6 +92,9 @@ infectedcabinet=Armadietto infetto
 infectedbed=Letto infetto
 infecteddoublebed=Letto matrimoniale infetto
 infectedcandelabra=Candelabro infetto
+# NEW
+infectedwoodwall=Muro di legno infetto
+infectedwooddoor=Porta di legno infetta
 
 
 [itemcategory]
@@ -146,7 +148,7 @@ goldsaber=Sciabola d'oro
 demonicsaber=Sciabola demoniaca
 unstablegelsaber=Sciabola di gel instabile
 honeysaber=Sciabola di miele
-glaciallsaber=Sciabola glaciale
+glacialsaber=Sciabola glaciale
 crimsonkora=Kora cremisi
 
 // Battleaxes
@@ -335,6 +337,9 @@ runeofmoonlightdancer=Runa della danzatrice della luce lunare
 runeofcrystaldragon=Runa del drago di cristallo
 
 // Modifier Runes Tier 0
+modifierrune=Runa modificatrice
+empoweringrune=Runa potenziante
+recurrentrune=Runa ricorrente
 
 // Modifier Runes Tier 1
 frenzyrune=Runa della frenesia
@@ -380,6 +385,7 @@ backpack=È un nuovo inventario che contiene tutti gli oggetti che raccogli
 backpackslots=Capacità di <slots> oggetti
 stored=Oggetti immagazzinati: <items>
 backpackcraft=Deve essere vuoto per creare uno zaino migliore
+rpgmodnerf=Oggetto nerfato da RPG Mod
 
 // Consumables
 deleteditem=Questo oggetto è stato rimosso, usalo per recuperare i materiali prima che venga rimosso definitivamente
@@ -465,8 +471,8 @@ rockyperiapt=§7+5§0 armatura, ma §6-5%§0 velocità di movimento
 rockyperiapt2=Premi [input=trinketability] per ottenere 10 armatura per 10 secondi
 unstableperiapt=Evoca due melme gelatinose instabili piccole (6 danni da evocatore)
 unstableperiapt2=Ti rende immune al debuff Appiccicoso
-bloodyperiapt=Inoltre, le armi 'Dardo di sangue' e 'Raffica di sangue' ruberanno il §73%§0 della vita
-demonicperiapt=Inoltre, le armi magiche ruberanno il §73%§0 della vita
+bloodyperiapt=Inoltre, le armi 'Dardo di sangue' e 'Raffica di sangue' ruberanno il §7<amount>%§0 della vita
+demonicperiapt=Inoltre, le armi magiche ruberanno il §7<amount>%§0 della vita
 necromancyperiapt=Ogni volta che tu o una delle tue evocazioni uccidete un mob ostile, evocate uno scheletro non morto
 necromancyperiapt2=20 danni da evocatore. Dura 10 secondi e ce ne possono essere al massimo 3 alla volta
 frozenperiapt=Le armi da mischia e a distanza congeleranno per 3 secondi
@@ -750,5 +756,5 @@ modifierrunesheader=Rune modificatrici
 modifierrunestext=Le rune modificatrici vengono utilizzate per personalizzare e migliorare l'effetto della tua runa di base. Possono modificare il valore dell'effetto, cambiarne il comportamento o aggiungere proprietà speciali. Tuttavia, le rune modificatrici comportano sempre dei compromessi: nessun modificatore è puramente vantaggioso, quindi scegli saggiamente!
 
 tableheader=Il tavolo delle rune
-tabletext=Il tavolo delle rune è la tua postazione di riferimento per creare un'ampia varietà di rune. La maggior parte delle rune standard può essere creata qui, ma ricorda: alcune rune potenti can be found only through l'esplorazione. Tieni gli occhi aperti, l'avventura premia i curiosi!
+tabletext=Il Tavolo delle Rune è la tua postazione di riferimento per creare un'ampia varietà di rune. La maggior parte delle rune standard può essere creata qui, ma ricorda: alcune rune potenti possono essere trovate solo attraverso l'esplorazione. Tieni gli occhi aperti, l'avventura premia i curiosi!
 crafttext=Nell'officina delle rune, troverai tutto il necessario per iniziare. Combina i contenuti con la tua runa iniziale e una runa di base che puoi creare nel tavolo delle rune, e avrai un iniettore di rune perfettamente funzionante pronto per essere equipaggiato!

@@ -1277,7 +1277,7 @@ public class AphBuffs {
     }
 
     public static void registerMightyBannerBuffs() {
-        if (AphDependencies.checkMightyBanner()) {
+        if (AphDependencies.checkDependencyMightyBanner()) {
             BuffRegistry.registerBuff("aph_banneroffishing_normal", MIGHTY_BANNER.FISHING = AphMightyBasicBannerBuff.intModifier(BuffModifiers.FISHING_POWER, 20));
             BuffRegistry.registerBuff("aph_banneroffishing_greater", MIGHTY_BANNER.FISHING_GREATER = AphMightyBasicBannerBuff.intModifier(BuffModifiers.FISHING_POWER, 30));
 
@@ -1310,7 +1310,7 @@ public class AphBuffs {
     }
 
     public static void registerSummonerExpansionBuffs() {
-        if (AphDependencies.checkMightyBanner()) {
+        if (AphDependencies.checkDependencyMightyBanner()) {
             BuffRegistry.registerBuff("aph_bannerofresilience", SUMMONER_EXPANSION.BANNER_RESILIENCE = new AphBasicBannerBuff(
                     AphBasicBannerBuff.AphBasicBannerBuffModifier.floatModifier(BuffModifiers.MAX_RESILIENCE, 0.1F),
                     AphBasicBannerBuff.AphBasicBannerBuffModifier.floatModifier(BuffModifiers.RESILIENCE_REGEN_FLAT, 0.1F)

@@ -64,10 +64,7 @@ import aphorea.items.tools.weapons.throwable.GelBall;
 import aphorea.items.tools.weapons.throwable.GelBallGroup;
 import aphorea.items.tools.weapons.throwable.UnstableGelveline;
 import aphorea.items.trinkets.SwampShield;
-import aphorea.items.vanillaitemtypes.AphGrassSeedItem;
-import aphorea.items.vanillaitemtypes.AphMatItem;
-import aphorea.items.vanillaitemtypes.AphPetItem;
-import aphorea.items.vanillaitemtypes.AphSimpleTrinketItem;
+import aphorea.items.vanillaitemtypes.*;
 import necesse.engine.localization.Localization;
 import necesse.engine.registries.ItemRegistry;
 import necesse.engine.util.GameBlackboard;
@@ -121,7 +118,7 @@ public class AphItems {
 
     public static void registerTools() {
         // Pickaxes ToolTier
-        replaceItem("ivypickaxe", new CustomPickaxeToolItem(450, 125, 1.5F, 18, 50, 50, 700), 100.0F); // TOOL TIER CHANGE
+        replaceItem("ivypickaxe", new AphReworkCustomPickaxeToolItem(450, 125, 1.5F, 18, 50, 50, 700), 100.0F); // TOOL TIER CHANGE
 
         // Melee Weapons
         registerItem("woodenrod", new WoodenRod());
@@ -182,7 +179,7 @@ public class AphItems {
         registerItem("unstablegelveline", new UnstableGelveline());
 
         // Work Tools
-        registerItem("superiorpickaxe", new CustomPickaxeToolItem(350, 220, 6, 30, 60, 60, 1200, Item.Rarity.EPIC));
+        registerItem("superiorpickaxe", new AphCustomPickaxeToolItem(350, 220, 6, 30, 60, 60, 1200, Item.Rarity.EPIC));
 
         // Healing Tools
         registerItem("healingstaff", new HealingStaff());
@@ -391,7 +388,7 @@ public class AphItems {
     }
 
     public static void registerMightyBannerItems() {
-        if (AphDependencies.checkMightyBanner()) {
+        if (AphDependencies.checkDependencyMightyBanner()) {
             replaceItem("banner_of_fishing", new AphMightyBanner(Item.Rarity.COMMON, 480, (m) -> AphBuffs.MIGHTY_BANNER.FISHING, 20, "banneroffishingeffect"), 200F); // REWORKED
             replaceItem("banner_of_greater_fishing", new AphMightyBanner(Item.Rarity.RARE, 480, (m) -> AphBuffs.MIGHTY_BANNER.FISHING_GREATER, 30, "banneroffishingeffect")); // REWORKED
 
@@ -413,7 +410,7 @@ public class AphItems {
     }
 
     public static void registerSummonerExpansionItems() {
-        if (AphDependencies.checkSummonerExpansion()) {
+        if (AphDependencies.checkDependencySummonerExpansion()) {
             replaceItem("bannerofresilience", new AphSummonerExpansionBanner(Item.Rarity.COMMON, 480, (m) -> AphBuffs.SUMMONER_EXPANSION.BANNER_RESILIENCE, 10), 200.0F, true);
             replaceItem("bannerofbouncing", new AphSummonerExpansionBanner(Item.Rarity.COMMON, 480, (m) -> AphBuffs.SUMMONER_EXPANSION.BANNER_BOUNCING, 4), 200.0F, true);
             replaceItem("bannerofessence", new AphSummonerExpansionBanner(Item.Rarity.COMMON, 480, (m) -> AphBuffs.SUMMONER_EXPANSION.BANNER_ESSENCE, 200), 200.0F, true);

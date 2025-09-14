@@ -72,7 +72,6 @@ runes=룬
 [object]
 witchstatue=마녀 조각상
 runestable=룬 테이블
-#NEW
 infectedsapling=감염된 묘목
 spinelcluster=스피넬 군집
 spinelcluster_small=작은 스피넬 군집
@@ -92,6 +91,9 @@ infectedcabinet=감염된 수납장
 infectedbed=감염된 침대
 infecteddoublebed=감염된 더블 침대
 infectedcandelabra=감염된 촛대
+# NEW
+infectedwoodwall=감염된 나무 벽
+infectedwooddoor=감염된 나무 문
 
 
 [itemcategory]
@@ -184,7 +186,7 @@ spambullet=스팸 탄환
 
 // Greatbows
 gelgreatbow=젤 대궁
-unstablegelgreatsword=불안정한 젤 대궁
+unstablegelgreatbow=불안정한 젤 대궁
 
 // Arrows
 gelarrow=젤 화살
@@ -334,6 +336,9 @@ runeofmoonlightdancer=달빛 무희의 룬
 runeofcrystaldragon=수정 용의 룬
 
 // Modifier Runes Tier 0
+modifierrune=수정 룬
+empoweringrune=강화 룬
+recurrentrune=재발 룬
 
 // Modifier Runes Tier 1
 frenzyrune=광란의 룬
@@ -379,6 +384,7 @@ backpack=수집한 모든 아이템을 보관하는 새로운 인벤토리입니
 backpackslots=<slots> 아이템 용량
 stored=보관된 아이템: <items>
 backpackcraft=더 좋은 배낭을 만들려면 비어 있어야 합니다
+rpgmodnerf=RPG Mod에 의해 너프된 아이템
 
 // Consumables
 deleteditem=이 아이템은 삭제되었습니다. 영구적으로 삭제되기 전에 이 아이템을 사용하여 재료를 회수하십시오
@@ -464,8 +470,8 @@ rockyperiapt=§7+5§0 방어, 하지만 §6-5%§0 이동 속도
 rockyperiapt2=[input=trinketability]를 눌러 10초 동안 10 방어를 얻습니다
 unstableperiapt=두 개의 아기 불안정한 젤 슬라임을 소환합니다 (6 소환사 피해)
 unstableperiapt2=끈적임 디버프에 면역이 됩니다
-bloodyperiapt=또한, '피의 화살'과 '피의 일제 사격' 무기는 §73%§0의 생명력을 훔칩니다
-demonicperiapt=또한, 마법 무기는 §73%§0의 생명력을 훔칩니다
+bloodyperiapt=또한, '피의 화살'과 '피의 일제 사격' 무기는 §7<amount>%§0의 생명력을 훔칩니다
+demonicperiapt=또한, 마법 무기는 §7<amount>%§0의 생명력을 훔칩니다
 necromancyperiapt=당신이나 당신의 소환수 중 하나가 적대적인 몹을 죽일 때마다 언데드 해골을 소환합니다
 necromancyperiapt2=20 소환사 피해. 10초 동안 지속되며 한 번에 최대 3마리까지 있을 수 있습니다
 frozenperiapt=근접 및 원거리 무기는 3초 동안 동결됩니다

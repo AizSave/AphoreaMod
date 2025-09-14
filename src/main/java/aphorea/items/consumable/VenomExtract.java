@@ -5,7 +5,7 @@ import necesse.inventory.item.ItemCategory;
 
 public class VenomExtract extends AphSimplePotionItem {
     public VenomExtract() {
-        super(100, Rarity.COMMON, "venomextractbuff", 300, "venomextract");
+        super(100, Rarity.COMMON, "venomextractbuff", 300, "venomextractbuff");
         this.setItemCategory(ItemCategory.craftingManager, "consumable", "buffpotions");
     }
 }

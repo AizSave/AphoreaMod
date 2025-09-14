@@ -1,6 +1,7 @@
 package aphorea.items.tools.weapons.melee.rapier;
 
 import aphorea.items.tools.weapons.melee.rapier.logic.RapierDashAttackHandler;
+import aphorea.items.vanillaitemtypes.weapons.AphSpearToolItem;
 import aphorea.packets.AphCustomPushPacket;
 import aphorea.utils.AphColors;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
@@ -26,7 +27,7 @@ import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 
-public class AphRapierToolItem extends SpearToolItem {
+public class AphRapierToolItem extends AphSpearToolItem {
     public IntUpgradeValue dashRange;
     public IntUpgradeValue dashAnimTime;
 

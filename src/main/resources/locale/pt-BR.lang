@@ -72,7 +72,6 @@ runes=Runas
 [object]
 witchstatue=Estátua da Bruxa
 runestable=Mesa de Runas
-#NEW
 infectedsapling=Muda Infectada
 spinelcluster=Aglomerado de Espinélio
 spinelcluster_small=Pequeno Aglomerado de Espinélio
@@ -92,6 +91,9 @@ infectedcabinet=Armário Infectado
 infectedbed=Cama Infectada
 infecteddoublebed=Cama de Casal Infectada
 infectedcandelabra=Candelabro Infectado
+# NEW
+infectedwoodwall=Parede de Madeira Infectada
+infectedwooddoor=Porta de Madeira Infectada
 
 
 [itemcategory]
@@ -382,6 +384,7 @@ backpack=É um novo inventário que armazena todos os itens que você coleta
 backpackslots=Capacidade de <slots> itens
 stored=Itens armazenados: <items>
 backpackcraft=Deve estar vazio para criar uma mochila melhor
+rpgmodnerf=Item nerfado pelo Mod RPG
 
 // Consumables
 deleteditem=Este item foi removido, use este item para recuperar os materiais antes que seja permanentemente removido
@@ -467,8 +470,8 @@ rockyperiapt=§7+5§0 de Armadura, mas §6-5%§0 de Velocidade de Movimento
 rockyperiapt2=Pressione [input=trinketability] para ganhar 10 de Armadura por 10 segundos
 unstableperiapt=Invoca dois Slimes de Gel Instáveis Bebês (6 de Dano de Invocador)
 unstableperiapt2=Torna você imune ao debuff Pegajoso
-bloodyperiapt=Além disso, as armas 'Dardo de Sangue' e 'Voleio de Sangue' roubarão §73%§0 da vida
-demonicperiapt=Além disso, as armas mágicas roubarão §73%§0 da vida
+bloodyperiapt=Além disso, as armas 'Dardo de Sangue' e 'Voleio de Sangue' roubarão §7<amount>%§0 da vida
+demonicperiapt=Além disso, as armas mágicas roubarão §7<amount>%§0 da vida
 necromancyperiapt=Toda vez que você ou uma de suas invocações mata um mob hostil, você invoca um Esqueleto Morto-vivo
 necromancyperiapt2=20 de Dano de Invocador. Dura 10 segundos e pode haver no máximo 3 de cada vez
 frozenperiapt=Armas corpo a corpo e à distância Congelarão por 3 segundos

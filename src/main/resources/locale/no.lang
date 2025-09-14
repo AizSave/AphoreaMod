@@ -72,7 +72,6 @@ runes=Runer
 [object]
 witchstatue=Heksestatue
 runestable=Runebord
-#NEW
 infectedsapling=Infisert ungtre
 spinelcluster=Spinellklynge
 spinelcluster_small=Liten spinellklynge
@@ -92,6 +91,9 @@ infectedcabinet=Infisert skap
 infectedbed=Infisert seng
 infecteddoublebed=Infisert dobbeltseng
 infectedcandelabra=Infisert kandelaber
+# NEW
+infectedwoodwall=Infisert trevegg
+infectedwooddoor=Infisert tredør
 
 
 [itemcategory]
@@ -334,6 +336,9 @@ runeofmoonlightdancer=Månelysets dansers rune
 runeofcrystaldragon=Krystalldragens rune
 
 // Modifier Runes Tier 0
+modifierrune=Modifikasjonsrune
+empoweringrune=Styrkende rune
+recurrentrune=Gjentakende rune
 
 // Modifier Runes Tier 1
 frenzyrune=Vanviddsrune
@@ -379,6 +384,7 @@ backpack=Det er et nytt lager som lagrer alle gjenstandene du samler
 backpackslots=Kapasitet på <slots> gjenstander
 stored=Lagrede gjenstander: <items>
 backpackcraft=Må være tom for å lage en bedre ryggsekk
+rpgmodnerf=Gjenstand nerfet av RPG Mod
 
 // Consumables
 deleteditem=Denne gjenstanden er fjernet, bruk denne gjenstanden til å gjenopprette materialene før den fjernes permanent
@@ -464,8 +470,8 @@ rockyperiapt=§7+5§0 panser, men §6-5%§0 bevegelseshastighet
 rockyperiapt2=Trykk på [input=trinketability] for å få 10 panser i 10 sekunder
 unstableperiapt=Tilkaller to ustabile geléslimbabyer (6 tilkallerskade)
 unstableperiapt2=Gjør deg immun mot den klissete debuffen
-bloodyperiapt=Også våpnene 'Blodbolt' og 'Blodsalve' vil stjele §73%§0 av livet
-demonicperiapt=Også magiske våpen vil stjele §73%§0 av livet
+bloodyperiapt=Også våpnene 'Blodbolt' og 'Blodsalve' vil stjele §7<amount>%§0 av livet
+demonicperiapt=Også magiske våpen vil stjele §7<amount>%§0 av livet
 necromancyperiapt=Hver gang du eller en av dine tilkalte dreper en fiendtlig mob, tilkaller du et udødt skjelett
 necromancyperiapt2=20 tilkallerskade. Varer i 10 sekunder, og det kan høyst være 3 om gangen
 frozenperiapt=Nærkamp- og avstandsvåpen vil fryse i 3 sekunder

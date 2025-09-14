@@ -72,7 +72,6 @@ runes=符文
 [object]
 witchstatue=女巫雕像
 runestable=符文台
-#NEW
 infectedsapling=受感染的樹苗
 spinelcluster=尖晶石簇
 spinelcluster_small=小尖晶石簇
@@ -92,6 +91,9 @@ infectedcabinet=受感染的櫃子
 infectedbed=受感染的床
 infecteddoublebed=受感染的雙人床
 infectedcandelabra=受感染的燭台
+# NEW
+infectedwoodwall=受感染的木牆
+infectedwooddoor=受感染的木門
 
 
 [itemcategory]
@@ -145,7 +147,7 @@ goldsaber=金馬刀
 demonicsaber=惡魔馬刀
 unstablegelsaber=不穩定凝膠馬刀
 honeysaber=蜂蜜馬刀
-glaciallsaber=冰川馬刀
+glacialsaber=冰川馬刀
 crimsonkora=深紅科拉
 
 // Battleaxes
@@ -382,6 +384,7 @@ backpack=這是一個新的庫存，可以存放你收集的所有物品
 backpackslots=容量 <slots> 物品
 stored=已存放物品：<items>
 backpackcraft=必須為空才能製作更好的背包
+rpgmodnerf=物品被RPG Mod削弱
 
 // Consumables
 deleteditem=此物品已被移除，請在永久移除前使用此物品回收材料
@@ -467,8 +470,8 @@ rockyperiapt=§7+5§0 護甲，但 §6-5%§0 移動速度
 rockyperiapt2=按 [input=trinketability] 獲得 10 秒的 10 點護甲
 unstableperiapt=召喚兩個不穩定的凝膠史萊姆寶寶（6 點召喚物傷害）
 unstableperiapt2=使你免疫粘性減益
-bloodyperiapt=此外，武器「血箭」和「血彈」將竊取 §73%§0 的生命
-demonicperiapt=此外，魔法武器將竊取 §73%§0 的生命
+bloodyperiapt=此外，武器「血箭」和「血彈」將竊取 §7<amount>%§0 的生命
+demonicperiapt=此外，魔法武器將竊取 §7<amount>%§0 的生命
 necromancyperiapt=每當你或你的一個召喚物殺死一個敵對怪物時，你就會召喚一個亡靈骷髏
 necromancyperiapt2=20 點召喚物傷害。持續 10 秒，一次最多只能有 3 個
 frozenperiapt=近戰和遠程武器將凍結 3 秒
@@ -516,7 +519,7 @@ bannerofsummoningeffect=§7+<effect>§0 最大召喚物
 bannerofattackspeedeffect=§7+<effect>%§0 攻擊速度
 
 // Summoner Expansion Banners
-bannerofresilienceeffect=§7+<effect>%§0 最大恢復力\n每秒恢復 §7<effect>§0 恢復力
+bannerofresilienceeffect=§7+<effect>%§0 最大恢復力\n每秒恢復 §7+<effect>§0 恢復力
 bannerofbouncingeffect=§7+<effect>§0 彈射物反彈
 bannerofessenceeffect=§7+<effect>%§0 生命精華持續時間
 bannerofstaminaeffect=§7+<effect>%§0 耐力容量\n§7+<effect2>%§0 耐力恢復\n§7-<effect2>%§0 耐力消耗

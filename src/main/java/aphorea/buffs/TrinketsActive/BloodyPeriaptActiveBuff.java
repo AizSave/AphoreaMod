@@ -1,5 +1,6 @@
 package aphorea.buffs.TrinketsActive;
 
+import aphorea.AphDependencies;
 import aphorea.utils.AphColors;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.util.GameRandom;
@@ -13,6 +14,8 @@ import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.buffs.staticBuffs.Buff;
+import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.particle.Particle;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.PlayerInventorySlot;
@@ -25,21 +28,25 @@ public class BloodyPeriaptActiveBuff extends Buff {
             Particle.GType.COSMETIC
     );
 
-    boolean doLifeSteal;
+    public boolean doLifeSteal;
 
+    public boolean hasRPGMod;
     public BloodyPeriaptActiveBuff() {
         this.isVisible = false;
         this.canCancel = false;
         this.shouldSave = true;
         doLifeSteal = false;
+        hasRPGMod = AphDependencies.checkRPGMod();
     }
 
+    @Override
     public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {
         buff.addModifier(BuffModifiers.SPEED, 0.5F);
         buff.addModifier(BuffModifiers.ATTACK_SPEED, 0.3F);
     }
 
-    public void onItemAttacked(ActiveBuff buff, int targetX, int targetY, PlayerMob player, int attackHeight, @NotNull InventoryItem item, PlayerInventorySlot slot, int animAttack) {
+    @Override
+    public void onItemAttacked(ActiveBuff buff, int targetX, int targetY, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack) {
         String itemID = item.item.getStringID();
         if (itemID.equals("bloodbolt") || itemID.equals("bloodvolley")) {
             doLifeSteal = true;
@@ -48,11 +55,12 @@ public class BloodyPeriaptActiveBuff extends Buff {
         }
     }
 
+    @Override
     public void onHasAttacked(ActiveBuff buff, MobWasHitEvent event) {
         if (!event.wasPrevented && event.damageType.equals(DamageTypeRegistry.MAGIC) && event.target.isHostile) {
             Mob owner = event.attacker.getAttackOwner();
             if (doLifeSteal) {
-                int heal = (int) Math.ceil(event.damage * 0.03F);
+                int heal = (int) Math.ceil(event.damage * (hasRPGMod ? 0.002F : 0.02F));
 
                 if (heal > 0) {
                     if (owner.isServer()) {

@@ -72,7 +72,6 @@ runes=Runy
 [object]
 witchstatue=Posąg Wiedźmy
 runestable=Stół Runiczny
-#NEW
 infectedsapling=Zainfekowana Sadzonka
 spinelcluster=Skupisko Spinelu
 spinelcluster_small=Małe Skupisko Spinelu
@@ -92,13 +91,16 @@ infectedcabinet=Zainfekowana Szafka
 infectedbed=Zainfekowane Łóżko
 infecteddoublebed=Zainfekowane Podwójne Łóżko
 infectedcandelabra=Zainfekowany Kandelabr
+# NEW
+infectedwoodwall=Zainfekowana Ściana Drewniana
+infectedwooddoor=Zainfekowane Drzwi Drewniane
 
 
 [itemcategory]
 healing=Leczenie
 healingtools=Narzędzia Lecznicze
 runes=Runy
-injectors=Wstrzykiwacze Run
+runesinjectors=Wstrzykiwacze Run
 baserunes=Runy Podstawowe
 modifierrunes=Runy Modyfikujące
 
@@ -366,7 +368,7 @@ areabuffdisplay=<buff> na <duration> sekund
 attackarmorpentip=Przebicie pancerza: <value>%
 
 // Mechanics
-magichealinggrace=§aŁaska Magicznego Leczenia:§0 Leczy siebie o % magicznego leczenia przeznaczonego для sojuszników
+magichealinggrace=§aŁaska Magicznego Leczenia:§0 Leczy siebie o % magicznego leczenia przeznaczonego dla sojuszników
 cursedbuff=§bPrzeklęty:§0 §6+25%§0 otrzymywanych obrażeń
 inspiration=§9Inspiracja:§0 Poprawia efekty sztandarów i instrumentów muzycznych
 adrenaline=§6Adrenalina:§0 +5% obrażeń, -5% pancerza. Może się kumulować do 5 razy
@@ -382,6 +384,7 @@ backpack=To nowy ekwipunek, który przechowuje wszystkie zebrane przedmioty
 backpackslots=Pojemność <slots> przedmiotów
 stored=Przechowywane przedmioty: <items>
 backpackcraft=Musi być pusty, aby stworzyć lepszy plecak
+rpgmodnerf=Przedmiot osłabiony przez mod RPG
 
 // Consumables
 deleteditem=Ten przedmiot został usunięty, użyj go, aby odzyskać materiały, zanim zostanie trwale usunięty
@@ -467,8 +470,8 @@ rockyperiapt=§7+5§0 pancerza, ale §6-5%§0 prędkości ruchu
 rockyperiapt2=Naciśnij [input=trinketability], aby zyskać 10 pancerza na 10 sekund
 unstableperiapt=Przywołuje dwa małe niestabilne szlamy żelowe (6 obrażeń przywoływacza)
 unstableperiapt2=Czyni cię odpornym na debuff lepkości
-bloodyperiapt=Ponadto, broń 'Krwawy Pocisk' i 'Krwawa Salwa' kradną §73%§0 życia
-demonicperiapt=Ponadto, broń magiczna kradnie §73%§0 życia
+bloodyperiapt=Ponadto, broń 'Krwawy Pocisk' i 'Krwawa Salwa' kradną §7<amount>%§0 życia
+demonicperiapt=Ponadto, broń magiczna kradnie §7<amount>%§0 życia
 necromancyperiapt=Za każdym razem, gdy ty lub jeden z twoich przywołańców zabije wrogiego moba, przywołujesz nieumarłego szkieleta
 necromancyperiapt2=20 obrażeń przywoływacza. Trwa 10 sekund i może być maksymalnie 3 naraz
 frozenperiapt=Broń biała i dystansowa zamraża na 3 sekundy

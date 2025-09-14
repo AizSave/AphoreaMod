@@ -72,7 +72,6 @@ runes=Rune
 [object]
 witchstatue=Kip vještice
 runestable=Stol za rune
-#NEW
 infectedsapling=Zaražena sadnica
 spinelcluster=Grozd spinela
 spinelcluster_small=Mali grozd spinela
@@ -92,6 +91,9 @@ infectedcabinet=Zaraženi ormar
 infectedbed=Zaraženi krevet
 infecteddoublebed=Zaraženi bračni krevet
 infectedcandelabra=Zaraženi svijećnjak
+# NEW
+infectedwoodwall=Zaraženi drveni zid
+infectedwooddoor=Zaražena drvena vrata
 
 
 [itemcategory]
@@ -334,6 +336,9 @@ runeofmoonlightdancer=Runa plesačice mjesečine
 runeofcrystaldragon=Runa kristalnog zmaja
 
 // Modifier Runes Tier 0
+modifierrune=Runa modifikatora
+empoweringrune=Osnažujuća runa
+recurrentrune=Ponavljajuća runa
 
 // Modifier Runes Tier 1
 frenzyrune=Runa ludila
@@ -379,6 +384,7 @@ backpack=To je novi inventar koji pohranjuje sve predmete koje sakupite
 backpackslots=Kapacitet <slots> predmeta
 stored=Pohranjeni predmeti: <items>
 backpackcraft=Mora biti prazan da bi se napravio bolji ruksak
+rpgmodnerf=Predmet oslabljen RPG modom
 
 // Consumables
 deleteditem=Ovaj predmet je uklonjen, upotrijebite ovaj predmet da biste povratili materijale prije nego što se trajno ukloni
@@ -464,8 +470,8 @@ rockyperiapt=§7+5§0 oklopa, ali §6-5%§0 brzine kretanja
 rockyperiapt2=Pritisnite [input=trinketability] da biste dobili 10 oklopa na 10 sekundi
 unstableperiapt=Priziva dvije bebe nestabilne gel sluzi (6 štete prizivača)
 unstableperiapt2=Čini vas imunim na debuff ljepljivosti
-bloodyperiapt=Također, oružje 'Krvava strijela' i 'Krvava salva' ukrast će §73%§0 života
-demonicperiapt=Također, magično oružje ukrast će §73%§0 života
+bloodyperiapt=Također, oružje 'Krvava strijela' i 'Krvava salva' ukrast će §7<amount>%§0 života
+demonicperiapt=Također, magično oružje ukrast će §7<amount>%§0 života
 necromancyperiapt=Svaki put kad vi ili jedan od vaših prizvanih ubije neprijateljskog moba, prizivate nemrtvog kostura
 necromancyperiapt2=20 štete prizivača. Traje 10 sekundi i može biti najviše 3 odjednom
 frozenperiapt=Oružje za bližu i dalju borbu zamrznut će se na 3 sekunde

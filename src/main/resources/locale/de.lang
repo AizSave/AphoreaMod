@@ -72,7 +72,6 @@ runes=Runen
 [object]
 witchstatue=Hexenstatue
 runestable=Runentisch
-#NEW
 infectedsapling=Infizierter Setzling
 spinelcluster=Spinell-Cluster
 spinelcluster_small=Kleiner Spinell-Cluster
@@ -92,6 +91,9 @@ infectedcabinet=Infizierter Schrank
 infectedbed=Infiziertes Bett
 infecteddoublebed=Infiziertes Doppelbett
 infectedcandelabra=Infizierter Kandelaber
+# NEW
+infectedwoodwall=Infizierte Holzwand
+infectedwooddoor=Infizierte Holztür
 
 
 [itemcategory]
@@ -334,6 +336,279 @@ runeofmoonlightdancer=Rune des Mondlichttänzers
 runeofcrystaldragon=Rune des Kristalldrachens
 
 // Modifier Runes Tier 0
+modifierrune=Modifikatorrune
+empoweringrune=Stärkungsrune
+recurrentrune=Wiederkehrende Rune
+
+// Modifier Runes Tier 1
+frenzyrune=Rasereirune
+vitalrune=Vitalrune
+devastatingrune=Zerstörungsrune
+onyxrune=Onyxrune
+pawningrune=Verpfändungsrune
+
+// Modifier Runes Tier 2
+abysmalrune=Abgrundsrune
+tidalrune=Gezeitenrune
+
+// Modifier Runes Tier 3
+ascendantrune=Aufsteigende Rune
+
+
+[itemtooltip]
+// Stat tips
+line=----------------------------------------
+magichealingtip=Magische Heilung: §7<health>
+rangetip=Reichweite: §9<range>
+areatip=§aBereich <number>
+inspirationdamagetip=Inspirationsschaden: <value>
+areabuff=Wende <buff> auf Verbündete an
+areadebuff=Wende <buff> auf Feinde an
+areabuffdisplay=<buff> für <duration> Sekunden
+attackarmorpentip=Rüstungsdurchdringung: <value>%
+
+// Mechanics
+magichealinggrace=§aMagische Heilungsgunst:§0 Heilt dich selbst mit einem Prozentsatz der für Verbündete bestimmten magischen Heilung
+cursedbuff=§bVerflucht:§0 §6+25%§0 erlittener Schaden
+inspiration=§9Inspiration:§0 Verbessert die Effekte von Bannern und Musikinstrumenten
+adrenaline=§6Adrenalin:§0 +5% Schaden, -5% Rüstung. Bis zu 5-mal stapelbar
+livingsapling=§7Lebender Setzling:§0 Heilt den Besitzer alle 10 Angriffe magisch um §73§0
+
+// Misc
+gelslimenullifier=Sie werden dich mit einem einfachen Klick nicht mehr belästigen!
+enchantingscrollhealingequipmenttip=Wird verwendet, um einen Heilungsausrüstungsgegenstand mit <enchantment> zu verzaubern\n§!Aphorea Mod
+enchantingscrollhealingtip=Wird verwendet, um ein Heilwerkzeug mit <enchantment> zu verzaubern\n§!Aphorea Mod
+enchantingscrollareatip=Wird verwendet, um ein Flächeneffekt-Werkzeug mit <enchantment> zu verzaubern\n§!Aphorea Mod
+enchantingscrolldaggertip=Wird verwendet, um eine Dolchwaffe mit <enchantment> zu verzaubern\n§!Aphorea Mod
+backpack=Es ist ein neues Inventar, das alle von dir gesammelten Gegenstände speichert
+backpackslots=Kapazität von <slots> Gegenständen
+stored=Gespeicherte Gegenstände: <items>
+backpackcraft=Muss leer sein, um einen besseren Rucksack herzustellen
+rpgmodnerf=Gegenstand durch RPG-Mod abgeschwächt
+
+// Consumables
+deleteditem=Dieser Gegenstand wurde entfernt, benutze diesen Gegenstand, um die Materialien wiederherzustellen, bevor er endgültig entfernt wird
+unstablecore=§bSetzt eine instabile Aura frei...§0 Kann nur tagsüber verwendet werden
+venomextractbuff=Lowd sagt, trink es, tu es nicht
+venomextractbuffdesc=Du kannst nicht mehr als 1 HP haben
+lifespinel=Erhöht die maximale Gesundheit dauerhaft um 5 bis zu 320
+
+// General Weapons
+spinsecondaryattack=Halten Sie [input=mouse2] gedrückt, um einen Drehangriff auszuführen
+areasecondaryattack=Drücken Sie [input=mouse2], um einen Flächenangriff auszuführen, der <mana> Mana verbraucht
+stikybuff1=Macht den Feind für 1 Sekunde klebrig
+stikybuff2=Macht den Feind für 2 Sekunden klebrig
+stikybuff3=Macht den Feind für 3 Sekunden klebrig
+projectilearea=Wenn das Projektil endet, verursacht es Flächenschaden
+
+// Melee Weapons
+saber=Lade maximal auf, um vollen Schaden zu verursachen und einen Luftschnitt zu entfesseln
+saberdash=Halten Sie [input=mouse2] gedrückt, um einen Sprint aufzuladen und durch Feinde zu schneiden
+battleaxe=Das Aufladen dauert lange
+battleaxe2=Drücken Sie [input=mouse2], um den Berserkerrausch zu aktivieren und vorübergehend 3 Adrenalin zu erhalten
+battleaxe3=Erhalte vorübergehend Adrenalin, indem du Feinde während des Rausches triffst, was die Bewegungs- und Angriffsgeschwindigkeit verbessert
+dagger=Halten Sie [input=mouse2] gedrückt, um den Dolch zu werfen
+
+// Range Weapons
+sling=Wirft Steine mit Kraft
+sling2=§7100%§0 Chance, den Feind für 0,5 Sekunden zu betäuben
+twoarrows=Schießt zwei Pfeile auf einmal
+threearrows=Schießt drei Pfeile auf einmal
+blowgun=Schießt Samen
+
+// Single Melee Weapons
+woodenrod=Heilt dich alle 10 Angriffe magisch um §7<healing>§0
+voidhammer=Wenn das Projektil abprallt oder einen Feind trifft, zielt es auf den nächsten und trifft bis zu 3 Mal
+crimsonkora=Halten Sie [input=mouse2] gedrückt, um einen verheerenden, aber langsamen Angriff aufzuladen
+thenarcissist=Verkette 4 Angriffe, um beim fünften Treffer einen wirbelnden Schwertwurf zu entfesseln!\n+20% Schaden für jeden verketteten Angriff
+
+// Single Range Weapons
+firesling=Verbrennt die Feinde
+frozensling=Friert die Feinde ein
+gelgreatbow=Verwandelt Steinpfeile in Gel-Pfeile
+unstablegelgreatbow=Verwandelt Steinpfeile und Gel-Pfeile in instabile Gel-Pfeile
+thespammer=Kann Spam-Kugeln verschießen
+shotgunsaber=Ziele in die Nähe des Zentrums für stärkere, genauere und durchdringendere Schüsse
+honeysaber=Lade maximal auf, um vollen Schaden zu verursachen und Honig und Blaubeeren zu verschießen
+spinelcrossbow=Schießt Pfeile, die bis zu 2 Feinde durchdringen und mit jedem Durchdringen tödlicher werden
+spinelcrossbow2=Halten Sie [input=mouse2] gedrückt, um 3 Pfeile auf einmal zu schießen
+
+// Single Magic Weapons
+unstablegelstaff=Wenn Projektile von Wänden abprallen, duplizieren sie sich
+harpofharmony=Harmonie: Erhöhte Geschwindigkeit, Gesundheits- und Manaregeneration
+
+// Single Summoner Weapons
+infectedstaff=Beschwört zwei lebende Setzlinge pro Beschwörung
+
+// Single Throwable Weapons
+gelball=Wirft einen Gel-Ball
+
+// Single Magic Healing Tools
+magicalvial=Zeige auf einen verletzten Menschen, um ihn zu heilen, zeige auf niemanden, um dich selbst zu heilen
+magicalvial2=Unendliche Verwendungen
+
+// Ammo
+spambullet=Hat zufällig einen dieser Effekte:
+spambullet1=§9Traurig:§0 Angegriffener Feind wird klebrig und verlangsamt sich für 5 Sekunden
+spambullet2=§9Feuer:§0 Anstatt zu kollidieren, hinterlässt es eine Feuerpfütze auf dem Boden
+spambullet3=§9Gefällt mir:§0 Prallt von Wänden ab und durchdringt Mobs, jeweils bis zu 10 Mal
+spambullet4=§9Prüfen:§0 Magischer Heilungsbereich von 3 Gesundheit am Ende seines Weges
+spambullet5=§9Explosion:§0 Explodiert am Ende seines Weges, anstatt zu kollidieren
+
+// Tiles
+geltile=Klebriger Boden, der alles darauf stark verlangsamt
+
+// Objects
+witchstatue=Das Aufstellen dieser Statue auf der Oberfläche eines Sumpfes wird das Erscheinen von Hexen auf der ganzen Insel verhindern
+
+// Generic Trinkets
+areawhenheal=Führt diesen Bereich für jede <magichealing> durchgeführte magische Heilung aus
+periaptboost=Drücken Sie [input=trinketability], um für 10 Sekunden einen Schub an Geschwindigkeit und Angriffsgeschwindigkeit zu erhalten
+
+// Trinkets
+rockyperiapt=§7+5§0 Rüstung, aber §6-5%§0 Bewegungsgeschwindigkeit
+rockyperiapt2=Drücken Sie [input=trinketability], um für 10 Sekunden 10 Rüstung zu erhalten
+unstableperiapt=Beschwört zwei Baby-instabile Gel-Schleime (6 Beschwörerschaden)
+unstableperiapt2=Macht dich immun gegen den Klebrig-Debuff
+bloodyperiapt=Außerdem stehlen die Waffen 'Blutblitz' und 'Blut-Volley' §7<amount>%§0 des Lebens
+demonicperiapt=Außerdem stehlen magische Waffen §7<amount>%§0 des Lebens
+necromancyperiapt=Jedes Mal, wenn du oder einer deiner Beschworenen einen feindlichen Mob tötest, beschwörst du ein untotes Skelett
+necromancyperiapt2=20 Beschwörerschaden. Hält 10 Sekunden an und es können maximal 3 gleichzeitig vorhanden sein
+frozenperiapt=Nahkampf- und Fernkampfwaffen frieren für 3 Sekunden ein
+frozenperiapt2=Verursacht mehr Schaden bei Mobs, die von Einfrieren betroffen sind
+frozenperiapt3=Macht dich immun gegen die Debuffs Einfrieren und Frostverlangsamung
+floralring=Heilt dich alle 5 Sekunden magisch um §7<healing>§0
+gelring=§7+30%§0 erhaltene magische Heilung
+heartring=§7+20§0 maximale Gesundheit
+swampshield=Schützt nur Angriffe in der Richtung, in der sie empfangen werden
+swampshield2=Bei perfektem Block: Heilt dich magisch um §7<healing>§0 deiner maximalen Gesundheit
+iceboots=Lässt dich gleiten, als wärst du auf Eis, gewährt aber +50% Bewegungsgeschwindigkeit und +4 Rüstung
+inspirationfoci1=§7+40%§0 Inspirationseffekt und §7+20%§0 Inspirations-Fähigkeitsgeschwindigkeit
+inspirationfoci2=§6-20%§0 aller nicht-inspirationsbedingten Schäden und §6-1§0 maximale Beschwörungen
+essenceofhealing=§7+<percent>%§0 magische Heilung pro Lebensessenz
+essenceofhealing2=§7<flat>§0 magische Heilung pro 2 Lebensessenzen
+essenceofhealing3=§6-80%§0 Lebensessenzdauer, begrenzt auf -50%
+ninjascarf=Wandelt Säbelsprints in Säbelsprünge um
+adrenalinecharm=Jeder erlittene Treffer gibt dir für 20 Sekunden Adrenalin
+infectedperiapt=Beschwört zwei lebende Setzlinge (8 Beschwörerschaden)
+bloomrushcharm=Verringert den Ausdauerverbrauch um 10% für jedes Adrenalin, das du hast\nBeschwört einen lebenden Setzling (8 Beschwörerschaden) für jedes Adrenalin, das du hast
+
+// Set Bonus
+goldhatsetbonus=Wenn du stillstehst, wird deine Fernkampfangriffsgeschwindigkeit stark erhöht
+pinkwitchsetbonus=Erhöht die magische Angriffsgeschwindigkeit, die Manaregeneration und die Rüstung, je niedriger deine Gesundheit ist
+infectedsetbonus=Beschwört drei lebende Setzlinge (8 Beschwörerschaden)
+spinelhelmetsetbonus=Heilt dich magisch um §7<healing>§0 des Nahkampfschadens, der feindlichen Mobs zugefügt wird
+spinelhatsetbonus=Heilt dich und alle nahen Verbündeten magisch\num §7<healing>§0 des magischen Schadens, der feindlichen Mobs zugefügt wird
+
+// Banners
+strikebannereffect=§7+<effect>%§0 Gesundheitsregeneration (im und außerhalb des Kampfes)
+strikebannerability=§aAlle <time> Sekunden:§0 Führt einen Flächenangriff aus
+blankbannereffect=§7+<effect>%§0 Gesundheitsregeneration (außerhalb des Kampfes)
+blankbannerability=§aAlle <time> Sekunden:§0 Führt eine Flächenheilung aus
+bannerofdamageeffect=§7+<effect>%§0 Schaden
+bannerofdefenseeffect=§7-<effect>%§0 erlittener Schaden
+bannerofspeedeffect=§7+<effect>%§0 Bewegungsgeschwindigkeit
+bannerofsummonspeedeffect=§7+<effect>%§0 Beschwörungsbewegungsgeschwindigkeit
+
+// Mighty Banners
+banneroffishingeffect=§7+<effect>§0 Angelkraft
+bannerofhealthregeneffect=§7+<effectfloat>§0 Kampf-Gesundheitsregeneration
+bannerofmanaregeneffect=§7+<effect>%§0 Kampf-Manaregeneration
+bannerofresistanceeffect=§7+<effect>§0 Rüstung
+bannerofsummoningeffect=§7+<effect>§0 maximale Beschwörungen
+bannerofattackspeedeffect=§7+<effect>%§0 Angriffsgeschwindigkeit
+
+// Summoner Expansion Banners
+bannerofresilienceeffect=§7+<effect>%§0 maximale Widerstandsfähigkeit\nRegeneriert §7+<effect>§0 Widerstandsfähigkeit pro Sekunde
+bannerofbouncingeffect=§7+<effect>§0 Projektilabpraller
+bannerofessenceeffect=§7+<effect>%§0 Lebensessenzdauer
+bannerofstaminaeffect=§7+<effect>%§0 Ausdauerkapazität\n§7+<effect2>%§0 Ausdauerregeneration\n§7-<effect2>%§0 Ausdauerverbrauch
+bannerofpickingeffect=§7+<effectfloat>§0 Aufhebereichweite
+bannerofdashingeffect=§7+<effect>§0 Sprintstapel\n§7-<effect2>%§0 Sprint-Abklingzeit
+bannerofmanaeffect=§7+<effect>%§0 maximales Mana\n§7<effect2>%§0 Manaregeneration
+
+// Runes (General)
+baserune=§iBasis-Rune
+modifierrune=§aModifikator-Rune
+linkedrune=§bRune verbunden mit [<player>]
+notruneowner=Du bist nicht der Besitzer der Basis-Rune
+runesslots=Kann bis zu 1 Basis-Rune + <modifierslots> Modifikator-Runen einfügen
+useruneinfusor=[input=runesinjectorability] zum Aktivieren
+requiresbaserune=Benötigt eine eingefügte Basis-Rune
+onlyonebaserune=Es kann nur eine Basis-Rune gleichzeitig eingefügt werden
+duplicatedmodifierrunes=Es kann nicht mehr als eine gleiche Modifikator-Rune eingefügt werden
+runehealthcost=Verbraucht bei Aktivierung <health>% der maximalen Gesundheit
+runehealthhealing=Stellt bei Verwendung <health>% der maximalen Gesundheit wieder her
+runecooldown=Lädt in <seconds> Sekunden wieder auf
+increaseruneeffectnumber=Erhöht den Effekt um §7<variation>%§0
+decreaseruneeffectnumber=Verringert den Effekt um §6<variation>%§0
+increaserunecooldown=Erhöht die Abklingzeit um §6<variation>%§0
+decreaserunecooldown=Verringert die Abklingzeit um §7<variation>%§0
+increaserunehealthcost=Erhöht den Verbrauch der maximalen Gesundheit um §6<health>%§0
+increaserunehealthhealing=Erhöht die Wiederherstellung der maximalen Gesundheit um §7<health>%§0
+runedamagereduction=Der Schaden wird gegen Menschen drastisch reduziert und gegen Bosse noch mehr
+runedamagereductionnoboss=Der Schaden wird gegen Menschen drastisch reduziert und betrifft keine Bosse
+moreextraeffectmod=Effektmodifikationen sind um <mod>% effektiver
+lessextraeffectmod=Effektmodifikationen sind um <mod>% weniger effektiv
+
+// Runes Injectors
+
+// Base Runes Tier 0
+runeoffury=Erhöht deinen Schaden und deine Angriffsgeschwindigkeit für 10 Sekunden um §7<effectNumber>§0%
+runeofspeed=Sprinte mit §7<effectNumber>§0 Stärke in die Richtung, in die du dich bewegst, und werde für 0,5 Sekunden unverwundbar
+runeofresistance=Erhöht deine Rüstung für 10 Sekunden um §7<effectNumber>§0%
+runeofresistance2=Während der Abklingzeit ist deine Rüstung halbiert
+runeofvalor=+200% Inspiration für §7<effectNumber>§0 Sekunden
+runeofdetonation=Explodiert und verursacht mehr Schaden und stößt Feinde zurück, je näher sie sind
+runeofdetonation2=Der maximale Schaden beträgt §7<effectNumber>§0% der maximalen Gesundheit der Mobs als Schaden
+runeofthunder=Nach zwei Sekunden schlägt ein Blitz an der ursprünglichen Position deines Cursors ein
+runeofthunder2=Der Blitz verursacht §7<effectNumber>§0% der Gesundheit der Mobs als Schaden und betäubt für 2 Sekunden
+runeofwinter=Verlangsamt Feinde im Umkreis von 500 für §7<effectNumber>§0 Sekunden mit Frost
+runeofimmortality=Wenn du innerhalb der nächsten §7<effectNumber>§0 Sekunden stirbst, überlebst du mit maximaler Gesundheit
+runeofimmortality2=Wenn dies geschieht, bist du für 3 Sekunden unverwundbar, aber die Abklingzeit beträgt 30 Sekunden
+runeofimmortality3=Während der Abklingzeit ist deine maximale Gesundheit halbiert
+runeofshadows=Für §7<effectNumber>§0 Sekunden wirst du unsichtbar, aber auch eingeschüchtert, was dich daran hindert, irgendwelche Aktionen auszuführen
+
+// Base Runes Tier 1
+runeofunstablegelslime=Teleportiere dich an einen nahegelegenen Ort und beschwöre 2 runische instabile Gel-Schleime für §7<effectNumber>§0 Sekunden
+runeofunstablegelslime2=Die Beschworenen verursachen 5% der maximalen Gesundheit der Mobs als Schaden
+runeofevilsprotector=+§7<effectNumber>§0% Angriffsgeschwindigkeit, aber -50% Bewegungsgeschwindigkeit für 10 Sekunden
+runeofevilsprotector2=Nachts an der Oberfläche wird der positive Effekt verdoppelt
+runeofqueenspider=Hinterlässt für §7<effectNumber>§0 Sekunden ein Spinnennetz auf dem Boden
+runeofvoidwizard=Alle Projektile prallen unendlich ab und +§7<effectNumber>§0% Projektilgeschwindigkeit für 10 Sekunden
+runeofswampguardian=Reduziert allen erlittenen Schaden für §7<effectNumber>§0 Sekunden um 80%
+runeofancientvulture=Beschwört ein runisches Geierküken für 10 Sekunden
+runeofancientvulture2=Die Beschwörung verursacht §7<effectNumber>§0% der maximalen Gesundheit der Mobs als Schaden
+runeofpiratecaptain=Erhöht deinen Schaden um §7<effectNumber>§0% für alle 200 Münzen, die du hast, bis zu einem Maximum von 20.000 Münzen
+runeofpiratecaptain2=Jedes Mal, wenn du angreifst, verlierst du 3 Münzen
+runeofchieftain=Für die nächsten 20 Sekunden erhöht sich dein Schaden, je niedriger deine Gesundheit ist, bis zu einem Maximum von +§7<effectNumber>§0%
+
+// Base Runes Tier 2
+runeofreaper=Teleportiere dich zur Position deiner Maus. Maximale Entfernung §7<effectNumber>§0
+runeofcryoqueen=Halte für 1 Sekunde an und starte einen Eisangriff um dich herum mit einer Reichweite von §7<effectNumber>§0
+runeofcryoqueen2=Die Projektile verursachen 200% der maximalen Gesundheit der Mobs als Schaden
+runeofpestwarden=Für die nächsten §7<effectNumber>§0 Sekunden beschädigt und stößt die Kollision mit Feinden sie
+runeofpestwarden2=Der Schaden beträgt 20% ihrer maximalen Gesundheit
+runeofsageandgrit=Wenn sich in der Nähe verletzte Verbündete befinden (Reichweite 500), heile §7<effectNumber>§0% ihrer gesamten Gesundheit
+runeofsageandgrit2=Wenn nicht, erhöhe deinen Schaden, deine Angriffsgeschwindigkeit und deine Bewegungsgeschwindigkeit für 20 Sekunden um +§7<effectNumber>§0%
+runeoffallenwizard=Betäube alle Mobs außer dir für §7<effectNumber>§0 Sekunden
+runeoffallenwizard2=Menschen werden sich schneller befreien, und Bosse noch schneller
+runeofbabylontower=+§7<effectNumber>§0% aller Schäden, aber du kannst dich nicht bewegen. 10 Sekunden
+
+// Base Runes Tier 3
+runeofmotherslime=Führe einen großen Sprung in Richtung deiner Mausposition aus und verursache bei der Landung Flächenschaden
+runeofmotherslime2=Die Landung verursacht §7<effectNumber>§0% der maximalen Gesundheit der Mobs als Schaden
+runeofnightswarm=Beschwöre 5 Fledermäuse für §7<effectNumber>§0 Sekunden, die feindliche Mobs suchen, um sie zu beißen
+runeofnightswarm2=Jeder Biss stellt 1% deiner gesamten Gesundheit wieder her (mindestens 1)
+runeofspiderempress=Wirft §7<F0effectNumber>§0 Spinnennetzbälle in Richtung deiner Maus
+runeofspiderempress2=Die Spinnennetzbälle betäuben für 3 Sekunden und verlangsamen für 10 Sekunden
+runeofsunlightchampion=Werde für 3 Sekunden betäubt und lade eine Nova mit einer Reichweite von §7<effectNumber>§0 auf
+runeofsunlightchampion2=Die Nova verursacht 200% der maximalen Gesundheit der Mobs als Schaden
+runeofmoonlightdancer=+§7<effectNumber>§0% Schaden für jede +1% Bewegungsgeschwindigkeit für 10 Sekunden
+runeofcrystaldragon=Wirf einen Laserstrahl für 5 Sekunden auf die Position deines Cursors
+runeofcrystaldragon2=Der Laser verursacht §7<effectNumber>§0% der maximalen Gesundheit der Mobs als Schaden
+
+// Modifier Runes Tier 0
 
 // Modifier Runes Tier 1
 onyxrune=Wenn aktiviert, beschwört es Onyx für 5 Sekunden. Es verursacht Schaden basierend auf 5% der Gesundheit des Mobs
@@ -430,8 +705,7 @@ healthalreadyfull=Gesundheit ist bereits voll
 cantheal=Kann nicht heilen
 insuficienthealth=Unzureichende Gesundheit, um diese Aktion auszuführen!
 cannottrhowlockeditem=Du kannst keinen im Inventar gesperrten Gegenstand werfen
-initialrunetip=Wähle deine anfängliche Rune sorgfältig aus;
-du wirst die anderen erst später im Spiel erhalten
+initialrunetip=Wähle deine anfängliche Rune sorgfältig aus;\ndu wirst die anderen erst später im Spiel erhalten
 alreadyselectedinitialrune=Anfängliche Rune bereits ausgewählt
 cannotusetrial=Kann nicht in Prüfungsräumen verwendet werden
 treantattackmessage=Infizierte Treants ([mob=infectedtreant]) sind nur mit Äxten verwundbar ([item=ironaxe])
@@ -483,5 +757,3 @@ modifierrunestext=Modifikator-Runen werden verwendet, um den Effekt deiner Basis
 tableheader=Der Runentisch
 tabletext=Der Runentisch ist deine Anlaufstelle für die Herstellung einer Vielzahl von Runen. Die meisten Standardrunen können hier hergestellt werden, aber denke daran: Einige mächtige Runen können nur durch Erkundung gefunden werden. Halte die Augen offen, Abenteuer belohnt die Neugierigen!
 crafttext=In der Runenwerkstatt findest du alles, was du für den Anfang brauchst. Kombiniere den Inhalt mit deiner Anfangs-Rune und einer Basis-Rune, die du am Runentisch herstellen kannst, und du hast einen voll funktionsfähigen Runeninjektor, der zum Ausrüsten bereit ist!
-
-spinsecondaryattack=Halten Sie [input=mouse2] gedrückt, um einen Drehangriff auszuführen

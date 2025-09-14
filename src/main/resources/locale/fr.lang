@@ -72,7 +72,6 @@ runes=Runes
 [object]
 witchstatue=Statue de sorcière
 runestable=Table des runes
-#NEW
 infectedsapling=Jeune pousse infectée
 spinelcluster=Amas de spinelle
 spinelcluster_small=Petit amas de spinelle
@@ -92,6 +91,9 @@ infectedcabinet=Armoire infectée
 infectedbed=Lit infecté
 infecteddoublebed=Lit double infecté
 infectedcandelabra=Candélabre infecté
+# NEW
+infectedwoodwall=Mur en bois infecté
+infectedwooddoor=Porte en bois infectée
 
 
 [itemcategory]
@@ -184,7 +186,7 @@ spambullet=Balle de spam
 
 // Greatbows
 gelgreatbow=Grand arc en gel
-unstablegelgreatsword=Grand arc en gel instable
+unstablegelgreatbow=Grand arc en gel instable
 
 // Arrows
 gelarrow=Flèche en gel
@@ -382,6 +384,7 @@ backpack=C'est un nouvel inventaire qui stocke tous les objets que vous collecte
 backpackslots=Capacité de <slots> objets
 stored=Objets stockés : <items>
 backpackcraft=Doit être vide pour fabriquer un meilleur sac à dos
+rpgmodnerf=Objet nerfé par RPG Mod
 
 // Consumables
 deleteditem=Cet objet a été supprimé, utilisez cet objet pour récupérer les matériaux avant qu'il ne soit définitivement supprimé
@@ -467,8 +470,8 @@ rockyperiapt=§7+5§0 d'armure, mais §6-5%§0 de vitesse de déplacement
 rockyperiapt2=Appuyez sur [input=trinketability] pour obtenir 10 d'armure pendant 10 secondes
 unstableperiapt=Invoque deux bébés gelées de gel instables (6 de dégâts d'invocateur)
 unstableperiapt2=Vous immunise contre le debuff collant
-bloodyperiapt=De plus, les armes 'Boulon de sang' et 'Volée de sang' voleront §73%§0 de vie
-demonicperiapt=De plus, les armes magiques voleront §73%§0 de vie
+bloodyperiapt=De plus, les armes 'Boulon de sang' et 'Volée de sang' voleront §7<amount>%§0 de vie
+demonicperiapt=De plus, les armes magiques voleront §7<amount>%§0 de vie
 necromancyperiapt=Chaque fois que vous ou l'un de vos invocations tuez un monstre hostile, vous invoquez un squelette mort-vivant
 necromancyperiapt2=20 de dégâts d'invocateur. Dure 10 secondes et il ne peut y en avoir que 3 à la fois au maximum
 frozenperiapt=Les armes de mêlée et à distance gèleront pendant 3 secondes
@@ -747,7 +750,7 @@ equiptext=Pour activer vos runes, l'injecteur de runes doit être équipé dans 
 runesheader=Que sont les runes ?
 runestext=Les runes sont des pierres mystiques qui fournissent des effets puissants lorsqu'elles sont insérées dans un injecteur de runes. Leur force et leur comportement dépendent de la façon dont elles sont combinées, maîtriser leur utilisation est la clé pour libérer tout votre potentiel.
 baserunesheader=Runes de base
-baserunestext=Chaque injecteur de runes nécessite exactement une rune de base pour fonctionner. La rune de base définit l'effet principal de l'injecteur et sert de noyau à votre configuration. Vous remarquerez un nombre vert à côté de l'effet, cela représente sa valeur d'effet, qui peut être augmentée ou diminuée avec des modificateurs.
+baserunestext=Chaque injecteur de runes nécessite exactly une rune de base pour fonctionner. La rune de base définit l'effet principal de l'injecteur et sert de noyau à votre configuration. Vous remarquerez un nombre vert à côté de l'effet, cela représente sa valeur d'effet, qui peut être augmentée ou diminuée avec des modificateurs.
 modifierrunesheader=Runes de modification
 modifierrunestext=Les runes de modification sont utilisées pour personnaliser et améliorer l'effet de votre rune de base. Elles peuvent ajuster la valeur de l'effet, changer son comportement ou ajouter des propriétés spéciales. Cependant, les runes de modification s'accompagnent toujours de compromis : aucun modificateur n'est purement bénéfique, alors choisissez judicieusement !
 

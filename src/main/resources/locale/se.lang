@@ -72,7 +72,6 @@ runes=Runor
 [object]
 witchstatue=Häxstaty
 runestable=Runbord
-#NEW
 infectedsapling=Infekterad planta
 spinelcluster=Spinellkluster
 spinelcluster_small=Litet spinellkluster
@@ -92,6 +91,9 @@ infectedcabinet=Infekterat skåp
 infectedbed=Infekterad säng
 infecteddoublebed=Infekterad dubbelsäng
 infectedcandelabra=Infekterad kandelaber
+# NEW
+infectedwoodwall=Infekterad trävägg
+infectedwooddoor=Infekterad trädörr
 
 
 [itemcategory]
@@ -145,7 +147,7 @@ goldsaber=Guldsabel
 demonicsaber=Demonisk sabel
 unstablegelsaber=Instabil gelésabel
 honeysaber=Honungssabel
-glaciallsaber=Glaciärsabel
+glacialsaber=Glaciärsabel
 crimsonkora=Karmosinröd kora
 
 // Battleaxes
@@ -334,6 +336,9 @@ runeofmoonlightdancer=Månljusets dansares runa
 runeofcrystaldragon=Kristalldrakens runa
 
 // Modifier Runes Tier 0
+modifierrune=Modifieringsruna
+empoweringrune=Stärkande runa
+recurrentrune=Återkommande runa
 
 // Modifier Runes Tier 1
 frenzyrune=Vanvettesruna
@@ -379,6 +384,7 @@ backpack=Det är ett nytt lager som lagrar alla föremål du samlar
 backpackslots=Kapacitet på <slots> föremål
 stored=Lagrade föremål: <items>
 backpackcraft=Måste vara tom för att skapa en bättre ryggsäck
+rpgmodnerf=Föremål nerfat av RPG Mod
 
 // Consumables
 deleteditem=Detta föremål har tagits bort, använd detta föremål för att återställa materialen innan det tas bort permanent
@@ -464,8 +470,8 @@ rockyperiapt=§7+5§0 pansar, men §6-5%§0 rörelsehastighet
 rockyperiapt2=Tryck på [input=trinketability] för att få 10 pansar i 10 sekunder
 unstableperiapt=Kallar fram two instabila geléslembebisar (6 frammaningsskada)
 unstableperiapt2=Gör dig immun mot den klibbiga debuffen
-bloodyperiapt=Dessutom kommer vapnen 'Blodbolt' och 'Blodsalva' att stjäla §73%§0 av livet
-demonicperiapt=Dessutom kommer magiska vapen att stjäla §73%§0 av livet
+bloodyperiapt=Dessutom kommer vapnen 'Blodbolt' och 'Blodsalva' att stjäla §7<amount>%§0 av livet
+demonicperiapt=Dessutom kommer magiska vapen att stjäla §7<amount>%§0 av livet
 necromancyperiapt=Varje gång du eller en av dina frammanade dödar en fientlig mob kallar du fram ett odött skelett
 necromancyperiapt2=20 frammaningsskada. Varar i 10 sekunder och det kan högst finnas 3 åt gången
 frozenperiapt=Närstrids- och avståndsvapen kommer att frysa i 3 sekunder

@@ -72,7 +72,6 @@ runes=Runer
 [object]
 witchstatue=Heksestatue
 runestable=Runebord
-#NEW
 infectedsapling=Inficeret ungtræ
 spinelcluster=Spinelklynge
 spinelcluster_small=Lille spinelklynge
@@ -92,6 +91,9 @@ infectedcabinet=Inficeret skab
 infectedbed=Inficeret seng
 infecteddoublebed=Inficeret dobbeltseng
 infectedcandelabra=Inficeret kandelaber
+# NEW
+infectedwoodwall=Inficeret trævæg
+infectedwooddoor=Inficeret trædør
 
 
 [itemcategory]
@@ -145,7 +147,7 @@ goldsaber=Guldsabel
 demonicsaber=Dæmonisk sabel
 unstablegelsaber=Ustabil gelésabel
 honeysaber=Honningsabel
-glaciallsaber=Gletsjersabel
+glacialsaber=Gletsjersabel
 crimsonkora=Karminrød kora
 
 // Battleaxes
@@ -334,6 +336,9 @@ runeofmoonlightdancer=Månelysets dansers rune
 runeofcrystaldragon=Krystaldragens rune
 
 // Modifier Runes Tier 0
+modifierrune=Modifikationsrune
+empoweringrune=Styrkende rune
+recurrentrune=Tilbagevendende rune
 
 // Modifier Runes Tier 1
 frenzyrune=Vanvidsrune
@@ -379,6 +384,7 @@ backpack=Det er et nyt lager, der opbevarer alle de genstande, du samler
 backpackslots=Kapacitet på <slots> genstande
 stored=Opbevarede genstande: <items>
 backpackcraft=Skal være tom for at lave en bedre rygsæk
+rpgmodnerf=Genstand nerfed af RPG Mod
 
 // Consumables
 deleteditem=Denne genstand er blevet fjernet, brug denne genstand til at gendanne materialerne, før den fjernes permanent
@@ -464,8 +470,8 @@ rockyperiapt=§7+5§0 panser, men §6-5%§0 bevægelseshastighed
 rockyperiapt2=Tryk på [input=trinketability] for at få 10 panser i 10 sekunder
 unstableperiapt=Tilkalder to ustabile geléslimbabyer (6 tilkalderskade)
 unstableperiapt2=Gør dig immun over for den klæbrige debuff
-bloodyperiapt=Også våbnene 'Blodbolt' og 'Blodsalve' vil stjæle §73%§0 af livet
-demonicperiapt=Også magiske våben vil stjæle §73%§0 af livet
+bloodyperiapt=Også våbnene 'Blodbolt' og 'Blodsalve' vil stjæle §7<amount>%§0 af livet
+demonicperiapt=Også magiske våben vil stjæle §7<amount>%§0 af livet
 necromancyperiapt=Hver gang du eller en af dine tilkaldte dræber en fjendtlig mob, tilkalder du et udødt skelet
 necromancyperiapt2=20 tilkalderskade. Varer 10 sekunder, og der kan højst være 3 ad gangen
 frozenperiapt=Nærkamps- og afstandsvåben vil fryse i 3 sekunder

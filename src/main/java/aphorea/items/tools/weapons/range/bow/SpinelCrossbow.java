@@ -1,5 +1,6 @@
 package aphorea.items.tools.weapons.range.bow;
 
+import aphorea.items.vanillaitemtypes.weapons.AphBowProjectileToolItem;
 import aphorea.packets.AphCustomPushPacket;
 import aphorea.projectiles.toolitem.SpinelArrowProjectile;
 import aphorea.utils.AphColors;
@@ -41,7 +42,7 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 import java.io.FileNotFoundException;
 
-public class SpinelCrossbow extends BowProjectileToolItem implements ItemInteractAction {
+public class SpinelCrossbow extends AphBowProjectileToolItem implements ItemInteractAction {
     public GameTexture arrowlessAttackTexture;
 
     public SpinelCrossbow() {

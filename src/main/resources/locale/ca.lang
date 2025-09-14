@@ -72,7 +72,6 @@ runes=Runes
 [object]
 witchstatue=Estàtua de Bruixa
 runestable=Taula de Runes
-#NEW
 infectedsapling=Planter Infectat
 spinelcluster=Cúmul d'Espinela
 spinelcluster_small=Cúmul d'Espinela Petit
@@ -92,6 +91,9 @@ infectedcabinet=Armari Infectat
 infectedbed=Llit Infectat
 infecteddoublebed=Llit Doble Infectat
 infectedcandelabra=Canelobre Infectat
+# NEW
+infectedwoodwall=Paret de Fusta Infectada
+infectedwooddoor=Porta de Fusta Infectada
 
 
 [itemcategory]
@@ -118,7 +120,7 @@ lifespinel=Espinela de Vida
 
 // Consumables
 unstablecore=Nucli Inestable
-runeinitial=Runa Inicial
+initialrune=Runa Inicial
 venomextract=Extracte de Verí
 
 // Swords
@@ -184,7 +186,7 @@ spambullet=Bala de Spam
 
 // Greatbows
 gelgreatbow=Gran Arc de Gel
-unstablegelgreatsword=Gran Arc de Gel Inestable
+unstablegelgreatbow=Gran Arc de Gel Inestable
 
 // Arrows
 gelarrow=Fletxa de Gel
@@ -382,6 +384,7 @@ backpack=És un nou inventari que emmagatzema tots els objectes que reculls
 backpackslots=Capacitat de <slots> objectes
 stored=Objectes emmagatzemats: <items>
 backpackcraft=Ha d'estar buit per crear una motxilla millor
+rpgmodnerf=Objecte nerfejat per RPG Mod
 
 // Consumables
 deleteditem=Aquest objecte ha estat eliminat, utilitza aquest objecte per recuperar els materials abans que s'elimini permanentment
@@ -467,8 +470,8 @@ rockyperiapt=§7+5§0 d'Armadura, però §6-5%§0 de Velocitat de Moviment
 rockyperiapt2=Prem [input=trinketability] per guanyar 10 d'Armadura durant 10 segons
 unstableperiapt=Invoca dos Bebès de Llim de Gel Inestable (6 de Dany d'Invocador)
 unstableperiapt2=Et fa immune al desavantatge Enganxós
-bloodyperiapt=A més, les armes 'Fletxa de Sang' i 'Volea de Sang' robaran un §73%§0 de vida
-demonicperiapt=A més, les armes màgiques robaran un §73%§0 de vida
+bloodyperiapt=A més, les armes 'Fletxa de Sang' i 'Volea de Sang' robaran un §7<amount>%§0 de vida
+demonicperiapt=A més, les armes màgiques robaran un §7<amount>%§0 de vida
 necromancyperiapt=Cada vegada que tu o un dels teus invocats mata un monstre hostil, invoques un Esquelet No-mort
 necromancyperiapt2=20 de Dany d'Invocador. Dura 10 segons i hi pot haver un màxim de 3 alhora
 frozenperiapt=Les armes de cos a cos i a distància Congelaran durant 3 segons

@@ -1,5 +1,6 @@
 package aphorea.items.tools.weapons.magic;
 
+import aphorea.items.vanillaitemtypes.weapons.AphMagicProjectileToolItem;
 import aphorea.projectiles.toolitem.BabylonCandleProjectile;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.sound.SoundEffect;
@@ -14,12 +15,12 @@ import necesse.inventory.InventoryItem;
 import necesse.inventory.item.toolItem.projectileToolItem.magicProjectileToolItem.MagicProjectileToolItem;
 import necesse.level.maps.Level;
 
-public class BabylonCandle extends MagicProjectileToolItem {
+public class BabylonCandle extends AphMagicProjectileToolItem {
     public BabylonCandle() {
         super(1550);
         this.rarity = Rarity.EPIC;
         this.attackAnimTime.setBaseValue(200);
-        this.attackDamage.setBaseValue(50.0F).setUpgradedValue(1.0F, 80.0F);
+        this.attackDamage.setBaseValue(50.0F).setUpgradedValue(1.0F, 70.0F);
         this.velocity.setBaseValue(50);
         this.attackXOffset = 6;
         this.attackYOffset = 20;

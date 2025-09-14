@@ -1,5 +1,6 @@
 package aphorea.buffs.Trinkets.Periapt;
 
+import aphorea.AphDependencies;
 import aphorea.utils.AphColors;
 import necesse.engine.localization.Localization;
 import necesse.engine.registries.DamageTypeRegistry;
@@ -24,8 +25,10 @@ public class AbysmalPeriaptBuff extends TrinketBuff {
             Particle.GType.IMPORTANT_COSMETIC,
             Particle.GType.COSMETIC
     );
+    public boolean hasRPGMod;
 
     public AbysmalPeriaptBuff() {
+        hasRPGMod = AphDependencies.checkRPGMod();
     }
 
     public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {
@@ -35,7 +38,7 @@ public class AbysmalPeriaptBuff extends TrinketBuff {
         if (!event.wasPrevented && event.target.isHostile) {
             Mob owner = event.attacker.getAttackOwner();
             if (event.damageType.equals(DamageTypeRegistry.MAGIC)) {
-                int heal = (int) Math.ceil(event.damage * 0.03F);
+                int heal = (int) Math.ceil(event.damage * (hasRPGMod ? 0.002F : 0.02F));
 
                 if (heal > 0) {
                     if (owner.isServer()) {
@@ -57,7 +60,8 @@ public class AbysmalPeriaptBuff extends TrinketBuff {
 
     public ListGameTooltips getTrinketTooltip(TrinketItem trinketItem, InventoryItem item, PlayerMob perspective) {
         ListGameTooltips tooltips = super.getTrinketTooltip(trinketItem, item, perspective);
-        tooltips.add(Localization.translate("itemtooltip", "demonicperiapt"));
+        tooltips.add(Localization.translate("itemtooltip", "demonicperiapt", "amount", hasRPGMod ? "0.2" : "2"));
+        if (hasRPGMod) tooltips.add(Localization.translate("itemtooltip", "rpgmodnerf"));
         return tooltips;
     }
 

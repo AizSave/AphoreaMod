@@ -72,7 +72,6 @@ runes=Riimut
 [object]
 witchstatue=Noidan patsas
 runestable=Riimupöytä
-#NEW
 infectedsapling=Saastunut taimi
 spinelcluster=Spinellirykelmä
 spinelcluster_small=Pieni spinellirykelmä
@@ -92,6 +91,9 @@ infectedcabinet=Saastunut kaappi
 infectedbed=Saastunut sänky
 infecteddoublebed=Saastunut parivuode
 infectedcandelabra=Saastunut kynttelikkö
+# NEW
+infectedwoodwall=Saastunut puuseinä
+infectedwooddoor=Saastunut puuovi
 
 
 [itemcategory]
@@ -334,6 +336,9 @@ runeofmoonlightdancer=Kuunvalon tanssijan riimu
 runeofcrystaldragon=Kristallilohikäärmeen riimu
 
 // Modifier Runes Tier 0
+modifierrune=Muokkausriimu
+empoweringrune=Voimaannuttava riimu
+recurrentrune=Toistuva riimu
 
 // Modifier Runes Tier 1
 frenzyrune=Raivoriimu
@@ -347,6 +352,7 @@ abysmalrune=Syvyyden riimu
 tidalrune=Vuorovesiriimu
 
 // Modifier Runes Tier 3
+ascendantrune=Nouseva riimu
 
 
 [itemtooltip]
@@ -378,6 +384,7 @@ backpack=Se on uusi inventaario, joka tallentaa kaikki keräämäsi esineet
 backpackslots=Kapasiteetti <slots> esinettä
 stored=Tallennetut esineet: <items>
 backpackcraft=On oltava tyhjä paremman repun valmistamiseksi
+rpgmodnerf=Esine on heikennetty RPG-modilla
 
 // Consumables
 deleteditem=Tämä esine on poistettu, käytä tätä esinettä materiaalien palauttamiseen ennen kuin se poistetaan pysyvästi
@@ -463,8 +470,8 @@ rockyperiapt=§7+5§0 panssaria, mutta §6-5%§0 liikkumisnopeutta
 rockyperiapt2=Paina [input=trinketability] saadaksesi 10 panssaria 10 sekunniksi
 unstableperiapt=Kutsuu kaksi epävakaa geeliliman vauvaa (6 kutsujan vahinkoa)
 unstableperiapt2=Tekee sinut immuuniksi tahmealle debuffille
-bloodyperiapt=Myös aseet 'Veripultti' ja 'Verisalva' varastavat §73%§0 elämää
-demonicperiapt=Myös maagiset aseet varastavat §73%§0 elämää
+bloodyperiapt=Myös aseet 'Veripultti' ja 'Verisalva' varastavat §7<amount>%§0 elämää
+demonicperiapt=Myös maagiset aseet varastavat §7<amount>%§0 elämää
 necromancyperiapt=Joka kerta kun sinä tai joku kutsuistasi tappaa vihamielisen mobin, kutsut epäkuolleen luurangon
 necromancyperiapt2=20 kutsujan vahinkoa. Kestää 10 sekuntia ja niitä voi olla enintään 3 kerrallaan
 frozenperiapt=Lähitaistelu- ja etäisyysaseet jäätyvät 3 sekunniksi

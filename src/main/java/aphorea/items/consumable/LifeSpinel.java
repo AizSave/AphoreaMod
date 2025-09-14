@@ -1,5 +1,6 @@
 package aphorea.items.consumable;
 
+import aphorea.items.vanillaitemtypes.AphConsumableItem;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.network.packet.PacketPlayerGeneral;
@@ -15,7 +16,7 @@ import necesse.level.maps.Level;
 
 import java.awt.geom.Line2D;
 
-public class LifeSpinel extends ConsumableItem {
+public class LifeSpinel extends AphConsumableItem {
     public LifeSpinel() {
         super(50, true);
         this.rarity = Rarity.RARE;

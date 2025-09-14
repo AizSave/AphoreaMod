@@ -72,7 +72,6 @@ runes=Runy
 [object]
 witchstatue=Socha čarodějnice
 runestable=Runový stůl
-#NEW
 infectedsapling=Infikovaná sazenice
 spinelcluster=Spinelový shluk
 spinelcluster_small=Malý spinelový shluk
@@ -92,6 +91,9 @@ infectedcabinet=Infikovaná skříň
 infectedbed=Infikovaná postel
 infecteddoublebed=Infikovaná manželská postel
 infectedcandelabra=Infikovaný svícen
+# NEW
+infectedwoodwall=Infikovaná dřevěná zeď
+infectedwooddoor=Infikované dřevěné dveře
 
 
 [itemcategory]
@@ -334,6 +336,9 @@ runeofmoonlightdancer=Runa tanečnice měsíčního světla
 runeofcrystaldragon=Runa křišťálového draka
 
 // Modifier Runes Tier 0
+modifierrune=Modifikační runa
+empoweringrune=Posilující runa
+recurrentrune=Opakující se runa
 
 // Modifier Runes Tier 1
 frenzyrune=Runa šílenství
@@ -379,6 +384,7 @@ backpack=Je to nový inventář, který ukládá všechny sebrané předměty
 backpackslots=Kapacita <slots> předmětů
 stored=Uložené předměty: <items>
 backpackcraft=Musí být prázdný, aby se dal vyrobit lepší batoh
+rpgmodnerf=Předmět oslabený RPG modem
 
 // Consumables
 deleteditem=Tento předmět byl odstraněn, použijte tento předmět k obnovení materiálů, než bude trvale odstraněn
@@ -464,8 +470,8 @@ rockyperiapt=§7+5§0 brnění, ale §6-5%§0 rychlosti pohybu
 rockyperiapt2=Stiskněte [input=trinketability] pro získání 10 brnění na 10 sekund
 unstableperiapt=Vyvolá dva malé nestabilní gelové slizy (6 poškození vyvolávače)
 unstableperiapt2=Učiní vás imunním vůči debuffu lepkavosti
-bloodyperiapt=Také zbraně 'Krvavý šíp' a 'Krvavá salva' ukradnou §73%§0 života
-demonicperiapt=Také magické zbraně ukradnou §73%§0 života
+bloodyperiapt=Také zbraně 'Krvavý šíp' a 'Krvavá salva' ukradnou §7<amount>%§0 života
+demonicperiapt=Také magické zbraně ukradnou §7<amount>%§0 života
 necromancyperiapt=Pokaždé, když vy nebo jeden z vašich vyvolaných zabije nepřátelského moba, vyvoláte nemrtvého kostlivce
 necromancyperiapt2=20 poškození vyvolávače. Trvá 10 sekund a najednou mohou být maximálně 3
 frozenperiapt=Zbraně na blízko a na dálku zmrazí na 3 sekundy
@@ -750,4 +756,4 @@ modifierrunestext=Modifikační runy se používají k přizpůsobení a vylepš
 
 tableheader=Runový stůl
 tabletext=Runový stůl je vaše hlavní stanice pro výrobu široké škály run. Většinu standardních run lze vyrobit zde, ale pamatujte: některé silné runy lze nalézt pouze průzkumem. Mějte oči otevřené, dobrodružství odměňuje zvědavé!
-crafttext=V runové dílně najdete vše, co potřebujete k zahájení. Zkombinujte obsah se svou počáteční runou a základní runou, kterou můžete vyrobit na runovém stole, a budete mít plně funkční runový injektor připravený k vybavení!
+crafttext=V dílně run najdete vše, co potřebujete, abyste mohli začít. Zkombinujte obsah se svou počáteční runou a základní runou, kterou si můžete vyrobit u stolu s runami, a budete mít plně funkční injektor run připravený k vybavení!

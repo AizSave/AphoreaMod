@@ -1,5 +1,6 @@
 package aphorea.buffs.TrinketsActive;
 
+import aphorea.AphDependencies;
 import aphorea.utils.AphColors;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.util.GameRandom;
@@ -21,10 +22,12 @@ public class DemonicPeriaptActiveBuff extends Buff {
             Particle.GType.COSMETIC
     );
 
+    public boolean hasRPGMod;
     public DemonicPeriaptActiveBuff() {
         this.isVisible = false;
         this.canCancel = false;
         this.shouldSave = true;
+        hasRPGMod = AphDependencies.checkRPGMod();
     }
 
     public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {
@@ -36,7 +39,7 @@ public class DemonicPeriaptActiveBuff extends Buff {
         if (!event.wasPrevented && event.target.isHostile) {
             Mob owner = event.attacker.getAttackOwner();
             if (event.damageType.equals(DamageTypeRegistry.MAGIC)) {
-                int heal = (int) Math.ceil(event.damage * 0.03F);
+                int heal = (int) Math.ceil(event.damage * (hasRPGMod ? 0.002F : 0.02F));
 
                 if (heal > 0) {
                     if (owner.isServer()) {

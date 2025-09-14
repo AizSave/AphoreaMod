@@ -72,7 +72,6 @@ runes=Runen
 [object]
 witchstatue=Heksenbeeld
 runestable=Runentafel
-#NEW
 infectedsapling=Geïnfecteerde zaailing
 spinelcluster=Spinelcluster
 spinelcluster_small=Kleine spinelcluster
@@ -92,6 +91,9 @@ infectedcabinet=Geïnfecteerde kast
 infectedbed=Geïnfecteerd bed
 infecteddoublebed=Geïnfecteerd tweepersoonsbed
 infectedcandelabra=Geïnfecteerde kandelaar
+# NEW
+infectedwoodwall=Geïnfecteerde houten muur
+infectedwooddoor=Geïnfecteerde houten deur
 
 
 [itemcategory]
@@ -334,6 +336,9 @@ runeofmoonlightdancer=Rune van de maanlichtdanser
 runeofcrystaldragon=Rune van de kristaldraak
 
 // Modifier Runes Tier 0
+modifierrune=Modificatierune
+empoweringrune=Versterkende rune
+recurrentrune=Terugkerende rune
 
 // Modifier Runes Tier 1
 frenzyrune=Waanzinrune
@@ -379,6 +384,7 @@ backpack=Het is een nieuwe inventaris die alle items opslaat die je verzamelt
 backpackslots=Capaciteit van <slots> items
 stored=Opgeslagen items: <items>
 backpackcraft=Moet leeg zijn om een betere rugzak te maken
+rpgmodnerf=Item verzwakt door RPG Mod
 
 // Consumables
 deleteditem=Dit item is verwijderd, gebruik dit item om de materialen te herstellen voordat het permanent wordt verwijderd
@@ -464,8 +470,8 @@ rockyperiapt=§7+5§0 pantser, maar §6-5%§0 bewegingssnelheid
 rockyperiapt2=Druk op [input=trinketability] om 10 pantser te krijgen gedurende 10 seconden
 unstableperiapt=Roept twee onstabiele gelslijmbaby's op (6 oproeperschade)
 unstableperiapt2=Maakt je immuun voor de plakkerige debuff
-bloodyperiapt=Ook zullen de wapens 'Bloedbout' en 'Bloedsalvo' §73%§0 van het leven stelen
-demonicperiapt=Ook zullen magische wapens §73%§0 van het leven stelen
+bloodyperiapt=Ook zullen de wapens 'Bloedbout' en 'Bloedsalvo' §7<amount>%§0 van het leven stelen
+demonicperiapt=Ook zullen magische wapens §7<amount>%§0 van het leven stelen
 necromancyperiapt=Elke keer dat jij of een van je oproepen een vijandige mob doodt, roep je een ondood skelet op
 necromancyperiapt2=20 oproeperschade. Duurt 10 seconden en er kunnen er maximaal 3 tegelijk zijn
 frozenperiapt=Contact- en afstandswapens zullen 3 seconden bevriezen
@@ -750,4 +756,4 @@ modifierrunestext=Modificatierunen worden gebruikt om het effect van je basisrun
 
 tableheader=De runentafel
 tabletext=De runentafel is je go-to-station voor het maken van een breed scala aan runen. De meeste standaardrunen kunnen hier worden gemaakt, maar onthoud: sommige krachtige runen kunnen alleen worden gevonden door verkenning. Houd je ogen open, avontuur beloont de nieuwsgierigen!
-crafttext=In de runenwerkplaats vind je alles wat je nodig hebt om te beginnen. Combineer de inhoud met je initiële rune en een basisrune die je aan de runentafel kunt maken, en je hebt een volledig functionele runeninjector klaar om uit te rusten!
+crafttext=In de Runenwerkplaats vind je alles wat je nodig hebt om te beginnen. Combineer de inhoud met je Initiële Rune en een Basisrune die je aan de Runentafel kunt maken, en je hebt een volledig functionele Runeninjector klaar om uit te rusten!

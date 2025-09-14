@@ -72,7 +72,6 @@ runes=Runos
 [object]
 witchstatue=Raganos statula
 runestable=Runų stalas
-#NEW
 infectedsapling=Užkrėstas daigas
 spinelcluster=Spinelio sankaupa
 spinelcluster_small=Maža spinelio sankaupa
@@ -92,6 +91,9 @@ infectedcabinet=Užkrėsta spintelė
 infectedbed=Užkrėsta lova
 infecteddoublebed=Užkrėsta dvigulė lova
 infectedcandelabra=Užkrėstas žvakidė
+# NEW
+infectedwoodwall=Užkrėsta medinė siena
+infectedwooddoor=Užkrėstos medinės durys
 
 
 [itemcategory]
@@ -272,6 +274,108 @@ spinelboots=Spinelio batai
 
 // Misc
 gelslimenullifier=Jie nustos jus varginti vienu paprastu paspaudimu!
+cuberry=Kubinė uoga
+infectedgrassseed=Užkrėstos žolės sėklos
+
+// Backpacks
+basicbackpack=Pagrindinė kuprinė
+sapphirebackpack=Safyro kuprinė
+amethystbackpack=Ametisto kuprinė
+rubybackpack=Rubino kuprinė
+emeraldbackpack=Smaragdo kuprinė
+diamondbackpack=Deimantinė kuprinė
+
+// Books
+runestutorialbook=Runų vadovėlis
+
+// Runes Injectors
+runesinjector=Runų injektorius
+rusticrunesinjector=Kaimiškas runų injektorius
+unstablerunesinjector=Nestabilus runų injektorius
+demonicrunesinjector=Demoniškas runų injektorius
+tungstenrunesinjector=Volframo runų injektorius
+ancientrunesinjector=Senovinis runų injektorius
+
+// Base Runes Tier 0
+baserune=Pagrindinė runa
+runeoffury=Įniršio runa
+runeofspeed=Greičio runa
+runeofhealing=Gydymo runa
+runeofresistance=Atsparumo runa
+runeofvalor=Drąsos runa
+runeofdetonation=Detonacijos runa
+runeofthunder=Griaustinio runa
+runeofwinter=Žiemos runa
+runeofshadows=Šešėlių runa
+runeofimmortality=Nemirtingumo runa
+
+// Base Runes Tier 1
+runeofunstablegelslime=Nestabiliojo gelinio gleivės runa
+runeofevilsprotector=Piktadario gynėjo runa
+runeofqueenspider=Vorų karalienės runa
+runeofvoidwizard=Tuštumos burtininko runa
+runeofswampguardian=Pelkių sargybinio runa
+runeofancientvulture=Senovinio grifo runa
+runeofpiratecaptain=Piratų kapitono runa
+runeofchieftain=Vado runa
+
+// Base Runes Tier 2
+runeofreaper=Pjovėjo runa
+runeofcryoqueen=Krio karalienės runa
+runeofpestwarden=Maros sargybinio runa
+runeofsageandgrit=Išminčiaus ir drąsos runa
+runeoffallenwizard=Puolusio burtininko runa
+runeofbabylontower=Babelio bokšto runa
+
+// Base Runes Tier 3
+runeofmotherslime=Motinos gleivės runa
+runeofnightswarm=Nakties spiečiaus runa
+runeofspiderempress=Vorų imperatorienės runa
+runeofsunlightchampion=Saulės šviesos čempiono runa
+runeofmoonlightdancer=Mėnulio šviesos šokėjos runa
+runeofcrystaldragon=Krištolinio drakono runa
+
+// Modifier Runes Tier 0
+modifierrune=Modifikavimo runa
+empoweringrune=Įgalinanti runa
+recurrentrune=Pasikartojanti runa
+
+// Modifier Runes Tier 1
+frenzyrune=Pašėlimo runa
+vitalrune=Gyvybinė runa
+devastatingrune=Naikinanti runa
+onyxrune=Onikso runa
+pawningrune=Užstato runa
+
+// Modifier Runes Tier 2
+abysmalrune=Bedugnės runa
+tidalrune=Potvynio runa
+
+// Modifier Runes Tier 3
+ascendantrune=Kylanti runa
+
+
+[itemtooltip]
+// Stat tips
+line=----------------------------------------
+magichealingtip=Magiškas gydymas: §7<health>
+rangetip=Diapazonas: §9<range>
+areatip=§aPlotas <number>
+inspirationdamagetip=Įkvėpimo žala: <value>
+areabuff=Pritaikyti <buff> sąjungininkams
+areadebuff=Pritaikyti <buff> priešams
+areabuffdisplay=<buff> <duration> sekundes
+attackarmorpentip=Šarvų pramušimas: <value>%
+
+// Mechanics
+magichealinggrace=§aMagiško gydymo malonė:§0 Gydo save procentine dalimi magiško gydymo, skirto sąjungininkams
+cursedbuff=§bPrakeiktas:§0 §6+25%§0 gaunamos žalos
+inspiration=§9Įkvėpimas:§0 Pagerina vėliavų ir muzikos instrumentų poveikį
+adrenaline=§6Adrenalinas:§0 +5% žalos, -5% šarvų. Gali kauptis iki 5 kartų
+livingsapling=§7Gyvas daigas:§0 Kas 10 atakų magiškai gydo savininką §73§0
+
+// Misc
+gelslimenullifier=Jie nustos jus varginti vienu paprastu paspaudimu!
 enchantingscrollhealingequipmenttip=Naudojamas gydymo įrangos daiktui užburti su <enchantment>\n§!Aphorea Mod
 enchantingscrollhealingtip=Naudojamas gydymo įrankiui užburti su <enchantment>\n§!Aphorea Mod
 enchantingscrollareatip=Naudojamas ploto poveikio įrankiui užburti su <enchantment>\n§!Aphorea Mod
@@ -280,6 +384,7 @@ backpack=Tai naujas inventorius, kuriame saugomi visi surinkti daiktai
 backpackslots=Talpa <slots> daiktų
 stored=Saugojami daiktai: <items>
 backpackcraft=Turi būti tuščias, kad būtų galima pagaminti geresnę kuprinę
+rpgmodnerf=RPG Mod susilpnintas daiktas
 
 // Consumables
 deleteditem=Šis daiktas buvo pašalintas, naudokite šį daiktą, kad atgautumėte medžiagas, kol jis nebus visam laikui pašalintas
@@ -365,8 +470,8 @@ rockyperiapt=§7+5§0 šarvų, bet §6-5%§0 judėjimo greičio
 rockyperiapt2=Paspauskite [input=trinketability], kad 10 sekundžių gautumėte 10 šarvų
 unstableperiapt=Iškviečia du nestabilius gelinius gleivių kūdikius (6 iškvietimo žalos)
 unstableperiapt2=Padaro jus imunitetą lipniam debuffui
-bloodyperiapt=Taip pat ginklai 'Kraujo strėlė' ir 'Kraujo salvė' pavogs §73%§0 gyvybės
-demonicperiapt=Taip pat magiški ginklai pavogs §73%§0 gyvybės
+bloodyperiapt=Taip pat ginklai 'Kraujo strėlė' ir 'Kraujo salvė' pavogs §7<amount>%§0 gyvybės
+demonicperiapt=Taip pat magiški ginklai pavogs §7<amount>%§0 gyvybės
 necromancyperiapt=Kiekvieną kartą, kai jūs arba vienas iš jūsų iškvietimų nužudo priešišką mobą, jūs iškviečiate negyvą skeletą
 necromancyperiapt2=20 iškvietimo žalos. Trunka 10 sekundžių ir vienu metu gali būti ne daugiau kaip 3
 frozenperiapt=Artimosios ir tolimosios kovos ginklai sušals 3 sekundėms

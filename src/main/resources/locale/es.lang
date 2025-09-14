@@ -30,7 +30,7 @@ loyal=La daga volverá a ti
 
 
 [stats]
-banner_damage=Daño de inspiración
+inspiration_damage=Daño de inspiración
 
 
 [enchantment]
@@ -66,13 +66,12 @@ spinelgravel=Grava de Espinela
 
 
 [tech]
-runes=Runes
+runes=Runas
 
 
 [object]
 witchstatue=Estatua de Bruja
 runestable=Mesa de Runas
-#NEW
 infectedsapling=Retoño Infectado
 spinelcluster=Estructura de Espinela
 spinelcluster_small=Espinela Pequeña
@@ -92,6 +91,9 @@ infectedcabinet=Gabinete Infectado
 infectedbed=Cama Infectada
 infecteddoublebed=Cama Doble Infectada
 infectedcandelabra=Candelabro Infectado
+# NEW
+infectedwoodwall=Pared de Madera Infectada
+infectedwooddoor=Puerta de Madera Infectada
 
 
 [itemcategory]
@@ -111,7 +113,6 @@ anybasicfoci=Cualquier Foco Básico
 rockygel=Gel Rocoso
 unstablegel=Gel Inestable
 stardust=Polvo Estelar
-# NEW
 infectedlog=Leño Infectado
 infectedalloy=Aleación Infectada
 spinel=Espinela
@@ -119,8 +120,7 @@ lifespinel=Espinela Viviente
 
 // Consumables
 unstablecore=Núcleo Inestable
-lowdspotion=Poción de Lowd
-# NEW
+initialrune=Runa Inicial
 venomextract=Extracto de Veneno
 
 // Swords
@@ -128,14 +128,12 @@ gelsword=Espada de Gel
 unstablegelsword=Espada de Gel Inestable
 broom=Escoba
 voidhammer=Martillo del Vacío
-# NEW
 brokenkora=Kora Rota
 thenarcissist=La Narcisista
 cryokatana=Katana Criogénica
 
 // Greatswords
 unstablegelgreatsword=Espadón de Gel Inestable
-# NEW
 babylongreatsword=Espadón de Babylon
 
 // Glaives
@@ -148,7 +146,6 @@ ironsaber=Sable de Hierro
 goldsaber=Sable de Oro
 demonicsaber=Sable Demoníaco
 unstablegelsaber=Sable de Gel Inestable
-# NEW
 honeysaber=Sable de Miel
 glacialsaber=Sable Glacial
 crimsonkora=Kora Carmesí
@@ -165,11 +162,9 @@ irondagger=Daga de Hierro
 golddagger=Daga de Oro
 demonicdagger=Daga Demoniaca
 tungstendagger=Daga de Tungsteno
-# NEW
 lostumbrella=Sombrilla Perdida
 
 // Rapiers
-# NEW
 fossilrapier=Ropera Fósil
 lightrapier=Ropera Ligera
 
@@ -177,20 +172,16 @@ lightrapier=Ropera Ligera
 unstablegelstaff=Bastón de Gel Inestable
 magicalbroom=Escoba Mágica
 adeptsbook=Libro del Adepto
-# NEW
 harpofharmony=Arpa de la Armonía
 babyloncandle=Vela de Babylon
 
 // Bows
-# NEW
 spinelcrossbow=Ballesta de Espinela
 
 // Guns
-# NEW
 thespammer=El Spameador
 
 // Bullets
-# NEW
 spambullet=Bala Spam
 
 // Greatbows
@@ -202,7 +193,6 @@ gelarrow=Flecha de Gel
 unstablegelarrow=Flecha de Gel Inestable
 
 // Saber Guns
-# NEW
 sabergun=Pistola Sable
 shotgunsaber=Escopeta Sable
 
@@ -221,7 +211,6 @@ unstablegelveline=Jabalina de Gel Inestable
 
 // Summon weapons
 volatilegelstaff=Bastón de Gel Volátil
-# NEW
 infectedstaff=Bastón Infectado
 
 // Banners
@@ -233,12 +222,10 @@ magicalvial=Vial Mágico
 healingstaff=Bastón Curativo
 woodenwand=Varita de Madera
 goldenwand=Varita Dorada
-# NEW
 spinelstaff=Bastón de Espinela
 
 // Tools
-# NEW
-superiorpickaxe=Superior Pickaxe
+superiorpickaxe=Pico Superior
 
 // Trinkets
 rockyperiapt=Talismán Rocoso
@@ -255,7 +242,6 @@ ringofhealth=Anillo de la Salud
 swampshield=Escudo del Pantano
 witchmedallion=Medallón de Bruja
 iceboots=Botas de Hielo
-# NEW
 inspirationfoci=Enfoque de Inspiración
 cursedmedallion=Medallón Maldito
 ancientmedallion=Medallón Antiguo
@@ -278,7 +264,6 @@ swampboots=Botas del Pantano
 swampchestplate=Pechera del Pantano
 swampmask=Máscara del Pantano
 swamphood=Capucha del Pantano
-# NEW
 infectedhat=Gorro Infectado
 infectedchestplate=Pechera Infectada
 infectedboots=Botas Infectadas
@@ -290,7 +275,6 @@ spinelboots=Botas de Espinela
 // Misc
 gelslimenullifier=Anulador de Slimes de Gel
 cuberry=Cubaya
-# NEW
 infectedgrassseed=Semillas de Hierba Infectada
 
 // Backpacks
@@ -302,7 +286,6 @@ emeraldbackpack=Mochila de Esmeralda
 diamondbackpack=Mochila de Diamante
 
 // Books
-# NEW
 runestutorialbook=Tutorial de Runas
 
 // Runes Injectors
@@ -334,7 +317,6 @@ runeofvoidwizard=Runa del Mago del Vacío
 runeofswampguardian=Runa del Guardián del Pantano
 runeofancientvulture=Runa del Carroñero Antiguo
 runeofpiratecaptain=Runa del Capitán Pirata
-# NEW
 runeofchieftain=Runa del Cacique Rúnico
 
 // Base Runes Tier 2
@@ -343,12 +325,11 @@ runeofcryoqueen=Runa de la Reina Gélida
 runeofpestwarden=Runa del Guardián de la Plaga
 runeofsageandgrit=Runa de Sage y Grit
 runeoffallenwizard=Runa del Mago Caído
-# NEW
 runeofbabylontower=Runa de la Torre de Babilonia
 
 // Base Runes Tier 3
-runeofmotherslime=Rune de la Madre Slime
-runeofnightswarm=Rune del Enjambre Nocturno
+runeofmotherslime=Runa de la Madre Slime
+runeofnightswarm=Runa del Enjambre Nocturno
 runeofspiderempress=Runa de la Emperatriz Araña
 runeofsunlightchampion=Runa del Campeón de la Luz Solar
 runeofmoonlightdancer=Runa de la Bailarina de la Luz de Luna
@@ -388,7 +369,6 @@ attackarmorpentip=Penetración de armadura: <value>%
 
 // Mechanics
 magichealinggrace=§aGracia de Curación Mágica:§0 Curate con un % de la §9[Curación Mágica]§0 aplicada en aliados
-# NEW
 cursedbuff=§bMaldito:§0 §6+25%§0 Daño Recibido
 inspiration=§9Inspiración:§0 Mejora los efectos de estandartes e instrumentos musicales
 adrenaline=§6Adrenalina:§0 +5% Daño, -5% Armadura. Acumulable hasta 5 veces
@@ -403,13 +383,12 @@ enchantingscrolldaggertip=Se usa para encantar dagas con <enchantment>\n§!Aphor
 backpack=Es un nuevo inventario que almacena todos los items que recojas
 backpackslots=Capacidad de <slots> items
 stored=Items guardados: <items>
-# NEW
 backpackcraft=Debe estar vacía para crear una mochila mejor
+rpgmodnerf=Objeto nerfeado por RPG Mod
 
 // Consumables
 deleteditem=Este objeto ha sido eliminado, usa este objeto para recuperar los materiales antes de que sea eliminado permanentemente
 unstablecore=§bLibera una aura inestable...§0 Solo puede ser usado durante el día
-# NEW
 venomextractbuff=Lowd dice que lo bebas, no lo hagas
 venomextractbuffdesc=No puedes tener más de 1 de Vida
 lifespinel=Aumenta 5 puntos de salud máxima de forma permanente\nPueden acumularse hasta 320 puntos
@@ -427,7 +406,6 @@ saber=Carga al máximo para daño máximo y para lanzar un corte de aire
 saberdash=Mantén [input=mouse2] para cargar un impulso que cortará a los enemigos
 battleaxe=Requiere mucho tiempo de carga
 battleaxe2=Presiona [input=mouse2] para activar la Furia Berserker y ganar 3 de Adrenalina temporalmente
-# NEW
 battleaxe3=Gana Adrenalina temporalmente al golpear enemigos durante la Furia, aumentando velocidad y velocidad de ataque
 dagger=Mantén [input=mouse2] para lanzar la daga
 
@@ -441,7 +419,6 @@ blowgun=Dispara semillas
 // Single Melee Weapons
 woodenrod=Curate mágicamente §7<healing>§0 cada 10 ataques
 voidhammer=Cuando el proyectil rebota o golpea a un enemigo, se redirige al más cercano, golpeando hasta 3 veces
-# NEW
 crimsonkora=Mantén [input=mouse2] para cargar un ataque devastador, pero lento
 thenarcissist=Encadena 4 ataques para lanzar un ataque giratorio en el quinto ataque!\n+20% Daño por cada ataque encadenado
 
@@ -450,7 +427,6 @@ firesling=Quema a los enemigos
 frozensling=Congela a los enemigos
 gelgreatbow=Convierte Flechas de Piedra en Flechas de Gel
 unstablegelgreatbow=Convierte Flechas de Piedra y Flechas de Gel en Flechas de Gel Inestable
-# NEW
 thespammer=Dispara Balas de Spam
 shotgunsaber=Suelta cerca del centro para un disparo más poderoso, certero y con balas penetrantes
 honeysaber=Carga al máximo para daño máximo y para disparar miel y arándanos
@@ -459,11 +435,9 @@ spinelcrossbow2=Mantén [input=mouse2] para disparar 3 flechas a la vez
 
 // Single Magic Weapons
 unstablegelstaff=Cuando los proyectiles rebotan en las paredes, se duplican
-# NEW
 harpofharmony=Armonía: Aumenta velocidad, regeneración de vida y regeneración de maná
 
 // Single Summoner Weapons
-# NEW
 infectedstaff=Invoca dos Retoños Vivientes por invocación
 
 // Single Throwable Weapons
@@ -488,7 +462,6 @@ geltile=Suelo pegajoso que ralentiza un montón a todo lo que esté encima
 witchstatue=Colocar esta estatua en la superficie de un pantano eliminará el spawn de las Brujas Rosa en toda la isla
 
 // Generic Trinkets
-# NEW
 areawhenheal=Ejecuta este área por cada <magichealing> de curación mágica realizada
 periaptboost=Presiona [input=trinketability] para recibir una bonificación de Velocidad y Velocidad de Ataque por 10 segundos
 
@@ -497,8 +470,8 @@ rockyperiapt=§7+5§0 Armadura, pero §6-5%§0 Velocidad
 rockyperiapt2=Presiona [input=trinketability] para recibir 10 de Armadura durante 10 segundos
 unstableperiapt=Invoca dos Slimes de Gel Inestable Bebé (6 de Daño de Invocación)
 unstableperiapt2=Te vuelve inmune al debuff §9Pegajoso§0
-bloodyperiapt=Además, las armas §6Rayo de sangre§0 y §6Descarga carmesí§0 roban §73%§0 de Vida
-demonicperiapt=Además, las armas mágicas robarán §73%§0 de Vida
+bloodyperiapt=Además, las armas §6Rayo de sangre§0 y §6Descarga carmesí§0 roban §7<amount>%§0 de Vida
+demonicperiapt=Además, las armas mágicas robarán §7<amount>%§0 de Vida
 necromancyperiapt=Cada vez que tú o uno de tus esbirros mata a un mob hostil, invocas un Esqueleto No-Muerto
 necromancyperiapt2=20 Daño de Invocación. Dura 10 segundos y máximo pueden haber 3 a la vez
 frozenperiapt=Las armas cuerpo a cuerpo y a distancia §9Congelarán§0 durante 3 segundos
@@ -510,7 +483,6 @@ heartring=+20 de salud máxima
 swampshield=Solo protege ataques en la dirección que se reciben
 swampshield2=Al bloquear perfectamente: Curate mágicamente §7<healing>§0 de tu vida máxima
 iceboots=Te hace resbalarte como en hielo, pero otorga +50% velocidad de movimiento y +4 de armadura
-# NEW
 inspirationfoci1=§7+40%§0 efecto de inspiración y §7+20%§0 velocidad de habilidades de inspiración
 inspirationfoci2=§6-20%§0 Daño no inpsiración y §6-1§0 invocación máxima
 essenceofhealing=§7+<percent>%&§0 Curación mágica por cada esencia de vida
@@ -524,7 +496,6 @@ bloomrushcharm=Reduce en 10% el uso de resistencia por cada Adrenalina\nInvoca u
 // Set Bonus
 goldhatsetbonus=+60% de Velocidad de Ataque a Distancia mientras no te muevas
 pinkwitchsetbonus=Aumenta la Velocidad de Daño Mágico, la Regeneración de Maná y la Armadura conforme menos vida tengas, con un máximo de 50% / 6 de Armadura
-# NEW
 infectedsetbonus=Invoca tres Retoños Vivientes (8 de Daño de Invocador)
 spinelhelmetsetbonus=Curaté mágicamente §7<healing>§0 del daño cuerpo a cuerpo realizado a enemgios
 spinelhatsetbonus=Curaté mágicamente a ti y a los aliados cercanos §7<healing>§0 del daño mágico realizado a enemgios
@@ -540,23 +511,21 @@ bannerofspeedeffect=§7+<effect>%§0 velocidad de movimiento
 bannerofsummonspeedeffect=§7+<effect>%§0 velocidad de movimiento de las invocaciones
 
 // Mighty Banners
-# NEW
-banneroffishingeffect=§7+<effect>§0 fishing power
-bannerofhealthregeneffect=§7+<effectfloat>§0 combat health regen
-bannerofmanaregeneffect=§7+<effect>%§0 combat mana regen
-bannerofresistanceeffect=§7+<effect>§0 armor
-bannerofsummoningeffect=§7+<effect>§0 max summons
-bannerofattackspeedeffect=§7+<effect>%§0 attack speed
+banneroffishingeffect=§7+<effect>§0 poder de pesca
+bannerofhealthregeneffect=§7+<effectfloat>§0 regeneración de vida en combate
+bannerofmanaregeneffect=§7+<effect>%§0 regeneración de maná en combate
+bannerofresistanceeffect=§7+<effect>§0 armadura
+bannerofsummoningeffect=§7+<effect>§0 invocaciones máximas
+bannerofattackspeedeffect=§7+<effect>%§0 velocidad de ataque
 
 // Summoner Expansion Banners
-# NEW
-bannerofresilienceeffect=§7+<effect>%§0 max resilience\nRegen §7+<effect>§0 resilience per second
-bannerofbouncingeffect=§7+<effect>§0 projectile bounces
-bannerofessenceeffect=§7+<effect>%§0 life essence duration
-bannerofstaminaeffect=§7+<effect>%§0 stamina capacity\n§7+<effect2>%§0 stamina regen\n§7-<effect2>%§0 stamina usage
-bannerofpickingeffect=§7+<effectfloat>§0 pickup range
-bannerofdashingeffect=§7+<effect>§0 dash stacks\n§7-<effect2>%§0 dash cooldown
-bannerofmanaeffect=§7+<effect>%§0 max mana\n§7<effect2>%§0 mana regen
+bannerofresilienceeffect=§7+<effect>%§0 resiliencia máxima\nRegenera §7+<effect>§0 de resiliencia por segundo
+bannerofbouncingeffect=§7+<effect>§0 rebotes de proyectil
+bannerofessenceeffect=§7+<effect>%§0 duración de la esencia de vida
+bannerofstaminaeffect=§7+<effect>%§0 capacidad de aguante\n§7+<effect2>%§0 regeneración de aguante\n§7-<effect2>%§0 uso de aguante
+bannerofpickingeffect=§7+<effectfloat>§0 rango de recogida
+bannerofdashingeffect=§7+<effect>§0 acumulaciones de carrera\n§7-<effect2>%§0 enfriamiento de carrera
+bannerofmanaeffect=§7+<effect>%§0 maná máximo\n§7<effect2>%§0 regeneración de maná
 
 // Runes (General)
 baserune=§iRuna Base
@@ -612,7 +581,6 @@ runeofancientvulture=Invoca un Cría de Carroñero Rúnica por 10 segundos
 runeofancientvulture2=La invocación hará daño igual al §7<effectNumber>§0% de la vida máxima de los enemigos
 runeofpiratecaptain=Aumenta tu daño en §7<effectNumber>§0% por cada 100 monedas que tengas, hasta un máximo de 20,000 monedas
 runeofpiratecaptain2=Perderás 3 monedas cada vez que ataques
-# NEW
 runeofchieftain=Durante los 20 segundos tu Daño aumenta conforme menor sea tu Vida hasta un máximo de +§7<effectNumber>§0%
 
 // Base Runes Tier 2
@@ -625,7 +593,6 @@ runeofsageandgrit=Si hay aliados cerca (500 range), cura §7<effectNumber>§0% d
 runeofsageandgrit2=Si no, aumenta tu daño, velocidad de ataque y velocidad de movimiento en +§7<effectNumber>§0% por 20 segundos
 runeoffallenwizard=Aturde a todos los mobs excepto a ti por §7<effectNumber>§0 segundos
 runeoffallenwizard2=Los humanos serán libres más rápido, y los bosses aún más rápido
-# NEW
 runeofbabylontower=+§7<effectNumber>§0% Daño, pero no te puedes mover. Dura 10 segundos
 
 // Base Runes Tier 3
@@ -673,7 +640,6 @@ voidadept=Adepto del Vacío
 copperdaggergoblin=Goblin con Daga de Cobre
 irondaggergoblin=Goblin con Daga de Hierro
 golddaggergoblin=Goblin con Daga de Oro
-# NEW
 infectedtreant=Treant Infectado
 spinelgolem=Gólem de Espinela
 spinelcaveling=Chaneque de Espinela
@@ -694,11 +660,10 @@ runicunstablegelslime=Slime de Gel Inestable Rúnico
 runicvulturehatchling=Cría de Carroñero Rúnica
 runicbat=Murciélago Rúnico
 onyx=Onyx
-# NEW
 livingsapling=Retoño Viviente
 
 // Pet
-petphosphorslime=Phosphor Slime
+petphosphorslime=Slime de Fósforo
 
 
 [buff]
@@ -707,7 +672,6 @@ stunbuff=Aturdimiento
 fallenstunbuff=Aturdimiento del Cáido
 stickybuff=Pegajoso
 stopbuff=Detenido
-# NEW
 honeyedbuff=Enmielado
 venomextractbuff=Extracto de Veneno
 cursedbuff=Maldito
@@ -753,7 +717,6 @@ infectedfields=Campos Infectados
 [journal]
 
 //Levels
-# NEW
 infectedfieldssurface=Superficie de Campos Infectados
 infectedfieldscave=Cuevas de Campos Infectados
 
@@ -763,15 +726,12 @@ pickupfloralring=[item=floralring] Corta un montón de hierba en el bosque para 
 killunstablegelslime=[mob=unstablegelslime] Mata 1 Slime de Gel Inestable
 
 // Swamp Surface Challenges
-# NEW
 killpinkwitchesswamp=[mob=pinkwitch] Durante la noche, mata 5 Brujas Rosas en la superficie del pantano
 
 // Infected Fields Surface Challenges
-# NEW
 pickupinfectedlogs=[item=infectedlog] Tala para recoger 100 Leños Infectados
 
 // Infected Fields Cave Challenges
-# NEW
 pickupspinel=[item=spinel] Recoge 40 de Espinela
 activatebabylontower=[item=lifespinel] Colcoa un Espinel Viviente en la Torre de Babilonia
 findthespammer=[item=thespammer] Encuentra El Spammer
@@ -782,7 +742,6 @@ runesinjectorability=Habilidad del Inyector de Runas
 
 
 [runestutorialbook]
-# NEW
 openheader=Abrir el Inyector de Runas
 opentext=Para utilizar runas, necesitarás un Inyector de Runas. Estos dispositivos especiales pueden abrirse para insertar runas. Cada inyector tiene una ranura para una Runa Base y múltiples ranuras para Runas Modificador, según su capacidad. ¡Eres libre de añadir tantas Runas Modificador como permita el inyector, experimenta para encontrar las mejores combinaciones!
 equipheader=Equipar el Inyector

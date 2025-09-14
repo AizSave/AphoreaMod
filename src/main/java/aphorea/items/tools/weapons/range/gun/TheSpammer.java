@@ -1,5 +1,6 @@
 package aphorea.items.tools.weapons.range.gun;
 
+import aphorea.items.vanillaitemtypes.weapons.AphGunProjectileToolItem;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.util.GameRandom;
@@ -9,12 +10,11 @@ import necesse.entity.projectile.modifiers.ResilienceOnHitProjectileModifier;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.bulletItem.BulletItem;
-import necesse.inventory.item.toolItem.projectileToolItem.gunProjectileToolItem.GunProjectileToolItem;
 import necesse.level.maps.Level;
 
 import java.awt.*;
 
-public class TheSpammer extends GunProjectileToolItem {
+public class TheSpammer extends AphGunProjectileToolItem {
     public TheSpammer() {
         super("spambullet", 1300);
         this.rarity = Rarity.RARE;

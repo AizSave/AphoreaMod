@@ -72,7 +72,6 @@ runes=Rúnák
 [object]
 witchstatue=Boszorkány szobor
 runestable=Rúnaasztal
-#NEW
 infectedsapling=Fertőzött csemete
 spinelcluster=Spinell fürt
 spinelcluster_small=Kis spinell fürt
@@ -92,6 +91,9 @@ infectedcabinet=Fertőzött szekrény
 infectedbed=Fertőzött ágy
 infecteddoublebed=Fertőzött franciaágy
 infectedcandelabra=Fertőzött gyertyatartó
+# NEW
+infectedwoodwall=Fertőzött fa fal
+infectedwooddoor=Fertőzött fa ajtó
 
 
 [itemcategory]
@@ -272,6 +274,108 @@ spinelboots=Spinell csizma
 
 // Misc
 gelslimenullifier=Egy egyszerű kattintással abbahagyják a zaklatást!
+cuberry=Kubberry
+infectedgrassseed=Fertőzött fűmag
+
+// Backpacks
+basicbackpack=Alap hátizsák
+sapphirebackpack=Zafír hátizsák
+amethystbackpack=Ametiszt hátizsák
+rubybackpack=Rubin hátizsák
+emeraldbackpack=Smaragd hátizsák
+diamondbackpack=Gyémánt hátizsák
+
+// Books
+runestutorialbook=Rúnák oktatókönyv
+
+// Runes Injectors
+runesinjector=Rúna injektor
+rusticrunesinjector=Rusztikus rúna injektor
+unstablerunesinjector=Instabil rúna injektor
+demonicrunesinjector=Démoni rúna injektor
+tungstenrunesinjector=Volfrám rúna injektor
+ancientrunesinjector=Ősi rúna injektor
+
+// Base Runes Tier 0
+baserune=Alap rúna
+runeoffury=Harag rúnája
+runeofspeed=Sebesség rúnája
+runeofhealing=Gyógyítás rúnája
+runeofresistance=Ellenállás rúnája
+runeofvalor=Bátorság rúnája
+runeofdetonation=Robbanás rúnája
+runeofthunder=Mennydörgés rúnája
+runeofwinter=Tél rúnája
+runeofshadows=Árnyak rúnája
+runeofimmortality=Halhatatlanság rúnája
+
+// Base Runes Tier 1
+runeofunstablegelslime=Instabil gélnyálka rúnája
+runeofevilsprotector=Gonosz védelmezőjének rúnája
+runeofqueenspider=Pókkirálynő rúnája
+runeofvoidwizard=Üresség varázslójának rúnája
+runeofswampguardian=Mocsár őrzőjének rúnája
+runeofancientvulture=Ősi keselyű rúnája
+runeofpiratecaptain=Kalózkapitány rúnája
+runeofchieftain=Törzsfőnök rúnája
+
+// Base Runes Tier 2
+runeofreaper=Kaszás rúnája
+runeofcryoqueen=Jégkirálynő rúnája
+runeofpestwarden=Kártevő őrzőjének rúnája
+runeofsageandgrit=Zsálya és kurázsi rúnája
+runeoffallenwizard=Bukott varázsló rúnája
+runeofbabylontower=Bábel tornyának rúnája
+
+// Base Runes Tier 3
+runeofmotherslime=Nyálkaanya rúnája
+runeofnightswarm=Éjszakai raj rúnája
+runeofspiderempress=Pókcsászárnő rúnája
+runeofsunlightchampion=Napfény bajnokának rúnája
+runeofmoonlightdancer=Holdfény táncosának rúnája
+runeofcrystaldragon=Kristálysárkány rúnája
+
+// Modifier Runes Tier 0
+modifierrune=Módosító rúna
+empoweringrune=Erősítő rúna
+recurrentrune=Ismétlődő rúna
+
+// Modifier Runes Tier 1
+frenzyrune=Őrjöngés rúnája
+vitalrune=Életfontosságú rúna
+devastatingrune=Pusztító rúna
+onyxrune=Ónix rúna
+pawningrune=Zálog rúna
+
+// Modifier Runes Tier 2
+abysmalrune=Mélytengeri rúna
+tidalrune=Árapály rúna
+
+// Modifier Runes Tier 3
+ascendantrune=Felemelkedő rúna
+
+
+[itemtooltip]
+// Stat tips
+line=----------------------------------------
+magichealingtip=Mágikus gyógyítás: §7<health>
+rangetip=Hatótáv: §9<range>
+areatip=§aTerület <number>
+inspirationdamagetip=Inspirációs sebzés: <value>
+areabuff=Alkalmazd a <buff> hatást a szövetségesekre
+areadebuff=Alkalmazd a <buff> hatást az ellenségekre
+areabuffdisplay=<buff> <duration> másodpercig
+attackarmorpentip=Páncéltörés: <value>%
+
+// Mechanics
+magichealinggrace=§aMágikus gyógyítás kegyelme:§0 Meggyógyítja magát a szövetségeseknek szánt mágikus gyógyítás egy százalékával
+cursedbuff=§bElátkozott:§0 §6+25%§0 bejövő sebzés
+inspiration=§9Inspiráció:§0 Javítja a zászlók és hangszerek hatásait
+adrenaline=§6Adrenalin:§0 +5% sebzés, -5% páncél. Akár 5-ször is halmozódhat
+livingsapling=§7Élő csemete:§0 10 támadásonként §73§0-mal gyógyítja a tulajdonost
+
+// Misc
+gelslimenullifier=Egy egyszerű kattintással abbahagyják a zaklatást!
 enchantingscrollhealingequipmenttip=Gyógyító felszerelés tárgyának megbűvölésére szolgál <enchantment>\n§!Aphorea Mod
 enchantingscrollhealingtip=Gyógyító eszköz megbűvölésére szolgál <enchantment>\n§!Aphorea Mod
 enchantingscrollareatip=Területi hatású eszköz megbűvölésére szolgál <enchantment>\n§!Aphorea Mod
@@ -280,6 +384,7 @@ backpack=Ez egy új leltár, amely tárolja az összes összegyűjtött tárgyat
 backpackslots=<slots> tárgy kapacitása
 stored=Tárolt tárgyak: <items>
 backpackcraft=Üresnek kell lennie egy jobb hátizsák készítéséhez
+rpgmodnerf=Tárgy gyengítve az RPG Mod által
 
 // Consumables
 deleteditem=Ezt az elemet eltávolították, használd ezt az elemet az anyagok visszaszerzéséhez, mielőtt véglegesen eltávolítanák
@@ -365,8 +470,8 @@ rockyperiapt=§7+5§0 páncél, de §6-5%§0 mozgási sebesség
 rockyperiapt2=Nyomd meg a [input=trinketability] gombot, hogy 10 másodpercre 10 páncélt kapj
 unstableperiapt=Két instabil gél nyálka bébit idéz meg (6 idéző sebzés)
 unstableperiapt2=Immunissá tesz a ragadós debuffal szemben
-bloodyperiapt=Továbbá a 'Vérnyíl' és a 'Vérröppentyű' fegyverek §73%§0 életet lopnak
-demonicperiapt=Továbbá a mágikus fegyverek §73%§0 életet lopnak
+bloodyperiapt=Továbbá a 'Vérnyíl' és a 'Vérröppentyű' fegyverek §7<amount>%§0 életet lopnak
+demonicperiapt=Továbbá a mágikus fegyverek §7<amount>%§0 életet lopnak
 necromancyperiapt=Minden alkalommal, amikor te vagy az egyik idézésed megöl egy ellenséges mobot, megidézel egy élőhalott csontvázat
 necromancyperiapt2=20 idéző sebzés. 10 másodpercig tart, és egyszerre legfeljebb 3 lehet
 frozenperiapt=A közelharci és a távolsági fegyverek 3 másodpercre megfagynak

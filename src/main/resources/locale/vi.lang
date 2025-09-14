@@ -72,7 +72,6 @@ runes=Runes
 [object]
 witchstatue=Tượng phù thủy
 runestable=Bàn Rune
-#NEW
 infectedsapling=Cây non bị nhiễm độc
 spinelcluster=Cụm Spinel
 spinelcluster_small=Cụm Spinel nhỏ
@@ -92,6 +91,9 @@ infectedcabinet=Tủ bị nhiễm độc
 infectedbed=Giường bị nhiễm độc
 infecteddoublebed=Giường đôi bị nhiễm độc
 infectedcandelabra=Chân nến bị nhiễm độc
+# NEW
+infectedwoodwall=Tường gỗ bị nhiễm độc
+infectedwooddoor=Cửa gỗ bị nhiễm độc
 
 
 [itemcategory]
@@ -184,7 +186,7 @@ spambullet=Đạn spam
 
 // Greatbows
 gelgreatbow=Cung lớn Gel
-unstablegelgreatsword=Cung lớn Gel không ổn định
+unstablegelgreatbow=Cung lớn Gel không ổn định
 
 // Arrows
 gelarrow=Mũi tên Gel
@@ -382,6 +384,7 @@ backpack=Đây là một kho đồ mới chứa tất cả các vật phẩm b�
 backpackslots=Sức chứa <slots> vật phẩm
 stored=Vật phẩm được lưu trữ: <items>
 backpackcraft=Phải trống để chế tạo một chiếc ba lô tốt hơn
+rpgmodnerf=Vật phẩm bị nerfed bởi RPG Mod
 
 // Consumables
 deleteditem=Vật phẩm này đã bị xóa, hãy sử dụng vật phẩm này để phục hồi nguyên liệu trước khi nó bị xóa vĩnh viễn
@@ -467,8 +470,8 @@ rockyperiapt=§7+5§0 giáp, nhưng §6-5%§0 tốc độ di chuyển
 rockyperiapt2=Nhấn [input=trinketability] để nhận 10 giáp trong 10 giây
 unstableperiapt=Triệu hồi hai Slime Gel không ổn định con (6 sát thương triệu hồi)
 unstableperiapt2=Làm cho bạn miễn nhiễm với hiệu ứng xấu dính
-bloodyperiapt=Ngoài ra, vũ khí 'Mũi tên máu' và 'Loạt đạn máu' sẽ hút §73%§0 máu
-demonicperiapt=Ngoài ra, vũ khí phép thuật sẽ hút §73%§0 máu
+bloodyperiapt=Ngoài ra, vũ khí 'Mũi tên máu' và 'Loạt đạn máu' sẽ hút §7<amount>%§0 máu
+demonicperiapt=Ngoài ra, vũ khí phép thuật sẽ hút §7<amount>%§0 máu
 necromancyperiapt=Mỗi khi bạn hoặc một trong những triệu hồi của bạn giết một mob thù địch, bạn sẽ triệu hồi một bộ xương bất tử
 necromancyperiapt2=20 sát thương triệu hồi. Kéo dài 10 giây và có thể có tối đa 3 con cùng một lúc
 frozenperiapt=Vũ khí cận chiến và tầm xa sẽ đóng băng trong 3 giây

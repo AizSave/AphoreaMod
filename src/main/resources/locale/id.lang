@@ -72,7 +72,6 @@ runes=Rune
 [object]
 witchstatue=Patung Penyihir
 runestable=Meja Rune
-#NEW
 infectedsapling=Bibit Terinfeksi
 spinelcluster=Gugus Spinel
 spinelcluster_small=Gugus Spinel Kecil
@@ -92,6 +91,9 @@ infectedcabinet=Lemari Terinfeksi
 infectedbed=Tempat Tidur Terinfeksi
 infecteddoublebed=Tempat Tidur Ganda Terinfeksi
 infectedcandelabra=Kandelabra Terinfeksi
+# NEW
+infectedwoodwall=Dinding Kayu Terinfeksi
+infectedwooddoor=Pintu Kayu Terinfeksi
 
 
 [itemcategory]
@@ -184,7 +186,7 @@ spambullet=Peluru Spam
 
 // Greatbows
 gelgreatbow=Busur Besar Gel
-unstablegelgreatsword=Busur Besar Gel Tidak Stabil
+unstablegelgreatbow=Busur Besar Gel Tidak Stabil
 
 // Arrows
 gelarrow=Panah Gel
@@ -382,6 +384,7 @@ backpack=Ini adalah inventaris baru yang menyimpan semua item yang Anda kumpulka
 backpackslots=Kapasitas <slots> item
 stored=Item yang disimpan: <items>
 backpackcraft=Harus kosong untuk membuat ransel yang lebih baik
+rpgmodnerf=Item dilemahkan oleh RPG Mod
 
 // Consumables
 deleteditem=Item ini telah dihapus, gunakan item ini untuk memulihkan material sebelum dihapus secara permanen

@@ -1,5 +1,6 @@
 package aphorea.items.tools.weapons.melee.sword;
 
+import aphorea.items.vanillaitemtypes.weapons.AphKatanaToolITem;
 import aphorea.utils.AphColors;
 import necesse.engine.registries.BuffRegistry;
 import necesse.engine.util.GameMath;
@@ -19,7 +20,7 @@ import necesse.level.maps.Level;
 
 import java.awt.geom.Point2D;
 
-public class CryoKatana extends KatanaToolItem {
+public class CryoKatana extends AphKatanaToolITem {
     public CryoKatana() {
         super(1900);
         this.rarity = Rarity.EPIC;

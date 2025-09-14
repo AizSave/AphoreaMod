@@ -72,7 +72,6 @@ runes=Rünler
 [object]
 witchstatue=Cadı Heykeli
 runestable=Rün Masası
-#NEW
 infectedsapling=Enfekte Fidan
 spinelcluster=Spinel Kümesi
 spinelcluster_small=Küçük Spinel Kümesi
@@ -92,6 +91,9 @@ infectedcabinet=Enfekte Dolap
 infectedbed=Enfekte Yatak
 infecteddoublebed=Enfekte Çift Kişilik Yatak
 infectedcandelabra=Enfekte Şamdan
+# NEW
+infectedwoodwall=Enfekte Ahşap Duvar
+infectedwooddoor=Enfekte Ahşap Kapı
 
 
 [itemcategory]
@@ -334,6 +336,9 @@ runeofmoonlightdancer=Ay Işığı Dansçısı Rünü
 runeofcrystaldragon=Kristal Ejderha Rünü
 
 // Modifier Runes Tier 0
+modifierrune=Değiştirici Rün
+empoweringrune=Güçlendirici Rün
+recurrentrune=Tekrarlayan Rün
 
 // Modifier Runes Tier 1
 frenzyrune=Çılgınlık Rünü
@@ -347,6 +352,7 @@ abysmalrune=Uçurum Rünü
 tidalrune=Gelgit Rünü
 
 // Modifier Runes Tier 3
+ascendantrune=Yükselen Rün
 
 
 [itemtooltip]
@@ -378,6 +384,7 @@ backpack=Topladığınız tüm eşyaları saklayan yeni bir envanterdir
 backpackslots=<slots> eşya kapasitesi
 stored=Saklanan eşyalar: <items>
 backpackcraft=Daha iyi bir sırt çantası yapmak için boş olmalıdır
+rpgmodnerf=Eşya RPG Modu tarafından zayıflatıldı
 
 // Consumables
 deleteditem=Bu öğe kaldırıldı, kalıcı olarak kaldırılmadan önce malzemeleri kurtarmak için bu öğeyi kullanın

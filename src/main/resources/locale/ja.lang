@@ -72,7 +72,6 @@ runes=ルーン
 [object]
 witchstatue=魔女の像
 runestable=ルーンテーブル
-#NEW
 infectedsapling=感染した苗木
 spinelcluster=スピネルクラスター
 spinelcluster_small=小さなスピネルクラスター
@@ -92,6 +91,9 @@ infectedcabinet=感染したキャビネット
 infectedbed=感染したベッド
 infecteddoublebed=感染したダブルベッド
 infectedcandelabra=感染した燭台
+# NEW
+infectedwoodwall=感染した木の壁
+infectedwooddoor=感染した木のドア
 
 
 [itemcategory]
@@ -272,6 +274,108 @@ spinelboots=スピネルブーツ
 
 // Misc
 gelslimenullifier=クリックするだけで、彼らはあなたを悩ませるのをやめます！
+cuberry=キューベリー
+infectedgrassseed=感染した草の種
+
+// Backpacks
+basicbackpack=基本のバックパック
+sapphirebackpack=サファイアのバックパック
+amethystbackpack=アメジストのバックパック
+rubybackpack=ルビーのバックパック
+emeraldbackpack=エメラルドのバックパック
+diamondbackpack=ダイヤモンドのバックパック
+
+// Books
+runestutorialbook=ルーンのチュートリアルブック
+
+// Runes Injectors
+runesinjector=ルーンインジェクター
+rusticrunesinjector=素朴なルーンインジェクター
+unstablerunesinjector=不安定なルーンインジェクター
+demonicrunesinjector=悪魔のルーンインジェクター
+tungstenrunesinjector=タングステンのルーンインジェクター
+ancientrunesinjector=古代のルーンインジェクター
+
+// Base Runes Tier 0
+baserune=ベースルーン
+runeoffury=怒りのルーン
+runeofspeed=速度のルーン
+runeofhealing=回復のルーン
+runeofresistance=抵抗のルーン
+runeofvalor=勇気のルーン
+runeofdetonation=爆発のルーン
+runeofthunder=雷のルーン
+runeofwinter=冬のルーン
+runeofshadows=影のルーン
+runeofimmortality=不死のルーン
+
+// Base Runes Tier 1
+runeofunstablegelslime=不安定なゲルスライムのルーン
+runeofevilsprotector=悪の守護者のルーン
+runeofqueenspider=女王蜘蛛のルーン
+runeofvoidwizard=ヴォイドウィザードのルーン
+runeofswampguardian=沼の守護者のルーン
+runeofancientvulture=古代のハゲワシのルーン
+runeofpiratecaptain=海賊船長のルーン
+runeofchieftain=族長のルーン
+
+// Base Runes Tier 2
+runeofreaper=死神のルーン
+runeofcryoqueen=クライオクイーンのルーン
+runeofpestwarden=害虫駆除人のルーン
+runeofsageandgrit=賢者と根性のルーン
+runeoffallenwizard=堕落したウィザードのルーン
+runeofbabylontower=バビロンの塔のルーン
+
+// Base Runes Tier 3
+runeofmotherslime=マザースライムのルーン
+runeofnightswarm=夜の群れのルーン
+runeofspiderempress=蜘蛛の女帝のルーン
+runeofsunlightchampion=太陽光のチャンピオンのルーン
+runeofmoonlightdancer=月光のダンサーのルーン
+runeofcrystaldragon=クリスタルドラゴンのルーン
+
+// Modifier Runes Tier 0
+modifierrune=修飾ルーン
+empoweringrune=強化ルーン
+recurrentrune=反復ルーン
+
+// Modifier Runes Tier 1
+frenzyrune=狂乱のルーン
+vitalrune=生命のルーン
+devastatingrune=破壊的なルーン
+onyxrune=オニキスルーン
+pawningrune=質入れのルーン
+
+// Modifier Runes Tier 2
+abysmalrune=奈落のルーン
+tidalrune=潮のルーン
+
+// Modifier Runes Tier 3
+ascendantrune=アセンダントルーン
+
+
+[itemtooltip]
+// Stat tips
+line=----------------------------------------
+magichealingtip=魔法回復: §7<health>
+rangetip=範囲: §9<range>
+areatip=§aエリア <number>
+inspirationdamagetip=インスピレーションダメージ: <value>
+areabuff=味方に <buff> を適用
+areadebuff=敵に <buff> を適用
+areabuffdisplay=<buff> を <duration> 秒間
+attackarmorpentip=アーマー貫通: <value>%
+
+// Mechanics
+magichealinggrace=§a魔法回復の猶予:§0 味方を対象とした魔法回復の割合で自分を回復します
+cursedbuff=§b呪い:§0 §6+25%§0 の被ダメージ
+inspiration=§9インスピレーション:§0 バナーや楽器の効果を向上させます
+adrenaline=§6アドレナリン:§0 +5% ダメージ、-5% アーマー。最大 5 回までスタック可能
+livingsapling=§7生きた苗木:§0 10 回の攻撃ごとに所有者を §73§0 魔法回復します
+
+// Misc
+gelslimenullifier=クリックするだけで、彼らはあなたを悩ませるのをやめます！
 enchantingscrollhealingequipmenttip=<enchantment> で回復装備をエンチャントするために使用されます\n§!Aphorea Mod
 enchantingscrollhealingtip=<enchantment> で回復ツールをエンチャントするために使用されます\n§!Aphorea Mod
 enchantingscrollareatip=<enchantment> で範囲効果ツールをエンチャントするために使用されます\n§!Aphorea Mod
@@ -280,6 +384,7 @@ backpack=これは、収集したすべてのアイテムを保管する新し�
 backpackslots=<slots> アイテムの容量
 stored=保管されているアイテム: <items>
 backpackcraft=より良いバックパックを作成するには空でなければなりません
+rpgmodnerf=RPG Modによって弱体化されたアイテム
 
 // Consumables
 deleteditem=このアイテムは削除されました。永久に削除される前に、このアイテムを使用して材料を回収してください
@@ -365,8 +470,8 @@ rockyperiapt=§7+5§0 アーマー、しかし §6-5%§0 移動速度
 rockyperiapt2=[input=trinketability] を押して、10 秒間 10 アーマーを獲得します
 unstableperiapt=2 体の赤ちゃんの不安定なゲルスライムを召喚します (6 召喚ダメージ)
 unstableperiapt2=粘着性デバフに対して免疫になります
-bloodyperiapt=また、武器「ブラッドボルト」と「ブラッドボレー」は §73%§0 のライフを盗みます
-demonicperiapt=また、魔法の武器は §73%§0 のライフを盗みます
+bloodyperiapt=また、武器「ブラッドボルト」と「ブラッドボレー」は §7<amount>%§0 のライフを盗みます
+demonicperiapt=また、魔法の武器は §7<amount>%§0 のライフを盗みます
 necromancyperiapt=あなたまたはあなたの召喚獣の 1 体が敵対的なモブを殺すたびに、アンデッドスケルトンを召喚します
 necromancyperiapt2=20 召喚ダメージ。10 秒間持続し、一度に最大 3 体まで存在できます
 frozenperiapt=近接武器と遠隔武器は 3 秒間凍結します
