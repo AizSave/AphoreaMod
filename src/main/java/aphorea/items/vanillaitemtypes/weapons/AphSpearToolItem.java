@@ -6,10 +6,11 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.toolItem.spearToolItem.SpearToolItem;
+import necesse.inventory.lootTable.presets.SpearWeaponsLootTable;
 
 public class AphSpearToolItem extends SpearToolItem {
     public AphSpearToolItem(int enchantCost) {
-        super(enchantCost);
+        super(enchantCost, SpearWeaponsLootTable.spearWeapons);
     }
 
     @Override

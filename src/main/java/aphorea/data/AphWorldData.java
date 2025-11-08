@@ -7,7 +7,7 @@ import necesse.engine.world.worldData.WorldData;
 
 public class AphWorldData extends WorldData {
     public static final String DATA_KEY = "aphoreaworlddata";
-    public boolean gelslimesnulled;
+    public boolean gelSlimesNulled;
 
     public AphWorldData() {
     }
@@ -25,13 +25,13 @@ public class AphWorldData extends WorldData {
     @Override
     public void addSaveData(SaveData save) {
         super.addSaveData(save);
-        save.addBoolean("gelslimesnulled", gelslimesnulled);
+        save.addBoolean("gelslimesnulled", gelSlimesNulled);
     }
 
     @Override
     public void applyLoadData(LoadData save) {
         super.applyLoadData(save);
-        gelslimesnulled = save.getBoolean("gelslimesnulled", gelslimesnulled);
+        gelSlimesNulled = save.getBoolean("gelslimesnulled", gelSlimesNulled);
     }
 
 }

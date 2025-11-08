@@ -1,6 +1,7 @@
 package aphorea.mobs.runicsummons;
 
 import necesse.engine.gameLoop.tickManager.TickManager;
+import necesse.engine.network.server.ServerClient;
 import necesse.engine.registries.MobRegistry;
 import necesse.engine.util.GameUtils;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.MobHealthChangeEvent;
@@ -41,7 +42,7 @@ public class RunicBat extends RunicFlyingAttackingFollowingMob {
     }
 
     @Override
-    public GameDamage getCollisionDamage(Mob target) {
+    public GameDamage getCollisionDamage(Mob target, boolean fromPacket, ServerClient packetSubmitter) {
         return new GameDamage(0);
     }
 
@@ -57,7 +58,7 @@ public class RunicBat extends RunicFlyingAttackingFollowingMob {
             target.isServerHit(damage, target.x - owner.x, target.y - owner.y, (float) knockback, this);
             this.collisionHitCooldowns.startCooldown(target);
             if (target.isHostile) {
-                getLevel().entityManager.addLevelEvent(new MobHealthChangeEvent(owner, (int) Math.max(owner.getMaxHealth() * 0.01F, 1)));
+                getLevel().entityManager.events.add(new MobHealthChangeEvent(owner, (int) Math.max(owner.getMaxHealth() * 0.01F, 1)));
             }
         }
     }
@@ -107,7 +108,7 @@ public class RunicBat extends RunicFlyingAttackingFollowingMob {
                 drawOptions.draw();
             }
         });
-        this.addShadowDrawables(tileList, x, y, light, camera);
+        this.addShadowDrawables(tileList, level, x, y, light, camera);
     }
 
     @Override

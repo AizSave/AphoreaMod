@@ -70,7 +70,7 @@ runes=Runes
 
 
 [object]
-witchstatue=Witch Statue
+goldwitchstatue=Witch Statue
 runestable=Runes Table
 infectedsapling=Infected Sapling
 spinelcluster=Spinel Cluster
@@ -459,7 +459,7 @@ spambullet5=§9Explosion:§0 Explodes at the end of its path instead of collidin
 geltile=Sticky floor that greatly slows down everything on top
 
 // Objects
-witchstatue=Placing this statue on the surface of a swamp will eliminate witch spawn throughout the island
+goldwitchstatue=Pink Witches cannot spawn near this statue (100 tiles range)
 
 // Generic Trinkets
 areawhenheal=Executes this area for every <magichealing> Magic Healing done
@@ -697,8 +697,6 @@ unstablegelslime_fullanger=§6Unstable Gel Slime got angry! <anger>/10
 unstablegelslime_night=§6Unstable Gel Slime§0 vanished as night fell!
 gelslimesnulled=Gel Slimes nullified in this world. They will no longer appear
 gelslimesunnulled=Gel Slimes admitted in this world. They will now appear
-pinkwitchesnulled=Pink Witches nullified in (<x>, <y>)
-pinkwitchesunnulled=Pink Witches admitted in (<x>, <y>)
 needfreeslots=You need <slots> free slots in the inventory to use this
 cantuseatnight=Cannot be used at night
 healthalreadyfull=Health is already full
@@ -709,6 +707,7 @@ initialrunetip=Choose your initial rune carefully;\nyou won't obtain the others 
 alreadyselectedinitialrune=Already selected initial rune
 cannotusetrial=Cannot use in trial rooms
 treantattackmessage=Infected Treants ([mob=infectedtreant]) are vulnerable only to axes ([item=ironaxe])
+infectedfieldsday=§#e05cd5Caution! §#ca25adInfected Fields §#e05cd5are highly radioactive at daytime!
 
 [biome]
 infectedfields=Infected Fields

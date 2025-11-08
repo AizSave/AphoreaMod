@@ -107,7 +107,7 @@ public class VolatileGelSlime extends AttackingFollowingMob {
             }
         });
 
-        if (!this.isWaterWalking()) addShadowDrawables(tileList, x, y, light, camera);
+        if (!this.isWaterWalking()) addShadowDrawables(tileList, level, x, y, light, camera);
     }
 
     @Override
@@ -137,17 +137,11 @@ public class VolatileGelSlime extends AttackingFollowingMob {
         this.remove();
 
         if (this.summonDamage != null) {
-            ExplosionEvent event = new BombExplosionEvent(x, y, 140, this.summonDamage, false, 0, this.getFollowingMob());
-            this.getLevel().entityManager.addLevelEvent(event);
+            ExplosionEvent event = new BombExplosionEvent(x, y, 140, this.summonDamage, false, false, 0, this.getFollowingMob());
+            this.getLevel().entityManager.events.add(event);
         }
 
     }
-
-    @Override
-    public void addBuff(ActiveBuff buff, boolean sendUpdatePacket) {
-        if (buff.buff != AphBuffs.STICKY) super.addBuff(buff, sendUpdatePacket);
-    }
-
 
     static public class VolatileGelExplosion extends ExplosionEvent implements Attacker {
         public VolatileGelExplosion() {

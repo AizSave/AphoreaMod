@@ -111,11 +111,11 @@ public class RunicUnstableGelSlime extends RunicAttackingFollowingMob {
             }
         });
 
-        if (!this.isWaterWalking()) addShadowDrawables(tileList, x, y, light, camera);
+        if (!this.isWaterWalking()) addShadowDrawables(tileList, level, x, y, light, camera);
     }
 
     @Override
-    protected TextureDrawOptions getShadowDrawOptions(int x, int y, GameLight light, GameCamera camera) {
+    protected TextureDrawOptions getShadowDrawOptions(Level level, int x, int y, GameLight light, GameCamera camera) {
         GameTexture shadowTexture = Textures.human_baby_shadow;
         int res = shadowTexture.getHeight();
         int drawX = camera.getDrawX(x) - res / 2;
@@ -127,10 +127,5 @@ public class RunicUnstableGelSlime extends RunicAttackingFollowingMob {
     @Override
     public int getRockSpeed() {
         return 20;
-    }
-
-    @Override
-    public void addBuff(ActiveBuff buff, boolean sendUpdatePacket) {
-        if (buff.buff != AphBuffs.STICKY) super.addBuff(buff, sendUpdatePacket);
     }
 }

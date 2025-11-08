@@ -13,6 +13,7 @@ import java.awt.*;
 public class BloodyPeriaptBuff extends AphPeriaptActivableBuff {
 
     public boolean hasRPGMod;
+
     public BloodyPeriaptBuff() {
         super("bloodyperiaptactive");
         hasRPGMod = AphDependencies.checkRPGMod();

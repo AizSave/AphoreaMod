@@ -70,7 +70,7 @@ runes=Rune
 
 
 [object]
-witchstatue=Kip vještice
+goldwitchstatue=Kip vještice
 runestable=Stol za rune
 infectedsapling=Zaražena sadnica
 spinelcluster=Grozd spinela
@@ -459,7 +459,7 @@ spambullet5=§9Eksplozija:§0 Eksplodira na kraju svog puta umjesto sudara
 geltile=Ljepljivi pod koji uvelike usporava sve na njemu
 
 // Objects
-witchstatue=Postavljanje ovog kipa na površinu močvare eliminirat će pojavu vještica na cijelom otoku
+goldwitchstatue=Postavljanje ovog kipa na površinu močvare eliminirat će pojavu vještica na cijelom otoku
 
 // Generic Trinkets
 areawhenheal=Izvršava ovo područje za svako <magichealing> izvršeno magično iscjeljenje

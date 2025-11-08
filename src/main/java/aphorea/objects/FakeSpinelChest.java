@@ -28,12 +28,12 @@ import java.util.List;
 
 public class FakeSpinelChest extends GameObject {
 
-    ObjectDamagedTextureArray texture;
+    public GameTexture texture;
 
     @Override
     public void loadTextures() {
         super.loadTextures();
-        this.texture = ObjectDamagedTextureArray.loadAndApplyOverlay(this, "objects/spinelchest");
+        this.texture = GameTexture.fromFile("objects/spinelchest");
     }
 
     @Override
@@ -46,10 +46,8 @@ public class FakeSpinelChest extends GameObject {
         GameLight light = level.getLightLevel(tileX, tileY);
         int drawX = camera.getTileDrawX(tileX);
         int drawY = camera.getTileDrawY(tileY);
-        ObjectDamagedTextureArray usedTexture = this.texture;
 
-        GameTexture texture = usedTexture.getDamagedTexture(this, level, tileX, tileY);
-        final SharedTextureDrawOptions draws = new SharedTextureDrawOptions(texture);
+        final SharedTextureDrawOptions draws = new SharedTextureDrawOptions(texture).addObjectDamageOverlay(this, level, tileX, tileY);
         int rotation = level.getObjectRotation(tileX, tileY) % (texture.getWidth() / 32);
         boolean treasureHunter = perspective != null && perspective.buffManager.getModifier(BuffModifiers.TREASURE_HUNTER);
         draws.addSprite(rotation, 0, 32, texture.getHeight()).spelunkerLight(light, treasureHunter, this.getID(), level).pos(drawX, drawY - texture.getHeight() + 32);
@@ -68,9 +66,9 @@ public class FakeSpinelChest extends GameObject {
     public void drawPreview(Level level, int tileX, int tileY, int rotation, float alpha, PlayerMob player, GameCamera camera) {
         int drawX = camera.getTileDrawX(tileX);
         int drawY = camera.getTileDrawY(tileY);
-        GameTexture texture = this.texture.getDamagedTexture(0.0F);
+
         rotation %= texture.getWidth() / 32;
-        texture.initDraw().sprite(rotation, 0, 32, texture.getHeight()).alpha(alpha).draw(drawX, drawY - texture.getHeight() + 32);
+        texture.initDraw().sprite(rotation, 0, 32, texture.getHeight()).addObjectDamageOverlay(this, level, tileX, tileY).alpha(alpha).draw(drawX, drawY - texture.getHeight() + 32);
     }
 
     @Override
@@ -85,28 +83,21 @@ public class FakeSpinelChest extends GameObject {
 
     @Override
     public void interact(Level level, int x, int y, PlayerMob player) {
-        turnIntoMimic(level, x, y);
+        turnIntoMimic(level, 0, x, y);
     }
 
     @Override
     public void onDestroyed(Level level, int layerID, int x, int y, Attacker attacker, ServerClient client, ArrayList<ItemPickupEntity> itemsDropped) {
-        turnIntoMimic(level, x, y);
+        turnIntoMimic(level, layerID, x, y);
     }
 
-    @Override
-    public void doExplosionDamage(Level level, int layerID, int tileX, int tileY, int damage, float toolTier, Attacker attacker, ServerClient client) {
-        if (!level.settlementLayer.isActive()) {
-            super.doExplosionDamage(level, layerID, tileX, tileY, damage, toolTier, attacker, client);
-        }
-    }
-
-    public void turnIntoMimic(Level level, int tileX, int tileY) {
+    public void turnIntoMimic(Level level, int layerID, int tileX, int tileY) {
         if (level.isServer()) {
             Mob mob = MobRegistry.getMob("spinelmimic", level);
-            mob.setDir(level.objectLayer.getObjectRotation(tileX, tileY));
+            mob.setDir(level.objectLayer.getObjectRotation(layerID, tileX, tileY));
             level.entityManager.addMob(mob, tileX * 32 + 16, tileY * 32 + 16);
         }
-        level.objectLayer.setObject(tileX, tileY, 0);
+        level.objectLayer.setObject(layerID, tileX, tileY, 0);
     }
 
     @Override

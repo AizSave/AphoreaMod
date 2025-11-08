@@ -70,7 +70,7 @@ runes=Runer
 
 
 [object]
-witchstatue=Heksestatue
+goldwitchstatue=Heksestatue
 runestable=Runebord
 infectedsapling=Inficeret ungtræ
 spinelcluster=Spinelklynge
@@ -459,7 +459,7 @@ spambullet5=§9Eksplosion:§0 Eksploderer ved slutningen af sin vej i stedet for
 geltile=Klæbrigt gulv, der bremser alt ovenpå kraftigt
 
 // Objects
-witchstatue=Placering af denne statue på overfladen af en sump vil eliminere hekseopdræt på hele øen
+goldwitchstatue=Placering af denne statue på overfladen af en sump vil eliminere hekseopdræt på hele øen
 
 // Generic Trinkets
 areawhenheal=Udfører dette område for hver <magichealing> magisk helbredelse, der udføres

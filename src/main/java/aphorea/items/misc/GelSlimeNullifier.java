@@ -2,6 +2,7 @@ package aphorea.items.misc;
 
 import aphorea.data.AphWorldData;
 import aphorea.items.vanillaitemtypes.AphMiscItem;
+import aphorea.registry.AphData;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.network.packet.PacketChatMessage;
@@ -15,8 +16,6 @@ import necesse.inventory.InventoryItem;
 import necesse.level.maps.Level;
 
 public class GelSlimeNullifier extends AphMiscItem {
-
-    public static AphWorldData worldData = new AphWorldData();
 
     public GelSlimeNullifier() {
         super(1);
@@ -36,22 +35,22 @@ public class GelSlimeNullifier extends AphMiscItem {
     @Override
     public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
         if (level.isServer()) {
-            AphWorldData currentData = worldData.getData(level.getWorldEntity());
-            boolean gelSlimesNulled = currentData.gelslimesnulled;
+            AphWorldData currentData = AphData.getWorldData(level.getWorldEntity());
+            boolean gelSlimesNulled = currentData.gelSlimesNulled;
 
             if (gelSlimesNulled) {
 
-                currentData.gelslimesnulled = false;
+                currentData.gelSlimesNulled = false;
 
                 PacketChatMessage mensaje = new PacketChatMessage(Localization.translate("message", "gelslimesunnulled"));
                 GameUtils.streamServerClients(level).forEach((j) -> j.sendPacket(mensaje));
 
             } else {
 
-                currentData.gelslimesnulled = true;
+                currentData.gelSlimesNulled = true;
 
-                PacketChatMessage mensaje = new PacketChatMessage(Localization.translate("message", "gelslimesnulled"));
-                GameUtils.streamServerClients(level).forEach((j) -> j.sendPacket(mensaje));
+                PacketChatMessage message = new PacketChatMessage(Localization.translate("message", "gelslimesnulled"));
+                GameUtils.streamServerClients(level).forEach((j) -> j.sendPacket(message));
             }
         }
 

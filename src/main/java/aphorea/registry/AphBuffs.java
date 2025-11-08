@@ -34,6 +34,7 @@ import aphorea.utils.area.AphAreaList;
 import aphorea.utils.magichealing.AphMagicHealing;
 import necesse.engine.modifiers.ModifierValue;
 import necesse.engine.network.client.Client;
+import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.network.packet.PacketForceOfWind;
 import necesse.engine.network.server.Server;
 import necesse.engine.network.server.ServerClient;
@@ -423,7 +424,7 @@ public class AphBuffs {
             @Override
             public void run(Level level, PlayerMob player, int targetX, int targetY) {
                 super.run(level, player, targetX, targetY);
-                player.getLevel().entityManager.addLevelEvent(new AphRuneOfDetonationEvent(player, player.x, player.y, getEffectNumber(player) / 100));
+                player.getLevel().entityManager.events.add(new AphRuneOfDetonationEvent(player, player.x, player.y, getEffectNumber(player) / 100));
             }
 
         }.setHealthCost(0.05F));
@@ -443,7 +444,7 @@ public class AphBuffs {
                         new AphAreaList(new AphArea(range, level.isCave ? AphColors.dark_magic : AphColors.lighting)).setOnlyVision(false).executeClient(level, player.x, player.y, 1F, 1F, 0F);
                     }
                 } else if (level.isServer()) {
-                    player.getLevel().entityManager.addLevelEvent(new AphRuneOfThunderEvent(player, targetX, targetY, getEffectNumber(player) / 100));
+                    player.getLevel().entityManager.events.add(new AphRuneOfThunderEvent(player, targetX, targetY, getEffectNumber(player) / 100));
                 }
             }
 
@@ -608,7 +609,7 @@ public class AphBuffs {
             @Override
             public void runServer(Server server, PlayerMob player, int targetX, int targetY) {
                 super.runServer(server, player, targetX, targetY);
-                player.getLevel().entityManager.addLevelEvent(new AphRuneOfQueenSpiderEvent(player, (int) player.x, (int) player.y, (int) (getEffectNumber(player) * 1000), GameRandom.globalRandom));
+                player.getLevel().entityManager.events.add(new AphRuneOfQueenSpiderEvent(player, (int) player.x, (int) player.y, (int) (getEffectNumber(player) * 1000), GameRandom.globalRandom));
             }
 
         });
@@ -762,8 +763,8 @@ public class AphBuffs {
             }
 
             @Override
-            public void onItemAttacked(ActiveBuff buff, int targetX, int targetY, ItemAttackerMob mob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack) {
-                super.onItemAttacked(buff, targetX, targetY, mob, attackHeight, item, slot, animAttack);
+            public void onItemAttacked(ActiveBuff buff, int targetX, int targetY, ItemAttackerMob mob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, GNDItemMap attackMap) {
+                super.onItemAttacked(buff, targetX, targetY, mob, attackHeight, item, slot, animAttack, attackMap);
                 if (mob.isServer() && mob.isPlayer) {
                     ((PlayerMob) mob).getInv().removeItems(ItemRegistry.getItem("coin"), 3, false, false, false, false, "buy");
                 }
@@ -835,7 +836,7 @@ public class AphBuffs {
             @Override
             public void runServer(Server server, PlayerMob player, int targetX, int targetY) {
                 super.runServer(server, player, targetX, targetY);
-                player.getLevel().entityManager.addLevelEvent(new AphRuneOfCryoQueenEvent(player, (int) player.x, (int) player.y, GameRandom.globalRandom.getFloatBetween(0, 360), GameRandom.globalRandom.nextBoolean(), getEffectNumber(player)));
+                player.getLevel().entityManager.events.add(new AphRuneOfCryoQueenEvent(player, (int) player.x, (int) player.y, GameRandom.globalRandom.getFloatBetween(0, 360), GameRandom.globalRandom.nextBoolean(), getEffectNumber(player)));
                 player.buffManager.addBuff(new ActiveBuff(AphBuffs.STOP, player, 1000, null), true);
             }
 
@@ -853,7 +854,7 @@ public class AphBuffs {
             @Override
             public void runServer(Server server, PlayerMob player, int targetX, int targetY) {
                 super.runServer(server, player, targetX, targetY);
-                player.getLevel().entityManager.addLevelEvent(new AphRuneOfPestWardenEvent(player));
+                player.getLevel().entityManager.events.add(new AphRuneOfPestWardenEvent(player));
             }
         });
         // On duration
@@ -889,7 +890,7 @@ public class AphBuffs {
                         temporalBuff = false;
 
                         arrayList.forEach(
-                                target -> target.getLevel().entityManager.addLevelEvent(new MobHealthChangeEvent(target, (int) (target.getMaxHealth() * 0.2F)))
+                                target -> target.getLevel().entityManager.events.add(new MobHealthChangeEvent(target, (int) (target.getMaxHealth() * 0.2F)))
                         );
                         areaList.sendExecutePacket(level, player.x, player.y);
                     }
@@ -961,7 +962,7 @@ public class AphBuffs {
                 } else {
                     player.dismount();
                     if (level.isServer()) {
-                        player.getLevel().entityManager.addLevelEvent(new AphRuneOfMotherSlimeEvent(player, targetX, targetY, getEffectNumber(player)));
+                        player.getLevel().entityManager.events.add(new AphRuneOfMotherSlimeEvent(player, targetX, targetY, getEffectNumber(player)));
                         player.buffManager.addBuff(new ActiveBuff(AphBuffs.STOP, player, 1000, null), true);
                     }
                 }
@@ -1026,7 +1027,7 @@ public class AphBuffs {
             @Override
             public void runServer(Server server, PlayerMob player, int targetX, int targetY) {
                 super.runServer(server, player, targetX, targetY);
-                player.getLevel().entityManager.addLevelEvent(new AphRuneOfSunlightChampionEvent((int) getEffectNumber(player), player));
+                player.getLevel().entityManager.events.add(new AphRuneOfSunlightChampionEvent((int) getEffectNumber(player), player));
                 player.buffManager.addBuff(new ActiveBuff(AphBuffs.STUN, player, 3000, null), true);
             }
         });
@@ -1085,7 +1086,7 @@ public class AphBuffs {
             public void run(Level level, PlayerMob player, int targetX, int targetY) {
                 super.run(level, player, targetX, targetY);
                 float angle = (float) Math.toDegrees(Math.atan2(targetY - player.y, targetX - player.x));
-                player.getLevel().entityManager.addLevelEvent(new AphRuneOfCrystalDragonEvent(player, new GameRandom(), 1000, getEffectNumber(player) / 100, 100, 5000, angle));
+                player.getLevel().entityManager.events.add(new AphRuneOfCrystalDragonEvent(player, new GameRandom(), 1000, getEffectNumber(player) / 100, 100, 5000, angle));
             }
 
         });
@@ -1163,7 +1164,7 @@ public class AphBuffs {
                 if (activeBuff.owner.isServer()) {
                     int healing = Math.min((int) (activeBuff.owner.getMaxHealth() * 0.2F), activeBuff.owner.getMaxHealth() - activeBuff.owner.getHealth());
                     LevelEvent changeHeal = new MobHealthChangeEvent(activeBuff.owner, healing);
-                    activeBuff.owner.getLevel().entityManager.addLevelEvent(changeHeal);
+                    activeBuff.owner.getLevel().entityManager.events.add(changeHeal);
                     pawnHealing = (int) (healing * 1.4F);
                 }
             }
@@ -1174,7 +1175,7 @@ public class AphBuffs {
                 if (pawnHealing > 0) {
                     if (buff.owner.isServer()) {
                         LevelEvent changeHeal = new MobHealthChangeEvent(buff.owner, -pawnHealing);
-                        buff.owner.getLevel().entityManager.addLevelEvent(changeHeal);
+                        buff.owner.getLevel().entityManager.events.add(changeHeal);
                     } else {
                         SoundManager.playSound(GameResources.npchurt, SoundEffect.effect(buff.owner).pitch(GameRandom.globalRandom.getOneOf(0.95F, 1.0F, 1.05F)));
                     }
@@ -1198,7 +1199,7 @@ public class AphBuffs {
                     public void runServer(Server server, PlayerMob player, int targetX, int targetY) {
                         super.runServer(server, player, targetX, targetY);
                         if (!player.buffManager.hasBuff("abysmalrunecooldown")) {
-                            player.getLevel().entityManager.addLevelEvent(new AphAbysmalRuneEvent(player, targetX, targetY));
+                            player.getLevel().entityManager.events.add(new AphAbysmalRuneEvent(player, targetX, targetY));
                             player.buffManager.addBuff(new ActiveBuff("abysmalrunecooldown", player, 10000, null), true);
                         }
                     }
@@ -1212,7 +1213,7 @@ public class AphBuffs {
                     @Override
                     public void runServer(Server server, PlayerMob player, int targetX, int targetY) {
                         super.runServer(server, player, targetX, targetY);
-                        player.getLevel().entityManager.addLevelEvent(new AphTidalRuneEvent(player));
+                        player.getLevel().entityManager.events.add(new AphTidalRuneEvent(player));
                         player.buffManager.forceUpdateBuffs();
                     }
 

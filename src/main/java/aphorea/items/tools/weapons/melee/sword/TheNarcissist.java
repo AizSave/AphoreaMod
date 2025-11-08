@@ -67,7 +67,7 @@ public class TheNarcissist extends AphSwordToolItem {
         if (combo == 4) {
             if (level.isServer()) {
                 attackerMob.buffManager.addBuff(new ActiveBuff(BuffRegistry.getBuff("narcissistbuff"), attackerMob, animTime, null), true);
-                attackerMob.getLevel().entityManager.addLevelEvent(new AphNarcissistEvent(attackerMob, (float) Math.atan2(y - attackerMob.y, x - attackerMob.x), attackHeight, this.getDefaultAttackDamage(item)));
+                attackerMob.getLevel().entityManager.events.add(new AphNarcissistEvent(attackerMob, (float) Math.atan2(y - attackerMob.y, x - attackerMob.x), attackHeight, this.getDefaultAttackDamage(item)));
             }
             item.getGndData().setInt("lastCombo", 4);
         } else {

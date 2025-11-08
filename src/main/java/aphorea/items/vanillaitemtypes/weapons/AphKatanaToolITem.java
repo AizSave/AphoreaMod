@@ -6,10 +6,11 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.toolItem.swordToolItem.KatanaToolItem;
+import necesse.inventory.lootTable.presets.CloseRangeWeaponsLootTable;
 
 public class AphKatanaToolITem extends KatanaToolItem {
     public AphKatanaToolITem(int enchantCost) {
-        super(enchantCost);
+        super(enchantCost, CloseRangeWeaponsLootTable.closeRangeWeapons);
     }
 
     @Override

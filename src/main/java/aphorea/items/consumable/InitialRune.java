@@ -6,7 +6,6 @@ import aphorea.items.vanillaitemtypes.AphConsumableItem;
 import aphorea.registry.AphContainers;
 import aphorea.registry.AphItems;
 import necesse.engine.localization.Localization;
-import necesse.engine.localization.message.LocalMessage;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.network.packet.PacketOpenContainer;
 import necesse.engine.network.server.ServerClient;
@@ -16,10 +15,14 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTexture.GameSprite;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.container.travel.TravelContainer;
+import necesse.inventory.PlayerInventorySlot;
+import necesse.inventory.container.Container;
+import necesse.inventory.container.ContainerActionResult;
+import necesse.inventory.container.slots.ContainerSlot;
 import necesse.level.maps.Level;
 
 import java.awt.geom.Line2D;
+import java.util.function.Supplier;
 
 public class InitialRune extends AphConsumableItem {
     public InitialRune() {
@@ -33,12 +36,8 @@ public class InitialRune extends AphConsumableItem {
     public InventoryItem onPlace(Level level, int x, int y, PlayerMob player, int seed, InventoryItem item, GNDItemMap mapContent) {
         if (level.isServer()) {
             ServerClient client = player.getServerClient();
-            if (!TravelContainer.canOpen(client)) {
-                client.sendChatMessage(new LocalMessage("ui", "travelopeninvalid"));
-            } else {
-                PacketOpenContainer p = new PacketOpenContainer(AphContainers.INITIAL_RUNE_CONTAINER);
-                ContainerRegistry.openAndSendContainer(client, p);
-            }
+            PacketOpenContainer p = new PacketOpenContainer(AphContainers.INITIAL_RUNE_CONTAINER);
+            ContainerRegistry.openAndSendContainer(client, p);
         }
 
         return item;
@@ -49,6 +48,38 @@ public class InitialRune extends AphConsumableItem {
         AphPlayerData playerData = AphPlayerDataList.getCurrentPlayer(player);
         return !playerData.runeSelected ? null : Localization.translate("message", "alreadyselectedinitialrune");
     }
+
+    @Override
+    public Supplier<ContainerActionResult> getInventoryRightClickAction(Container container, InventoryItem item, int slotIndex, ContainerSlot slot) {
+        return () -> {
+            PlayerInventorySlot playerSlot = null;
+            if (slot.getInventory() == container.getClient().playerMob.getInv().main) {
+                playerSlot = new PlayerInventorySlot(container.getClient().playerMob.getInv().main, slot.getInventorySlot());
+            }
+
+            if (slot.getInventory() == container.getClient().playerMob.getInv().cloud) {
+                playerSlot = new PlayerInventorySlot(container.getClient().playerMob.getInv().cloud, slot.getInventorySlot());
+            }
+
+            if (playerSlot != null) {
+                AphPlayerData playerData = AphPlayerDataList.getCurrentPlayer(container.getClient().playerMob);
+
+                if (!playerData.runeSelected) {
+                    if (container.getClient().isServer()) {
+                        ServerClient client = container.getClient().getServerClient();
+                        PacketOpenContainer p = new PacketOpenContainer(AphContainers.INITIAL_RUNE_CONTAINER);
+                        ContainerRegistry.openAndSendContainer(client, p);
+                    }
+                    return new ContainerActionResult(-1002911334);
+                } else {
+                    return new ContainerActionResult(208675834, Localization.translate("message", "alreadyselectedinitialrune"));
+                }
+            } else {
+                return new ContainerActionResult(208675834, Localization.translate("itemtooltip", "rclickinvopenerror"));
+            }
+        };
+    }
+
 
     @Override
     public ListGameTooltips getTooltips(InventoryItem item, PlayerMob perspective, GameBlackboard blackboard) {

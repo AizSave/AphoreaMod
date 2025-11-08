@@ -3,6 +3,8 @@ package aphorea.mobs.bosses.minions;
 import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import necesse.engine.gameLoop.tickManager.TickManager;
+import necesse.engine.network.PacketReader;
+import necesse.engine.network.PacketWriter;
 import necesse.engine.registries.BuffRegistry;
 import necesse.engine.util.GameRandom;
 import necesse.engine.util.GameUtils;
@@ -83,6 +85,18 @@ public class MiniUnstableGelSlime extends FlyingHostileMob {
         countTP = 0;
     }
 
+    @Override
+    public void setupSpawnPacket(PacketWriter writer) {
+        super.setupSpawnPacket(writer);
+        writer.putNextBoolean(initialTP);
+    }
+
+    @Override
+    public void applySpawnPacket(PacketReader reader) {
+        super.applySpawnPacket(reader);
+        initialTP = reader.getNextBoolean();
+    }
+
     public GameAreaStream<Mob> streamPossibleTargets(Point base, TargetFinderDistance<MiniUnstableGelSlime> distance) {
         return distance.streamPlayersInRange(base, this).filter((m) -> m != null && !m.removed() && (m.isHuman && m.getTeam() != -1 || m.isPlayer)).map((m) -> m);
     }
@@ -156,7 +170,7 @@ public class MiniUnstableGelSlime extends FlyingHostileMob {
             }
         });
 
-        if (!this.isWaterWalking()) addShadowDrawables(tileList, x, y, light, camera);
+        if (!this.isWaterWalking()) addShadowDrawables(tileList, level, x, y, light, camera);
     }
 
     @Override
@@ -185,11 +199,6 @@ public class MiniUnstableGelSlime extends FlyingHostileMob {
                 this.escape++;
             }
         }
-    }
-
-    @Override
-    public void addBuff(ActiveBuff buff, boolean sendUpdatePacket) {
-        if (buff.buff != AphBuffs.STICKY) super.addBuff(buff, sendUpdatePacket);
     }
 
 }

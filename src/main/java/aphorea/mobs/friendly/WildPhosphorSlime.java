@@ -145,7 +145,7 @@ public class WildPhosphorSlime extends FriendlyMob {
             }
         });
 
-        addShadowDrawables(tileList, x, y, light, camera);
+        addShadowDrawables(tileList, level, x, y, light, camera);
     }
 
     public boolean isScared(Level level) {
@@ -167,11 +167,11 @@ public class WildPhosphorSlime extends FriendlyMob {
     }
 
     @Override
-    protected void playDeathSound() {
+    public void playDeathSound() {
     }
 
     @Override
-    protected void playHitSound() {
+    public void playHitSound() {
     }
 
     @Override

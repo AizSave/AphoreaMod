@@ -1,6 +1,7 @@
 package aphorea.mobs.runicsummons;
 
 import necesse.engine.gameLoop.tickManager.TickManager;
+import necesse.engine.network.server.ServerClient;
 import necesse.engine.registries.MobRegistry.Textures;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.GameDamage;
@@ -39,7 +40,7 @@ public class RunicVultureHatchling extends RunicFlyingAttackingFollowingMob {
     }
 
     @Override
-    public GameDamage getCollisionDamage(Mob target) {
+    public GameDamage getCollisionDamage(Mob target, boolean fromPacket, ServerClient packetSubmitter) {
         float damagePercent = effectNumber / 100;
         if (target.isBoss()) {
             damagePercent /= 50;
@@ -128,11 +129,11 @@ public class RunicVultureHatchling extends RunicFlyingAttackingFollowingMob {
         topList.add((tm) -> {
             options.draw();
         });
-        this.addShadowDrawables(tileList, x, y, light, camera);
+        this.addShadowDrawables(tileList, level, x, y, light, camera);
     }
 
     @Override
-    protected TextureDrawOptions getShadowDrawOptions(int x, int y, GameLight light, GameCamera camera) {
+    protected TextureDrawOptions getShadowDrawOptions(Level level, int x, int y, GameLight light, GameCamera camera) {
         GameTexture shadowTexture = Textures.vultureHatchling_shadow;
         int drawX = camera.getDrawX(x) - shadowTexture.getWidth() / 2;
         int drawY = camera.getDrawY(y) - shadowTexture.getHeight() / 2 + 13;

@@ -70,7 +70,7 @@ runes=Runor
 
 
 [object]
-witchstatue=Häxstaty
+goldwitchstatue=Häxstaty
 runestable=Runbord
 infectedsapling=Infekterad planta
 spinelcluster=Spinellkluster
@@ -459,7 +459,7 @@ spambullet5=§9Explosion:§0 Exploderar i slutet av sin bana istället för att 
 geltile=Klibbigt golv som saktar ner allt ovanpå kraftigt
 
 // Objects
-witchstatue=Att placera denna staty på ytan av ett träsk kommer att eliminera häxspawning på hela ön
+goldwitchstatue=Att placera denna staty på ytan av ett träsk kommer att eliminera häxspawning på hela ön
 
 // Generic Trinkets
 areawhenheal=Utför detta område för varje <magichealing> magisk läkning som utförs

@@ -3,6 +3,7 @@ package aphorea.items.tools.weapons.range.sabergun.logic;
 import aphorea.items.tools.weapons.range.sabergun.AphSaberGunToolItem;
 import aphorea.ui.AphCustomUIList;
 import aphorea.utils.AphColors;
+import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameRandom;
@@ -133,7 +134,7 @@ public class SaberGunAttackHandler extends MousePositionAttackHandler {
             this.toolItem.doAttack(this.attackerMob.getLevel(), this.lastX, this.lastY, this.attackerMob, attackItem, this.seed);
 
             for (ActiveBuff b : this.attackerMob.buffManager.getArrayBuffs()) {
-                b.onItemAttacked(this.lastX, this.lastY, this.attackerMob, this.attackerMob.getCurrentAttackHeight(), attackItem, this.slot, 0);
+                b.onItemAttacked(this.lastX, this.lastY, this.attackerMob, this.attackerMob.getCurrentAttackHeight(), attackItem, this.slot, 0, new GNDItemMap());
             }
         }
 

@@ -7,10 +7,11 @@ import necesse.entity.mobs.itemAttacker.FollowPosition;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.toolItem.summonToolItem.SummonToolItem;
+import necesse.inventory.lootTable.presets.SummonWeaponsLootTable;
 
 abstract public class AphSummonToolItem extends SummonToolItem {
     public AphSummonToolItem(String mobStringID, FollowPosition followPosition, float summonSpaceTaken, int enchantCost) {
-        super(mobStringID, followPosition, summonSpaceTaken, enchantCost);
+        super(mobStringID, followPosition, summonSpaceTaken, enchantCost, SummonWeaponsLootTable.summonWeapons);
     }
 
     @Override

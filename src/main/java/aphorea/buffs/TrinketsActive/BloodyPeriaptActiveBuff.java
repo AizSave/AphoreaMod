@@ -2,6 +2,7 @@ package aphorea.buffs.TrinketsActive;
 
 import aphorea.AphDependencies;
 import aphorea.utils.AphColors;
+import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.util.GameRandom;
 import necesse.entity.ParticleTypeSwitcher;
@@ -9,7 +10,6 @@ import necesse.entity.levelEvent.LevelEvent;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.MobHealthChangeEvent;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.MobWasHitEvent;
-import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.BuffModifiers;
@@ -18,8 +18,6 @@ import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
 import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.entity.particle.Particle;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.PlayerInventorySlot;
-import org.jetbrains.annotations.NotNull;
 
 public class BloodyPeriaptActiveBuff extends Buff {
     public ParticleTypeSwitcher particleTypeSwitcher = new ParticleTypeSwitcher(
@@ -31,6 +29,7 @@ public class BloodyPeriaptActiveBuff extends Buff {
     public boolean doLifeSteal;
 
     public boolean hasRPGMod;
+
     public BloodyPeriaptActiveBuff() {
         this.isVisible = false;
         this.canCancel = false;
@@ -46,7 +45,7 @@ public class BloodyPeriaptActiveBuff extends Buff {
     }
 
     @Override
-    public void onItemAttacked(ActiveBuff buff, int targetX, int targetY, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack) {
+    public void onItemAttacked(ActiveBuff buff, int targetX, int targetY, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, GNDItemMap attackMap) {
         String itemID = item.item.getStringID();
         if (itemID.equals("bloodbolt") || itemID.equals("bloodvolley")) {
             doLifeSteal = true;
@@ -65,7 +64,7 @@ public class BloodyPeriaptActiveBuff extends Buff {
                 if (heal > 0) {
                     if (owner.isServer()) {
                         LevelEvent healEvent = new MobHealthChangeEvent(owner, heal);
-                        owner.getLevel().entityManager.addLevelEvent(healEvent);
+                        owner.getLevel().entityManager.events.add(healEvent);
                     }
 
                     for (int i = 0; i < 20; i++) {

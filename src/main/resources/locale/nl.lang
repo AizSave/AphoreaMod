@@ -70,7 +70,7 @@ runes=Runen
 
 
 [object]
-witchstatue=Heksenbeeld
+goldwitchstatue=Heksenbeeld
 runestable=Runentafel
 infectedsapling=Geïnfecteerde zaailing
 spinelcluster=Spinelcluster
@@ -459,7 +459,7 @@ spambullet5=§9Explosie:§0 Explodeert aan het einde van zijn pad in plaats van 
 geltile=Plakkerige vloer die alles erop aanzienlijk vertraagt
 
 // Objects
-witchstatue=Het plaatsen van dit beeld op het oppervlak van een moeras zal het spawnen van heksen op het hele eiland elimineren
+goldwitchstatue=Het plaatsen van dit beeld op het oppervlak van een moeras zal het spawnen van heksen op het hele eiland elimineren
 
 // Generic Trinkets
 areawhenheal=Voert dit gebied uit voor elke <magichealing> magische genezing die wordt uitgevoerd

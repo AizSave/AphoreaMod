@@ -140,7 +140,8 @@ public class BabylonTowerMob extends BossMob {
         this.setPos(entity.getMobX(), entity.getMobY(), true);
     }
 
-    protected void playDeathSound() {
+    @Override
+    public void playDeathSound() {
     }
 
     public boolean canBePushed(Mob other) {
@@ -235,7 +236,7 @@ public class BabylonTowerMob extends BossMob {
                 if (!(this.getLevel() instanceof IncursionLevel)) {
                     Point entrancePosition = new Point(x + 1, y + 2);
                     if (!this.getLevel().getLevelObject(entrancePosition.x, entrancePosition.y).getMultiTile().getMasterObject().getStringID().equals("babylonentrance")) {
-                        this.getLevel().entityManager.addLevelEvent(new BabylonEntranceObject.BabylonEntranceEvent(x + 1, y + 2));
+                        this.getLevel().entityManager.events.add(new BabylonEntranceObject.BabylonEntranceEvent(x + 1, y + 2));
                         openingStaircase = true;
                     }
                 }
@@ -583,7 +584,7 @@ public class BabylonTowerMob extends BossMob {
 
         public void summonFallingCrystal(T mob, float targetX, float targetY) {
             if (mob.getDistance(targetX, targetY) <= BOSS_AREA_RADIUS) {
-                mob.getLevel().entityManager.addLevelEvent(new BabylonTowerFallingCrystalAttackEvent(mob, (int) targetX, (int) targetY, GameRandom.globalRandom, projectileDamage));
+                mob.getLevel().entityManager.events.add(new BabylonTowerFallingCrystalAttackEvent(mob, (int) targetX, (int) targetY, GameRandom.globalRandom, projectileDamage));
             }
         }
 

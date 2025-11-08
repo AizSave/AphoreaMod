@@ -64,7 +64,7 @@ public class RockyGelSlime extends HostileMob {
         super.init();
         ai = new BehaviourTreeAI<>(this, new CollisionPlayerChaserWandererAI<>(null, 12 * 32, collision_damage, collision_knockback, 40000));
 
-        if (this.getLevel().biome == AphBiomes.INFECTED_FIELDS) {
+        if (this.getLevel().baseBiome == AphBiomes.INFECTED_FIELDS) {
             this.setSpeed(this.getSpeed() * 1.4F);
         }
     }
@@ -112,7 +112,7 @@ public class RockyGelSlime extends HostileMob {
             }
         });
 
-        if (!this.isWaterWalking()) addShadowDrawables(tileList, x, y, light, camera);
+        if (!this.isWaterWalking()) addShadowDrawables(tileList, level, x, y, light, camera);
     }
 
     @Override
@@ -158,7 +158,7 @@ public class RockyGelSlime extends HostileMob {
     public void throwRock(int targetX, int targetY, boolean dropRockyGel) {
         Projectile projectile;
         float speed = GameRandom.globalRandom.getFloatBetween(40F, 50F);
-        GameDamage damage = this.getLevel().biome == AphBiomes.INFECTED_FIELDS ? rock_damage_if : rock_damage;
+        GameDamage damage = this.getLevel().baseBiome == AphBiomes.INFECTED_FIELDS ? rock_damage_if : rock_damage;
 
         if (dropRockyGel) {
             projectile = new RockyGelSlimeLootProjectile(this, this.x, this.y, targetX, targetY, speed, 640, damage, rock_knockback);

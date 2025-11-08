@@ -92,17 +92,6 @@ public class SpinelArrowProjectile extends Projectile {
             return 0.0F;
         } else {
             float speed = this.speed * (0.5F + 0.5F * this.amountHit);
-            if (this.isBoomerang) {
-                Mob owner = this.getOwner();
-                if (owner == null) {
-                    this.remove();
-                    return 0.0F;
-                }
-
-                if (this.returningToOwner) {
-                    this.setTarget(owner.x, owner.y);
-                }
-            }
 
             float moveX = this.getMoveDist(this.dx * speed, delta);
             float moveY = this.getMoveDist(this.dy * speed, delta);
@@ -112,7 +101,7 @@ public class SpinelArrowProjectile extends Projectile {
             }
 
             this.moveDist(totalDist);
-            if (this.removeIfOutOfBounds && (this.getX() < -100 || this.getY() < -100 || this.getX() > this.getLevel().width * 32 + 100 || this.getY() > this.getLevel().height * 32 + 100)) {
+            if (this.removeIfOutOfBounds && !this.getLevel().regionManager.isTileLoaded(this.getTileX(), this.getTileY())) {
                 this.remove();
             }
 

@@ -6,10 +6,11 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.armorItem.BootsArmorItem;
+import necesse.inventory.lootTable.presets.FeetArmorLootTable;
 
 abstract public class AphBootsArmorItem extends BootsArmorItem {
     public AphBootsArmorItem(int armorValue, int enchantCost, Rarity rarity, String textureName) {
-        super(armorValue, enchantCost, rarity, textureName);
+        super(armorValue, enchantCost, rarity, textureName, FeetArmorLootTable.feetArmor);
     }
 
     @Override

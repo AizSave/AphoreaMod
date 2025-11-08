@@ -6,10 +6,11 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.toolItem.projectileToolItem.bowProjectileToolItem.BowProjectileToolItem;
+import necesse.inventory.lootTable.presets.BowWeaponsLootTable;
 
 public class AphBowProjectileToolItem extends BowProjectileToolItem {
     public AphBowProjectileToolItem(int enchantCost) {
-        super(enchantCost);
+        super(enchantCost, BowWeaponsLootTable.bowWeapons);
     }
 
     @Override

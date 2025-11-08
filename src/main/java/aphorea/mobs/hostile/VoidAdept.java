@@ -211,7 +211,7 @@ public class VoidAdept extends HostileMob {
                 drawOptions.draw();
             }
         });
-        this.addShadowDrawables(tileList, x, y, light, camera);
+        this.addShadowDrawables(tileList, level, x, y, light, camera);
     }
 
     private static ItemAttackDrawOptions getItemAttackDrawOptions(int dir, GameLight light) {

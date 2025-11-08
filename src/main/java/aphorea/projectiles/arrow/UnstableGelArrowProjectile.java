@@ -88,7 +88,7 @@ public class UnstableGelArrowProjectile extends Projectile {
 
     @Override
     protected void playHitSound(float x, float y) {
-        SoundManager.playSound(GameResources.slimesplash, SoundEffect.effect(x, y));
+        SoundManager.playSound(GameResources.slimeSplash1, SoundEffect.effect(x, y));
     }
 
 

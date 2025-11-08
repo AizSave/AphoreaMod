@@ -121,12 +121,12 @@ public class SpamBulletProjectile extends BulletProjectile {
             mob.buffManager.addBuff(new ActiveBuff(AphBuffs.STICKY, mob, 5F, null), false);
         } else if (type == 1) {
             LevelEvent event = new FirePoolGroundEffectEvent(this.getOwner(), (int) x, (int) y, new GameRandom(GameRandom.getNewUniqueID()));
-            this.getLevel().entityManager.addLevelEvent(event);
+            this.getLevel().entityManager.events.add(event);
         } else if (type == 3) {
             areaList.execute(getOwner(), x, y, 1, item, toolItem, false);
         } else if (type == 4) {
             ExplosionEvent event = new SpamBulletExplosion(x, y, this.getDamage(), this.getOwner());
-            this.getLevel().entityManager.addLevelEvent(event);
+            this.getLevel().entityManager.events.add(event);
         }
     }
 

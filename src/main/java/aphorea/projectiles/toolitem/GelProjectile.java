@@ -103,7 +103,7 @@ public class GelProjectile extends Projectile {
             Mob owner = this.getOwner();
             if (owner != null && !owner.removed()) {
                 GelProjectileGroundEffectEvent event = new GelProjectileGroundEffectEvent(owner, (int) x, (int) y, GameRandom.globalRandom);
-                this.getLevel().entityManager.addLevelEvent(event);
+                this.getLevel().entityManager.events.add(event);
             }
         }
         super.remove();

@@ -6,10 +6,11 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.armorItem.ChestArmorItem;
+import necesse.inventory.lootTable.presets.BodyArmorLootTable;
 
 abstract public class AphChestArmorItem extends ChestArmorItem {
     public AphChestArmorItem(int armorValue, int enchantCost, Rarity rarity, String bodyTextureName, String armsTextureName) {
-        super(armorValue, enchantCost, rarity, bodyTextureName, armsTextureName);
+        super(armorValue, enchantCost, rarity, bodyTextureName, armsTextureName, BodyArmorLootTable.bodyArmor);
     }
 
     @Override

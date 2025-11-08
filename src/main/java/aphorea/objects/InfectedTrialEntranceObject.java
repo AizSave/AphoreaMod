@@ -1,7 +1,7 @@
 package aphorea.objects;
 
-import aphorea.biomes.levels.InfectedTrialRoomLevel;
-import aphorea.biomes.presets.trial.InfectedTrialRoom;
+import aphorea.levels.InfectedTrialRoomLevel;
+import aphorea.presets.trial.InfectedTrialRoom;
 import necesse.engine.network.server.Server;
 import necesse.engine.util.GameRandom;
 import necesse.engine.util.LevelIdentifier;

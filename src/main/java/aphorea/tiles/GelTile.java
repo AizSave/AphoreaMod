@@ -11,6 +11,7 @@ import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawables.LevelSortedDrawable;
 import necesse.gfx.drawables.LevelTileLiquidDrawOptions;
 import necesse.gfx.drawables.LevelTileTerrainDrawOptions;
+import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.gameTexture.GameTextureSection;
 import necesse.gfx.gameTooltips.ListGameTooltips;
@@ -40,12 +41,11 @@ public class GelTile extends EdgedTiledTexture {
     }
 
     @Override
-    public void addDrawables(LevelTileTerrainDrawOptions underLiquidList, LevelTileLiquidDrawOptions liquidList, LevelTileTerrainDrawOptions overLiquidList, List<LevelSortedDrawable> sortedList, Level level, int tileX, int tileY, GameCamera camera, TickManager tickManager) {
-        super.addDrawables(underLiquidList, liquidList, overLiquidList, sortedList, level, tileX, tileY, camera, tickManager);
-        if (tileY < level.height - 1 && level.isShore(tileX, tileY + 1) && !level.getTile(tileX, tileY + 1).isFloor) {
+    public void addDrawables(LevelTileTerrainDrawOptions underLiquidList, LevelTileLiquidDrawOptions liquidList, LevelTileTerrainDrawOptions overLiquidList, OrderableDrawables objectTileList, List<LevelSortedDrawable> sortedList, Level level, int tileX, int tileY, GameCamera camera, TickManager tickManager) {
+        super.addDrawables(underLiquidList, liquidList, overLiquidList, objectTileList, sortedList, level, tileX, tileY, camera, tickManager);
+        if (level.isShore(tileX, tileY + 1) && !level.getTile(tileX, tileY + 1).isFloor) {
             this.addBridgeDrawables(overLiquidList, sortedList, level, tileX, tileY + 1, camera, tickManager);
         }
-
     }
 
     @Override
@@ -58,7 +58,7 @@ public class GelTile extends EdgedTiledTexture {
             sharedList.add(this.texture.sprite(4, 2, 16, 32)).pos(drawX, drawY);
         }
 
-        if (tileX != level.width - 1 && level.isLiquidTile(tileX + 1, tileY) && level.getTileID(tileX + 1, tileY - 1) == this.getID()) {
+        if (tileX != level.tileWidth - 1 && level.isLiquidTile(tileX + 1, tileY) && level.getTileID(tileX + 1, tileY - 1) == this.getID()) {
             sharedList.add(this.texture.sprite(5, 2, 16, 32)).pos(drawX + 16, drawY);
         } else {
             sharedList.add(this.texture.sprite(7, 2, 16, 32)).pos(drawX + 16, drawY);

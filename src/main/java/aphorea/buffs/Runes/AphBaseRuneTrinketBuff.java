@@ -7,7 +7,6 @@ import necesse.engine.network.server.Server;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameRandom;
-import necesse.entity.levelEvent.LevelEvent;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.MobHealthChangeEvent;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
@@ -154,9 +153,9 @@ public class AphBaseRuneTrinketBuff extends TrinketBuff {
             float healthCost = getHealthCost(player);
             if (healthCost != 0) {
                 int healthMod = (int) (-healthCost * player.getMaxHealth());
-                if(healthMod != 0) {
+                if (healthMod != 0) {
                     if (level.isServer()) {
-                        player.getLevel().entityManager.addLevelEvent(new MobHealthChangeEvent(player, healthMod));
+                        player.getLevel().entityManager.events.add(new MobHealthChangeEvent(player, healthMod));
                     } else if (level.isClient()) {
                         if (healthCost > 0) {
                             SoundManager.playSound(GameResources.npchurt, SoundEffect.effect(player).pitch(GameRandom.globalRandom.getOneOf(0.95F, 1.0F, 1.05F)));

@@ -21,6 +21,7 @@ import necesse.inventory.lootTable.lootItem.ChanceLootItem;
 import necesse.inventory.lootTable.lootItem.OneOfTicketLootItems;
 import necesse.level.maps.Level;
 import necesse.level.maps.TilePosition;
+import necesse.level.maps.biomes.Biome;
 import necesse.level.maps.light.GameLight;
 
 import java.awt.*;
@@ -144,7 +145,7 @@ public class SpinelCaveling extends HostileMob {
     }
 
     @Override
-    public int getTileWanderPriority(TilePosition pos) {
+    public int getTileWanderPriority(TilePosition pos, Biome baseBiome) {
         return 0;
     }
 

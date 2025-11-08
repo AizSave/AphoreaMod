@@ -1,8 +1,7 @@
 package aphorea.mobs.hostile;
 
-import aphorea.data.AphWorldData;
-import aphorea.mobs.hostile.classes.AphDayHostileMob;
 import aphorea.registry.AphBuffs;
+import aphorea.registry.AphData;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.server.Server;
 import necesse.engine.network.server.ServerClient;
@@ -10,12 +9,18 @@ import necesse.engine.registries.MobRegistry;
 import necesse.engine.save.LoadData;
 import necesse.engine.save.SaveData;
 import necesse.engine.util.GameRandom;
-import necesse.entity.mobs.GameDamage;
-import necesse.entity.mobs.Mob;
-import necesse.entity.mobs.MobDrawable;
-import necesse.entity.mobs.PlayerMob;
+import necesse.engine.util.gameAreaSearch.GameAreaStream;
+import necesse.entity.mobs.*;
 import necesse.entity.mobs.ai.behaviourTree.BehaviourTreeAI;
+import necesse.entity.mobs.ai.behaviourTree.Blackboard;
+import necesse.entity.mobs.ai.behaviourTree.composites.SelectorAINode;
+import necesse.entity.mobs.ai.behaviourTree.leaves.EscapeAINode;
+import necesse.entity.mobs.ai.behaviourTree.leaves.TargetFinderAINode;
+import necesse.entity.mobs.ai.behaviourTree.leaves.WandererAINode;
+import necesse.entity.mobs.ai.behaviourTree.trees.CollisionChaserAI;
+import necesse.entity.mobs.ai.behaviourTree.util.TargetFinderDistance;
 import necesse.entity.mobs.buffs.ActiveBuff;
+import necesse.entity.mobs.hostile.HostileMob;
 import necesse.entity.particle.FleshParticle;
 import necesse.entity.particle.Particle;
 import necesse.gfx.camera.GameCamera;
@@ -25,13 +30,16 @@ import necesse.gfx.gameTexture.GameTexture;
 import necesse.inventory.lootTable.LootTable;
 import necesse.inventory.lootTable.lootItem.ChanceLootItem;
 import necesse.level.maps.Level;
+import necesse.level.maps.levelBuffManager.LevelModifiers;
 import necesse.level.maps.light.GameLight;
 
 import java.awt.*;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.function.Supplier;
 
-public class GelSlime extends AphDayHostileMob {
-
+public class GelSlime extends HostileMob {
     public static GameDamage attack = new GameDamage(25);
     public static int attack_knockback = 50;
 
@@ -43,23 +51,7 @@ public class GelSlime extends AphDayHostileMob {
             ChanceLootItem.between(0.02f, "gelring", 1, 1)
     );
 
-    public static AphWorldData worldData = new AphWorldData();
-
-    @Override
-    public boolean isValidSpawnLocation(Server server, ServerClient client, int targetX, int targetY) {
-        if (client == null) {
-            return false;
-        }
-
-        AphWorldData currentData = worldData.getData(client.getLevel().getWorldEntity());
-        if (currentData.gelslimesnulled || client.getLevel().getWorldEntity().isNight()) {
-            return false;
-        } else {
-            return super.isValidSpawnLocation(server, client, targetX, targetY);
-        }
-    }
-
-    boolean turnPhosphor;
+    public boolean turnPhosphor;
 
     public GelSlime() {
         super(60);
@@ -72,9 +64,20 @@ public class GelSlime extends AphDayHostileMob {
     }
 
     @Override
+    public boolean isValidSpawnLocation(Server server, ServerClient client, int targetX, int targetY) {
+        if (client == null) {
+            return false;
+        }
+
+        return !AphData.gelSlimesNulled(client.getLevel().getWorldEntity()) &&
+                !client.getLevel().getWorldEntity().isNight() &&
+                (new MobSpawnLocation(this, targetX, targetY)).checkMobSpawnLocation().checkNotOnSurfaceInsideOnFloor().checkMaxHostilesAround(4, 8, client).validAndApply();
+    }
+
+    @Override
     public void init() {
         super.init();
-        ai = new BehaviourTreeAI<>(this, new CollisionOnlyPlayerChaserWandererAI<>(onlyDay ? () -> this.getServer().world.worldEntity.isNight() : null, 4 * 32, attack, attack_knockback, 40000));
+        ai = new BehaviourTreeAI<>(this, new GelSlimeAI<>(() -> this.getServer().world.worldEntity.isNight(), 4 * 32, attack, attack_knockback, 40000));
         turnPhosphor = GameRandom.globalRandom.getChance(0.03F);
     }
 
@@ -133,7 +136,7 @@ public class GelSlime extends AphDayHostileMob {
             }
         });
 
-        if (!this.isWaterWalking()) addShadowDrawables(tileList, x, y, light, camera);
+        if (!this.isWaterWalking()) addShadowDrawables(tileList, level, x, y, light, camera);
     }
 
     @Override
@@ -160,7 +163,43 @@ public class GelSlime extends AphDayHostileMob {
     }
 
     @Override
-    public void addBuff(ActiveBuff buff, boolean sendUpdatePacket) {
-        if (buff.buff != AphBuffs.STICKY) super.addBuff(buff, sendUpdatePacket);
+    protected void onDeath(Attacker attacker, HashSet<Attacker> attackers) {
+        if (attacker != null && attacker.getAttackOwner() != null) {
+            if (Arrays.stream(attackers.toArray()).noneMatch((a -> ((Attacker) a).getAttackOwner() != null && ((Attacker) a).getAttackOwner().isPlayer))) {
+                this.dropsLoot = false;
+            }
+        }
+        super.onDeath(attacker, attackers);
     }
+
+    public static class GelSlimeAI<T extends Mob> extends SelectorAINode<T> {
+        public final EscapeAINode<T> escapeAINode;
+        public final CollisionOnlyPlayerChaserAI<T> collisionPlayerChaserAI;
+        public final WandererAINode<T> wandererAINode;
+
+        public GelSlimeAI(final Supplier<Boolean> shouldEscape, int searchDistance, GameDamage damage, int knockback, int wanderFrequency) {
+            this.addChild(this.escapeAINode = new EscapeAINode<T>() {
+                public boolean shouldEscape(T mob, Blackboard<T> blackboard) {
+                    if (mob.isHostile && !mob.isSummoned && mob.getLevel().buffManager.getModifier(LevelModifiers.ENEMIES_RETREATING)) {
+                        return true;
+                    } else {
+                        return shouldEscape != null && shouldEscape.get();
+                    }
+                }
+            });
+            this.addChild(this.collisionPlayerChaserAI = new CollisionOnlyPlayerChaserAI<>(searchDistance, damage, knockback));
+            this.addChild(this.wandererAINode = new WandererAINode<>(wanderFrequency));
+        }
+    }
+
+    public static class CollisionOnlyPlayerChaserAI<T extends Mob> extends CollisionChaserAI<T> {
+        public CollisionOnlyPlayerChaserAI(int searchDistance, GameDamage damage, int knockback) {
+            super(searchDistance, damage, knockback);
+        }
+
+        public GameAreaStream<Mob> streamPossibleTargets(T mob, Point base, TargetFinderDistance<T> distance) {
+            return TargetFinderAINode.streamPlayers(mob, base, distance).map(playerMob -> playerMob);
+        }
+    }
+
 }

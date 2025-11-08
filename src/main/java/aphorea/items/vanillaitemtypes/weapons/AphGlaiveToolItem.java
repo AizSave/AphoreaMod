@@ -6,10 +6,11 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.toolItem.glaiveToolItem.GlaiveToolItem;
+import necesse.inventory.lootTable.presets.GlaiveWeaponsLootTable;
 
 abstract public class AphGlaiveToolItem extends GlaiveToolItem {
     public AphGlaiveToolItem(int enchantCost) {
-        super(enchantCost);
+        super(enchantCost, GlaiveWeaponsLootTable.glaiveWeapons);
     }
 
     @Override

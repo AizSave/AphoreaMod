@@ -6,10 +6,11 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.toolItem.ToolItem;
+import necesse.inventory.lootTable.presets.ToolsLootTable;
 
 abstract public class AphToolItem extends ToolItem {
     public AphToolItem(int enchantCost) {
-        super(enchantCost);
+        super(enchantCost, ToolsLootTable.tools);
     }
 
     @Override

@@ -72,7 +72,6 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.Item;
-import necesse.inventory.item.toolItem.pickaxeToolItem.CustomPickaxeToolItem;
 
 import java.util.ArrayList;
 
@@ -117,9 +116,6 @@ public class AphItems {
     }
 
     public static void registerTools() {
-        // Pickaxes ToolTier
-        replaceItem("ivypickaxe", new AphReworkCustomPickaxeToolItem(450, 125, 1.5F, 18, 50, 50, 700), 100.0F); // TOOL TIER CHANGE
-
         // Melee Weapons
         registerItem("woodenrod", new WoodenRod());
         registerItem("gelsword", new GelSword());

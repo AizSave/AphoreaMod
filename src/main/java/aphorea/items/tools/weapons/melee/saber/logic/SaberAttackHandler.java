@@ -117,7 +117,7 @@ public class SaberAttackHandler extends MousePositionAttackHandler {
             this.toolItem.superOnAttack(this.attackerMob.getLevel(), this.lastX, this.lastY, this.attackerMob, this.attackerMob.getCurrentAttackHeight(), attackItem, this.slot, 0, this.seed, attackMap);
 
             for (ActiveBuff b : this.attackerMob.buffManager.getArrayBuffs()) {
-                b.onItemAttacked(this.lastX, this.lastY, this.attackerMob, this.attackerMob.getCurrentAttackHeight(), attackItem, this.slot, 0);
+                b.onItemAttacked(this.lastX, this.lastY, this.attackerMob, this.attackerMob.getCurrentAttackHeight(), attackItem, this.slot, 0, new GNDItemMap());
             }
         } else {
             this.attackerMob.doAndSendStopAttackAttacker(false);

@@ -3,6 +3,7 @@ package aphorea.registry;
 import aphorea.journal.AphJournalChallenges;
 import necesse.engine.journal.JournalEntry;
 import necesse.engine.registries.JournalRegistry;
+import necesse.engine.util.LevelIdentifier;
 import necesse.inventory.lootTable.LootTable;
 import necesse.inventory.lootTable.lootItem.LootItem;
 
@@ -18,7 +19,7 @@ public class AphJournal {
         // Vanilla Bulk
         JournalRegistry.getJournalEntries().forEach(journalEntry -> {
             vanillaBulkAll(journalEntry);
-            if (journalEntry.levelType == JournalRegistry.LevelType.SURFACE) {
+            if (journalEntry.levelIdentifier == LevelIdentifier.SURFACE_IDENTIFIER) {
                 vanillaBulkSurface(journalEntry);
             }
         });
@@ -66,15 +67,14 @@ public class AphJournal {
 
     public static void infectedFields() {
         // Surface
-        JournalEntry infectedFieldsSurface = new JournalEntry(AphBiomes.INFECTED_FIELDS, JournalRegistry.LevelType.SURFACE);
+        JournalEntry infectedFieldsSurface = new JournalEntry(AphBiomes.INFECTED_FIELDS, LevelIdentifier.SURFACE_IDENTIFIER);
         infectedFieldsSurface.addBiomeLootEntry("infectedlog", "fossilrapier", "rockfish");
         infectedFieldsSurface.addMobEntries("rockygelslime", "infectedtreant");
-        infectedFieldsSurface.addTreasureEntry(AphLootTables.infectedFieldsSurface);
         infectedFieldsSurface.addEntryChallenges(AphJournalChallenges.INFECTED_SURFACE_CHALLENGES_ID);
         JournalRegistry.registerJournalEntry("infectedfieldssurface", infectedFieldsSurface);
 
         // Cave
-        JournalEntry infectedFieldsCave = new JournalEntry(AphBiomes.INFECTED_FIELDS, JournalRegistry.LevelType.CAVE);
+        JournalEntry infectedFieldsCave = new JournalEntry(AphBiomes.INFECTED_FIELDS, LevelIdentifier.CAVE_IDENTIFIER);
         infectedFieldsCave.addBiomeLootEntry("tungstenore", "rockygel");
         infectedFieldsCave.addMobEntries("rockygelslime", "infectedtreant", "spinelcaveling", "spinelgolem", "spinelmimic", "babylontower");
         infectedFieldsCave.addTreasureEntry(AphLootTables.infectedCaveForest, AphLootTables.infectedCaveVariousTreasures, AphLootTables.infectedLootLake);

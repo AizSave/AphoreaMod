@@ -83,7 +83,7 @@ public class SpinelShieldBuff extends TrinketBuff implements ActiveBuffAbility {
             if (serverTicks < 10) {
                 serverTicks++;
                 if (buff.owner.isServer() && serverTicks == 10) {
-                    buff.owner.getLevel().entityManager.addLevelEvent(new AphSpinelShieldEvent(buff.owner, getInitialAngle(buff.owner)));
+                    buff.owner.getLevel().entityManager.events.add(new AphSpinelShieldEvent(buff.owner, getInitialAngle(buff.owner)));
                 }
             }
         }

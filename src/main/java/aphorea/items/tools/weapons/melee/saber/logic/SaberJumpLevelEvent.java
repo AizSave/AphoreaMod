@@ -1,6 +1,6 @@
 package aphorea.items.tools.weapons.melee.saber.logic;
 
-import aphorea.methodpatches.PlayerFlyingHeight;
+import aphorea.patches.PlayerFlyingHeight;
 import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;

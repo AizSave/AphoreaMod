@@ -8,6 +8,6 @@ public class AphBiomes {
     public static Biome INFECTED_FIELDS;
 
     public static void registerCore() {
-        BiomeRegistry.registerBiome("infectedfields", INFECTED_FIELDS = new InfectedFieldsBiome(), 200, null);
+        BiomeRegistry.registerBiome("infectedfields", INFECTED_FIELDS = new InfectedFieldsBiome().setGenerationWeight(0.75F), true);
     }
 }

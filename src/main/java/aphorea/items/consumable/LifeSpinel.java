@@ -11,7 +11,6 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.GameResources;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.item.placeableItem.consumableItem.ConsumableItem;
 import necesse.level.maps.Level;
 
 import java.awt.geom.Line2D;

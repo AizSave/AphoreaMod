@@ -70,7 +70,7 @@ runes=Rünler
 
 
 [object]
-witchstatue=Cadı Heykeli
+goldwitchstatue=Cadı Heykeli
 runestable=Rün Masası
 infectedsapling=Enfekte Fidan
 spinelcluster=Spinel Kümesi
@@ -459,7 +459,7 @@ spambullet5=§9Patlama:§0 Çarpışmak yerine yolunun sonunda patlar
 geltile=Üzerindeki her şeyi büyük ölçüde yavaşlatan yapışkan zemin
 
 // Objects
-witchstatue=Bu heykeli bir bataklığın yüzeyine yerleştirmek, ada genelinde cadıların ortaya çıkmasını engeller
+goldwitchstatue=Bu heykeli bir bataklığın yüzeyine yerleştirmek, ada genelinde cadıların ortaya çıkmasını engeller
 
 // Generic Trinkets
 areawhenheal=Yapılan her <magichealing> Sihirli İyileştirme için bu alanı yürütür

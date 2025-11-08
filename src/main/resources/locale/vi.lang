@@ -70,7 +70,7 @@ runes=Runes
 
 
 [object]
-witchstatue=Tượng phù thủy
+goldwitchstatue=Tượng phù thủy
 runestable=Bàn Rune
 infectedsapling=Cây non bị nhiễm độc
 spinelcluster=Cụm Spinel
@@ -459,7 +459,7 @@ spambullet5=§9Nổ:§0 Nổ ở cuối đường đi của nó thay vì va ch�
 geltile=Sàn dính làm chậm đáng kể mọi thứ trên đó
 
 // Objects
-witchstatue=Đặt bức tượng này trên bề mặt của một đầm lầy sẽ loại bỏ sự xuất hiện của phù thủy trên khắp hòn đảo
+goldwitchstatue=Đặt bức tượng này trên bề mặt của một đầm lầy sẽ loại bỏ sự xuất hiện của phù thủy trên khắp hòn đảo
 
 // Generic Trinkets
 areawhenheal=Thực hiện khu vực này cho mỗi <magichealing> hồi máu phép được thực hiện

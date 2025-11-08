@@ -1,6 +1,7 @@
 package aphorea.mobs.summon;
 
 import necesse.engine.gameLoop.tickManager.TickManager;
+import necesse.engine.network.server.ServerClient;
 import necesse.engine.util.GameUtils;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.MobHealthChangeEvent;
 import necesse.entity.mobs.GameDamage;
@@ -41,7 +42,7 @@ public class Onyx extends FlyingAttackingFollowingMob {
     }
 
     @Override
-    public GameDamage getCollisionDamage(Mob target) {
+    public GameDamage getCollisionDamage(Mob target, boolean fromPacket, ServerClient packetSubmitter) {
         float damagePercent = 0.05F;
         if (target.isBoss()) {
             damagePercent /= 50;
@@ -64,7 +65,7 @@ public class Onyx extends FlyingAttackingFollowingMob {
             target.isServerHit(damage, target.x - owner.x, target.y - owner.y, (float) knockback, this);
             this.collisionHitCooldowns.startCooldown(target);
             if (target.isHostile) {
-                getLevel().entityManager.addLevelEvent(new MobHealthChangeEvent(owner, (int) Math.max(owner.getMaxHealth() * 0.01F, 1)));
+                getLevel().entityManager.events.add(new MobHealthChangeEvent(owner, (int) Math.max(owner.getMaxHealth() * 0.01F, 1)));
             }
         }
     }
@@ -114,7 +115,7 @@ public class Onyx extends FlyingAttackingFollowingMob {
                 drawOptions.draw();
             }
         });
-        this.addShadowDrawables(tileList, x, y, light, camera);
+        this.addShadowDrawables(tileList, level, x, y, light, camera);
     }
 
     @Override

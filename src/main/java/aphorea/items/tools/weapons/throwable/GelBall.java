@@ -49,7 +49,7 @@ public class GelBall extends AphThrowToolItem {
     @Override
     public void showAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, int animAttack, int seed, GNDItemMap mapContent) {
         if (level.isClient()) {
-            SoundManager.playSound(GameResources.slimesplash, SoundEffect.effect(attackerMob)
+            SoundManager.playSound(GameResources.slimeSplash1, SoundEffect.effect(attackerMob)
                     .volume(0.7f)
                     .pitch(GameRandom.globalRandom.getFloatBetween(1.0f, 1.1f)));
         }

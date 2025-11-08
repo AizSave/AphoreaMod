@@ -70,7 +70,7 @@ runes=符文
 
 
 [object]
-witchstatue=女巫雕像
+goldwitchstatue=女巫雕像
 runestable=符文台
 infectedsapling=受感染的樹苗
 spinelcluster=尖晶石簇
@@ -459,7 +459,7 @@ spambullet5=§9爆炸：§0 在其路徑盡頭爆炸而不是碰撞
 geltile=粘性地板，會極大地減慢上面的一切
 
 // Objects
-witchstatue=將此雕像放置在沼澤表面將消除整個島嶼的女巫生成
+goldwitchstatue=將此雕像放置在沼澤表面將消除整個島嶼的女巫生成
 
 // Generic Trinkets
 areawhenheal=每完成 <magichealing> 魔法治療就執行此區域

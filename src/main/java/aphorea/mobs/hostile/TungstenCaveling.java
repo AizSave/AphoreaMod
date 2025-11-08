@@ -18,6 +18,7 @@ import necesse.inventory.lootTable.LootTable;
 import necesse.inventory.lootTable.lootItem.LootItem;
 import necesse.level.maps.Level;
 import necesse.level.maps.TilePosition;
+import necesse.level.maps.biomes.Biome;
 import necesse.level.maps.light.GameLight;
 
 import java.awt.*;
@@ -121,7 +122,7 @@ public class TungstenCaveling extends HostileMob {
     }
 
     @Override
-    public int getTileWanderPriority(TilePosition pos) {
+    public int getTileWanderPriority(TilePosition pos, Biome baseBiome) {
         return 0;
     }
 

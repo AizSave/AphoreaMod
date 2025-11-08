@@ -14,6 +14,7 @@ import java.awt.*;
 public class DemonicPeriaptBuff extends AphPeriaptActivableBuff {
 
     public boolean hasRPGMod;
+
     public DemonicPeriaptBuff() {
         super("demonicperiaptactive");
         hasRPGMod = AphDependencies.checkRPGMod();

@@ -1,13 +1,24 @@
 package aphorea.registry;
 
-import aphorea.data.AphSwampLevelData;
 import aphorea.data.AphWorldData;
 import necesse.engine.registries.LevelDataRegistry;
 import necesse.engine.registries.WorldDataRegistry;
+import necesse.engine.world.WorldEntity;
 
 public class AphData {
+    public static AphWorldData worldData;
+
     public static void registerCore() {
         WorldDataRegistry.registerWorldData("aphoreaworlddata", AphWorldData.class);
-        LevelDataRegistry.registerLevelData("aphoreaswampleveldata", AphSwampLevelData.class);
+
+        worldData = new AphWorldData();
+    }
+
+    public static AphWorldData getWorldData(WorldEntity world) {
+        return worldData.getData(world);
+    }
+
+    public static boolean gelSlimesNulled(WorldEntity world) {
+        return getWorldData(world).gelSlimesNulled;
     }
 }

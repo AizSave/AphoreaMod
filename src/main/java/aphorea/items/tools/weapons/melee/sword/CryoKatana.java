@@ -15,7 +15,6 @@ import necesse.entity.trails.TrailVector;
 import necesse.gfx.GameResources;
 import necesse.gfx.gameTexture.GameSprite;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.item.toolItem.swordToolItem.KatanaToolItem;
 import necesse.level.maps.Level;
 
 import java.awt.geom.Point2D;
@@ -43,7 +42,7 @@ public class CryoKatana extends AphKatanaToolITem {
 
     @Override
     public void showKatanaAttack(Level level, final AttackAnimMob mob, final int seed, final InventoryItem item) {
-        level.entityManager.addLevelEventHidden(new SwordCleanSliceAttackEvent(mob, seed, 12, this) {
+        level.entityManager.events.addHidden(new SwordCleanSliceAttackEvent(mob, seed, 12, this) {
             Trail[] trails = null;
 
             public void tick(float angle, float currentAttackProgress) {

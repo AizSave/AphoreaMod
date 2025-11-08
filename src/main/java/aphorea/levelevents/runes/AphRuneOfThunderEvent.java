@@ -19,12 +19,9 @@ import necesse.entity.trails.LightningTrail;
 import necesse.entity.trails.TrailVector;
 import necesse.gfx.GameResources;
 import necesse.level.maps.LevelObjectHit;
-import necesse.level.maps.regionSystem.RegionPosition;
 
 import java.awt.*;
-import java.util.Collections;
 import java.util.HashSet;
-import java.util.Set;
 
 public class AphRuneOfThunderEvent extends HitboxEffectEvent implements Attacker {
     private int lifeTime = 0;
@@ -162,9 +159,5 @@ public class AphRuneOfThunderEvent extends HitboxEffectEvent implements Attacker
     }
 
     public void hitObject(LevelObjectHit hit) {
-    }
-
-    public Set<RegionPosition> getRegionPositions() {
-        return Collections.singleton(this.getLevel().regionManager.getRegionPosByTile(this.targetX / 32, this.targetY / 32));
     }
 }

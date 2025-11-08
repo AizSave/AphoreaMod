@@ -14,11 +14,8 @@ import necesse.entity.mobs.Mob;
 import necesse.entity.particle.Particle;
 import necesse.gfx.GameResources;
 import necesse.level.maps.LevelObjectHit;
-import necesse.level.maps.regionSystem.RegionPosition;
 
 import java.awt.*;
-import java.util.Collections;
-import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class AphAbysmalRuneEvent extends HitboxEffectEvent implements Attacker {
@@ -118,10 +115,6 @@ public class AphAbysmalRuneEvent extends HitboxEffectEvent implements Attacker {
     }
 
     public void hitObject(LevelObjectHit hit) {
-    }
-
-    public Set<RegionPosition> getRegionPositions() {
-        return Collections.singleton(this.getLevel().regionManager.getRegionPosByTile(this.targetX / 32, this.targetY / 32));
     }
 
 }

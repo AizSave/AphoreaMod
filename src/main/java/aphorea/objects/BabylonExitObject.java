@@ -5,7 +5,6 @@ import necesse.engine.localization.Localization;
 import necesse.engine.network.server.Server;
 import necesse.engine.network.server.ServerClient;
 import necesse.engine.registries.ObjectRegistry;
-import necesse.engine.util.LevelIdentifier;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.objectEntity.ObjectEntity;
 import necesse.entity.objectEntity.PortalObjectEntity;
@@ -67,15 +66,9 @@ public class BabylonExitObject extends StaticMultiObject {
     public static class BabylonExitObjectEntity extends PortalObjectEntity {
         public BabylonExitObjectEntity(Level level, int x, int y, int entranceX, int entranceY) {
             super(level, "babylonexit", x, y, level.getIdentifier(), entranceX, entranceY);
-            LevelIdentifier identifier = level.getIdentifier();
-            if (identifier.isIslandPosition()) {
-                this.destinationIdentifier = new LevelIdentifier(identifier.getIslandX(), identifier.getIslandY(), 0);
-            }
         }
 
         public void use(Server server, ServerClient client) {
-            this.teleportClientToAroundDestination(client, null, true);
-            this.runClearMobs(getLevel(), getX(), getY());
         }
     }
 

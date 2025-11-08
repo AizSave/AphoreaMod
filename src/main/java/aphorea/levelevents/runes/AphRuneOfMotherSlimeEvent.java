@@ -1,6 +1,6 @@
 package aphorea.levelevents.runes;
 
-import aphorea.methodpatches.PlayerFlyingHeight;
+import aphorea.patches.PlayerFlyingHeight;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
@@ -16,13 +16,10 @@ import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.gfx.GameResources;
 import necesse.level.maps.LevelObjectHit;
-import necesse.level.maps.regionSystem.RegionPosition;
 
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
-import java.util.Collections;
 import java.util.HashSet;
-import java.util.Set;
 
 public class AphRuneOfMotherSlimeEvent extends HitboxEffectEvent implements Attacker {
     private int lifeTime = 0;
@@ -85,7 +82,7 @@ public class AphRuneOfMotherSlimeEvent extends HitboxEffectEvent implements Atta
             this.over();
         } else if (this.lifeTime >= 1000) {
             if (!showedImpact) {
-                SoundManager.playSound(GameResources.slimesplash, SoundEffect.effect(targetX, targetY).pitch(1.0F));
+                SoundManager.playSound(GameResources.slimeSplash1, SoundEffect.effect(targetX, targetY).pitch(1.0F));
                 SoundManager.playSound(GameResources.flick, SoundEffect.effect(targetX, targetY).pitch(0.8F));
 
                 new AphAreaList(new AphArea(200, AphColors.paletteMotherSlime)).setOnlyVision(false).executeClient(level, targetX, targetY, 1, 0.8F, 0.5F);
@@ -157,9 +154,5 @@ public class AphRuneOfMotherSlimeEvent extends HitboxEffectEvent implements Atta
     }
 
     public void hitObject(LevelObjectHit hit) {
-    }
-
-    public Set<RegionPosition> getRegionPositions() {
-        return Collections.singleton(this.getLevel().regionManager.getRegionPosByTile(this.targetX / 32, this.targetY / 32));
     }
 }

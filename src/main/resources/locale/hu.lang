@@ -70,7 +70,7 @@ runes=Rúnák
 
 
 [object]
-witchstatue=Boszorkány szobor
+goldwitchstatue=Boszorkány szobor
 runestable=Rúnaasztal
 infectedsapling=Fertőzött csemete
 spinelcluster=Spinell fürt
@@ -459,7 +459,7 @@ spambullet5=§9Robbanás:§0 Ütközés helyett az útja végén felrobban
 geltile=Ragadós padló, amely nagymértékben lelassít mindent a tetején
 
 // Objects
-witchstatue=Ennek a szobornak a mocsár felszínére helyezése megszünteti a boszorkányok megjelenését az egész szigeten
+goldwitchstatue=Ennek a szobornak a mocsár felszínére helyezése megszünteti a boszorkányok megjelenését az egész szigeten
 
 // Generic Trinkets
 areawhenheal=Minden <magichealing> mágikus gyógyítás után végrehajtja ezt a területet

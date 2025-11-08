@@ -7,14 +7,20 @@ import necesse.inventory.item.toolItem.ToolType;
 import necesse.level.gameObject.RockObject;
 import necesse.level.gameObject.SingleRockObject;
 import necesse.level.gameObject.WallObject;
-import necesse.level.gameObject.furniture.*;
+import necesse.level.gameObject.container.BookshelfObject;
+import necesse.level.gameObject.container.CabinetObject;
+import necesse.level.gameObject.container.StorageBoxInventoryObject;
+import necesse.level.gameObject.furniture.BedObject;
+import necesse.level.gameObject.furniture.CandelabraObject;
+import necesse.level.gameObject.furniture.ChairObject;
+import necesse.level.gameObject.furniture.DinnerTableObject;
 import necesse.level.gameObject.furniture.doubleBed.DoubleBedBaseObject;
 
-import java.awt.*;
-
 public class AphObjects {
+    public static int GEL_ROCK;
+
     public static void registerCore() {
-        ObjectRegistry.registerObject("witchstatue", new WitchStatue(), -1.0F, true);
+        ObjectRegistry.registerObject("goldwitchstatue", new GoldWitchStatue(), -1.0F, true);
         ObjectRegistry.registerObject("fakespinelchest", new FakeSpinelChest(), -1.0F, true);
         ObjectRegistry.registerObject("spinelchest", new StorageBoxInventoryObject("spinelchest", 40, AphColors.spinel), 20.0F, true);
 
@@ -70,8 +76,8 @@ public class AphObjects {
 
     public static void gelRock() {
         RockObject gelRock;
-        ObjectRegistry.registerObject("gelrock", gelRock = new RockyWallObject("gelrock", AphColors.rock, "rockygel", 0, 1, 1), -1.0F, true);
-        gelRock.toolTier = 1.5F;
+        GEL_ROCK = ObjectRegistry.registerObject("gelrock", gelRock = new RockyWallObject("gelrock", AphColors.rock, "rockygel", 0, 1, 1), -1.0F, true);
+        gelRock.toolTier = 3;
         SingleRockObject.registerSurfaceRock(gelRock, "surfacegelrock", AphColors.rock_light, 1, 2, 1, -1.0F, true);
         ObjectRegistry.registerObject("tungstenoregelrock", new TungstenGelRockOreObject(gelRock, "oremask", "tungstenore", AphColors.tungsten), -1.0F, true);
     }

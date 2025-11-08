@@ -70,7 +70,7 @@ runes=Runas
 
 
 [object]
-witchstatue=Estatua de Bruja
+goldwitchstatue=Estatua de Bruja
 runestable=Mesa de Runas
 infectedsapling=Retoño Infectado
 spinelcluster=Estructura de Espinela
@@ -459,7 +459,7 @@ spambullet5=§9Explosión:§0 Explota en lugar de impactar
 geltile=Suelo pegajoso que ralentiza un montón a todo lo que esté encima
 
 // Objects
-witchstatue=Colocar esta estatua en la superficie de un pantano eliminará el spawn de las Brujas Rosa en toda la isla
+goldwitchstatue=Colocar esta estatua en la superficie de un pantano eliminará el spawn de las Brujas Rosa en toda la isla
 
 // Generic Trinkets
 areawhenheal=Ejecuta este área por cada <magichealing> de curación mágica realizada

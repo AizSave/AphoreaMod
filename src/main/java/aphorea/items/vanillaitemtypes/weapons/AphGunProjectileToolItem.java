@@ -6,16 +6,17 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.toolItem.projectileToolItem.gunProjectileToolItem.GunProjectileToolItem;
+import necesse.inventory.lootTable.presets.GunWeaponsLootTable;
 
 import java.util.LinkedHashSet;
 
 public class AphGunProjectileToolItem extends GunProjectileToolItem {
     public AphGunProjectileToolItem(String ammoStringID, int enchantCost) {
-        super(ammoStringID, enchantCost);
+        super(ammoStringID, enchantCost, GunWeaponsLootTable.gunWeapons);
     }
 
     public AphGunProjectileToolItem(LinkedHashSet<String> ammoTypes, int enchantCost) {
-        super(ammoTypes, enchantCost);
+        super(ammoTypes, enchantCost, GunWeaponsLootTable.gunWeapons);
     }
 
     @Override

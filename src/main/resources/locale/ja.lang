@@ -70,7 +70,7 @@ runes=ルーン
 
 
 [object]
-witchstatue=魔女の像
+goldwitchstatue=魔女の像
 runestable=ルーンテーブル
 infectedsapling=感染した苗木
 spinelcluster=スピネルクラスター
@@ -459,7 +459,7 @@ spambullet5=§9爆発:§0 衝突する代わりに、パスの終わりに爆発
 geltile=粘着性のある床で、その上のすべてを大幅に減速させます
 
 // Objects
-witchstatue=この像を沼の表面に置くと、島全体の魔女の出現がなくなります
+goldwitchstatue=この像を沼の表面に置くと、島全体の魔女の出現がなくなります
 
 // Generic Trinkets
 areawhenheal=実行された <magichealing> 魔法回復ごとにこのエリアを実行します

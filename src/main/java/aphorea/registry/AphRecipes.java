@@ -374,7 +374,7 @@ public class AphRecipes {
         );
 
         addCraftingList("settlementflag", tech,
-                AphCraftingRecipe.showAfter("witchstatue", 1,
+                AphCraftingRecipe.showAfter("goldwitchstatue", 1,
                         new Ingredient("goldbar", 10),
                         new Ingredient("stardust", 3)
                 )

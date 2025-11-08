@@ -15,7 +15,6 @@ import necesse.engine.sound.SoundManager;
 import necesse.engine.sound.SoundPlayer;
 import necesse.engine.util.GameMath;
 import necesse.engine.util.GameRandom;
-import necesse.engine.util.LevelIdentifier;
 import necesse.entity.levelEvent.LevelEvent;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.objectEntity.ObjectEntity;
@@ -28,17 +27,13 @@ import necesse.gfx.drawables.LevelSortedDrawable;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.inventory.item.toolItem.ToolType;
-import necesse.level.gameObject.GameObject;
 import necesse.level.gameObject.StaticMultiObject;
 import necesse.level.maps.Level;
-import necesse.level.maps.biomes.temple.TempleLevel;
 import necesse.level.maps.light.GameLight;
-import necesse.level.maps.regionSystem.RegionPosition;
 
 import java.awt.*;
 import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 
 public class BabylonEntranceObject extends StaticMultiObject {
     protected BabylonEntranceObject(int multiX, int multiY, int multiWidth, int multiHeight, int[] multiIDs, Rectangle fullCollision) {
@@ -54,7 +49,6 @@ public class BabylonEntranceObject extends StaticMultiObject {
         GameLight light = level.getLightLevel(tileX, tileY);
         int drawX = camera.getTileDrawX(tileX);
         int drawY = camera.getTileDrawY(tileY);
-        GameTexture texture = this.texture.getDamagedTexture(this, level, tileX, tileY);
         float animationProgress = oe == null ? 1.0F : oe.getRevealAnimationProgress();
         int tileProgress = (int) ((float) this.multiWidth * (1.0F - animationProgress) * 32.0F);
         int offset = Math.max(tileProgress - this.multiX * 32, 0);
@@ -65,10 +59,10 @@ public class BabylonEntranceObject extends StaticMultiObject {
             int yOffset = texture.getHeight() - this.multiHeight * 32;
             TextureDrawOptionsEnd options;
             if (this.multiY == 0) {
-                options = texture.initDraw().section(startX, endX, 0, 32 + yOffset).light(light).pos(drawX, drawY - yOffset);
+                options = texture.initDraw().section(startX, endX, 0, 32 + yOffset).addObjectDamageOverlay(this, level, tileX, tileY).light(light).pos(drawX, drawY - yOffset);
             } else {
                 int startY = this.multiY * 32 + yOffset;
-                options = texture.initDraw().section(startX, endX, startY, startY + 32).light(light).pos(drawX, drawY);
+                options = texture.initDraw().section(startX, endX, startY, startY + 32).addObjectDamageOverlay(this, level, tileX, tileY).light(light).pos(drawX, drawY);
             }
 
             tileList.add((tm) -> options.draw());
@@ -122,39 +116,9 @@ public class BabylonEntranceObject extends StaticMultiObject {
 
         public void init() {
             super.init();
-            if (this.getLevel() != null) {
-                LevelIdentifier identifier = this.getLevel().getIdentifier();
-                if (identifier.isIslandPosition()) {
-                    this.destinationIdentifier = new LevelIdentifier(identifier.getIslandX(), identifier.getIslandY(), -200);
-                    Point destinationTile = TempleLevel.getEntranceSpawnPos(identifier.getIslandX(), identifier.getIslandY());
-
-                    this.destinationTileX = destinationTile.x;
-                    this.destinationTileY = destinationTile.y;
-                } else {
-                    this.destinationIdentifier = identifier;
-                    this.destinationTileX = this.getTileX();
-                    this.destinationTileY = this.getTileY();
-                }
-            }
-
         }
 
         public void use(Server server, ServerClient client) {
-            this.teleportClientToAroundDestination(client, (level) -> {
-                GameObject exit = ObjectRegistry.getObject(ObjectRegistry.getObjectID("babylonexit"));
-                if (exit != null) {
-                    exit.placeObject(level, this.destinationTileX - 1, this.destinationTileY, 0, false);
-                    PortalObjectEntity exitEntity = (PortalObjectEntity) level.entityManager.getObjectEntity(this.destinationTileX - 1, this.destinationTileY);
-                    if (exitEntity != null) {
-                        exitEntity.destinationTileX = this.getX();
-                        exitEntity.destinationTileY = this.getY();
-                        exitEntity.destinationIdentifier = this.getLevel().getIdentifier();
-                    }
-                }
-
-                return true;
-            }, true);
-            this.runClearMobs(getLevel(), getX(), getY());
         }
 
         public void startRevealAnimation(int runTimeMilliseconds) {
@@ -258,8 +222,8 @@ public class BabylonEntranceObject extends StaticMultiObject {
             }
         }
 
-        public Set<RegionPosition> getRegionPositions() {
-            return Collections.singleton(this.level.regionManager.getRegionPosByTile(this.tileX, this.tileY));
+        public Point getSaveToRegionPos() {
+            return new Point(this.level.regionManager.getRegionCoordByTile(this.tileX), this.level.regionManager.getRegionCoordByTile(this.tileY));
         }
     }
 

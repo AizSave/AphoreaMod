@@ -70,7 +70,7 @@ runes=Runy
 
 
 [object]
-witchstatue=Posąg Wiedźmy
+goldwitchstatue=Posąg Wiedźmy
 runestable=Stół Runiczny
 infectedsapling=Zainfekowana Sadzonka
 spinelcluster=Skupisko Spinelu
@@ -459,7 +459,7 @@ spambullet5=§9Eksplozja:§0 Eksploduje na końcu swojej ścieżki zamiast koliz
 geltile=Lepka podłoga, która znacznie spowalnia wszystko na niej
 
 // Objects
-witchstatue=Umieszczenie tego posągu na powierzchni bagna wyeliminuje pojawianie się wiedźm na całej wyspie
+goldwitchstatue=Umieszczenie tego posągu na powierzchni bagna wyeliminuje pojawianie się wiedźm na całej wyspie
 
 // Generic Trinkets
 areawhenheal=Wykonuje ten obszar za każde <magichealing> wykonane magiczne leczenie

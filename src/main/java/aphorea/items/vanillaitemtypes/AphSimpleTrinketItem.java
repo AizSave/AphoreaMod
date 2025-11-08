@@ -11,6 +11,7 @@ import necesse.inventory.enchants.Enchantable;
 import necesse.inventory.enchants.EquipmentItemEnchant;
 import necesse.inventory.enchants.ItemEnchantment;
 import necesse.inventory.item.trinketItem.SimpleTrinketItem;
+import necesse.inventory.lootTable.presets.ToolsLootTable;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -19,7 +20,7 @@ public class AphSimpleTrinketItem extends SimpleTrinketItem {
     public final boolean healingEnchantments;
 
     public AphSimpleTrinketItem(Rarity rarity, String[] buffStringIDs, int enchantCost, boolean healingEnchantments) {
-        super(rarity, buffStringIDs, enchantCost);
+        super(rarity, buffStringIDs, enchantCost, ToolsLootTable.tools);
         this.healingEnchantments = healingEnchantments;
     }
 

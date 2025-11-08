@@ -6,10 +6,11 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.toolItem.projectileToolItem.magicProjectileToolItem.MagicProjectileToolItem;
+import necesse.inventory.lootTable.presets.MagicWeaponsLootTable;
 
 abstract public class AphMagicProjectileToolItem extends MagicProjectileToolItem {
     public AphMagicProjectileToolItem(int enchantCost) {
-        super(enchantCost);
+        super(enchantCost, MagicWeaponsLootTable.magicWeapons);
     }
 
     @Override

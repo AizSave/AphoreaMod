@@ -43,7 +43,7 @@ public class AbysmalPeriaptBuff extends TrinketBuff {
                 if (heal > 0) {
                     if (owner.isServer()) {
                         LevelEvent healEvent = new MobHealthChangeEvent(owner, heal);
-                        owner.getLevel().entityManager.addLevelEvent(healEvent);
+                        owner.getLevel().entityManager.events.add(healEvent);
                     }
 
                     for (int i = 0; i < 20; i++) {

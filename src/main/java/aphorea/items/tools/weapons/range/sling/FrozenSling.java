@@ -15,7 +15,7 @@ public class FrozenSling extends AphSlingToolItem {
         super(500);
         this.rarity = Rarity.NORMAL;
         this.attackAnimTime.setBaseValue(1200);
-        this.attackDamage.setBaseValue(50.0F).setUpgradedValue(1.0F, 92.0F);
+        this.attackDamage.setBaseValue(60.0F).setUpgradedValue(1.0F, 114.0F);
         this.attackRange.setBaseValue(500);
         this.velocity.setBaseValue(100);
         this.attackXOffset = 8;

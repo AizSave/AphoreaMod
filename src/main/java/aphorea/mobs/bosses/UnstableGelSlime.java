@@ -192,11 +192,11 @@ public class UnstableGelSlime extends FlyingBossMob {
             }
         });
 
-        if (!this.isWaterWalking()) addShadowDrawables(tileList, x, y, light, camera);
+        if (!this.isWaterWalking()) addShadowDrawables(tileList, level, x, y, light, camera);
     }
 
     @Override
-    protected TextureDrawOptions getShadowDrawOptions(int x, int y, GameLight light, GameCamera camera) {
+    protected TextureDrawOptions getShadowDrawOptions(Level level, int x, int y, GameLight light, GameCamera camera) {
         GameTexture shadowTexture = MobRegistry.Textures.ancientVulture_shadow;
         int drawX = camera.getDrawX(x) - shadowTexture.getWidth() / 2;
         int drawY = camera.getDrawY(y) - shadowTexture.getHeight() / 2 - 9;
@@ -262,12 +262,12 @@ public class UnstableGelSlime extends FlyingBossMob {
     protected void onDeath(Attacker attacker, HashSet<Attacker> attackers) {
         super.onDeath(attacker, attackers);
 
-        attackers.stream().map(Attacker::getAttackOwner).filter((m) -> m != null && m.isPlayer).distinct().forEach((m) -> this.getServer().network.sendPacket(new PacketChatMessage(new LocalMessage("misc", "bossdefeat", "name", this.getLocalization())), ((PlayerMob) m).getServerClient()));
+        if (this.isServer()) {
+            attackers.stream().map(Attacker::getAttackOwner).filter((m) -> m != null && m.isPlayer).distinct().forEach((m) -> this.getServer().network.sendPacket(new PacketChatMessage(new LocalMessage("misc", "bossdefeat", "name", this.getLocalization())), ((PlayerMob) m).getServerClient()));
 
-        for (int i = 0; i < 4; i++) {
-            Mob invocar = MobRegistry.getMob("miniunstablegelslime", this.getLevel());
-
-            this.getLevel().entityManager.addMob(invocar, randomPositionClose(this.x), randomPositionClose(this.y));
+            for (int i = 0; i < 4; i++) {
+                this.getLevel().entityManager.addMob(MobRegistry.getMob("miniunstablegelslime", this.getLevel()), randomPositionClose(this.x), randomPositionClose(this.y));
+            }
         }
     }
 
@@ -294,11 +294,6 @@ public class UnstableGelSlime extends FlyingBossMob {
     public void handleCollisionHit(Mob target, GameDamage damage, int knockback) {
         super.handleCollisionHit(target, damage, knockback);
         target.addBuff(new ActiveBuff(AphBuffs.STICKY, target, 1000, this), true);
-    }
-
-    @Override
-    public void addBuff(ActiveBuff buff, boolean sendUpdatePacket) {
-        if (buff.buff != AphBuffs.STICKY) super.addBuff(buff, sendUpdatePacket);
     }
 
     public static class UnstableGelSlimeAI<T extends UnstableGelSlime> extends SelectorAINode<T> {
@@ -488,7 +483,7 @@ public class UnstableGelSlime extends FlyingBossMob {
                 }
 
                 private void playSlimeSound(T mob) {
-                    SoundManager.playSound(GameResources.slimesplash, SoundEffect.effect(mob)
+                    SoundManager.playSound(GameResources.slimeSplash1, SoundEffect.effect(mob)
                             .volume(0.7f)
                             .pitch(GameRandom.globalRandom.getFloatBetween(1.0f, 1.1f)));
                 }
@@ -516,10 +511,12 @@ public class UnstableGelSlime extends FlyingBossMob {
         }
 
         public void spawnMiniUnstableGelSlimes(T mob, int number) {
-            for (int i = 0; i < number; i++) {
-                MiniUnstableGelSlime summoned = (MiniUnstableGelSlime) MobRegistry.getMob("miniunstablegelslime", mob.getLevel());
-                summoned.setInitialTP(true);
-                mob.getLevel().entityManager.addMob(summoned, mob.randomPositionClose(mob.x), mob.randomPositionClose(mob.y));
+            if (mob.isServer()) {
+                for (int i = 0; i < number; i++) {
+                    MiniUnstableGelSlime summoned = (MiniUnstableGelSlime) MobRegistry.getMob("miniunstablegelslime", mob.getLevel());
+                    summoned.setInitialTP(true);
+                    mob.getLevel().entityManager.addMob(summoned, mob.randomPositionClose(mob.x), mob.randomPositionClose(mob.y));
+                }
             }
         }
 

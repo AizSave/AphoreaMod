@@ -23,6 +23,7 @@ import necesse.inventory.enchants.ItemEnchantment;
 import necesse.inventory.enchants.ToolItemEnchantment;
 import necesse.inventory.item.ItemInteractAction;
 import necesse.inventory.item.toolItem.spearToolItem.SpearToolItem;
+import necesse.inventory.lootTable.presets.CloseRangeWeaponsLootTable;
 import necesse.level.maps.Level;
 
 import java.awt.*;
@@ -32,7 +33,7 @@ import java.util.Set;
 public abstract class AphDaggerToolItem extends SpearToolItem implements ItemInteractAction {
 
     public AphDaggerToolItem(int enchantCost) {
-        super(enchantCost);
+        super(enchantCost, CloseRangeWeaponsLootTable.closeRangeWeapons);
         this.keyWords.add("dagger");
         this.keyWords.remove("spear");
         this.width = 8.0F;

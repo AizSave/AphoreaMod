@@ -71,7 +71,7 @@ runes=Rune
 
 
 [object]
-witchstatue=Statua della strega
+goldwitchstatue=Statua della strega
 runestable=Tavolo delle rune
 infectedsapling=Piantina infetta
 spinelcluster=Grappolo di spinello
@@ -460,7 +460,7 @@ spambullet5=§9Esplosione:§0 Esplode alla fine del suo percorso invece di colli
 geltile=Pavimento appiccicoso che rallenta notevolmente tutto ciò che si trova sopra
 
 // Objects
-witchstatue=Posizionare questa statua sulla superficie di una palude eliminerà la generazione di streghe in tutta l'isola
+goldwitchstatue=Posizionare questa statua sulla superficie di una palude eliminerà la generazione di streghe in tutta l'isola
 
 // Generic Trinkets
 areawhenheal=Esegue quest'area per ogni <magichealing> di guarigione magica effettuata

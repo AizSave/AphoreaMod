@@ -82,7 +82,7 @@ public class PetPhosphorSlime extends PetFollowingMob {
     }
 
     @Override
-    protected void playDeathSound() {
+    public void playDeathSound() {
     }
 
     @Override
@@ -114,7 +114,7 @@ public class PetPhosphorSlime extends PetFollowingMob {
             }
         });
 
-        if (!this.isWaterWalking()) addShadowDrawables(tileList, x, y, light, camera);
+        if (!this.isWaterWalking()) addShadowDrawables(tileList, level, x, y, light, camera);
     }
 
     public boolean isScared(Level level) {

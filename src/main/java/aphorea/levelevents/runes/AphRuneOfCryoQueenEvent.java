@@ -9,10 +9,6 @@ import necesse.engine.util.GameRandom;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.MobAbilityLevelEvent;
 import necesse.entity.mobs.Mob;
 import necesse.gfx.GameResources;
-import necesse.level.maps.regionSystem.RegionPosition;
-
-import java.util.Collections;
-import java.util.Set;
 
 public class AphRuneOfCryoQueenEvent extends MobAbilityLevelEvent {
     public float effectNumber;
@@ -96,10 +92,6 @@ public class AphRuneOfCryoQueenEvent extends MobAbilityLevelEvent {
 
         }
 
-    }
-
-    public Set<RegionPosition> getRegionPositions() {
-        return Collections.singleton(this.getLevel().regionManager.getRegionPosByTile(this.x, this.y));
     }
 
     protected float getProjectileSpeed() {

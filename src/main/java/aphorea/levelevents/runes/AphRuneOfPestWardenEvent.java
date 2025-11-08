@@ -9,12 +9,9 @@ import necesse.entity.mobs.Attacker;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.level.maps.LevelObjectHit;
-import necesse.level.maps.regionSystem.RegionPosition;
 
 import java.awt.*;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.Set;
 
 public class AphRuneOfPestWardenEvent extends HitboxEffectEvent implements Attacker {
     private HashMap<Integer, Integer> hits = new HashMap<>();
@@ -98,10 +95,6 @@ public class AphRuneOfPestWardenEvent extends HitboxEffectEvent implements Attac
     }
 
     public void hitObject(LevelObjectHit hit) {
-    }
-
-    public Set<RegionPosition> getRegionPositions() {
-        return Collections.singleton(this.getLevel().regionManager.getRegionPosByTile((int) owner.x / 32, (int) owner.y / 32));
     }
 
 }

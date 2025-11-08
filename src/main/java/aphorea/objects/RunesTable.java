@@ -18,7 +18,7 @@ import java.awt.*;
 import java.util.List;
 
 public class RunesTable extends AphCraftingStationObject {
-    public ObjectDamagedTextureArray texture;
+    public GameTexture texture;
 
     public RunesTable() {
         super(new Rectangle(32, 32));
@@ -33,7 +33,7 @@ public class RunesTable extends AphCraftingStationObject {
 
     public void loadTextures() {
         super.loadTextures();
-        this.texture = ObjectDamagedTextureArray.loadAndApplyOverlay(this, "objects/runestable");
+        this.texture = GameTexture.fromFile("objects/runestable");
     }
 
     public Rectangle getCollision(Level level, int x, int y, int rotation) {
@@ -45,8 +45,8 @@ public class RunesTable extends AphCraftingStationObject {
         int drawX = camera.getTileDrawX(tileX);
         int drawY = camera.getTileDrawY(tileY);
         int rotation = level.getObjectRotation(tileX, tileY);
-        GameTexture texture = this.texture.getDamagedTexture(this, level, tileX, tileY);
-        final TextureDrawOptions options = texture.initDraw().sprite(rotation % 4, 0, 32, texture.getHeight()).light(light).pos(drawX, drawY - (texture.getHeight() - 32));
+
+        final TextureDrawOptions options = texture.initDraw().sprite(rotation % 4, 0, 32, texture.getHeight()).addObjectDamageOverlay(this, level, tileX, tileY).light(light).pos(drawX, drawY - (texture.getHeight() - 32));
         list.add(new LevelSortedDrawable(this, tileX, tileY) {
             public int getSortY() {
                 return 20;
@@ -61,8 +61,8 @@ public class RunesTable extends AphCraftingStationObject {
     public void drawPreview(Level level, int tileX, int tileY, int rotation, float alpha, PlayerMob player, GameCamera camera) {
         int drawX = camera.getTileDrawX(tileX);
         int drawY = camera.getTileDrawY(tileY);
-        GameTexture texture = this.texture.getDamagedTexture(0.0F);
-        texture.initDraw().sprite(rotation % 4, 0, 32, texture.getHeight()).alpha(alpha).draw(drawX, drawY - (texture.getHeight() - 32));
+
+        texture.initDraw().sprite(rotation % 4, 0, 32, texture.getHeight()).addObjectDamageOverlay(this, level, tileX, tileY).alpha(alpha).draw(drawX, drawY - (texture.getHeight() - 32));
     }
 
     public Tech[] getCraftingTechs() {

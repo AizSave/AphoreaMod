@@ -70,7 +70,7 @@ runes=룬
 
 
 [object]
-witchstatue=마녀 조각상
+goldwitchstatue=마녀 조각상
 runestable=룬 테이블
 infectedsapling=감염된 묘목
 spinelcluster=스피넬 군집
@@ -459,7 +459,7 @@ spambullet5=§9폭발:§0 충돌하는 대신 경로 끝에서 폭발합니다
 geltile=위에 있는 모든 것을 크게 느리게 하는 끈적한 바닥
 
 // Objects
-witchstatue=이 조각상을 늪지 표면에 놓으면 섬 전체에서 마녀가 생성되지 않습니다
+goldwitchstatue=이 조각상을 늪지 표면에 놓으면 섬 전체에서 마녀가 생성되지 않습니다
 
 // Generic Trinkets
 areawhenheal=수행된 <magichealing> 마법 치유마다 이 영역을 실행합니다

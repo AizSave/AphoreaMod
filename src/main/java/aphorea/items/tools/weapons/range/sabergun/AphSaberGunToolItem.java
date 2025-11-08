@@ -25,6 +25,7 @@ import necesse.inventory.InventoryItem;
 import necesse.inventory.item.*;
 import necesse.inventory.item.toolItem.projectileToolItem.ProjectileToolItem;
 import necesse.inventory.item.upgradeUtils.IntUpgradeValue;
+import necesse.inventory.lootTable.presets.GunWeaponsLootTable;
 import necesse.level.maps.Level;
 
 import java.awt.*;
@@ -35,7 +36,7 @@ abstract public class AphSaberGunToolItem extends ProjectileToolItem implements 
     public IntUpgradeValue dashRange;
 
     public AphSaberGunToolItem(int enchantCost) {
-        super(enchantCost);
+        super(enchantCost, GunWeaponsLootTable.gunWeapons);
         this.setItemCategory("equipment", "weapons", "rangedweapons");
         this.setItemCategory(ItemCategory.equipmentManager, "weapons", "rangedweapons");
         this.setItemCategory(ItemCategory.craftingManager, "equipment", "weapons", "rangedweapons");

@@ -6,10 +6,11 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.toolItem.projectileToolItem.throwToolItem.ThrowToolItem;
+import necesse.inventory.lootTable.presets.ThrowWeaponsLootTable;
 
 abstract public class AphThrowToolItem extends ThrowToolItem {
     public AphThrowToolItem(int enchantCost) {
-        super(enchantCost);
+        super(enchantCost, ThrowWeaponsLootTable.throwWeapons);
     }
 
     @Override

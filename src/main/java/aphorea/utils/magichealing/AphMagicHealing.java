@@ -46,7 +46,7 @@ public class AphMagicHealing {
 
         int realHealing = Math.min(healing, target.getMaxHealth() - target.getHealth());
         if (realHealing > 0) {
-            target.getLevel().entityManager.addLevelEvent(new MobHealthChangeEvent(target, realHealing));
+            target.getLevel().entityManager.events.add(new MobHealthChangeEvent(target, realHealing));
 
             for (ActiveBuff buff : healer.buffManager.getArrayBuffs()) {
                 if (buff.buff instanceof AphMagicHealingBuff) {
@@ -60,7 +60,7 @@ public class AphMagicHealing {
                 int magicalHealingGrace = (int) (realHealing * getHealingGrace(healer, toolItem, item));
                 int realHealingGrace = Math.min(magicalHealingGrace, healer.getMaxHealth() - healer.getHealth());
                 if (realHealingGrace > 0) {
-                    target.getLevel().entityManager.addLevelEvent(new MobHealthChangeEvent(healer, realHealingGrace));
+                    target.getLevel().entityManager.events.add(new MobHealthChangeEvent(healer, realHealingGrace));
                 }
             }
         }

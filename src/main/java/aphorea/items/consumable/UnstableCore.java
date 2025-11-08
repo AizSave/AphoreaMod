@@ -10,10 +10,12 @@ import necesse.engine.network.packet.PacketMobChat;
 import necesse.engine.registries.MobRegistry;
 import necesse.engine.util.GameBlackboard;
 import necesse.engine.util.GameRandom;
+import necesse.engine.util.LevelIdentifier;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
+import necesse.inventory.item.placeableItem.consumableItem.spawnItems.EvilsProtectorSpawnItem;
 import necesse.level.maps.IncursionLevel;
 import necesse.level.maps.Level;
 
@@ -39,9 +41,7 @@ public class UnstableCore extends AphConsumableItem {
             return null;
         } else if (level instanceof IncursionLevel) {
             return "inincursion";
-        } else if (!level.isIslandPosition()) {
-            return "notisland";
-        } else if (level.getIslandDimension() != 0) {
+        } else if (!level.getIdentifier().equals(LevelIdentifier.SURFACE_IDENTIFIER)) {
             return "notsurface";
         } else if (level.getServer().world.worldEntity.isNight()) {
             return "night";

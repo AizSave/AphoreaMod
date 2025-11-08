@@ -12,7 +12,6 @@ import necesse.entity.projectile.Projectile;
 import necesse.entity.projectile.modifiers.ResilienceOnHitProjectileModifier;
 import necesse.gfx.GameResources;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.item.toolItem.projectileToolItem.magicProjectileToolItem.MagicProjectileToolItem;
 import necesse.level.maps.Level;
 
 public class BabylonCandle extends AphMagicProjectileToolItem {

@@ -11,6 +11,7 @@ import necesse.inventory.enchants.Enchantable;
 import necesse.inventory.enchants.EquipmentItemEnchant;
 import necesse.inventory.enchants.ItemEnchantment;
 import necesse.inventory.item.trinketItem.TrinketItem;
+import necesse.inventory.lootTable.presets.TrinketsLootTable;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -19,7 +20,7 @@ abstract public class AphTrinketItem extends TrinketItem {
     public boolean healingEnchantments = false;
 
     public AphTrinketItem(Rarity rarity, int enchantCost) {
-        super(rarity, enchantCost);
+        super(rarity, enchantCost, TrinketsLootTable.trinkets);
     }
 
     @Override

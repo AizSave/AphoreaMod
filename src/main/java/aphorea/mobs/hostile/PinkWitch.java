@@ -1,6 +1,5 @@
 package aphorea.mobs.hostile;
 
-import aphorea.data.AphSwampLevelData;
 import aphorea.projectiles.mob.PinkWitchProjectile;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.server.Server;
@@ -26,6 +25,7 @@ import necesse.level.maps.light.GameLight;
 
 import java.awt.*;
 import java.util.List;
+import java.util.Objects;
 
 public class PinkWitch extends FlyingHostileMob {
 
@@ -53,12 +53,9 @@ public class PinkWitch extends FlyingHostileMob {
             )
     );
 
-    public static AphSwampLevelData aphoreaSwampLevelData = new AphSwampLevelData();
-
     @Override
     public boolean isValidSpawnLocation(Server server, ServerClient client, int targetX, int targetY) {
-        AphSwampLevelData currentData = aphoreaSwampLevelData.getData(client.getLevel());
-        if (currentData.witchesnulled) {
+        if (client.getLevel().entityManager.objectEntities.streamAreaTileRange(targetX, targetY, 100).anyMatch(oe -> Objects.equals(oe.type, "witchstatue"))) {
             return false;
         } else {
             return super.isValidSpawnLocation(server, client, targetX, targetY);
@@ -148,7 +145,7 @@ public class PinkWitch extends FlyingHostileMob {
             }
         });
 
-        addShadowDrawables(tileList, x, y, light, camera);
+        addShadowDrawables(tileList, level, x, y, light, camera);
     }
 
     @Override

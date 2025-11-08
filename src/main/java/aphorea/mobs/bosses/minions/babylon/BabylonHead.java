@@ -133,7 +133,7 @@ public class BabylonHead extends BossWormMobHead<BabylonBody, BabylonHead> {
     public void clientTick() {
         super.clientTick();
         if (this.sound == null || this.sound.isDone()) {
-            this.sound = SoundManager.playSound(GameResources.wind, SoundEffect.effect(this).falloffDistance(1400).volume(0.8F));
+            this.sound = SoundManager.playSound(GameResources.wind1, SoundEffect.effect(this).falloffDistance(1400).volume(0.8F));
         }
 
         if (this.sound != null) {

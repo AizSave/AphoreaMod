@@ -4,7 +4,7 @@ import necesse.engine.localization.Localization;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
-import necesse.level.gameObject.CraftingStationObject;
+import necesse.level.gameObject.container.CraftingStationObject;
 
 import java.awt.*;
 

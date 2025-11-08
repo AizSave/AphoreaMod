@@ -13,11 +13,9 @@ import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.gfx.GameResources;
 import necesse.level.maps.LevelObjectHit;
-import necesse.level.maps.regionSystem.RegionPosition;
 
 import java.awt.*;
 import java.util.HashSet;
-import java.util.Set;
 
 public class AphTidalRuneEvent extends HitboxEffectEvent implements Attacker {
     private int lifeTime = 0;
@@ -100,9 +98,5 @@ public class AphTidalRuneEvent extends HitboxEffectEvent implements Attacker {
     }
 
     public void hitObject(LevelObjectHit hit) {
-    }
-
-    public Set<RegionPosition> getRegionPositions() {
-        return this.owner.getRegionPositions();
     }
 }

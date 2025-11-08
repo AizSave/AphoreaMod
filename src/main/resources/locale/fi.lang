@@ -70,7 +70,7 @@ runes=Riimut
 
 
 [object]
-witchstatue=Noidan patsas
+goldwitchstatue=Noidan patsas
 runestable=Riimupöytä
 infectedsapling=Saastunut taimi
 spinelcluster=Spinellirykelmä
@@ -459,7 +459,7 @@ spambullet5=§9Räjähdys:§0 Räjähtää sen polun päässä törmäyksen sija
 geltile=Tahmea lattia, joka hidastaa kaikkea sen päällä olevaa huomattavasti
 
 // Objects
-witchstatue=Tämän patsaan sijoittaminen suon pinnalle poistaa noitien syntymisen koko saarelta
+goldwitchstatue=Tämän patsaan sijoittaminen suon pinnalle poistaa noitien syntymisen koko saarelta
 
 // Generic Trinkets
 areawhenheal=Suorittaa tämän alueen jokaisesta <magichealing> maagisesta parannuksesta

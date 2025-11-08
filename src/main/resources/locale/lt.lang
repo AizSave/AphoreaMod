@@ -70,7 +70,7 @@ runes=Runos
 
 
 [object]
-witchstatue=Raganos statula
+goldwitchstatue=Raganos statula
 runestable=Runų stalas
 infectedsapling=Užkrėstas daigas
 spinelcluster=Spinelio sankaupa
@@ -459,7 +459,7 @@ spambullet5=§9Sprogimas:§0 Sprogsta savo kelio pabaigoje, užuot susidūręs
 geltile=Lipnios grindys, kurios labai sulėtina viską, kas ant jų yra
 
 // Objects
-witchstatue=Pastačius šią statulą pelkės paviršiuje, visoje saloje nebeatsiras raganų
+goldwitchstatue=Pastačius šią statulą pelkės paviršiuje, visoje saloje nebeatsiras raganų
 
 // Generic Trinkets
 areawhenheal=Vykdo šią sritį už kiekvieną <magichealing> atliktą magišką gydymą

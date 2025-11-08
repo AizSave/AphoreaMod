@@ -70,7 +70,7 @@ runes=Runy
 
 
 [object]
-witchstatue=Socha čarodějnice
+goldwitchstatue=Socha čarodějnice
 runestable=Runový stůl
 infectedsapling=Infikovaná sazenice
 spinelcluster=Spinelový shluk
@@ -459,7 +459,7 @@ spambullet5=§9Exploze:§0 Exploduje na konci své cesty místo kolize
 geltile=Lepkavá podlaha, která výrazně zpomaluje vše na ní
 
 // Objects
-witchstatue=Umístění této sochy na povrch bažiny odstraní výskyt čarodějnic na celém ostrově
+goldwitchstatue=Umístění této sochy na povrch bažiny odstraní výskyt čarodějnic na celém ostrově
 
 // Generic Trinkets
 areawhenheal=Provede tuto oblast za každé <magichealing> provedené magické léčení

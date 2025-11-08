@@ -103,7 +103,8 @@ public class HearthCrystalMob extends HostileMob {
         return true;
     }
 
-    protected void playDeathSound() {
+    @Override
+    public void playDeathSound() {
         SoundManager.playSound(GameResources.crystalHit1, SoundEffect.effect(x, y).volume(1.5F));
     }
 
@@ -129,7 +130,7 @@ public class HearthCrystalMob extends HostileMob {
             }
         });
 
-        if (!this.isWaterWalking()) addShadowDrawables(tileList, x, y, light, camera);
+        if (!this.isWaterWalking()) addShadowDrawables(tileList, level, x, y, light, camera);
 
     }
 

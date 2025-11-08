@@ -10,7 +10,6 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.item.bulletItem.BulletItem;
 import necesse.inventory.item.toolItem.ToolItem;
 
 public class SpamBullet extends AphBulletItem {

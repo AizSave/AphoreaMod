@@ -2,6 +2,7 @@ package aphorea.mobs.summon;
 
 import aphorea.registry.AphBuffs;
 import necesse.engine.gameLoop.tickManager.TickManager;
+import necesse.engine.modifiers.ModifierValue;
 import necesse.engine.registries.MobRegistry.Textures;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.Mob;
@@ -23,6 +24,7 @@ import necesse.level.maps.light.GameLight;
 
 import java.awt.*;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class BabyUnstableGelSlime extends AttackingFollowingMob {
 
@@ -81,11 +83,11 @@ public class BabyUnstableGelSlime extends AttackingFollowingMob {
             }
         });
 
-        if (!this.isWaterWalking()) addShadowDrawables(tileList, x, y, light, camera);
+        if (!this.isWaterWalking()) addShadowDrawables(tileList, level, x, y, light, camera);
     }
 
     @Override
-    protected TextureDrawOptions getShadowDrawOptions(int x, int y, GameLight light, GameCamera camera) {
+    protected TextureDrawOptions getShadowDrawOptions(Level level, int x, int y, GameLight light, GameCamera camera) {
         GameTexture shadowTexture = Textures.human_baby_shadow;
         int res = shadowTexture.getHeight();
         int drawX = camera.getDrawX(x) - res / 2;
@@ -100,7 +102,7 @@ public class BabyUnstableGelSlime extends AttackingFollowingMob {
     }
 
     @Override
-    public void addBuff(ActiveBuff buff, boolean sendUpdatePacket) {
-        if (buff.buff != AphBuffs.STICKY) super.addBuff(buff, sendUpdatePacket);
+    public Stream<ModifierValue<?>> getDefaultModifiers() {
+        return super.getDefaultModifiers();
     }
 }

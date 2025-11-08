@@ -144,13 +144,13 @@ public class SpinelMimic extends HostileMob {
             }
         });
 
-        if (!isWaterWalking()) addShadowDrawables(tileList, x, y, light, camera);
+        if (!isWaterWalking()) addShadowDrawables(tileList, level, x, y, light, camera);
     }
 
     @Override
-    protected void addShadowDrawables(OrderableDrawables list, int x, int y, GameLight light, GameCamera camera) {
+    protected void addShadowDrawables(OrderableDrawables list, Level level, int x, int y, GameLight light, GameCamera camera) {
         if (!(Boolean) this.buffManager.getModifier(BuffModifiers.INVISIBILITY) && !this.isRiding()) {
-            TextureDrawOptions shadowOptions = this.getShadowDrawOptions(x, y, light, camera);
+            TextureDrawOptions shadowOptions = this.getShadowDrawOptions(level, x, y, light, camera);
             if (shadowOptions != null) {
                 list.add((tm) -> shadowOptions.draw());
             }
@@ -158,7 +158,7 @@ public class SpinelMimic extends HostileMob {
     }
 
     @Override
-    protected TextureDrawOptions getShadowDrawOptions(int x, int y, GameLight light, GameCamera camera) {
+    protected TextureDrawOptions getShadowDrawOptions(Level level, int x, int y, GameLight light, GameCamera camera) {
         GameTexture shadowTexture = texture_shadow;
         int drawX = camera.getDrawX(x) - 16;
         int drawY = camera.getDrawY(y) - 32 - adjustY;

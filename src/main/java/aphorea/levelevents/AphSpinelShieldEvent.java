@@ -16,10 +16,8 @@ import necesse.entity.particle.Particle;
 import necesse.entity.projectile.Projectile;
 import necesse.gfx.GameResources;
 import necesse.level.maps.LevelObjectHit;
-import necesse.level.maps.regionSystem.RegionPosition;
 
 import java.awt.*;
-import java.util.Set;
 
 public class AphSpinelShieldEvent extends ProjectileShieldLevelEvent implements Attacker {
     public ParticleTypeSwitcher particleTypeSwitcher = new ParticleTypeSwitcher(
@@ -130,10 +128,5 @@ public class AphSpinelShieldEvent extends ProjectileShieldLevelEvent implements 
     @Override
     public float getMaxDelta() {
         return maxDelta;
-    }
-
-    @Override
-    public Set<RegionPosition> getRegionPositions() {
-        return this.owner.getRegionPositions();
     }
 }

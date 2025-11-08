@@ -70,7 +70,7 @@ runes=Runes
 
 
 [object]
-witchstatue=Estàtua de Bruixa
+goldwitchstatue=Estàtua de Bruixa
 runestable=Taula de Runes
 infectedsapling=Planter Infectat
 spinelcluster=Cúmul d'Espinela
@@ -459,7 +459,7 @@ spambullet5=§9Explosió:§0 Explota al final del seu camí en lloc de col·lidi
 geltile=Sòl enganxós que alenteix molt tot el que hi ha a sobre
 
 // Objects
-witchstatue=Col·locar aquesta estàtua a la superfície d'un pantà eliminarà l'aparició de bruixes a tota l'illa
+goldwitchstatue=Col·locar aquesta estàtua a la superfície d'un pantà eliminarà l'aparició de bruixes a tota l'illa
 
 // Generic Trinkets
 areawhenheal=Executa aquesta àrea per cada <magichealing> de Curació Màgica realitzada

@@ -15,6 +15,7 @@ import necesse.engine.util.GameBlackboard;
 import necesse.engine.world.GameClock;
 import necesse.engine.world.WorldSettings;
 import necesse.entity.Entity;
+import necesse.entity.TileEntity;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.staticBuffs.armorBuffs.trinketBuffs.TrinketBuff;
 import necesse.gfx.drawOptions.itemAttack.ItemAttackDrawOptions;
@@ -35,6 +36,7 @@ import necesse.inventory.item.ItemCategory;
 import necesse.inventory.item.TickItem;
 import necesse.inventory.item.miscItem.InternalInventoryItemInterface;
 import necesse.inventory.item.trinketItem.TrinketItem;
+import necesse.inventory.lootTable.presets.TrinketsLootTable;
 import necesse.level.maps.Level;
 
 import java.util.Iterator;
@@ -51,7 +53,7 @@ public class AphRunesInjector extends TrinketItem implements InternalInventoryIt
     public int tooltipsNumber;
 
     public AphRunesInjector(Rarity rarity, int extraToolTips, int modifierRunesNumber) {
-        super(rarity, 400);
+        super(rarity, 400, TrinketsLootTable.trinkets);
         this.setItemCategory(ItemCategory.craftingManager, "runes", "runesinjectors");
         this.worldDrawSize = 32;
         this.incinerationTimeMillis = 60000;
@@ -99,8 +101,9 @@ public class AphRunesInjector extends TrinketItem implements InternalInventoryIt
         return modifierBuffs;
     }
 
-    public void tick(Inventory inventory, int slot, InventoryItem item, GameClock clock, GameState state, Entity entity, WorldSettings worldSettings, Consumer<InventoryItem> setItem) {
-        this.tickInternalInventory(item, clock, state, entity, worldSettings);
+    @Override
+    public void tick(Inventory inventory, int slot, InventoryItem item, GameClock clock, GameState state, Entity entity, TileEntity tileEntity, WorldSettings worldSettings, Consumer<InventoryItem> consumer) {
+        this.tickInternalInventory(item, clock, state, entity, tileEntity, worldSettings);
     }
 
     public boolean isValidPouchItem(InventoryItem item, InventoryItem runesInjector) {
@@ -267,11 +270,6 @@ public class AphRunesInjector extends TrinketItem implements InternalInventoryIt
     }
 
     @Override
-    public void tickInternalInventory(InventoryItem item, GameClock clock, GameState state, Entity entity, WorldSettings worldSettings) {
-        InternalInventoryItemInterface.super.tickInternalInventory(item, clock, state, entity, worldSettings);
-    }
-
-    @Override
     public void saveInternalInventory(InventoryItem item, Inventory inventory) {
         InternalInventoryItemInterface.super.saveInternalInventory(item, inventory);
     }
@@ -410,6 +408,7 @@ public class AphRunesInjector extends TrinketItem implements InternalInventoryIt
             tooltips.add(Localization.translate("itemtooltip", getStringID() + "_mod" + tooltipNumber));
         }
     }
+
 
     public int getTooltipsNumber() {
         return tooltipsNumber;

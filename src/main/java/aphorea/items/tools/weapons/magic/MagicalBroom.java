@@ -185,7 +185,7 @@ public class MagicalBroom extends AphSwordToolItem {
             int aimX = x - attackerMob.getX();
             int aimY = y - attackerMob.getY() + attackHeight;
             ToolItemMobAbilityEvent event = new ToolItemMobAbilityEvent(attackerMob, seed, item, aimX, aimY, animTime, animTime);
-            level.entityManager.addLevelEventHidden(event);
+            level.entityManager.events.addHidden(event);
 
             this.consumeMana(attackerMob, item);
         }

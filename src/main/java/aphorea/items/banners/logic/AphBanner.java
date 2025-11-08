@@ -73,17 +73,17 @@ public class AphBanner extends BannerItem {
 
     @Override
     public void tickHolding(InventoryItem item, PlayerMob player) {
-        if (player != null && player.isClient()) {
-            this.refreshLight(player.getLevel(), player.x, player.y, item);
-        }
-
         assert player != null;
-        GameUtils.streamNetworkClients(player.getLevel()).filter((c) -> this.shouldBuffPlayer(item, player, c.playerMob)).filter((c) -> GameMath.diagonalMoveDistance(player.getX(), player.getY(), c.playerMob.getX(), c.playerMob.getY()) <= (double) getPlayerRange()).forEach((c) -> {
-            this.applyBuffs(c.playerMob, player);
-        });
-        player.getLevel().entityManager.mobs.streamInRegionsInRange(player.x, player.y, getPlayerRange()).filter((m) -> !m.removed()).filter((m) -> this.shouldBuffMob(item, player, m)).filter((m) -> GameMath.diagonalMoveDistance(player.getX(), player.getY(), m.getX(), m.getY()) <= (double) getPlayerRange()).forEach((m) -> {
-            this.applyBuffs(m, player);
-        });
+        GameUtils.streamNetworkClients(player.getLevel()).filter((c) -> this.shouldBuffPlayer(item, player, c.playerMob))
+                .filter((c) -> GameMath.diagonalMoveDistance(player.getX(), player.getY(), c.playerMob.getX(), c.playerMob.getY()) <= (double) getPlayerRange())
+                .forEach((c) -> {
+                    this.applyBuffs(c.playerMob, player);
+                });
+        player.getLevel().entityManager.mobs.streamInRegionsInRange(player.x, player.y, getPlayerRange()).filter((m) -> !m.removed()).filter((m) -> this.shouldBuffMob(item, player, m))
+                .filter((m) -> GameMath.diagonalMoveDistance(player.getX(), player.getY(), m.getX(), m.getY()) <= (double) getPlayerRange())
+                .forEach((m) -> {
+                    this.applyBuffs(m, player);
+                });
     }
 
     @Override
@@ -108,18 +108,18 @@ public class AphBanner extends BannerItem {
                 ActiveBuff antBuff = mob.buffManager.getBuff(newBuff.buff.getID());
                 if (antBuff != null && antBuff.buff instanceof AphBannerBuff) {
                     if (AphBannerBuff.shouldChange(antBuff, newBuff)) {
-                        addBuff(newBuff, mob, player, true);
+                        addBuff(newBuff, mob, true);
                     }
                 } else {
-                    addBuff(newBuff, mob, player, true);
+                    addBuff(newBuff, mob, true);
                 }
             } else {
-                addBuff(newBuff, mob, player, false);
+                addBuff(newBuff, mob, false);
             }
         }
     }
 
-    public void addBuff(ActiveBuff ab, Mob mob, PlayerMob player, boolean forceOverride) {
+    public void addBuff(ActiveBuff ab, Mob mob, boolean forceOverride) {
         mob.buffManager.addBuff(ab, false, forceOverride);
     }
 

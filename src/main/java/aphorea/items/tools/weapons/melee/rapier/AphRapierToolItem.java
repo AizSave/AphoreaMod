@@ -18,7 +18,6 @@ import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.gfx.drawOptions.itemAttack.ItemAttackDrawOptions;
 import necesse.gfx.gameTexture.GameSprite;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.item.toolItem.spearToolItem.SpearToolItem;
 import necesse.inventory.item.upgradeUtils.IntUpgradeValue;
 import necesse.level.maps.Level;
 

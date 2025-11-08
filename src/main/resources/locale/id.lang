@@ -70,7 +70,7 @@ runes=Rune
 
 
 [object]
-witchstatue=Patung Penyihir
+goldwitchstatue=Patung Penyihir
 runestable=Meja Rune
 infectedsapling=Bibit Terinfeksi
 spinelcluster=Gugus Spinel
@@ -459,7 +459,7 @@ spambullet5=\u00a79Ledakan:\u00a70 Meledak di akhir jalurnya alih-alih bertabrak
 geltile=Lantai lengket yang sangat memperlambat semua yang ada di atasnya
 
 // Objects
-witchstatue=Menempatkan patung ini di permukaan rawa akan menghilangkan kemunculan penyihir di seluruh pulau
+goldwitchstatue=Menempatkan patung ini di permukaan rawa akan menghilangkan kemunculan penyihir di seluruh pulau
 
 // Generic Trinkets
 areawhenheal=Menjalankan area ini untuk setiap <magichealing> Penyembuhan Sihir yang dilakukan

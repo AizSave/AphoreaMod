@@ -6,18 +6,19 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.toolItem.pickaxeToolItem.CustomPickaxeToolItem;
+import necesse.inventory.lootTable.presets.ToolsLootTable;
 
 public class AphReworkCustomPickaxeToolItem extends CustomPickaxeToolItem {
     public AphReworkCustomPickaxeToolItem(int attackAnimTime, int toolDps, float toolTier, int attackDamage, int attackRange, int knockback, int enchantCost) {
-        super(attackAnimTime, toolDps, toolTier, attackDamage, attackRange, knockback, enchantCost);
+        super(attackAnimTime, toolDps, toolTier, attackDamage, attackRange, knockback, enchantCost, ToolsLootTable.tools);
     }
 
     public AphReworkCustomPickaxeToolItem(int attackAnimTime, int toolDps, float toolTier, int attackDamage, int attackRange, int knockback, int enchantCost, Rarity rarity) {
-        super(attackAnimTime, toolDps, toolTier, attackDamage, attackRange, knockback, enchantCost, rarity);
+        super(attackAnimTime, toolDps, toolTier, attackDamage, attackRange, knockback, enchantCost, ToolsLootTable.tools, rarity);
     }
 
     public AphReworkCustomPickaxeToolItem(int attackAnimTime, int toolDps, float toolTier, int attackDamage, int attackRange, int knockback, int enchantCost, Rarity rarity, int addedRange) {
-        super(attackAnimTime, toolDps, toolTier, attackDamage, attackRange, knockback, enchantCost, rarity, addedRange);
+        super(attackAnimTime, toolDps, toolTier, attackDamage, attackRange, knockback, enchantCost, ToolsLootTable.tools, rarity, addedRange);
     }
 
     @Override

@@ -70,7 +70,7 @@ runes=Runas
 
 
 [object]
-witchstatue=Estátua da Bruxa
+goldwitchstatue=Estátua da Bruxa
 runestable=Mesa de Runas
 infectedsapling=Muda Infectada
 spinelcluster=Aglomerado de Espinélio
@@ -459,7 +459,7 @@ spambullet5=§9Explosão:§0 Explode no final de seu caminho em vez de colidir
 geltile=Piso pegajoso que diminui muito a velocidade de tudo em cima
 
 // Objects
-witchstatue=Colocar esta estátua na superfície de um pântano eliminará o surgimento de bruxas em toda a ilha
+goldwitchstatue=Colocar esta estátua na superfície de um pântano eliminará o surgimento de bruxas em toda a ilha
 
 // Generic Trinkets
 areawhenheal=Executa esta área para cada <magichealing> de Cura Mágica realizada

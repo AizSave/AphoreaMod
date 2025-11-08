@@ -25,6 +25,7 @@ import necesse.level.gameTile.GameTile;
 import necesse.level.gameTile.LavaTile;
 import necesse.level.gameTile.LiquidTile;
 import necesse.level.maps.Level;
+import necesse.level.maps.biomes.Biome;
 
 import java.awt.*;
 import java.util.HashMap;
@@ -73,9 +74,9 @@ public class InfectedWaterTile extends LiquidTile {
                 float damageMultiplier = 0F;
                 long lastHitTime = lastHit.getOrDefault(mob.getID(), 0L);
                 long currentTime = level.getTime();
-                if (lastHitTime + (level.isCave ? 200 : 3_000) < currentTime) {
+                if (lastHitTime + (level.isCave ? 200 : 1_000) < currentTime) {
                     int consecutiveHitsCount = consecutiveHits.getOrDefault(mob.getID(), 0);
-                    if (lastHitTime + (level.isCave ? 300 : 4_000) > currentTime) {
+                    if (lastHitTime + (level.isCave ? 300 : 1_500) > currentTime) {
                         consecutiveHitsCount++;
                     } else {
                         consecutiveHitsCount = 0;
@@ -116,15 +117,17 @@ public class InfectedWaterTile extends LiquidTile {
 
     }
 
-    public TextureIndexes getTextureIndexes(Level level) {
+    @Override
+    public TextureIndexes getTextureIndexes(Level level, int tileX, int tileY, Biome biome) {
         return new LiquidTile.TextureIndexes(0, 1, 2, 3);
     }
 
-    public Color getLiquidColor(Level level, int x, int y) {
+    public Color getLiquidColor(Level level, int x, int y, Biome biome) {
         return AphColors.infected_light;
     }
 
-    public Color getNewSplattingLiquidColor(Level level, int x, int y) {
+    @Override
+    public Color getNewSplattingLiquidColor(Level level, int tileX, int tileY, Biome biome) {
         return AphColors.infected;
     }
 

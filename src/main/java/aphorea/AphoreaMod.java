@@ -29,9 +29,6 @@ public class AphoreaMod {
         // Packets
         AphPackets.registerCore();
 
-        // Listeners
-        AphListeners.addListeners();
-
         // Controls
         AphControls.registerCore();
 
@@ -73,6 +70,9 @@ public class AphoreaMod {
 
         // Biomes
         AphBiomes.registerCore();
+
+        // World Presets
+        AphWorldPresets.registerCore();
 
         // Levels
         AphLevels.registerCore();

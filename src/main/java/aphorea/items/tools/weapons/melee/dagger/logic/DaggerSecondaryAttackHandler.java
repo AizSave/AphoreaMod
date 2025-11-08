@@ -1,6 +1,7 @@
 package aphorea.items.tools.weapons.melee.dagger.logic;
 
 import aphorea.items.tools.weapons.melee.dagger.AphDaggerToolItem;
+import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameMath;
@@ -48,12 +49,14 @@ public class DaggerSecondaryAttackHandler extends MousePositionAttackHandler {
         return (float) this.getTimeSinceStart() / this.chargeTime;
     }
 
+    @Override
     public Point getNextItemAttackerLevelPos(Mob currentTarget) {
         InventoryItem attackItem = this.item.copy();
         attackItem.getGndData().setFloat("skillPercent", 1.0F);
         return ((ItemAttackerWeaponItem) attackItem.item).getItemAttackerAttackPosition(this.attackerMob.getLevel(), this.attackerMob, currentTarget, -1, attackItem);
     }
 
+    @Override
     public void onUpdate() {
         super.onUpdate();
 
@@ -99,16 +102,19 @@ public class DaggerSecondaryAttackHandler extends MousePositionAttackHandler {
 
     }
 
+    @Override
     public void onMouseInteracted(int levelX, int levelY) {
         this.endedByInteract = true;
         this.attackerMob.endAttackHandler(false);
     }
 
+    @Override
     public void onControllerInteracted(float aimX, float aimY) {
         this.endedByInteract = true;
         this.attackerMob.endAttackHandler(false);
     }
 
+    @Override
     public void onEndAttack(boolean bySelf) {
         float chargePercent = this.getChargePercent();
         if (!this.endedByInteract && chargePercent >= 1F) {
@@ -133,7 +139,7 @@ public class DaggerSecondaryAttackHandler extends MousePositionAttackHandler {
             this.toolItem.doSecondaryAttack(this.attackerMob.getLevel(), this.lastX, this.lastY, this.attackerMob, attackItem, this.slot, this.seed);
 
             for (ActiveBuff b : this.attackerMob.buffManager.getArrayBuffs()) {
-                b.onItemAttacked(this.lastX, this.lastY, this.attackerMob, this.attackerMob.getCurrentAttackHeight(), attackItem, this.slot, 0);
+                b.onItemAttacked(this.lastX, this.lastY, this.attackerMob, this.attackerMob.getCurrentAttackHeight(), attackItem, this.slot, 0, new GNDItemMap());
             }
         }
 

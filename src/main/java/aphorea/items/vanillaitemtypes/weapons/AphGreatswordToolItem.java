@@ -7,12 +7,13 @@ import necesse.entity.mobs.attackHandler.GreatswordChargeLevel;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.toolItem.swordToolItem.greatswordToolItem.GreatswordToolItem;
+import necesse.inventory.lootTable.presets.GreatswordWeaponsLootTable;
 
 import java.awt.*;
 
 abstract public class AphGreatswordToolItem extends GreatswordToolItem {
     public AphGreatswordToolItem(int enchantCost, GreatswordChargeLevel... chargeLevels) {
-        super(enchantCost, chargeLevels);
+        super(enchantCost, GreatswordWeaponsLootTable.greatswordWeapons, chargeLevels);
     }
 
     @Override

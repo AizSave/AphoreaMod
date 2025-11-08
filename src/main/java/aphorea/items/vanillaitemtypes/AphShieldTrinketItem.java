@@ -11,6 +11,7 @@ import necesse.inventory.enchants.Enchantable;
 import necesse.inventory.enchants.EquipmentItemEnchant;
 import necesse.inventory.enchants.ItemEnchantment;
 import necesse.inventory.item.trinketItem.ShieldTrinketItem;
+import necesse.inventory.lootTable.presets.TrinketsLootTable;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -19,7 +20,7 @@ abstract public class AphShieldTrinketItem extends ShieldTrinketItem {
     public final boolean healingEnchantments;
 
     public AphShieldTrinketItem(Rarity rarity, int armorValue, float minSlowModifier, int msToDepleteStamina, float staminaUsageOnBlock, int damageTakenPercent, float angleCoverage, int enchantCost, boolean healingEnchantments) {
-        super(rarity, armorValue, minSlowModifier, msToDepleteStamina, staminaUsageOnBlock, damageTakenPercent, angleCoverage, enchantCost);
+        super(rarity, armorValue, minSlowModifier, msToDepleteStamina, staminaUsageOnBlock, damageTakenPercent, angleCoverage, enchantCost, TrinketsLootTable.trinkets);
         this.healingEnchantments = healingEnchantments;
     }
 

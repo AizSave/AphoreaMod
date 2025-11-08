@@ -70,7 +70,7 @@ runes=Runen
 
 
 [object]
-witchstatue=Hexenstatue
+goldwitchstatue=Hexenstatue
 runestable=Runentisch
 infectedsapling=Infizierter Setzling
 spinelcluster=Spinell-Cluster
@@ -459,7 +459,7 @@ spambullet5=§9Explosion:§0 Explodiert am Ende seines Weges, anstatt zu kollidi
 geltile=Klebriger Boden, der alles darauf stark verlangsamt
 
 // Objects
-witchstatue=Das Aufstellen dieser Statue auf der Oberfläche eines Sumpfes wird das Erscheinen von Hexen auf der ganzen Insel verhindern
+goldwitchstatue=Das Aufstellen dieser Statue auf der Oberfläche eines Sumpfes wird das Erscheinen von Hexen auf der ganzen Insel verhindern
 
 // Generic Trinkets
 areawhenheal=Führt diesen Bereich für jede <magichealing> durchgeführte magische Heilung aus

@@ -51,7 +51,7 @@ public class AphRuneOfSunlightChampionEvent extends MobAbilityLevelEvent impleme
         this.lifeTime += 50;
         if (this.lifeTime >= 3000) {
             SoundManager.playSound(GameResources.explosionHeavy, SoundEffect.effect(owner.x, owner.y).volume(2.5F).pitch(1.5F));
-            owner.getLevel().entityManager.addLevelEvent(new AphRuneOfSunlightChampionExplosionEvent(owner.x, owner.y, range, 0, owner));
+            owner.getLevel().entityManager.events.add(new AphRuneOfSunlightChampionExplosionEvent(owner.x, owner.y, range, 0, owner));
             this.over();
         } else if (this.lifeTime <= 2000) {
             GameRandom random = GameRandom.globalRandom;
@@ -81,7 +81,7 @@ public class AphRuneOfSunlightChampionEvent extends MobAbilityLevelEvent impleme
         super.serverTick();
         this.lifeTime += 50;
         if (this.lifeTime >= 3000) {
-            owner.getLevel().entityManager.addLevelEvent(new AphRuneOfSunlightChampionExplosionEvent(owner.x, owner.y, range, 0, owner));
+            owner.getLevel().entityManager.events.add(new AphRuneOfSunlightChampionExplosionEvent(owner.x, owner.y, range, 0, owner));
             this.over();
         }
 

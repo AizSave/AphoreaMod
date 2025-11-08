@@ -62,7 +62,7 @@ public class AphRunFromMobsAI<T extends Mob> extends MoveTaskAINode<T> {
 
     @Override
     public AINodeResult tickNode(T mob, Blackboard<T> blackboard) {
-        if (isRunning && !mob.getLevel().isCave && !(new Rectangle(96, 96, (mob.getLevel().width - 6) * 32, (mob.getLevel().height - 6) * 32)).contains(mob.getCollision())) {
+        if (isRunning && !mob.getLevel().isCave && !(new Rectangle(96, 96, (mob.getLevel().tileWidth - 6) * 32, (mob.getLevel().tileHeight - 6) * 32)).contains(mob.getCollision())) {
             mob.remove();
             return AINodeResult.SUCCESS;
         } else {

@@ -70,7 +70,7 @@ runes=الرونية
 
 
 [object]
-witchstatue=تمثال الساحرة
+goldwitchstatue=تمثال الساحرة
 runestable=طاولة الرونية
 infectedsapling=شتلة ملوثة
 spinelcluster=مجموعة الإسبنيل
@@ -459,7 +459,7 @@ spambullet5=§9انفجار:§0 ينفجر في نهاية مساره بدلاً
 geltile=أرضية لزجة تبطئ كل شيء عليها بشكل كبير
 
 // Objects
-witchstatue=سيؤدي وضع هذا التمثال على سطح مستنقع إلى القضاء على ظهور السحرة في جميع أنحاء الجزيرة
+goldwitchstatue=سيؤدي وضع هذا التمثال على سطح مستنقع إلى القضاء على ظهور السحرة في جميع أنحاء الجزيرة
 
 // Generic Trinkets
 areawhenheal=ينفذ هذه المنطقة لكل <magichealing> شفاء سحري يتم إجراؤه

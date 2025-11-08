@@ -21,12 +21,13 @@ import necesse.inventory.item.Item;
 import necesse.inventory.item.ItemCategory;
 import necesse.inventory.item.ItemStatTipList;
 import necesse.inventory.item.toolItem.projectileToolItem.ProjectileToolItem;
+import necesse.inventory.lootTable.presets.BowWeaponsLootTable;
 import necesse.level.maps.Level;
 
 abstract public class AphSlingToolItem extends ProjectileToolItem {
 
     public AphSlingToolItem(int enchantCost) {
-        super(enchantCost);
+        super(enchantCost, BowWeaponsLootTable.bowWeapons);
         this.setItemCategory("equipment", "weapons", "rangedweapons");
         this.setItemCategory(ItemCategory.equipmentManager, "weapons", "rangedweapons");
         this.setItemCategory(ItemCategory.craftingManager, "equipment", "weapons", "rangedweapons");

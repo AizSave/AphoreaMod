@@ -70,7 +70,7 @@ runes=Runes
 
 
 [object]
-witchstatue=Statue de sorcière
+goldwitchstatue=Statue de sorcière
 runestable=Table des runes
 infectedsapling=Jeune pousse infectée
 spinelcluster=Amas de spinelle
@@ -459,7 +459,7 @@ spambullet5=§9Explosion :§0 Explose à la fin de son chemin au lieu d'entrer e
 geltile=Sol collant qui ralentit considérablement tout ce qui se trouve dessus
 
 // Objects
-witchstatue=Placer cette statue à la surface d'un marais éliminera l'apparition de sorcières sur toute l'île
+goldwitchstatue=Placer cette statue à la surface d'un marais éliminera l'apparition de sorcières sur toute l'île
 
 // Generic Trinkets
 areawhenheal=Exécute cette zone pour chaque <magichealing> de soins magiques effectués

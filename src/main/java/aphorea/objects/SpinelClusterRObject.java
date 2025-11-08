@@ -24,7 +24,7 @@ import java.util.List;
 public class SpinelClusterRObject extends GameObject {
     protected int counterID;
     private final String textureName;
-    public ObjectDamagedTextureArray texture;
+    public GameTexture texture;
     protected final GameRandom drawRandom;
 
     public SpinelClusterRObject(String textureName, Color mapColor, float glowHue) {
@@ -41,7 +41,7 @@ public class SpinelClusterRObject extends GameObject {
 
     public void loadTextures() {
         super.loadTextures();
-        this.texture = ObjectDamagedTextureArray.loadAndApplyOverlay(this, "objects/" + this.textureName);
+        this.texture = GameTexture.fromFile("objects/" + this.textureName);
     }
 
     public MultiTile getMultiTile(int rotation) {
@@ -52,13 +52,13 @@ public class SpinelClusterRObject extends GameObject {
         GameLight light = level.getLightLevel(tileX, tileY);
         int drawX = camera.getTileDrawX(tileX);
         int drawY = camera.getTileDrawY(tileY);
-        GameTexture texture = this.texture.getDamagedTexture(this, level, tileX, tileY);
+
         int sprite;
         synchronized (this.drawRandom) {
             sprite = this.drawRandom.seeded(getTileSeed(tileX - 1, tileY)).nextInt(texture.getWidth() / 64);
         }
 
-        final TextureDrawOptions options = texture.initDraw().sprite(sprite * 2 + 1, 0, 32, texture.getHeight()).light(light.minLevelCopy(150.0F)).pos(drawX, drawY - texture.getHeight() + 32);
+        final TextureDrawOptions options = texture.initDraw().sprite(sprite * 2 + 1, 0, 32, texture.getHeight()).addObjectDamageOverlay(this, level, tileX, tileY).light(light.minLevelCopy(150.0F)).pos(drawX, drawY - texture.getHeight() + 32);
         list.add(new LevelSortedDrawable(this, tileX, tileY) {
             public int getSortY() {
                 return 16;
@@ -74,13 +74,13 @@ public class SpinelClusterRObject extends GameObject {
         GameLight light = level.getLightLevel(tileX, tileY);
         int drawX = camera.getTileDrawX(tileX);
         int drawY = camera.getTileDrawY(tileY);
-        GameTexture texture = this.texture.getDamagedTexture(0.0F);
+
         int sprite;
         synchronized (this.drawRandom) {
             sprite = this.drawRandom.seeded(getTileSeed(tileX - 1, tileY)).nextInt(texture.getWidth() / 64);
         }
 
-        texture.initDraw().sprite(sprite * 2 + 1, 0, 32, texture.getHeight()).light(light.minLevelCopy(150.0F)).alpha(alpha).draw(drawX, drawY - texture.getHeight() + 32);
+        texture.initDraw().sprite(sprite * 2 + 1, 0, 32, texture.getHeight()).addObjectDamageOverlay(this, level, tileX, tileY).light(light.minLevelCopy(150.0F)).alpha(alpha).draw(drawX, drawY - texture.getHeight() + 32);
     }
 
     public void playDamageSound(Level level, int x, int y, boolean damageDone) {

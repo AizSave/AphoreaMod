@@ -46,7 +46,7 @@ public class SpinelClusterObject extends CrystalClusterObject {
     }
 
     @Override
-    public ArrayList<InventoryItem> getDroppedItems(Level level, int layerID, int x, int y) {
+    public ArrayList<InventoryItem> getObjectDroppedItems(Level level, int layerID, int tileX, int tileY, String purpose) {
         return new ArrayList<>();
     }
 }

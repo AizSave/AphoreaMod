@@ -14,7 +14,7 @@ public class KillGelSlimesSurfaceForestJournalChallenge extends MobsKilledJourna
     public void onMobKilled(ServerClient serverClient, Mob mob) {
         Level level = mob.getLevel();
         if (!level.isCave) {
-            if (JournalChallengeUtils.isForestBiome(level.biome)) {
+            if (JournalChallengeUtils.isForestBiome(level.getBiome(mob.getTileX(), mob.getTileY()))) {
                 super.onMobKilled(serverClient, mob);
             }
         }

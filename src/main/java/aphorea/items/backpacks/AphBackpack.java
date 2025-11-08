@@ -7,13 +7,17 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.Inventory;
 import necesse.inventory.InventoryItem;
+import necesse.inventory.InventoryItemsRemoved;
 import necesse.inventory.InventorySlot;
 import necesse.inventory.item.Item;
 import necesse.inventory.item.miscItem.InternalInventoryItemInterface;
 import necesse.inventory.item.miscItem.PouchItem;
+import necesse.inventory.recipe.Ingredient;
 import necesse.inventory.recipe.IngredientCounter;
 import necesse.inventory.recipe.IngredientUser;
 import necesse.level.maps.Level;
+
+import java.util.Collection;
 
 abstract public class AphBackpack extends PouchItem {
     public AphBackpack() {
@@ -125,6 +129,12 @@ abstract public class AphBackpack extends PouchItem {
             super.useIngredientAmount(level, player, inventory, inventorySlot, item, purpose, handler);
         }
     }
+
+    @Override
+    public int removeInventoryAmount(Level level, PlayerMob player, final InventoryItem item, Inventory inventory, int inventorySlot, Ingredient ingredient, int amount, Collection<InventoryItemsRemoved> collect) {
+        return canBeUsedForCrafting(item) ? super.removeInventoryAmount(level, player, item, inventory, inventorySlot, ingredient, amount, collect) : 0;
+    }
+
 
     @Override
     public int getStackSize() {

@@ -4,6 +4,7 @@ import aphorea.registry.AphBuffs;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.server.ServerClient;
 import necesse.engine.registries.BuffRegistry;
+import necesse.engine.sound.SoundPlayer;
 import necesse.entity.chains.Chain;
 import necesse.entity.chains.ChainLocation;
 import necesse.entity.mobs.GameDamage;
@@ -76,7 +77,9 @@ public class RuneOfSpiderEmpressProjectile extends BoomerangProjectile {
         super.returnToOwner();
     }
 
-    public void playMoveSound() {
+    @Override
+    protected SoundPlayer playMoveSound() {
+        return null;
     }
 
     public Trail getTrail() {

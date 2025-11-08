@@ -7,10 +7,12 @@ import necesse.entity.mobs.gameDamageType.DamageType;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.armorItem.SetHelmetArmorItem;
+import necesse.inventory.lootTable.presets.ArmorSetsLootTable;
+import necesse.inventory.lootTable.presets.HeadArmorLootTable;
 
 abstract public class AphSetHelmetArmorItem extends SetHelmetArmorItem {
     public AphSetHelmetArmorItem(int armorValue, DamageType damageType, int enchantCost, Rarity rarity, String textureName, String setChestStringID, String setBootsStringID, String buffType) {
-        super(armorValue, damageType, enchantCost, rarity, textureName, setChestStringID, setBootsStringID, buffType);
+        super(armorValue, damageType, enchantCost, HeadArmorLootTable.headArmor, ArmorSetsLootTable.armorSets, rarity, textureName, setChestStringID, setBootsStringID, buffType);
     }
 
     @Override

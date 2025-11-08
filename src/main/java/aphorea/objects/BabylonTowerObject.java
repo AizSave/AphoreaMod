@@ -26,7 +26,9 @@ import necesse.gfx.gameTexture.GameTexture;
 import necesse.inventory.item.Item;
 import necesse.inventory.item.toolItem.ToolType;
 import necesse.level.gameObject.GameObject;
+import necesse.level.gameObject.SpiderThroneObject;
 import necesse.level.gameObject.StaticMultiObject;
+import necesse.level.gameObject.container.ForgeObject;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
 
@@ -36,7 +38,6 @@ import java.util.Collections;
 import java.util.List;
 
 public class BabylonTowerObject extends StaticMultiObject {
-    protected int yOffset = -3;
 
     public BabylonTowerObject(int multiX, int multiY, int multiWidth, int multiHeight, int[] multiIDs, Rectangle fullCollision) {
         super(multiX, multiY, multiWidth, multiHeight, multiIDs, fullCollision, "babylontower");
@@ -88,8 +89,7 @@ public class BabylonTowerObject extends StaticMultiObject {
                 }
             }
 
-            GameTexture texture = this.texture.getDamagedTexture(this, level, tileX, tileY);
-            final DrawOptions[] options = this.getMultiTextureDrawOptionsCustom(texture, level, tileX, tileY, camera, alpha);
+            final DrawOptions[] options = this.getMultiTextureDrawOptionsCustom(this.texture, level, tileX, tileY, camera, alpha);
             for (DrawOptions drawOptions : options) {
                 list.add(new LevelSortedDrawable(this, tileX, tileY) {
                     public int getSortY() {
@@ -184,11 +184,11 @@ public class BabylonTowerObject extends StaticMultiObject {
         }
 
         public float getMobX() {
-            return this.getX() * 32 + 48;
+            return this.tileX * 32 + 48;
         }
 
         public float getMobY() {
-            return this.getY() * 32 + 32;
+            return this.tileY * 32 + 32;
         }
 
         public void setupContentPacket(PacketWriter writer) {
@@ -234,7 +234,7 @@ public class BabylonTowerObject extends StaticMultiObject {
 
             boolean noPlayersNearby = this.getLevel().entityManager.players
                     .streamArea(getMobX(), getMobY(), BabylonTowerMob.BOSS_AREA_RADIUS)
-                    .noneMatch(p -> p.getDistance(getMobX(), getMobY()) < BabylonTowerMob.BOSS_AREA_RADIUS);
+                    .noneMatch(p -> p.getDistance(getMobX(), getMobY()) < BabylonTowerMob.BOSS_AREA_RADIUS && !p.getServerClient().isDead());
 
             if (noPlayersNearby) {
                 if (getMob().getHealthPercent() == 1) {

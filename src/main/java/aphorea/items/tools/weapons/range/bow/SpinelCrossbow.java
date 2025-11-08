@@ -35,7 +35,7 @@ import necesse.inventory.item.Item;
 import necesse.inventory.item.ItemAttackerWeaponItem;
 import necesse.inventory.item.ItemInteractAction;
 import necesse.inventory.item.arrowItem.ArrowItem;
-import necesse.inventory.item.toolItem.projectileToolItem.bowProjectileToolItem.BowProjectileToolItem;
+import necesse.inventory.item.toolItem.projectileToolItem.gunProjectileToolItem.GunProjectileToolItem;
 import necesse.level.maps.Level;
 
 import java.awt.*;
@@ -75,10 +75,12 @@ public class SpinelCrossbow extends AphBowProjectileToolItem implements ItemInte
         return item.getGndData().getBoolean("charging") ? super.getAttackSprite(item, player) : this.getArrowlessAttackSprite(item, player);
     }
 
+    @Override
     public Item getArrowItem(Level level, ItemAttackerMob attackerMob, int seed, InventoryItem item) {
         return ItemRegistry.getItem("stonearrow");
     }
 
+    @Override
     public void setupAttackMapContent(GNDItemMap map, Level level, int x, int y, ItemAttackerMob attackerMob, int seed, InventoryItem item) {
         super.setupAttackMapContent(map, level, x, y, attackerMob, seed, item);
         Item arrow = this.getArrowItem(level, attackerMob, seed, item);
@@ -92,6 +94,7 @@ public class SpinelCrossbow extends AphBowProjectileToolItem implements ItemInte
         }, "arrowammo");
     }
 
+    @Override
     public InventoryItem onAttack(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack, int seed, GNDItemMap mapContent) {
         item.getGndData().setBoolean("charging", false);
         int arrowID = mapContent.getShortUnsigned("arrowID", 65535);
@@ -207,7 +210,7 @@ public class SpinelCrossbow extends AphBowProjectileToolItem implements ItemInte
 
     @Override
     public InventoryItem onLevelInteract(Level level, int x, int y, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int seed, GNDItemMap mapContent) {
-        int animTime = this.getAttackAnimTime(item, attackerMob) * 2;
+        int animTime = (int) (this.getAttackAnimTime(item, attackerMob) * 1.5F);
         attackerMob.startAttackHandler(new SpinelCrossbowInteractionAttackHandler(attackerMob, slot, item, this, animTime, seed).startFromInteract());
         return item;
     }
@@ -221,7 +224,6 @@ public class SpinelCrossbow extends AphBowProjectileToolItem implements ItemInte
         public int seed;
         public boolean endedByInteract;
         protected int endAttackBuffer;
-
 
         public SpinelCrossbowInteractionAttackHandler(ItemAttackerMob attackerMob, ItemAttackSlot slot, InventoryItem item, SpinelCrossbow toolItem, int chargeTime, int seed) {
             super(attackerMob, slot, 20);
@@ -240,12 +242,14 @@ public class SpinelCrossbow extends AphBowProjectileToolItem implements ItemInte
             return (float) this.getTimeSinceStart() / this.chargeTime;
         }
 
+        @Override
         public Point getNextItemAttackerLevelPos(Mob currentTarget) {
             InventoryItem attackItem = this.item.copy();
             attackItem.getGndData().setFloat("skillPercent", 1.0F);
             return ((ItemAttackerWeaponItem) attackItem.item).getItemAttackerAttackPosition(this.attackerMob.getLevel(), this.attackerMob, currentTarget, -1, attackItem);
         }
 
+        @Override
         public void onUpdate() {
             super.onUpdate();
             Point2D.Float dir = GameMath.normalize((float) this.lastX - this.attackerMob.x, (float) this.lastY - this.attackerMob.y);
@@ -289,16 +293,19 @@ public class SpinelCrossbow extends AphBowProjectileToolItem implements ItemInte
             }
         }
 
+        @Override
         public void onMouseInteracted(int levelX, int levelY) {
             this.endedByInteract = true;
             this.attackerMob.endAttackHandler(false);
         }
 
+        @Override
         public void onControllerInteracted(float aimX, float aimY) {
             this.endedByInteract = true;
             this.attackerMob.endAttackHandler(false);
         }
 
+        @Override
         public void onEndAttack(boolean bySelf) {
             float chargePercent = this.getChargePercent();
             if (!this.endedByInteract && chargePercent >= 1F) {
