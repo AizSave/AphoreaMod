@@ -391,7 +391,6 @@ deleteditem=このアイテムは削除されました。永久に削除され�
 unstablecore=§b不安定なオーラを放出します...§0 昼間のみ使用できます
 venomextractbuff=ロードはそれを飲めと言いますが、飲まないでください
 venomextractbuffdesc=HP を 1 より多くすることはできません
-lifespinel=最大体力を永続的に 5 増加させ、最大 320 まで
 
 // General Weapons
 spinsecondaryattack=[input=mouse2] を長押ししてスピン攻撃を実行します

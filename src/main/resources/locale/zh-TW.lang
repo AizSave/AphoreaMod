@@ -391,7 +391,6 @@ deleteditem=此物品已被移除，請在永久移除前使用此物品回收�
 unstablecore=§b釋放不穩定的光環...§0 只能在白天使用
 venomextractbuff=洛德說喝了它，別喝
 venomextractbuffdesc=你的生命值不能超過 1
-lifespinel=永久增加最大生命值 5 點，最高 320
 
 // General Weapons
 spinsecondaryattack=按住 [input=mouse2] 執行旋轉攻擊

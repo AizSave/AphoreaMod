@@ -391,7 +391,6 @@ deleteditem=Šis daiktas buvo pašalintas, naudokite šį daiktą, kad atgautum�
 unstablecore=§bIšlaisvina nestabilią aurą...§0 Galima naudoti tik dieną
 venomextractbuff=Lowdas sako išgerti, nedaryk to
 venomextractbuffdesc=Negalite turėti daugiau nei 1 HP
-lifespinel=Visam laikui padidina maksimalią sveikatą 5, iki 320
 
 // General Weapons
 spinsecondaryattack=Laikykite [input=mouse2], kad atliktumėte sukamąjį puolimą

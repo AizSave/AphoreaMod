@@ -391,7 +391,6 @@ deleteditem=Ovaj predmet je uklonjen, upotrijebite ovaj predmet da biste povrati
 unstablecore=§bOslobađa nestabilnu auru...§0 Može se koristiti samo danju
 venomextractbuff=Lowd kaže popij, nemoj
 venomextractbuffdesc=Ne možete imati više od 1 HP
-lifespinel=Trajno povećava maksimalno zdravlje za 5 do 320
 
 // General Weapons
 spinsecondaryattack=Držite [input=mouse2] za izvođenje vrtložnog napada

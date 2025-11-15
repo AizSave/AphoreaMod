@@ -391,7 +391,6 @@ deleteditem=تمت إزالة هذا العنصر، استخدم هذا العن
 unstablecore=§bيطلق هالة غير مستقرة...§0 لا يمكن استخدامه إلا أثناء النهار
 venomextractbuff=يقول لود اشربه، لا تفعل
 venomextractbuffdesc=لا يمكن أن يكون لديك أكثر من 1 HP
-lifespinel=يزيد الصحة القصوى بشكل دائم بمقدار 5 حتى 320
 
 // General Weapons
 spinsecondaryattack=اضغط باستمرار على [input=mouse2] لتنفيذ هجوم دوراني

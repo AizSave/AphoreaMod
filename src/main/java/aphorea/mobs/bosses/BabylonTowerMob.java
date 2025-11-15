@@ -6,6 +6,7 @@ import aphorea.mobs.bosses.minions.babylon.BabylonHead;
 import aphorea.objects.BabylonEntranceObject;
 import aphorea.objects.BabylonTowerObject;
 import aphorea.packets.AphRemoveObjectEntity;
+import aphorea.registry.AphData;
 import aphorea.utils.AphColors;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
@@ -18,11 +19,14 @@ import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
 import necesse.engine.network.client.Client;
 import necesse.engine.network.packet.PacketChatMessage;
+import necesse.engine.network.server.ServerClient;
+import necesse.engine.registries.ItemRegistry;
 import necesse.engine.registries.MobRegistry;
 import necesse.engine.registries.MusicRegistry;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameRandom;
+import necesse.engine.util.GameUtils;
 import necesse.engine.util.gameAreaSearch.GameAreaStream;
 import necesse.entity.mobs.*;
 import necesse.entity.mobs.ai.behaviourTree.AINode;
@@ -42,6 +46,7 @@ import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.gameTooltips.GameTooltips;
 import necesse.gfx.gameTooltips.StringTooltips;
 import necesse.inventory.lootTable.LootTable;
+import necesse.inventory.lootTable.lootItem.ConditionLootItem;
 import necesse.inventory.lootTable.lootItem.LootItem;
 import necesse.inventory.lootTable.lootItem.RotationLootItem;
 import necesse.level.gameObject.GameObject;
@@ -62,7 +67,11 @@ public class BabylonTowerMob extends BossMob {
     public static GameTexture icon;
 
     public static LootTable lootTable = new LootTable(
-            LootItem.between("spinel", 8, 16)
+            LootItem.between("spinel", 8, 16),
+            new ConditionLootItem("spinelcure", (r, o) -> {
+                Mob mob = LootTable.expectExtra(Mob.class, o, 0);
+                return mob == null || !AphData.spinelCured(mob.getWorldEntity());
+            })
     );
 
     public static LootTable privateLootTable = new LootTable(
@@ -72,6 +81,7 @@ public class BabylonTowerMob extends BossMob {
                     new LootItem("babyloncandle")
             )
     );
+
 
     protected MobHealthScaling scaling = new MobHealthScaling(this);
 
@@ -222,6 +232,7 @@ public class BabylonTowerMob extends BossMob {
             AchievementManager.checkMeAndThisArmyKill(this.getLevel(), attackers);
         }
 
+
         int x = this.getTileX() - 1;
         int y = this.getTileY() - 1;
 
@@ -232,6 +243,7 @@ public class BabylonTowerMob extends BossMob {
                 objectEntity.remove();
                 getServer().network.sendToClientsAtEntireLevel(new AphRemoveObjectEntity(x, y), getLevel());
 
+                /*
                 boolean openingStaircase = false;
                 if (!(this.getLevel() instanceof IncursionLevel)) {
                     Point entrancePosition = new Point(x + 1, y + 2);
@@ -247,6 +259,7 @@ public class BabylonTowerMob extends BossMob {
                         c.sendChatMessage(new LocalMessage("misc", "staircaseopening"));
                     }
                 });
+                */
 
             }
         }
@@ -285,7 +298,9 @@ public class BabylonTowerMob extends BossMob {
         public int currentStageTick = 0;
         public int currentStageTickDuration = 6000 / 50;
         public boolean babylonSummoned = false;
+        public boolean firstHealthCrystalsSummoned = false;
         public boolean alreadyBulkStage = false;
+        public boolean forcedBulkStage = false;
 
         public Map<String, Object> saveData = new HashMap<>();
 
@@ -303,9 +318,9 @@ public class BabylonTowerMob extends BossMob {
 
                         @Override
                         public AINodeResult tick(T mob, Blackboard<T> blackboard) {
-                            if (!babylonSummoned && mob.getHealthPercent() <= 0.6F) {
-                                babylonSummoned = true;
-                                summonBabylon(mob);
+                            if (!firstHealthCrystalsSummoned && mob.getHealthPercent() <= 0.75F) {
+                                hearthCrystalsSummoned(mob);
+
                                 float angle = GameRandom.globalRandom.getFloatBetween(0, (float) (Math.PI * 2));
                                 float distanceFromCenter = 0.25F;
                                 int health = 80 + (int) (40 * streamPossibleTargets(mob).count());
@@ -314,6 +329,18 @@ public class BabylonTowerMob extends BossMob {
                                 summonHearthCrystalMoved(mob, distanceFromCenter, angle, health, 0, 0.15F, 0.5F, clockWise);
                                 summonHearthCrystalMoved(mob, distanceFromCenter, angle + (float) Math.PI * 2 / 3, health, 0, 0.15F, 0.5F, clockWise);
                                 summonHearthCrystalMoved(mob, distanceFromCenter, angle + (float) Math.PI * 4 / 3, health, 0, 0.15F, 0.5F, clockWise);
+
+                            } else if (!babylonSummoned && mob.getHealthPercent() <= 0.5F) {
+                                babylonSummoned = true;
+                                if (mob.isServer()) {
+                                    GameUtils.streamTargetsRange(mob, BOSS_AREA_RADIUS).filter(Objects::nonNull).filter(m -> m.isPlayer).map(m -> (PlayerMob) m).filter(PlayerMob::isServerClient).map(PlayerMob::getServerClient).distinct().forEach((c) -> {
+                                        c.sendChatMessage(new LocalMessage("message", "babylondragonspawn"));
+                                    });
+                                }
+
+                                summonBabylon(mob);
+                            } else if (!alreadyBulkStage && mob.getHealthPercent() <= 0.25F) {
+                                forcedBulkStage = true;
                             }
                             return AINodeResult.FAILURE;
                         }
@@ -371,6 +398,8 @@ public class BabylonTowerMob extends BossMob {
                     new BabylonTowerActionAiNode() {
                         @Override
                         public void doTickAction(T mob, int time, int duration, float progress, Blackboard<T> blackboard) {
+                            hearthCrystalsSummoned(mob);
+
                             int health = 80 + (int) (40 * streamPossibleTargets(mob).count());
                             boolean clockWise = GameRandom.globalRandom.getChance(0.5F);
                             switch (GameRandom.globalRandom.getIntBetween(0, 5)) {
@@ -477,10 +506,11 @@ public class BabylonTowerMob extends BossMob {
 
             int selected;
 
-            if (!alreadyBulkStage && mob.getHealthPercent() < 0.4F) {
+            if (forcedBulkStage) {
                 stages.get(hearthPilarStage).startStage(mob);
                 selected = selectStage(projectileBulkStages);
                 alreadyBulkStage = true;
+                forcedBulkStage = false;
             } else if (stagesUntilNow == 5 || stagesUntilNow % 10 == 0) {
                 selected = hearthPilarStage;
             } else if (stagesUntilNow % 5 == 0) {
@@ -524,7 +554,10 @@ public class BabylonTowerMob extends BossMob {
 
             @Override
             public AINodeResult tick(T mob, Blackboard<T> blackboard) {
-                if (currentStage != stageNumber) {
+                if (forcedBulkStage) {
+                    selectNextStage(mob);
+                    return AINodeResult.SUCCESS;
+                } else if (currentStage != stageNumber) {
                     return AINodeResult.FAILURE;
                 } else if (currentStageTickDuration <= currentStageTick) {
                     selectNextStage(mob);
@@ -544,6 +577,16 @@ public class BabylonTowerMob extends BossMob {
             abstract public int getStageDuration(T mob);
 
             public void startStage(T mob) {
+            }
+        }
+
+        public void hearthCrystalsSummoned(T mob) {
+            if (!firstHealthCrystalsSummoned) {
+                if (mob.isServer())
+                    GameUtils.streamTargetsRange(mob, BOSS_AREA_RADIUS).filter(Objects::nonNull).filter(m -> m.isPlayer).map(m -> (PlayerMob) m).filter(PlayerMob::isServerClient).map(PlayerMob::getServerClient).distinct().forEach((c) -> {
+                        c.sendChatMessage(new LocalMessage("message", "heartcrystalsspawn"));
+                    });
+                firstHealthCrystalsSummoned = true;
             }
         }
 

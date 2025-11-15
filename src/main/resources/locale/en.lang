@@ -91,7 +91,6 @@ infectedcabinet=Infected Cabinet
 infectedbed=Infected Bed
 infecteddoublebed=Infected Double Bed
 infectedcandelabra=Infected Candelabra
-# NEW
 infectedwoodwall=Infected Wood Wall
 infectedwooddoor=Infected Wood Door
 
@@ -116,12 +115,13 @@ stardust=Stardust
 infectedlog=Infected Log
 infectedalloy=Infected Alloy
 spinel=Spinel
-lifespinel=Life Spinel
 
 // Consumables
 unstablecore=Unstable Core
 initialrune=Initial Rune
 venomextract=Venom Extract
+lifespinel=Life Spinel
+spinelcure=Spinel Cure
 
 // Swords
 gelsword=Gel Sword
@@ -391,7 +391,6 @@ deleteditem=This item has been removed, use this item to recover the materials b
 unstablecore=§bReleases an unstable aura...§0 Can only be used during the day
 venomextractbuff=Lowd says drink it, don't do it
 venomextractbuffdesc=You can't have more than 1 HP
-lifespinel=Permanently increases max health by 5 up to 320
 
 // General Weapons
 spinsecondaryattack=Hold [input=mouse2] to perform an spin attack
@@ -708,6 +707,10 @@ alreadyselectedinitialrune=Already selected initial rune
 cannotusetrial=Cannot use in trial rooms
 treantattackmessage=Infected Treants ([mob=infectedtreant]) are vulnerable only to axes ([item=ironaxe])
 infectedfieldsday=§#e05cd5Caution! §#ca25adInfected Fields §#e05cd5are highly radioactive at daytime!
+babylondragonspawn=Babylon, the §!Immortal§0 dragon, came to protect his territory!
+heartcrystalsspawn=[mob=babylontower] Destroy the hearts to continue damaging the tower!
+spinelcure=The Infected Fields are no longer radioactive at day!
+alreadycured=The Infected Fields are already cured
 
 [biome]
 infectedfields=Infected Fields

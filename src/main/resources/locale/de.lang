@@ -391,7 +391,6 @@ deleteditem=Dieser Gegenstand wurde entfernt, benutze diesen Gegenstand, um die 
 unstablecore=§bSetzt eine instabile Aura frei...§0 Kann nur tagsüber verwendet werden
 venomextractbuff=Lowd sagt, trink es, tu es nicht
 venomextractbuffdesc=Du kannst nicht mehr als 1 HP haben
-lifespinel=Erhöht die maximale Gesundheit dauerhaft um 5 bis zu 320
 
 // General Weapons
 spinsecondaryattack=Halten Sie [input=mouse2] gedrückt, um einen Drehangriff auszuführen

@@ -391,7 +391,6 @@ deleteditem=Este item foi removido, use este item para recuperar os materiais an
 unstablecore=§bLibera uma aura instável...§0 Só pode ser usado durante o dia
 venomextractbuff=Lowd diz para beber, não faça isso
 venomextractbuffdesc=Você não pode ter mais de 1 HP
-lifespinel=Aumenta permanentemente a vida máxima em 5 até 320
 
 // General Weapons
 spinsecondaryattack=Segure [input=mouse2] para realizar um ataque giratório

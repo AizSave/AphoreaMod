@@ -391,7 +391,6 @@ deleteditem=Cet objet a été supprimé, utilisez cet objet pour récupérer les
 unstablecore=§bLibère une aura instable...§0 Ne peut être utilisé que de jour
 venomextractbuff=Lowd dit de le boire, ne le faites pas
 venomextractbuffdesc=Vous ne pouvez pas avoir plus de 1 PV
-lifespinel=Augmente de façon permanente la santé maximale de 5 jusqu'à 320
 
 // General Weapons
 spinsecondaryattack=Maintenez [input=mouse2] pour effectuer une attaque tournoyante

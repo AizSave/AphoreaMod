@@ -234,7 +234,7 @@ public class BabylonTowerObject extends StaticMultiObject {
 
             boolean noPlayersNearby = this.getLevel().entityManager.players
                     .streamArea(getMobX(), getMobY(), BabylonTowerMob.BOSS_AREA_RADIUS)
-                    .noneMatch(p -> p.getDistance(getMobX(), getMobY()) < BabylonTowerMob.BOSS_AREA_RADIUS && !p.getServerClient().isDead());
+                    .noneMatch(p -> p.getDistance(getMobX(), getMobY()) < BabylonTowerMob.BOSS_AREA_RADIUS && !(p.isClient() ? p.getClient().isDead : p.getServerClient().isDead()));
 
             if (noPlayersNearby) {
                 if (getMob().getHealthPercent() == 1) {

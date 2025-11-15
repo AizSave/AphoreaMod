@@ -1,5 +1,6 @@
 package aphorea.tiles;
 
+import aphorea.registry.AphData;
 import aphorea.utils.AphColors;
 import necesse.engine.localization.message.GameMessage;
 import necesse.engine.localization.message.LocalMessage;
@@ -115,7 +116,7 @@ public class InfectedGrassTile extends TerrainSplatterTile {
 
     @Override
     public void tick(Mob mob, Level level, int x, int y) {
-        if (!level.getWorldEntity().isNight() && !level.isCave) {
+        if (!AphData.spinelCured(level.getWorldEntity()) && !level.getWorldEntity().isNight() && !level.isCave) {
             if (level.isServer() && !mob.isHostile) {
                 if(mob.isPlayer) {
                     PlayerMob player = (PlayerMob) mob;
@@ -143,7 +144,7 @@ public class InfectedGrassTile extends TerrainSplatterTile {
                 }
 
                 if (damageMultiplier != 0) {
-                    float damage = (level.isCave ? 10F : 5F) * damageMultiplier;
+                    float damage = 2F * damageMultiplier;
                     mob.isServerHit(new GameDamage(DamageTypeRegistry.TRUE, damage), 0.0F, 0.0F, 0.0F, INFECED_GRASS_ATTACKER);
                 }
             }

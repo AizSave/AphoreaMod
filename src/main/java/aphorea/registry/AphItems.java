@@ -28,10 +28,7 @@ import aphorea.items.banners.BlankBannerItem;
 import aphorea.items.banners.logic.AphBanner;
 import aphorea.items.banners.logic.AphMightyBanner;
 import aphorea.items.banners.logic.AphSummonerExpansionBanner;
-import aphorea.items.consumable.InitialRune;
-import aphorea.items.consumable.LifeSpinel;
-import aphorea.items.consumable.UnstableCore;
-import aphorea.items.consumable.VenomExtract;
+import aphorea.items.consumable.*;
 import aphorea.items.misc.GelSlimeNullifier;
 import aphorea.items.misc.books.RunesTutorialBook;
 import aphorea.items.runes.AphBaseRune;
@@ -112,6 +109,7 @@ public class AphItems {
         registerItem("stardust", (new AphMatItem(500, Item.Rarity.COMMON)).setItemCategory("materials"), 15F);
         registerItem("infectedlog", (new AphMatItem(500, "anylog")).setItemCategory("materials", "logs"), 2F);
         registerItem("spinel", (new AphMatItem(500, Item.Rarity.UNCOMMON)).setItemCategory("materials", "minerals"), 10F);
+        registerItem("lifespinel", (new AphMatItem(500, Item.Rarity.RARE)).setItemCategory("materials", "minerals"), 60F);
         registerItem("infectedalloy", (new AphMatItem(500, Item.Rarity.RARE)).setItemCategory("materials"), 30F);
     }
 
@@ -175,7 +173,7 @@ public class AphItems {
         registerItem("unstablegelveline", new UnstableGelveline());
 
         // Work Tools
-        registerItem("superiorpickaxe", new AphCustomPickaxeToolItem(350, 220, 6, 30, 60, 60, 1200, Item.Rarity.EPIC));
+        registerItem("superiorpickaxe", new AphCustomPickaxeToolItem(300, 300, 11, 40, 60, 60, 1200, Item.Rarity.EPIC));
 
         // Healing Tools
         registerItem("healingstaff", new HealingStaff());
@@ -195,7 +193,7 @@ public class AphItems {
         // Ammo
         registerItem("gelarrow", new GelArrowItem(), 0.4F);
         registerItem("unstablegelarrow", new UnstableGelArrowItem(), 2.2F);
-        registerItem("spambullet", new SpamBullet());
+        registerItem("spambullet", new SpamBullet(), 1F);
     }
 
     public static void registerArmor() {
@@ -282,11 +280,9 @@ public class AphItems {
         // Potions
         registerItem("venomextract", new VenomExtract());
 
-        // Permanent Buffs
-        registerItem("lifespinel", new LifeSpinel(), 60F);
-
         // Others
-        registerItem("initialrune", new InitialRune(), 0F);
+        registerItem("initialrune", new InitialRune(), 50F);
+        registerItem("spinelcure", new SpinelCure(), 0F);
     }
 
     public static void registerMisc() {

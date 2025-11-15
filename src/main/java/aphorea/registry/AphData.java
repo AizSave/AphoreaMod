@@ -1,7 +1,6 @@
 package aphorea.registry;
 
 import aphorea.data.AphWorldData;
-import necesse.engine.registries.LevelDataRegistry;
 import necesse.engine.registries.WorldDataRegistry;
 import necesse.engine.world.WorldEntity;
 
@@ -20,5 +19,9 @@ public class AphData {
 
     public static boolean gelSlimesNulled(WorldEntity world) {
         return getWorldData(world).gelSlimesNulled;
+    }
+
+    public static boolean spinelCured(WorldEntity world) {
+        return getWorldData(world).spinelCured;
     }
 }

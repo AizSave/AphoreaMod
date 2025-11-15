@@ -391,7 +391,6 @@ deleteditem=Este objeto ha sido eliminado, usa este objeto para recuperar los ma
 unstablecore=§bLibera una aura inestable...§0 Solo puede ser usado durante el día
 venomextractbuff=Lowd dice que lo bebas, no lo hagas
 venomextractbuffdesc=No puedes tener más de 1 de Vida
-lifespinel=Aumenta 5 puntos de salud máxima de forma permanente\nPueden acumularse hasta 320 puntos
 
 // General Weapons
 spinsecondaryattack=Mantén presionado [input=mouse2] para realizar un ataque giratorio

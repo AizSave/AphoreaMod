@@ -391,7 +391,6 @@ deleteditem=Item ini telah dihapus, gunakan item ini untuk memulihkan material s
 unstablecore=\u00a7bMelepaskan aura tidak stabil...\u00a70 Hanya dapat digunakan di siang hari
 venomextractbuff=Lowd bilang minum, jangan lakukan
 venomextractbuffdesc=Anda tidak dapat memiliki lebih dari 1 HP
-lifespinel=Meningkatkan kesehatan maksimal secara permanen sebesar 5 hingga 320
 
 // General Weapons
 spinsecondaryattack=Tahan [input=mouse2] untuk melakukan serangan berputar

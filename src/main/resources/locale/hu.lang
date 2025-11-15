@@ -391,7 +391,6 @@ deleteditem=Ezt az elemet eltávolították, használd ezt az elemet az anyagok 
 unstablecore=§bInstabil aurát bocsát ki...§0 Csak nappal használható
 venomextractbuff=Lowd azt mondja, idd meg, ne tedd
 venomextractbuffdesc=Nem lehet több, mint 1 életerőd
-lifespinel=Tartósan 5-tel növeli a maximális életerőt, legfeljebb 320-ig
 
 // General Weapons
 spinsecondaryattack=Tartsa lenyomva az [input=mouse2] gombot egy pörgő támadás végrehajtásához

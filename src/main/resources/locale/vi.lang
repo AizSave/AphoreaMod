@@ -391,7 +391,6 @@ deleteditem=Vật phẩm này đã bị xóa, hãy sử dụng vật phẩm này
 unstablecore=§bGiải phóng một luồng khí không ổn định...§0 Chỉ có thể sử dụng vào ban ngày
 venomextractbuff=Lowd bảo uống đi, đừng làm vậy
 venomextractbuffdesc=Bạn không thể có nhiều hơn 1 HP
-lifespinel=Tăng vĩnh viễn máu tối đa thêm 5, lên đến 320
 
 // General Weapons
 spinsecondaryattack=Giữ [input=mouse2] để thực hiện một đòn tấn công xoay

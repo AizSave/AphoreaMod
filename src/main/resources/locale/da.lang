@@ -391,7 +391,6 @@ deleteditem=Denne genstand er blevet fjernet, brug denne genstand til at gendann
 unstablecore=§bFrigiver en ustabil aura...§0 Kan kun bruges om dagen
 venomextractbuff=Lowd siger, drik det, lad være
 venomextractbuffdesc=Du kan ikke have mere end 1 HP
-lifespinel=Øger permanent maks. helbred med 5 op til 320
 
 // General Weapons
 spinsecondaryattack=Hold [input=mouse2] nede for at udføre et spin-angreb

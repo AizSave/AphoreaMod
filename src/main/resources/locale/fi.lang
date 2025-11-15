@@ -391,7 +391,6 @@ deleteditem=Tämä esine on poistettu, käytä tätä esinettä materiaalien pal
 unstablecore=§bVapauttaa epävakaan auran...§0 Voidaan käyttää vain päivällä
 venomextractbuff=Lowd sanoo juo se, älä tee sitä
 venomextractbuffdesc=Sinulla ei voi olla enempää kuin 1 HP
-lifespinel=Lisää pysyvästi maksimiterveyttä 5:llä, enintään 320:een
 
 // General Weapons
 spinsecondaryattack=Pidä [input=mouse2] painettuna suorittaaksesi pyörähdyshyökkäyksen

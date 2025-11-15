@@ -391,7 +391,6 @@ deleteditem=Bu öğe kaldırıldı, kalıcı olarak kaldırılmadan önce malzem
 unstablecore=§bKararsız bir aura yayar...§0 Sadece gündüz kullanılabilir
 venomextractbuff=Lowd iç diyor, yapma
 venomextractbuffdesc=1'den fazla canınız olamaz
-lifespinel=Maksimum canı kalıcı olarak 5 artırır, 320'ye kadar
 
 // General Weapons
 spinsecondaryattack=Dönen bir saldırı gerçekleştirmek için [input=mouse2] tuşunu basılı tutun

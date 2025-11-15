@@ -1,6 +1,5 @@
 package aphorea.mobs.hostile;
 
-import aphorea.registry.AphBiomes;
 import aphorea.registry.AphTiles;
 import aphorea.utils.AphColors;
 import necesse.engine.Settings;
@@ -10,8 +9,13 @@ import necesse.engine.modifiers.ModifierValue;
 import necesse.engine.network.NetworkClient;
 import necesse.engine.network.client.Client;
 import necesse.engine.util.GameRandom;
+import necesse.engine.util.gameAreaSearch.EntityListsRegionSearch;
+import necesse.engine.util.gameAreaSearch.GameAreaStream;
 import necesse.engine.window.WindowManager;
+import necesse.entity.manager.EntityRegionList;
 import necesse.entity.mobs.*;
+import necesse.entity.mobs.ai.behaviourTree.AINode;
+import necesse.entity.mobs.ai.behaviourTree.AINodeResult;
 import necesse.entity.mobs.ai.behaviourTree.BehaviourTreeAI;
 import necesse.entity.mobs.ai.behaviourTree.Blackboard;
 import necesse.entity.mobs.ai.behaviourTree.composites.SelectorAINode;
@@ -19,7 +23,7 @@ import necesse.entity.mobs.ai.behaviourTree.leaves.CollisionChaserAINode;
 import necesse.entity.mobs.ai.behaviourTree.leaves.EscapeAINode;
 import necesse.entity.mobs.ai.behaviourTree.leaves.WandererAINode;
 import necesse.entity.mobs.ai.behaviourTree.trees.CollisionPlayerChaserAI;
-import necesse.entity.mobs.ai.behaviourTree.trees.CollisionPlayerChaserWandererAI;
+import necesse.entity.mobs.ai.behaviourTree.util.TargetFinderDistance;
 import necesse.entity.mobs.ai.behaviourTree.util.WandererBaseOptions;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.hostile.HostileMob;
@@ -101,7 +105,7 @@ public class InfectedTreant extends HostileMob {
     @Override
     public void init() {
         super.init();
-        this.ai = new BehaviourTreeAI<>(this, new InfectedTreantAI(null, 6 * 32, collisionDamage, 0, 40000 * 20));
+        this.ai = new BehaviourTreeAI<>(this, new InfectedTreantAI(6 * 32, collisionDamage, 0, 40000 * 20));
         jump = 0;
     }
 
@@ -220,7 +224,7 @@ public class InfectedTreant extends HostileMob {
     }
 
     protected void addShadowDrawables(OrderableDrawables list, int x, int y, GameLight light, GameCamera camera, float alpha) {
-        if (!(Boolean) this.buffManager.getModifier(BuffModifiers.INVISIBILITY) && !this.isRiding()) {
+        if (!this.isRiding()) {
             TextureDrawOptions shadowOptions = this.getShadowDrawOptions(x, y, light, camera, alpha);
             if (shadowOptions != null) {
                 list.add((tm) -> shadowOptions.draw());
@@ -281,7 +285,12 @@ public class InfectedTreant extends HostileMob {
 
     @Override
     public boolean canBeTargeted(Mob attacker, NetworkClient attackerClient) {
-        return attacker.isPlayer && super.canBeTargeted(attacker, attackerClient);
+        return (this.getWorldEntity() == null || this.getWorldEntity().isNight()) && attacker.isPlayer && super.canBeTargeted(attacker, attackerClient);
+    }
+
+    @Override
+    public boolean canTakeDamage() {
+        return (this.getWorldEntity() == null || this.getWorldEntity().isNight()) && super.canTakeDamage();
     }
 
     @Override
@@ -294,6 +303,11 @@ public class InfectedTreant extends HostileMob {
         if (leavesTexture != null) {
             TreeObject.spawnLeafParticles(level, x, y, leavesCenterWidth, minStartHeight, leavesMaxHeight, amount, windDir, windSpeed, leavesTexture);
         }
+    }
+
+    @Override
+    public boolean isVisible() {
+        return false;
     }
 
     @Override
@@ -324,17 +338,26 @@ public class InfectedTreant extends HostileMob {
         public final CollisionPlayerChaserAI<InfectedTreant> collisionPlayerChaserAI;
         public final WandererAINode<InfectedTreant> wandererAINode;
 
-        public InfectedTreantAI(final Supplier<Boolean> shouldEscape, int searchDistance, GameDamage damage, int knockback, int wanderFrequency) {
+        public InfectedTreantAI(int searchDistance, GameDamage damage, int knockback, int wanderFrequency) {
             this.addChild(this.escapeAINode = new EscapeAINode<InfectedTreant>() {
                 public boolean shouldEscape(InfectedTreant mob, Blackboard<InfectedTreant> blackboard) {
-                    if (mob.isHostile && !mob.isSummoned && mob.getLevel().buffManager.getModifier(LevelModifiers.ENEMIES_RETREATING)) {
-                        return true;
-                    } else {
-                        return shouldEscape != null && shouldEscape.get();
-                    }
+                    return mob.isHostile && !mob.isSummoned && mob.getLevel().buffManager.getModifier(LevelModifiers.ENEMIES_RETREATING);
                 }
             });
             this.addChild(this.collisionPlayerChaserAI = new CollisionPlayerChaserAI<InfectedTreant>(searchDistance, damage, knockback) {
+                @Override
+                public GameAreaStream<Mob> streamPossibleTargets(InfectedTreant mob, Point base, TargetFinderDistance<InfectedTreant> distance) {
+                    return super.streamPossibleTargets(mob, base, distance);
+                }
+
+                @Override
+                protected AINodeResult tickChildren(AINode<InfectedTreant> lastRunningChild, AINodeResult runningChildResult, Iterable<AINode<InfectedTreant>> children, InfectedTreant mob, Blackboard<InfectedTreant> blackboard) {
+                    if(!(mob.getWorldEntity() == null || mob.getWorldEntity().isNight())) {
+                        return AINodeResult.FAILURE;
+                    }
+                    return super.tickChildren(lastRunningChild, runningChildResult, children, mob, blackboard);
+                }
+
                 public boolean attackTarget(InfectedTreant mob, Mob target) {
                     return InfectedTreantAI.this.attackTarget(mob, target);
                 }
@@ -354,7 +377,7 @@ public class InfectedTreant extends HostileMob {
         }
 
         public boolean attackTarget(InfectedTreant mob, Mob target) {
-            return CollisionChaserAINode.simpleAttack(mob, target, this.collisionPlayerChaserAI.damage, this.collisionPlayerChaserAI.knockback);
+            return !(mob.getWorldEntity() == null || mob.getWorldEntity().isNight()) && CollisionChaserAINode.simpleAttack(mob, target, this.collisionPlayerChaserAI.damage, this.collisionPlayerChaserAI.knockback);
         }
     }
 
